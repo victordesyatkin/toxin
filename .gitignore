@@ -1,0 +1,12 @@
+node_modules
+/.vscode
+/app
+/conf
+/public
+/sandbox
+/src1
+/NTH-start-project-master
+/flat-starter-kit-master
+/config.js
+/createBlock.js
+/dist

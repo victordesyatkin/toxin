@@ -1,0 +1,6 @@
+mixin logo-image(options = {fill: true, alt: ''})
+    - let path = "../../components/logo-image/img/logo-color.svg";
+
+    .logo
+        img.logo__img(src=require(`../../components/logo-image/img/logo-${options.fill ? 'fill' : 'color'}.svg`).default alt = options.alt || '')
+        
