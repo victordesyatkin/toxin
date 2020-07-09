@@ -1,6 +1,11 @@
 mixin logo-image(options = {fill: true, alt: ''})
-    - let path = "../../components/logo-image/img/logo-color.svg";
-
-    .logo
-        img.logo__img(src=require(`../../components/logo-image/img/logo-${options.fill ? 'fill' : 'color'}.svg`).default alt = options.alt || '')
+    -
+        let classes = `logo`;
+        classes += options.fill ? ' logo_fill' : ' logo_color';
+        let src = require(`../../components/logo-image/img/logo-fill.svg`).default;
+        if (options.fill === 'color') {
+            src = require(`../../components/logo-image/img/logo-color.svg`).default;
+        }
+    div(class=classes)
+        img.logo__img(src=src alt = options.alt || '')
         
