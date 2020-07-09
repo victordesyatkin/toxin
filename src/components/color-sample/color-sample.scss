@@ -1,0 +1,40 @@
+.color-sample {
+  width: 269.69px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__section-rectangle {
+    width: 70px;
+    height: 70px;
+  }
+
+  &__rectangle {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+  }
+  &__section-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title,
+  &__description {
+    color: #1f2041;
+    font-family: Quicksand;
+    font-style: normal;
+    font-size: 19px;
+    line-height: 29px;
+  }
+  &__title {
+    font-weight: bold;
+  }
+}
+/*    .color-sample__section-rectangle
+        .color-sample__rectangle(style=style) 
+    .color-sample__section-info
+        .color-sample__title #{title}
+        .color-sample__description #{description}
+*/

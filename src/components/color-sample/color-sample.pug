@@ -1,0 +1,11 @@
+mixin color-sample(o)
+    - 
+        let { background = '#1F2041', title = 'Dark Shade 100%', description = '#1F2041' } = o || {};
+        let style = `background: ${background}`;
+    
+    .color-sample
+        .color-sample__section-rectangle
+            .color-sample__rectangle(style=style) 
+        .color-sample__section-info
+            .color-sample__title #{title}
+            .color-sample__description #{description}
