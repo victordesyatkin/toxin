@@ -1,0 +1,31 @@
+mixin radio-buttons(o = {buttons: [], label: ''})
+    -
+        let { label = '', buttons = [] } = o || {};
+    .radio-buttons
+        if (o.label)
+            h3.radio-buttons__label=label
+        .radio-buttons__section-buttons
+            for b in buttons
+                -
+                    let id = b.name ? `radio-buttons__button-${b.value}`: '';
+                    let checkmarkClasses = b.checked ? `radio-buttons__checkmark radio-buttons__button_checked`: 'radio-buttons__checkmark';
+                    let lableClasses = b.checked ? `radio-buttons__button-lable radio-buttons__button-lable_checked`: 'radio-buttons__button-lable';
+                label.radio-buttons__button(for=id)
+                    input.radio-buttons__input(
+                        type = "radio"
+                        name = b.name
+                        tabindex = b.tabindex
+                        required = b.required
+                        disabled = b.disabled ? b.disabled : false
+                        checked = b.checked ? b.checked : false
+                        value = b.value
+                        id = id
+                    )
+                    span.radio-buttons__checkmark
+                        span
+                    span.radio-buttons__button-lable=b.lable
+                    
+                
+                    
+
+

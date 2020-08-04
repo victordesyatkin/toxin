@@ -1,0 +1,1 @@
+import "./font-sample.scss";

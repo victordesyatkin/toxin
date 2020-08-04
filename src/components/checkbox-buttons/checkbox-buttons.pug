@@ -1,0 +1,27 @@
+mixin checkbox-buttons(o = {buttons: [], label: ''})
+    -
+        let { label = '', buttons = [] } = o || {};
+        let checked = require('../../components/checkbox-buttons/img/checkbox-buttons.svg').default;
+    .checkbox-buttons
+        if (o.label)
+            h3.checkbox-buttons__label=label
+        for b in buttons
+            - let id = b.name ? `checkbox-buttons__button-${b.name}`: '';
+            label.checkbox-buttons__button(for=id)
+                input.checkbox-buttons__input(
+                    type = "checkbox"
+                    name = b.name
+                    tabindex = b.tabindex
+                    required = b.required
+                    disabled = b.disabled ? b.disabled : false
+                    checked = b.checked ? b.checked : false
+                    id = id
+                )
+                span.checkbox-buttons__checkmark
+                    img(src=checked, alt=b.name)
+                span.checkbox-buttons__button-lable=b.lable
+                    
+                
+                    
+
+

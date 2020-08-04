@@ -1,12 +1,15 @@
+@import "~theme/variables.scss";
+
 .color-sample {
-  width: 269.69px;
-  height: 70px;
+  flex-basis: 100%;
+  flex-grow: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   &__section-rectangle {
     width: 70px;
+    min-width: 70px;
     height: 70px;
   }
 
@@ -19,22 +22,24 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 15.18%;
+    text-align: left;
   }
-  &__title,
+  &__label,
   &__description {
-    color: #1f2041;
-    font-family: Quicksand;
     font-style: normal;
-    font-size: 19px;
-    line-height: 29px;
   }
-  &__title {
+
+  &__label {
+    font-family: $font-family-third-bold;
     font-weight: bold;
   }
+
+  &__description {
+    text-transform: uppercase;
+    font-family: $font-family-third-regular;
+    font-weight: normal;
+    margin-top: 6px;
+    margin-left: 1px;
+  }
 }
-/*    .color-sample__section-rectangle
-        .color-sample__rectangle(style=style) 
-    .color-sample__section-info
-        .color-sample__title #{title}
-        .color-sample__description #{description}
-*/

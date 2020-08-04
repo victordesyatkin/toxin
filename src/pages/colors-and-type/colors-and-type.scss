@@ -1,0 +1,111 @@
+@import "~theme/variables.scss";
+
+.colors-and-type {
+  display: flex;
+  flex-basis: 100%;
+  flex-grow: 1;
+
+  &__colors {
+    max-width: 18.75vw;
+    min-width: 270px;
+    & > div {
+      margin-top: 20px;
+    }
+
+    & > div:first-child {
+      margin-top: 0;
+    }
+    margin-bottom: 15px;
+  }
+
+  &__type {
+    min-width: 290px;
+    max-width: 403px;
+
+    & > div {
+      margin-top: 50px;
+    }
+
+    & > div:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@function size($px) {
+  @return calc(100% / 1440 * #{$px});
+}
+$padding-top: size(67);
+$padding-right: size(190);
+$padding-left: size(150);
+$margin-right: size(427);
+
+@media (max-width: 2561px) and (min-width: $xl) {
+  .colors-and-type {
+    padding: 67px 190px 0 150px;
+
+    &__colors {
+      margin-right: 427px;
+    }
+  }
+}
+
+@media (max-width: 1439px) and (min-width: 1120px) {
+  .colors-and-type {
+    padding: $padding-top $padding-right 0 $padding-left;
+
+    &__colors {
+      margin-right: $margin-right;
+    }
+  }
+}
+
+@media (max-width: $lg) and (min-width: 992px) {
+  .colors-and-type {
+    padding: $padding-top $padding-right 0 $padding-left;
+
+    &__colors {
+      margin-right: $margin-right;
+    }
+  }
+}
+
+@media (max-width: $md) and (min-width: 768px) {
+  .colors-and-type {
+    padding-top: 15px;
+    justify-content: space-around;
+
+    &__colors {
+      margin-right: 15px;
+    }
+  }
+}
+
+@media (max-width: $sm) and (min-width: 576px) {
+  .colors-and-type {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+}
+
+@media (max-width: $xs) and (min-width: 321px) {
+  .colors-and-type {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: $xxs) {
+  .colors-and-type {
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    &__colors,
+    &__type {
+      width: 100%;
+      padding: 15px;
+    }
+  }
+}

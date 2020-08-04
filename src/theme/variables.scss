@@ -1,3 +1,10 @@
+@import "~fonts/Montserrat-Bold/fonts.css";
+@import "~fonts/Montserrat-Regular/fonts.css";
+@import "~fonts/OpenSans-Bold/stylesheet.css";
+@import "~fonts/OpenSans-Regular/stylesheet.css";
+@import "~fonts/Quicksand-Bold/fonts.css";
+@import "~fonts/Quicksand-Regular/fonts.css";
+
 /***** Variables *****/
 $xxs: 320px;
 $xs: 575px;
@@ -6,11 +13,33 @@ $md: 991px;
 $lg: 1199px;
 $xl: 1440px;
 
+$color-dark-shade100: #1f2041;
+$color-dark-shade75: rgba(31, 32, 65, 0.75);
+$color-dark-shade50: rgba(31, 32, 65, 0.5);
+$color-dark-shade25: rgba(31, 32, 65, 0.25);
+$color-dark-shade5: rgba(31, 32, 65, 0.05);
+$color-purple: #bc9cff;
+$color-green: #6fcf97;
+
 $color-first: #4eb7a8;
 $color-second: #e75735;
-$color-first-dark: #28a290;
-$color-second-dark: #bf3e1f;
 $color-disabled: #e5e5e5;
+
+$color-first-dark: $color-dark-shade100;
+$color-second-dark: $color-dark-shade75;
+$color-third-dark: $color-dark-shade50;
+$color-fourth-dark: $color-dark-shade25;
+
+$font-size-body: 14px;
+
+$font-family-first-regular: "open_sansregular";
+$font-family-first-bold: "open_sansbold";
+$font-family-second-regular: "Conv_Montserrat-Regular";
+$font-family-second-bold: "Conv_Montserrat-Bold";
+$font-family-third-regular: "Conv_Quicksand-Regular";
+$font-family-third-bold: "Conv_Quicksand-Bold";
+
+$background-color-first: #e5e5e5;
 
 /***** Mixins *****/
 @mixin media-breakpoint-up($width) {

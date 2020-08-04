@@ -1,0 +1,47 @@
+extends ../base/base
+include ../../components/header-ui-kit/header-ui-kit
+include ../../components/input/input
+include ../../components/checkbox-buttons/checkbox-buttons
+include ../../components/radio-buttons/radio-buttons
+//- include ../../components/layout/layout
+//- include ../../components/button/button
+//- include ../../components/arrow-button/arrow-button
+//- include ../../components/percentage/percentage
+//- include ../../components/pie-chart/pie-chart
+//- include ../../components/slider/slider
+//- include ../../components/stages/stages
+//- include ../../components/feedback/feedback
+//- include ../../components/toggle/toggle
+//- include ../../components/tick-box/tick-box
+//- include ../../components/search/search
+//- include ../../components/user-profile/user-profile
+//- include ../../components/drop-down/drop-down
+//- include ../../components/activity-card/activity-card
+//- include ../../components/news/news
+//- include ../../components/event/event
+//- include ../../components/location/location
+//- include ../../components/calendar/calendar
+//- include ../../components/messenger/messenger
+
+block title
+
+block header 
+  +header-ui-kit()
+
+block main
+  .demo-input  
+    +input({type: 'email', label: 'text field', placeholder: 'email', state: 'default'})
+    +input({type: 'text', label: 'text field', placeholder: 'This is pretty awesome', state: 'hover/focus'})
+    +checkbox-buttons({label: 'Checkbox Buttons', buttons: [
+      {lable: 'Можно курить', checked: false, name: 'smoke'},
+      {lable: 'Можно с питомцами', checked: true, name: 'pet'},
+      {lable: 'Можно пригласить гостей (до 10 человек)', checked: true, name: 'guest'}
+    ]})
+    +radio-buttons({label: 'Radio Buttons', buttons: [
+      {lable: 'Мужчина', checked: true, name: 'gender', value: 'male'},
+      {lable: 'Женщина', checked: false, name: 'gender', value: 'female'},
+      {lable: 'Мужчина', checked: false, name: 'gender', value: 'male1'},
+      {lable: 'Женщина', checked: false, name: 'gender', value: 'female1'},
+      {lable: 'Мужчина', checked: false, name: 'gender', value: 'male2'},
+      {lable: 'Женщина', checked: false, name: 'gender', value: 'female2'},
+    ]})

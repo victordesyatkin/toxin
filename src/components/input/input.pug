@@ -1,0 +1,60 @@
+include ../toggle/toggle
+include ../tick-box/tick-box
+
+//-
+  options.name - form element name
+  options.type - input type
+  options.placeholder - input placeholder
+  options.pattern - input pattern
+  options.tabindex - input tabindex
+  options.required - input required
+  options.label - подпись к checkbox и radio
+
+mixin input(options)
+  if !options
+    - options = {}
+
+  .input
+    if options.label || options.state
+      .input__info
+        if options.label
+          h3.input__label
+            - let id = options.name ? `input_${options.name}` : ''; 
+            label(for=id ).input__label-text=options.label
+        if options.state
+          h3.input__state #{options.state}
+    - if (options.type === 'text' || options.type === 'email' || options.type === 'password')
+      - let placeholder = ((options.placeholder || '')[0] ? (options.placeholder || '')[0].toLocaleUpperCase() : '') + (options.placeholder || '').slice(1);    
+      input.input__element(
+            type = options.type
+            name = options.name
+            placeholder = placeholder
+            pattern = options.pattern
+            tabindex = options.tabindex
+            required = options.required
+            id = id
+        )
+
+    //-   - if (options.type === 'email' || options.pattern)
+    //-     .input__validation
+    //-       span.input__validation-ok thanks!
+    //-       span.input__validation-error error
+
+    //- - if (options.type === 'checkbox' || options.type === 'radio')
+    //-   label.input__label
+    //-     input.input__element(
+    //-       type = options.type
+    //-       name = options.name
+    //-       tabindex = options.tabindex
+    //-       required = options.required
+    //-     )
+    //-     if options.type === 'checkbox'
+    //-       +toggle({mix: 'input__toggle'})
+    //-     else
+    //-       +tick-box({mix: 'input__tick-box'})
+    //-     if options.label
+    //-       .input__label-text=options.label
+    //-         block
+    //-     else
+    //-       block
+

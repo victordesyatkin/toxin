@@ -1,0 +1,57 @@
+{
+  "colors": [
+    {
+      "background": "#1F2041",
+      "label": "Dark Shade 100%",
+      "description": "#1F2041"
+    },
+    {
+      "background": "rgba(31, 32, 65, 0.75)",
+      "label": "Dark Shade 75%",
+      "description": "#1F2041"
+    },
+    {
+      "background": "rgba(31, 32, 65, 0.50)",
+      "label": "Dark Shade 50%",
+      "description": "#1F2041"
+    },
+    {
+      "background": "rgba(31, 32, 65, 0.25)",
+      "label": "Dark Shade 25%",
+      "description": "#1F2041"
+    },
+    {
+      "background": "rgba(31, 32, 65, 0.05)",
+      "label": "Dark Shade 5%",
+      "description": "#1F2041"
+    },
+    {
+      "background": "#bc9cff",
+      "label": "Purple",
+      "description": "#BC9CFF"
+    },
+    {
+      "background": "#6fcf97",
+      "label": "Green",
+      "description": "#6FCF97"
+    }
+  ],
+  "fonts": [
+    {
+      "element": "H1",
+      "description": "This one is the sub-section or widget title"
+    },
+    {
+      "element": "H2",
+      "description": "Next one is the item title inside widgets"
+    },
+    {
+      "element": "H3",
+      "description": "This is a label or CTA text"
+    },
+    {
+      "element": "Body",
+      "description": "This is the body text which is used for most<br/> of the design, like paragraphs, lists, etc."
+    }
+  ]
+}

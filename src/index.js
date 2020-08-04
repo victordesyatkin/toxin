@@ -1,4 +1,4 @@
-import "normalize.css";
+//import "normalize.css";
 import "./theme/global.scss";
 
 function requireAll(requireContext) {

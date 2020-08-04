@@ -1,0 +1,11 @@
+mixin font-sample(o)
+    - 
+        let { element = 'span', description = 'This one is the sub-section or widget title' } = o || {};
+
+    .font-sample
+        .font-sample__element
+            #{element} #{element}
+        .font-sample__section-info
+            #{element}!=description
+            
+                

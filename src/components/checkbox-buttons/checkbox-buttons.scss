@@ -1,0 +1,59 @@
+@import "~theme/variables.scss";
+
+.checkbox-buttons {
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    display: flex;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-direction: row;
+    margin-top: 10.56px;
+    cursor: pointer;
+    line-height: 1.29rem;
+    color: $color-third-dark;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: none;
+      height: 0;
+      width: 0;
+    }
+  }
+
+  &__button:first-of-type {
+    margin-top: 16.56px;
+  }
+
+  &__checkmark {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color-fourth-dark;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+
+    img {
+      width: 10px;
+      height: 10px;
+      opacity: 0;
+    }
+  }
+
+  input:checked ~ &__checkmark {
+    border: 1px solid #bc9cff;
+
+    img {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+  }
+}
