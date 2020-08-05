@@ -3,6 +3,7 @@ include ../../components/header-ui-kit/header-ui-kit
 include ../../components/input/input
 include ../../components/checkbox-buttons/checkbox-buttons
 include ../../components/radio-buttons/radio-buttons
+include ../../components/toggle-buttons/toggle-buttons
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -44,4 +45,8 @@ block main
       {lable: 'Женщина', checked: false, name: 'gender', value: 'female1'},
       {lable: 'Мужчина', checked: false, name: 'gender', value: 'male2'},
       {lable: 'Женщина', checked: false, name: 'gender', value: 'female2'},
+    ]})
+    +toggle-buttons({label: 'Toggle', buttons: [
+      {lable: 'Получать спецпредложения', checked: true, name: 'male' },
+      {lable: 'Получать спецпредложения', checked: false, name: 'female' },
     ]})

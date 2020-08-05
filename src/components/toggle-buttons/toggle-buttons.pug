@@ -1,0 +1,27 @@
+mixin toggle-buttons(o = {buttons: [], label: ''})
+    -
+        let { label = '', buttons = [] } = o || {};
+    .toggle-buttons
+        if (o.label)
+            h3.radio-buttons__label=label
+        for b in buttons
+            -
+                let id = b.name ? `toggle-buttons__button-${b.name}`: '';
+            label.toggle-buttons__button(for=id)
+                input.toggle-buttons__input(
+                    type = "checkbox"
+                    name = b.name
+                    tabindex = b.tabindex
+                    required = b.required
+                    disabled = b.disabled ? b.disabled : false
+                    checked = b.checked ? b.checked : false
+                    id = id
+                )
+                span.toggle-buttons__checkmark
+                    span
+                span.toggle-buttons__button-lable=b.lable
+                    
+                
+                    
+
+

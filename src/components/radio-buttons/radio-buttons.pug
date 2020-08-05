@@ -8,8 +8,6 @@ mixin radio-buttons(o = {buttons: [], label: ''})
             for b in buttons
                 -
                     let id = b.name ? `radio-buttons__button-${b.value}`: '';
-                    let checkmarkClasses = b.checked ? `radio-buttons__checkmark radio-buttons__button_checked`: 'radio-buttons__checkmark';
-                    let lableClasses = b.checked ? `radio-buttons__button-lable radio-buttons__button-lable_checked`: 'radio-buttons__button-lable';
                 label.radio-buttons__button(for=id)
                     input.radio-buttons__input(
                         type = "radio"
