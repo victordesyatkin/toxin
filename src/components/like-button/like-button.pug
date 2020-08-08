@@ -1,0 +1,33 @@
+mixin like-button(o = {buttons: [], label: ''})
+    -
+        let { label = '', buttons = [] } = o || {};
+        let like = require('../../components/like-button/img/favorite.svg').default;
+        let noLike = require('../../components/like-button/img/favorite_border.svg').default;
+    .like-button
+        if (o.label)
+            h3.radio-buttons__label=label
+        .like-button__section-buttons
+            for b in buttons
+                -
+                    let id = b.name ? `like-button__button-${b.name}`: '';
+                label.like-button__button(for=id)
+                    input.like-button__input(
+                        type = "checkbox"
+                        name = b.name
+                        tabindex = b.tabindex
+                        required = b.required
+                        disabled = b.disabled ? b.disabled : false
+                        checked = b.checked ? b.checked : false
+                        id = id
+                    )
+                    div.like-button__checkmark
+                        div.like-button__checkmark-like
+                            img(src=like, alt='')
+                        div.like-button__checkmark-no-like
+                            img(src=noLike, alt='')
+                        div.like-button__count #{b.count}
+                    
+                
+                    
+
+

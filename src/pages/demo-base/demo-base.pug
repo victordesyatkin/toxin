@@ -4,6 +4,7 @@ include ../../components/input/input
 include ../../components/checkbox-buttons/checkbox-buttons
 include ../../components/radio-buttons/radio-buttons
 include ../../components/toggle-buttons/toggle-buttons
+include ../../components/like-button/like-button
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -49,4 +50,8 @@ block main
     +toggle-buttons({label: 'Toggle', buttons: [
       {lable: 'Получать спецпредложения', checked: true, name: 'male' },
       {lable: 'Получать спецпредложения', checked: false, name: 'female' },
+    ]})
+    +like-button({label: 'Like button', buttons: [
+      { checked: false, name: 'male', count: 2 },
+      { checked: true, name: 'female', count: 12 },
     ]})
