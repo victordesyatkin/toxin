@@ -1,0 +1,42 @@
+mixin rate-button(o = {buttons: [], label: ''})
+    -
+        let
+            { label = '', buttons = [] } = o || {};
+            imgRate = require('../../components/rate-button/img/star.svg').default;
+            noImgRate = require('../../components/rate-button/img/star_border.svg').default;
+    .rate-button
+        if (label)
+            h3.rate-button__label=label
+        .rate-button__section-buttons
+            for b in buttons
+                -
+                    let
+                        count = b.count;
+                        grade = b.grade;
+                        n = 1;
+                    if (grade > count) {
+                        grade = count
+                    } else if (grade < 0 || typeof (b || {}).grade === undefined) {
+                        grade = 0;
+                    }
+                .rate-button__button(data-count=count)
+                    input.rate-button__input(
+                        type = "hidden"
+                        name = b.name
+                        value = grade
+                    )
+                    while n <= b.count
+                        -
+                            let 
+                                rate = n < grade ? 1 : 0; 
+                                classes = `rate-button__rate${rate ? ' rate-button__rate_checked' : ''}`;  
+                        div(class=classes, data-index=n, data-rate=rate)
+                            img(src=imgRate, alt=b.name, class="rate-button__img rate-button__img_checked")
+                            img(src=noImgRate, alt=b.name, class="rate-button__img rate-button__img_nochecked")
+                        -
+                            n++;
+                    
+                
+                    
+
+

@@ -1,0 +1,51 @@
+@import "~theme/variables.scss";
+
+.rate-button {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 19px;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 15px;
+  }
+
+  &__rate {
+    margin-right: 5px;
+    position: relative;
+    width: 20px;
+    height: 19px;
+    cursor: pointer;
+  }
+
+  &__rate_checked {
+    .rate-button__img_checked {
+      display: inherit;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 19px;
+    display: none;
+  }
+
+  .rate-button__img_nochecked {
+    display: inherit;
+  }
+
+  &__section-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
