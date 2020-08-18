@@ -1,0 +1,16 @@
+mixin range-slider(o = {buttons: [], label: ''})
+    -
+        let
+            { label = '', start = 0, end = 100, unit = '', total = 100, nameStart = 'start', endName = 'end', separator = 10 } = o || {};
+    .range-slider(data-total=total, data-separator=separator)
+        input(type="hidden", value=start, name=nameStart, data-type="start")
+        input(type="hidden", value=end, name=nameEnd, data-type="end")
+
+        .range-slider__section-head
+            if (label)
+                h3.range-slider__label=label
+            .range-slider__info
+        .range-slider__section-body
+            .range-slider__point(data-type="start", ondrag="return false", ondragdrop="return false", ondragstart="return false").range-slider__point_start
+            .range-slider__track
+            .range-slider__point(data-type="end", ondrag="return false", ondragdrop="return false", ondragstart="return false").range-slider__point_end
