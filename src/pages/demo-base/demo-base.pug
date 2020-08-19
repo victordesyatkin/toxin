@@ -7,6 +7,7 @@ include ../../components/toggle-buttons/toggle-buttons
 include ../../components/like-button/like-button
 include ../../components/rate-button/rate-button
 include ../../components/range-slider/range-slider
+include ../../components/buttons/buttons
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -62,3 +63,9 @@ block main
       { grade: 5, name: 'female', count: 5 },
     ]})
     +range-slider({label: 'Range Slider', unit: '&#8381;', start: 5000, end: 10000, total:15000, separator: 1000})
+    +buttons({ label: 'Buttons', buttons: [
+      {text: 'Click me', type: 'button', disabled:false, value: '', view: 0, full: true},
+      {text: 'Click me', type: 'button', disabled:false, value: '', view: 1, full: true},
+      {text: 'Click me', type: 'button', disabled:false, value: '', view: 2, full: true},
+      {text: 'Перейти к оплате', type: 'button', disabled:false, value: '', view: 3, full: true},
+    ]})

@@ -1,0 +1,136 @@
+@import "~theme/variables.scss";
+
+.buttons {
+  &__section-head {
+    margin-bottom: 16px;
+  }
+  &__section-body {
+    width: 100%;
+  }
+  &__buttons__items {
+    display: none;
+  }
+  &__view {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  &__view:first-child {
+    margin-top: 0;
+  }
+  &__items_full {
+    justify-content: space-between;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    font-family: $font-family-second-bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99px;
+    height: 44px;
+    border-radius: 22px;
+  }
+
+  &__view_0 {
+    button {
+      background: linear-gradient(
+        180deg,
+        $color-purple 0%,
+        $color-purple-dark 100%
+      );
+      color: $color-first-white;
+      border-radius: 22px;
+    }
+
+    button[disabled="true"],
+    button[disabled] {
+      opacity: 0.5;
+    }
+  }
+
+  &__view_1 {
+    .buttons__item {
+      background: linear-gradient(
+        180deg,
+        $color-purple 0%,
+        $color-purple-dark 100%
+      );
+      border-radius: 22px;
+      padding: 2px;
+    }
+
+    button {
+      color: $color-purple;
+      background-color: white;
+      border-radius: 22px;
+    }
+
+    .buttons__item[disabled="true"],
+    .buttons__item[disabled] {
+      background: linear-gradient(
+        180deg,
+        $color-purple 0%,
+        $color-purple-dark 100%
+      );
+      opacity: 0.5;
+    }
+  }
+
+  &__view_2 {
+    .buttons__item {
+      width: auto;
+      height: auto;
+    }
+
+    button {
+      color: $color-purple;
+      background-color: transparent;
+    }
+
+    button[disabled="true"],
+    button[disabled] {
+      color: $color-third-dark;
+    }
+  }
+
+  &__view_3 {
+    .buttons__item {
+      width: 320px;
+      background: linear-gradient(
+        180deg,
+        $color-purple 0%,
+        $color-purple-dark 100%
+      );
+      position: relative;
+      border-width: 2px;
+      border-radius: 22px;
+      position: relative;
+
+      img {
+        position: absolute;
+        right: 13px;
+      }
+    }
+
+    button {
+      color: $color-purple;
+      background-color: transparent;
+      color: $color-first-white;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+mixin buttons(o = {})
+    -
+        let { label = '', buttons = [] } = o || {};
+    .buttons
+        if (label)
+            .buttons__section-head
+                h3.buttons__label=label
+        .buttons__section-body
+            for b in buttons
+                -
+                    let
+                        { text = '', type = 'button', disabled = false, view = 0, full = false, value = '' } = b || {};
+                        classes = 'buttons__items';
+                        classes += full ? ' buttons__items_full' : '';
+                        classes += view !== undefined ? ` buttons__view buttons__view_${view}` : '';
+                        src = undefined;    
+                    if (view === 3 ) {
+                        src = require('../../components/buttons/img/arrow_forward.svg').default;
+                    }
+                        
+                div(class=classes)
+                    if (full)
+                        .buttons__item
+                            button(
+                                type="button"
+                                disabled=false
+                                value=''
+                            )=text
+                            if (src && view === 3)
+                                img(src=src)
+                        if (view !== 3) 
+                            .buttons__item(disabled=true)
+                                button(
+                                    type="button"
+                                    disabled=true
+                                    value=''
+                                )=text
+                                if (src && view === 3)
+                                    img(src=src)
+                    else
+                        .buttons__item(disabled=disabled)
+                            button(
+                                type=type
+                                value=''
+                                disabled=disabled
+                            )=text
+                            if (src && view === 3)
+                                img(src=src)
