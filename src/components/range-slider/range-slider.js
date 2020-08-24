@@ -201,7 +201,7 @@ class RangeSlider {
 
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
-    const buttons = [].map.call(
+    const components = [].map.call(
       document.querySelectorAll(".range-slider"),
       (node) => {
         return new RangeSlider(node);
@@ -212,7 +212,7 @@ export default function renderComponent(callbackWhenInitialized) {
       callbackWhenInitialized &&
       typeof callbackWhenInitialized === "function"
     ) {
-      callbackWhenInitialized(buttons);
+      callbackWhenInitialized(components);
     }
   })();
 }

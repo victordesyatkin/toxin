@@ -8,6 +8,7 @@ include ../../components/like-button/like-button
 include ../../components/rate-button/rate-button
 include ../../components/range-slider/range-slider
 include ../../components/buttons/buttons
+include ../../components/pagination/pagination
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -69,3 +70,4 @@ block main
       {text: 'Click me', type: 'button', disabled:false, value: '', view: 2, full: true},
       {text: 'Перейти к оплате', type: 'button', disabled:false, value: '', view: 3, full: true},
     ]})
+    +pagination({start: 1, end: 15, current: 12, text: 'вариантов аренды', label: 'pagination'})

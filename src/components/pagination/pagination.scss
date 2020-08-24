@@ -1,0 +1,72 @@
+@import "~theme/variables.scss";
+
+.pagination {
+  width: 100;
+
+  &__section-header {
+    margin-bottom: 16.44px;
+  }
+  &__section-body,
+  &__common {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__arrow,
+  &__item {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-third-dark;
+    line-height: normal;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  &__item_empty {
+    cursor: default;
+  }
+
+  &__arrow {
+    background: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
+    border-radius: 22px;
+  }
+  &__arrow_previous {
+    transform: rotate(180deg);
+  }
+
+  &__item_current {
+    background: linear-gradient(
+      180deg,
+      $color-purple 0%,
+      $color-purple-dark 100%
+    );
+    border-radius: 22px;
+    font-style: normal;
+    font-weight: bold;
+    color: $color-first-white;
+    font-family: $font-family-second-bold;
+  }
+
+  &__section-footer {
+    margin-top: 11px;
+  }
+  [hidden="true"] {
+    opacity: 0;
+    visibility: none;
+    pointer-events: none;
+    transition: 0.3s opacity;
+    display: none;
+  }
+  [hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: normal;
+    transition: 0.3s opacity;
+  }
+}
