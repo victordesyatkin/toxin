@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?lvn0ys');
+  src:  url('fonts/icomoon.eot?lvn0ys#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?lvn0ys') format('truetype'),
+    url('fonts/icomoon.woff?lvn0ys') format('woff'),
+    url('fonts/icomoon.svg?lvn0ys#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-whatshot:before {
+  content: "\e900";
+}
+.icon-location_city:before {
+  content: "\e901";
+}
+.icon-insert_emoticon:before {
+  content: "\e902";
+}
+.icon-arrow_forward:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-star:before {
+  content: "\e904";
+}
+.icon-star_border:before {
+  content: "\e905";
+}
+.icon-favorite_border:before {
+  content: "\e906";
+}
+.icon-favorite:before {
+  content: "\e907";
+  color: #bc9cff;
+}
+.icon-Vector:before {
+  content: "\e908";
+}

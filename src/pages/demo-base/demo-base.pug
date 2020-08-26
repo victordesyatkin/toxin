@@ -9,6 +9,7 @@ include ../../components/rate-button/rate-button
 include ../../components/range-slider/range-slider
 include ../../components/buttons/buttons
 include ../../components/pagination/pagination
+include ../../components/info/info
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -71,3 +72,7 @@ block main
       {text: 'Перейти к оплате', type: 'button', disabled:false, value: '', view: 3, full: true},
     ]})
     +pagination({start: 1, end: 15, current: 12, text: 'вариантов аренды', label: 'pagination'})
+    +info({label: 'Комфорт', sections: [
+      { title: 'Комфорт', content: 'Шумопоглощающие стены', src: 'comfort' },
+      { title: 'Удобство', content: 'Окно в каждой из спален', src: 'usability'}
+    ]})

@@ -1,0 +1,45 @@
+@import "~theme/variables.scss";
+
+.info {
+  &__section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid $color-fifth-dark;
+  }
+  &__img {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: 40px;
+      background: linear-gradient(
+        180deg,
+        $color-purple 0%,
+        $color-purple-dark 100%
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__body {
+    padding-left: 10px;
+  }
+
+  &__title {
+    font-weight: bold;
+    color: $color-second-dark;
+  }
+}

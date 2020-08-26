@@ -4,6 +4,7 @@
 @import "~fonts/OpenSans-Regular/stylesheet.css";
 @import "~fonts/Quicksand-Bold/fonts.css";
 @import "~fonts/Quicksand-Regular/fonts.css";
+@import "~fonts/Icomoon/style.css";
 
 /***** Variables *****/
 $xxs: 320px;
@@ -17,6 +18,7 @@ $color-dark-shade100: #1f2041;
 $color-dark-shade75: rgba(31, 32, 65, 0.75);
 $color-dark-shade50: rgba(31, 32, 65, 0.5);
 $color-dark-shade25: rgba(31, 32, 65, 0.25);
+$color-dark-shade10: rgba(31, 32, 65, 0.1);
 $color-dark-shade5: rgba(31, 32, 65, 0.05);
 $color-purple: #bc9cff;
 $color-purple-dark: #8ba4f9;
@@ -33,6 +35,7 @@ $color-first-dark: $color-dark-shade100;
 $color-second-dark: $color-dark-shade75;
 $color-third-dark: $color-dark-shade50;
 $color-fourth-dark: $color-dark-shade25;
+$color-fifth-dark: $color-dark-shade10;
 
 $color-first-white: $color-white-shade100;
 

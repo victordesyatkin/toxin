@@ -1,0 +1,33 @@
+mixin info(o = {})
+    -
+        let
+            {label = '', sections = []} = o;
+            defaults = {
+                'comfort': 'icon-insert_emoticon',
+                'usability': 'icon-location_city',
+                'cosiness': 'icon- whatshot',
+            }
+
+    .info
+        if (label)
+            h3=label
+    .info__sections
+        each section in sections
+            -
+                section = section || {};
+                let
+                    src = section.src || '';
+                    classDefault = defaults[src];
+                    alt = section.alt || '';
+            .info__section
+                .info__img
+                    if (classDefault)
+                        span(class=classDefault)
+                    else if (src)
+                        img(src=src, alt=alt)
+                .info__body
+                    .info__title
+                        |#{section.title}
+                    .info__content
+                        |#{section.content}
+        
