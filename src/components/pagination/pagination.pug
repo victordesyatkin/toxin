@@ -8,8 +8,8 @@ mixin pagination(o = {})
             isEmptyEnd = true;
             emptyString = '...';
             tmp = '';
-            hiddenPrevious = start !== current ? false : true;
-            hiddenNext = end !== current ? false : true;
+            classesButtonPrevious = 'pagination__arrow pagination__arrow_previous' + (start === current ? 'pagination_hidden' : '');
+            classesButtonNext = 'pagination__arrow pagination__arrow_next' + (end === current ? 'pagination_hidden' : '');
             tmpText = '';
         if (text && typeof text === 'string' && text.trim().length) {
             let startText = (current - 1) * count > 0  ? current * count - count : current;
@@ -17,7 +17,7 @@ mixin pagination(o = {})
             let total = end * current > 100 ? '100+' : end * current; 
             tmpText = `${startText} - ${endText} из ${total} ${text}`;
         }    
-            hiddenSectionFooter = typeof tmpText === 'string' && tmpText.trim().length ? false : true;
+            classesSectionFooter = 'pagination__section-footer' + (typeof tmpText !== 'string' || tmpText.trim().length ? 'pagination_hidden' : '');
         if (current - start > limit) {
             pages.push(start);
         }
@@ -45,7 +45,7 @@ mixin pagination(o = {})
                 .pagination__section-header
                     h3=label
             .pagination__section-body
-                .pagination__arrow.pagination__arrow_previous(data-direction="prev", hidden=hiddenPrevious)
+                div(class=classesButtonPrevious, data-direction="prev")
                     img(src=src, alt=altPrevious)
                 div.pagination__common
                     each page in pages
@@ -60,7 +60,7 @@ mixin pagination(o = {})
                                     dataCurrent = 1;
                                 }
                         div(class=classes, data-current=dataCurrent, data-item=page)=page
-                .pagination__arrow.pagination__arrow_next(data-direction="next", hidden=hiddenNext)
+                div(class=classesButtonNext, data-direction="next")
                     img(src=src, alt=altNext)
-            .pagination__section-footer(hidden=hiddenSectionFooter)=tmpText
+            div(class=classesSectionFooter)=tmpText
                 

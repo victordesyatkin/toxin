@@ -47,7 +47,7 @@ class Pagination {
     const element = this.component.querySelector(
       `[data-direction="${direction}"]`
     );
-    element && element.setAttribute("hidden", hidden);
+    element && element.classList.toggle("pagination_hidden", hidden);
   };
 
   _renderText = () => {
