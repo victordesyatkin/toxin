@@ -210,7 +210,7 @@ module.exports = (env = {}) => {
                 outputPath: "./",
                 publicPath: "./",
                 //name: "[path][name]-[sha1:hash:7].[ext]",
-                name: "[name]-[sha1:hash:7].[ext]",
+                name: "[sha1:hash:7]-[sha1:hash:7].[ext]",
               },
             },
           ],

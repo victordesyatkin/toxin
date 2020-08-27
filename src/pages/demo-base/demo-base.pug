@@ -10,6 +10,7 @@ include ../../components/range-slider/range-slider
 include ../../components/buttons/buttons
 include ../../components/pagination/pagination
 include ../../components/info/info
+include ../../components/comments/comments
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -75,4 +76,8 @@ block main
     +info({label: 'Комфорт', sections: [
       { title: 'Комфорт', content: 'Шумопоглощающие стены', src: 'comfort' },
       { title: 'Удобство', content: 'Окно в каждой из спален', src: 'usability'}
+    ]})
+    +comments({ lable: 'Отзывы посетителей номера', count: '2 отзыва', comments: [
+      {likeButton: { buttons: [{ checked: true, name: 'male2', count: 12 }]}, src: 'male', fullName: 'Мурад Сарафанов', date: '5 дней назад', count: 12, content: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' },
+      {likeButton: { buttons: [{ checked: false, name: 'female2', count: 2 }]}, src: 'female', fullName: 'Патрисия Стёклышкова', date: 'Неделю назад', count: 2, content: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент' }
     ]})

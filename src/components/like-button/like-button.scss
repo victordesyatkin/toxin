@@ -4,10 +4,13 @@
   display: flex;
   flex-direction: column;
 
+  &__label {
+    margin-bottom: 16px;
+  }
+
   &__section-buttons {
     display: flex;
     flex-direction: row;
-    margin-top: 6px;
     flex-wrap: wrap;
   }
 
@@ -15,7 +18,6 @@
     display: flex;
     flex-shrink: 1;
     flex-direction: row;
-    margin-top: 10.56px;
     cursor: pointer;
     line-height: 1.29rem;
     color: $color-third-dark;
@@ -29,6 +31,10 @@
     }
   }
 
+  &__button:not(:first-child) {
+    margin-left: 10px;
+  }
+
   &__checkmark {
     min-width: 40px;
     width: 40px;
@@ -39,7 +45,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
     position: relative;
 
     div {

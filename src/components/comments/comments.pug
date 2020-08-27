@@ -1,0 +1,34 @@
+mixin comments(o = {})
+    -
+        let
+            {lable = '', count = '', comments = [] } = o;
+            sources = {
+                'male': require('../../components/comments/img/image.png').default,
+                'female': require('../../components/comments/img/image 4.png').default,
+            }
+    .comments
+        if (lable || count)
+            .comments__header
+                .comments__lable
+                    h2=lable
+                .comments__count=count
+        .comments__sections
+            each comment in comments
+                -
+                    let
+                        src = sources[comment.src];
+                        style = `background: url(${src}) 45% 30%`; 
+                .comments__section
+                    .comments__left
+                        .comments__img(style=style)
+                        .comments__like-button
+                            +like-button(comment.likeButton)
+                    .comments__right
+                        .comments__full-name=comment.fullName
+                        .comments__date=comment.date
+                        .comments__content=comment.content
+
+
+
+
+

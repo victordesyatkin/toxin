@@ -5,7 +5,7 @@ mixin like-button(o = {buttons: [], label: ''})
         let noLike = require('../../components/like-button/img/favorite_border.svg').default;
     .like-button
         if (o.label)
-            h3.radio-buttons__label=label
+            h3.like-button__label=label
         .like-button__section-buttons
             for b in buttons
                 -
