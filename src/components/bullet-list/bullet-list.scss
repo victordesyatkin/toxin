@@ -1,0 +1,25 @@
+@import "~theme/variables.scss";
+
+.bullet-list {
+  &__lable {
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__item-mark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: $color-fourth-dark;
+    border-radius: 50%;
+    margin-right: 10.43px;
+  }
+}
