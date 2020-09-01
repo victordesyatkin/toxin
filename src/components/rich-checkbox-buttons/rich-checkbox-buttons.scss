@@ -1,0 +1,28 @@
+@import "~theme/variables.scss";
+
+.rich-checkbox-buttons {
+  &__lable {
+    margin-bottom: 16px;
+  }
+
+  &__button-lable {
+    margin-top: 2px;
+    font-weight: bold;
+    color: $color-second-dark;
+  }
+
+  &__button {
+    margin-top: 10px;
+  }
+
+  &__button:first-child {
+    margin-top: 0;
+  }
+
+  &__info {
+    padding-left: 30px;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

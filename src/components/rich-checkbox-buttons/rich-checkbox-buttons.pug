@@ -1,0 +1,14 @@
+mixin rich-checkbox-buttons(o = {})
+    -
+        let
+            {label, buttons = []} = o || {};
+    .rich-checkbox-buttons
+        if (label) 
+            .rich-checkbox-buttons__lable
+                h3=label
+        .rich-checkbox-buttons__buttons
+            each button in buttons
+                .rich-checkbox-buttons__button
+                    +checkbox-buttons({buttons: [{...button, classButtonLable: 'rich-checkbox-buttons__button-lable'}]})
+                    if (button.info)
+                        .rich-checkbox-buttons__info=button.info
