@@ -13,6 +13,7 @@ include ../../components/info/info
 include ../../components/comments/comments
 include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
 include ../../components/bullet-list/bullet-list
+include ../../components/masked-text-field/masked-text-field
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -40,8 +41,8 @@ block header
 
 block main
   .demo-input  
-    +input({type: 'email', label: 'text field', placeholder: 'email', state: 'default'})
-    +input({type: 'text', label: 'text field', placeholder: 'This is pretty awesome', state: 'hover/focus'})
+    +input({name: 'firstname', id: 'firstname', type: 'email', label: 'text field', placeholder: 'email', stateText: 'default'})
+    +input({name: 'lastname', id: 'lastname', type: 'text', label: 'text field', placeholder: 'This is pretty awesome', stateText: 'hover/focus', state: 'hover'})
     +checkbox-buttons({label: 'Checkbox Buttons', buttons: [
       {lable: 'Можно курить', checked: false, name: 'smoke'},
       {lable: 'Можно с питомцами', checked: true, name: 'pet'},
@@ -92,3 +93,4 @@ block main
       {lable: 'Без вечеринок и мероприятий'},
       {lable: 'Время прибытия — после 13:00, а выезд до 12:00'}
     ]})
+    +masked-text-field({ name: 'birthday', id: 'birthday', type: 'text', label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', stateText: 'Default'})

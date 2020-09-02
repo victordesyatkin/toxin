@@ -31,12 +31,19 @@
     font-style: normal;
     font-weight: normal;
     padding: 13px 15px;
+    font-size: 14px;
+    line-height: 1.7rem;
 
     &:hover,
     &:focus {
       color: $color-second-dark;
       border: 1px solid $color-third-dark;
       outline: none !important;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: $color-second-dark;
     }
   }
 

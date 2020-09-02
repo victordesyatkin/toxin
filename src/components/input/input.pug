@@ -12,27 +12,29 @@ include ../tick-box/tick-box
 
 mixin input(options)
   if !options
-    - options = {}
-
+    - options = {};
   .input
     if options.label || options.state
       .input__info
         if options.label
           h3.input__label
-            - let id = options.name ? `input_${options.name}` : ''; 
-            label(for=id ).input__label-text=options.label
-        if options.state
-          h3.input__state #{options.state}
+            label(for=options.name).input__label-text=options.label
+        if options.stateText
+          h3.input__state #{options.stateText}
     - if (options.type === 'text' || options.type === 'email' || options.type === 'password')
-      - let placeholder = ((options.placeholder || '')[0] ? (options.placeholder || '')[0].toLocaleUpperCase() : '') + (options.placeholder || '').slice(1);    
+      - 
+        let 
+          placeholder = ((options.placeholder || '')[0] ? (options.placeholder || '')[0].toLocaleUpperCase() : '') + (options.placeholder || '').slice(1);    
+          autofocus = options.state ? true : false;
       input.input__element(
+            id = options.name
             type = options.type
             name = options.name
             placeholder = placeholder
             pattern = options.pattern
             tabindex = options.tabindex
             required = options.required
-            id = id
+            autofocus = autofocus
         )
 
     //-   - if (options.type === 'email' || options.pattern)
