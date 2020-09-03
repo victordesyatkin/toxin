@@ -25,6 +25,13 @@
     position: relative;
   }
 
+  &__section:hover,
+  &__xection:focus {
+    .input__button_default {
+      color: $color-second-dark;
+    }
+  }
+
   &__button {
     display: flex;
     justify-content: center;
@@ -40,17 +47,22 @@
   }
 
   &__button_default {
+    color: $color-third-dark;
+    background-color: transparent;
+    font-size: 8px;
+    cursor: pointer;
+  }
+
+  &__button_forward {
     background: linear-gradient(
       180deg,
       $color-purple 0%,
       $color-purple-dark 100%
     );
+    font-size: 18px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    //color: $color-third-dark;
-    font-size: 18px;
-    cursor: pointer;
   }
 
   &__input {
@@ -62,7 +74,7 @@
     font-family: $font-family-second-regular;
     font-style: normal;
     font-weight: normal;
-    padding: 13px 15px;
+    padding: 13px 44px 13px 15px;
     font-size: 14px;
     line-height: 1.7rem;
 
@@ -75,6 +87,20 @@
 
     &:hover::placeholder,
     &:focus::placeholder {
+      color: $color-second-dark;
+    }
+  }
+
+  &_hover-focus {
+    .input__input {
+      color: $color-second-dark;
+      border: 1px solid $color-third-dark;
+      outline: none !important;
+    }
+
+    .input__input::placeholder,
+    .input__input::placeholder,
+    .input__button_default {
       color: $color-second-dark;
     }
   }

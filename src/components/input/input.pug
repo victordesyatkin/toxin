@@ -14,7 +14,7 @@
 mixin input(o = {})
   -
     let { label = '', stateText = '', type = '', name = '', state = false, placeholder = '', button = {}, value, required, pattern, tabindex } = o || {};
-    let { buttonVisible = false } = button || {};
+    let { visible:buttonVisible = false } = button || {};
     let 
       autofocus = state ? true : false;
   .input
@@ -41,9 +41,14 @@ mixin input(o = {})
             let { type:buttonType = 'button', class:buttonClass = 'default', name:buttonName, value:buttonValue } = button || {};
             let buttonClasses = 'input__button';
             switch (buttonClass) {
-              case 'default':
-              default: {
+              case 'arrow-down': {
                 buttonClasses += ' input__button_default';
+                buttonClasses += ' icon-expand_more';
+                break;
+              }
+              case 'arrow_forward':
+              default: {
+                buttonClasses += ' input__button_forward';
                 buttonClasses += ' icon-arrow_forward';
                 break;
               }
