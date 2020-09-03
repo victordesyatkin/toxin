@@ -1,5 +1,6 @@
-include ../toggle/toggle
-include ../tick-box/tick-box
+//-
+  include ../toggle/toggle
+  include ../tick-box/tick-box
 
 //-
   options.name - form element name
@@ -10,53 +11,50 @@ include ../tick-box/tick-box
   options.required - input required
   options.label - подпись к checkbox и radio
 
-mixin input(options)
-  if !options
-    - options = {};
+mixin input(o = {})
+  -
+    let { label = '', stateText = '', type = '', name = '', state = false, placeholder = '', button = {}, value, required, pattern, tabindex } = o || {};
+    let { visible:buttonVisible = false } = button || {};
+    let 
+      autofocus = state ? true : false;
   .input
-    if options.label || options.state
-      .input__info
-        if options.label
-          h3.input__label
-            label(for=options.name).input__label-text=options.label
-        if options.stateText
-          h3.input__state #{options.stateText}
-    - if (options.type === 'text' || options.type === 'email' || options.type === 'password')
-      - 
-        let 
-          placeholder = ((options.placeholder || '')[0] ? (options.placeholder || '')[0].toLocaleUpperCase() : '') + (options.placeholder || '').slice(1);    
-          autofocus = options.state ? true : false;
-      input.input__element(
-            id = options.name
-            type = options.type
-            name = options.name
-            placeholder = placeholder
-            pattern = options.pattern
-            tabindex = options.tabindex
-            required = options.required
-            autofocus = autofocus
+    .input__info
+      if label
+        h3.input__label
+          label.input__label-text(for=name)=label
+      if stateText
+        h3.input__stateText=stateText
+    .input__section
+        input.input__input(
+          id = name
+          type = type
+          name = name
+          placeholder = placeholder
+          pattern = pattern
+          tabindex = tabindex
+          required = required
+          autofocus = autofocus
+          value = value
         )
-
-    //-   - if (options.type === 'email' || options.pattern)
-    //-     .input__validation
-    //-       span.input__validation-ok thanks!
-    //-       span.input__validation-error error
-
-    //- - if (options.type === 'checkbox' || options.type === 'radio')
-    //-   label.input__label
-    //-     input.input__element(
-    //-       type = options.type
-    //-       name = options.name
-    //-       tabindex = options.tabindex
-    //-       required = options.required
-    //-     )
-    //-     if options.type === 'checkbox'
-    //-       +toggle({mix: 'input__toggle'})
-    //-     else
-    //-       +tick-box({mix: 'input__tick-box'})
-    //-     if options.label
-    //-       .input__label-text=options.label
-    //-         block
-    //-     else
-    //-       block
-
+        if buttonVisible
+          - 
+            let { type:buttonType = 'button', class:buttonClass = 'default', name:buttonName, value:buttonValue } = button || {};
+            let buttonClasses = 'input__button';
+            switch (buttonClass) {
+              case 'arrow-down': {
+                buttonClasses += ' input__button_default';
+                buttonClasses += ' icon-expand_more';
+                break;
+              }
+              case 'arrow_forward':
+              default: {
+                buttonClasses += ' input__button_forward';
+                buttonClasses += ' icon-arrow_forward';
+                break;
+              }
+            }
+          button(
+            type=buttonType
+            name=buttonName
+            class=buttonClasses
+          )

@@ -14,14 +14,58 @@
     margin-bottom: 5px;
   }
 
-  &__state {
+  &__stateText {
     color: $color-third-dark;
     font-family: $font-family-second-regular;
     font-weight: normal;
     text-transform: uppercase;
   }
 
-  &__element {
+  &__section {
+    position: relative;
+  }
+
+  &__section:hover,
+  &__xection:focus {
+    .input__button_default {
+      color: $color-second-dark;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    z-index: 2;
+    border: none;
+    outline: none;
+  }
+
+  &__button_default {
+    color: $color-third-dark;
+    background-color: transparent;
+    font-size: 8px;
+    cursor: pointer;
+  }
+
+  &__button_forward {
+    background: linear-gradient(
+      180deg,
+      $color-purple 0%,
+      $color-purple-dark 100%
+    );
+    font-size: 18px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  &__input {
     width: 100%;
     height: 44px;
     border: 1px solid $color-fourth-dark;
@@ -30,7 +74,7 @@
     font-family: $font-family-second-regular;
     font-style: normal;
     font-weight: normal;
-    padding: 13px 15px;
+    padding: 13px 44px 13px 15px;
     font-size: 14px;
     line-height: 1.7rem;
 
@@ -47,8 +91,22 @@
     }
   }
 
-  &__element_hover,
-  &__element_focus {
+  &_hover-focus {
+    .input__input {
+      color: $color-second-dark;
+      border: 1px solid $color-third-dark;
+      outline: none !important;
+    }
+
+    .input__input::placeholder,
+    .input__input::placeholder,
+    .input__button_default {
+      color: $color-second-dark;
+    }
+  }
+
+  &__input_hover,
+  &__input_focus {
     color: $color-third-dark;
     border: 1px solid $color-third-dark;
     outline: none !important;

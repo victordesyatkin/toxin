@@ -6,6 +6,7 @@
   "dependencies": {
     "inputmask": "^5.0.6-beta.12",
     "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
     "normalize.css": "^8.0.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.13.1",
