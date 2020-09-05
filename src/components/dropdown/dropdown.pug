@@ -1,3 +1,48 @@
 mixin dropdown(o)
-    .dropdown
+    -
+        let { expand = false } = o;
+        let classDropdown = 'dropdown' + (expand ? ' dropdown_expand' : '');
+    div(class=classDropdown)
         +input(o)
+        block main
+            .dropdown__main
+                -
+                    let { items = [], controlVisible = false  } = o;
+                each item in items
+                    - 
+                        let { title = '', value = 0, name = '' } = item || {};
+                        let buttonMinusClass = 'dropdown__button'  + (value === 0 ? ' dropdown__button_fade' : '');
+                    .dropdown__item
+                        input(
+                            name=name,
+                            type='hidden',
+                            value=value
+                            data-title=title
+                        )
+                        .dropdown__item-title
+                            h3=title
+                        .dropdown__item-control
+                            button(
+                                type="button"
+                                data-type="0"
+                                class=buttonMinusClass
+                            )="-"
+                            .dropdown__item-value
+                                h3=value
+                            button.dropdown__button(
+                                type="button"
+                                data-type="1"
+                            )="+"
+            if (items.length && controlVisible)
+                .dropdown__main-control
+                    button.dropdown__control-button_apply(
+                        type="button",
+                        name="apply"
+                    )
+                        |Применить
+                    button.dropdown__control-button_clean(
+                        type="button",
+                        name="clean"
+                    )   
+                        |Очистить
+

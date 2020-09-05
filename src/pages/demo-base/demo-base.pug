@@ -98,4 +98,9 @@ block main
     //- ]})
     //- +masked-text-field({ name: 'birthday', id: 'birthday', type: 'text', label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', stateText: 'Default'})
     //- +subscription-text-field({ name: 'subscription_email', id: 'subscription_email', type: 'email', label: 'Subscription text field', placeholder: 'Email', button: { visible: true }})
-    +dropdown({ name: 'dropdown', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: 'Сколько гостей', button: { class: 'arrow-down', visible: true }})
+    +dropdown({ expand: false, name: 'dropdown', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: 'Сколько гостей', button: { class: 'arrow-down', visible: true }, items: [
+      {title: 'спальни', value: 2},
+      {title: 'кровати', value: 2},
+      {title: 'ванные комнаты', value: 0}
+    ]
+    })

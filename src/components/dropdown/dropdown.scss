@@ -1,7 +1,87 @@
 @import "~theme/variables.scss";
 
 .dropdown {
+  .input__input {
+    color: $color-second-dark;
+  }
+
   input::placeholder {
     color: $color-second-dark;
+  }
+
+  &_expand {
+    .input__input {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      color: $color-second-dark;
+      border: 1px solid $color-third-dark;
+      outline: none !important;
+    }
+
+    .input__input::placeholder,
+    .input__input::placeholder,
+    .input__button_default {
+      color: $color-second-dark;
+    }
+
+    .dropdown__main {
+      display: block;
+    }
+  }
+
+  &__main {
+    display: none;
+    border: 1px solid $color-third-dark;
+    border-top: none;
+    box-sizing: border-box;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 7px 0 15px;
+  }
+
+  &__item:last-child {
+    padding-bottom: 8px;
+  }
+
+  &__item-control,
+  &__item-value {
+    display: flex;
+  }
+
+  &__button,
+  &__item-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__button {
+    border-radius: 100%;
+    border: 1px solid $color-fourth-dark;
+    color: $color-third-dark;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  &__button:hover,
+  &__button:focus,
+  &__button:active {
+    outline: none;
+  }
+
+  &__button_fade {
+    opacity: 0.5;
+  }
+
+  &__item-value {
+    width: 32px;
   }
 }
