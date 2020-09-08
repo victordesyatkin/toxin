@@ -1,0 +1,5 @@
+mixin expandable-checkbox-list(o = {})
+    .expandable-checkbox-list
+        - let {expandable = {}, ...other} = o;
+        +expandable(expandable)
+            +checkbox-buttons(o)

@@ -1,0 +1,10 @@
+mixin expandable(o = {})
+    -
+        let { label } = o || {};
+    .expandable
+        .expandable__header
+            .expandable__label
+                h3=label
+            .expandable__control.icon-expand_more
+        .expandable__body
+            block

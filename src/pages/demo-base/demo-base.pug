@@ -16,6 +16,8 @@ include ../../components/bullet-list/bullet-list
 include ../../components/masked-text-field/masked-text-field
 include ../../components/subscription-text-field/subscription-text-field
 include ../../components/dropdown/dropdown
+include ../../components/expandable/expandable
+include ../../components/expandable-checkbox-list/expandable-checkbox-list
 
 //- include ../../components/layout/layout
 //- include ../../components/button/button
@@ -110,3 +112,13 @@ block main
       {title: 'младенцы', value: 0}
     ]
     })
+    +expandable-checkbox-list({expandable: {label: 'expandable checkbox list'}, buttons: [
+      {lable: 'Завтрак', checked: false, name: 'breakfast'},
+      {lable: 'Письменный стол', checked: true, name: 'table'},
+      {lable: 'Стул для кормления', checked: true, name: 'chair'},
+      {lable: 'Кроватка', checked: true, name: 'cot'},
+      {lable: 'Телевизор', checked: false, name: 'tv1'},
+      {lable: 'Шампунь', checked: false, name: 'shampoo1'},
+      {lable: 'Телевизор', checked: false, name: 'tv2'},
+      {lable: 'Шампунь', checked: false, name: 'shampoo2'},
+    ]})

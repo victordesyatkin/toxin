@@ -1,0 +1,37 @@
+@import "~theme/variables.scss";
+
+.expandable {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__control {
+    font-size: 8px;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: -ms-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    transition-duration: 1s;
+  }
+
+  &__body {
+    display: none;
+    margin-top: 17.44px;
+  }
+
+  &_expand {
+    .expandable__control {
+      transform: rotate(180deg);
+      -webkit-transition-property: -webkit-transform;
+      -moz-transition-property: -moz-transform;
+      -ms-transition-property: -ms-transform;
+      -o-transition-property: -o-transform;
+      transition-property: transform;
+      transition-duration: 1s;
+    }
+  }
+}
