@@ -1,6 +1,8 @@
 @import "~theme/variables.scss";
 
 .expandable {
+  position: relative;
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -20,7 +22,10 @@
 
   &__body {
     display: none;
-    margin-top: 17.44px;
+    position: absolute;
+    top: 32.44px;
+    left: 0;
+    z-index: 2;
   }
 
   &_expand {
