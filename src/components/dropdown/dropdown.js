@@ -2,34 +2,167 @@ import "./dropdown.scss";
 
 class Dropdown {
   constructor(element) {
+    this._inputs = {};
     this._element = element;
     this._$element = $(element);
-    this._$mainINput = $(".input__input", element);
+    this._type = parseInt(this._$element.attr("data-type"));
+    this._$mainInput = $(".input__input", element);
+    this._$mainInput.attr("disabled", true);
+    this._mainPlaceholder = this._$mainInput.attr("placeholder");
     this._$dropdownMain = $(".dropdown__main", this._element);
     this._$buttonExpand = $(".input__button", this._element);
     this._$buttonExpand.on("click", this._handlerClickExpand.bind(this));
-    this._$items = $(".dropdown__item", this._$dropdownMain);
-    this._prepareItems(this._$items);
-    this._updatePlaceHolder();
+    this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
+    this._$buttonClean.on("click", this._handlerClickClean.bind(this));
+    this._prepareItems();
+    this._createPlaceholder();
+    this._updatePlaceholder();
+    this._toggleButtonClean();
   }
 }
 
-Dropdown.prototype._inputs = {};
+class Placeholder {
+  constructor(inputs) {
+    this._inputs = inputs;
+  }
+}
 
-Dropdown.prototype._updatePlaceHolder = function () {
+Placeholder.prototype._inputs = {};
+
+Placeholder.prototype._toString = function () {
+  return "";
+};
+
+Placeholder.prototype._wordForm = function (num, word) {
+  const cases = [2, 0, 1, 1, 1, 2];
+  return word[
+    num % 100 > 4 && num % 100 < 20 ? 2 : cases[num % 10 < 5 ? num % 10 : 5]
+  ];
+};
+
+class PlaceholderRooms extends Placeholder {
+  constructor(props) {
+    super(props);
+    this._words = {
+      спальни: ["спальня", "спальни", "спален"],
+      кровати: ["кровать", "кровати", "кроватей"],
+      "ванные комнаты": ["ванная комната", "ванные комнаты", "ванных комнат"],
+    };
+  }
+}
+
+PlaceholderRooms.prototype._toString = function () {
   let placeholder = "";
   let separator = "";
   Object.keys(this._inputs).forEach((key) => {
     const value = parseInt(this._inputs[key]);
-    if (value > 0) {
-      placeholder += `${separator}${value} ${key}`;
+    if (value > -1) {
+      placeholder += `${separator}${value} ${this._wordForm(
+        value,
+        this._words[key] || []
+      )}`;
       if (!separator) {
         separator = ", ";
       }
     }
   });
+  return placeholder;
+};
+
+class PlaceholderGuests extends Placeholder {
+  constructor(props) {
+    super(props);
+    this._words = {
+      гость: ["гость", "гостя", "гостей"],
+      младенцы: ["младенец", "младенца", "младенцев"],
+    };
+  }
+}
+
+PlaceholderGuests.prototype._toString = function () {
+  let placeholder = "";
+  let countGuests = 0;
+  let countBaby = 0;
+  let separator = "";
+  Object.keys(this._inputs).forEach((key) => {
+    if (["взрослые", "дети"].indexOf(key) > -1) {
+      countGuests += parseInt(this._inputs[key]);
+    } else if (["младенцы"].indexOf(key) > -1) {
+      countBaby += parseInt(this._inputs[key]);
+    }
+  });
+  if (countGuests > 0) {
+    placeholder = `${separator}${countGuests} ${this._wordForm(
+      countGuests,
+      this._words["гость"] || []
+    )}`;
+    if (!separator) {
+      separator = ", ";
+    }
+  }
+  if (countBaby > 0) {
+    placeholder += `${separator}${countBaby} ${this._wordForm(
+      countBaby,
+      this._words["младенцы"] || []
+    )}`;
+  }
+  return placeholder;
+};
+
+Dropdown.prototype._inputs = {};
+
+Dropdown.prototype._handlerClickClean = function () {
+  Object.keys(this._inputs).forEach((key) => {
+    this._inputs[key] = 0;
+  });
+  $($(".dropdown__item", this._$dropdownMain)).each(function () {
+    $("input", this).val(0);
+    $(".dropdown__item-value", this).text(0);
+  });
+  this._updatePlaceholder();
+  this._toggleButtonClean();
+};
+
+Dropdown.prototype._createPlaceholder = function () {
+  switch (this._type) {
+    case 0: {
+      this._placeholder = new PlaceholderRooms(this._inputs);
+      break;
+    }
+    case 1: {
+      this._placeholder = new PlaceholderGuests(this._inputs);
+      break;
+    }
+    default: {
+      return new Placeholder(this._inputs);
+    }
+  }
+};
+
+Dropdown.prototype._toggleButtonClean = function () {
+  let flag = false;
+  const inputs = Object.values(this._inputs);
+  for (let i = 0, { length } = inputs; i < length; i++) {
+    if (parseInt(inputs[i])) {
+      flag = true;
+      break;
+    }
+  }
+  if (flag) {
+    this._$buttonClean.removeClass("dropdown__control-button_hide");
+  } else {
+    this._$buttonClean.addClass("dropdown__control-button_hide");
+  }
+};
+
+Dropdown.prototype._updatePlaceholder = function () {
+  let placeholder = this._placeholder._toString();
   if (placeholder) {
-    this._$mainINput.attr("placeholder", placeholder);
+    this._$mainInput.attr("placeholder", placeholder);
+    this._$mainInput.val(placeholder);
+  } else {
+    this._$mainInput.attr("placeholder", this._mainPlaceholder);
+    this._$mainInput.val(this._mainPlaceholder);
   }
 };
 
@@ -38,7 +171,8 @@ Dropdown.prototype._handlerChangeChildInput = function (event) {
   const $input = $(target);
   const title = $input.attr("data-title");
   this._inputs[title] = $input.val();
-  this._updatePlaceHolder();
+  this._updatePlaceholder();
+  this._toggleButtonClean();
 };
 
 Dropdown.prototype._handlerClickExpand = function () {
@@ -53,8 +187,9 @@ Dropdown.prototype._toggleClassExpand = function () {
   this._$element.toggleClass("dropdown_expand");
 };
 
-Dropdown.prototype._prepareItems = function (items) {
-  [].map.call(items, (item) => {
+Dropdown.prototype._prepareItems = function () {
+  this._$items = $(".dropdown__item", this._$dropdownMain);
+  [].map.call(this._$items, (item) => {
     const $input = $($("input", item));
     const title = $input.attr("data-title");
     $input.on("input", this._handlerChangeChildInput.bind(this));
@@ -76,7 +211,7 @@ class Element {
       "click",
       this._handlerClickButton.bind(this, 0)
     );
-    this._$fakeinput = $(".dropdown__item-value h3", this._element);
+    this._$fakeinput = $(".dropdown__item-value", this._element);
   }
 }
 

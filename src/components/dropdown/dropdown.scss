@@ -5,6 +5,10 @@
     color: $color-second-dark;
   }
 
+  input.input__input:disabled {
+    background: none;
+  }
+
   input::placeholder {
     color: $color-second-dark;
   }
@@ -83,5 +87,44 @@
 
   &__item-value {
     width: 32px;
+  }
+
+  &__main-control {
+    display: flex;
+    justify-content: space-between;
+    padding: 19px 7px 14px 13px;
+  }
+
+  &__control-button,
+  &__item-value {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    line-height: normal;
+    font-family: $font-family-second-bold, sans-serif;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__control-button_apply {
+    color: $color-purple;
+  }
+
+  &__control-button_clean {
+    color: $color-third-dark;
+  }
+
+  &__control-button:hover,
+  &__control-button:focus,
+  &__control-button:active {
+    border: none;
+    outline: none;
+  }
+
+  &__control-button_hide {
+    opacity: 0;
+    visibility: none;
+    pointer-events: none;
   }
 }
