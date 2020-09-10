@@ -1,0 +1,30 @@
+@import "~theme/variables.scss";
+@import "~air-datepicker/dist/css/datepicker.min.css";
+
+.calendar {
+  .datepicker {
+    width: 100%;
+  }
+
+  .datepicker--nav {
+    padding: 18px 16px 30px 16px;
+  }
+
+  .datepicker--nav-action {
+    span {
+      color: $color-purple;
+      font-size: 18px;
+    }
+  }
+
+  .datepicker--nav-action:hover,
+  .datepicker--nav-action:active,
+  .datepicker--nav-action:focus {
+    background: none;
+  }
+
+  .datepicker--nav-title {
+    @include h2;
+    text-transform: capitalize;
+  }
+}

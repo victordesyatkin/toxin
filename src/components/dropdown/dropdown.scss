@@ -97,10 +97,7 @@
 
   &__control-button,
   &__item-value {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    line-height: normal;
-    font-family: $font-family-second-bold, sans-serif;
+    @include h3;
     border: none;
     background-color: transparent;
     outline: none;

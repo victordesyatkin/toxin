@@ -32,29 +32,16 @@ body {
 //   font-family: LatoBlack, sans-serif;
 // }
 
-h1,
-h2,
-h3 {
-  font-family: $font-family-first-bold, sans-serif;
-  font-style: normal;
-  color: $color-first-dark;
-}
-
 h1 {
-  font-size: 1.71rem;
-  line-height: normal;
+  @include h1;
 }
 
 h2 {
-  font-size: 1.36rem;
-  line-height: normal;
+  @include h2;
 }
 
 h3 {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  line-height: normal;
-  font-family: $font-family-second-bold, sans-serif;
+  @include h3;
 }
 
 body {

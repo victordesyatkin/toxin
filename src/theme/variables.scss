@@ -53,6 +53,33 @@ $background-color-first: #e5e5e5;
 $gradient: linear-gradient(180deg, $color-purple 0%, $color-purple-dark 100%);
 
 /***** Mixins *****/
+@mixin base-h {
+  font-family: $font-family-first-bold, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  color: $color-first-dark;
+}
+
+@mixin h1 {
+  @include base-h;
+  font-size: 1.71rem;
+  line-height: normal;
+}
+
+@mixin h2 {
+  @include base-h;
+  font-size: 1.36rem;
+  line-height: normal;
+}
+
+@mixin h3 {
+  @include base-h;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  line-height: normal;
+  font-family: $font-family-second-bold, sans-serif;
+}
+
 @mixin media-breakpoint-up($width) {
   @media (min-width: $width + 1) {
     @content;
