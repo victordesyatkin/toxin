@@ -4,3 +4,8 @@ mixin calendar(o = {})
             block
         else 
             input(type="hidden")
+        .calendar__control
+            button.calendar__button.calendar__button_clean(type="button", data-type=0)
+                |Очистить
+            button.calendar__button.calendar__button_apply(type="button", data-type=1)
+                |Применить

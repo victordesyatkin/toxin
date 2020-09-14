@@ -62,7 +62,7 @@
     justify-content: flex-end;
 
     span {
-      background: $gradient;
+      background: $gradient-first;
       transition: left 0.5s;
       left: calc(100% - 16px);
     }

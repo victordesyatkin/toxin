@@ -50,9 +50,40 @@ $font-family-third-bold: "Conv_Quicksand-Bold";
 
 $background-color-first: #e5e5e5;
 
-$gradient: linear-gradient(180deg, $color-purple 0%, $color-purple-dark 100%);
+$gradient-first: linear-gradient(
+  180deg,
+  $color-purple 0%,
+  $color-purple-dark 100%
+);
+
+$gradient-second: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
 
 /***** Mixins *****/
+@mixin reset-button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+@mixin linear-gradient($degrees, $top-color, $bottom-color, $opacity) {
+  background: -moz-linear-gradient(
+    $degrees,
+    rgba($top-color, $opacity) 0%,
+    rgba($bottom-color, $opacity) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    $degrees,
+    rgba($top-color, $opacity) 0%,
+    rgba($bottom-color, $opacity) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    $degrees,
+    rgba($top-color, $opacity) 0%,
+    rgba($bottom-color, $opacity) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{rgba($top-color, $opacity)}', endColorstr='#{rgba($bottom-color, $opacity)}',GradientType=0 ); /* IE6-9 */
+}
+
 @mixin base-h {
   font-family: $font-family-first-bold, sans-serif;
   font-style: normal;
@@ -78,6 +109,15 @@ $gradient: linear-gradient(180deg, $color-purple 0%, $color-purple-dark 100%);
   text-transform: uppercase;
   line-height: normal;
   font-family: $font-family-second-bold, sans-serif;
+}
+
+@mixin h3-lite {
+  @include base-h;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: normal;
+  font-family: $font-family-second-regular, sans-serif;
 }
 
 @mixin media-breakpoint-up($width) {

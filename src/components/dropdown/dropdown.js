@@ -1,7 +1,7 @@
 import "./dropdown.scss";
 
 class Dropdown {
-  constructor(element) {
+  constructor(element, zIndex = 1) {
     this._inputs = {};
     this._element = element;
     this._$element = $(element);
@@ -14,6 +14,7 @@ class Dropdown {
     this._$buttonExpand.on("click", this._handlerClickExpand.bind(this));
     this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
     this._$buttonClean.on("click", this._handlerClickClean.bind(this));
+    this._$main = $(".dropdown__main", this._$element);
     this._prepareItems();
     this._createPlaceholder();
     this._updatePlaceholder();
@@ -175,11 +176,39 @@ Dropdown.prototype._handlerChangeChildInput = function (event) {
   this._toggleButtonClean();
 };
 
+Dropdown.prototype._toggleZIndex = function (zIndex = 1) {
+  this._$main.css("z-index", zIndex);
+  return false;
+};
+
+Dropdown.prototype._rollOtherDropdown = function () {
+  let zIndex = 99;
+  const others = $(".dropdown__main", "body");
+  others.each(function () {
+    const tempZIndex = parseInt($(this).css("z-index"));
+    if (tempZIndex > zIndex) {
+      zIndex = tempZIndex;
+    }
+  });
+  this._toggleZIndex(zIndex + 1);
+  $(".dropdown__main", "body")
+    .not(this._$main)
+    .slideUp("slow")
+    .parent(".dropdown")
+    .removeClass("dropdown_expand");
+};
+
 Dropdown.prototype._handlerClickExpand = function () {
   if (this._$element.hasClass("dropdown_expand")) {
-    this._$dropdownMain.slideUp("slow", this._toggleClassExpand.bind(this));
+    this._$dropdownMain.slideUp("slow", () => {
+      this._toggleClassExpand();
+      this._toggleZIndex(1);
+    });
   } else {
-    this._$dropdownMain.slideDown("slow", this._toggleClassExpand.bind(this));
+    this._rollOtherDropdown();
+    this._$dropdownMain.slideDown("slow", () => {
+      this._toggleClassExpand();
+    });
   }
 };
 

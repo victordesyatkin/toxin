@@ -7,8 +7,8 @@ mixin dropdown(o)
         // - type = 1 - guests
     div(class=classDropdown, data-type=type)
         +input(inputOptions)
-        block main
-            .dropdown__main
+        .dropdown__main
+            block main
                 -
                     let { items = [] } = o;
                 each item in items
