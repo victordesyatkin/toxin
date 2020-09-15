@@ -57,6 +57,26 @@ Calendar.prototype._handlerClean = function () {
 
 Calendar.prototype._handlerApply = function () {};
 
+Calendar.prototype._toggleVisibleButtonClean = function () {
+  const selectedDatesLength = get(this._datepicker, ["selectedDates"], [])
+    .length;
+  if (
+    !this._$buttonClean.hasClass("calendar__button_hide") &&
+    !selectedDatesLength
+  ) {
+    this._$buttonClean.addClass("calendar__button_hide");
+  } else if (
+    this._$buttonClean.hasClass("calendar__button_hide") &&
+    selectedDatesLength
+  ) {
+    this._$buttonClean.removeClass("calendar__button_hide");
+  }
+};
+
+Calendar.prototype._handlerClickCalendar = function () {
+  this._toggleVisibleButtonClean();
+};
+
 Calendar.prototype._init = function () {
   this._options = {
     ...this._options,
@@ -74,6 +94,8 @@ Calendar.prototype._init = function () {
     "click",
     this._handlerApply.bind(this)
   );
+  this._toggleVisibleButtonClean();
+  this._$component.on("click", this._handlerClickCalendar.bind(this));
 };
 
 function renderComponent() {
