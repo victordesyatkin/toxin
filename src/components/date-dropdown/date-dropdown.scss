@@ -1,1 +1,34 @@
 @import "~theme/variables.scss";
+
+$dd: ".date-dropdown";
+
+body #{$dd} {
+  &__section-dropdown {
+    display: flex;
+    justify-content: space-between;
+
+    .input__input,
+    .input__input:focus,
+    .input__input:hover,
+    .input__input::placeholder {
+      border-color: $color-fourth-dark;
+      color: $color-second-dark;
+    }
+
+    .input__section {
+      button.input__button {
+        color: $color-third-dark;
+      }
+    }
+  }
+
+  &__section-dropdown > div:nth-child(2) {
+    margin-left: 20px;
+  }
+
+  &__section-calendar {
+    .calendar__main {
+      top: 5px;
+    }
+  }
+}

@@ -73,6 +73,19 @@ Calendar.prototype._toggleVisibleButtonClean = function () {
   }
 };
 
+Calendar.prototype._toggleVisibleMain = function () {
+  if (get(this._options, ["visible"])) {
+    return false;
+  }
+  const visible = get(this._datepicker, ["visible"]);
+  if (visible && this._$main.hasClass("calendar__main_hide")) {
+    this._$main.removeClass("calendar__main_hide");
+  } else if (!visible && !this._$main.hasClass("calendar__main_hide")) {
+    this._$main.addClass("calendar__main_hide");
+  }
+  return false;
+};
+
 Calendar.prototype._handlerClickCalendar = function () {
   this._toggleVisibleButtonClean();
 };
@@ -83,9 +96,12 @@ Calendar.prototype._init = function () {
     ...get(this._$component.data(), ["options"]),
     onSelect: this._handlerSelect.bind(this),
     onRenderCell: this._onRenderCell.bind(this),
+    onShow: this._toggleVisibleMain.bind(this),
+    onHide: this._toggleVisibleMain.bind(this),
   };
   this._$input.datepicker(this._options);
   this._datepicker = this._$input.datepicker().data("datepicker");
+  this._$main = $(".calendar__main", this._$component);
   this._$buttonClean = $(".calendar__button_clean", this._$component).on(
     "click",
     this._handlerClean.bind(this)
@@ -94,8 +110,9 @@ Calendar.prototype._init = function () {
     "click",
     this._handlerApply.bind(this)
   );
-  this._toggleVisibleButtonClean();
   this._$component.on("click", this._handlerClickCalendar.bind(this));
+  this._toggleVisibleButtonClean();
+  this._toggleVisibleMain();
 };
 
 function renderComponent() {

@@ -19,6 +19,7 @@ include ../../components/dropdown/dropdown
 include ../../components/expandable/expandable
 include ../../components/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/calendar/calendar
+include ../../components/date-dropdown/date-dropdown
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -100,27 +101,30 @@ block main
     //- ]})
     //- +masked-text-field({ name: 'birthday', id: 'birthday', type: 'text', label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', stateText: 'Default'})
     //- +subscription-text-field({ name: 'subscription_email', id: 'subscription_email', type: 'email', label: 'Subscription text field', placeholder: 'Email', button: { visible: true }})
-    +dropdown({ dropdownOptions: { expand: false, type: 0 }, name: 'rooms', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: '', button: { class: 'arrow-down', visible: true }, items: [
-      {title: 'спальни', value: 2},
-      {title: 'кровати', value: 2},
-      {title: 'ванные комнаты', value: 0}
-    ]
+    //- +dropdown({ dropdownOptions: { expand: false, type: 0 }, name: 'rooms', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: '', button: { class: 'arrow-down', visible: true }, items: [
+    //-   {title: 'спальни', value: 2},
+    //-   {title: 'кровати', value: 2},
+    //-   {title: 'ванные комнаты', value: 0}
+    //- ]
+    //- })
+    //- +dropdown({ dropdownOptions: { expand: true, type: 1, controlVisible: true }, name: 'guests', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: 'Сколько гостей', button: { class: 'arrow-down', visible: true }, items: [
+    //-   {title: 'взрослые', value: 0},
+    //-   {title: 'дети', value: 0},
+    //-   {title: 'младенцы', value: 0}
+    //- ]
+    //- })
+    //- +expandable-checkbox-list({expandable: {label: 'expandable checkbox list'}, buttons: [
+    //-   {lable: 'Завтрак', checked: false, name: 'breakfast'},
+    //-   {lable: 'Письменный стол', checked: true, name: 'table'},
+    //-   {lable: 'Стул для кормления', checked: true, name: 'chair'},
+    //-   {lable: 'Кроватка', checked: true, name: 'cot'},
+    //-   {lable: 'Телевизор', checked: false, name: 'tv1'},
+    //-   {lable: 'Шампунь', checked: false, name: 'shampoo1'},
+    //-   {lable: 'Телевизор', checked: false, name: 'tv2'},
+    //-   {lable: 'Шампунь', checked: false, name: 'shampoo2'},
+    //- ]})
+    //-+calendar()
+    +date-dropdown({
+      fieldStart: { name: 'startDate', id: 'startDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
+      fieldEnd: { name: 'endDate', id: 'endDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
     })
-    +dropdown({ dropdownOptions: { expand: true, type: 1, controlVisible: true }, name: 'guests', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: 'Сколько гостей', button: { class: 'arrow-down', visible: true }, items: [
-      {title: 'взрослые', value: 0},
-      {title: 'дети', value: 0},
-      {title: 'младенцы', value: 0}
-    ]
-    })
-    +expandable-checkbox-list({expandable: {label: 'expandable checkbox list'}, buttons: [
-      {lable: 'Завтрак', checked: false, name: 'breakfast'},
-      {lable: 'Письменный стол', checked: true, name: 'table'},
-      {lable: 'Стул для кормления', checked: true, name: 'chair'},
-      {lable: 'Кроватка', checked: true, name: 'cot'},
-      {lable: 'Телевизор', checked: false, name: 'tv1'},
-      {lable: 'Шампунь', checked: false, name: 'shampoo1'},
-      {lable: 'Телевизор', checked: false, name: 'tv2'},
-      {lable: 'Шампунь', checked: false, name: 'shampoo2'},
-    ]})
-    +calendar()
-    +date-dropdown()

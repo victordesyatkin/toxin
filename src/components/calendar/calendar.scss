@@ -2,8 +2,26 @@
 @import "~air-datepicker/dist/css/datepicker.min.css";
 
 .calendar {
+  position: relative;
+
+  &__main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    border: 1px solid $color-fourth-dark;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px $color-sixth-dark;
+    border-radius: 4px;
+  }
+
+  &__main_hide {
+    display: none;
+  }
+
   .datepicker {
     width: 100%;
+    border: none;
   }
 
   .datepicker,
@@ -33,6 +51,10 @@
   .datepicker--nav-title {
     @include h2;
     text-transform: capitalize;
+  }
+
+  .datepicker--content {
+    padding: 0 20px;
   }
 
   .datepicker--day-name,

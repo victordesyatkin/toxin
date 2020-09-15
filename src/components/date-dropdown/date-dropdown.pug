@@ -1,2 +1,8 @@
 mixin date-dropdown(o = {})
     .date-dropdown
+        .date-dropdown__section-dropdown
+            - let {fieldStart, fieldEnd, calendar } = o || {};
+            +masked-text-field(fieldStart)
+            +masked-text-field(fieldEnd)
+        .date-dropdown__section-calendar
+            +calendar(calendar)
