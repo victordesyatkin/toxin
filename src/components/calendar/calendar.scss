@@ -163,4 +163,10 @@
   &__button_apply {
     color: $color-purple;
   }
+
+  &__button_hide {
+    opacity: 0;
+    visibility: none;
+    pointer-events: none;
+  }
 }
