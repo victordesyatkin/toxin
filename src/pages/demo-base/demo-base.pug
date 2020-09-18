@@ -20,6 +20,7 @@ include ../../components/expandable/expandable
 include ../../components/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/calendar/calendar
 include ../../components/date-dropdown/date-dropdown
+include ../../components/filter-date-dropdown/filter-date-dropdown
 //- include ../../components/layout/layout
 //- include ../../components/button/button
 //- include ../../components/arrow-button/arrow-button
@@ -124,7 +125,8 @@ block main
     //-   {lable: 'Шампунь', checked: false, name: 'shampoo2'},
     //- ]})
     //-+calendar()
-    +date-dropdown({
-      fieldStart: { name: 'startDate', id: 'startDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
-      fieldEnd: { name: 'endDate', id: 'endDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
-    })
+    //- +date-dropdown({
+    //-   fieldStart: { name: 'startDate', id: 'startDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
+    //-   fieldEnd: { name: 'endDate', id: 'endDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
+    //- })
+    +filter-date-dropdown()

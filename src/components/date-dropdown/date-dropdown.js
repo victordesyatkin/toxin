@@ -18,8 +18,6 @@ DateDropdown.prototype._toggleVisibleCalendar = function () {
   }
 };
 
-DateDropdown.prototype._handlerSelected = function () {};
-
 DateDropdown.prototype._handlerClean = function () {
   this._inputStart.val("");
   this._inputEnd.val("");
@@ -39,6 +37,15 @@ DateDropdown.prototype._handlerApply = function () {
   }
 };
 
+DateDropdown.prototype._handlerClickDocument = function (event) {
+  if (
+    !$(event.target).closest(this._$component).length &&
+    !$(event.target, this._$component).hasClass("datepicker--cell")
+  ) {
+    this._datepicker.hide();
+  }
+};
+
 DateDropdown.prototype._init = function () {
   this._$sections = $(".input__section", this._$component);
   this._inputStart = $(".input__input", this._$sections.get(0));
@@ -48,12 +55,11 @@ DateDropdown.prototype._init = function () {
   this._$buttonEnd = $("button", this._$sections.get(1));
   this._$buttonStart.on("click", this._toggleVisibleCalendar.bind(this));
   this._$buttonEnd.on("click", this._toggleVisibleCalendar.bind(this));
-  this._$datepickerContent = $(".datepicker--content", this._$component);
-  this._$datepickerContent.on("click", this._handlerSelected.bind(this));
   this._buttonClean = $('button[data-type="0"]', this._$component);
   this._buttonApply = $('button[data-type="1"]', this._$component);
   this._buttonClean.on("click", this._handlerClean.bind(this));
   this._buttonApply.on("click", this._handlerApply.bind(this));
+  $(document).on("click", this._handlerClickDocument.bind(this));
 };
 
 function renderComponent() {

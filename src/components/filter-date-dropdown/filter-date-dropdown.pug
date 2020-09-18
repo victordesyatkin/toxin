@@ -1,0 +1,27 @@
+mixin filter-date-dropdown(o = {})
+    - 
+        let {label, input} = o || {};
+        input = { ...{ name: 'filter-date-dropdown', value: '', dummy: 'ДД МЕС' }, ...input };
+        let { name, value, dummy } = input;
+    .filter-date-dropdown(data-options={dummy, separator: '-'})
+        input(
+            type = "hidden",
+            name = name
+            value = value
+            data-type = "1"
+        )
+        if label
+            .filter-date-dropdown__label=label
+        .filter-date-dropdown__section-up
+            input.filter-date-dropdown__input(
+                data-type="0"
+                placeholder="ДД МЕС - ДД МЕС"
+                disabled=true
+            )
+            button.filter-date-dropdown__button(
+                    type="button",
+                    class="icon-expand_more"
+            )
+        .filter-date-dropdown__section-down(data-type="3")
+            +calendar({visible: true})
+

@@ -23,10 +23,36 @@
 
   &__section {
     position: relative;
+    border: 1px solid $color-fourth-dark;
+    border-radius: 4px;
+    color: rgba(31, 32, 65, 0.25);
+    padding: 0 15px;
+    width: 100%;
+    height: 44px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-second-dark;
+      border: 1px solid $color-third-dark;
+    }
+
+    input,
+    input:hover,
+    input:focus {
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      outline: none;
+    }
+  }
+
+  &__section_offset {
+    padding-right: 44px;
   }
 
   &__section:hover,
-  &__xection:focus {
+  &__section:focus {
     .input__button_default {
       color: $color-second-dark;
     }
@@ -67,24 +93,13 @@
 
   &__input {
     width: 100%;
-    height: 44px;
-    border: 1px solid $color-fourth-dark;
-    border-radius: 4px;
-    color: $color-fourth-dark;
+    height: 100%;
     font-family: $font-family-second-regular;
     font-style: normal;
     font-weight: normal;
-    padding: 13px 44px 13px 15px;
     font-size: 14px;
     line-height: 1.7rem;
     text-overflow: ellipsis;
-
-    &:hover,
-    &:focus {
-      color: $color-second-dark;
-      border: 1px solid $color-third-dark;
-      outline: none !important;
-    }
 
     &:hover::placeholder,
     &:focus::placeholder {

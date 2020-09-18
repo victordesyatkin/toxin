@@ -17,6 +17,7 @@ mixin input(o = {})
     let { visible:buttonVisible = false } = button || {};
     let 
       autofocus = state ? true : false;
+      classesInputSection = 'input__section' + (buttonVisible ? ' input__section_offset' : '')
   .input
     .input__info
       if label
@@ -24,7 +25,7 @@ mixin input(o = {})
           label.input__label-text(for=name)=label
       if stateText
         h3.input__stateText=stateText
-    .input__section
+    div(class=classesInputSection)
         input.input__input(
           id = name
           type = type
