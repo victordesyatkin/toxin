@@ -1,47 +1,36 @@
 @import "~theme/variables.scss";
 
-.colors-and-type {
-  display: flex;
-  flex-basis: 100%;
-  flex-grow: 1;
-
-  &__colors {
-    max-width: 18.75vw;
-    min-width: 270px;
-    & > div {
-      margin-top: 20px;
-    }
-
-    & > div:first-child {
-      margin-top: 0;
-    }
-    margin-bottom: 15px;
+.form-elements {
+  width: 100%;
+  height: 100%;
+  outline: 1px solid red;
+  &-up {
+    display: flex;
+    justify-content: space-between;
+    //outline: 1px solid red;
   }
 
-  &__type {
-    min-width: 290px;
-    max-width: 403px;
+  &-section {
+    //outline: 1px solid red;
+    width: 320px;
+    max-width: 320px;
+  }
 
-    & > div {
-      margin-top: 50px;
-    }
-
-    & > div:first-child {
-      margin-top: 0;
-    }
+  &-block1 {
+    margin-bottom: 20px;
   }
 }
 
 @function size($px) {
   @return #{$px * 100 / 1440}vw;
 }
-$padding-top: size(67);
+$padding-top: size(65);
 $padding-right: size(190);
-$padding-left: size(150);
+$padding-left: size(141);
 $margin-right: size(427);
 
 @media (max-width: 2561px) and (min-width: $xl + 1) {
-  .colors-and-type {
+  .form-elements {
     padding-top: $padding-top;
     display: flex;
     justify-content: space-around;
@@ -49,12 +38,8 @@ $margin-right: size(427);
 }
 
 @media (max-width: 1440px) and (min-width: 1120px) {
-  .colors-and-type {
+  .form-elements {
     padding: $padding-top $padding-right 0 $padding-left;
-
-    &__colors {
-      margin-right: $margin-right;
-    }
   }
 }
 
@@ -84,26 +69,5 @@ $margin-right: size(427);
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 15px;
-  }
-}
-
-@media (max-width: $xs) and (min-width: 321px) {
-  .colors-and-type {
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding-top: 15px;
-  }
-}
-
-@media (max-width: $xxs) {
-  .colors-and-type {
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    &__colors,
-    &__type {
-      width: 100%;
-      padding: 15px;
-    }
   }
 }

@@ -1,6 +1,6 @@
-mixin dropdown(o)
+mixin dropdown(o = {})
     -
-        let { dropdownOptions, ...inputOptions } = o;
+        let { dropdownOptions, ...inputOptions } = o || {};
         let { expand = false, type, controlVisible } = dropdownOptions;
         let classDropdown = 'dropdown' + (expand ? ' dropdown_expand' : '');
         // - type = 0 - rooms
@@ -10,7 +10,7 @@ mixin dropdown(o)
         .dropdown__main
             block main
                 -
-                    let { items = [] } = o;
+                    let { items = [] } = o || {};
                 each item in items
                     - 
                         let { title = '', value = 0, name = '' } = item || {};
