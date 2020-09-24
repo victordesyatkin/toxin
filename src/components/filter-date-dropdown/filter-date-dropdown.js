@@ -37,17 +37,26 @@ FilterDateDropdown.prototype._handlerApply = function () {
   const [start, end] = selectedDates;
   this._$input.val(JSON.stringify(selectedDates));
   this._changeFake();
+  this._toggleMainBlock();
 };
 
 FilterDateDropdown.prototype._toggleMainBlock = function () {
+  if (this._forcedVisible) {
+    return false;
+  }
   this._$mainBlock.fadeToggle("fast");
   this._$component.toggleClass("filter-date-dropdown_expanded");
 };
 
 FilterDateDropdown.prototype._handlerClickDocument = function (event) {
+  if (this._forcedVisible) {
+    return false;
+  }
+  const classTarget = `.${$(event.target, this._$component).attr("class")}`;
   if (
     !$(event.target).closest(this._component).length &&
-    !$(event.target, this._$component).hasClass("datepicker--cell")
+    !$(event.target, this._$component).hasClass("datepicker--cell") &&
+    !$(classTarget, this._$component).length
   ) {
     this._$mainBlock.slideUp();
     this._$component.removeClass("filter-date-dropdown_expanded");
@@ -74,12 +83,18 @@ FilterDateDropdown.prototype._init = function () {
   this._buttonClean.on("click", this._handlerClean.bind(this));
   this._buttonApply.on("click", this._handlerApply.bind(this));
   $(document).on("click", this._handlerClickDocument.bind(this));
+  this._forcedVisible = this._$component.hasClass(
+    "filter-date-dropdown_forced-expanded"
+  );
 };
 
 function renderComponent() {
-  const components = [].map.call($(".filter-date-dropdown"), (element) => {
-    return new FilterDateDropdown(element);
-  });
+  const components = Array.prototype.map.call(
+    $(".filter-date-dropdown"),
+    (element) => {
+      return new FilterDateDropdown(element);
+    }
+  );
   return components;
 }
 

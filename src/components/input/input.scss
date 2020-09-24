@@ -50,10 +50,18 @@
   &__section_offset {
     padding-right: 44px;
   }
-
+  &__section_hover,
+  &__section_focus,
   &__section:hover,
   &__section:focus {
+    border: 1px solid $color-third-dark;
+
     .input__button_default {
+      color: $color-second-dark;
+    }
+
+    .input__input,
+    .input__input::placeholder {
       color: $color-second-dark;
     }
   }
@@ -100,6 +108,8 @@
     font-size: 14px;
     line-height: 1.7rem;
     text-overflow: ellipsis;
+    color: $color-fourth-dark;
+    background: none;
 
     &:hover::placeholder,
     &:focus::placeholder {
@@ -110,23 +120,21 @@
   &_hover-focus {
     .input__input {
       color: $color-second-dark;
-      border: 1px solid $color-third-dark;
+      // border: 1px solid $color-third-dark;
       outline: none !important;
       text-overflow: ellipsis;
     }
+  }
+
+  .input__input:hover,
+  .input__input:focus {
+    color: $color-second-dark;
 
     .input__input::placeholder,
     .input__input::placeholder,
     .input__button_default {
       color: $color-second-dark;
     }
-  }
-
-  &__input_hover,
-  &__input_focus {
-    color: $color-third-dark;
-    border: 1px solid $color-third-dark;
-    outline: none !important;
   }
 
   // align-items: stretch;

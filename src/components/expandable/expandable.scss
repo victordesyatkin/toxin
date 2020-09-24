@@ -1,5 +1,19 @@
 @import "~theme/variables.scss";
 
+$parent: ".expandable";
+
+@mixin expand {
+  .expandable__control {
+    transform: rotate(180deg);
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: -ms-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+    transition-duration: 1s;
+  }
+}
+
 .expandable {
   position: relative;
 
@@ -30,15 +44,14 @@
     background-color: $color-white-shade100;
   }
 
-  &_expand {
-    .expandable__control {
-      transform: rotate(180deg);
-      -webkit-transition-property: -webkit-transform;
-      -moz-transition-property: -moz-transform;
-      -ms-transition-property: -ms-transform;
-      -o-transition-property: -o-transform;
-      transition-property: transform;
-      transition-duration: 1s;
+  &_forced-expanded {
+    #{$parent}__body {
+      display: block;
     }
+    @include expand;
+  }
+
+  #{$parent}_expand {
+    @include expand;
   }
 }

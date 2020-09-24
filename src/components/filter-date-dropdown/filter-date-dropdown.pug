@@ -1,9 +1,13 @@
 mixin filter-date-dropdown(o = {})
     - 
-        let {label, input} = o || {};
+        let {label, input, expanded, forcedExpanded} = o || {};
         input = { ...{ name: 'filter-date-dropdown', value: '', dummy: 'ДД МЕС' }, ...input };
         let { name, value, dummy } = input;
-    .filter-date-dropdown(data-options={dummy, separator: '-'})
+        let classes = 'filter-date-dropdown' + (expanded ? ' filter-date-dropdown_expanded': '') + (forcedExpanded ? ' filter-date-dropdown_forced-expanded': '');
+    div(
+        data-options={dummy, separator: '-'}
+        class=classes
+    )
         input(
             type = "hidden",
             name = name

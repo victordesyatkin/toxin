@@ -3,31 +3,43 @@
 .dropdown {
   position: relative;
 
-  .input__input {
-    color: $color-second-dark;
-  }
+  .input__section {
+    border-radius: 4px;
 
-  input.input__input:disabled {
-    background: none;
-  }
+    input::placeholder {
+      color: $color-second-dark;
+    }
 
-  input::placeholder {
-    color: $color-second-dark;
-  }
-
-  &_expand {
     .input__input {
+      color: $color-second-dark;
+    }
+
+    input.input__input:disabled {
+      background: none;
+    }
+  }
+
+  &_particular {
+    .input__section {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &_foreced-expand,
+  &_expand {
+    .input__section {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       color: $color-second-dark;
-      border: 1px solid $color-third-dark;
+      border-color: $color-third-dark;
       outline: none !important;
-    }
 
-    .input__input::placeholder,
-    .input__input::placeholder,
-    .input__button_default {
-      color: $color-second-dark;
+      .input__input::placeholder,
+      .input__input::placeholder,
+      .input__button_default {
+        color: $color-second-dark;
+      }
     }
 
     .dropdown__main {

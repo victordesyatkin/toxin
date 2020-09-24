@@ -1,6 +1,3 @@
-import upperFirst from "lodash/upperFirst";
-import toLower from "lodash/toLower";
-
 import "./input.scss";
 
 (function () {

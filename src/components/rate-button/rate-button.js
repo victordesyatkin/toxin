@@ -30,7 +30,12 @@ class RateButton {
         const prev = this.component.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 1;
         const classList = prev.classList;
-        if ([].indexOf.call(classList, "rate-button__rate_checked") === -1) {
+        if (
+          Array.prototype.indexOf.call(
+            classList,
+            "rate-button__rate_checked"
+          ) === -1
+        ) {
           prev.classList.add("rate-button__rate_checked");
         }
       }
@@ -42,7 +47,10 @@ class RateButton {
         const prev = this.component.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 0;
         const classList = prev.classList;
-        if ([].indexOf.call(classList, "rate-button__rate_checked") > -1) {
+        if (
+          Array.prototype.indexOf.call(classList, "rate-button__rate_checked") >
+          -1
+        ) {
           prev.classList.remove("rate-button__rate_checked");
         }
       }
@@ -52,7 +60,7 @@ class RateButton {
 
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
-    const buttons = [].map.call(
+    const buttons = Array.prototype.map.call(
       document.querySelectorAll(".rate-button__button"),
       (node) => {
         return new RateButton(node);

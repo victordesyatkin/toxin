@@ -1,7 +1,10 @@
 mixin expandable(o = {})
     -
-        let { label } = o || {};
-    .expandable
+        let { label, forcedExpanded = false } = o || {};
+        let classes = 'expandable' + (forcedExpanded ? ' expandable_forced-expanded' : '')
+    div(
+        class=classes
+    )
         .expandable__header
             .expandable__label
                 h3=label

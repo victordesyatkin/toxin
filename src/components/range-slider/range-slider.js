@@ -101,7 +101,7 @@ class RangeSlider {
   };
 
   _preparePoints = () => {
-    [].forEach.call(this.nodeListPoints, (point) => {
+    Array.prototype.forEach.call(this.nodeListPoints, (point) => {
       const { type } = point.dataset;
       this.points[type] = point;
       const input = this.inputs[type];
@@ -131,7 +131,7 @@ class RangeSlider {
       endCurrency = "RUB",
       endUnit = "&#8381;";
 
-    [].forEach.call(this.nodeListInputs, (input) => {
+    Array.prototype.forEach.call(this.nodeListInputs, (input) => {
       const {
         type,
         style = "decimal",
@@ -201,7 +201,7 @@ class RangeSlider {
 
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
-    const components = [].map.call(
+    const components = Array.prototype.map.call(
       document.querySelectorAll(".range-slider"),
       (node) => {
         return new RangeSlider(node);

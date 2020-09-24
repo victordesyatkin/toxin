@@ -5,9 +5,11 @@
   "main": "script.js",
   "dependencies": {
     "air-datepicker": "^2.2.3",
+    "imask": "^6.0.5",
     "inputmask": "^5.0.6-beta.15",
     "jquery": "^3.5.1",
     "lodash": "^4.17.20",
+    "moment": "^2.29.0",
     "normalize.css": "^8.0.1",
     "postcss-loader": "^3.0.0",
     "react": "^16.13.1",

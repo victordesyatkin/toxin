@@ -32,12 +32,131 @@ block main
                 .form-elements-block1
                     +input({name: 'lastname', id: 'lastname', type: 'text', label: 'text field', placeholder: 'This is pretty awesome', stateText: 'hover/focus', state: 'hover'})
                 .form-elements-block1
-                    +dropdown({ dropdownOptions: { expand: true, type: 1, controlVisible: true }, name: 'guests', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: 'Сколько гостей', button: { class: 'arrow-down', visible: true }, items: [
-                    {title: 'взрослые', value: 0},
-                    {title: 'дети', value: 0},
-                    {title: 'младенцы', value: 0}
-                    ]
+                    +dropdown({ dropdownOptions: { expand: false, type: 1, controlVisible: true }, name: 'guests', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: 'Сколько гостей', button: { class: 'arrow-down', visible: true },
+                    items: [
+                        {title: 'взрослые', value: 0},
+                        {title: 'дети', value: 0},
+                        {title: 'младенцы', value: 0}
+                    ]})
+                .form-elements-block1
+                    +masked-text-field({ name: 'birthday', id: 'birthday', type: 'text', label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', stateText: 'Default'})                    
+                .form-elements-block2
+                    +date-dropdown({
+                        fieldStart: { name: 'startDate', id: 'startDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
+                        fieldEnd: { name: 'endDate', id: 'endDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
+                        calendar: { visible: false }
                     })
+                .form-elements-block2.form-elements-block3
+                    +filter-date-dropdown()
+                .form-elements-block2.form-elements-block3
+                    +subscription-text-field({ name: 'subscription_email', id: 'subscription_email', type: 'email', label: 'Subscription text field', placeholder: 'Email', button: { visible: true }})
+                .form-elements-block2.form-elements-block3.margin-top-100    
+                    +dropdown({
+                        dropdownOptions: { expand: false, type: 0 },
+                        name: 'rooms',
+                        stateText: 'Default',
+                        type: 'text',
+                        label: 'dropdown',
+                        placeholder: '',
+                        button: { class: 'arrow-down', visible: true },
+                        items: [
+                            {title: 'спальни', value: 2},
+                            {title: 'кровати', value: 2},
+                            {title: 'ванные комнаты', value: 0}
+                        ]
+                    })
+                .form-elements-block2.form-elements-block3.margin-bottom-175 
+                    +dropdown({
+                        dropdownOptions: { forcedExpand: true, type: 0 },
+                        name: 'rooms2',
+                        stateText: 'expanded',
+                        type: 'text',
+                        label: 'dropdown',
+                        placeholder: '',
+                        button: { class: 'arrow-down', visible: true },
+                        items: [
+                            {title: 'спальни', value: 2},
+                            {title: 'кровати', value: 2},
+                            {title: 'ванные комнаты', value: 0}
+                        ]
+                    })
+                .form-elements-block2.form-elements-block3
+                    +expandable-checkbox-list({
+                        expandable: {label: 'expandable checkbox list'},
+                        buttons: [
+                            {lable: 'Завтрак', checked: false, name: 'breakfast'},
+                            {lable: 'Письменный стол', checked: true, name: 'table'},
+                            {lable: 'Стул для кормления', checked: true, name: 'chair'},
+                            {lable: 'Кроватка', checked: true, name: 'cot'},
+                            {lable: 'Телевизор', checked: false, name: 'tv1'},
+                            {lable: 'Шампунь', checked: false, name: 'shampoo1'},
+                            {lable: 'Телевизор', checked: false, name: 'tv2'},
+                            {lable: 'Шампунь', checked: false, name: 'shampoo2'},
+                        ]
+                    })
+                .form-elements-block2.form-elements-block3.margin-bottom-277
+                    +expandable-checkbox-list({
+                        expandable: {label: 'expandable checkbox list', forcedExpanded: true},
+                        buttons: [
+                            {lable: 'Завтрак', checked: false, name: 'breakfast1'},
+                            {lable: 'Письменный стол', checked: true, name: 'table1'},
+                            {lable: 'Стул для кормления', checked: true, name: 'chair1'},
+                            {lable: 'Кроватка', checked: true, name: 'cot1'},
+                            {lable: 'Телевизор', checked: false, name: 'tv11'},
+                            {lable: 'Шампунь', checked: false, name: 'shampoo11'},
+                            {lable: 'Телевизор', checked: false, name: 'tv21'},
+                            {lable: 'Шампунь', checked: false, name: 'shampoo21'},
+                        ]
+                    })
+                    //- +dropdown({
+                    //-     dropdownOptions: { expand: false, type: 1, controlVisible: true },
+                    //-     name: 'guests', 
+                    //-     stateText: 'Default',
+                    //-     type: 'text',
+                    //-     label: 'dropdown',
+                    //-     placeholder: 'Сколько гостей',
+                    //-     button: { class: 'arrow-down', visible: true },
+                    //-     items: [
+                    //-         {title: 'взрослые', value: 0},
+                    //-         {title: 'дети', value: 0},
+                    //-         {title: 'младенцы', value: 0}
+                    //-     ]
+                    //- })
             .form-elements-section
+                .form-elements-block1.width222
+                    +checkbox-buttons({
+                        label: 'Checkbox Buttons',
+                        buttons: [
+                            {lable: 'Можно курить', checked: false, name: 'smoke'},
+                            {lable: 'Можно с питомцами', checked: true, name: 'pet'},
+                            {lable: 'Можно пригласить гостей (до 10 человек)', checked: true, name: 'guest'}
+                        ]
+                    })
+                .form-elements-block1.width222
+                    +radio-buttons({label: 'Radio Buttons', buttons: [
+                        {lable: 'Мужчина', checked: true, name: 'gender', value: 'male'},
+                        {lable: 'Женщина', checked: false, name: 'gender', value: 'female'},
+                    ]})
+                .form-elements-block1.width260
+                        +toggle-buttons({
+                            label: 'Toggle',
+                            buttons: [
+                                {lable: 'Получать спецпредложения', checked: true, name: 'male' },
+                                {lable: 'Получать спецпредложения', checked: false, name: 'female' },
+                            ]
+                        })
+                .form-elements-block1.width90
+                    +like-button({label: 'Like button', buttons: [
+                        { checked: false, name: 'male', count: 2 },
+                        { checked: true, name: 'female', count: 12 },
+                    ]})
+                .form-elements-block1.width260
+                    +rate-button({
+                        label: 'Rate button',
+                        buttons: [
+                            { grade: 4, name: 'male', count: 5 },
+                            { grade: 5, name: 'female', count: 5 },
+                        ]
+                    })                       
             .form-elements-section
         .form-elements-down

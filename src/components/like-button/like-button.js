@@ -36,7 +36,7 @@ class LikeButton {
 
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
-    const buttons = [].map.call(
+    const buttons = Array.prototype.map.call(
       document.querySelectorAll(".like-button__button"),
       (node) => {
         return new LikeButton(node);

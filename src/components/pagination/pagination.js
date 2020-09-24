@@ -129,7 +129,7 @@ class Pagination {
 
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
-    const components = [].map.call(
+    const components = Array.prototype.map.call(
       document.querySelectorAll(".pagination"),
       (component) => new Pagination(component)
     );

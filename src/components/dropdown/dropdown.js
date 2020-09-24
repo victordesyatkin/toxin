@@ -8,13 +8,19 @@ class Dropdown {
     this._type = parseInt(this._$element.attr("data-type"));
     this._$mainInput = $(".input__input", element);
     this._$mainInput.attr("disabled", true);
+    this._$inputSection = $(".input__section", element);
+    this._$inputSection.on("click", this._handlerClickExpand.bind(this));
     this._mainPlaceholder = this._$mainInput.attr("placeholder");
     this._$dropdownMain = $(".dropdown__main", this._element);
     this._$buttonExpand = $(".input__button", this._element);
-    this._$buttonExpand.on("click", this._handlerClickExpand.bind(this));
+    //this._$buttonExpand.on("click", this._handlerClickExpand.bind(this));
     this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
     this._$buttonClean.on("click", this._handlerClickClean.bind(this));
+    this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
+    this._$buttonApply.on("click", this._handlerClickApply.bind(this));
     this._$main = $(".dropdown__main", this._$element);
+    $("body").on("click", this._handlerClickDocument.bind(this));
+    this._forecedExpand = this._$element.hasClass("dropdown_foreced-expand");
     this._prepareItems();
     this._createPlaceholder();
     this._updatePlaceholder();
@@ -112,6 +118,10 @@ PlaceholderGuests.prototype._toString = function () {
 
 Dropdown.prototype._inputs = {};
 
+Dropdown.prototype._handlerClickApply = function () {
+  this._handlerClickExpand();
+};
+
 Dropdown.prototype._handlerClickClean = function () {
   Object.keys(this._inputs).forEach((key) => {
     this._inputs[key] = 0;
@@ -198,7 +208,19 @@ Dropdown.prototype._rollOtherDropdown = function () {
     .removeClass("dropdown_expand");
 };
 
+Dropdown.prototype._handlerClickDocument = function (event) {
+  if (
+    this._$element.hasClass("dropdown_expand") &&
+    !$(event.target).closest(this._$element).length
+  ) {
+    this._handlerClickExpand();
+  }
+};
+
 Dropdown.prototype._handlerClickExpand = function () {
+  if (this._forecedExpand) {
+    return false;
+  }
   if (this._$element.hasClass("dropdown_expand")) {
     this._$dropdownMain.slideUp("slow", () => {
       this._toggleClassExpand();
@@ -218,7 +240,7 @@ Dropdown.prototype._toggleClassExpand = function () {
 
 Dropdown.prototype._prepareItems = function () {
   this._$items = $(".dropdown__item", this._$dropdownMain);
-  [].map.call(this._$items, (item) => {
+  Array.prototype.map.call(this._$items, (item) => {
     const $input = $($("input", item));
     const title = $input.attr("data-title");
     $input.on("input", this._handlerChangeChildInput.bind(this));
@@ -268,7 +290,7 @@ Element.prototype._handlerClickButton = function (type) {
 };
 
 const renderComponent = () => {
-  const elements = [].map.call($(".dropdown"), (element) => {
+  const elements = Array.prototype.map.call($(".dropdown"), (element) => {
     return new Dropdown(element);
   });
 };

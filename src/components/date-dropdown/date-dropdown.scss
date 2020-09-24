@@ -16,6 +16,8 @@ body #{$dd} {
     }
 
     .input__section {
+      cursor: pointer;
+
       button.input__button {
         color: $color-third-dark;
       }
@@ -27,6 +29,14 @@ body #{$dd} {
   }
 
   &__section-calendar {
+    position: relative;
+    width: 100%;
+
+    .calendar {
+      position: absolute;
+      width: 100%;
+    }
+
     .calendar__main {
       top: 5px;
     }
