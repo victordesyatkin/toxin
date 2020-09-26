@@ -48,6 +48,10 @@
     @include margin(256, "bottom");
   }
 
+  .margin-bottom-230 {
+    @include margin(230, "bottom");
+  }
+
   .margin-top-40 {
     @include margin(30, "top");
   }
@@ -69,23 +73,23 @@
   @include margin(175, "bottom");
 }
 
-.width260 {
+.width-260 {
   @include width(260);
 }
 
-.width222 {
+.width-222 {
   @include width(222);
 }
 
-.width218 {
+.width-218 {
   @include width(218);
 }
 
-.width144 {
+.width-144 {
   @include width(144);
 }
 
-.width90 {
+.width-90 {
   @include width(90);
 }
 

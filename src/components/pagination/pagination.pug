@@ -1,7 +1,7 @@
 mixin pagination(o = {})
     -
         let
-            { start = 0, end = 0, current = 0, text = '', label = '', altPrevious='previous_l10n', altNext = 'next_l10n', limit = 2, count = 12, fakeText = '' } = o || {};
+            { start = 0, end = 0, current = 0, text = '', label = '', altPrevious='previous_l10n', altNext = 'next_l10n', limit = 2, count = 12 } = o || {};
             pages = [];
             src = require('../../components/pagination/img/arrow_forward.svg').default;
             isEmptyStart = true;
@@ -12,15 +12,12 @@ mixin pagination(o = {})
             classesButtonNext = 'pagination__arrow pagination__arrow_next' + (end === current ? ' pagination_hidden' : '');
             tmpText = '';
         if (text && typeof text === 'string' && text.trim().length) {
+            let startText = (current - 1) * count > 0  ? current * count - count : current;
+            let endText = current * count > 0  ? current * count : current;
+            let total = end * count > 100 ? '100+' : end * count; 
             tmpText = `${startText} - ${endText} из ${total} ${text}`;
-            if (!fakeText) {
-                let startText = (current - 1) * count > 0  ? current * count - count : current;
-                let endText = current * count > 0  ? current * count : current;
-                let total = end * current > 100 ? '100+' : end * current; 
-                tmpText = `${startText} - ${endText} из ${total} ${text}`;
-            }
         }    
-            classesSectionFooter = 'pagination__section-footer' + (typeof tmpText !== 'string' || tmpText.trim().length ? ' pagination_hidden' : '');
+            classesSectionFooter = 'pagination__section-footer' + (typeof tmpText !== 'string' || !tmpText.trim().length ? ' pagination_hidden' : '');
         if (current - start > limit) {
             pages.push(start);
         }
