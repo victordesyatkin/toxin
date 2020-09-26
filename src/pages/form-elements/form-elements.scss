@@ -5,6 +5,10 @@
   max-width: #{$width}px;
 }
 
+@mixin margin($margin, $direction) {
+  margin-#{$direction}: #{$margin}px;
+}
+
 .form-elements {
   //outline: 1px solid red;
   width: 100%;
@@ -35,26 +39,50 @@
   &-block3 {
     width: 266px;
   }
+
+  .margin-top-196 {
+    @include margin(190, "top");
+  }
+
+  .margin-bottom-256 {
+    @include margin(256, "bottom");
+  }
+
+  .margin-top-40 {
+    @include margin(30, "top");
+  }
+
+  .margin-bottom-30 {
+    @include margin(30, "bottom");
+  }
 }
 
 .margin-top-100 {
-  margin-top: 100px;
-}
-
-.margin-bottom-175 {
-  margin-bottom: 175px;
+  @include margin(100, "top");
 }
 
 .margin-bottom-277 {
-  margin-bottom: 277px;
+  @include margin(277, "bottom");
+}
+
+.margin-bottom-175 {
+  @include margin(175, "bottom");
+}
+
+.width260 {
+  @include width(260);
 }
 
 .width222 {
   @include width(222);
 }
 
-.width260 {
-  @include width(260);
+.width218 {
+  @include width(218);
+}
+
+.width144 {
+  @include width(144);
 }
 
 .width90 {

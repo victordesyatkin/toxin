@@ -192,20 +192,20 @@ Dropdown.prototype._toggleZIndex = function (zIndex = 1) {
 };
 
 Dropdown.prototype._rollOtherDropdown = function () {
-  let zIndex = 99;
-  const others = $(".dropdown__main", "body");
-  others.each(function () {
-    const tempZIndex = parseInt($(this).css("z-index"));
-    if (tempZIndex > zIndex) {
-      zIndex = tempZIndex;
-    }
-  });
-  this._toggleZIndex(zIndex + 1);
-  $(".dropdown__main", "body")
-    .not(this._$main)
-    .slideUp("slow")
-    .parent(".dropdown")
-    .removeClass("dropdown_expand");
+  // let zIndex = 99;
+  // const others = $(".dropdown__main", "body");
+  // others.each(function () {
+  //   const tempZIndex = parseInt($(this).css("z-index"));
+  //   if (tempZIndex > zIndex) {
+  //     zIndex = tempZIndex;
+  //   }
+  // });
+  // this._toggleZIndex(zIndex + 1);
+  // $(".dropdown__main", "body")
+  //   .not(this._$main)
+  //   .slideUp("slow")
+  //   .parent(".dropdown")
+  //   .removeClass("dropdown_expand");
 };
 
 Dropdown.prototype._handlerClickDocument = function (event) {
@@ -224,12 +224,13 @@ Dropdown.prototype._handlerClickExpand = function () {
   if (this._$element.hasClass("dropdown_expand")) {
     this._$dropdownMain.slideUp("slow", () => {
       this._toggleClassExpand();
-      this._toggleZIndex(1);
+      this._toggleZIndex(10);
     });
   } else {
-    this._rollOtherDropdown();
+    //this._rollOtherDropdown();
     this._$dropdownMain.slideDown("slow", () => {
       this._toggleClassExpand();
+      this._toggleZIndex(100);
     });
   }
 };
