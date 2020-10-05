@@ -16,7 +16,7 @@
 }
 
 .form-elements {
-  outline: 1px solid black;
+  //outline: 1px solid black;
   width: 100%;
   height: 100%;
 
@@ -26,7 +26,7 @@
     width: 100%;
     flex-grow: 1;
     flex-shrink: 1;
-    outline: 1px solid green;
+    //outline: 1px solid green;
   }
 
   &-block1:not(:first-child) {
@@ -47,7 +47,7 @@
   }
 
   &-section {
-    outline: 1px solid red;
+    //outline: 1px solid red;
     min-width: 320px;
   }
 
