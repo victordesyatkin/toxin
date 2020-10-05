@@ -1,6 +1,5 @@
 import datepicker from "air-datepicker";
 import get from "lodash/get";
-import isArray from "lodash/isArray";
 import "./calendar.scss";
 
 class Calendar {
@@ -14,15 +13,18 @@ class Calendar {
 }
 
 Calendar.prototype._handlerSelect = function (formattedDate, date, inst) {
-  if (Object.prototype.toString.call(date) !== "[object Array]") {
-    return false;
+  if (this._options.range) {
+    if (Object.prototype.toString.call(date) !== "[object Array]") {
+      return false;
+    }
+    const length = date.length;
+    if (length === 1) {
+      this._rangeFromDate = new Date(date[0]).getTime();
+    } else if (this._rangeFromDate) {
+      this._rangeFromDate = "";
+    }
   }
-  const length = date.length;
-  if (length === 1) {
-    this._rangeFromDate = new Date(date[0]).getTime();
-  } else if (this._rangeFromDate) {
-    this._rangeFromDate = "";
-  }
+  this._toggleVisibleButtonClean();
   return false;
 };
 

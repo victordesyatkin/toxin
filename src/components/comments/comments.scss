@@ -28,7 +28,7 @@
   &__like-button {
     display: flex;
     justify-content: center;
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   &__left {
@@ -38,9 +38,14 @@
   &__full-name {
     font-weight: bold;
     color: $color-second-dark;
+    margin-left: -1px;
   }
 
   &__date {
     margin-bottom: 10px;
+  }
+
+  &__content {
+    padding-top: 2px;
   }
 }

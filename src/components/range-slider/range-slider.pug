@@ -1,8 +1,8 @@
 mixin range-slider(o = {buttons: [], label: ''})
     -
         let
-            { label = '', start = 0, end = 100, unit = '', total = 100, nameStart = 'start', endName = 'end', separator = 10 } = o || {};
-    .range-slider(data-total=total, data-separator=separator)
+            { label = '', start = 0, end = 100, nameStart = 'start', nameEnd = 'end', separator = 10, min = 0, max = 100 } = o || {};
+    .range-slider(data-options = o)
         input(type="hidden", value=start, name=nameStart, data-type="start")
         input(type="hidden", value=end, name=nameEnd, data-type="end")
 

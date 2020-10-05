@@ -86,6 +86,23 @@ FilterDateDropdown.prototype._init = function () {
   this._forcedVisible = this._$component.hasClass(
     "filter-date-dropdown_forced-expanded"
   );
+  this._setDates(this._getValue());
+  this._changeFake();
+};
+
+FilterDateDropdown.prototype._setDates = function ([start, end] = []) {
+  if (!start && !end) {
+    return false;
+  }
+  this._datepicker.selectDate([new Date(start), new Date(end)]);
+};
+
+FilterDateDropdown.prototype._setValue = function (value = []) {
+  this._$input.val(JSON.stringify(value));
+};
+
+FilterDateDropdown.prototype._getValue = function () {
+  return JSON.parse(this._$input.val() || "[]");
 };
 
 function renderComponent() {

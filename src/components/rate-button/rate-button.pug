@@ -28,13 +28,13 @@ mixin rate-button(o = {buttons: [], label: ''})
                     while n <= b.count
                         -
                             let 
-                                rate = n < grade ? 1 : 0; 
+                                rate = n <= grade ? 1 : 0; 
                                 classes = `rate-button__rate${rate ? ' rate-button__rate_checked' : ''}`;  
                         div(class=classes, data-index=n, data-rate=rate)
                             img(src=imgRate, alt=b.name, class="rate-button__img rate-button__img_checked")
                             img(src=noImgRate, alt=b.name, class="rate-button__img rate-button__img_nochecked")
                         -
-                            n++;
+                            ++n;
                     
                 
                     

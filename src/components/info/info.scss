@@ -4,16 +4,22 @@
   &__section {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    padding: 20px 0;
     border-bottom: 1px solid $color-fifth-dark;
+    padding-bottom: 19px;
   }
+
+  &__section:not(:first-child) {
+    padding-top: 8px;
+  }
+
   &__img {
     width: 48px;
     height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 12px;
+    margin-left: -1px;
 
     span {
       font-size: 40px;
@@ -35,6 +41,7 @@
   }
 
   &__body {
+    padding-top: 13px;
     padding-left: 10px;
   }
 

@@ -46,21 +46,27 @@ mixin pagination(o = {})
                     h3=label
             .pagination__section-body
                 div(class=classesButtonPrevious, data-direction="prev")
-                    img(src=src, alt=altPrevious)
-                div.pagination__common
-                    each page in pages
-                        - 
-                            let
-                                classes = 'pagination__item';
-                                dataCurrent = 0;
-                                if (page === emptyString) {
-                                    classes += ' pagination__item_empty';
-                                } else if (page === current) {
-                                    classes += ' pagination__item_current';    
-                                    dataCurrent = 1;
-                                }
-                        div(class=classes, data-current=dataCurrent, data-item=page)=page
+                    .pagination__dummy
+                    .pagination__content 
+                        img(src=src, alt=altPrevious)
+                //- div.pagination__common
+                each page in pages
+                    - 
+                        let
+                            classes = 'pagination__item';
+                            dataCurrent = 0;
+                            if (page === emptyString) {
+                                classes += ' pagination__item_empty';
+                            } else if (page === current) {
+                                classes += ' pagination__item_current';    
+                                dataCurrent = 1;
+                            }
+                    div(class=classes, data-current=dataCurrent, data-item=page)
+                        .pagination__dummy
+                        .pagination__content=page
                 div(class=classesButtonNext, data-direction="next")
-                    img(src=src, alt=altNext)
+                    .pagination__dummy
+                    .pagination__content 
+                        img(src=src, alt=altNext)
             div(class=classesSectionFooter)=tmpText
                 

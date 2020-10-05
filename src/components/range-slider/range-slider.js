@@ -1,203 +1,226 @@
+import get from "lodash/get";
 import "./range-slider.scss";
 
 class RangeSlider {
   constructor(component) {
-    this.component = component;
-    this.class = (this.component.classList || {}).value;
-    this.nodeListInputs = this.component.querySelectorAll("input");
-    this.nodeListPoints = this.component.querySelectorAll(
+    this._component = component;
+    this._nodeListInputs = this._component.querySelectorAll("input") || [];
+    this._inputs = {
+      start: this._nodeListInputs[0],
+      end: this._nodeListInputs[1],
+    };
+    this._nodeListPoints = this._component.querySelectorAll(
       ".range-slider__point"
     );
-    this.track = this.component.querySelector(".range-slider__track");
-    this.info = this.component.querySelector(".range-slider__info");
-    this.total = this.component.dataset.total;
-    this.separator = this.component.dataset.separator;
-    this.parentElement = this.component.parentElement;
-    this.points = {};
-    this.inputs = {};
-    this.type = null;
+    this._points = {
+      start: this._nodeListPoints[0],
+      end: this._nodeListPoints[1],
+    };
+    this._startPoint = this._nodeListPoints[0];
+    this._endPoint = this._nodeListPoints[1];
+    this._fullTrack = this._component.querySelector(
+      ".range-slider__section-body"
+    );
+    this._pointWidth = parseFloat(this._startPoint.offsetWidth);
+    this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
+    this._track = this._component.querySelector(".range-slider__track");
+    this._info = this._component.querySelector(".range-slider__info");
+    this._type = "";
+    this._options = JSON.parse(this._component.dataset.options);
+    this._min = this._options.min;
+    this._max = this._options.max;
+    this._separator = this._options.separator;
+    this._calculateK();
+    this._shiftX = this._component.getBoundingClientRect().left;
     this._attachEventHandlers();
-    this._prepareInfo();
-    this._preparePoints();
-    this._prepareTrack();
-  }
-
-  _attachEventHandlers() {
-    if (this.component) {
-      this.component.addEventListener("mousedown", this._mousedown);
-      document.addEventListener("mouseup", this._mouseup);
-      this.parentElement.addEventListener("mousemove", this._mousemove);
-      this.parentElement.addEventListener("mouseout", this._mouseout);
-    }
-  }
-
-  _mousedown = (event) => {
-    const el = event.target || {};
-    const { type } = el.dataset;
-    if (type !== "start" && type !== "end") {
-      return null;
-    }
-    this.type = type;
-  };
-
-  _mouseup = () => {
-    if (this.type) {
-      this.type = null;
-    }
-  };
-
-  _mouseout = (event) => {
-    const el = event.target || {};
-    const e = Object.assign({}, event);
-    let elementForClosest = (this.parentElement.classList || {}).value;
-    if (elementForClosest) {
-      elementForClosest = `.${elementForClosest}`;
-    } else {
-      elementForClosest = "body";
-    }
-    if (el.closest(elementForClosest)) {
-      return null;
-    }
-    if (this.type) {
-      this.type = null;
-    }
-  };
-
-  _mousemove = (event) => {
-    if (!this.type) {
-      return null;
-    }
-    const { offsetWidth, offsetLeft } = this.component;
-    const { clientX } = event;
-    let value;
-    if (this.type) {
-      if (this.points && this.points[this.type]) {
-        const pointWidth =
-          (100 * parseFloat(this.points[this.type].offsetWidth)) /
-          (2 * offsetWidth);
-        value = (100 * parseFloat(clientX - offsetLeft)) / offsetWidth;
-        const separator = 100 * (this.separator / this.total);
-        if (this.type === "start") {
-          const end = parseFloat(this.points["end"].style.left);
-          if (value <= end - separator && value >= 0) {
-            this.points[this.type].style.left = `${value - pointWidth}%`;
-          } else {
-            value = undefined;
-          }
-        } else if (this.type === "end") {
-          const start = parseFloat(this.points["start"].style.left);
-          if (value >= start + separator && value <= 100) {
-            this.points[this.type].style.left = `${value - pointWidth}%`;
-          } else {
-            value = undefined;
-          }
-        }
-        if (value !== undefined) {
-          this._prepareTrack();
-          this._setInput({ type: this.type, value });
-        }
-      }
-    }
-  };
-
-  _preparePoints = () => {
-    Array.prototype.forEach.call(this.nodeListPoints, (point) => {
-      const { type } = point.dataset;
-      this.points[type] = point;
-      const input = this.inputs[type];
-      if (input && input.value !== undefined) {
-        const value = parseFloat(input.value);
-        if (type === "start") {
-          point.style.left = `${Math.round((value / this.total) * 100)}%`;
-        } else if (type === "end") {
-          point.style.left = `${Math.round((value / this.total) * 100)}%`;
-        }
-      }
+    this._setInputs(this._options.start, this._options.end);
+    this._setInfo();
+    this._setPoints({
+      start: this._calculateCoordinate(this._options.start),
+      end: this._calculateCoordinate(this._options.end),
     });
-  };
-
-  _prepareTrack = () => {
-    this.track.style.left = this.points.start.style.left;
-    this.track.style.right = `${100 - parseFloat(this.points.end.style.left)}%`;
-  };
-
-  _prepareInfo = () => {
-    let start = 0,
-      end = 0,
-      startStyle = "currency",
-      startCurrency = "RUB",
-      startUnit = "&#8381;",
-      endStyle = "currency",
-      endCurrency = "RUB",
-      endUnit = "&#8381;";
-
-    Array.prototype.forEach.call(this.nodeListInputs, (input) => {
-      const {
-        type,
-        style = "decimal",
-        currency = "RUB",
-        unit = "&#8381;",
-      } = input.dataset;
-      switch (type) {
-        case "start": {
-          start = input.value;
-          startStyle = style;
-          startCurrency = currency;
-          startUnit = unit;
-        }
-        case "end": {
-          end = input.value;
-          endStyle = style;
-          endCurrency = currency;
-          endUnit = unit;
-        }
-        default: {
-        }
-      }
-      if (type && !this.inputs[type]) {
-        this.inputs[type] = input;
-      }
-    });
-    const startOptions = {
-      style: startStyle,
-      currency: startCurrency,
-      minimumFractionDigits: 0,
-    };
-    const endOptions = {
-      style: endStyle,
-      currency: endCurrency,
-      minimumFractionDigits: 0,
-    };
-    start = new Intl.NumberFormat("ru-RU", startOptions).format(start);
-    end = new Intl.NumberFormat("ru-RU", endOptions).format(end);
-    if (this.info) {
-      this.info.innerHTML = `${start}${startUnit} - ${end}${endUnit}`;
-    }
-  };
-
-  _setInput = (o = {}) => {
-    const r = null;
-    const { type = "" } = o;
-    let { value } = o;
-    if (!this.inputs) {
-      return r;
-    }
-    value = Math.ceil((value / 100) * this.total);
-    if (type === "start") {
-      if (value > this.inputs.end.value) {
-        value = this.inputs.end.value;
-      }
-    } else if (type === "end") {
-      if (value < this.inputs.start.value) {
-        value = this.inputs.start.value;
-      } else if (value > this.total) {
-        value = total;
-      }
-    }
-    this.inputs[type].value = value;
-    this._prepareInfo();
-  };
+    this._renderTrack();
+  }
 }
+
+RangeSlider.prototype._attachEventHandlers = function () {
+  if (!this._component) {
+    return false;
+  }
+  this._component.addEventListener("mousedown", this._mousedown.bind(this));
+  this._component.addEventListener("mouseenter", this._mouseenter.bind(this));
+  document.addEventListener("mouseleave", this._mouseleave.bind(this));
+  document.addEventListener("mouseup", this._mouseup.bind(this));
+  document.addEventListener("mousemove", this._mousemove.bind(this));
+  window.addEventListener("resize", this._resize.bind(this));
+};
+
+RangeSlider.prototype._setInputs = function ({ start, end } = {}) {
+  if (typeof start !== "undefined") {
+    this._setValue("start", start);
+  }
+  if (typeof end !== "undefined") {
+    this._setValue.setValue("end", end);
+  }
+};
+
+RangeSlider.prototype._renderTrack = function () {
+  const start = this._getPoint("start");
+  const end = this._getPoint("end");
+  const additive = this._pointWidth / 2;
+  this._track.style.left = `${start + additive}px`;
+  this._track.style.right = `${this._maxTrackLength - end - additive}px`;
+};
+
+RangeSlider.prototype._setPoints = function ({ start, end } = {}) {
+  if (typeof start !== "undefined") {
+    this._setPoint("start", start);
+  }
+  if (typeof end !== "undefined") {
+    this._setPoint("end", end);
+  }
+};
+
+RangeSlider.prototype._getOptionsInfo = function () {
+  const { style = "decimal", currency = "RUB", unit = "&#8381;" } =
+    get(this, ["_options", "info"], {}) || {};
+  return {
+    style,
+    currency,
+    minimumFractionDigits: 0,
+    unit,
+  };
+};
+
+RangeSlider.prototype._setInfo = function ({ start, end } = {}) {
+  if (typeof start === "undefined") {
+    start = this._getValue("start");
+  } else {
+    start = 0;
+  }
+  if (typeof end === "undefined") {
+    end = this._getValue("end");
+  } else {
+    end = 0;
+  }
+  const { unit, ...options } = this._getOptionsInfo();
+  start = new Intl.NumberFormat("ru-RU", options).format(start);
+  end = new Intl.NumberFormat("ru-RU", options).format(end);
+  if (this._info) {
+    this._info.innerHTML = `${start}${unit} - ${end}${unit}`;
+  }
+};
+
+RangeSlider.prototype._setValue = function (type = "", value = 0) {
+  if (this._types.indexOf(type) === -1) {
+    return false;
+  }
+  this._inputs[type].setAttribute("value", value);
+};
+
+RangeSlider.prototype._getValue = function (type = "") {
+  if (this._types.indexOf(type) === -1) {
+    return false;
+  }
+  return parseFloat(this._inputs[type].getAttribute("value"));
+};
+
+RangeSlider.prototype._setPoint = function (type = "", value = 0) {
+  if (this._types.indexOf(type) === -1) {
+    return false;
+  }
+  this._points[type].style.left = `${value}px`;
+};
+
+RangeSlider.prototype._getPoint = function (type = "") {
+  if (this._types.indexOf(type) === -1) {
+    return false;
+  }
+  return parseFloat(this._points[type].style.left) || 0;
+};
+
+RangeSlider.prototype._calculateCoordinate = function (v = 1) {
+  return v / this._k;
+};
+
+RangeSlider.prototype._calculateValue = function (c = 1) {
+  return c * this._k;
+};
+
+RangeSlider.prototype._calculateK = function () {
+  this._k = this._max / this._maxTrackLength;
+};
+
+RangeSlider.prototype._mouseenter = function () {};
+
+RangeSlider.prototype._mouseleave = function () {
+  this._type = "";
+};
+
+RangeSlider.prototype._mouseup = function (e) {
+  this._type = "";
+};
+
+RangeSlider.prototype._mousedown = function (e) {
+  e.preventDefault();
+  this._type = this._getTypePoint(e);
+};
+
+RangeSlider.prototype._mousemove = function (e) {
+  if (!this._type) {
+    return false;
+  }
+  let coordinate = e.clientX - this._shiftX;
+  const value = this._getValue(this._type);
+  let nextValue = this._calculateValue(coordinate);
+  nextValue = Math.floor(nextValue / this._separator) * this._separator;
+  if (
+    value === nextValue ||
+    (nextValue > this._getValue("end") - this._separator &&
+      this._type === "start") ||
+    (nextValue < this._getValue("start") + this._separator &&
+      this._type === "end") ||
+    nextValue > this._max ||
+    nextValue < this._min
+  ) {
+    return false;
+  }
+  coordinate = this._calculateCoordinate(nextValue);
+  if (nextValue <= this._min || coordinate <= 0) {
+    nextValue = this._min;
+    coordinate = -1;
+  } else if (nextValue >= this._max || coordinate >= this._maxTrackLength) {
+    nextValue = this._max;
+    coordinate = this._maxTrackLength - 4;
+  }
+  this._setPoint(this._type, coordinate);
+  this._setValue(this._type, nextValue);
+  this._setInfo();
+  this._renderTrack();
+};
+
+RangeSlider.prototype._getTypePoint = function (e = {}) {
+  const { type } = e.target.dataset || {};
+  if (this._types.indexOf(type) === -1) {
+    return "";
+  }
+  return type;
+};
+
+RangeSlider.prototype._resize = function () {
+  this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
+  this._calculateK();
+  this._shiftX = this._component.getBoundingClientRect().left;
+  this._setPoints({
+    start:
+      this._calculateCoordinate(this._getValue("start")) - this._pointWidth / 2,
+    end:
+      this._calculateCoordinate(this._getValue("end")) - this._pointWidth / 2,
+  });
+  this._renderTrack();
+};
+
+RangeSlider.prototype._types = ["start", "end"];
 
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
@@ -217,4 +240,4 @@ export default function renderComponent(callbackWhenInitialized) {
   })();
 }
 
-renderComponent();
+document.addEventListener("DOMContentLoaded", renderComponent);

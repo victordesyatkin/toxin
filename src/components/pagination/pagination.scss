@@ -1,7 +1,7 @@
 @import "~theme/variables.scss";
 
 .pagination {
-  width: 100;
+  width: 100%;
 
   &__section-header {
     margin-bottom: 16.44px;
@@ -10,15 +10,49 @@
   &__common {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  &__section-body {
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  &__common {
+    flex-basis: auto;
+    justify-content: flex-start;
   }
 
   &__arrow,
   &__item {
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
+    position: relative;
+    display: flex;
+    flex-basis: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  &__arrow {
+    max-width: 40px;
+  }
+
+  &__item {
+    max-width: 40px;
+  }
+
+  &__dummy {
+    margin-top: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +63,9 @@
   }
 
   &__item_empty {
-    cursor: default;
+    .pagination__content {
+      cursor: default;
+    }
   }
 
   &__arrow {
@@ -43,20 +79,23 @@
   }
 
   &__item_current {
-    background: linear-gradient(
-      180deg,
-      $color-purple 0%,
-      $color-purple-dark 100%
-    );
-    border-radius: 22px;
-    font-style: normal;
-    font-weight: bold;
-    color: $color-first-white;
-    font-family: $font-family-second-bold;
+    .pagination__content {
+      background: linear-gradient(
+        180deg,
+        $color-purple 0%,
+        $color-purple-dark 100%
+      );
+      border-radius: 22px;
+      font-style: normal;
+      font-weight: bold;
+      color: $color-first-white;
+      font-family: $font-family-second-bold;
+    }
   }
 
   &__section-footer {
     margin-top: 11px;
+    padding-left: 8px;
   }
 
   &_hidden {

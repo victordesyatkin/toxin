@@ -15,8 +15,10 @@ class Pagination {
   _click = (event) => {
     let target = (event || {}).target || {} || {};
     const { tagName } = target;
-    if (tagName === "IMG") {
-      target = target.closest("div");
+    if (target.closest("div[data-direction]")) {
+      target = target.closest("div[data-direction]");
+    } else if (target.closest("div[data-item]")) {
+      target = target.closest("div[data-item]");
     }
     const { current, direction, item } = target.dataset || {};
     if (parseFloat(current)) {
@@ -106,13 +108,27 @@ class Pagination {
     if (end - current > limit) {
       pages.push(end);
     }
-    const common = this.component.querySelector(".pagination__common");
-    common.innerHTML = "";
+    // const common = this.component.querySelector(".pagination__common");
+    // common.innerHTML = "";
+    const prev = this.component.querySelector('[data-direction="prev"]');
+    const next = this.component.querySelector('[data-direction="next"]');
+    const body = this.component.querySelector(".pagination__section-body");
+    body.innerHTML = "";
+    body.appendChild(prev);
     pages.forEach((page) => {
       const newDiv = document.createElement("div");
-      const newContent = document.createTextNode(page);
-      newDiv.appendChild(newContent);
       newDiv.classList.add("pagination__item");
+
+      const newDivDummy = document.createElement("div");
+      newDivDummy.classList.add("pagination__dummy");
+      newDiv.appendChild(newDivDummy);
+
+      const newDivContent = document.createElement("div");
+      newDivContent.classList.add("pagination__content");
+      newDiv.appendChild(newDivContent);
+
+      const newContent = document.createTextNode(page);
+      newDivContent.appendChild(newContent);
       let dataCurrent = 0;
       if (page === emptyString) {
         newDiv.classList.add("pagination__item_empty");
@@ -122,8 +138,9 @@ class Pagination {
       }
       newDiv.dataset.current = dataCurrent;
       newDiv.dataset.item = page;
-      common.appendChild(newDiv);
+      body.appendChild(newDiv);
     });
+    body.appendChild(next);
   };
 }
 

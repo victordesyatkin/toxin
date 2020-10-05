@@ -1,4 +1,4 @@
-import Inputmask from "inputmask";
+//import Inputmask from "inputmask";
 import IMask from "imask";
 import "./masked-text-field.scss";
 
@@ -19,8 +19,8 @@ export default function renderComponent() {
       lazy: false,
       overwrite: true,
       autofix: true,
-      min: new Date(new Date().getFullYear(), 0, 1),
-      max: new Date(new Date().getFullYear() + 2, 0, 1),
+      // min: new Date(new Date().getFullYear(), 0, 1),
+      // max: new Date(new Date().getFullYear() + 2, 0, 1),
       blocks: {
         d: {
           mask: IMask.MaskedRange,
