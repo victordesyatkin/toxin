@@ -67,6 +67,10 @@
     @include margin(49, "top");
   }
 
+  .margin-top-47 {
+    @include margin(47, "top");
+  }
+
   .margin-top-44 {
     @include margin(44, "top");
   }
@@ -103,8 +107,16 @@
     @include margin(9, "top");
   }
 
+  .margin-top--2 {
+    @include margin(-2, "top");
+  }
+
   .margin-bottom-256 {
     @include margin(256, "bottom");
+  }
+
+  .margin-bottom-254 {
+    @include margin(254, "bottom");
   }
 
   .margin-bottom-230 {
@@ -113,6 +125,10 @@
 
   .margin-bottom-30 {
     @include margin(30, "bottom");
+  }
+
+  .margin-bottom-31 {
+    @include margin(31, "bottom");
   }
 
   .margin-left-236 {
@@ -131,6 +147,10 @@
     @include margin(126, "left");
   }
 
+  .margin-left-124 {
+    @include margin(124, "left");
+  }
+
   .margin-left-72 {
     @include margin(72, "left");
   }
@@ -140,12 +160,16 @@
   @include margin(100, "top");
 }
 
-.margin-bottom-232 {
-  @include margin(232, "bottom");
-}
-
 .margin-bottom-277 {
   @include margin(277, "bottom");
+}
+
+.margin-bottom-259 {
+  @include margin(259, "bottom");
+}
+
+.margin-bottom-232 {
+  @include margin(232, "bottom");
 }
 
 .margin-bottom-175 {
@@ -249,13 +273,17 @@ $margin-right: size(427);
       margin-bottom: 30px;
     }
 
-    .section-second {
-      margin-left: 0;
+    &-section {
+      margin-bottom: 0px;
     }
 
-    .section-third {
-      margin-left: 0;
-    }
+    // .section-second {
+    //   margin-left: 0;
+    // }
+
+    // .section-third {
+    //   margin-left: 0;
+    // }
   }
 }
 
@@ -330,7 +358,8 @@ $margin-right: size(427);
 
     .margin-left-126,
     .margin-left-72,
-    .margin-left-163 {
+    .margin-left-163,
+    .margin-left-124 {
       margin-left: 0;
     }
 
@@ -376,7 +405,8 @@ $margin-right: size(427);
 
     .margin-left-126,
     .margin-left-72,
-    .margin-left-163 {
+    .margin-left-163,
+    .margin-left-124 {
       margin-left: 0;
     }
 

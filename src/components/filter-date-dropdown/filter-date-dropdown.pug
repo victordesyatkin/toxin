@@ -14,7 +14,7 @@ mixin filter-date-dropdown(o = {})
             value = value
             data-type = "1"
         )
-        if label
+        if (label)
             .filter-date-dropdown__label=label
         .filter-date-dropdown__section-up
             input.filter-date-dropdown__input(

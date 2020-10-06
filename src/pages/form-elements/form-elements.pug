@@ -24,148 +24,47 @@ include ../../components/filter-date-dropdown/filter-date-dropdown
 block title
     | Form Elements
 block main
+    - let data = htmlWebpackPlugin.options.getData()
     main.form-elements
         article.form-elements-up
             section.form-elements-section.width-320.section-first
                 .form-elements-block1
-                    +input({name: 'email', id: 'email', type: 'email', label: 'text field', placeholder: 'Email', stateText: 'default'})
+                    +input(data.input1)
                 .form-elements-block1
-                    +input({name: 'lastname', id: 'lastname', type: 'text', label: 'text field', placeholder: 'This is pretty awesome', stateText: 'hover/focus', state: 'hover'})
+                    +input(data.input2)
                 .form-elements-block1
-                    +dropdown({ dropdownOptions: { expand: false, type: 1, controlVisible: true }, name: 'guests', stateText: 'Default', type: 'text', label: 'dropdown', placeholder: 'Сколько гостей', button: { class: 'arrow-down', visible: true },
-                    items: [
-                        {title: 'взрослые', value: 0},
-                        {title: 'дети', value: 0},
-                        {title: 'младенцы', value: 0}
-                    ]})
+                    +dropdown(data.dropdown1)
                 .form-elements-block1.margin-top-23
-                    +masked-text-field({ name: 'birthday', id: 'birthday', type: 'text', label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', stateText: 'Default'})                    
+                    +masked-text-field(data.maskedTextfield1)                    
                 .form-elements-block2
-                    +date-dropdown({
-                        fieldStart: { name: 'startDate', id: 'startDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', button: {visible: true, class: 'arrow-down'}},
-                        fieldEnd: { name: 'endDate', id: 'endDate', type: 'text', label: 'date dropdown', placeholder: 'ДД.ММ.ГГГГ', value: '19.08.2019', button: {visible: true, class: 'arrow-down'}},
-                        calendar: { visible: false },
-                    })
-                .form-elements-block2.form-elements-block3.margin-top-62
-                    +filter-date-dropdown({
-                        input: {value: JSON.stringify([new Date('08.19.2020').toString(), new Date('08.23.2020').toString()])}
-                    })
+                    +date-dropdown(data.dropdown2)
+                .form-elements-block2.form-elements-block3.margin-top-42
+                    +filter-date-dropdown(data.filterDateDropdown1)
                 .form-elements-block2.form-elements-block3
-                    +subscription-text-field({ name: 'subscription_email', id: 'subscription_email', type: 'email', label: 'Subscription text field', placeholder: 'Email', button: { visible: true }})
+                    +subscription-text-field(data.subscriptionTextField1)
                 .form-elements-block2.form-elements-block3.margin-top-100    
-                    +dropdown({
-                        dropdownOptions: { expand: false, type: 0 },
-                        name: 'rooms',
-                        stateText: 'Default',
-                        type: 'text',
-                        label: 'dropdown',
-                        placeholder: '',
-                        button: { class: 'arrow-down', visible: true },
-                        items: [
-                            {title: 'спальни', value: 2},
-                            {title: 'кровати', value: 2},
-                            {title: 'ванные комнаты', value: 0}
-                        ]
-                    })
+                    +dropdown(data.dropdown3)
                 .form-elements-block1.form-elements-block3.margin-bottom-172
-                    +dropdown({
-                        dropdownOptions: { forcedExpand: true, type: 0 },
-                        name: 'rooms2',
-                        stateText: 'expanded',
-                        type: 'text',
-                        label: 'dropdown',
-                        placeholder: '',
-                        button: { class: 'arrow-down', visible: true },
-                        items: [
-                            {title: 'спальни', value: 2},
-                            {title: 'кровати', value: 2},
-                            {title: 'ванные комнаты', value: 0}
-                        ]
-                    })
+                    +dropdown(data.dropdown4)
                 .form-elements-block2.form-elements-block3
-                    +expandable-checkbox-list({
-                        expandable: {label: 'expandable checkbox list'},
-                        buttons: [
-                            {lable: 'Завтрак', checked: false, name: 'breakfast'},
-                            {lable: 'Письменный стол', checked: true, name: 'table'},
-                            {lable: 'Стул для кормления', checked: true, name: 'chair'},
-                            {lable: 'Кроватка', checked: true, name: 'cot'},
-                            {lable: 'Телевизор', checked: false, name: 'tv1'},
-                            {lable: 'Шампунь', checked: false, name: 'shampoo1'},
-                            {lable: 'Телевизор', checked: false, name: 'tv2'},
-                            {lable: 'Шампунь', checked: false, name: 'shampoo2'},
-                        ]
-                    })
+                    +expandable-checkbox-list(data.expandableCheckboxList1)
                 .form-elements-block2.form-elements-block3.margin-bottom-277.margin-top-49
-                    +expandable-checkbox-list({
-                        expandable: {label: 'expandable checkbox list', forcedExpanded: true},
-                        buttons: [
-                            {lable: 'Завтрак', checked: false, name: 'breakfast1'},
-                            {lable: 'Письменный стол', checked: true, name: 'table1'},
-                            {lable: 'Стул для кормления', checked: true, name: 'chair1'},
-                            {lable: 'Кроватка', checked: true, name: 'cot1'},
-                            {lable: 'Телевизор', checked: false, name: 'tv11'},
-                            {lable: 'Шампунь', checked: false, name: 'shampoo11'},
-                            {lable: 'Телевизор', checked: false, name: 'tv21'},
-                            {lable: 'Шампунь', checked: false, name: 'shampoo21'},
-                        ]
-                    })
+                    +expandable-checkbox-list(data.expandableCheckboxList2)
             section.form-elements-section.margin-left-126.width-320.section-second
                 .form-elements-block1.width-222
-                    +checkbox-buttons({
-                        label: 'Checkbox Buttons',
-                        buttons: [
-                            {lable: 'Можно курить', checked: false, name: 'smoke'},
-                            {lable: 'Можно с питомцами', checked: true, name: 'pet'},
-                            {lable: 'Можно пригласить гостей (до 10 человек)', checked: true, name: 'guest'}
-                        ]
-                    })
-                .form-elements-block1.width-222.margin-top-42
-                    +radio-buttons({label: 'Radio Buttons', buttons: [
-                        {lable: 'Мужчина', checked: true, name: 'gender', value: 'male'},
-                        {lable: 'Женщина', checked: false, name: 'gender', value: 'female'},
-                    ]})
-                .form-elements-block1.width-280.margin-top-9
-                        +toggle-buttons({
-                            label: 'Toggle',
-                            buttons: [
-                                {lable: 'Получать спецпредложения', checked: true, name: 'male' },
-                                {lable: 'Получать спецпредложения', checked: false, name: 'female' },
-                            ]
-                        })
+                    +checkbox-buttons(data.checkboxButtons1)
+                .form-elements-block1.width-241.margin-top-40
+                    +radio-buttons(data.radioButtons1)
+                .form-elements-block1.width-280.margin-top-42
+                    +toggle-buttons(data.toggleButtons1)
                 .form-elements-block1.width-90.margin-top-44
-                    +like-button({label: 'Like button', buttons: [
-                        { checked: false, name: 'male', count: 2 },
-                        { checked: true, name: 'female', count: 12 },
-                    ]})
+                    +like-button(data.likeButton1)
                 .form-elements-block1.width-260.margin-top-40
-                    +rate-button({
-                        label: 'Rate button',
-                        buttons: [
-                            { grade: 4, name: 'male2', count: 5 },
-                            { grade: 5, name: 'female2', count: 5 },
-                        ]
-                    })
-                .form-elements-block1.margin-top-198.margin-bottom-256
-                    +dropdown({
-                        dropdownOptions: { expand: false, type: 1, controlVisible: true, forcedExpand: true, },
-                        name: 'guests1', 
-                        stateText: 'Default',
-                        type: 'text',
-                        label: 'dropdown',
-                        placeholder: 'Сколько гостей',
-                        button: { class: 'arrow-down', visible: true },
-                        items: [
-                            {title: 'взрослые', value: 0},
-                            {title: 'дети', value: 0},
-                            {title: 'младенцы', value: 0}
-                        ]
-                    }) 
+                    +rate-button(data.rateButton1)
+                .form-elements-block1.margin-top-198.margin-bottom-259
+                    +dropdown(data.dropdown5) 
                 .form-elements-block1.width-253
-                    +rich-checkbox-buttons({label: 'rich checkbox buttons', buttons: [ 
-                        {lable: 'Широкий коридор', checked: false, name: 'widecorridor', info: 'Ширина коридоров в номере не менее 91 см.'},
-                        {lable: 'Помощник для инвалидов', checked: false, name: 'helper', info: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
-                    ]})
+                    +rich-checkbox-buttons(data.richCheckboxButtons1)
             section.form-elements-section.margin-left-72.width-320.section-third
                 .form-elements-block1.width-266
                     +range-slider({label: 'Range Slider', unit: '&#8381;', start: 5000, end: 10000, min:0, max:15000, separator: 1000})
@@ -176,13 +75,13 @@ block main
                             {text: 'Click me', type: 'button', disabled:false, value: '', view: 0, full: true},
                         ]
                     })
-                .form-elements-block1.width-218.margin-bottom-30
+                .form-elements-block1.width-218.margin-bottom-31
                     +buttons({
                         buttons: [
                             {text: 'Click me', type: 'button', disabled:false, value: '', view: 1, full: true},
                         ]
                     })
-                .form-elements-block1.width-144.margin-bottom-30
+                .form-elements-block1.width-144.margin-bottom-31
                     +buttons({
                         buttons: [
                             {text: 'Click me', type: 'button', disabled:false, value: '', view: 2, full: true},
@@ -196,7 +95,7 @@ block main
                     })
                 .form-elements-block2.margin-bottom-232.width-241
                     +pagination({start: 1, end: 15, current: 1, text: 'вариантов аренды', label: 'pagination'})                    
-                .form-elements-block2.margin-bottom-256
+                .form-elements-block2.margin-bottom-254
                     +dropdown({
                         dropdownOptions: { expand: false, type: 1, controlVisible: true, forcedExpand: true, },
                         name: 'guests2', 
@@ -221,15 +120,6 @@ block main
         article.form-elements-down
             section.form-elements-section
                 .form-elements-block1.width-282
-                    +info({
-                        sections: [
-                            { title: 'Комфорт', content: 'Шумопоглощающие стены', src: 'comfort' },
-                            { title: 'Удобство', content: 'Окно в каждой из спален', src: 'usability'}
-                        ]
-                    })
-            section.form-elements-section.width-auto.margin-left-163.section-down-second
-                +comments({
-                    comments: [
-                        {likeButton: { buttons: [{ checked: true, name: 'male2', count: 12 }]}, src: 'male', fullName: 'Мурад Сарафанов', date: '5 дней назад', count: 12, content: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' },
-                    ]
-                })
+                    +info(data.info1)
+            section.form-elements-section.width-auto.margin-left-124.section-down-second
+                +comments(data.comments1)
