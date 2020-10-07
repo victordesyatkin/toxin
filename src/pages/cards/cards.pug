@@ -1,0 +1,17 @@
+extends ../demo-base/demo-base
+include ../../components/picker/picker
+include ../../components/date-dropdown/date-dropdown
+include ../../components/masked-text-field/masked-text-field
+include ../../components/input/input
+include ../../components/calendar/calendar
+include ../../components/dropdown/dropdown
+include ../../components/buttons/buttons
+include ../../components/card/card
+
+block title
+    | Cards
+block main
+    - let data = htmlWebpackPlugin.options.getData()
+    .cards
+        +card
+            +picker(data.picker)

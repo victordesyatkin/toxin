@@ -58,6 +58,8 @@ $gradient-first: linear-gradient(
 );
 
 $gradient-second: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
+$box-shadow-first-color: rgba(0, 0, 0, 0.2);
+$border-first-color: rgba(0, 0, 0, 0.12);
 
 /***** Mixins *****/
 @mixin reset-button {

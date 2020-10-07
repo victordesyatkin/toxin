@@ -1,0 +1,26 @@
+@import "~theme/variables.scss";
+
+.picker {
+  /*width: 100%;*/
+
+  width: 380px;
+  outline: 1px solid red;
+
+  height: auto;
+  padding: 41px 30px 30px 30px;
+
+  &__label {
+    @include h1;
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__date-dropdown {
+    margin-bottom: 21px;
+  }
+
+  &__dropdown {
+    margin-bottom: 30px;
+  }
+}

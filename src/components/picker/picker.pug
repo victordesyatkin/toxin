@@ -1,0 +1,11 @@
+mixin picker (o = {})
+    .picker
+        - let {label = '', dateDropdown = {}, dropdown = {}, buttons = []} = o || {};
+        if (label)
+            .picker__label= label
+        .picker__date-dropdown
+            +date-dropdown(dateDropdown)
+        .picker__dropdown
+            +dropdown(dropdown)
+        .picker__buttons
+            +buttons({buttons})
