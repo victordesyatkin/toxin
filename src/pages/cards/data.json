@@ -3,20 +3,20 @@
         "label": "Найдём номера под ваши пожелания",
         "dateDropdown": {
             "fieldStart": {
-            "name": "startDate2",
-            "id": "startDate2",
-            "type": "text",
-            "label": "прибытие",
-            "placeholder": "ДД.ММ.ГГГГ",
-            "button": { "visible": true, "class": "arrow-down" }
+                "name": "startDate2",
+                "id": "startDate2",
+                "type": "text",
+                "label": "прибытие",
+                "placeholder": "ДД.ММ.ГГГГ",
+                "button": { "visible": true, "class": "arrow-down" }
             },
             "fieldEnd": {
-            "name": "endDate2",
-            "id": "endDate2 ",
-            "type": "text",
-            "label": "выезд",
-            "placeholder": "ДД.ММ.ГГГГ",
-            "button": { "visible": true, "class": "arrow-down" }
+                "name": "endDate2",
+                "id": "endDate2",
+                "type": "text",
+                "label": "выезд",
+                "placeholder": "ДД.ММ.ГГГГ",
+                "button": { "visible": true, "class": "arrow-down" }
             }
         },
         "dropdown": {
@@ -36,5 +36,63 @@
         "buttons": [
             {"text": "подобрать номер", "type": "button", "disabled":false, "value": "", "view": 3, "full": true}
         ]
+    },
+    "book": {
+        "discount": "2 179", 
+        "number": "888",
+        "suite": "люкс",
+        "price": "9 990",
+        "duration": "в сутки",
+        "unit": "&#8381",
+        "dateDropdown":{
+            "fieldStart": {
+                "name": "startDate3",
+                "id": "startDate3",
+                "type": "text",
+                "label": "прибытие",
+                "placeholder": "ДД.ММ.ГГГГ",
+                "value": "19.08.2019",
+                "button": { "visible": true, "class": "arrow-down" }
+            },
+            "fieldEnd": {
+                "name": "endDate3",
+                "id": "endDate3",
+                "type": "text",
+                "label": "выезд",
+                "placeholder": "ДД.ММ.ГГГГ",
+                "value": "23.08.2019",
+                "button": { "visible": true, "class": "arrow-down" }
+            }
+        },
+        "dropdown": {
+            "dropdownOptions": {
+                "expand": false,
+                "type": 1
+            },
+            "name": "guests2",
+            "type": "text",
+            "label": "dropdown",
+            "placeholder": "Сколько гостей",
+            "button": { "class": "arrow-down", "visible": true },
+            "items": [
+                { "title": "взрослые", "value": 2 },
+                { "title": "дети", "value": 1 },
+                { "title": "младенцы", "value": 0 }
+            ]
+        },
+        "total": "38 081",
+        "totalInfo": "Итого",
+        "buttons": {
+            "buttons": [
+              {
+                "text": "Забронировать",
+                "type": "button",
+                "disabled": false,
+                "value": "",
+                "view": 3,
+                "full": true
+              }
+            ]
+        }
     }
 }

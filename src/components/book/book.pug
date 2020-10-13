@@ -1,0 +1,40 @@
+mixin book(o = {})
+    -
+        let {discount = '2 179', number = '888', suite = 'люкс', price = '9 990', duration = 'в сутки', unit = '&#8381', dropdown = {}, dateDropdown = {}, total = '38 081', totalInfo= 'Итого', buttons = []} = o || {};
+    .book(data-options = o)
+        .book__section.margin-bottom-20(data-type="3")
+            .book__number-info
+                |№
+                span.book__number=number
+                span.book__suite=suite
+            .book__price
+                |#{price}!{unit}
+                span.book__duration=duration
+        .book__date-dropdown.margin-bottom-20
+            +date-dropdown(dateDropdown)
+        .book__dropdown.margin-bottom-21
+            +dropdown(dropdown)
+        .book__section.margin-bottom-10(data-type=1) 
+                .book__section-info
+                .book__section-total
+        .book__section.margin-bottom-10 
+            .book__section-info
+                span.book__section-content
+                    | Сбор за услуги: скидка #{discount}!{unit}
+                span.book__info.icon-info
+            .book__section-total
+                | 0!{unit}
+        .book__section.margin-bottom-30 
+            .book__section-info
+                span.book__section-content
+                    | Сбор за дополнительные услуги
+                span.book__info.icon-info
+            .book__section-total
+                | 300!{unit}                                
+        .book__section.book__total.margin-bottom-20(data-type=2)
+            .book__section-info=totalInfo
+            .book__section-total
+                |#{total}!{unit}
+        .book__buttons
+            +buttons(buttons)
+        

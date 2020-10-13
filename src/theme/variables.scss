@@ -141,6 +141,10 @@ $border-first-color: rgba(0, 0, 0, 0.12);
   }
 }
 
+@mixin margin($margin, $direction) {
+  margin-#{$direction}: #{$margin}px;
+}
+
 @mixin column($screen-width, $count) {
   flex-shrink: 0;
   padding-right: 1rem;

@@ -11,10 +11,6 @@
   max-width: #{$w}px;
 }
 
-@mixin margin($margin, $direction) {
-  margin-#{$direction}: #{$margin}px;
-}
-
 .form-elements {
   //outline: 1px solid black;
   width: 100%;

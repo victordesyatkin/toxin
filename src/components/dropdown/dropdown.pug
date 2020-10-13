@@ -1,7 +1,7 @@
 mixin dropdown(o = {})
     -
         let { dropdownOptions, ...inputOptions } = o || {};
-        let { expand = false, type, controlVisible, forcedExpand = false } = dropdownOptions;
+        let { expand = false, type = 0, controlVisible = false, forcedExpand = false } = dropdownOptions || {};
         let classDropdown = 'dropdown' + (expand ? ' dropdown_expand' : '') + (forcedExpand ? ' dropdown_foreced-expand' : ''); 
         classDropdown += type === 0 ? ' dropdown_particular' : '';
         // - type = 0 - rooms

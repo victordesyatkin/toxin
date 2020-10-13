@@ -1,0 +1,81 @@
+@import "~theme/variables.scss";
+
+.margin-bottom-30 {
+  @include margin(30, "bottom");
+}
+
+.margin-bottom-21 {
+  @include margin(21, "bottom");
+}
+
+.margin-bottom-20 {
+  @include margin(20, "bottom");
+}
+
+.margin-bottom-10 {
+  @include margin(10, "bottom");
+}
+
+.book {
+  width: 100%;
+  padding: 40px 30px 30px 30px;
+  outline: 1px solid red;
+
+  &__section-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $color-second-dark;
+  }
+
+  &__number-info {
+    @include h3;
+    text-transform: uppercase;
+  }
+
+  &__number {
+    @include h1;
+    margin: 0 5px;
+  }
+
+  &__suite {
+    color: $color-purple;
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__price {
+    @include base-h;
+    font-size: 14px;
+    font-weight: bold;
+    color: $color-dark-shade50;
+  }
+
+  &__duration {
+    font-weight: normal;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__section-content {
+    width: 214px;
+  }
+
+  &__info {
+    margin-left: 5px;
+    font-size: 20px;
+    color: $color-fourth-dark;
+  }
+
+  .book__total {
+    @include h2;
+  }
+}

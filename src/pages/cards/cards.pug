@@ -7,11 +7,14 @@ include ../../components/calendar/calendar
 include ../../components/dropdown/dropdown
 include ../../components/buttons/buttons
 include ../../components/card/card
+include ../../components/book/book
 
 block title
     | Cards
 block main
     - let data = htmlWebpackPlugin.options.getData()
-    .cards
+    article.cards
         +card
             +picker(data.picker)
+        +card
+            +book(data.book)
