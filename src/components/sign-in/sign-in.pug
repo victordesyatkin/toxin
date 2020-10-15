@@ -1,0 +1,14 @@
+mixin sign-in(props = {})
+    - 
+        let { title = '', email = {}, password = {}, signIn = {}, signUp = {} } = props || {}; 
+    .sign-in
+        if (title) 
+            .sign-in__title.margin-bottom-20=title
+        .sign-in__email.margin-bottom-10
+            +input(email)
+        .sign-in__email.margin-bottom-20
+            +input(password)
+        .sign-in__button-sign-in.margin-bottom-30
+            +buttons(signIn)
+        .sign-in__button-sign-in.margin-bottom-10
+            +card-footer(signUp)

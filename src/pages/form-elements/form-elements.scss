@@ -87,6 +87,10 @@
     @include margin(31, "top");
   }
 
+  .margin-top-24 {
+    @include margin(24, "top");
+  }
+
   .margin-top-23 {
     @include margin(23, "top");
   }
@@ -109,6 +113,10 @@
 
   .margin-bottom-256 {
     @include margin(256, "bottom");
+  }
+
+  .margin-bottom-257 {
+    @include margin(257, "bottom");
   }
 
   .margin-bottom-254 {

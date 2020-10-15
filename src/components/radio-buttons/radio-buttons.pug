@@ -3,7 +3,7 @@ mixin radio-buttons(o = {buttons: [], label: ''})
         let { label = '', buttons = [] } = o || {};
     .radio-buttons
         if (label)
-            h3.radio-buttons__label=label
+            .radio-buttons__label=label
         .radio-buttons__section-buttons
             for b in buttons
                 -

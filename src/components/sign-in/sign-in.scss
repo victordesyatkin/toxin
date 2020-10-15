@@ -1,0 +1,10 @@
+@import "~theme/global.scss";
+
+.sign-in {
+  width: 100%;
+  padding: 40px 30px 32px 30px;
+
+  &__title {
+    @include h1;
+  }
+}

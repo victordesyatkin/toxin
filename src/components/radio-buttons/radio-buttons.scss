@@ -4,11 +4,20 @@
   display: flex;
   flex-direction: column;
 
+  &__label {
+    margin-bottom: 17px;
+    @include h3;
+  }
+
   &__section-buttons {
     display: flex;
     flex-direction: row;
-    margin-top: 6px;
+    // margin-top: 6px;
     flex-wrap: wrap;
+  }
+
+  &__section-buttons:not(first-child) {
+    margin-bottom: 17px;
   }
 
   &__button {
@@ -16,7 +25,7 @@
     flex-shrink: 1;
     flex-grow: 1;
     flex-direction: row;
-    margin-top: 10.56px;
+    // margin-top: 10.56px;
     cursor: pointer;
     line-height: 1.29rem;
     color: $color-third-dark;

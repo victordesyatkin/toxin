@@ -1,0 +1,5 @@
+mixin card-footer(props = {})
+    - let { buttons = {}, content = '' } = props || {};
+    .card-footer
+        .card-footer__content=content
+        +buttons(buttons)

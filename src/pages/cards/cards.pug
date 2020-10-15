@@ -8,6 +8,11 @@ include ../../components/dropdown/dropdown
 include ../../components/buttons/buttons
 include ../../components/card/card
 include ../../components/book/book
+include ../../components/radio-buttons/radio-buttons
+include ../../components/sign-up/sign-up
+include ../../components/sign-in/sign-in
+include ../../components/toggle-buttons/toggle-buttons
+include ../../components/card-footer/card-footer
 
 block title
     | Cards
@@ -18,3 +23,9 @@ block main
             +picker(data.picker)
         +card
             +book(data.book)
+        +card({className: 'cards__calendar'})
+            +calendar(data.calendar)
+        +card
+            +sign-up(data.signUp)
+        +card
+            +sign-in(data.signIn)

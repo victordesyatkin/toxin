@@ -1,0 +1,14 @@
+@import "~theme/global.scss";
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__content {
+    color: $color-black-shade100;
+    line-height: 1.2857em;
+  }
+}

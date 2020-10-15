@@ -9,7 +9,7 @@ mixin buttons(o = {})
             for b in buttons
                 -
                     let
-                        { text = '', type = 'button', disabled = false, view = 0, full = false, value = '' } = b || {};
+                        { text = '', type = 'button', disabled = false, view = 0, full = false, value = '', name = '' } = b || {};
                         classes = 'buttons__items';
                         classes += full ? ' buttons__items_full' : '';
                         classes += view !== undefined ? ` buttons__view buttons__view_${view}` : '';
@@ -25,6 +25,7 @@ mixin buttons(o = {})
                                 type="button"
                                 disabled=false
                                 value=''
+                                name=name
                             )=text
                             if (src && view === 3)
                                 img(src=src)
@@ -34,6 +35,7 @@ mixin buttons(o = {})
                                     type="button"
                                     disabled=true
                                     value=''
+                                    name=name
                                 )=text
                                 if (src && view === 3)
                                     img(src=src)
@@ -43,6 +45,7 @@ mixin buttons(o = {})
                                 type=type
                                 value=''
                                 disabled=disabled
+                                name=name
                             )=text
                             if (src && view === 3)
                                 img(src=src)

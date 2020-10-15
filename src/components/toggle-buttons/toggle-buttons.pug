@@ -3,7 +3,7 @@ mixin toggle-buttons(o = {buttons: [], label: ''})
         let { label = '', buttons = [] } = o || {};
     .toggle-buttons
         if (o.label)
-            h3.radio-buttons__label=label
+            .toggle-buttons__label=label
         for b in buttons
             -
                 let id = b.name ? `toggle-buttons__button-${b.name}`: '';

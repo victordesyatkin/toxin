@@ -1,8 +1,13 @@
-@import "~theme/variables.scss";
+@import "~theme/global.scss";
 
 .toggle-buttons {
   display: flex;
   flex-direction: column;
+
+  &__label {
+    @include h3;
+    margin-bottom: 15px;
+  }
 
   &__button {
     display: flex;
@@ -10,7 +15,7 @@
     flex-shrink: 1;
     flex-grow: 1;
     flex-direction: row;
-    margin-top: 14px;
+    //margin-top: 14px;
     cursor: pointer;
     line-height: 1.29rem;
     color: $color-second-dark;
@@ -24,8 +29,8 @@
     }
   }
 
-  &__button:first-of-type {
-    margin-top: 16.56px;
+  &__button:not(:first-of-type) {
+    margin-top: 15px;
   }
 
   &__checkmark {

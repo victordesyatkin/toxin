@@ -115,6 +115,43 @@ Calendar.prototype._init = function () {
   this._$component.on("click", this._handlerClickCalendar.bind(this));
   this._toggleVisibleButtonClean();
   this._toggleVisibleMain();
+  this._selectDate();
+};
+
+Calendar.prototype._selectDate = function () {
+  let start = this._value2Date(
+    get(this._$component.data(), ["options", "start"])
+  );
+  let end = this._value2Date(get(this._$component.data(), ["options", "end"]));
+  if (end && !start) {
+    start = new Date();
+    start = start.setDate(end.getDate() - 1);
+  }
+  if (start && !end) {
+    end = new Date();
+    end = end.setDate(start.getDate() + 1);
+  }
+  if (start && end) {
+    this._datepicker.selectDate([start, end]);
+  }
+};
+
+Calendar.prototype._value2Date = function (value = "") {
+  const parts = value.split(".");
+  const partDay = parts[0];
+  const partMonth = parts[1];
+  const partYear = parts[2];
+  let date = "";
+  if (partDay && partMonth && partYear) {
+    date = `${partMonth}.${partDay}.${partYear}`;
+  }
+  if (date) {
+    date = new Date(date);
+    if (!(date instanceof Date)) {
+      date = "";
+    }
+  }
+  return date;
 };
 
 function renderComponent() {
