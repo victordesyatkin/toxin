@@ -1,0 +1,86 @@
+@import "~theme/global.scss";
+
+.slider {
+  height: 244px;
+  width: 100%;
+  //height: 100%;
+  position: relative;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  overflow: hidden;
+
+  &__section-images {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__image-wrapper {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 1;
+    width: 100%;
+
+    img {
+      object-position: 50% 50%;
+      width: 100%;
+    }
+  }
+
+  &__control {
+    width: 44px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    color: $color-white-shade100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 99.99%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    cursor: pointer;
+  }
+
+  &__control_left {
+    left: 0;
+  }
+
+  &__control_right {
+    right: 0;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+  }
+
+  &__pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: absolute;
+    right: 15.1px;
+    bottom: 19.5px;
+    z-index: 3;
+  }
+
+  &__point {
+    width: 7.5px;
+    height: 7.5px;
+    border-radius: 100%;
+    border: 1px solid $color-white-shade100;
+    margin-left: 4px;
+    cursor: pointer;
+  }
+
+  &__point_full {
+    background-color: $color-white-shade100;
+  }
+
+  &__point:first-child {
+    margin-left: 0;
+  }
+}

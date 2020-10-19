@@ -1,19 +1,18 @@
 @font-face {
-  font-family: "icomoon";
-  src: url("fonts/icomoon.eot?qs9qk5");
-  src: url("fonts/icomoon.eot?qs9qk5#iefix") format("embedded-opentype"),
-    url("fonts/icomoon.ttf?qs9qk5") format("truetype"),
-    url("fonts/icomoon.woff?qs9qk5") format("woff"),
-    url("fonts/icomoon.svg?qs9qk5#icomoon") format("svg");
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?v9ilu0');
+  src:  url('fonts/icomoon.eot?v9ilu0#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?v9ilu0') format('truetype'),
+    url('fonts/icomoon.woff?v9ilu0') format('woff'),
+    url('fonts/icomoon.svg?v9ilu0#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -31,6 +30,12 @@
 }
 .icon-expand_more:before {
   content: "\e909";
+}
+.icon-expand_more_prev:before {
+  content: "\e90f";
+}
+.icon-expand_more_forward:before {
+  content: "\e910";
 }
 .icon-expand_more_up:before {
   content: "\e90a";

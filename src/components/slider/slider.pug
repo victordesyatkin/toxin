@@ -1,0 +1,33 @@
+mixin slider(props = {})
+    -
+        
+        let { images = []} = props || {};
+        let
+            n = 0;
+            length = images.length;
+            defaultSrc = {
+                1: require('../../components/slider/img/image_1.png').default,
+                2: require('../../components/slider/img/image_2.png').default,
+            }
+    .slider(
+        data-props=props,
+        data-defaultsrc=defaultSrc
+    )
+        .slider__section-images
+            .slider__image-wrapper
+                img(
+                    src = ''
+                    alt = ''
+                )
+        if (length !== 0)
+            .slider__control.slider__control_left.icon-expand_more_prev(
+                data-type = 1
+            )
+            .slider__control.slider__control_right.icon-expand_more_prev(
+                data-type = 2
+            )
+            .slider__pagination
+                while n < length
+                    .slider__point
+                    -
+                        ++n

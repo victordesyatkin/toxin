@@ -13,19 +13,23 @@ include ../../components/sign-up/sign-up
 include ../../components/sign-in/sign-in
 include ../../components/toggle-buttons/toggle-buttons
 include ../../components/card-footer/card-footer
+include ../../components/slider/slider
+
 
 block title
     | Cards
 block main
     - let data = htmlWebpackPlugin.options.getData()
     article.cards
+        //- +card
+        //-     +picker(data.picker)
+        //- +card
+        //-     +book(data.book)
+        //- +card({className: 'cards__calendar'})
+        //-     +calendar(data.calendar)
+        //- +card
+        //-     +sign-up(data.signUp)
+        //- +card
+        //-     +sign-in(data.signIn)
         +card
-            +picker(data.picker)
-        +card
-            +book(data.book)
-        +card({className: 'cards__calendar'})
-            +calendar(data.calendar)
-        +card
-            +sign-up(data.signUp)
-        +card
-            +sign-in(data.signIn)
+            +slider(data.slider)
