@@ -1,0 +1,18 @@
+mixin card-slider(props = {})
+    -
+        let { slider = {}, header = {}, rating = {} } = props || {};
+        let { button, comments } = rating || {};
+    +card
+        .card-slider
+            .card-slider__slider
+                +slider(slider)
+        .card-slider__info
+            +card-header(info)
+        .card-slider__separator-wrap
+            .card-slider__separator
+        .card-slider__score
+            .card-slider__rating
+                +rate-button(button)
+            .card-slider__comments
+                span.card-slider__comments-numbers=comments 
+                span  Отзывов

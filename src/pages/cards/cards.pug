@@ -14,6 +14,9 @@ include ../../components/sign-in/sign-in
 include ../../components/toggle-buttons/toggle-buttons
 include ../../components/card-footer/card-footer
 include ../../components/slider/slider
+include ../../components/card-slider/card-slider
+include ../../components/card-header/card-header
+include ../../components/rate-button/rate-button
 
 
 block title
@@ -21,15 +24,22 @@ block title
 block main
     - let data = htmlWebpackPlugin.options.getData()
     article.cards
-        //- +card
-        //-     +picker(data.picker)
-        //- +card
-        //-     +book(data.book)
-        //- +card({className: 'cards__calendar'})
-        //-     +calendar(data.calendar)
-        //- +card
-        //-     +sign-up(data.signUp)
-        //- +card
+        .cards__section
+            //- +card
+            //-     +picker(data.picker)
+        .cards__section
+            //- +card
+            //-     +book(data.book)
+        .cards__section
+            //- +card({className: 'cards__calendar'})
+            //-     +calendar(data.calendar)
+        .cards__section
+            //- +card
+            //-     +sign-up(data.signUp)
+        .cards__section
+            //- +card
         //-     +sign-in(data.signIn)
-        +card
-            +slider(data.slider)
+        .cards__section.width-270
+            +card-slider(data.slider1)
+        .cards__section.width-270
+            +card-slider(data.slider2)

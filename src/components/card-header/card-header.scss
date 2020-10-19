@@ -1,0 +1,42 @@
+@import "~theme/global.scss";
+
+.card-header {
+  &__section-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: $color-second-dark;
+  }
+
+  &__number-info {
+    @include h3;
+    text-transform: uppercase;
+  }
+
+  &__number {
+    @include h1;
+    margin: 0 5px;
+  }
+
+  &__suite {
+    color: $color-purple;
+  }
+
+  &__price {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__price {
+    @include base-h;
+    font-size: 14px;
+    font-weight: bold;
+    color: $color-dark-shade50;
+  }
+
+  &__duration {
+    font-weight: normal;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+}

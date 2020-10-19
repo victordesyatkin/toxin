@@ -1,0 +1,11 @@
+mixin card-header(props = {})
+    - let { number = '888', suite = 'люкс', price = '9 990', duration = 'в сутки', unit = '&#8381' } = props || {};
+    .card-header
+        .card-header__section-info
+            .card-header__number-info
+                |№
+                span.card-header__number=number
+                span.card-header__suite=suite
+            .card-header__price
+                |#{price}!{unit}
+                span.card-header__duration=duration

@@ -1,17 +1,21 @@
 @import "~theme/variables.scss";
 
 .cards {
-  .card {
+  .cards-section {
     width: 380px;
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 40px;
   }
 
-  & &__calendar {
+  &__calendar {
     width: 320px;
     .calendar__main {
       position: relative;
     }
+  }
+
+  .width-270 {
+    width: 270px;
   }
 }
