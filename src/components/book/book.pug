@@ -10,21 +10,21 @@ mixin book(o = {})
             .book__price
                 |#{price}!{unit}
                 span.book__duration=duration
-        .book__date-dropdown.margin-bottom-20
+        .book__date-dropdown.margin-bottom-19
             +date-dropdown(dateDropdown)
-        .book__dropdown.margin-bottom-21
+        .book__dropdown.margin-bottom-18
             +dropdown(dropdown)
-        .book__section.margin-bottom-10(data-type=1) 
+        .book__section.margin-bottom-12(data-type=1) 
                 .book__section-info
                 .book__section-total
-        .book__section.margin-bottom-10 
+        .book__section.margin-bottom-11 
             .book__section-info
                 span.book__section-content
                     | Сбор за услуги: скидка #{discount}!{unit}
                 span.book__info.icon-info
             .book__section-total
                 | 0!{unit}
-        .book__section.margin-bottom-30 
+        .book__section.margin-bottom-27
             .book__section-info
                 span.book__section-content
                     | Сбор за дополнительные услуги
@@ -33,6 +33,7 @@ mixin book(o = {})
                 | 300!{unit}                                
         .book__section.book__total.margin-bottom-20(data-type=2)
             .book__section-info=totalInfo
+            .book__separator
             .book__section-total
                 |#{total}!{unit}
         .book__buttons

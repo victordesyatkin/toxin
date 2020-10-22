@@ -23,23 +23,26 @@ block title
     | Cards
 block main
     - let data = htmlWebpackPlugin.options.getData()
-    article.cards
-        .cards__section
-            //- +card
-            //-     +picker(data.picker)
-        .cards__section
-            //- +card
-            //-     +book(data.book)
-        .cards__section
-            //- +card({className: 'cards__calendar'})
-            //-     +calendar(data.calendar)
-        .cards__section
-            //- +card
-            //-     +sign-up(data.signUp)
-        .cards__section
-            //- +card
-        //-     +sign-in(data.signIn)
-        .cards__section.width-270
-            +card-slider(data.slider1)
-        .cards__section.width-270
-            +card-slider(data.slider2)
+    article.cards.margin-top-72
+        section.section__container.margin-right-41
+            .cards__section.width-380.margin-bottom-38
+                +card
+                    +picker(data.picker)
+            .cards__section.width-380
+                +card
+                    +sign-up(data.signUp)  
+        section.section__container.margin-right-41
+            .cards__section.width-380.margin-bottom-35
+                +card
+                    +book(data.book)
+            .cards__section.width-380
+                +card
+                    +sign-in(data.signIn)
+        section.section__container
+            .cards__section.width-320.margin-bottom-39
+                +card({className: 'cards__calendar'})
+                    +calendar(data.calendar)
+            .cards__section.width-270.margin-bottom-47
+                +card-slider(data.slider1)
+            .cards__section.width-270
+                +card-slider(data.slider2)

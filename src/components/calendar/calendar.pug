@@ -1,8 +1,8 @@
 mixin calendar(o = {})
     .calendar(data-options=o)
         - 
-            let {visible = false} = o || {};
-            classes = `calendar__main ${visible ? '' : ' calendar__main_hide'}`;
+            let {visible = false, classNames = []} = o || {};
+            classes = `calendar__main${visible ? '' : ' calendar__main_hide'}${classNames.length ? ` ${classNames.join(' ')}` : ''}`;
         div(class = classes)
             input(type="hidden", date-iscalendar="1")
             .calendar__control

@@ -4,6 +4,10 @@
   @include margin(30, "bottom");
 }
 
+.margin-bottom-27 {
+  @include margin(27, "bottom");
+}
+
 .margin-bottom-21 {
   @include margin(21, "bottom");
 }
@@ -12,13 +16,29 @@
   @include margin(20, "bottom");
 }
 
+.margin-bottom-19 {
+  @include margin(19, "bottom");
+}
+
+.margin-bottom-18 {
+  @include margin(18, "bottom");
+}
+
+.margin-bottom-12 {
+  @include margin(12, "bottom");
+}
+
+.margin-bottom-11 {
+  @include margin(11, "bottom");
+}
+
 .margin-bottom-10 {
   @include margin(10, "bottom");
 }
 
 .book {
   width: 100%;
-  padding: 40px 30px 30px 30px;
+  padding: 37px 30px 30px 29px;
 
   &__section-info {
     display: flex;
@@ -28,44 +48,47 @@
   }
 
   &__number-info {
-    @include h3;
+    @include base-h;
+    font-size: 14px;
+    font-weight: bold;
     text-transform: uppercase;
   }
 
   &__number {
     @include h1;
-    margin: 0 5px;
+    margin: 0 6px;
   }
 
   &__suite {
     color: $color-purple;
+    font-size: 13px;
   }
 
   &__price {
     display: flex;
     align-items: flex-end;
-  }
-
-  &__price {
     @include base-h;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     color: $color-dark-shade50;
+    padding-right: 4px;
   }
 
   &__duration {
     font-weight: normal;
     font-size: 12px;
-    margin-left: 5px;
+    margin-left: 7px;
   }
 
   &__section {
     display: flex;
     justify-content: space-between;
+    padding-left: 1px;
   }
 
   &__section-content {
     width: 214px;
+    line-height: 20px;
   }
 
   &__info {
@@ -74,7 +97,28 @@
     color: $color-fourth-dark;
   }
 
-  .book__total {
+  &__total {
     @include h2;
+    align-items: flex-end;
+
+    .book__section-info {
+      letter-spacing: 1px;
+      padding-left: 2px;
+      margin-right: 4px;
+    }
+
+    .book__section-total {
+      margin-left: 4px;
+    }
+  }
+
+  .book__separator {
+    height: 100%;
+    border-bottom: 1px dashed $color-fourth-dark;
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 100%;
+    margin-bottom: 6px;
   }
 }

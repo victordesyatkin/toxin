@@ -3,20 +3,20 @@ mixin sign-up(props = {})
         let { title = '', firstname, lastName, gender = {}, birthday, email, password, submit, contribute, pay, signIn } = props || {}; 
     .sign-up
         if (title) 
-            .sign-up__title.margin-bottom-20=title
-        .sign-up__firstName.margin-bottom-10
+            .sign-up__title.margin-bottom-13=title
+        .sign-up__firstName.margin-bottom-5
             +input(firstname)
-        .sign-up__lastname.margin-bottom-10
+        .sign-up__lastname.margin-bottom-11
             +input(lastName)
-        .sign-up__gender.margin-bottom-20
+        .sign-up__gender.margin-bottom-6
             +radio-buttons(gender)
-        .sign-up__birthday.margin-bottom-20
+        .sign-up__birthday.margin-bottom-21
             +masked-text-field(birthday)
-        .sign-up__email.margin-bottom-10
+        .sign-up__email.margin-bottom-4
             +input(email)
         .sign-up__password.margin-bottom-10
             +input(password)
-        .sign-up__contribute.margin-bottom-20 
+        .sign-up__contribute.margin-bottom-24 
             +toggle-buttons(contribute) 
         .sign-up__button-pay.margin-bottom-30
             +buttons(pay)

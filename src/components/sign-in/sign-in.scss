@@ -2,9 +2,10 @@
 
 .sign-in {
   width: 100%;
-  padding: 40px 30px 32px 30px;
+  padding: 40px 28px 32px 30px;
 
   &__title {
     @include h1;
+    letter-spacing: 1px;
   }
 }

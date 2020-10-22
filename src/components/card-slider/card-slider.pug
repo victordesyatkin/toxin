@@ -1,6 +1,6 @@
 mixin card-slider(props = {})
     -
-        let { slider = {}, header = {}, rating = {} } = props || {};
+        let { slider = {}, info = {}, rating = {} } = props || {};
         let { button, comments } = rating || {};
     +card
         .card-slider
@@ -15,4 +15,4 @@ mixin card-slider(props = {})
                 +rate-button(button)
             .card-slider__comments
                 span.card-slider__comments-numbers=comments 
-                span  Отзывов
+                span.card-slider__comments-content Отзывов
