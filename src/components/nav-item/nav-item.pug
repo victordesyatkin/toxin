@@ -1,0 +1,20 @@
+mixin nav-item(props)
+    -
+        let { label = '', current = '', children = [], href = "#", title = "" } = props || {};
+        let
+            classes = "nav-item" + (current ? " nav-item_current" : '');
+            length = children.length;
+    div(
+        class=classes
+    )
+        a(
+            herf=href
+            title=title
+            class="nav-item__link"
+        )=label
+        if length
+            button.nav-item__control(
+                type="button"
+            )
+                i.icon-expand_more
+

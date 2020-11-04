@@ -1,0 +1,12 @@
+mixin list-links(props)
+    - let {items = [], header = ''} = props || {};
+    .list-links
+        .list-links__header=header
+        ul.list-links__items
+            each item in items
+                li.list-links__item
+                    a(
+                        class="list-links__item-link"
+                        href=item.href || '#'
+                        title=item.title || ''
+                    )=item.content || '' 

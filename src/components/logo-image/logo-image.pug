@@ -1,11 +1,24 @@
-mixin logo-image(options = {fill: true, alt: 'TOXIN'})
+mixin logo-image(props = {fill: true, alt: 'TOXIN', href: "#", title: ""})
     -
         let classes = `logo`;
-        classes += options.fill ? ' logo_fill' : ' logo_color';
+        classes += props.fill ? ' logo_fill' : ' logo_color';
         let src = require('../../components/logo-image/img/logo-fill.svg').default;
-        if (options.fill === 'color') {
+        if (!props.fill) {
             src = require('../../components/logo-image/img/logo-color.svg').default;
         }
-    div(class=classes)
-        img.logo__img(src=src alt = options.alt || '')
+    div(
+        itemscope
+        itemtype="http://schema.org/Brand"
+        class=classes
+    )
+        a(
+            itemprop="url"
+            href=props.href || "#"
+            title=props.title || ''
+        )
+            img.logo__img(
+                itemprop="logo"
+                src=src
+                alt = props.alt || ''
+            )
         

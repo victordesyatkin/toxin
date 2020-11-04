@@ -1,14 +1,7 @@
-include ../menu/menu
-
-//-
-  options.menuItems - массив елементов меню
-
-mixin header(options)
-  if !options
-    - options = {}
-
-  .header
-    a.header__logo(href = '/home.html')
-      | Flat
-    .header__menu
-      +menu({items: options.menuItems})
+mixin header(props)
+    - let { nav = {}}  = props || {};
+    header.header
+        .header__logo
+            +logo-image({fill: false})
+        .header__nav
+            +nav(nav)

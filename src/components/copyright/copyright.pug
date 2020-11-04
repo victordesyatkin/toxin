@@ -1,0 +1,18 @@
+mixin copyright(props)
+    -
+        let { items = [], content, showLogo } = props || {};
+    .copyright
+        if showLogo
+            .copyright__content
+                +logo-image({full: flase})
+        .copyright__content=content
+        ul.copyright__social-items
+            each item in items
+                li.copyright__social-item
+                    - let classes = "copyright__social-item-link " + item.content
+                    a(
+                        class=classes
+                        href=item.href || ""
+                        title=item.title || ""
+                    )
+

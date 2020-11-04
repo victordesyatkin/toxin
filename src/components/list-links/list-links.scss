@@ -1,0 +1,23 @@
+@import "~theme/variables.scss";
+
+.list-links {
+  &__header {
+    @include h3;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+  }
+
+  &__items {
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__item-link {
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: $color-dark-shade50;
+  }
+}

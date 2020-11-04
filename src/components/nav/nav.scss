@@ -1,0 +1,55 @@
+@import "~theme/variables.scss";
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+
+  &__nav-section {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    & > div {
+      margin-right: 20px;
+    }
+  }
+
+  &__separator {
+    width: 1px;
+    height: 30px;
+    background: $color-dark-shade10;
+  }
+
+  &__user-section {
+    margin-left: 20px;
+    color: $color-dark-shade50;
+  }
+
+  &__control-section {
+    height: 34px;
+
+    .buttons__section-body {
+      display: flex;
+      justify-content: flex-end;
+
+      .buttons__items {
+        margin: 0;
+      }
+
+      .buttons__item {
+        height: 34px;
+
+        button {
+          padding: 9px 20px 10px 20px;
+        }
+      }
+
+      .buttons__items:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

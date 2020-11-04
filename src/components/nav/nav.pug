@@ -1,0 +1,17 @@
+mixin nav(props)
+    -
+        let {items = [], user, authorised = false, buttons = {} } = props || {};
+        let { firstName = '' , lastName = '' } = user || {}
+    .nav
+        nav.nav__nav-section
+            each item in items
+                +nav-item(item)
+        if authorised
+            .nav__separator
+            .nav__user-section
+                |#{firstName} #{lastName}
+        else
+            .nav__control-section
+                +buttons(buttons)
+
+

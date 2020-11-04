@@ -1,17 +1,24 @@
-//-
-  options.items - массив с элементами меню
-  options.items[0].name - имя элемента меню
-  options.items[0].href - ссылка элемента меню
+mixin footer(props)
+    -
+        let { info, items = [], subscibe, copyright } = props || {};
+        let { content } = info || {};
+        let { header, description, field } = subscibe || {};
 
-mixin footer(options)
-  if !options
-    - options = {}
-  if !options.items
-    - options.items = []
-
-  .footer
-     nav.footer__nav
-       for item in options.items
-         a.footer__nav-item(href = item.href)= item.name
-     .footer__copyright
-       | &copy; 2016-2017
+    .footer
+        .footer__up-wrapper
+            .footer__up
+                .footer__info-section
+                    .footer__logo
+                        +logo-image({full: false})
+                    .footer__info=content || ''
+                nav.footer__nav-items
+                    each item in items
+                        +list-links(item)
+                .footer__subscibe
+                    .footer__subscibe-header=header
+                    .footer__subscibe-description=description
+                    .footer__subscibe-field
+                        +subscription-text-field(field)
+        .footer__down
+            .footer__copyright
+                +copyright(copyright)
