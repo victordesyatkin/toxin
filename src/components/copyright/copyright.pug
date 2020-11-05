@@ -3,7 +3,7 @@ mixin copyright(props)
         let { items = [], content, showLogo } = props || {};
     .copyright
         if showLogo
-            .copyright__content
+            .copyright__logo
                 +logo-image({full: flase})
         .copyright__content=content
         ul.copyright__social-items

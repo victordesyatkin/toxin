@@ -15,10 +15,22 @@
   }
 
   &__copyright {
-    padding: 0 336px 140px 336px;
+    padding: 0 321px 140px 336px;
 
     .copyright {
       height: 367px;
+
+      .copyright__logo {
+        margin-bottom: 20px;
+      }
+
+      .copyright__content {
+        margin-bottom: 21px;
+      }
+
+      .copyright__social-items {
+        margin-bottom: 9px;
+      }
     }
   }
 }
@@ -35,7 +47,7 @@
 @media (max-width: 1440px) and (min-width: 1440px) {
   .headers-and-footers {
     .header {
-      padding-left: 125px;
+      padding-left: 140px;
       padding-right: 140px;
     }
   }
