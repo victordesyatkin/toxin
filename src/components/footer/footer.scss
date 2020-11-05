@@ -62,13 +62,13 @@
   }
 
   &__down {
-    padding: 26px 124px 26px 140px;
   }
 
   &__copyright {
     .copyright {
       justify-content: space-between;
       flex-direction: row;
+      padding: 26px 124px 26px 140px;
     }
 
     .copyright__content {

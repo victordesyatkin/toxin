@@ -28,6 +28,8 @@ include ../../components/copyright/copyright
 
 block title
     | Headers & Footers
+block header
+    +header-ui-kit({ full: true, classes: ['headers-and-footers']})
 block main
         article.headers-and-footers
             - let data = htmlWebpackPlugin.options.getData()

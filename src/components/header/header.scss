@@ -6,10 +6,32 @@
   justify-content: space-between;
   background: #ffffff;
   box-shadow: 0px 10px 20px $color-dark-shade5;
-  padding: 15px 125px 15px 140px;
+  //padding: 15px 125px 15px 140px;
+  padding: 15px 0;
 
   &_nav {
     display: flex;
     align-items: center;
   }
+}
+
+@media (max-width: 1920px) and (min-width: 1441px) {
+}
+
+@media (max-width: 1440px) and (min-width: 1440px) {
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+}
+
+@media (max-width: 767px) and (min-width: 425px) {
+}
+
+@media (max-width: 424px) and (min-width: 375px) {
+}
+
+@media (max-width: 374px) {
 }

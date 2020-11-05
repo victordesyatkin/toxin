@@ -17,13 +17,15 @@ include ../../components/slider/slider
 include ../../components/card-slider/card-slider
 include ../../components/card-header/card-header
 include ../../components/rate-button/rate-button
-
+include ../../components/header-ui-kit/header-ui-kit
 
 block title
     | Cards
+block header
+    +header-ui-kit({ full: true, classes: ['header-ui-kit_cards']})
 block main
     - let data = htmlWebpackPlugin.options.getData()
-    article.cards.margin-top-72
+    article.cards.cards_padding-top-72
         section.section__container.margin-right-41
             .cards__section.width-380.margin-bottom-38
                 +card

@@ -1,4 +1,9 @@
 include ../logo-image/logo-image
-mixin header-ui-kit(options = {fill: true, alt: ''})
-    header.header-ui-kit
+mixin header-ui-kit(options = { fill: true, alt: '' })
+    -
+        let { classes = [] } = options || {};
+        classes = ['header-ui-kit'].concat(classes).join(' ');
+    header(
+        class=classes
+    )
         +logo-image()
