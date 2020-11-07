@@ -1,0 +1,79 @@
+{
+  "headerNotAuthorised": {
+    "nav": {
+      "items": [
+        {
+          "id": 1,
+          "label": "О нас",
+          "children": [],
+          "current": true,
+          "parent": 0
+        },
+        {
+          "id": 2,
+          "label": "Услуги",
+          "current": false,
+          "parent": 0,
+          "children": [
+            {
+              "id": 7,
+              "label": "",
+              "parent": 2,
+              "current": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "label": "Вакансии",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 4,
+          "label": "Новости",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 5,
+          "label": "Соглашения",
+          "parent": 0,
+          "current": false,
+          "children": [
+            {
+              "id": 6,
+              "label": "",
+              "parent": 5,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "authorised": false,
+      "buttons": {
+        "buttons": [
+          {
+            "text": "Войти",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 1,
+            "full": false
+          },
+          {
+            "text": "Зарегистрироваться",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 0,
+            "full": false
+          }
+        ]
+      }
+    }
+  }
+}

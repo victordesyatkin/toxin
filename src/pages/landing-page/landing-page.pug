@@ -1,0 +1,23 @@
+extends ../base/base
+
+
+block title
+    | Landing page
+block main
+    -
+        let data = htmlWebpackPlugin.options.getData();
+        let src = require('../../pages/landing-page/img/landing-page.png').default;
+    main.landing-page
+        article
+            .landing-page__background
+                img(
+                    src=src
+                )
+            section.landing-page__find            
+                block landing-page-find
+                    +card
+                        +picker(data.picker)
+            section.landing-page__info
+                block landing-page-info
+                    | Лучшие номера для вашей работы, отдыха и просто вдохновения
+

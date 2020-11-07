@@ -1,7 +1,49 @@
-include ./base-data
+//include ./base-data
 block variables
 
 include ../../components/layout/layout
+include ../../components/buttons/buttons
+include ../../components/nav/nav
+include ../../components/nav-item/nav-item
+include ../../components/logo-image/logo-image
+include ../../components/card/card
+include ../../components/header/header
+include ../../components/picker/picker
+include ../../components/input/input
+include ../../components/date-dropdown/date-dropdown
+include ../../components/masked-text-field/masked-text-field
+include ../../components/calendar/calendar
+include ../../components/dropdown/dropdown
+include ../../components/book/book
+include ../../components/radio-buttons/radio-buttons
+include ../../components/sign-up/sign-up
+include ../../components/sign-in/sign-in
+include ../../components/toggle-buttons/toggle-buttons
+include ../../components/card-footer/card-footer
+include ../../components/slider/slider
+include ../../components/card-slider/card-slider
+include ../../components/card-header/card-header
+include ../../components/rate-button/rate-button
+include ../../components/checkbox-buttons/checkbox-buttons
+include ../../components/like-button/like-button
+include ../../components/range-slider/range-slider
+include ../../components/pagination/pagination
+include ../../components/info/info
+include ../../components/comments/comments
+include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
+include ../../components/bullet-list/bullet-list
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/expandable/expandable
+include ../../components/expandable-checkbox-list/expandable-checkbox-list
+include ../../components/filter-date-dropdown/filter-date-dropdown
+include ../../components/footer/footer
+include ../../components/list-links/list-links
+include ../../components/copyright/copyright
+include ../../components/header-ui-kit/header-ui-kit
+
+
+
+- let data = htmlWebpackPlugin.options.getData();
 
 doctype html
 html
@@ -15,10 +57,12 @@ html
       +layout__header()
         +layout__container({basis: 1440, align: 'center'})
           block header
+            +header(data.headerNotAuthorised)
       +layout__main()
         +layout__container({basis: 1440, align: 'center'})
           block main
       +layout__footer()
         +layout__container({basis: 1440, align: 'center'})
           block footer
+            +footer(data.footer)
     block scripts

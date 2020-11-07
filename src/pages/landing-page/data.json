@@ -1,0 +1,233 @@
+{
+  "headerNotAuthorised": {
+    "nav": {
+      "items": [
+        {
+          "id": 1,
+          "label": "О нас",
+          "children": [],
+          "current": true,
+          "parent": 0
+        },
+        {
+          "id": 2,
+          "label": "Услуги",
+          "current": false,
+          "parent": 0,
+          "children": [
+            {
+              "id": 7,
+              "label": "",
+              "parent": 2,
+              "current": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "label": "Вакансии",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 4,
+          "label": "Новости",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 5,
+          "label": "Соглашения",
+          "parent": 0,
+          "current": false,
+          "children": [
+            {
+              "id": 6,
+              "label": "",
+              "parent": 5,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "authorised": false,
+      "buttons": {
+        "buttons": [
+          {
+            "text": "Войти",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 1,
+            "full": false
+          },
+          {
+            "text": "Зарегистрироваться",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 0,
+            "full": false
+          }
+        ]
+      }
+    }
+  },
+  "picker": {
+    "label": "Найдём номера под ваши пожелания",
+    "dateDropdown": {
+      "fieldStart": {
+        "name": "startDate2",
+        "id": "startDate2",
+        "type": "text",
+        "label": "прибытие",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "button": { "visible": true, "class": "arrow-down" }
+      },
+      "fieldEnd": {
+        "name": "endDate2",
+        "id": "endDate2",
+        "type": "text",
+        "label": "выезд",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "button": { "visible": true, "class": "arrow-down" }
+      }
+    },
+    "dropdown": {
+      "dropdownOptions": { "expand": false, "type": 1, "controlVisible": true },
+      "name": "guests3",
+      "type": "text",
+      "label": "гости",
+      "placeholder": "Сколько гостей",
+      "button": { "class": "arrow-down", "visible": true },
+      "items": [
+        { "title": "взрослые", "value": 0 },
+        { "title": "дети", "value": 0 },
+        { "title": "младенцы", "value": 0 }
+      ]
+    },
+    "buttons": [
+      {
+        "text": "подобрать номер",
+        "type": "button",
+        "disabled": false,
+        "value": "",
+        "view": 3,
+        "full": true
+      }
+    ]
+  },
+  "footer": {
+    "title": "title title",
+    "info": {
+      "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    },
+    "items": [
+      {
+        "header": "навигация",
+        "items": [
+          {
+            "href": "#",
+            "title": "О нас",
+            "content": "О нас"
+          },
+          {
+            "href": "#",
+            "title": "Новости",
+            "content": "Новости"
+          },
+          {
+            "href": "#",
+            "title": "Служба поддержки",
+            "content": "Служба поддержки"
+          },
+          {
+            "href": "#",
+            "title": "Услуги",
+            "content": "Услуги"
+          }
+        ]
+      },
+      {
+        "header": "о нас",
+        "items": [
+          {
+            "href": "#",
+            "title": "О сервисе",
+            "content": "О сервисе"
+          },
+          {
+            "href": "#",
+            "title": "Наша команда",
+            "content": "Наша команда"
+          },
+          {
+            "href": "#",
+            "title": "Вакансии",
+            "content": "Вакансии"
+          },
+          {
+            "href": "#",
+            "title": "Инвесторы",
+            "content": "Инвесторы "
+          }
+        ]
+      },
+      {
+        "header": "Служба поддержки",
+        "items": [
+          {
+            "href": "#",
+            "title": "Соглашения",
+            "content": "Соглашения"
+          },
+          {
+            "href": "#",
+            "title": "Сообщества",
+            "content": "Сообщества"
+          },
+          {
+            "href": "#",
+            "title": "Связь с нами",
+            "content": "Связь с нами"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
+      "showLogo": false,
+      "items": [
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-t"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-f"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-i"
+        }
+      ]
+    },
+    "subscibe": {
+      "header": "Подписка",
+      "description": "Получайте специальные предложения и новости сервиса",
+      "field": {
+        "name": "footer_subscription_email",
+        "id": "footer_subscription_email",
+        "type": "email",
+        "placeholder": "Email",
+        "button": { "visible": true }
+      }
+    }
+  }
+}

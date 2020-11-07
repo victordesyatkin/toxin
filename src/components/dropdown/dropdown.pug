@@ -9,7 +9,7 @@ mixin dropdown(o = {})
     div(class=classDropdown, data-type=type)
         +input(inputOptions)
         .dropdown__main
-            block main
+            block dropdown__main
                 -
                     let { items = [] } = o || {};
                 each item in items
