@@ -1,0 +1,21 @@
+@import "~theme/variables.scss";
+
+.landing-page-guests-dropdown__find {
+  .dropdown__button.dropdown__button_fade {
+    margin-top: 3px;
+  }
+
+  .dropdown__item-control {
+    margin-top: 1px;
+  }
+
+  .dropdown__item-value {
+    margin-top: 1px;
+  }
+}
+
+@media (max-width: 425px) {
+  .landing-page-guests-dropdown__find {
+    width: 100%;
+  }
+}

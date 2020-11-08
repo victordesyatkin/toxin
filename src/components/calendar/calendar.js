@@ -12,7 +12,7 @@ class Calendar {
   }
 }
 
-Calendar.prototype._handlerSelect = function (formattedDate, date, inst) {
+Calendar.prototype._handlerSelect = function (formattedDate, date = {}, inst) {
   if (this._options.range) {
     if (Object.prototype.toString.call(date) !== "[object Array]") {
       return false;
@@ -49,6 +49,7 @@ Calendar.prototype._options = {
     months: "yyyy",
     years: "yyyy1 - yyyy2",
   },
+  multipleDates: true,
   nextHtml: '<span class="icon-arrow_forward"></span>',
   prevHtml: '<span class="icon-arrow_prev"></span>',
 };
@@ -100,6 +101,7 @@ Calendar.prototype._init = function () {
     onRenderCell: this._onRenderCell.bind(this),
     onShow: this._toggleVisibleMain.bind(this),
     onHide: this._toggleVisibleMain.bind(this),
+    startDate: new Date("08/07/2019"),
   };
   this._$input.datepicker(this._options);
   this._datepicker = this._$input.datepicker().data("datepicker");
@@ -161,4 +163,4 @@ function renderComponent() {
   });
 }
 
-renderComponent();
+document.addEventListener("DOMContentLoaded", renderComponent);

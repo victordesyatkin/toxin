@@ -1,48 +1,4 @@
 {
-  "picker": {
-    "label": "Найдём номера под ваши пожелания",
-    "dateDropdown": {
-      "fieldStart": {
-        "name": "startDate2",
-        "id": "startDate2",
-        "type": "text",
-        "label": "прибытие",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "button": { "visible": true, "class": "arrow-down" }
-      },
-      "fieldEnd": {
-        "name": "endDate2",
-        "id": "endDate2",
-        "type": "text",
-        "label": "выезд",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "button": { "visible": true, "class": "arrow-down" }
-      }
-    },
-    "dropdown": {
-      "dropdownOptions": { "expand": false, "type": 1, "controlVisible": true },
-      "name": "guests3",
-      "type": "text",
-      "label": "гости",
-      "placeholder": "Сколько гостей",
-      "button": { "class": "arrow-down", "visible": true },
-      "items": [
-        { "title": "взрослые", "value": 0 },
-        { "title": "дети", "value": 0 },
-        { "title": "младенцы", "value": 0 }
-      ]
-    },
-    "buttons": [
-      {
-        "text": "подобрать номер",
-        "type": "button",
-        "disabled": false,
-        "value": "",
-        "view": 3,
-        "full": true
-      }
-    ]
-  },
   "headerNotAuthorised": {
     "nav": {
       "items": [
@@ -229,5 +185,54 @@
         "button": { "visible": true }
       }
     }
+  },
+  "picker": {
+    "label": "Найдём номера под ваши пожелания",
+    "dateDropdown": {
+      "fieldStart": {
+        "name": "startDate2",
+        "id": "startDate2",
+        "type": "text",
+        "label": "прибытие",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "value": "19.08.2019",
+        "button": { "visible": true, "class": "arrow-down" }
+      },
+      "fieldEnd": {
+        "name": "endDate2",
+        "id": "endDate2",
+        "type": "text",
+        "label": "выезд",
+        "placeholder": "ДД.ММ.ГГГГ",
+        "value": "23.08.2019",
+        "button": { "visible": true, "class": "arrow-down" }
+      },
+      "calendar": {
+        "visible": true
+      }
+    },
+    "dropdown": {
+      "dropdownOptions": { "expand": false, "type": 1, "controlVisible": true },
+      "name": "guests3",
+      "type": "text",
+      "label": "гости",
+      "placeholder": "Сколько гостей",
+      "button": { "class": "arrow-down", "visible": true },
+      "items": [
+        { "title": "взрослые", "value": 0 },
+        { "title": "дети", "value": 0 },
+        { "title": "младенцы", "value": 0 }
+      ]
+    },
+    "buttons": [
+      {
+        "text": "подобрать номер",
+        "type": "button",
+        "disabled": false,
+        "value": "",
+        "view": 3,
+        "full": true
+      }
+    ]
   }
 }

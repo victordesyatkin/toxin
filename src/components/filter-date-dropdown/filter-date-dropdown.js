@@ -115,4 +115,4 @@ function renderComponent() {
   return components;
 }
 
-renderComponent();
+document.addEventListener("DOMContentLoaded", renderComponent);

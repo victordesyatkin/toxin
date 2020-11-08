@@ -4,10 +4,10 @@ extends ../base/base
 block title
     | Landing page
 block main
-    -
-        let data = htmlWebpackPlugin.options.getData();
-        let src = require('../../pages/landing-page/img/landing-page.png').default;
     main.landing-page
+        -
+            let data = htmlWebpackPlugin.options.getData();
+            let src = require('../../pages/landing-page/img/landing-page.png').default;
         article
             .landing-page__background
                 img(

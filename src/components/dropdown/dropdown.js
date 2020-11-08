@@ -296,4 +296,4 @@ const renderComponent = () => {
   });
 };
 
-renderComponent();
+document.addEventListener("DOMContentLoaded", renderComponent);

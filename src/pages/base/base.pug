@@ -6,10 +6,15 @@ include ../../components/buttons/buttons
 include ../../components/nav/nav
 include ../../components/nav-item/nav-item
 include ../../components/logo-image/logo-image
-include ../../components/card/card
-include ../../components/header/header
-include ../../components/picker/picker
 include ../../components/input/input
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/list-links/list-links
+include ../../components/copyright/copyright
+
+include ../../components/card/card
+include ../../components/picker/picker
 include ../../components/date-dropdown/date-dropdown
 include ../../components/masked-text-field/masked-text-field
 include ../../components/calendar/calendar
@@ -36,14 +41,7 @@ include ../../components/subscription-text-field/subscription-text-field
 include ../../components/expandable/expandable
 include ../../components/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/filter-date-dropdown/filter-date-dropdown
-include ../../components/footer/footer
-include ../../components/list-links/list-links
-include ../../components/copyright/copyright
-include ../../components/header-ui-kit/header-ui-kit
 
-
-
-- let data = htmlWebpackPlugin.options.getData();
 
 doctype html
 html
@@ -53,6 +51,7 @@ html
     title
       block title
   body
+  - let data = htmlWebpackPlugin.options.getData();
     +layout()
       +layout__header()
         +layout__container({basis: 1440, align: 'center'})

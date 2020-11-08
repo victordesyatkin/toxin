@@ -159,4 +159,4 @@ export default function renderComponent(callbackWhenInitialized) {
   })();
 }
 
-renderComponent();
+$(renderComponent);

@@ -75,5 +75,115 @@
         ]
       }
     }
+  },
+  "footer": {
+    "title": "title title",
+    "info": {
+      "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    },
+    "items": [
+      {
+        "header": "навигация",
+        "items": [
+          {
+            "href": "#",
+            "title": "О нас",
+            "content": "О нас"
+          },
+          {
+            "href": "#",
+            "title": "Новости",
+            "content": "Новости"
+          },
+          {
+            "href": "#",
+            "title": "Служба поддержки",
+            "content": "Служба поддержки"
+          },
+          {
+            "href": "#",
+            "title": "Услуги",
+            "content": "Услуги"
+          }
+        ]
+      },
+      {
+        "header": "о нас",
+        "items": [
+          {
+            "href": "#",
+            "title": "О сервисе",
+            "content": "О сервисе"
+          },
+          {
+            "href": "#",
+            "title": "Наша команда",
+            "content": "Наша команда"
+          },
+          {
+            "href": "#",
+            "title": "Вакансии",
+            "content": "Вакансии"
+          },
+          {
+            "href": "#",
+            "title": "Инвесторы",
+            "content": "Инвесторы "
+          }
+        ]
+      },
+      {
+        "header": "Служба поддержки",
+        "items": [
+          {
+            "href": "#",
+            "title": "Соглашения",
+            "content": "Соглашения"
+          },
+          {
+            "href": "#",
+            "title": "Сообщества",
+            "content": "Сообщества"
+          },
+          {
+            "href": "#",
+            "title": "Связь с нами",
+            "content": "Связь с нами"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
+      "showLogo": false,
+      "items": [
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-t"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-f"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-i"
+        }
+      ]
+    },
+    "subscibe": {
+      "header": "Подписка",
+      "description": "Получайте специальные предложения и новости сервиса",
+      "field": {
+        "name": "footer_subscription_email",
+        "id": "footer_subscription_email",
+        "type": "email",
+        "placeholder": "Email",
+        "button": { "visible": true }
+      }
+    }
   }
 }

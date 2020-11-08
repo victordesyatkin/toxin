@@ -184,6 +184,11 @@ module.exports = (env = {}) => {
     module: {
       rules: [
         {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: "babel-loader",
+        },
+        {
           test: /\.pug$/,
           use: [
             {
@@ -194,12 +199,6 @@ module.exports = (env = {}) => {
             },
           ],
         },
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: "babel-loader",
-        },
-
         // Loading images
         {
           test: /\.(png|jpg|jpeg|gif|ico|svg)$/,

@@ -52,4 +52,4 @@ export default function renderComponent(callbackWhenInitialized) {
   })();
 }
 
-renderComponent();
+document.addEventListener("DOMContentLoaded", renderComponent);

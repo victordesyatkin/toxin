@@ -15,4 +15,4 @@ function renderComponent() {
   });
 }
 
-renderComponent();
+document.addEventListener("DOMContentLoaded", renderComponent);
