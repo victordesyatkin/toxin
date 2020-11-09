@@ -2,11 +2,20 @@
 
 .sign-in {
   width: 100%;
-  padding: 40px 28px 32px 30px;
+  padding: 37px 28px 32px 30px;
   background-color: $color-first-white;
 
   &__title {
     @include h1;
     letter-spacing: 1px;
+  }
+
+  .card-footer {
+    .buttons__items.buttons__view.buttons__view_1 {
+      button {
+        padding-right: 18px;
+        padding-left: 16px;
+      }
+    }
   }
 }

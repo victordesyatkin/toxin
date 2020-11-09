@@ -108,7 +108,15 @@
     }
 
     .book__section-total {
+      padding-top: 1px;
       margin-left: 4px;
+      margin-right: 8px;
+      position: relative;
+
+      span {
+        position: absolute;
+        right: -8px;
+      }
     }
   }
 

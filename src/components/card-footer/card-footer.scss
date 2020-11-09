@@ -11,4 +11,11 @@
     color: $color-black-shade100;
     line-height: 1.2857em;
   }
+
+  .buttons__items.buttons__view.buttons__view_1 {
+    button {
+      padding-left: 25px;
+      padding-right: 24px;
+    }
+  }
 }

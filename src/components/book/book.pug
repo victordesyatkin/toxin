@@ -35,7 +35,8 @@ mixin book(o = {})
             .book__section-info=totalInfo
             .book__separator
             .book__section-total
-                |#{total}!{unit}
+                |#{total}
+                span !{unit}
         .book__buttons
             +buttons(buttons)
         

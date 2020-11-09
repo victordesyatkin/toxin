@@ -1,11 +1,20 @@
+import datepicker from "air-datepicker";
 import "./book.scss";
 
 class Book {
   constructor(component) {
     this._$component = $(component);
     this._init();
+    this._words = ["сутки", "суток", "суток"];
   }
 }
+
+Book.prototype._wordForm = function (num, word) {
+  const cases = [2, 0, 1, 1, 1, 2];
+  return word[
+    num % 100 > 4 && num % 100 < 20 ? 2 : cases[num % 10 < 5 ? num % 10 : 5]
+  ];
+};
 
 Book.prototype._init = function () {
   this._$calc = $('.book__section[data-type="1"]', this._$component);
@@ -22,10 +31,12 @@ Book.prototype._init = function () {
     '.book__date-dropdown input[type="hidden"][date-iscalendar="1"]',
     this._$component
   );
-  this._datepicker = $(this._$input).datepicker().data("datepicker");
-  this._prepareDaty();
-  this._setCalc();
-  this._$calendar.on("click", this._setCalc.bind(this));
+  setTimeout(() => {
+    this._datepicker = this._$input.datepicker().data("datepicker");
+    this._prepareDaty();
+    this._setCalc();
+    this._$calendar.on("click", this._setCalc.bind(this));
+  }, 100);
 };
 
 Book.prototype._options = {
@@ -60,7 +71,7 @@ Book.prototype._setTotal = function (total = 0) {
     total = 0;
   }
   total = new Intl.NumberFormat("ru-RU", this._options).format(total);
-  this._$totalTotal.html(`${total}${this._unit}`);
+  this._$totalTotal.html(`${total}<span>${this._unit}</span>`);
 };
 
 Book.prototype._prepareDaty = function () {

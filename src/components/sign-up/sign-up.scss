@@ -9,4 +9,10 @@
     @include h1;
     letter-spacing: 1px;
   }
+
+  &__button-pay {
+    button {
+      padding-left: 4px;
+    }
+  }
 }

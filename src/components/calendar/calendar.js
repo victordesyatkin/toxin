@@ -101,7 +101,6 @@ Calendar.prototype._init = function () {
     onRenderCell: this._onRenderCell.bind(this),
     onShow: this._toggleVisibleMain.bind(this),
     onHide: this._toggleVisibleMain.bind(this),
-    startDate: new Date("08/07/2019"),
   };
   this._$input.datepicker(this._options);
   this._datepicker = this._$input.datepicker().data("datepicker");
