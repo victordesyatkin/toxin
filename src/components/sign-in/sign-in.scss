@@ -3,6 +3,7 @@
 .sign-in {
   width: 100%;
   padding: 40px 28px 32px 30px;
+  background-color: $color-first-white;
 
   &__title {
     @include h1;

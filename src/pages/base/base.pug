@@ -51,7 +51,7 @@ html
     title
       block title
   body
-  - let data = htmlWebpackPlugin.options.getData();
+    - let data = htmlWebpackPlugin.options.getData() || {};
     +layout()
       +layout__header()
         +layout__container({basis: 1440, align: 'center'})

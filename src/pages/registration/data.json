@@ -1,0 +1,282 @@
+{
+  "signUp": {
+    "title": "Регистрация аккаунта",
+    "firstname": {
+      "name": "firstName1",
+      "id": "firstname1",
+      "type": "text",
+      "label": "",
+      "placeholder": "Имя"
+    },
+    "lastName": {
+      "name": "lastName1",
+      "id": "lastName1",
+      "type": "text",
+      "label": "",
+      "placeholder": "Фамилия",
+      "stateText": ""
+    },
+    "gender": {
+      "buttons": [
+        {
+          "lable": "Мужчина",
+          "checked": true,
+          "name": "gender1",
+          "value": "male"
+        },
+        {
+          "lable": "Женщина",
+          "checked": false,
+          "name": "gender1",
+          "value": "female"
+        }
+      ]
+    },
+    "birthday": {
+      "name": "birthday1",
+      "id": "birthday1",
+      "type": "text",
+      "label": "дата рождения",
+      "placeholder": "ДД.ММ.ГГГГ"
+    },
+    "email": {
+      "name": "email1",
+      "id": "email1",
+      "type": "email",
+      "label": "данные для входа в сервис",
+      "placeholder": "Email"
+    },
+    "password": {
+      "name": "password1",
+      "id": "password1",
+      "type": "password",
+      "placeholder": "Пароль"
+    },
+    "submit": "",
+    "contribute": {
+      "buttons": [
+        {
+          "lable": "Получать спецпредложения",
+          "checked": false,
+          "name": "contribute"
+        }
+      ]
+    },
+    "pay": {
+      "buttons": [
+        {
+          "text": "Перейти к оплате",
+          "type": "button",
+          "disabled": false,
+          "value": "",
+          "view": 3,
+          "full": true,
+          "name": "pay1"
+        }
+      ]
+    },
+    "signIn": {
+      "content": "Уже есть аккаунт на Toxin",
+      "buttons": {
+        "buttons": [
+          {
+            "text": "войти",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 1,
+            "full": false,
+            "name": "signIn"
+          }
+        ]
+      }
+    }
+  },
+  "headerNotAuthorised": {
+    "nav": {
+      "items": [
+        {
+          "id": 1,
+          "label": "О нас",
+          "children": [],
+          "current": true,
+          "parent": 0
+        },
+        {
+          "id": 2,
+          "label": "Услуги",
+          "current": false,
+          "parent": 0,
+          "children": [
+            {
+              "id": 7,
+              "label": "",
+              "parent": 2,
+              "current": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "label": "Вакансии",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 4,
+          "label": "Новости",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 5,
+          "label": "Соглашения",
+          "parent": 0,
+          "current": false,
+          "children": [
+            {
+              "id": 6,
+              "label": "",
+              "parent": 5,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "authorised": false,
+      "buttons": {
+        "buttons": [
+          {
+            "text": "Войти",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 1,
+            "full": false
+          },
+          {
+            "text": "Зарегистрироваться",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 0,
+            "full": false
+          }
+        ]
+      }
+    }
+  },
+  "footer": {
+    "title": "title title",
+    "info": {
+      "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    },
+    "items": [
+      {
+        "header": "навигация",
+        "items": [
+          {
+            "href": "#",
+            "title": "О нас",
+            "content": "О нас"
+          },
+          {
+            "href": "#",
+            "title": "Новости",
+            "content": "Новости"
+          },
+          {
+            "href": "#",
+            "title": "Служба поддержки",
+            "content": "Служба поддержки"
+          },
+          {
+            "href": "#",
+            "title": "Услуги",
+            "content": "Услуги"
+          }
+        ]
+      },
+      {
+        "header": "о нас",
+        "items": [
+          {
+            "href": "#",
+            "title": "О сервисе",
+            "content": "О сервисе"
+          },
+          {
+            "href": "#",
+            "title": "Наша команда",
+            "content": "Наша команда"
+          },
+          {
+            "href": "#",
+            "title": "Вакансии",
+            "content": "Вакансии"
+          },
+          {
+            "href": "#",
+            "title": "Инвесторы",
+            "content": "Инвесторы "
+          }
+        ]
+      },
+      {
+        "header": "Служба поддержки",
+        "items": [
+          {
+            "href": "#",
+            "title": "Соглашения",
+            "content": "Соглашения"
+          },
+          {
+            "href": "#",
+            "title": "Сообщества",
+            "content": "Сообщества"
+          },
+          {
+            "href": "#",
+            "title": "Связь с нами",
+            "content": "Связь с нами"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
+      "showLogo": false,
+      "items": [
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-t"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-f"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-i"
+        }
+      ]
+    },
+    "subscibe": {
+      "header": "Подписка",
+      "description": "Получайте специальные предложения и новости сервиса",
+      "field": {
+        "name": "footer_subscription_email",
+        "id": "footer_subscription_email",
+        "type": "email",
+        "placeholder": "Email",
+        "button": { "visible": true }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+extends ../base/base
+
+
+block title
+    | Registration
+block main
+    main.registration
+        - let data = htmlWebpackPlugin.options.getData();
+            block registration-background-wrapper
+                - let src = require('../../pages/registration/img/image_4.png').default;
+                .registration__background
+                    img(
+                        src=src
+                    )
+            block registration-sign-wrapper
+                section.registration__sign           
+                    block registration__sign 
+                        +card
+                            +sign-up(data.signUp)
+
