@@ -7,5 +7,6 @@ mixin card-header(props = {})
                 span.card-header__number=number
                 span.card-header__suite=suite
             .card-header__price
-                |#{price}!{unit}
+                span.card-header__price-content #{price}
+                span !{unit}
                 span.card-header__duration=duration

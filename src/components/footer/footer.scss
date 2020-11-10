@@ -77,6 +77,27 @@
   }
 }
 
+@media (min-width: 1441px) {
+  .footer {
+    .footer__up-wrapper {
+      display: flex;
+      justify-content: center;
+
+      .footer__up {
+        width: 1440px;
+      }
+    }
+
+    .copyright {
+      justify-content: center;
+
+      .copyright__content {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
 @media (max-width: 1439px) {
   .footer {
     .footer__up-wrapper {

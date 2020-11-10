@@ -52,7 +52,14 @@ $parent: ".expandable";
     @include expand;
   }
 
-  #{$parent}_expand {
+  &_expanded {
+    #{$parent}__body {
+      display: block;
+    }
     @include expand;
   }
+}
+
+#{$parent}_expand {
+  @include expand;
 }

@@ -21,11 +21,22 @@ Slider.prototype._init = function () {
   this._$next.on("click", this._onClickControl.bind(this, 2));
   this._$image = $(".slider__section-images img", this._$component);
   this._index = 0;
+  this._$points.on("click", this._onClickPoint.bind(this));
   this._setImage(this._index);
   this._setPoint(this._index);
 };
 
 Slider.prototype._types = [1, 2];
+
+Slider.prototype._onClickPoint = function (e) {
+  const index = get($(e.target).data(), ["index"]);
+  if (typeof index !== "undefined" && this.index !== index) {
+    this._cleanPoint(this._index);
+    this._index = index;
+    this._setImage(this._index);
+    this._setPoint(this._index);
+  }
+};
 
 Slider.prototype._onClickControl = function (type = 0) {
   if (this._types.indexOf(type) === -1) {

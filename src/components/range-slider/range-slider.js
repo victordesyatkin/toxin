@@ -21,25 +21,27 @@ class RangeSlider {
     this._fullTrack = this._component.querySelector(
       ".range-slider__section-body"
     );
-    this._pointWidth = parseFloat(this._startPoint.offsetWidth);
-    this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
-    this._track = this._component.querySelector(".range-slider__track");
-    this._info = this._component.querySelector(".range-slider__info");
-    this._type = "";
-    this._options = JSON.parse(this._component.dataset.options);
-    this._min = this._options.min;
-    this._max = this._options.max;
-    this._separator = this._options.separator;
-    this._calculateK();
-    this._shiftX = this._component.getBoundingClientRect().left;
-    this._attachEventHandlers();
-    this._setInputs(this._options.start, this._options.end);
-    this._setInfo();
-    this._setPoints({
-      start: this._calculateCoordinate(this._options.start),
-      end: this._calculateCoordinate(this._options.end),
-    });
-    this._renderTrack();
+    setTimeout(() => {
+      this._pointWidth = parseFloat(this._startPoint.offsetWidth);
+      this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
+      this._track = this._component.querySelector(".range-slider__track");
+      this._info = this._component.querySelector(".range-slider__info");
+      this._type = "";
+      this._options = JSON.parse(this._component.dataset.options);
+      this._min = this._options.min;
+      this._max = this._options.max;
+      this._separator = this._options.separator;
+      this._calculateK();
+      this._shiftX = this._component.getBoundingClientRect().left;
+      this._attachEventHandlers();
+      this._setInputs(this._options.start, this._options.end);
+      this._setInfo();
+      this._setPoints({
+        start: this._calculateCoordinate(this._options.start),
+        end: this._calculateCoordinate(this._options.end),
+      });
+      this._renderTrack();
+    }, 500);
   }
 }
 

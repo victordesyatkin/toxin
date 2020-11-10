@@ -1,7 +1,7 @@
 mixin expandable(o = {})
     -
-        let { label, forcedExpanded = false } = o || {};
-        let classes = 'expandable' + (forcedExpanded ? ' expandable_forced-expanded' : '')
+        let { label, forcedExpanded = false, expanded = false } = o || {};
+        let classes = 'expandable' + (forcedExpanded ? ' expandable_forced-expanded' : '') + (expanded ? ' expandable_expanded' : '' )
     div(
         class=classes
     )

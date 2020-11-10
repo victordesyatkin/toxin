@@ -1,0 +1,32 @@
+extends ../base/base
+
+block title
+    | Search room/Filter
+block main 
+    .search-room-filter
+        article.search-room-filter__article
+            section.search-room-filter__section.search-room-filter__panel
+                .search-room-filter__block.search-room-filter_margin-bottom-21
+                    +filter-date-dropdown(data.filterDateDropdown1)
+                .search-room-filter__block.search-room-filter_margin-bottom-29
+                    +dropdown(data.dropdown1)
+                .search-room-filter__block.search-room-filter_margin-bottom-25
+                    +range-slider(data.rangeSlider1)
+                    .search-room-filter__description Стоимость за сутки пребывания в номере
+                .search-room-filter__block.search-room-filter_margin-bottom-31
+                    +checkbox-buttons(data.checkboxButtons1)
+                .search-room-filter__block.search-room-filter_margin-bottom-30
+                    +rich-checkbox-buttons(data.richCheckboxButtons1)
+                .search-room-filter__block.search-room-filter_margin-bottom-30
+                    +dropdown(data.dropdown2)
+                .search-room-filter__block
+                    +expandable-checkbox-list(data.expandableCheckboxList1)
+            section.search-room-filter__section
+                h1.search-room-filter__title Номера, которые мы для вас подобрали
+                .search-room-filter__sliders-list.search-room-filter_margin-bottom-47
+                    each slider in data.sliders
+                        .search-room-filter__slider
+                            +card-slider(slider)
+                .search-room-filter__pagination
+                    +pagination(data.pagination)
+

@@ -1,13 +1,23 @@
 mixin slider(props = {})
     -
         
-        let { images = []} = props || {};
+        let { images = [], control = true } = props || {};
         let
             n = 0;
             length = images.length;
             defaultSrc = {
                 1: require('../../components/slider/img/image_1.png').default,
                 2: require('../../components/slider/img/image_2.png').default,
+                3: require('../../components/slider/img/image_3.png').default,
+                4: require('../../components/slider/img/image_4.png').default,
+                5: require('../../components/slider/img/image_5.png').default,
+                6: require('../../components/slider/img/image_6.png').default,
+                7: require('../../components/slider/img/image_7.png').default,
+                8: require('../../components/slider/img/image_8.png').default,
+                9: require('../../components/slider/img/image_9.png').default,
+                10: require('../../components/slider/img/image_10.png').default,
+                11: require('../../components/slider/img/image_11.png').default,
+                12: require('../../components/slider/img/image_12.png').default,
             }
     .slider(
         data-props=props,
@@ -20,14 +30,15 @@ mixin slider(props = {})
                     alt = ''
                 )
         if (length !== 0)
-            .slider__control.slider__control_left.icon-expand_more_prev(
-                data-type = 1
-            )
-            .slider__control.slider__control_right.icon-expand_more_prev(
-                data-type = 2
-            )
+            if (control === true)
+                .slider__control.slider__control_left.icon-expand_more_prev(
+                    data-type = 1
+                )
+                .slider__control.slider__control_right.icon-expand_more_prev(
+                    data-type = 2
+                )
             .slider__pagination
                 while n < length
-                    .slider__point
+                    .slider__point(data-index=n)
                     -
                         ++n

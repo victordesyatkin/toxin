@@ -8,6 +8,10 @@ function renderComponent() {
         if ($(this).hasClass("expandable_forced-expanded")) {
           return false;
         }
+        if ($(this).hasClass("expandable_expanded")) {
+          $(this).removeClass("expandable_expanded");
+          return false;
+        }
         $(this).toggleClass("expandable_expand");
         $(".expandable__body", this).fadeToggle(1000);
       }.bind(this)
