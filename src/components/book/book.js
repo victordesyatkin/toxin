@@ -61,7 +61,9 @@ Book.prototype._setCalc = function () {
   this._setTotal(total);
   price = new Intl.NumberFormat("ru-RU", this._options).format(price);
   total = new Intl.NumberFormat("ru-RU", this._options).format(total);
-  this._$calcInfo.html(`${price}${this._unit} x ${count} суток`);
+  this._$calcInfo.html(
+    `${price}${this._unit} x ${count} ${this._wordForm(count, this._words)}`
+  );
   this._$calcTotal.html(`${total}${this._unit}`);
 };
 
