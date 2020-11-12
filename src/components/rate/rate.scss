@@ -1,0 +1,73 @@
+@import "~theme/variables.scss";
+
+.rate {
+  width: 100%;
+  background-color: white;
+
+  &__title {
+    @include h2;
+    font-size: 19px;
+    line-height: 23.75px;
+    margin-bottom: 21px;
+  }
+
+  &__circle {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 31px;
+  }
+
+  &__dummy {
+    margin-top: 100%;
+  }
+
+  &__circle-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__canvas {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__total {
+    @include h1;
+    color: $color-purple;
+  }
+
+  &__unit {
+    @include h3;
+    color: $color-purple;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  &__vote-section {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  &__vote {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__vote-mark {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+}

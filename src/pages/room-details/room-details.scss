@@ -1,0 +1,10 @@
+@import "~theme/variables.scss";
+
+.room-details {
+  width: 100%;
+  padding: 50px;
+
+  &__rate {
+    max-width: 500px;
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "headerNotAuthorised": {
+    "nav": {
+      "items": [
+        {
+          "id": 1,
+          "label": "О нас",
+          "children": [],
+          "current": true,
+          "parent": 0
+        },
+        {
+          "id": 2,
+          "label": "Услуги",
+          "current": false,
+          "parent": 0,
+          "children": [
+            {
+              "id": 7,
+              "label": "",
+              "parent": 2,
+              "current": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "label": "Вакансии",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 4,
+          "label": "Новости",
+          "children": [],
+          "current": false,
+          "parent": 0
+        },
+        {
+          "id": 5,
+          "label": "Соглашения",
+          "parent": 0,
+          "current": false,
+          "children": [
+            {
+              "id": 6,
+              "label": "",
+              "parent": 5,
+              "children": []
+            }
+          ]
+        }
+      ],
+      "authorised": false,
+      "buttons": {
+        "buttons": [
+          {
+            "text": "Войти",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 1,
+            "full": false
+          },
+          {
+            "text": "Зарегистрироваться",
+            "type": "button",
+            "disabled": false,
+            "value": "",
+            "view": 0,
+            "full": false
+          }
+        ]
+      }
+    }
+  },
+  "footer": {
+    "title": "title title",
+    "info": {
+      "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    },
+    "items": [
+      {
+        "header": "навигация",
+        "items": [
+          {
+            "href": "#",
+            "title": "О нас",
+            "content": "О нас"
+          },
+          {
+            "href": "#",
+            "title": "Новости",
+            "content": "Новости"
+          },
+          {
+            "href": "#",
+            "title": "Служба поддержки",
+            "content": "Служба поддержки"
+          },
+          {
+            "href": "#",
+            "title": "Услуги",
+            "content": "Услуги"
+          }
+        ]
+      },
+      {
+        "header": "о нас",
+        "items": [
+          {
+            "href": "#",
+            "title": "О сервисе",
+            "content": "О сервисе"
+          },
+          {
+            "href": "#",
+            "title": "Наша команда",
+            "content": "Наша команда"
+          },
+          {
+            "href": "#",
+            "title": "Вакансии",
+            "content": "Вакансии"
+          },
+          {
+            "href": "#",
+            "title": "Инвесторы",
+            "content": "Инвесторы "
+          }
+        ]
+      },
+      {
+        "header": "Служба поддержки",
+        "items": [
+          {
+            "href": "#",
+            "title": "Соглашения",
+            "content": "Соглашения"
+          },
+          {
+            "href": "#",
+            "title": "Сообщества",
+            "content": "Сообщества"
+          },
+          {
+            "href": "#",
+            "title": "Связь с нами",
+            "content": "Связь с нами"
+          }
+        ]
+      }
+    ],
+    "copyright": {
+      "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
+      "showLogo": false,
+      "items": [
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-t"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-f"
+        },
+        {
+          "href": "#",
+          "title": "",
+          "content": "icon-i"
+        }
+      ]
+    },
+    "subscibe": {
+      "header": "Подписка",
+      "description": "Получайте специальные предложения и новости сервиса",
+      "field": {
+        "name": "footer_subscription_email",
+        "id": "footer_subscription_email",
+        "type": "email",
+        "placeholder": "Email",
+        "button": { "visible": true }
+      }
+    }
+  },
+  "rate": {
+    "title": "Впечатления от номера",
+    "total": 260,
+    "votes": [
+      {
+          "label": "Великолепно",
+          "count": 130,
+          "background": "linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)",
+          "linearGradient": {
+            "direction": "180deg",
+            "colors": [
+              {
+                "stop": 0,
+                "color": "#FFE39C"
+              },
+              {
+                "stop": 1,
+                "color": "#FFBA9C"
+              }
+            ]
+          },
+          "order": 3
+      },
+      {
+        "label": "Хорошо",
+        "count": 65,
+        "background": "linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)",
+        "linearGradient": {
+          "direction": "180deg",
+          "colors": [
+            {
+              "stop": 0,
+              "color": "#6FCF97"
+            },
+            {
+              "stop": 1,
+              "color": "#66D2EA"
+            }
+          ]
+        },
+        "order": 2
+      },
+      {
+        "label": "Удовлетворительно",
+        "count": 65,
+        "background": "linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)",
+        "linearGradient": {
+          "direction": "180deg",
+          "colors": [
+            {
+              "stop": 0,
+              "color": "#BC9CFF"
+            },
+            {
+              "stop": 1,
+              "color": "#8BA4F9"
+            }
+          ]
+        },
+        "order": 1
+      },
+      {
+        "label": "Разочарован",
+        "count": 0,
+        "background": "linear-gradient(180deg, #919191 0%, #3D4975 100%)",
+        "color": "#3D4975",
+        "order": 4
+      }
+    ],
+    "lineWidth": 4,
+    "separator": {
+      "color": "white",
+      "count": 1 
+    },
+    "units": ["голос", "голоса", "голосов"]
+  }
+}

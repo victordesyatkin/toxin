@@ -1,0 +1,9 @@
+extends ../base/base
+
+block title
+    | Room details
+block main
+    article.room-details
+        .room-details__rate
+            - let data = htmlWebpackPlugin.options.getData();
+            +rate(data.rate)
