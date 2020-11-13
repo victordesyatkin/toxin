@@ -1,17 +1,22 @@
 mixin comments(o = {})
     -
         let
-            {lable = '', count = '', comments = [] } = o;
+            {lable = '', count = '', comments = [], units = [] } = o;
             sources = {
                 'male': require('../../components/comments/img/image.png').default,
                 'female': require('../../components/comments/img/image 4.png').default,
             }
-    .comments
+    .comments(
+        data-count=count                        
+        data-units=units
+    )
         if (lable || count)
             .comments__header
                 .comments__lable
                     h2=lable
-                .comments__count=count
+                .comments__count
+                    span.comments__count-value=count
+                    span.comments__count-units
         .comments__sections
             each comment in comments
                 -

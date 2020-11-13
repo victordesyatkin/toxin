@@ -20,7 +20,6 @@ Rate.prototype._init = function () {
 };
 
 Rate.prototype._resizeCanvas = function () {
-  console.log("_resizeCanvas");
   this._initCircle();
   this._initCanvas();
   this._initCircleParams();

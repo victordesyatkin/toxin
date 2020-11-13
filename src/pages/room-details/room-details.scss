@@ -1,10 +1,287 @@
 @import "~theme/variables.scss";
 
+.layout__container_center {
+  overflow: hidden;
+}
+
 .room-details {
   width: 100%;
-  padding: 50px;
 
   &__rate {
     max-width: 500px;
+    .rate {
+      padding-top: 2px;
+      padding-left: 1px;
+    }
+  }
+
+  &__images-section {
+    display: flex;
+    width: 100%;
+    height: 485px;
+    overflow: hidden;
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    width: 459px;
+    overflow: hidden;
+  }
+
+  &__image1 {
+    width: 1013px;
+    height: 100%;
+  }
+
+  &__image2 {
+    width: 100%;
+    height: 50%;
+  }
+
+  &__image3 {
+    width: 100%;
+    height: 50%;
+  }
+
+  &__image1,
+  &__image2,
+  &__image3 {
+    overflow: hidden;
+  }
+
+  &__main-section {
+    padding: 68px 125px 70px 139px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__info-section {
+    width: 100%;
+    display: flex;
+    margin-bottom: 14px;
+
+    .info__sections {
+      padding-top: 8px;
+      padding-left: 2px;
+    }
+  }
+
+  &__info {
+    margin-right: 105px;
+  }
+
+  &__comments-section {
+    margin-bottom: 30px;
+
+    .comments__header {
+      margin-top: -2px;
+      position: relative;
+      padding-right: 90px;
+    }
+
+    .comments__sections {
+      margin-left: -2px;
+    }
+
+    .comments__section:nth-child(2) {
+      margin-top: 27px;
+    }
+
+    .comments__count {
+      position: absolute;
+      top: 6px;
+      right: 0;
+    }
+  }
+
+  &__rules-section {
+    display: flex;
+  }
+
+  &__rules {
+    margin-right: 104px;
+    width: 263px;
+
+    .bullet-list {
+      padding-top: 2px;
+    }
+
+    .bullet-list__lable {
+      @include h2;
+      text-transform: capitalize;
+      padding-left: 21px;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__cancel {
+    width: 50%;
+    padding-right: 25px;
+  }
+
+  &__cancel-title {
+    @include h2;
+    margin-bottom: 20px;
+  }
+
+  &__section-first {
+    margin-right: 70px;
+  }
+
+  &__section-second {
+    width: 380px;
+    height: 511px;
+    margin-top: 2px;
+  }
+
+  &__slider {
+    display: none;
+  }
+}
+
+.footer__up {
+  padding-top: 95px;
+}
+
+@media (min-width: 1441px) {
+  .room-details {
+    &__images {
+      width: 29%;
+    }
+
+    &__image1 {
+      width: 71%;
+    }
+
+    &__image1,
+    &__image2,
+    &__image3 {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .room-details {
+    &__images-section {
+      height: 359px;
+    }
+
+    &__images {
+      width: 29%;
+    }
+
+    &__image1 {
+      width: 71%;
+    }
+
+    &__image1,
+    &__image2,
+    &__image3 {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .room-details {
+    &__main-section {
+      padding: 15px;
+      flex-direction: column;
+    }
+
+    &__section-first {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    &__section-second {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .buttons__items.buttons__items_full.buttons__view.buttons__view_3 {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .room-details {
+    &__images-section {
+      height: 230px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .room-details {
+    &__main-section {
+      padding: 0;
+    }
+
+    &__section-first {
+      padding: 15px;
+    }
+
+    .card {
+      width: 100%;
+      padding: 15px;
+    }
+
+    .book {
+      padding: 0;
+    }
+
+    &__info-section {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__rules-section {
+      flex-direction: column;
+    }
+
+    &__rules {
+      margin: 0;
+      width: 100%;
+
+      .bullet-list__lable {
+        padding-left: 0;
+      }
+    }
+
+    &__cancel {
+      width: 100%;
+      padding-right: 0;
+    }
+
+    &__images-section {
+      height: 150px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .rate__vote-section {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .rate__circle {
+    margin: 0;
+    margin-bottom: 10px;
   }
 }

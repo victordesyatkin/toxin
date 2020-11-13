@@ -4,8 +4,7 @@ mixin bullet-list(o = {})
             {lable = '', items = []} = o;
     .bullet-list
         if (lable)
-            .bullet-list__lable
-                h3=lable
+            .bullet-list__lable=lable
         .bullet-list__list
             each item in items
                 .bullet-list__item

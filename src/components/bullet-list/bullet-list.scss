@@ -3,6 +3,7 @@
 .bullet-list {
   &__lable {
     margin-bottom: 16px;
+    @include h3;
   }
 
   &__list {
