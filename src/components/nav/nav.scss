@@ -12,6 +12,10 @@
     align-items: center;
     height: 100%;
 
+    & > div:first-child {
+      margin-right: 22px;
+    }
+
     & > div {
       margin-right: 20px;
     }

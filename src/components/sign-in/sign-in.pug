@@ -3,7 +3,7 @@ mixin sign-in(props = {})
         let { title = '', email = {}, password = {}, signIn = {}, signUp = {} } = props || {}; 
     .sign-in
         if (title) 
-            .sign-in__title.margin-bottom-14
+            .sign-in__title.sign-in_margin-bottom-16
                 |#{title}
         .sign-in__email.margin-bottom-5
             +input(email)

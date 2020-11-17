@@ -10,20 +10,21 @@
 
   &__info {
     width: 100%;
-    padding: 18px 23px 8px 19px;
+    padding: 16px 18px 8px 19px;
 
     .card-header__number-info {
       font-size: 14px;
     }
     .card-header__number {
       font-size: 19px;
+      margin: 0 2px 0 5px;
     }
     .card-header__suite {
       font-size: 12px;
     }
 
     .card-header__price {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
@@ -32,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 9px 19px 10px 20px;
+    padding: 9px 20px 10px 20px;
 
     .rate-button__button {
       margin: 0;

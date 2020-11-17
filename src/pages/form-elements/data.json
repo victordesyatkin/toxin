@@ -13,7 +13,7 @@
     "type": "text",
     "label": "text field",
     "placeholder": "This is pretty awesome",
-    "stateText": "hover/focus",
+    "stateText": "hover / focus",
     "state": "hover"
   },
   "dropdown1": {
@@ -191,7 +191,7 @@
       "forcedExpand": true
     },
     "name": "guests1",
-    "stateText": "Default",
+    "stateText": "",
     "type": "text",
     "label": "dropdown",
     "placeholder": "Сколько гостей",

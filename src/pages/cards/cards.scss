@@ -23,6 +23,18 @@
     width: 320px;
   }
 
+  &_width-273 {
+    width: 273px;
+  }
+
+  &_margin-left--2 {
+    @include margin(-2, "left");
+  }
+
+  &_margin-right-40 {
+    @include margin(40, "right");
+  }
+
   .calendar_relative {
     position: relative;
     border: none;

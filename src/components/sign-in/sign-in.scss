@@ -2,12 +2,24 @@
 
 .sign-in {
   width: 100%;
-  padding: 37px 28px 32px 30px;
+  padding: 38px 30px 32px 28px;
   background-color: $color-first-white;
 
   &__title {
     @include h1;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
+  }
+
+  &_margin-bottom-16 {
+    @include margin(16, "bottom");
+  }
+
+  &__button-sign-in {
+    .buttons__items.buttons__items_full.buttons__view.buttons__view_3 {
+      button {
+        padding-right: 0;
+      }
+    }
   }
 
   .card-footer {

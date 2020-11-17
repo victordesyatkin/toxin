@@ -11,6 +11,8 @@
   max-width: #{$w}px;
 }
 
+$parent: ".form-elements";
+
 .form-elements {
   //outline: 1px solid black;
   width: 100%;
@@ -26,7 +28,7 @@
   }
 
   &-block1:not(:first-child) {
-    margin-top: 20px;
+    margin-top: 22px;
   }
 
   &-block2 {
@@ -43,8 +45,35 @@
   }
 
   &-section {
-    //outline: 1px solid red;
     min-width: 320px;
+  }
+
+  &_margin-top-42 {
+    @include margin(42, "top");
+  }
+
+  #{$parent}_margin-top-41 {
+    @include margin(41, "top");
+  }
+
+  #{$parent}_margin-top-46 {
+    @include margin(46, "top");
+  }
+
+  &_margin-top-102 {
+    @include margin(102, "top");
+  }
+
+  #{$parent}_margin-top-199 {
+    @include margin(199, "top");
+  }
+
+  #{$parent}_margin-bottom-234 {
+    @include margin(234, "bottom");
+  }
+
+  #{$parent}_margin-bottom-258 {
+    @include margin(258, "bottom");
   }
 
   .header-ui-kit {
@@ -52,6 +81,61 @@
     width: 100%;
     height: 100%;
   }
+
+  //TODO START
+
+  .rate-button__label {
+    margin-bottom: 21px;
+  }
+
+  .dropdown__main-control {
+    padding: 24px 7px 12px 13px;
+  }
+
+  .comments__date {
+    margin-top: 2px;
+  }
+
+  .comments__like-button {
+    margin-top: 13px;
+  }
+
+  .range-slider__section-head {
+    padding-top: 1px;
+  }
+
+  .buttons__view_1 .buttons__item {
+    padding: 0;
+  }
+
+  .comments__full-name {
+    letter-spacing: 0.39px;
+  }
+
+  .bullet-list__lable {
+    margin-bottom: 14px;
+  }
+
+  .bullet-list__item {
+    margin-bottom: 11px;
+    padding-left: 20px;
+  }
+
+  .buttons__items.buttons__items_full.buttons__view.buttons__view_2 {
+    .buttons__item:last-child {
+      margin-right: 2px;
+    }
+  }
+
+  .checkbox-buttons.button-lable.rich-checkbox-buttons.button-lable {
+    letter-spacing: 0.39px;
+  }
+
+  .info__title {
+    letter-spacing: 0.39px;
+  }
+
+  //TODO END
 
   .margin-top-198 {
     @include margin(198, "top");
@@ -286,14 +370,6 @@ $margin-right: size(427);
     &-section {
       margin-bottom: 0px;
     }
-
-    // .section-second {
-    //   margin-left: 0;
-    // }
-
-    // .section-third {
-    //   margin-left: 0;
-    // }
   }
 }
 

@@ -268,12 +268,13 @@
     },
     "slider2": {
     "slider": {
-        "images": [{"src": 2}, {"src": 1}, {"src": 2}, {"src": 1}]
+      "images": [{ "src": 2 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+      "control": false
     },
     "info": {
         "number": "840",
         "suite": "",
-        "price": "9 990",
+        "price": "9 900",
         "duration": "в сутки",
         "unit": "&#8381"
     },

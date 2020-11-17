@@ -25,7 +25,7 @@ mixin input(o = {})
         .input__label
           label.input__label-text(for=name)=label
       if stateText
-        h3.input__stateText=stateText
+        .input__state-text=stateText
     div(class=classesInputSection)
         input(
           id = name

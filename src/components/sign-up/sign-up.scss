@@ -7,7 +7,19 @@
 
   &__title {
     @include h1;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
+  }
+
+  &_margin-bottom-16 {
+    @include margin(16, "bottom");
+  }
+
+  &_margin-bottom-11 {
+    @include margin(11, "bottom");
+  }
+
+  &_margin-bottom-7 {
+    @include margin(7, "bottom");
   }
 
   &__button-pay {

@@ -15,7 +15,7 @@ block main
             .cards__section.width-380
                 +card
                     +sign-up(data.signUp)  
-        section.section__container.margin-right-41
+        section.section__container.cards_margin-right-40
             .cards__section.width-380.margin-bottom-39
                 +card
                     +book(data.book)
@@ -26,8 +26,8 @@ block main
             .cards__section.width-320.margin-bottom-39
                 +card({className: 'cards__calendar'})
                     +calendar(data.calendar)
-            .cards__section.width-270.margin-bottom-47
+            .cards__section.cards_width-273.margin-bottom-47.cards_margin-left--2
                 +card-slider(data.slider1)
-            .cards__section.width-270
+            .cards__section.cards_width-273.cards_margin-left--2
                 +card-slider(data.slider2)
 block footer

@@ -14,11 +14,15 @@
     margin-bottom: 5px;
   }
 
-  &__stateText {
+  &__state-text {
+    @include h3;
     color: $color-third-dark;
     font-family: $font-family-second-regular;
     font-weight: normal;
     text-transform: uppercase;
+    position: absolute;
+    right: 0px;
+    top: -2px;
   }
 
   &__section {

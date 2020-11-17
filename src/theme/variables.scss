@@ -43,12 +43,12 @@ $color-first-white: $color-white-shade100;
 
 $font-size-body: 14px;
 
-$font-family-first-regular: "open_sansregular";
-$font-family-first-bold: "open_sansbold";
+$font-family-first-regular: "Conv_Montserrat-Regular";
+$font-family-first-bold: "Conv_Montserrat-Bold";
 $font-family-second-regular: "Conv_Montserrat-Regular";
 $font-family-second-bold: "Conv_Montserrat-Bold";
-$font-family-third-regular: "Conv_Quicksand-Regular";
-$font-family-third-bold: "Conv_Quicksand-Bold";
+$font-family-third-regular: "Conv_Montserrat-Regular";
+$font-family-third-bold: "Conv_Montserrat-Bold";
 
 $background-color-first: #e5e5e5;
 
@@ -91,27 +91,30 @@ $border-first-color: rgba(0, 0, 0, 0.12);
 @mixin base-h {
   font-family: $font-family-first-bold, sans-serif;
   font-style: normal;
-  font-weight: bold;
+  font-weight: normal;
   color: $color-first-dark;
 }
 
 @mixin h1 {
   @include base-h;
   font-size: 1.71rem;
-  line-height: normal;
+  line-height: 29.26px;
+  font-style: normal;
 }
 
 @mixin h2 {
   @include base-h;
   font-size: 1.36rem;
-  line-height: normal;
+  line-height: 23.16px;
+  font-style: normal;
 }
 
 @mixin h3 {
   @include base-h;
   font-size: 0.85rem;
   text-transform: uppercase;
-  line-height: normal;
+  line-height: 14.63px;
+  font-weight: normal;
   font-family: $font-family-second-bold, sans-serif;
 }
 

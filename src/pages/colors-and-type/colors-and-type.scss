@@ -7,7 +7,7 @@
 
   &__colors {
     max-width: 18.75vw;
-    min-width: 270px;
+    min-width: 285px;
     & > div {
       margin-top: 20px;
     }
@@ -20,7 +20,7 @@
 
   &__type {
     min-width: 290px;
-    max-width: 403px;
+    max-width: 442px;
 
     & > div {
       margin-top: 50px;
@@ -30,15 +30,23 @@
       margin-top: 0;
     }
   }
+
+  .font-sample:last-child {
+    margin-top: 49px;
+
+    .font-sample__section-info {
+      padding-top: 0;
+    }
+  }
 }
 
 @function size($px) {
   @return #{$px * 100 / 1440}vw;
 }
 $padding-top: size(67);
-$padding-right: size(190);
+$padding-right: size(139);
 $padding-left: size(150);
-$margin-right: size(427);
+$margin-right: size(411);
 
 @media (max-width: 2561px) and (min-width: $xl + 1) {
   .colors-and-type {
