@@ -1,5 +1,7 @@
 @import "~theme/variables.scss";
 
+$parent: ".rich-checkbox-buttons";
+
 .rich-checkbox-buttons {
   &__lable {
     margin-bottom: 16px;
@@ -9,6 +11,7 @@
     //margin-top: 2px;
     font-weight: bold;
     color: $color-second-dark;
+    letter-spacing: 0.39px;
   }
 
   &__button {
@@ -24,5 +27,10 @@
     margin-top: 5px;
     font-size: 12px;
     line-height: 14px;
+  }
+  &__button:first-child {
+    #{$parent}__info {
+      padding-right: 34px;
+    }
   }
 }

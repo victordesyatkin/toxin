@@ -5,18 +5,19 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  //justify-content: center;
   align-items: center;
   background: #ffffff;
   box-shadow: 0px 10px 20px $color-dark-shade5;
 
   &__logo {
-    margin-bottom: 17px;
+    margin-top: 121px;
     text-align: center;
   }
 
   &__content {
     text-align: center;
+    margin-bottom: 17px;
   }
 
   &__social-items {
@@ -28,7 +29,7 @@
     width: 24px;
     height: 24px;
     margin-right: 20px;
-    font-size: 20px;
+    font-size: 21px;
   }
 
   &__social-item-link {

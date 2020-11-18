@@ -30,7 +30,13 @@
     .nav__control-section {
       .buttons__section-body {
         .buttons__items:first-child {
-          margin-right: 17px;
+          margin-right: 18px;
+
+          .buttons__item {
+            button {
+              padding-left: 18px;
+            }
+          }
         }
       }
     }

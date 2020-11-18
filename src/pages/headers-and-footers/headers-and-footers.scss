@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: #e5e5e5;
+  background: $color-first-white;
 
   &__section:first-child {
     margin-top: 63px;
@@ -21,15 +21,35 @@
       height: 367px;
 
       .copyright__logo {
-        margin-bottom: 20px;
+        margin-bottom: 17px;
       }
 
       .copyright__content {
-        margin-bottom: 21px;
+        margin-bottom: 23px;
       }
 
       .copyright__social-items {
         margin-bottom: 9px;
+        display: block;
+        position: relative;
+        width: 137px;
+
+        .copyright__social-item {
+          position: absolute;
+        }
+
+        .copyright__social-item:first-child {
+          left: 12px;
+          top: -1px;
+        }
+
+        .copyright__social-item:nth-child(2) {
+          left: 58px;
+        }
+
+        .copyright__social-item:last-child {
+          right: 11px;
+        }
       }
     }
   }

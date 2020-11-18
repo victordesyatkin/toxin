@@ -32,7 +32,7 @@
     flex-grow: 1;
 
     .list-links {
-      padding-top: 4px;
+      padding-top: 6px;
     }
 
     .list-links:first-child {
@@ -50,11 +50,11 @@
 
   &__subscibe-header {
     @include h3;
-    margin-bottom: 18px;
+    margin-bottom: 21px;
   }
 
   &__subscibe-description {
-    margin-bottom: 19px;
+    margin-bottom: 17px;
   }
 
   &__up-wrapper {
@@ -62,13 +62,20 @@
   }
 
   &__down {
+    .copyright__social-item:first-child {
+      margin-right: 21px;
+    }
+
+    .copyright__social-item:last-child {
+      margin-top: 1px;
+    }
   }
 
   &__copyright {
     .copyright {
       justify-content: space-between;
       flex-direction: row;
-      padding: 25px 124px 26px 139px;
+      padding: 25px 123px 22px 140px;
     }
 
     .copyright__content {

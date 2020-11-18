@@ -4,6 +4,7 @@
   display: flex;
   flex-basis: 100%;
   flex-grow: 1;
+  background-color: $color-first-white;
 
   &__colors {
     max-width: 18.75vw;
