@@ -24,6 +24,52 @@
     }
   }
 
+  .checkbox-buttons__label {
+    margin-bottom: 17px;
+  }
+
+  .checkbox-buttons__checkmark {
+    margin-right: 10px;
+  }
+
+  .checkbox-buttons__button:last-child {
+    padding-right: 22px;
+  }
+
+  .rich-checkbox-buttons__lable {
+    margin-bottom: 18px;
+  }
+
+  .rich-checkbox-buttons__button:last-child {
+    .rich-checkbox-buttons__info {
+      padding-right: 10px;
+    }
+  }
+
+  .search-room-filter__panel {
+    margin-right: 58px;
+  }
+
+  .search-room-filter__pagination .pagination {
+    margin-left: -7px;
+  }
+
+  .search-room-filter__title {
+    padding-left: 1px;
+  }
+
+  .card-slider__info .card-header__number {
+    margin: 0 7px 0 4px;
+  }
+
+  .card-slider__score {
+    padding: 9px 19px 10px 20px;
+  }
+
+  .card-slider__comments-content {
+    margin-left: 4px;
+  }
+
   &__title {
     @include h1;
     margin-bottom: 19px;
@@ -79,6 +125,10 @@
 
   &_margin-bottom-40 {
     @include margin(40, "bottom");
+  }
+
+  &_margin-bottom-32 {
+    @include margin(32, "bottom");
   }
 
   &_margin-bottom-31 {

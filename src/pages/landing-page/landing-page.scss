@@ -44,6 +44,14 @@
     right: 119px;
     text-align: right;
   }
+
+  &__footer {
+    width: 100%;
+
+    .copyright {
+      padding: 23px 123px 22px 139px;
+    }
+  }
 }
 
 @media (min-width: 1441px) {

@@ -1,8 +1,18 @@
 @import "~theme/variables.scss";
 
 .landing-page-guests-dropdown__find {
+  .picker {
+    .picker__label {
+      margin-bottom: 24px;
+    }
+  }
+
   .dropdown__button.dropdown__button_fade {
     margin-top: 3px;
+  }
+
+  .dropdown__main-control {
+    padding: 20px 7px 13px 13px;
   }
 
   .dropdown__item-control {
