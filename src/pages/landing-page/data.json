@@ -4,7 +4,7 @@
     "dateDropdown": {
       "fieldStart": {
         "name": "startDate",
-        "id": "startDate2",
+        "id": "startDate",
         "type": "text",
         "label": "прибытие",
         "placeholder": "ДД.ММ.ГГГГ",
@@ -12,7 +12,7 @@
       },
       "fieldEnd": {
         "name": "endDate",
-        "id": "endDate2",
+        "id": "endDate",
         "type": "text",
         "label": "выезд",
         "placeholder": "ДД.ММ.ГГГГ",

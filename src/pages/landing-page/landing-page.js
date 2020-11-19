@@ -24,12 +24,11 @@ LandingPage.prototype._handler = function (e) {
         babies: "",
       };
       $("input[name]", this._$form).each(function () {
-        console.log(this.name);
+        console.log("name", this.name);
         if (Object.keys(data).indexOf(this.name) !== -1) {
           data[this.name] = $(this).val();
         }
       });
-      localStorage.clear();
       localStorage.setItem("landingPage", JSON.stringify(data));
       window.location.href = href;
     }
