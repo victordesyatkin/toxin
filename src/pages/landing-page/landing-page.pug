@@ -15,9 +15,10 @@ block main
                     )
             block landing-page-find-wrapper
                 section.landing-page__find
-                    block landing-page-find
-                        +card
-                            +picker(data.picker)
+                    form
+                        block landing-page-find
+                            +card
+                                +picker(data.picker)    
             section.landing-page__info
                 block landing-page-info
                     | Лучшие номера для вашей работы, отдыха и просто вдохновения
