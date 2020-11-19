@@ -8,12 +8,12 @@ const fs = require("fs");
 const pug = require("pug");
 const webpack = require("webpack");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
-const pretty = require("pretty");
-const getClassesFromHtml = require("get-classes-from-html");
+// const pretty = require("pretty");
+// const getClassesFromHtml = require("get-classes-from-html");
 const assert = require("assert");
 const postcssSCSS = require("postcss-scss");
 const stylelint = require("stylelint");
-const doiuse = require("doiuse");
+// const doiuse = require("doiuse");
 const postcssReporter = require("postcss-reporter");
 
 const nth = {};
@@ -165,7 +165,11 @@ module.exports = (env = {}) => {
     if (isProd) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: "main-[hash:8].css",
+          //filename: "main-[hash:8].css",
+          filename: "[name].css",
+          chunkFilename: "[id].css",
+          hmr: isDev,
+          reloadAll: true,
         })
       );
     }
