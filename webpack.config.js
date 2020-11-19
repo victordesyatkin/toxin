@@ -201,8 +201,8 @@ module.exports = (env = {}) => {
             {
               loader: "file-loader",
               options: {
-                outputPath: "./",
-                publicPath: "./",
+                outputPath: "./images/",
+                publicPath: "./images",
                 //name: "[path][name]-[sha1:hash:7].[ext]",
                 name: "[sha1:hash:7]-[sha1:hash:7].[ext]",
               },

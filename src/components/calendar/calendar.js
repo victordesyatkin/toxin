@@ -77,7 +77,7 @@ Calendar.prototype._toggleVisibleButtonClean = function () {
 };
 
 Calendar.prototype._toggleVisibleMain = function () {
-  if (get(this._options, ["visible"])) {
+  if (get(this._options, ["forceVisible"])) {
     return false;
   }
   const visible = get(this._datepicker, ["visible"]);
@@ -85,12 +85,30 @@ Calendar.prototype._toggleVisibleMain = function () {
     this._$main.removeClass("calendar__main_hide");
   } else if (!visible && !this._$main.hasClass("calendar__main_hide")) {
     this._$main.addClass("calendar__main_hide");
+    this._$main.removeClass("calendar__main_open");
+  } else if (!visible && this._$main.hasClass("calendar__main_open")) {
+    this._$main.removeClass("calendar__main_open");
+    this._$main.addClass("calendar__main_hide");
   }
   return false;
 };
 
 Calendar.prototype._handlerClickCalendar = function () {
   this._toggleVisibleButtonClean();
+};
+
+Calendar.prototype._prepareOptions = function (options) {
+  options = { ...options };
+  const minDateType = get(this._$component.data(), ["options", "minDateType"]);
+  switch (minDateType) {
+    case "current": {
+      options = { ...options, minDate: new Date() };
+      break;
+    }
+    default: {
+    }
+  }
+  return options;
 };
 
 Calendar.prototype._init = function () {
@@ -102,6 +120,7 @@ Calendar.prototype._init = function () {
     onShow: this._toggleVisibleMain.bind(this),
     onHide: this._toggleVisibleMain.bind(this),
   };
+  this._options = this._prepareOptions(this._options);
   this._$input.datepicker(this._options);
   this._datepicker = this._$input.datepicker().data("datepicker");
   this._$main = $(".calendar__main", this._$component);
@@ -115,7 +134,9 @@ Calendar.prototype._init = function () {
   );
   this._$component.on("click", this._handlerClickCalendar.bind(this));
   this._toggleVisibleButtonClean();
-  this._toggleVisibleMain();
+  //this._toggleVisibleMain();
+  this._isOpen = get(this._$component.data(), ["options", "isOpen"]);
+  this._isOpen && this._datepicker.show();
   this._selectDate();
 };
 

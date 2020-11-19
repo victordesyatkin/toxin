@@ -14,7 +14,8 @@ block main
                     )
             block registration-sign-wrapper
                 section.registration__sign           
-                    block registration__sign 
-                        +card
-                            +sign-up(data.signUp)
+                    block registration__sign
+                        form 
+                            +card
+                                +sign-up(data.signUp)
 

@@ -1,5 +1,19 @@
 @import "~theme/global.scss";
 
+.card-slider-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  text-transform: none;
+  transition: transform 0.3s;
+  color: inherit;
+
+  &:hover {
+    transform: translate(0, -2px);
+    transition: transform 0.3s;
+  }
+}
+
 .card-slider {
   width: 100%;
 

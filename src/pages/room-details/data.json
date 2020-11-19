@@ -55,14 +55,20 @@
       ],
       "authorised": false,
       "buttons": {
-        "buttons": [
+                "buttons": [
           {
             "text": "Войти",
             "type": "button",
             "disabled": false,
             "value": "",
             "view": 1,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration-sign-in.html"
+              }
+            }
           },
           {
             "text": "Зарегистрироваться",
@@ -70,7 +76,13 @@
             "disabled": false,
             "value": "",
             "view": 0,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration.html"
+              }
+            }
           }
         ]
       }

@@ -62,7 +62,13 @@
             "disabled": false,
             "value": "",
             "view": 1,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration-sign-in.html"
+              }
+            }
           },
           {
             "text": "Зарегистрироваться",
@@ -70,7 +76,13 @@
             "disabled": false,
             "value": "",
             "view": 0,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration.html"
+              }
+            }
           }
         ]
       }
@@ -190,8 +202,8 @@
     "label": "Найдём номера под ваши пожелания",
     "dateDropdown": {
       "fieldStart": {
-        "name": "startDate2",
-        "id": "startDate2",
+        "name": "startDate",
+        "id": "startDate",
         "type": "text",
         "label": "прибытие",
         "placeholder": "ДД.ММ.ГГГГ",
@@ -199,8 +211,8 @@
         "button": { "visible": true, "class": "arrow-down" }
       },
       "fieldEnd": {
-        "name": "endDate2",
-        "id": "endDate2",
+        "name": "endDate",
+        "id": "endDate",
         "type": "text",
         "label": "выезд",
         "placeholder": "ДД.ММ.ГГГГ",
@@ -212,16 +224,17 @@
       }
     },
     "dropdown": {
-      "dropdownOptions": { "expand": true, "type": 1, "controlVisible": true, "forcedExpand": true },
-      "name": "guests3",
+      "dropdownOptions": { "expand": true, "type": 1, "controlVisible": true, "forcedExpand": false },
+      "name": "guests",
+      "id": "guests",
       "type": "text",
       "label": "гости",
       "placeholder": "Сколько гостей",
       "button": { "class": "arrow-down", "visible": true },
       "items": [
-        { "title": "взрослые", "value": 2 },
-        { "title": "дети", "value": 1 },
-        { "title": "младенцы", "value": 0 }
+        { "title": "взрослые", "value": 2, "name": "adults" },
+        { "title": "дети", "value": 1, "name": "children" },
+        { "title": "младенцы", "value": 0, "name": "babies" }
       ]
     },
     "buttons": [
@@ -231,7 +244,13 @@
         "disabled": false,
         "value": "",
         "view": 3,
-        "full": true
+        "full": true,
+        "action": {
+          "type": "SUBMIT",
+          "payload": {
+            "href": "search-room-filter.html"
+          } 
+        }
       }
     ]
   }

@@ -4,8 +4,8 @@ extends ../base/base
 block title
     | Landing page
 block main
-    main.landing-page
-        - let data = htmlWebpackPlugin.options.getData();
+    - let data = htmlWebpackPlugin.options.getData();
+    main.landing-page(data-data=data)
         article
             block landing-page-background-wrapper
                 - let src = require('../../pages/landing-page/img/landing-page.png').default;
@@ -14,10 +14,11 @@ block main
                         src=src
                     )
             block landing-page-find-wrapper
-                section.landing-page__find            
+                section.landing-page__find
                     block landing-page-find
-                        +card
-                            +picker(data.picker)
+                        form
+                            +card
+                                +picker(data.picker)
             section.landing-page__info
                 block landing-page-info
                     | Лучшие номера для вашей работы, отдыха и просто вдохновения

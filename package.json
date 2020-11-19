@@ -54,9 +54,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "dev": "better-npm-run start-dev",
     "start": "webpack-dev-server",
-    "build": "webpack --env.mode=development",
+    "build": "webpack --env.mode=production",
+    "build:dev": "webpack --env.mode=development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "betterScripts": {

@@ -96,6 +96,7 @@
     position: relative;
   }
 
+  .datepicker--cell.-focus-.-disabled-,
   .datepicker--cell.-current-.-focus-,
   .datepicker--cell.-current-.-in-range-,
   .-current-,
@@ -115,6 +116,10 @@
   .-range-to-,
   .-focus- {
     background: inherit;
+  }
+
+  .datepicker--cell.-focus-.-disabled-::after {
+    background: $color-dark-shade25;
   }
 
   .-range-from-.-focus-::after,

@@ -1,18 +1,40 @@
 mixin card-slider(props = {})
     -
-        let { slider = {}, info = {}, rating = {} } = props || {};
+        let { slider = {}, info = {}, rating = {}, link } = props || {};
         let { button, comments } = rating || {};
-    +card
-        .card-slider
-            .card-slider__slider
-                +slider(slider)
-        .card-slider__info
-            +card-header(info)
-        .card-slider__separator-wrap
-            .card-slider__separator
-        .card-slider__score
-            .card-slider__rating
-                +rate-button(button)
-            .card-slider__comments
-                span.card-slider__comments-numbers=comments 
-                span.card-slider__comments-content Отзывов
+    if (link)
+        - let { href = "#", title = "" } = link || {};
+        a.card-slider-link(
+            title=title
+            href=href
+            rel="noreferrer noopener"
+        )
+            +card
+                .card-slider
+                    .card-slider__slider
+                        +slider(slider)
+                .card-slider__info
+                    +card-header(info)
+                .card-slider__separator-wrap
+                    .card-slider__separator
+                .card-slider__score
+                    .card-slider__rating
+                        +rate-button(button)
+                    .card-slider__comments
+                        span.card-slider__comments-numbers=comments 
+                        span.card-slider__comments-content Отзывов
+    else
+        +card
+            .card-slider
+                .card-slider__slider
+                    +slider(slider)
+            .card-slider__info
+                +card-header(info)
+            .card-slider__separator-wrap
+                .card-slider__separator
+            .card-slider__score
+                .card-slider__rating
+                    +rate-button(button)
+                .card-slider__comments
+                    span.card-slider__comments-numbers=comments 
+                    span.card-slider__comments-content Отзывов

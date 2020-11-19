@@ -2,6 +2,10 @@
 
 .registration__sign-in {
   z-index: 3;
+
+  form {
+    z-index: 3;
+  }
 }
 
 @media (max-width: 1440px) and (min-width: 1440px) {

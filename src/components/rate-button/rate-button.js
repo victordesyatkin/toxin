@@ -5,7 +5,8 @@ class RateButton {
     this.component = component;
     this.count = this.component.dataset.count;
     this.input = this.component.querySelector("input");
-    this._attachEventHandlers();
+    this._off = $(this.component).data("off");
+    !this._off && this._attachEventHandlers();
   }
 
   _attachEventHandlers() {

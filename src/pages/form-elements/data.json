@@ -181,7 +181,8 @@
     "buttons": [
       { "grade": 4, "name": "male2", "count": 5 },
       { "grade": 5, "name": "female2", "count": 5 }
-    ]
+    ],
+    "off": 0
   },
   "dropdown5": {
     "dropdownOptions": {

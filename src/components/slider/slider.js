@@ -29,6 +29,7 @@ Slider.prototype._init = function () {
 Slider.prototype._types = [1, 2];
 
 Slider.prototype._onClickPoint = function (e) {
+  e.preventDefault();
   const index = get($(e.target).data(), ["index"]);
   if (typeof index !== "undefined" && this.index !== index) {
     this._cleanPoint(this._index);
@@ -38,7 +39,8 @@ Slider.prototype._onClickPoint = function (e) {
   }
 };
 
-Slider.prototype._onClickControl = function (type = 0) {
+Slider.prototype._onClickControl = function (type = 0, e) {
+  e.preventDefault();
   if (this._types.indexOf(type) === -1) {
     return false;
   }

@@ -71,6 +71,7 @@ DateDropdown.prototype._value2Date = function (value) {
 
 DateDropdown.prototype._handlerClickDocument = function (event) {
   const classTarget = `.${$(event.target, this._$component).attr("class")}`;
+
   if (
     !$(event.target).closest(this._$component).length &&
     !$(event.target, this._$component).hasClass("datepicker--cell") &&

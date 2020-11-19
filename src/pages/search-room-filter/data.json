@@ -62,7 +62,13 @@
             "disabled": false,
             "value": "",
             "view": 1,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration-sign-in.html"
+              }
+            }
           },
           {
             "text": "Зарегистрироваться",
@@ -70,7 +76,13 @@
             "disabled": false,
             "value": "",
             "view": 0,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration.html"
+              }
+            }
           }
         ]
       }
@@ -201,9 +213,9 @@
     "placeholder": "Сколько гостей",
     "button": { "class": "arrow-down", "visible": true },
     "items": [
-      { "title": "взрослые", "value": 2 },
-      { "title": "дети", "value": 1 },
-      { "title": "младенцы", "value": 1 }
+      { "title": "взрослые", "value": 2, "name": "adults" },
+      { "title": "дети", "value": 1, "name": "children" },
+      { "title": "младенцы", "value": 1, "name": "babies" }
     ]
   },
   "rangeSlider1": {
@@ -292,6 +304,10 @@
                   ]
               },
               "comments": 145
+          },
+          "link": {
+            "title": "",
+            "href": "room-details.html"
           }
     },
     "slider2": {
@@ -313,6 +329,10 @@
               ]
           },
           "comments": 65
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider3": {
@@ -334,6 +354,10 @@
               ]
           },
           "comments": 35
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider4": {
@@ -355,6 +379,10 @@
               ]
           },
           "comments": 19
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider5": {
@@ -376,6 +404,10 @@
               ]
           },
           "comments": 44
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider6": {
@@ -397,6 +429,10 @@
               ]
           },
           "comments": 56
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider7": {
@@ -418,6 +454,10 @@
               ]
           },
           "comments": 45
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider8": {
@@ -439,6 +479,10 @@
               ]
           },
           "comments": 39
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider9": {
@@ -460,6 +504,10 @@
               ]
           },
           "comments": 77
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider10": {
@@ -481,6 +529,10 @@
               ]
           },
           "comments": 25
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider11": {
@@ -502,6 +554,10 @@
               ]
           },
           "comments": 15
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     },
     "slider12": {
@@ -523,6 +579,10 @@
               ]
           },
           "comments": 55
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
       }
     }
   },

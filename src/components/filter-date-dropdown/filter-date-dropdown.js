@@ -1,3 +1,4 @@
+import get from "lodash/get";
 import "./filter-date-dropdown.scss";
 
 class FilterDateDropdown {
@@ -101,7 +102,38 @@ FilterDateDropdown.prototype._setValue = function (value = []) {
   this._$input.val(JSON.stringify(value));
 };
 
+FilterDateDropdown.prototype._value2Date = function (value) {
+  const parts = value.split(".");
+  const partDay = parts[0];
+  const partMonth = parts[1];
+  const partYear = parts[2];
+  let date = "";
+  if (partDay && partMonth && partYear) {
+    date = `${partMonth}.${partDay}.${partYear}`;
+  }
+  if (date) {
+    date = new Date(date);
+    if (!(date instanceof Date)) {
+      date = "";
+    }
+  }
+  return date;
+};
+
 FilterDateDropdown.prototype._getValue = function () {
+  if (localStorage && localStorage.getItem("landingPage")) {
+    let landingPage = localStorage.getItem("landingPage") || "{}";
+    landingPage = JSON.parse(landingPage);
+    let { startDate, endDate } = landingPage;
+    if (!isNaN(parseFloat(startDate)) && !isNaN(parseFloat(endDate))) {
+      startDate = this._value2Date(startDate);
+      endDate = this._value2Date(endDate);
+      this._setValue([startDate, endDate]);
+      if (startDate && endDate) {
+        return [startDate, endDate];
+      }
+    }
+  }
   return JSON.parse(this._$input.val() || "[]");
 };
 

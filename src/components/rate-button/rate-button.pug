@@ -1,7 +1,7 @@
 mixin rate-button(o = {buttons: [], label: ''})
     -
         let
-            { label = '', buttons = [] } = o || {};
+            { label = '', buttons = [], off = 1 } = o || {};
             imgRate = require('../../components/rate-button/img/star.svg').default;
             noImgRate = require('../../components/rate-button/img/star_border.svg').default;
     .rate-button
@@ -19,7 +19,10 @@ mixin rate-button(o = {buttons: [], label: ''})
                     } else if (grade < 0 || typeof (b || {}).grade === undefined) {
                         grade = 0;
                     }
-                .rate-button__button(data-count=count)
+                .rate-button__button(
+                    data-count = count
+                    data-off = off
+                )
                     input.rate-button__input(
                         type = "hidden"
                         name = b.name

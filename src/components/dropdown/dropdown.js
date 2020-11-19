@@ -241,17 +241,37 @@ Dropdown.prototype._toggleClassExpand = function () {
 
 Dropdown.prototype._prepareItems = function () {
   this._$items = $(".dropdown__item", this._$dropdownMain);
+  const data = {};
+  const names = ["adults", "babies", "children"];
+  if (localStorage && localStorage.getItem("landingPage")) {
+    let landingPage = localStorage.getItem("landingPage") || "{}";
+    landingPage = JSON.parse(landingPage);
+    Object.keys(landingPage).forEach((name) => {
+      if (names.indexOf(name) === -1) {
+        return false;
+      }
+      if (!isNaN(parseFloat(landingPage[name]))) {
+        data[name] = parseFloat(landingPage[name]);
+      }
+    });
+  }
+
   Array.prototype.map.call(this._$items, (item) => {
     const $input = $($("input", item));
     const title = $input.attr("data-title");
     $input.on("input", this._handlerChangeChildInput.bind(this));
+    const name = $input.attr("name");
+    if (typeof data[name] !== "undefined") {
+      const value = data[name];
+      $input.val(value);
+    }
     this._inputs[title] = parseInt($input.val()) || 0;
-    return new Element(item);
+    return new Element(item, this._inputs[title]);
   });
 };
 
 class Element {
-  constructor(element) {
+  constructor(element, value) {
     this._element = element;
     this._$element = $(element);
     this._$hiddenInput = $("input", this._element);
@@ -264,6 +284,9 @@ class Element {
       this._handlerClickButton.bind(this, 0)
     );
     this._$fakeinput = $(".dropdown__item-value", this._element);
+    if (typeof value !== "undefined") {
+      this._$fakeinput.html(value);
+    }
   }
 }
 

@@ -25,7 +25,13 @@
           "value": "",
           "view": 3,
           "full": true,
-          "name": "signIn1"
+          "name": "signIn1",
+          "action": {
+            "type": "LINK",
+            "payload": {
+              "href": "landing-page.html"
+            }
+          }
         }
       ]
     },
@@ -40,7 +46,13 @@
             "value": "",
             "view": 1,
             "full": false,
-            "name": "signUp2"
+            "name": "signUp2",
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration.html"
+              }
+            }
           }
         ]
       }
@@ -109,7 +121,13 @@
             "disabled": false,
             "value": "",
             "view": 1,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration-sign-in.html"
+              }
+            }
           },
           {
             "text": "Зарегистрироваться",
@@ -117,7 +135,13 @@
             "disabled": false,
             "value": "",
             "view": 0,
-            "full": false
+            "full": false,
+            "action": {
+              "type": "LINK",
+              "payload": {
+                "href": "registration.html"
+              }
+            }
           }
         ]
       }

@@ -3,6 +3,7 @@ extends ../landing-page/landing-page
 block title
     | Landing page/Guests Dropdown
 block landing-page-find
-    .landing-page-guests-dropdown__find
-        +card
-            +picker(data.picker)
+        .landing-page-guests-dropdown__find
+            form
+                +card
+                    +picker(data.picker)
