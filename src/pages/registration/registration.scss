@@ -15,16 +15,13 @@
     z-index: 1;
   }
 
-  &__sign {
+  &__sign,
+  form {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-
-    form {
-      z-index: 2;
-    }
 
     .card {
       z-index: 2;
@@ -118,4 +115,12 @@
 }
 
 @media (max-width: 375px) {
+}
+
+@media (max-width: 315px) {
+  .registration {
+    .radio-buttons__button:last-child {
+      margin-top: 10px;
+    }
+  }
 }

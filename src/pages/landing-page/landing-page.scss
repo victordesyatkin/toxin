@@ -16,7 +16,8 @@
     z-index: 1;
   }
 
-  &__find {
+  &__find,
+  form {
     position: absolute;
     top: 70px;
     left: 139px;
@@ -98,7 +99,8 @@
       padding: 0 15px;
     }
 
-    &__find {
+    &__find,
+    form {
       left: 0;
       right: 0;
       width: 100%;
