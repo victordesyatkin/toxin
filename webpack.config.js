@@ -2,23 +2,12 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlBeautifyPlugin = require("html-beautify-webpack-plugin");
 const path = require("path");
 const fs = require("fs");
-const pug = require("pug");
 const webpack = require("webpack");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
-// const pretty = require("pretty");
-// const getClassesFromHtml = require("get-classes-from-html");
-const assert = require("assert");
-const postcssSCSS = require("postcss-scss");
-const stylelint = require("stylelint");
-// const doiuse = require("doiuse");
-const postcssReporter = require("postcss-reporter");
 
 const nth = {};
-//nth.config = require("./config.js");
-//nth.blocksFromHtml = Object.create(nth.config.alwaysAddBlocks);
 nth.dir = {
   src: path.resolve(__dirname, "src"),
   blocks: path.resolve(__dirname, "src", "blocks"),
@@ -27,13 +16,10 @@ nth.dir = {
 
 module.exports = (env = {}) => {
   const { mode = "development" } = env;
-  //const buildLibrary = env.BUILD_LIBRARY == "yes" ? true : false;
-
   const pages = [];
   fs.readdirSync(nth.dir.pages).forEach((file) => {
     pages.push(file);
   });
-
   const htmlPlugins = pages.map(
     (fileName) =>
       new HtmlWebpackPlugin({
@@ -56,81 +42,6 @@ module.exports = (env = {}) => {
       })
   );
 
-  // const blocksList = pages.map((fileName) => {
-  //   try {
-  //     const pathFile = `${nth.dir.pages}/${fileName}/${fileName}.pug`;
-  //     if (fileExist(pathFile)) {
-  //       const compiledFunction = pug.compileFile(pathFile);
-  //       let html = compiledFunction({
-  //         getData: () => {
-  //           try {
-  //             return JSON.parse(
-  //               fs.readFileSync(
-  //                 `${nth.dir.pages}/${fileName}/data.json`,
-  //                 "utf8"
-  //               )
-  //             );
-  //           } catch (e) {
-  //             console.warn(`data.json was not provided for page ${fileName}`);
-  //             return {};
-  //           }
-  //         },
-  //       });
-  //       html = pretty(html, { ocd: true });
-  //       html = html.replace(
-  //         /^(\s*)(<button.+?>)(.*)(<\/button>)/gm,
-  //         "$1$2\n$1  $3\n$1$4"
-  //       );
-  //       html = html.replace(
-  //         /^( *)(<.+?>)(<script>)([\s\S]*)(<\/script>)/gm,
-  //         "$1$2\n$1$3\n$4\n$1$5\n"
-  //       );
-  //       html = html.replace(
-  //         /^( *)(<.+?>)(<script\s+src.+>)(?:[\s\S]*)(<\/script>)/gm,
-  //         "$1$2\n$1$3$4"
-  //       );
-  //       let classesInFile = getClassesFromHtml(html);
-  //       // nth.blocksFromHtml = [];
-  //       // Обойдём найденные классы
-  //       for (let item of classesInFile) {
-  //         // Не Блок или этот Блок уже присутствует?
-  //         if (
-  //           item.indexOf("__") > -1 ||
-  //           item.indexOf("--") > -1 ||
-  //           nth.blocksFromHtml.indexOf(item) + 1
-  //         )
-  //           continue;
-  //         // Класс совпадает с классом-исключением из настроек?
-  //         if (nth.config.ignoredBlocks.indexOf(item) + 1) continue;
-  //         // У этого блока отсутствует папка?
-  //         // if (!fileExist(dir.blocks + item)) continue;
-  //         // Добавляем класс в список
-  //         nth.blocksFromHtml.push(item);
-  //       }
-  //     }
-  //     const newJsImportsList = [];
-  //     let allBlocksWithJsFiles = [];
-  //     try {
-  //       allBlocksWithJsFiles = getDirectories("js");
-  //     } catch (e) {
-  //       $a = 1;
-  //     }
-  //     allBlocksWithJsFiles.forEach((blockWithJsFile) => {
-  //       let url = `${nth.dir.blocks}/${blockWithJsFile}/${blockWithJsFile}.js`;
-  //       if (nth.blocksFromHtml.indexOf(blockWithJsFile) === -1) return;
-  //       if (newJsImportsList.indexOf(blockWithJsFile) > -1) return;
-  //       newJsImportsList.push(url);
-  //     });
-  //     let jsRequires = fs.readFileSync(`${nth.dir.src}/entry.js`, "utf-8");
-  //     newJsImportsList.forEach((src) => {
-  //       jsRequires += `require('${src}');\n`;
-  //     });
-  //     jsRequires && fs.writeFileSync(`${nth.dir.src}/index.js`, jsRequires);
-  //   } catch (e) {
-  //     console.warn(`was not provided for page ${fileName}`);
-  //   }
-  // });
-
   const isProd = mode === "production";
   const isDev = mode === "development";
 
@@ -144,11 +55,6 @@ module.exports = (env = {}) => {
   const getPlugins = () => {
     const plugins = [
       new CleanWebpackPlugin(),
-      // new HtmlWebpackPlugin({
-      //   title: "Hello World",
-      //   buildTime: new Date().toISOString(),
-      //   template: "public/index.html",
-      // }),
       new webpack.ProgressPlugin(),
       new webpack.ProvidePlugin({
         $: "jquery",
@@ -165,7 +71,6 @@ module.exports = (env = {}) => {
     if (isProd) {
       plugins.push(
         new MiniCssExtractPlugin({
-          //filename: "main-[hash:8].css",
           filename: "[name].css",
           chunkFilename: "[id].css",
           hmr: isDev,
@@ -198,7 +103,6 @@ module.exports = (env = {}) => {
             },
           ],
         },
-        // Loading images
         {
           test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
           use: [
@@ -207,14 +111,11 @@ module.exports = (env = {}) => {
               options: {
                 outputPath: "./images/",
                 publicPath: "./images",
-                //name: "[path][name]-[sha1:hash:7].[ext]",
                 name: "[sha1:hash:7]-[sha1:hash:7].[ext]",
               },
             },
           ],
         },
-
-        //Loading fonts
         {
           test: /\.(ttf|otf|eot|woff|woff2)$/,
           use: [
@@ -227,47 +128,13 @@ module.exports = (env = {}) => {
             },
           ],
         },
-
-        // Loading CSS
         {
           test: /\.(css)$/,
           use: getStyleLoaders(),
         },
-
-        // Loading SASS/SCSS
         {
           test: /\.(s[ca]ss)$/,
-          use: [
-            ...getStyleLoaders(),
-            "resolve-url-loader",
-            "sass-loader",
-            // {
-            //   loader: "postcss-loader",
-            //   options: {
-            //     syntax: postcssSCSS,
-            //     plugins: function () {
-            //       return [
-            //         stylelint(),
-            //         doiuse({
-            //           browsers: ["ie >= 11", "last 2 versions"],
-            //           ignore: [
-            //             "flexbox",
-            //             "rem",
-            //             "css-resize",
-            //             "css-masks",
-            //             "object-fit",
-            //           ],
-            //           ignoreFiles: ["**/normalize.css"],
-            //         }),
-            //         postcssReporter({
-            //           clearReportedMessages: true,
-            //           throwError: true,
-            //         }),
-            //       ];
-            //     },
-            //   },
-            // },
-          ],
+          use: [...getStyleLoaders(), "resolve-url-loader", "sass-loader"],
         },
         {
           test: /\.js$/,
@@ -281,7 +148,6 @@ module.exports = (env = {}) => {
 
     devServer: {
       open: true,
-      //contentBase: path.join(__dirname, "dist"),
     },
   };
 };

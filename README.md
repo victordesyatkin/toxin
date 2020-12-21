@@ -1,5 +1,5 @@
 <h1>Демо-проект "TOXIN"</h1>
-<p>Макет страниц по поиску номеров в отеле: <a href="https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/">тут</a> или <a href="https://www.figma.com/file/xorjGw6bbI9mK7fZAMebJu/FSD-frontend-education-program.-The-2nd-task-Copy">тут</a>.</p>
+<p>Макет страниц по поиску номеров в отеле: <a href="https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/" rel="noopener noreferrer" target="_blank">тут</a> или <a href="https://www.figma.com/file/xorjGw6bbI9mK7fZAMebJu/FSD-frontend-education-program.-The-2nd-task-Copy" rel="noopener noreferrer" target="_blank">тут</a>.</p>
 <h4>Online Demo</h4>
 <h5>UI Kit</h5>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/colors-and-type.html" rel="noopener noreferrer" target="_blank">Colors & Type</a></p>
@@ -37,12 +37,12 @@
   <li>Навыки работы с макетами в Figma</li>
 </ul>
 <h4>JavaScript-библиотеки и jQuery-плагины</h4>
-<p><a href="https://jquery.com/" target="_blank" rel="noopener">jquery</a></p>
-<p><a href="https://lodash.com/" target="_blank" rel="noopener">lodash</a></p>
-<p><a href="https://github.com/JedWatson/classnames" target="_blank" rel="noopener">classnames</a></p>
-<p><a href="https://github.com/uNmAnNeR/imaskjs" target="_blank" rel="noopener">imask</a></p>
-<p><a href="https://github.com/RobinHerbots/Inputmask" target="_blank" rel="noopener">inputmask</a></p>
-<p><a href="https://github.com/t1m0n/air-datepicker" target="_blank" rel="noopener">air-datepicker</a></p>
+<p><a href="https://jquery.com/" target="_blank" rel="noopener noreferrer">jquery</a></p>
+<p><a href="https://lodash.com/" target="_blank" rel="noopener noreferrer">lodash</a></p>
+<p><a href="https://github.com/JedWatson/classnames" target="_blank" rel="noopener noreferrer">classnames</a></p>
+<p><a href="https://github.com/uNmAnNeR/imaskjs" target="_blank" rel="noopener noreferrer">imask</a></p>
+<p><a href="https://github.com/RobinHerbots/Inputmask" target="_blank" rel="noopener noreferrer">inputmask</a></p>
+<p><a href="https://github.com/t1m0n/air-datepicker" target="_blank" rel="noopener noreferrer">air-datepicker</a></p>
 <h4>Установка</h4>
   <h5>1. Клонированить репозиторий</h5>
       <code>git clone git@github.com:victordesyatkin/toxin.git</code>
@@ -50,4 +50,4 @@
       <code>npm i</code>
   <h5>3. Запуск демо</h5>
       <code>npm run start</code>
-      <span>and then go to <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a></span>
+      <span>and then go to <a href="http://localhost:8080/" target="_blank" rel="noopener noreferrer">http://localhost:8080/</a></span>
