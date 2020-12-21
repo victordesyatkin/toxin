@@ -50,4 +50,4 @@
       <code>npm i</code>
   <h5>3. Запуск демо</h5>
       <code>npm run start</code>
-      <code>http://localhost:8080/</code>
+      <code>and then go to http://localhost:8080/</code>
