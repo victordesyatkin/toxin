@@ -37,12 +37,12 @@
   <li>Навыки работы с макетами в Figma</li>
 </ul>
 <h4>JavaScript-библиотеки и jQuery-плагины</h4>
-<p><a href="https://jquery.com/">jquery</a></p>
-<p><a href="https://lodash.com/">lodash</a></p>
-<p><a href="https://github.com/JedWatson/classnames">classnames</a></p>
-<p><a href="https://github.com/uNmAnNeR/imaskjs">imask</a></p>
-<p><a href="https://github.com/RobinHerbots/Inputmask">inputmask</a></p>
-<p><a href="https://github.com/t1m0n/air-datepicker">air-datepicker</a></p>
+<p><a href="https://jquery.com/" target="_blank" rel="noopener">jquery</a></p>
+<p><a href="https://lodash.com/" target="_blank" rel="noopener">lodash</a></p>
+<p><a href="https://github.com/JedWatson/classnames" target="_blank" rel="noopener">classnames</a></p>
+<p><a href="https://github.com/uNmAnNeR/imaskjs" target="_blank" rel="noopener">imask</a></p>
+<p><a href="https://github.com/RobinHerbots/Inputmask" target="_blank" rel="noopener">inputmask</a></p>
+<p><a href="https://github.com/t1m0n/air-datepicker" target="_blank" rel="noopener">air-datepicker</a></p>
 <h4>Установка</h4>
   <h5>1. Клонированить репозиторий</h5>
       <code>git clone git@github.com:victordesyatkin/toxin.git</code>
@@ -50,4 +50,4 @@
       <code>npm i</code>
   <h5>3. Запуск демо</h5>
       <code>npm run start</code>
-      <code>and then go to http://localhost:8080/</code>
+      <span>and then go to <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a></span>
