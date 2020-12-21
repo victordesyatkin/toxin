@@ -1,12 +1,12 @@
-
 <h1>Демо-проект "TOXIN"</h1>
 <p>Макет страниц по поиску номеров в отеле: <a href="https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/">тут</a> или <a href="https://www.figma.com/file/xorjGw6bbI9mK7fZAMebJu/FSD-frontend-education-program.-The-2nd-task-Copy">тут</a>.</p>
-<h4>UI Kit</h4>
+<h4>Online Demo</h4>
+<h5>UI Kit</h5>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/colors-and-type.html" rel="noopener noreferrer" target="_blank">Colors & Type</a></p>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/cards.html" rel="noopener noreferrer" target="_blank">Cards</a></p>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/form-elements.html" rel="noopener noreferrer" target="_blank">Headers & Footers</a></p>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/headers-and-footers.html" rel="noopener noreferrer" target="_blank">Form Elements</a></p>
-<h4>Website pages</h4>
+<h5>Website pages</h5>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/landing-page.html" rel="noopener noreferrer" target="_blank">Landing page</a></p>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/landing-page-dates-dropdown.html" rel="noopener noreferrer" target="_blank">Landing page/Dates Dropdown</a></p>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/landing-page-guests-dropdown.html" rel="noopener noreferrer" target="_blank">Landing page/Guests Dropdown</a></p>
@@ -43,3 +43,11 @@
 <p><a href="https://github.com/uNmAnNeR/imaskjs">imask</a></p>
 <p><a href="https://github.com/RobinHerbots/Inputmask">inputmask</a></p>
 <p><a href="https://github.com/t1m0n/air-datepicker">air-datepicker</a></p>
+<h4>Установка</h4>
+  <h5>1. Клонированить репозиторий</h5>
+      <code>git clone git@github.com:victordesyatkin/toxin.git</code>
+  <h5>2. Установить зависимости</h5>
+      <code>npm i</code>
+  <h5>3. Запуск демо</h5>
+      <code>npm run start</code>
+      <code>http://localhost:8080/</code>
