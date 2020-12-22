@@ -16,9 +16,8 @@
 
   &__state-text {
     @include h3;
-    color: $color-third-dark;
-    font-family: $font-family-second-regular;
     font-weight: normal;
+    color: $color-third-dark;
     text-transform: uppercase;
     position: absolute;
     right: 0px;
@@ -110,9 +109,7 @@
   &__input {
     width: 100%;
     height: 100%;
-    font-family: $font-family-second-regular;
-    font-style: normal;
-    font-weight: normal;
+    @include font-family-first-regular;
     font-size: 14px;
     line-height: 1.7rem;
     text-overflow: ellipsis;

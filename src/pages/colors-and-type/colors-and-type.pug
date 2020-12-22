@@ -9,9 +9,9 @@ block main
     - let data = htmlWebpackPlugin.options.getData()
     .colors-and-type
         .colors-and-type__colors
-            for color in data.colors
+            for color in ((data || {}).colors || [])
                 +color-sample(color)
         .colors-and-type__type
-            for font in data.fonts
+            for font in ((data || {}).fonts || [])
                 +font-sample(font)
 block footer

@@ -6,31 +6,12 @@
   padding: 0;
 }
 
-// html {
-//   font-size: 8px;
-
-//   @include media-breakpoint-up($xxs) {
-//     font-size: 10px;
-//   }
-
-//   @include media-breakpoint-up($xs) {
-//     font-size: 12px;
-//   }
-// }
-
 html,
 body {
   height: 100%;
   font-size: $font-size-body;
+  @include font-family-first-regular;
 }
-
-// h1,
-// h2 {
-//   text-align: center;
-//   text-transform: uppercase;
-//   color: #777;
-//   font-family: LatoBlack, sans-serif;
-// }
 
 h1 {
   @include h1;
@@ -46,7 +27,6 @@ h3 {
 
 body {
   color: $color-dark-shade75;
-  font-family: $font-family-second-regular, sans-serif;
   line-height: 1.7142rem;
 }
 
@@ -59,33 +39,21 @@ body {
 }
 
 ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
   color: $color-fourth-dark;
-  font-family: $font-family-second-regular;
-  font-style: normal;
-  font-weight: normal;
+  @include font-family-first-regular;
 }
 
 ::-moz-placeholder {
-  /* Firefox 19+ */
   color: $color-fourth-dark;
-  font-family: $font-family-second-regular;
-  font-style: normal;
-  font-weight: normal;
+  @include font-family-first-regular;
 }
 :-ms-input-placeholder {
-  /* IE 10+ */
   color: $color-fourth-dark;
-  font-family: $font-family-second-regular;
-  font-style: normal;
-  font-weight: normal;
+  @include font-family-first-regular;
 }
 :-moz-placeholder {
-  /* Firefox 18- */
   color: $color-fourth-dark;
-  font-family: $font-family-second-regular;
-  font-style: normal;
-  font-weight: normal;
+  @include font-family-first-regular;
 }
 
 .margin-right-41 {
