@@ -22,6 +22,9 @@
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
     "css-loader": "^3.6.0",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-babel": "^5.3.1",
     "favicons-webpack-plugin": "^3.0.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
@@ -42,6 +45,7 @@
     "start": "webpack-dev-server",
     "build": "webpack --env.mode=production",
     "build:dev": "webpack --env.mode=development",
+    "eslint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "betterScripts": {

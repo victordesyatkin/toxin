@@ -92,10 +92,8 @@
         $color-purple-dark 100%
       );
       border-radius: 22px;
-      font-style: normal;
-      font-weight: bold;
       color: $color-first-white;
-      font-family: $font-family-second-bold;
+      @include font-family-first-regular;
     }
   }
 

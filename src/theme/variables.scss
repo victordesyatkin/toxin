@@ -1,9 +1,5 @@
-@import "~fonts/Montserrat-Bold/fonts.css";
-@import "~fonts/Montserrat-Regular/fonts.css";
-@import "~fonts/OpenSans-Bold/stylesheet.css";
-@import "~fonts/OpenSans-Regular/stylesheet.css";
-@import "~fonts/Quicksand-Bold/fonts.css";
-@import "~fonts/Quicksand-Regular/fonts.css";
+@import "~fonts/Montserrat/fonts.css";
+@import "~fonts/Quicksand/fonts.css";
 @import "~fonts/Icomoon/style.css";
 
 /***** Variables *****/
@@ -43,12 +39,7 @@ $color-first-white: $color-white-shade100;
 
 $font-size-body: 14px;
 
-$font-family-first-regular: "Montserrat-Regular";
-$font-family-first-bold: "Montserrat-Bold";
-$font-family-second-regular: "Montserrat-Regular";
-$font-family-second-bold: "Montserrat-Bold";
-$font-family-third-regular: "Montserrat-Regular";
-$font-family-third-bold: "Montserrat-Bold";
+$font-family-first: Montserrat, Arial, sans-serif;
 
 $background-color-first: #e5e5e5;
 
@@ -62,7 +53,20 @@ $gradient-second: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
 $box-shadow-first-color: rgba(0, 0, 0, 0.2);
 $border-first-color: rgba(0, 0, 0, 0.12);
 
-/***** Mixins *****/
+/***** Mixin *****/
+
+@mixin font-family-first-regular {
+  font-family: $font-family-first;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin font-family-first-bold {
+  font-family: $font-family-first;
+  font-weight: 700;
+  font-style: normal;
+}
+
 @mixin reset-button {
   background: none;
   border: none;
@@ -74,24 +78,22 @@ $border-first-color: rgba(0, 0, 0, 0.12);
     $degrees,
     rgba($top-color, $opacity) 0%,
     rgba($bottom-color, $opacity) 100%
-  ); /* FF3.6-15 */
+  );
   background: -webkit-linear-gradient(
     $degrees,
     rgba($top-color, $opacity) 0%,
     rgba($bottom-color, $opacity) 100%
-  ); /* Chrome10-25,Safari5.1-6 */
+  );
   background: linear-gradient(
     $degrees,
     rgba($top-color, $opacity) 0%,
     rgba($bottom-color, $opacity) 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{rgba($top-color, $opacity)}', endColorstr='#{rgba($bottom-color, $opacity)}',GradientType=0 ); /* IE6-9 */
 }
 
 @mixin base-h {
-  font-family: $font-family-first-bold, sans-serif;
-  font-style: normal;
-  font-weight: normal;
+  @include font-family-first-bold;
   color: $color-first-dark;
 }
 
@@ -99,14 +101,12 @@ $border-first-color: rgba(0, 0, 0, 0.12);
   @include base-h;
   font-size: 1.71rem;
   line-height: 29.26px;
-  font-style: normal;
 }
 
 @mixin h2 {
   @include base-h;
   font-size: 1.36rem;
   line-height: 23.16px;
-  font-style: normal;
 }
 
 @mixin h3 {
@@ -114,8 +114,6 @@ $border-first-color: rgba(0, 0, 0, 0.12);
   font-size: 0.85rem;
   text-transform: uppercase;
   line-height: 14.63px;
-  font-weight: normal;
-  font-family: $font-family-second-bold, sans-serif;
 }
 
 @mixin h3-lite {
@@ -124,7 +122,7 @@ $border-first-color: rgba(0, 0, 0, 0.12);
   text-transform: uppercase;
   font-weight: normal;
   line-height: normal;
-  font-family: $font-family-second-regular, sans-serif;
+  @include font-family-first-regular;
 }
 
 @mixin media-breakpoint-up($width) {

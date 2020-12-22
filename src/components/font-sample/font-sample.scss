@@ -16,7 +16,7 @@
       color: $color-dark-shade25;
       font-weight: normal;
       text-align: right;
-      font-family: $font-family-second-regular;
+      @include font-family-first-regular;
     }
   }
   &__section-info {
@@ -25,13 +25,11 @@
     padding-top: 2px;
     h1,
     h2 {
-      font-family: $font-family-third-bold;
-      font-weight: normal;
+      @include font-family-first-regular;
     }
 
     h3 {
-      font-family: $font-family-second-bold;
-      font-weight: normal;
+      @include font-family-first-bold;
     }
   }
 }

@@ -27,9 +27,7 @@
   button {
     outline: none;
     border: none;
-    font-family: $font-family-second-bold;
-    font-style: normal;
-    font-weight: bold;
+    @include font-family-first-bold;
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;

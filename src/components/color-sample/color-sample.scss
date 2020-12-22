@@ -18,13 +18,12 @@
     height: 100%;
     border-radius: 6px;
   }
+
   &__section-info {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
     margin-left: 14.1%;
     text-align: left;
   }
+
   &__label,
   &__description {
     @include h2;
@@ -39,6 +38,6 @@
     margin-top: 0px;
     margin-left: 0px;
     line-height: 27.79px;
-    font-family: $font-family-third-regular;
+    @include font-family-first-regular;
   }
 }
