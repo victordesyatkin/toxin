@@ -1,35 +1,35 @@
 @import "~theme/variables.scss";
+$parent: "font-sample";
 
-.font-sample {
+.#{$parent} {
   flex-basis: 100%;
   flex-grow: 1;
   display: flex;
-  font-style: normal;
+  @include font-family-first-regular;
 
-  &__element {
+  &_size_lg {
+    @include h1;
+  }
+
+  &_size_md {
+    @include h2;
+  }
+
+  &_size_sm {
+    @include h3;
+  }
+
+  &__content {
     min-width: 37px;
     max-width: 9.18%;
-
-    h1,
-    h2,
-    h3 {
-      color: $color-dark-shade25;
-      font-weight: normal;
-      text-align: right;
-      @include font-family-first-regular;
-    }
+    color: $color-dark-shade25;
+    font-weight: 400;
+    text-align: right;
   }
-  &__section-info {
+
+  &__description {
     margin-left: 31px;
     text-align: left;
     padding-top: 2px;
-    h1,
-    h2 {
-      @include font-family-first-regular;
-    }
-
-    h3 {
-      @include font-family-first-bold;
-    }
   }
 }

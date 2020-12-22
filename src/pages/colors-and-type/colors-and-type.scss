@@ -19,7 +19,7 @@
     margin-bottom: 15px;
   }
 
-  &__type {
+  &__fonts {
     min-width: 290px;
     max-width: 442px;
 
@@ -29,14 +29,6 @@
 
     & > div:first-child {
       margin-top: 0;
-    }
-  }
-
-  .font-sample:last-child {
-    margin-top: 49px;
-
-    .font-sample__section-info {
-      padding-top: 0;
     }
   }
 }
@@ -110,7 +102,7 @@ $margin-right: size(411);
     flex-wrap: wrap;
 
     &__colors,
-    &__type {
+    &__fonts {
       width: 100%;
       padding: 15px;
     }

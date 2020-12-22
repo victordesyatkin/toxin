@@ -1,11 +1,11 @@
 mixin font-sample(o)
     - 
-        let { element = 'span', description = 'This one is the sub-section or widget title' } = o || {};
-
-    .font-sample
-        .font-sample__element
-            #{element} #{element}
-        .font-sample__section-info
-            #{element}!=description
-            
-                
+        let { content = '', description = '', size = '', classNames = [] } = o || {};
+        classNames = classNames.join(' ') + (size ? `font-sample_size_${size}`: ''); 
+    .font-sample(
+        class=classNames
+    )
+        if (content)
+            .font-sample__content=content
+        if (description)
+            .font-sample__description=description

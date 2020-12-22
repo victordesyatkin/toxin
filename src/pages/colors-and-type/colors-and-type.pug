@@ -11,7 +11,7 @@ block main
         .colors-and-type__colors
             for color in ((data || {}).colors || [])
                 +color-sample(color)
-        .colors-and-type__type
+        .colors-and-type__fonts
             for font in ((data || {}).fonts || [])
                 +font-sample(font)
 block footer

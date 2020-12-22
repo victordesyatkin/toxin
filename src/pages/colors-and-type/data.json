@@ -38,20 +38,24 @@
   ],
   "fonts": [
     {
-      "element": "H1",
+      "content": "H1",
+      "size": "lg",
       "description": "This one is the sub-section or widget title"
     },
     {
-      "element": "H2",
+      "content": "H2",
+      "size": "md",
       "description": "Next one is the item title inside widgets"
     },
     {
-      "element": "H3",
+      "content": "H3",
+      "size": "sm",
       "description": "This is a label or CTA text"
     },
     {
-      "element": "Body",
-      "description": "This is the body text which is used for most<br/> of the design, like paragraphs, lists, etc."
+      "size": "xs",
+      "content": "Body",
+      "description": "This is the body text which is used for most of the design, like paragraphs, lists, etc."
     }
   ]
 }
