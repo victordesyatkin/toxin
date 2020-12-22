@@ -1,4 +1,6 @@
 import get from "lodash/get";
+import upperFirst from "lodash/upperFirst";
+
 import "./date-dropdown.scss";
 
 class DateDropdown {
@@ -82,15 +84,15 @@ DateDropdown.prototype._handlerClickDocument = function (event) {
 };
 
 DateDropdown.prototype._init = function () {
-  this._$sections = $(".input__section", this._$component);
-  this._inputstart = $(".input__input", this._$sections.get(0));
-  this._inputstart.attr("disabled", true);
-  this._inputend = $(".input__input", this._$sections.get(1));
-  this._inputend.attr("disabled", true);
+  this._$sections = $(".js-input__section", this._$component);
+  this._inputStart = $(".js-input__input", this._$sections.get(0));
+  this._inputStart.attr("disabled", true);
+  this._inputEnd = $(".js-input__input", this._$sections.get(1));
+  this._inputEnd.attr("disabled", true);
   this._$sections.on("click", this._toggleVisibleCalendar.bind(this));
-  this._$calendar = $(".date-dropdown__section-calendar", this._$component);
+  this._$calendar = $(".js-date-dropdown__section-calendar", this._$component);
   this._datepicker = $(
-    'input[type="hidden"][date-iscalendar="1"]',
+    'input[type="hidden"][date-isCalendar="1"]',
     this._$calendar
   )
     .datepicker()
@@ -99,8 +101,6 @@ DateDropdown.prototype._init = function () {
     start: this._value2Date(this._getValue("start")),
     end: this._value2Date(this._getValue("end")),
   });
-  // this._$buttonStart = $("button", this._$sections.get(0));
-  // this._$buttonEnd = $("button", this._$sections.get(1));
   this._buttonClean = $('button[data-type="0"]', this._$calendar);
   this._buttonApply = $('button[data-type="1"]', this._$calendar);
   this._buttonClean.on("click", this._handlerClean.bind(this));
@@ -120,26 +120,16 @@ DateDropdown.prototype._setDates = function ({ start, end } = {}) {
   this._datepicker.selectDate([start, end]);
 };
 
-// DateDropdown.prototype._setDate = function (type, date) {
-//   if (!this._checkType(type) || !date) {
-//     return false;
-//   }
-//   if (!this._datepicker || !this._datepicker.selectDate) {
-//     return false;
-//   }
-//   this._datepicker.selectDate(date);
-// };
-
 DateDropdown.prototype._getValue = function (type = "") {
   if (this._checkType(type)) {
-    return this[`_input${type}`].val();
+    return this[`_input${upperFirst(type)}`].val();
   }
   return "";
 };
 
 DateDropdown.prototype._setValue = function (type = "", value = "") {
   if (this._checkType(type)) {
-    return this[`_input${type}`].val(value);
+    return this[`_input${upperFirst(type)}`].val(value);
   }
   return "";
 };
@@ -152,7 +142,7 @@ DateDropdown.prototype._checkType = function (type = "") {
 
 function renderComponent() {
   const components = [];
-  Array.prototype.map.call($(".date-dropdown"), function (component) {
+  Array.prototype.map.call($(".js-date-dropdown"), function (component) {
     components.push(new DateDropdown(component));
   });
 }

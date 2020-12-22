@@ -13,14 +13,13 @@ class Dropdown {
     this._mainPlaceholder = this._$mainInput.attr("placeholder");
     this._$dropdownMain = $(".dropdown__main", this._element);
     this._$buttonExpand = $(".input__button", this._element);
-    //this._$buttonExpand.on("click", this._handlerClickExpand.bind(this));
     this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
     this._$buttonClean.on("click", this._handlerClickClean.bind(this));
     this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
     this._$buttonApply.on("click", this._handlerClickApply.bind(this));
     this._$main = $(".dropdown__main", this._$element);
     $("body").on("click", this._handlerClickDocument.bind(this));
-    this._forecedExpand = this._$element.hasClass("dropdown_foreced-expand");
+    this._forcedExpand = this._$element.hasClass("dropdown_forced-expand");
     this._prepareItems();
     this._createPlaceholder();
     this._updatePlaceholder();
@@ -191,26 +190,11 @@ Dropdown.prototype._toggleZIndex = function (zIndex = 1) {
   return false;
 };
 
-Dropdown.prototype._rollOtherDropdown = function () {
-  // let zIndex = 99;
-  // const others = $(".dropdown__main", "body");
-  // others.each(function () {
-  //   const tempZIndex = parseInt($(this).css("z-index"));
-  //   if (tempZIndex > zIndex) {
-  //     zIndex = tempZIndex;
-  //   }
-  // });
-  // this._toggleZIndex(zIndex + 1);
-  // $(".dropdown__main", "body")
-  //   .not(this._$main)
-  //   .slideUp("slow")
-  //   .parent(".dropdown")
-  //   .removeClass("dropdown_expand");
-};
+Dropdown.prototype._rollOtherDropdown = function () {};
 
 Dropdown.prototype._handlerClickDocument = function (event) {
   if (
-    this._$element.hasClass("dropdown_expand") &&
+    this._$element.hasClass("js-dropdown_expanded") &&
     !$(event.target).closest(this._$element).length
   ) {
     this._handlerClickExpand();
@@ -218,16 +202,15 @@ Dropdown.prototype._handlerClickDocument = function (event) {
 };
 
 Dropdown.prototype._handlerClickExpand = function () {
-  if (this._forecedExpand) {
+  if (this._forcedExpand) {
     return false;
   }
-  if (this._$element.hasClass("dropdown_expand")) {
+  if (this._$element.hasClass("js-dropdown_expanded")) {
     this._$dropdownMain.slideUp("slow", () => {
       this._toggleClassExpand();
       this._toggleZIndex(10);
     });
   } else {
-    //this._rollOtherDropdown();
     this._$dropdownMain.slideDown("slow", () => {
       this._toggleClassExpand();
       this._toggleZIndex(100);
@@ -236,7 +219,7 @@ Dropdown.prototype._handlerClickExpand = function () {
 };
 
 Dropdown.prototype._toggleClassExpand = function () {
-  this._$element.toggleClass("dropdown_expand");
+  this._$element.toggleClass(["dropdown_expanded", "js-dropdown_expanded"]);
 };
 
 Dropdown.prototype._prepareItems = function () {
@@ -283,9 +266,9 @@ class Element {
       "click",
       this._handlerClickButton.bind(this, 0)
     );
-    this._$fakeinput = $(".dropdown__item-value", this._element);
+    this._$fakeInput = $(".js-dropdown__item-value", this._element);
     if (typeof value !== "undefined") {
-      this._$fakeinput.html(value);
+      this._$fakeInput.html(value);
     }
   }
 }
@@ -302,11 +285,17 @@ Element.prototype._handlerClickButton = function (type) {
   }
   if (flag) {
     if (value > 0) {
-      this._$buttonMinus.removeClass("dropdown__button_fade");
+      this._$buttonMinus.removeClass([
+        "dropdown__button_fade",
+        "js-dropdown__button_fade",
+      ]);
     } else {
-      this._$buttonMinus.addClass("dropdown__button_fade");
+      this._$buttonMinus.addClass([
+        "dropdown__button_fade",
+        "js-dropdown__button_fade",
+      ]);
     }
-    this._$fakeinput.text(value);
+    this._$fakeInput.text(value);
     this._$hiddenInput.val(value);
     const event = new Event("input");
     this._$hiddenInput[0].dispatchEvent(event);
@@ -314,7 +303,7 @@ Element.prototype._handlerClickButton = function (type) {
 };
 
 const renderComponent = () => {
-  const elements = Array.prototype.map.call($(".dropdown"), (element) => {
+  const elements = Array.prototype.map.call($(".js-dropdown"), (element) => {
     return new Dropdown(element);
   });
 };

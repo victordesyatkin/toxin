@@ -1,8 +1,8 @@
 @import "~theme/variables.scss";
 
-$dd: ".date-dropdown";
+$parent: ".date-dropdown";
 
-body #{$dd} {
+body #{$parent} {
   &__section-dropdown {
     display: flex;
     justify-content: space-between;

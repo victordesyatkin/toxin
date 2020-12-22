@@ -2,10 +2,8 @@ mixin dropdown(o = {})
     -
         let { dropdownOptions, ...inputOptions } = o || {};
         let { expand = false, type = 0, controlVisible = false, forcedExpand = false } = dropdownOptions || {};
-        let classDropdown = 'dropdown' + (expand ? ' dropdown_expand' : '') + (forcedExpand ? ' dropdown_foreced-expand' : ''); 
-        classDropdown += type === 0 ? ' dropdown_particular' : '';
-        // - type = 0 - rooms
-        // - type = 1 - guests
+        let classDropdown = 'dropdown js-dropdown' + (expand ? ' dropdown_expanded js-dropdown_expanded' : '') + (forcedExpand ? ' dropdown_forced-expanded js-dropdown_forced-expanded' : ''); 
+        classDropdown += type === 0 ? ' dropdown_particular js-dropdown_particular' : '';
     div(class=classDropdown, data-type=type)
         +input(inputOptions)
         .dropdown__main
@@ -15,7 +13,7 @@ mixin dropdown(o = {})
                 each item in items
                     - 
                         let { title = '', value = 0, name = '' } = item || {};
-                        let buttonMinusClass = 'dropdown__button'  + (value === 0 ? ' dropdown__button_fade' : '');
+                        let buttonMinusClass = 'dropdown__button js-dropdown__button'  + (value === 0 ? ' dropdown__button_fade js-dropdown__button_fade' : '');
                     .dropdown__item
                         input(
                             name=name,
@@ -26,14 +24,12 @@ mixin dropdown(o = {})
                         .dropdown__item-title
                             h3=title
                         .dropdown__item-control
-                            //- type = 0 - minus 
                             button(
                                 type="button"
                                 data-type="0"
                                 class=buttonMinusClass
                             )="-"
-                            .dropdown__item-value=value
-                            //- type = 1 - plus
+                            .dropdown__item-value.js-dropdown__item-value=value
                             button.dropdown__button(
                                 type="button"
                                 data-type="1"

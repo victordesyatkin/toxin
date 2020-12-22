@@ -4,7 +4,7 @@ mixin calendar(o = {})
             let {isOpen = false, classNames = [], forceVisible = false } = o || {};
             classes = `calendar__main${isOpen ? ' calendar__main_open' : ' calendar__main_hide'}${classNames.length ? ` ${classNames.join(' ')}` : ''}`;
         div(class = classes)
-            input(type="hidden", date-iscalendar="1")
+            input(type="hidden", date-isCalendar="1")
             .calendar__control
                 button.calendar__button.calendar__button_clean(type="button", data-type=0)
                     |Очистить

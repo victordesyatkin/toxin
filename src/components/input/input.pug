@@ -1,24 +1,11 @@
-//-
-  include ../toggle/toggle
-  include ../tick-box/tick-box
-
-//-
-  options.name - form element name
-  options.type - input type
-  options.placeholder - input placeholder
-  options.pattern - input pattern
-  options.tabindex - input tabindex
-  options.required - input required
-  options.label - подпись к checkbox и radio
-
 mixin input(o = {})
   -
     let { label = '', stateText = '', type = '', name = '', state = false, placeholder = '', button = {}, value, required, pattern, tabindex } = o || {};
     let { visible:buttonVisible = false } = button || {};
     let 
       autofocus = state ? true : false;
-      classesInputSection = 'input__section' + (buttonVisible ? ' input__section_offset' : '') + (autofocus ? ' input__section_hover' : '');
-      inputClasses = 'input__input';
+      classesInputSection = 'input__section js-input__section' + (buttonVisible ? ' input__section_offset' : '') + (autofocus ? ' input__section_hovered' : '');
+      inputClasses = 'input__input js-input__input';
   .input
     .input__info
       if label
@@ -49,9 +36,9 @@ mixin input(o = {})
                 buttonClasses += ' icon-expand_more';
                 break;
               }
-              case 'arrow_forward':
+              case 'arrow-forward':
               default: {
-                buttonClasses += ' input__button_forward';
+                buttonClasses += ' input__button_forwarded';
                 buttonClasses += ' icon-arrow_forward';
                 break;
               }

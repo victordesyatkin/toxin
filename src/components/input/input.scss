@@ -53,8 +53,8 @@
   &__section_offset {
     padding-right: 44px;
   }
-  &__section_hover,
-  &__section_focus,
+  &__section_hovered,
+  &__section_focused,
   &__section:hover,
   &__section:focus {
     border: 1px solid $color-third-dark;
@@ -90,7 +90,7 @@
     cursor: pointer;
   }
 
-  &__button_forward {
+  &__button_forwarded {
     background: linear-gradient(
       180deg,
       $color-purple 0%,
@@ -122,11 +122,10 @@
     }
   }
 
-  &_hover-focus {
+  &_hovered-focused {
     .input__input {
       color: $color-second-dark;
-      // border: 1px solid $color-third-dark;
-      outline: none !important;
+      outline: none;
       text-overflow: ellipsis;
     }
   }
@@ -141,109 +140,4 @@
       color: $color-second-dark;
     }
   }
-
-  // align-items: stretch;
-
-  // &__element {
-  //   flex-grow: 1;
-  //   width: 10rem;
-  //   padding: 0.43rem 1rem;
-  //   color: #888;
-  //   border: none;
-  //   border-radius: 4px;
-  //   background-color: #e5e5e5;
-  //   font-family: SourceSansProRegular, sans-serif;
-  //   font-size: 1.2rem;
-
-  //   &:focus {
-  //     outline: 0.3rem auto #bbb;
-  //   }
-
-  //   &[type='checkbox'],
-  //   &[type='radio'] {
-  //     position: absolute;
-  //     left: 1rem;
-  //     width: 1px;
-  //     height: 1px;
-
-  //     @include firefox-only() {
-  //       visibility: hidden;
-  //     }
-  //   }
-  // }
-
-  // &__label {
-  //   display: flex;
-  //   align-items: center;
-  // }
-
-  // &__label-text {
-  //   padding: 0.43rem 1rem;
-  //   color: #888;
-  //   font-family: SourceSansProRegular, sans-serif;
-  //   font-size: 1.2rem;
-  // }
-
-  // &__toggle,
-  // &__tick-box {
-  //   flex: 0 0 auto;
-  // }
-
-  // &__validation {
-  //   position: relative;
-  //   display: flex;
-  //   min-width: 6rem;
-  //   margin-left: 1rem;
-  //   border-radius: 4px;
-  //   justify-content: center;
-  //   align-items: center;
-
-  //   &::after {
-  //     position: absolute;
-  //     top: calc(50% - 0.25rem);
-  //     left: -0.25rem;
-  //     display: block;
-  //     width: 0.5rem;
-  //     height: 0.5rem;
-  //     content: '';
-  //     transform: rotate(45deg);
-  //     border-bottom-left-radius: 1px;
-  //     background-color: inherit;
-  //   }
-  // }
-
-  // &__validation-ok,
-  // &__validation-error {
-  //   text-transform: uppercase;
-  //   color: white;
-  //   font-family: LatoBlack, sans-serif;
-  //   font-size: 0.9rem;
-  //   font-weight: bold;
-  // }
-
-  // &__element {
-  //   &:valid + .input__validation {
-  //     background-color: $color-first;
-
-  //     & .input__validation-ok {
-  //       display: inline;
-  //     }
-
-  //     & .input__validation-error {
-  //       display: none;
-  //     }
-  //   }
-
-  //   &:invalid + .input__validation {
-  //     background-color: $color-second;
-
-  //     & .input__validation-ok {
-  //       display: none;
-  //     }
-
-  //     & .input__validation-error {
-  //       display: inline;
-  //     }
-  //   }
-  // }
 }

@@ -28,7 +28,7 @@ Book.prototype._init = function () {
   this._unit = this._props.unit;
   this._$calendar = $(".calendar", this._$component);
   this._$input = $(
-    '.book__date-dropdown input[type="hidden"][date-iscalendar="1"]',
+    '.book__date-dropdown input[type="hidden"][date-isCalendar="1"]',
     this._$component
   );
   setTimeout(() => {

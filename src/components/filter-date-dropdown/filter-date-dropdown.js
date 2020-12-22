@@ -74,7 +74,7 @@ FilterDateDropdown.prototype._init = function () {
   this._$mainBlock = $('div[data-type="3"]', this._$component);
   this._$input = $('input[type="hidden"][data-type="1"]', this._$component);
   this._datepicker = $(
-    'input[type="hidden"][date-iscalendar="1"]',
+    'input[type="hidden"][date-isCalendar="1"]',
     this._$component
   )
     .datepicker()
