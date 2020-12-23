@@ -2,11 +2,11 @@ mixin dropdown(o = {})
     -
         let { dropdownOptions, ...inputOptions } = o || {};
         let { expand = false, type = 0, controlVisible = false, forcedExpand = false } = dropdownOptions || {};
-        let classDropdown = 'dropdown js-dropdown' + (expand ? ' dropdown_expanded js-dropdown_expanded' : '') + (forcedExpand ? ' dropdown_forced-expanded js-dropdown_forced-expanded' : ''); 
+        let classDropdown = 'dropdown js-dropdown' + (expand ? ' dropdown_expanded' : '') + (forcedExpand ? ' dropdown_forced-expanded' : ''); 
         classDropdown += type === 0 ? ' dropdown_particular js-dropdown_particular' : '';
     div(class=classDropdown, data-type=type)
         +input(inputOptions)
-        .dropdown__main
+        .dropdown__main.js-dropdown__main
             block dropdown__main
                 -
                     let { items = [] } = o || {};
@@ -14,7 +14,7 @@ mixin dropdown(o = {})
                     - 
                         let { title = '', value = 0, name = '' } = item || {};
                         let buttonMinusClass = 'dropdown__button js-dropdown__button'  + (value === 0 ? ' dropdown__button_fade js-dropdown__button_fade' : '');
-                    .dropdown__item
+                    .dropdown__item.js-dropdown__item
                         input(
                             name=name,
                             type='hidden',

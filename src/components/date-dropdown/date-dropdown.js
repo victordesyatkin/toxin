@@ -4,6 +4,10 @@ import upperFirst from "lodash/upperFirst";
 import "./date-dropdown.scss";
 
 class DateDropdown {
+  static TYPE_CLEAN = 0;
+  static TYPE_APPLY = 0;
+  static IS_CALENDAR = 1;
+
   constructor(component) {
     this._component = component;
     this._$component = $(component);
@@ -15,6 +19,7 @@ DateDropdown.prototype._toggleVisibleCalendar = function () {
   if (get(this._datepicker, ["visible"])) {
     this._datepicker.hide();
   } else {
+    console.log("this.datepicker", this._datepicker);
     this._datepicker.show();
   }
 };
@@ -92,7 +97,7 @@ DateDropdown.prototype._init = function () {
   this._$sections.on("click", this._toggleVisibleCalendar.bind(this));
   this._$calendar = $(".js-date-dropdown__section-calendar", this._$component);
   this._datepicker = $(
-    'input[type="hidden"][date-isCalendar="1"]',
+    `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
     this._$calendar
   )
     .datepicker()
@@ -101,8 +106,14 @@ DateDropdown.prototype._init = function () {
     start: this._value2Date(this._getValue("start")),
     end: this._value2Date(this._getValue("end")),
   });
-  this._buttonClean = $('button[data-type="0"]', this._$calendar);
-  this._buttonApply = $('button[data-type="1"]', this._$calendar);
+  this._buttonClean = $(
+    `button[data-type="${DateDropdown.TYPE_CLEAN}"]`,
+    this._$calendar
+  );
+  this._buttonApply = $(
+    `button[data-type="${DateDropdown.TYPE_APPLY}"]`,
+    this._$calendar
+  );
   this._buttonClean.on("click", this._handlerClean.bind(this));
   this._buttonApply.on("click", this._handlerApply.bind(this));
   $(document).on("click", this._handlerClickDocument.bind(this));

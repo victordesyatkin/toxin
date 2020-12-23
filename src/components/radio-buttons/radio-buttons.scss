@@ -12,7 +12,6 @@
   &__section-buttons {
     display: flex;
     flex-direction: row;
-    // margin-top: 6px;
     flex-wrap: wrap;
   }
 
@@ -25,7 +24,6 @@
     flex-shrink: 1;
     flex-grow: 1;
     flex-direction: row;
-    // margin-top: 10.56px;
     cursor: pointer;
     line-height: 1.29rem;
     color: $color-third-dark;
@@ -39,7 +37,7 @@
     }
   }
 
-  &__checkmark {
+  &__check-mark {
     min-width: 20px;
     width: 20px;
     height: 20px;
@@ -52,11 +50,11 @@
     margin-right: 10px;
   }
 
-  &__button-lable {
+  &__button-label {
     margin-right: 20px;
   }
 
-  input:checked ~ &__checkmark {
+  input:checked ~ &__check-mark {
     border: 1px solid $color-purple;
 
     span {
@@ -68,7 +66,7 @@
     }
   }
 
-  input:checked ~ &__button-lable {
+  input:checked ~ &__button-label {
     color: $color-second-dark;
   }
 }

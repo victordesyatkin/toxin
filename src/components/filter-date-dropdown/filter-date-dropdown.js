@@ -2,6 +2,13 @@ import get from "lodash/get";
 import "./filter-date-dropdown.scss";
 
 class FilterDateDropdown {
+  static TYPE_FAKE = 0;
+  static TYPE_MAIN = 3;
+  static TYPE_INPUT = 1;
+  static TYPE_CLEAN = 0;
+  static TYPE_APPLY = 1;
+  static IS_CALENDAR = 1;
+
   constructor(component) {
     this._component = component;
     this._$component = $(component);
@@ -35,7 +42,6 @@ FilterDateDropdown.prototype._handlerClean = function () {
 
 FilterDateDropdown.prototype._handlerApply = function () {
   const selectedDates = this._datepicker.selectedDates || [];
-  const [start, end] = selectedDates;
   this._$input.val(JSON.stringify(selectedDates));
   this._changeFake();
   this._toggleMainBlock();
@@ -68,19 +74,37 @@ FilterDateDropdown.prototype._init = function () {
   this._options = this._$component.data("options");
   this._dummy = this._options.dummy || "ДД МЕС";
   this._separator = this._options.separator || "-";
-  this._$fake = $('input[data-type="0"]', this._$component);
-  this._$sectionUp = $(".filter-date-dropdown__section-up", this._$component);
+  this._$fake = $(
+    `input[data-type="${FilterDateDropdown.TYPE_FAKE}"]`,
+    this._$component
+  );
+  this._$sectionUp = $(
+    ".js-filter-date-dropdown__section-up",
+    this._$component
+  );
   this._$sectionUp.on("click", this._toggleMainBlock.bind(this));
-  this._$mainBlock = $('div[data-type="3"]', this._$component);
-  this._$input = $('input[type="hidden"][data-type="1"]', this._$component);
+  this._$mainBlock = $(
+    `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
+    this._$component
+  );
+  this._$input = $(
+    `input[type="hidden"][data-type=${FilterDateDropdown.TYPE_INPUT}]`,
+    this._$component
+  );
   this._datepicker = $(
-    'input[type="hidden"][date-isCalendar="1"]',
+    `input[type="hidden"][date-isCalendar="${FilterDateDropdown.IS_CALENDAR}"]`,
     this._$component
   )
     .datepicker()
     .data("datepicker");
-  this._buttonClean = $('button[data-type="0"]', this._$component);
-  this._buttonApply = $('button[data-type="1"]', this._$component);
+  this._buttonClean = $(
+    `button[data-type="${FilterDateDropdown.TYPE_CLEAN}"]`,
+    this._$component
+  );
+  this._buttonApply = $(
+    `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
+    this._$component
+  );
   this._buttonClean.on("click", this._handlerClean.bind(this));
   this._buttonApply.on("click", this._handlerApply.bind(this));
   $(document).on("click", this._handlerClickDocument.bind(this));
@@ -139,7 +163,7 @@ FilterDateDropdown.prototype._getValue = function () {
 
 function renderComponent() {
   const components = Array.prototype.map.call(
-    $(".filter-date-dropdown"),
+    $(".js-filter-date-dropdown"),
     (element) => {
       return new FilterDateDropdown(element);
     }

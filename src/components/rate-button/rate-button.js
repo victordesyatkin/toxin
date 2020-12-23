@@ -20,7 +20,7 @@ class RateButton {
       return null;
     }
     if (el.tagName === "IMG") {
-      el = el.closest("div.rate-button__rate");
+      el = el.closest("div.js-rate-button__rate");
     }
     let { rate, index } = el.dataset || {};
     rate = parseFloat(rate);
@@ -34,7 +34,7 @@ class RateButton {
         if (
           Array.prototype.indexOf.call(
             classList,
-            "rate-button__rate_checked"
+            "js-rate-button__rate_checked"
           ) === -1
         ) {
           prev.classList.add("rate-button__rate_checked");
@@ -62,7 +62,7 @@ class RateButton {
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
     const buttons = Array.prototype.map.call(
-      document.querySelectorAll(".rate-button__button"),
+      document.querySelectorAll(".js-rate-button__button"),
       (node) => {
         return new RateButton(node);
       }

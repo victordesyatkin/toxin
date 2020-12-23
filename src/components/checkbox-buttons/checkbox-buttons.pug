@@ -9,8 +9,8 @@ mixin checkbox-buttons(o = {buttons: [], label: ''})
             -
                 let
                     id = b.name ? `checkbox-buttons__button-${b.name}`: '';
-                    classButtonLable = b.classButtonLable ? ` ${b.classButtonLable}` : '';
-                    classesButtonLabel = `checkbox-buttons__button-lable${classButtonLable}`;
+                    classButtonLabel = b.classButtonLabel ? ` ${b.classButtonLabel}` : '';
+                    classesButtonLabel = `checkbox-buttons__button-label${classButtonLabel}`;
             label.checkbox-buttons__button(for=id)
                 input.checkbox-buttons__input(
                     type = "checkbox"
@@ -21,9 +21,9 @@ mixin checkbox-buttons(o = {buttons: [], label: ''})
                     checked = b.checked ? b.checked : false
                     id = id
                 )
-                span.checkbox-buttons__checkmark
+                span.checkbox-buttons__check-mark
                     img(src=checked, alt=b.name)
-                span(class=classesButtonLabel)=b.lable
+                span(class=classesButtonLabel)=b.label
                     
                 
                     

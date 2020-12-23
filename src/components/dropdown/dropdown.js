@@ -6,20 +6,20 @@ class Dropdown {
     this._element = element;
     this._$element = $(element);
     this._type = parseInt(this._$element.attr("data-type"));
-    this._$mainInput = $(".input__input", element);
+    this._$mainInput = $(".js-input__input", element);
     this._$mainInput.attr("disabled", true);
-    this._$inputSection = $(".input__section", element);
+    this._$inputSection = $(".js-input__section", element);
     this._$inputSection.on("click", this._handlerClickExpand.bind(this));
     this._mainPlaceholder = this._$mainInput.attr("placeholder");
-    this._$dropdownMain = $(".dropdown__main", this._element);
-    this._$buttonExpand = $(".input__button", this._element);
+    this._$dropdownMain = $(".js-dropdown__main", this._element);
+    this._$buttonExpand = $(".js-input__button", this._element);
     this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
     this._$buttonClean.on("click", this._handlerClickClean.bind(this));
     this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
     this._$buttonApply.on("click", this._handlerClickApply.bind(this));
-    this._$main = $(".dropdown__main", this._$element);
+    this._$main = $(".js-dropdown__main", this._$element);
     $("body").on("click", this._handlerClickDocument.bind(this));
-    this._forcedExpand = this._$element.hasClass("dropdown_forced-expand");
+    this._forcedExpand = this._$element.hasClass("dropdown_forced-expanded");
     this._prepareItems();
     this._createPlaceholder();
     this._updatePlaceholder();
@@ -125,9 +125,9 @@ Dropdown.prototype._handlerClickClean = function () {
   Object.keys(this._inputs).forEach((key) => {
     this._inputs[key] = 0;
   });
-  $($(".dropdown__item", this._$dropdownMain)).each(function () {
+  $($(".js-dropdown__item", this._$dropdownMain)).each(function () {
     $("input", this).val(0);
-    $(".dropdown__item-value", this).text(0);
+    $(".js-dropdown__item-value", this).text(0);
   });
   this._updatePlaceholder();
   this._toggleButtonClean();
@@ -194,7 +194,7 @@ Dropdown.prototype._rollOtherDropdown = function () {};
 
 Dropdown.prototype._handlerClickDocument = function (event) {
   if (
-    this._$element.hasClass("js-dropdown_expanded") &&
+    this._$element.hasClass("dropdown_expanded") &&
     !$(event.target).closest(this._$element).length
   ) {
     this._handlerClickExpand();
@@ -205,7 +205,7 @@ Dropdown.prototype._handlerClickExpand = function () {
   if (this._forcedExpand) {
     return false;
   }
-  if (this._$element.hasClass("js-dropdown_expanded")) {
+  if (this._$element.hasClass("dropdown_expanded")) {
     this._$dropdownMain.slideUp("slow", () => {
       this._toggleClassExpand();
       this._toggleZIndex(10);
@@ -219,11 +219,11 @@ Dropdown.prototype._handlerClickExpand = function () {
 };
 
 Dropdown.prototype._toggleClassExpand = function () {
-  this._$element.toggleClass(["dropdown_expanded", "js-dropdown_expanded"]);
+  this._$element.toggleClass("dropdown_expanded");
 };
 
 Dropdown.prototype._prepareItems = function () {
-  this._$items = $(".dropdown__item", this._$dropdownMain);
+  this._$items = $(".js-dropdown__item", this._$dropdownMain);
   const data = {};
   const names = ["adults", "babies", "children"];
   if (localStorage && localStorage.getItem("landingPage")) {
@@ -254,18 +254,21 @@ Dropdown.prototype._prepareItems = function () {
 };
 
 class Element {
+  static TYPE_PLUS = 1;
+  static TYPE_MINUS = 0;
+
   constructor(element, value) {
     this._element = element;
     this._$element = $(element);
     this._$hiddenInput = $("input", this._element);
-    this._$buttonPlus = $('button[data-type="1"]', this._$element).on(
-      "click",
-      this._handlerClickButton.bind(this, 1)
-    );
-    this._$buttonMinus = $('button[data-type="0"]', this._$element).on(
-      "click",
-      this._handlerClickButton.bind(this, 0)
-    );
+    this._$buttonPlus = $(
+      `button[data-type="${Element.TYPE_PLUS}"]`,
+      this._$element
+    ).on("click", this._handlerClickButton.bind(this, Element.TYPE_PLUS));
+    this._$buttonMinus = $(
+      `button[data-type="${Element.TYPE_MINUS}"]`,
+      this._$element
+    ).on("click", this._handlerClickButton.bind(this, Element.TYPE_MINUS));
     this._$fakeInput = $(".js-dropdown__item-value", this._element);
     if (typeof value !== "undefined") {
       this._$fakeInput.html(value);
@@ -276,24 +279,18 @@ class Element {
 Element.prototype._handlerClickButton = function (type) {
   let value = parseInt(this._$hiddenInput.val());
   let flag = 0;
-  if (type === 0 && value > 0) {
+  if (type === Element.TYPE_MINUS && value > 0) {
     value--;
     flag = 1;
-  } else if (type === 1) {
+  } else if (type === Element.TYPE_PLUS) {
     value++;
     flag = 1;
   }
   if (flag) {
     if (value > 0) {
-      this._$buttonMinus.removeClass([
-        "dropdown__button_fade",
-        "js-dropdown__button_fade",
-      ]);
+      this._$buttonMinus.removeClass("dropdown__button_fade");
     } else {
-      this._$buttonMinus.addClass([
-        "dropdown__button_fade",
-        "js-dropdown__button_fade",
-      ]);
+      this._$buttonMinus.addClass("dropdown__button_fade");
     }
     this._$fakeInput.text(value);
     this._$hiddenInput.val(value);

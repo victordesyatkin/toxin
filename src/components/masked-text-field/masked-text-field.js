@@ -1,4 +1,5 @@
 import IMask from "imask";
+
 import "./masked-text-field.scss";
 
 export default function renderComponent() {

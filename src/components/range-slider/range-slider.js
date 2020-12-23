@@ -1,4 +1,5 @@
 import get from "lodash/get";
+
 import "./range-slider.scss";
 
 class RangeSlider {
@@ -10,7 +11,7 @@ class RangeSlider {
       end: this._nodeListInputs[1],
     };
     this._nodeListPoints = this._component.querySelectorAll(
-      ".range-slider__point"
+      ".js-range-slider__point"
     );
     this._points = {
       start: this._nodeListPoints[0],
@@ -19,13 +20,13 @@ class RangeSlider {
     this._startPoint = this._nodeListPoints[0];
     this._endPoint = this._nodeListPoints[1];
     this._fullTrack = this._component.querySelector(
-      ".range-slider__section-body"
+      ".js-range-slider__section-body"
     );
     setTimeout(() => {
       this._pointWidth = parseFloat(this._startPoint.offsetWidth);
       this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
-      this._track = this._component.querySelector(".range-slider__track");
-      this._info = this._component.querySelector(".range-slider__info");
+      this._track = this._component.querySelector(".js-range-slider__track");
+      this._info = this._component.querySelector(".js-range-slider__info");
       this._type = "";
       this._options = JSON.parse(this._component.dataset.options);
       this._min = this._options.min;
@@ -45,6 +46,16 @@ class RangeSlider {
   }
 }
 
+RangeSlider.prototype._ondrag = function () {
+  return false;
+};
+
+RangeSlider.prototype._attachPointHandlers = function (el) {
+  el.addEventListener("ondrag", this._ondrag);
+  el.addEventListener("ondragdrop", this._ondrag);
+  el.addEventListener("ondragstart", this._ondrag);
+};
+
 RangeSlider.prototype._attachEventHandlers = function () {
   if (!this._component) {
     return false;
@@ -55,6 +66,10 @@ RangeSlider.prototype._attachEventHandlers = function () {
   document.addEventListener("mouseup", this._mouseup.bind(this));
   document.addEventListener("mousemove", this._mousemove.bind(this));
   window.addEventListener("resize", this._resize.bind(this));
+  Array.prototype.forEach.call(
+    this._nodeListPoints,
+    this._attachPointHandlers.bind(this)
+  );
 };
 
 RangeSlider.prototype._setInputs = function ({ start, end } = {}) {
@@ -227,7 +242,7 @@ RangeSlider.prototype._types = ["start", "end"];
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
     const components = Array.prototype.map.call(
-      document.querySelectorAll(".range-slider"),
+      document.querySelectorAll(".js-range-slider"),
       (node) => {
         return new RangeSlider(node);
       }

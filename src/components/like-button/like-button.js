@@ -4,7 +4,7 @@ class LikeButton {
   constructor(component) {
     this.component = component;
     this.input = this.component.querySelector("input");
-    this.count = this.component.querySelector(".like-button__count");
+    this.count = this.component.querySelector(".js-like-button__count");
     this._attachEventHandlers();
   }
 
@@ -14,7 +14,7 @@ class LikeButton {
       this.input.addEventListener("click", this._toggleCount);
   }
 
-  _toggleCount = (event) => {
+  _toggleCount = () => {
     if (
       this.input &&
       this.input.checked !== undefined &&
@@ -37,7 +37,7 @@ class LikeButton {
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
     const buttons = Array.prototype.map.call(
-      document.querySelectorAll(".like-button__button"),
+      document.querySelectorAll(".js-like-button__button"),
       (node) => {
         return new LikeButton(node);
       }

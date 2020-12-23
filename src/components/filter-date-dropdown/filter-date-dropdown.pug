@@ -3,7 +3,7 @@ mixin filter-date-dropdown(o = {})
         let {label, input, expanded, forcedExpanded} = o || {};
         input = { ...{ name: 'filter-date-dropdown', value: '', dummy: 'ДД МЕС' }, ...input };
         let { name, value, dummy } = input;
-        let classes = 'filter-date-dropdown' + (expanded ? ' filter-date-dropdown_expanded': '') + (forcedExpanded ? ' filter-date-dropdown_forced-expanded': '');
+        let classes = 'filter-date-dropdown js-filter-date-dropdown' + (expanded ? ' filter-date-dropdown_expanded' : '') + (forcedExpanded ? ' filter-date-dropdown_forced-expanded': '');
     div(
         data-options={dummy, separator: '-'}
         class=classes
@@ -16,7 +16,7 @@ mixin filter-date-dropdown(o = {})
         )
         if (label)
             .filter-date-dropdown__label=label
-        .filter-date-dropdown__section-up
+        .filter-date-dropdown__section-up.js-filter-date-dropdown__section-up
             input.filter-date-dropdown__input(
                 data-type="0"
                 placeholder="ДД МЕС - ДД МЕС"
@@ -26,6 +26,6 @@ mixin filter-date-dropdown(o = {})
                     type="button",
                     class="icon-expand_more"
             )
-        .filter-date-dropdown__section-down(data-type="3")
+        .filter-date-dropdown__section-down.js-filter-date-dropdown__section-down(data-type="3")
             +calendar({isOpen: true})
 

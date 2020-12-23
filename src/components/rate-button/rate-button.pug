@@ -3,7 +3,7 @@ mixin rate-button(o = {buttons: [], label: ''})
         let
             { label = '', buttons = [], off = 1 } = o || {};
             imgRate = require('../../components/rate-button/img/star.svg').default;
-            noImgRate = require('../../components/rate-button/img/star_border.svg').default;
+            noImgRate = require('../../components/rate-button/img/star-border.svg').default;
     .rate-button
         if (label)
             h3.rate-button__label=label
@@ -19,7 +19,7 @@ mixin rate-button(o = {buttons: [], label: ''})
                     } else if (grade < 0 || typeof (b || {}).grade === undefined) {
                         grade = 0;
                     }
-                .rate-button__button(
+                .rate-button__button.js-rate-button__button(
                     data-count = count
                     data-off = off
                 )
@@ -32,10 +32,10 @@ mixin rate-button(o = {buttons: [], label: ''})
                         -
                             let 
                                 rate = n <= grade ? 1 : 0; 
-                                classes = `rate-button__rate${rate ? ' rate-button__rate_checked' : ''}`;  
+                                classes = `rate-button__rate js-rate-button__rate${rate ? ' rate-button__rate_checked' : ''}`;  
                         div(class=classes, data-index=n, data-rate=rate)
                             img(src=imgRate, alt=b.name, class="rate-button__img rate-button__img_checked")
-                            img(src=noImgRate, alt=b.name, class="rate-button__img rate-button__img_nochecked")
+                            img(src=noImgRate, alt=b.name, class="rate-button__img rate-button__img_not_checked")
                         -
                             ++n;
                     

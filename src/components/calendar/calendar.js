@@ -1,5 +1,6 @@
 import datepicker from "air-datepicker";
 import get from "lodash/get";
+
 import "./calendar.scss";
 
 class Calendar {
@@ -81,14 +82,14 @@ Calendar.prototype._toggleVisibleMain = function () {
     return false;
   }
   const visible = get(this._datepicker, ["visible"]);
-  if (visible && this._$main.hasClass("calendar__main_hide")) {
-    this._$main.removeClass("calendar__main_hide");
-  } else if (!visible && !this._$main.hasClass("calendar__main_hide")) {
-    this._$main.addClass("calendar__main_hide");
-    this._$main.removeClass("calendar__main_open");
-  } else if (!visible && this._$main.hasClass("calendar__main_open")) {
-    this._$main.removeClass("calendar__main_open");
-    this._$main.addClass("calendar__main_hide");
+  if (visible && this._$main.hasClass("calendar__main_hidden")) {
+    this._$main.removeClass("calendar__main_hidden");
+  } else if (!visible && !this._$main.hasClass("calendar__main_hidden")) {
+    this._$main.addClass("calendar__main_hidden");
+    this._$main.removeClass("calendar__main_opened");
+  } else if (!visible && this._$main.hasClass("calendar__main_opened")) {
+    this._$main.removeClass("calendar__main_opened");
+    this._$main.addClass("calendar__main_hidden");
   }
   return false;
 };
@@ -123,18 +124,17 @@ Calendar.prototype._init = function () {
   this._options = this._prepareOptions(this._options);
   this._$input.datepicker(this._options);
   this._datepicker = this._$input.datepicker().data("datepicker");
-  this._$main = $(".calendar__main", this._$component);
-  this._$buttonClean = $(".calendar__button_clean", this._$component).on(
+  this._$main = $(".js-calendar__main", this._$component);
+  this._$buttonClean = $(".js-calendar__button_clean", this._$component).on(
     "click",
     this._handlerClean.bind(this)
   );
-  this._$buttonApply = $(".calendar__button_apply", this._$component).on(
+  this._$buttonApply = $(".js-calendar__button_apply", this._$component).on(
     "click",
     this._handlerApply.bind(this)
   );
   this._$component.on("click", this._handlerClickCalendar.bind(this));
   this._toggleVisibleButtonClean();
-  //this._toggleVisibleMain();
   this._isOpen = get(this._$component.data(), ["options", "isOpen"]);
   this._isOpen && this._datepicker.show();
   this._selectDate();
@@ -178,7 +178,7 @@ Calendar.prototype._value2Date = function (value = "") {
 
 function renderComponent() {
   const components = [];
-  $(".calendar", "body").each(function () {
+  $(".js-calendar", "body").each(function () {
     components.push(new Calendar(this));
   });
 }

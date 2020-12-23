@@ -29,7 +29,7 @@ mixin input(o = {})
         if buttonVisible
           - 
             let { type:buttonType = 'button', class:buttonClass = 'default', name:buttonName, value:buttonValue } = button || {};
-            let buttonClasses = 'input__button';
+            let buttonClasses = 'input__button js-input__button';
             switch (buttonClass) {
               case 'arrow-down': {
                 buttonClasses += ' input__button_default';

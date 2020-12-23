@@ -2,16 +2,16 @@ mixin like-button(o = {buttons: [], label: ''})
     -
         let { label = '', buttons = [] } = o || {};
         let like = require('../../components/like-button/img/favorite.svg').default;
-        let noLike = require('../../components/like-button/img/favorite_border.svg').default;
-    .like-button
+        let noLike = require('../../components/like-button/img/favorite-border.svg').default;
+    .like-button.js-like-button
         if (o.label)
             h3.like-button__label=label
         .like-button__section-buttons
             for b in buttons
                 -
                     let id = b.name ? `like-button__button-${b.name}`: '';
-                label.like-button__button(for=id)
-                    input.like-button__input(
+                label.like-button__button.js-like-button__button(for=id)
+                    input.like-button__input.js-like-button__input(
                         type = "checkbox"
                         name = b.name
                         tabindex = b.tabindex
@@ -20,12 +20,12 @@ mixin like-button(o = {buttons: [], label: ''})
                         checked = b.checked ? b.checked : false
                         id = id
                     )
-                    div.like-button__checkmark
-                        div.like-button__checkmark-like
+                    div.like-button__check-mark
+                        div.like-button__check-mark-like
                             img(src=like, alt='')
-                        div.like-button__checkmark-no-like
+                        div.like-button__check-mark-no-like
                             img(src=noLike, alt='')
-                        div.like-button__count #{b.count}
+                        div.like-button__count.js-like-button__count #{b.count}
                     
                 
                     
