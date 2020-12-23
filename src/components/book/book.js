@@ -2,6 +2,11 @@ import datepicker from "air-datepicker";
 import "./book.scss";
 
 class Book {
+  static TYPE_PRICE = 3;
+  static TYPE_COUNT = 1;
+  static TYPE_FEE = 2;
+  static IS_CALENDAR = 1;
+
   constructor(component) {
     this._$component = $(component);
     this._init();
@@ -17,23 +22,29 @@ Book.prototype._wordForm = function (num, word) {
 };
 
 Book.prototype._init = function () {
-  this._$calc = $('.book__section[data-type="1"]', this._$component);
-  this._$calcInfo = $(".book__section-info", this._$calc);
-  this._$calcTotal = $(".book__section-total", this._$calc);
-  this._$total = $('.book__section[data-type="2"]', this._$component);
-  this._$totalTotal = $(".book__section-total", this._$total);
+  this._$calc = $(
+    `.js-book__section[data-type="${Book.TYPE_COUNT}"]`,
+    this._$component
+  );
+  this._$calcInfo = $(".js-book__section-info", this._$calc);
+  this._$calcTotal = $(".js-book__section-total", this._$calc);
+  this._$total = $(
+    `.js-book__section[data-type="${Book.TYPE_FEE}"]`,
+    this._$component
+  );
+  this._$totalTotal = $(".js-book__section-total", this._$total);
   this._props = this._$component.data("options");
   this._price = parseFloat(this._prepareNumber(this._props.price));
   this._discount = parseFloat(this._prepareNumber(this._props.discount));
   this._unit = this._props.unit;
-  this._$calendar = $(".calendar", this._$component);
+  this._$calendar = $("js-calendar", this._$component);
   this._$input = $(
-    '.book__date-dropdown input[type="hidden"][date-isCalendar="1"]',
+    `.js-book__date-dropdown input[type="hidden"][date-isCalendar="${Book.IS_CALENDAR}"]`,
     this._$component
   );
   setTimeout(() => {
     this._datepicker = this._$input.datepicker().data("datepicker");
-    this._prepareDaty();
+    this._prepareDirty();
     this._setCalc();
     this._$calendar.on("click", this._setCalc.bind(this));
   }, 100);
@@ -68,7 +79,7 @@ Book.prototype._setCalc = function () {
 };
 
 Book.prototype._setTotal = function (total = 0) {
-  total += this._daty - this._discount;
+  total += this._dirty - this._discount;
   if (total < 0) {
     total = 0;
   }
@@ -76,16 +87,16 @@ Book.prototype._setTotal = function (total = 0) {
   this._$totalTotal.html(`${total}<span>${this._unit}</span>`);
 };
 
-Book.prototype._prepareDaty = function () {
-  const $daties = $(".book__section:not([data-type])");
-  let daty = 0;
+Book.prototype._prepareDirty = function () {
+  const $dates = $(".js-book__section:not([data-type])");
+  let dirty = 0;
   Array.prototype.forEach.call(
-    $(".book__section-total", $daties),
+    $(".js-book__section-total", $dates),
     function (element) {
-      daty += parseFloat(this._prepareNumber($(element).html()));
+      dirty += parseFloat(this._prepareNumber($(element).html()));
     }.bind(this)
   );
-  this._daty = daty;
+  this._dirty = dirty;
 };
 
 document.addEventListener("DOMContentLoaded", function () {

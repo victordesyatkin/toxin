@@ -5,7 +5,7 @@ import "./date-dropdown.scss";
 
 class DateDropdown {
   static TYPE_CLEAN = 0;
-  static TYPE_APPLY = 0;
+  static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
 
   constructor(component) {

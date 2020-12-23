@@ -108,9 +108,9 @@
     },
     "signUp": {
         "title": "Регистрация аккаунта",
-        "firstname": {
+        "firstName": {
             "name": "firstName1",
-            "id": "firstname1",
+            "id": "firstName1",
             "type": "text",
             "label": "",
             "placeholder": "Имя"
@@ -126,13 +126,13 @@
         "gender": {
             "buttons": [
                 {
-                    "lable": "Мужчина",
+                    "label": "Мужчина",
                     "checked": true,
                     "name": "gender1",
                     "value": "male"
                 },
                 {
-                    "lable": "Женщина",
+                    "label": "Женщина",
                     "checked": false,
                     "name": "gender1",
                     "value": "female"
@@ -163,7 +163,7 @@
         "contribute": {
             "buttons": [
                 {
-                    "lable": "Получать спецпредложения",
+                    "label": "Получать спецпредложения",
                     "checked": false,
                     "name": "contribute"
                 }

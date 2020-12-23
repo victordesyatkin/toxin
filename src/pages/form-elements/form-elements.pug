@@ -14,7 +14,7 @@ block main
                 .form-elements-block1
                     +dropdown(data.dropdown1)
                 .form-elements-block1.margin-top-23
-                    +masked-text-field(data.maskedTextfield1)                    
+                    +masked-text-field(data.maskedTextField1)                    
                 .form-elements-block2
                     +date-dropdown(data.dropdown2)
                 .form-elements-block2.form-elements-block3.margin-top-42
@@ -46,56 +46,21 @@ block main
                     +rich-checkbox-buttons(data.richCheckboxButtons1)
             section.form-elements-section.margin-left-72.width-320.section-third
                 .form-elements-block1.width-266
-                    +range-slider({label: 'Range Slider', unit: '&#8381;', start: 5000, end: 10000, min:0, max:15000, separator: 1000})
+                    +range-slider(data.rangeSlider)
                 .form-elements-block1.width-218.margin-top-40.margin-bottom-30.margin-top-31
-                    +buttons({
-                        label: 'Buttons',
-                        buttons: [
-                            {text: 'Click me', type: 'button', disabled:false, value: '', view: 0, full: true},
-                        ]
-                    })
+                    +buttons(data.buttons1)
                 .form-elements-block1.width-218.margin-bottom-31
-                    +buttons({
-                        buttons: [
-                            {text: 'Click me', type: 'button', disabled:false, value: '', view: 1, full: true},
-                        ]
-                    })
+                    +buttons(data.buttons2)
                 .form-elements-block1.width-144.margin-bottom-31
-                    +buttons({
-                        buttons: [
-                            {text: 'Click me', type: 'button', disabled:false, value: '', view: 2, full: true},
-                        ]
-                    })
+                    +buttons(data.buttons3)
                 .form-elements-block1.margin-bottom-30
-                    +buttons({
-                        buttons: [
-                            {text: 'Перейти к оплате', type: 'button', disabled:false, value: '', view: 3, full: true},
-                        ]
-                    })
+                    +buttons(data.buttons4)
                 .form-elements-block2.form-elements_margin-bottom-234.width-241
-                    +pagination({start: 1, end: 15, current: 1, text: 'вариантов аренды', label: 'pagination'})                    
+                    +pagination(data.pagination)                    
                 .form-elements-block2.form-elements_margin-bottom-258
-                    +dropdown({
-                        dropdownOptions: { expand: false, type: 1, controlVisible: true, forcedExpand: true, },
-                        name: 'guests2', 
-                        stateText: '',
-                        type: 'text',
-                        label: 'dropdown',
-                        placeholder: 'Сколько гостей',
-                        button: { class: 'arrow-down', visible: true },
-                        items: [
-                            {title: 'взрослые', value: 2},
-                            {title: 'дети', value: 1},
-                            {title: 'младенцы', value: 0}
-                        ]
-                    })
+                    +dropdown(data.dropdown6)
                 .form-elements-block2.width-260
-                    +bullet-list({lable: 'bullet list', items: [
-                        {lable: 'Нельзя с питомцами'},
-                        {lable: 'Без вечеринок и мероприятий'},
-                        {lable: 'Время прибытия — после 13:00, а выезд до 12:00'}
-                    ]
-                })
+                    +bullet-list(data.bulletList)
         article.form-elements-down
             section.form-elements-section
                 .form-elements-block1.width-282

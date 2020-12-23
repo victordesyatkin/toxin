@@ -3,7 +3,7 @@ mixin pagination(o = {})
         let
             { start = 0, end = 0, current = 0, text = '', label = '', altPrevious='previous_l10n', altNext = 'next_l10n', limit = 2, count = 12 } = o || {};
             pages = [];
-            src = require('../../components/pagination/img/arrow_forward.svg').default;
+            src = require('../../components/pagination/img/arrow-forward.svg').default;
             isEmptyStart = true;
             isEmptyEnd = true;
             emptyString = '...';
@@ -39,17 +39,16 @@ mixin pagination(o = {})
         if (end - current > limit) {
             pages.push(end);
         }
-    .pagination(data-start=start, data-limit=limit, data-end=end, data-current=current, data-text=text, data-count=count)
+    .pagination.js-pagination(data-start=start, data-limit=limit, data-end=end, data-current=current, data-text=text, data-count=count)
         if (start > 0 & end > 0)
             if (label)
                 .pagination__section-header
                     h3=label
-            .pagination__section-body
+            .pagination__section-body.js-pagination__section-body
                 div(class=classesButtonPrevious, data-direction="prev")
                     .pagination__dummy
                     .pagination__content 
                         img(src=src, alt=altPrevious)
-                //- div.pagination__common
                 each page in pages
                     - 
                         let

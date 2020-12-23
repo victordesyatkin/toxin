@@ -1,4 +1,5 @@
 import get from "lodash/get";
+
 import("./comments.scss");
 
 function wordForm(num, word) {
@@ -9,11 +10,11 @@ function wordForm(num, word) {
 }
 
 function renderComponent() {
-  $(".comments").each(function () {
+  $(".js-comments").each(function () {
     const data = $(this).data();
     const units = get(data, ["units"]) || [];
     const count = get(data, ["count"]) || [];
-    const $units = $(".comments__count-units", this);
+    const $units = $(".js-comments__count-units", this);
     if (units.length) {
       $units.html(wordForm(count, units));
     }

@@ -108,13 +108,12 @@ class Pagination {
     if (end - current > limit) {
       pages.push(end);
     }
-    // const common = this.component.querySelector(".pagination__common");
-    // common.innerHTML = "";
     const prev = this.component.querySelector('[data-direction="prev"]');
     const next = this.component.querySelector('[data-direction="next"]');
-    const body = this.component.querySelector(".pagination__section-body");
+    const body = this.component.querySelector(".js-pagination__section-body");
     body.innerHTML = "";
-    body.appendChild(prev);
+    const fragment = document.createDocumentFragment();
+    fragment.appendChild(prev);
     pages.forEach((page) => {
       const newDiv = document.createElement("div");
       newDiv.classList.add("pagination__item");
@@ -138,16 +137,17 @@ class Pagination {
       }
       newDiv.dataset.current = dataCurrent;
       newDiv.dataset.item = page;
-      body.appendChild(newDiv);
+      fragment.appendChild(newDiv);
     });
-    body.appendChild(next);
+    fragment.appendChild(next);
+    body.appendChild(fragment);
   };
 }
 
 export default function renderComponent(callbackWhenInitialized) {
   (() => {
     const components = Array.prototype.map.call(
-      document.querySelectorAll(".pagination"),
+      document.querySelectorAll(".js-pagination"),
       (component) => new Pagination(component)
     );
     if (

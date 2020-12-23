@@ -1,13 +1,13 @@
 mixin bullet-list(o = {})
     -
         let
-            {lable = '', items = []} = o;
+            {label = '', items = []} = o;
     .bullet-list
-        if (lable)
-            .bullet-list__lable=lable
+        if (label)
+            .bullet-list__label=label
         .bullet-list__list
             each item in items
                 .bullet-list__item
                     span.bullet-list__item-mark
-                    span.bullet-list__item-lable=item.lable
+                    span.bullet-list__item-label=item.label
 
