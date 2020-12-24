@@ -6,24 +6,24 @@ mixin slider(props = {})
             n = 0;
             length = images.length;
             defaultSrc = {
-                1: require('../../components/slider/img/image_1.png').default,
-                2: require('../../components/slider/img/image_2.png').default,
-                3: require('../../components/slider/img/image_3.png').default,
-                4: require('../../components/slider/img/image_4.png').default,
-                5: require('../../components/slider/img/image_5.png').default,
-                6: require('../../components/slider/img/image_6.png').default,
-                7: require('../../components/slider/img/image_7.png').default,
-                8: require('../../components/slider/img/image_8.png').default,
-                9: require('../../components/slider/img/image_9.png').default,
-                10: require('../../components/slider/img/image_10.png').default,
-                11: require('../../components/slider/img/image_11.png').default,
-                12: require('../../components/slider/img/image_12.png').default,
+                1: require('../../components/slider/img/image-1.png').default,
+                2: require('../../components/slider/img/image-2.png').default,
+                3: require('../../components/slider/img/image-3.png').default,
+                4: require('../../components/slider/img/image-4.png').default,
+                5: require('../../components/slider/img/image-5.png').default,
+                6: require('../../components/slider/img/image-6.png').default,
+                7: require('../../components/slider/img/image-7.png').default,
+                8: require('../../components/slider/img/image-8.png').default,
+                9: require('../../components/slider/img/image-9.png').default,
+                10: require('../../components/slider/img/image-10.png').default,
+                11: require('../../components/slider/img/image-11.png').default,
+                12: require('../../components/slider/img/image-12.png').default,
             }
-    .slider(
+    .slider.js-slider(
         data-props=props,
-        data-defaultsrc=defaultSrc
+        data-defaultSrc=defaultSrc
     )
-        .slider__section-images.slider__section_noselect
+        .slider__section-images.slider__section_not_selected.js-slider__section-images
             .slider__image-wrapper
                 img(
                     src = ''
@@ -31,14 +31,14 @@ mixin slider(props = {})
                 )
         if (length !== 0)
             if (control === true)
-                .slider__control.slider__control_left.icon-expand_more_prev(
+                .slider__control.slider__control_left.icon-expand_more_prev.js-slider__control(
                     data-type = 1
                 )
-                .slider__control.slider__control_right.icon-expand_more_prev(
+                .slider__control.slider__control_right.icon-expand_more_prev.js-slider__control(
                     data-type = 2
                 )
             .slider__pagination
                 while n < length
-                    .slider__point(data-index=n)
+                    .slider__point.js-slider__point(data-index=n)
                     -
                         ++n

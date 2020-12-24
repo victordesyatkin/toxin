@@ -8,8 +8,8 @@
     "stateText": "default"
   },
   "input2": {
-    "name": "lastname",
-    "id": "lastname",
+    "name": "lastName",
+    "id": "lastName",
     "type": "text",
     "label": "text field",
     "placeholder": "This is pretty awesome",

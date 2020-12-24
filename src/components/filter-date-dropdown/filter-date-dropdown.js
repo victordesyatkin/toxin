@@ -1,4 +1,5 @@
 import get from "lodash/get";
+
 import "./filter-date-dropdown.scss";
 
 class FilterDateDropdown {

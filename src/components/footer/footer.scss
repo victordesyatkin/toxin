@@ -40,7 +40,7 @@
     }
   }
 
-  &__subscibe {
+  &__subscribe {
     display: flex;
     flex-direction: column;
     width: 270px;
@@ -48,12 +48,12 @@
     padding: 5px;
   }
 
-  &__subscibe-header {
+  &__subscribe-header {
     @include h3;
     margin-bottom: 21px;
   }
 
-  &__subscibe-description {
+  &__subscribe-description {
     margin-bottom: 17px;
   }
 
@@ -145,13 +145,13 @@
           }
         }
 
-        .footer__subscibe {
+        .footer__subscribe {
           margin: 0;
           width: 100%;
           padding: 0 15px;
 
-          .footer__subscibe-header,
-          .footer__subscibe-description {
+          .footer__subscribe-header,
+          .footer__subscribe-description {
             text-align: center;
           }
         }

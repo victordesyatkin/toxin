@@ -1,5 +1,6 @@
 import get from "lodash/get";
 import orderBy from "lodash/orderBy";
+
 import "./rate.scss";
 
 class Rate {
@@ -36,7 +37,6 @@ Rate.prototype._drawSeparator = function (startAngle) {
   startAngle = startAngle - this._calcAngle(this._separatorCount) / 2;
   const endAngle = startAngle + this._calcAngle(this._separatorCount);
   this._ctx.strokeStyle = this._separatorColor;
-  //this._ctx.lineWidth = this._lineWidth * 1.1;
   this._ctx.arc(this._x, this._y, this._radius - 0, startAngle, endAngle);
   this._ctx.stroke();
   this._ctx.closePath();
@@ -108,10 +108,7 @@ Rate.prototype._draw = function () {
 };
 
 Rate.prototype._initCircle = function () {
-  this._$circle = $(".rate__circle", this._$component);
-  if (!this._$circle) {
-    this._$circle = $(".rate__circle", this._$component);
-  }
+  this._$circle = $(".js-rate__circle", this._$component);
   if (this._$circle.length) {
     this._widthCircle = this._$circle.width();
     this._heightCircle = this._$circle.height();
@@ -124,7 +121,7 @@ Rate.prototype._initCanvas = function () {
   if (this._$canvas.length) {
     this._canvas = this._$canvas.get(0);
     this._canvas.width = this._widthCircle;
-    this._canvas.height = this._widthCircle; //this._heightCircle;
+    this._canvas.height = this._widthCircle;
     this._ctx = this._canvas.getContext("2d");
     this._ctx.lineWidth = this._lineWidth;
   }
@@ -141,7 +138,7 @@ Rate.prototype._initCircleParams = function () {
 Rate.prototype._setUnits = function () {
   this._total = get(this._data, ["data", "total"]);
   this._units = get(this._data, ["data", "units"]) || [];
-  this._$unit = $(".rate__unit", this._$component);
+  this._$unit = $(".js-rate__unit", this._$component);
   if (this._units.length) {
     this._$unit.html(this._wordForm(this._total, this._units));
   }
@@ -155,7 +152,7 @@ Rate.prototype._wordForm = function (num, word) {
 };
 
 const renderComponent = () => {
-  $(".rate").each(function () {
+  $(".js-rate").each(function () {
     const components = new Rate(this);
   });
 };

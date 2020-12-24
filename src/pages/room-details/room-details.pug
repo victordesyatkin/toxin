@@ -1,5 +1,12 @@
 extends ../base/base
 
+include ../../components/info/info
+include ../../components/rate/rate
+include ../../components/bullet-list/bullet-list
+include ../../components/comments/comments
+include ../../components/card/card
+include ../../components/book/book
+
 block title
     | Room details
 block main
@@ -9,9 +16,9 @@ block main
             -   
                 let { images } = data || {};
                 let { src1, src2, src3 } = images || {};
-                src1 = src1 || require('../../pages/room-details/img/image_1.png').default;
-                src2 = src2 || require('../../pages/room-details/img/image_2.png').default;
-                src3 = src3 || require('../../pages/room-details/img/image_3.png').default;
+                src1 = src1 || require('../../pages/room-details/img/image-1.png').default;
+                src2 = src2 || require('../../pages/room-details/img/image-2.png').default;
+                src3 = src3 || require('../../pages/room-details/img/image-3.png').default;
             .room-details__image1
                 img(
                     src=src1

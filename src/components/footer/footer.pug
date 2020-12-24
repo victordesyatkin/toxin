@@ -1,8 +1,13 @@
+include ../logo-image/logo-image
+include ../list-links/list-links
+include ../subscription-text-field/subscription-text-field
+include ../copyright/copyright
+
 mixin footer(props)
     -
-        let { info, items = [], subscibe, copyright } = props || {};
+        let { info, items = [], subscribe, copyright } = props || {};
         let { content } = info || {};
-        let { header, description, field } = subscibe || {};
+        let { header, description, field } = subscribe || {};
 
     .footer
         .footer__up-wrapper
@@ -14,10 +19,10 @@ mixin footer(props)
                 nav.footer__nav-items
                     each item in items
                         +list-links(item)
-                .footer__subscibe
-                    .footer__subscibe-header=header
-                    .footer__subscibe-description=description
-                    .footer__subscibe-field
+                .footer__subscribe
+                    .footer__subscribe-header=header
+                    .footer__subscribe-description=description
+                    .footer__subscribe-field
                         +subscription-text-field(field)
         .footer__down
             .footer__copyright

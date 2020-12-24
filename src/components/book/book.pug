@@ -1,3 +1,7 @@
+include ../date-dropdown/date-dropdown
+include ../dropdown/dropdown
+include ../buttons/buttons
+
 mixin book(o = {})
     -
         let {discount = '2 179', number = '888', suite = 'люкс', price = '9 990', duration = 'в сутки', unit = '&#8381', dropdown = {}, dateDropdown = {}, total = '38 081', totalInfo= 'Итого', buttons = []} = o || {};

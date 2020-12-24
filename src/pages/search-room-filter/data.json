@@ -6,7 +6,7 @@
           "id": 1,
           "label": "О нас",
           "children": [],
-          "current": true,
+          "current": false,
           "parent": 0
         },
         {
@@ -186,7 +186,7 @@
         }
       ]
     },
-    "subscibe": {
+    "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
@@ -230,10 +230,10 @@
   "checkboxButtons1": {
     "label": "правила дома",
     "buttons": [
-      { "lable": "Можно курить", "checked": false, "name": "smoke" },
-      { "lable": "Можно с питомцами", "checked": true, "name": "pet" },
+      { "label": "Можно курить", "checked": false, "name": "smoke" },
+      { "label": "Можно с питомцами", "checked": true, "name": "pet" },
       {
-        "lable": "Можно пригласить гостей (до 10 человек)",
+        "label": "Можно пригласить гостей (до 10 человек)",
         "checked": true,
         "name": "guest"
       }
@@ -243,13 +243,13 @@
     "label": "доступность",
     "buttons": [
       {
-        "lable": "Широкий коридор",
+        "label": "Широкий коридор",
         "checked": false,
         "name": "widecorridor",
         "info": "Ширина коридоров в номере не менее 91 см."
       },
       {
-        "lable": "Помощник для инвалидов",
+        "label": "Помощник для инвалидов",
         "checked": false,
         "name": "helper",
         "info": "На 1 этаже вас встретит специалист  и проводит до номера."
@@ -275,14 +275,14 @@
   "expandableCheckboxList1": {
     "expandable": { "label": "дополнительные удобства" },
     "buttons": [
-      { "lable": "Завтрак", "checked": false, "name": "breakfast" },
-      { "lable": "Письменный стол", "checked": true, "name": "table" },
-      { "lable": "Стул для кормления", "checked": true, "name": "chair" },
-      { "lable": "Кроватка", "checked": true, "name": "cot" },
-      { "lable": "Телевизор", "checked": false, "name": "tv1" },
-      { "lable": "Шампунь", "checked": false, "name": "shampoo1" },
-      { "lable": "Телевизор", "checked": false, "name": "tv2" },
-      { "lable": "Шампунь", "checked": false, "name": "shampoo2" }
+      { "label": "Завтрак", "checked": false, "name": "breakfast" },
+      { "label": "Письменный стол", "checked": true, "name": "table" },
+      { "label": "Стул для кормления", "checked": true, "name": "chair" },
+      { "label": "Кроватка", "checked": true, "name": "cot" },
+      { "label": "Телевизор", "checked": false, "name": "tv1" },
+      { "label": "Шампунь", "checked": false, "name": "shampoo1" },
+      { "label": "Телевизор", "checked": false, "name": "tv2" },
+      { "label": "Шампунь", "checked": false, "name": "shampoo2" }
     ]
   },
   "sliders": {

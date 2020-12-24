@@ -19,13 +19,13 @@
     "gender": {
       "buttons": [
         {
-          "lable": "Мужчина",
+          "label": "Мужчина",
           "checked": true,
           "name": "gender1",
           "value": "male"
         },
         {
-          "lable": "Женщина",
+          "label": "Женщина",
           "checked": false,
           "name": "gender1",
           "value": "female"
@@ -56,7 +56,7 @@
     "contribute": {
       "buttons": [
         {
-          "lable": "Получать спецпредложения",
+          "label": "Получать спецпредложения",
           "checked": false,
           "name": "contribute"
         }
@@ -105,7 +105,7 @@
           "id": 1,
           "label": "О нас",
           "children": [],
-          "current": true,
+          "current": false,
           "parent": 0
         },
         {
@@ -285,7 +285,7 @@
         }
       ]
     },
-    "subscibe": {
+    "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {

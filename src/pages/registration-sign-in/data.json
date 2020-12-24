@@ -65,7 +65,7 @@
           "id": 1,
           "label": "О нас",
           "children": [],
-          "current": true,
+          "current": false,
           "parent": 0
         },
         {
@@ -245,7 +245,7 @@
         }
       ]
     },
-    "subscibe": {
+    "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {

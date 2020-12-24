@@ -56,6 +56,7 @@
 
   .search-room-filter__title {
     padding-left: 1px;
+    margin-top: -1px;
   }
 
   .card-slider__info .card-header__number {
@@ -116,6 +117,10 @@
   &__description {
     font-size: 12px;
     color: $color-dark-shade50;
+  }
+
+  .footer__up {
+    padding-top: 104px;
   }
 
   &_margin-bottom-47 {

@@ -1,3 +1,9 @@
+include ../input/input
+include ../radio-buttons/radio-buttons
+include ../masked-text-field/masked-text-field
+include ../toggle-buttons/toggle-buttons
+include ../card-footer/card-footer
+
 mixin sign-up(props = {})
     - 
         let { title = '', firstName, lastName, gender = {}, birthday, email, password, submit, contribute, pay, signIn } = props || {}; 

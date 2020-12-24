@@ -1,4 +1,5 @@
 import datepicker from "air-datepicker";
+
 import "./book.scss";
 
 class Book {

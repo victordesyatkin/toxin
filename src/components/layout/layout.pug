@@ -14,18 +14,6 @@ mixin layout__footer()
   footer.layout__footer
     block
 
-//-
-  options.display - задает display, возможное значение 'block', по-умолчанию 'flex'
-  options.basis - задает flex-basis в пикселях, от 50 до 4000 с шагом 50 или auto, по-умолчанию 100%
-  options.grow - задает flex-grow, от 0 до 10, по-умолчанию 1
-  options.shrink - задает flex-shrink, от 0 до 10, по-умолчанию 1
-  options.wrap - задает flex-wrap, возможные значения 'wrap', 'wrap-reverse', по-умолчанию 'nowrap'
-  options.direction - задает flex-direction, возможные значения 'column', 'column-reverse',
-                      'row-reverse', по-умолчанию 'row'
-  options.align - горизонтальное выравнивание относительно родительского контейнера,
-                  не сработает если у соседнего контейнера flex-grow > 0,
-                  возможные значения 'left', 'right', 'center'
-  options.mix - любая строка, будет добавлена в классы контейнера
 mixin layout__container(options)
   if !options
     - options = {}
