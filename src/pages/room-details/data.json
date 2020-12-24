@@ -276,6 +276,7 @@
   },
   "info1": {
     "label": "Сведения о номере",
+    "withoutLastLine": true,
     "sections": [
       {
         "title": "Комфорт",

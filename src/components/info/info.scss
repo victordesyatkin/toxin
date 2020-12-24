@@ -1,6 +1,13 @@
 @import "~theme/variables.scss";
 
+$parent: ".info";
 .info {
+  &__sections_without_last_line {
+    #{$parent}__section:last-child {
+      border-bottom: none;
+    }
+  }
+
   &__section {
     display: flex;
     justify-content: flex-start;

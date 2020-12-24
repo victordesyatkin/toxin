@@ -347,7 +347,7 @@ $margin-right: size(427);
 
 @media (max-width: 1440px) and (min-width: 1120px) {
   .form-elements {
-    padding: $padding-top 125px 0 $padding-left;
+    padding: $padding-top 125px 132px $padding-left;
 
     &-up {
       flex-wrap: wrap;
@@ -366,7 +366,7 @@ $margin-right: size(427);
 
 @media (max-width: $lg) and (min-width: 992px) {
   .form-elements {
-    padding: $padding-top $padding-right 0 $padding-left;
+    padding: $padding-top $padding-right 132px $padding-left;
 
     .section-second {
       margin-left: 0;

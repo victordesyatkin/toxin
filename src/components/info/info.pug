@@ -1,17 +1,19 @@
 mixin info(o = {})
     -
         let
-            {label = '', sections = []} = o;
+            {label = '', sections = [], withoutLastLine = false} = o;
             defaults = {
                 'comfort': 'icon-insert_emoticon',
                 'usability': 'icon-location_city',
                 'cosiness': 'icon-whatshot',
             }
-
+            classNames = withoutLastLine ? 'info__sections_without_last_line' : '';
     .info
         if (label)
             h2=label
-    .info__sections
+    .info__sections(
+        class=classNames
+    )
         each section in sections
             -
                 section = section || {};
