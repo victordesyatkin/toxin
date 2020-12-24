@@ -8,7 +8,6 @@
   align-items: center;
   cursor: pointer;
   white-space: nowrap;
-  color: $color-dark-shade50;
 
   &_current {
     font-weight: bold;
@@ -17,6 +16,9 @@
 
   &__link {
     display: inline-block;
+    color: $color-dark-shade50;
+    text-decoration: none;
+    text-transform: none;
   }
 
   &__nav-section {

@@ -1,9 +1,9 @@
 {
   "signUp": {
     "title": "Регистрация аккаунта",
-    "firstname": {
+    "firstName": {
       "name": "firstName1",
-      "id": "firstname1",
+      "id": "firstName1",
       "type": "text",
       "label": "",
       "placeholder": "Имя"

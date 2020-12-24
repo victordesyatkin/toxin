@@ -321,6 +321,7 @@
   },
   "bulletList1": {
     "label": "Правила",
+    "label_size_large": true,
     "items": [
       { "label": "Нельзя с питомцами" },
       { "label": "Без вечеринок и мероприятий" },

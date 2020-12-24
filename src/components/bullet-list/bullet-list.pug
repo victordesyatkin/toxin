@@ -1,10 +1,13 @@
 mixin bullet-list(o = {})
     -
         let
-            {label = '', items = []} = o;
+            {label = '', items = [], label_size_large = false} = o;
+        let classNames = label_size_large ? 'bullet-list__label_size_large' : '';            
     .bullet-list
         if (label)
-            .bullet-list__label=label
+            .bullet-list__label(
+                class=classNames
+            )=label 
         .bullet-list__list
             each item in items
                 .bullet-list__item

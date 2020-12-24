@@ -4,6 +4,13 @@
   &__label {
     margin-bottom: 16px;
     @include h3;
+
+    &_size_large {
+      @include h2;
+      text-transform: inherit;
+      padding-left: 21px;
+      margin-bottom: 20px;
+    }
   }
 
   &__list {
