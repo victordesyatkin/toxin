@@ -6,6 +6,11 @@ const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const postcssReporter = require("postcss-reporter");
+const postcssSCSS = require("postcss-scss");
+const autoprefixer = require("autoprefixer");
+const stylelint = require("stylelint");
+const doiuse = require("doiuse");
 
 const nth = {};
 nth.dir = {
@@ -136,7 +141,49 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.(s[ca]ss)$/,
-          use: [...getStyleLoaders(), "resolve-url-loader", "sass-loader"],
+          use: [
+            ...getStyleLoaders(),
+            "resolve-url-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  plugins: function () {
+                    return [autoprefixer({ browsers: ["last 2 versions"] })];
+                  },
+                },
+              },
+            },
+            "sass-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                postcssOptions: {
+                  syntax: postcssSCSS,
+                  plugins: function () {
+                    return [
+                      stylelint(),
+                      doiuse({
+                        browsers: ["ie >= 11", "last 2 versions"],
+                        ignore: [
+                          "flexbox",
+                          "rem",
+                          "css-resize",
+                          "css-masks",
+                          "object-fit",
+                        ],
+                        ignoreFiles: ["**/normalize.css"],
+                      }),
+                      postcssReporter({
+                        clearReportedMessages: true,
+                        throwError: true,
+                      }),
+                    ];
+                  },
+                },
+              },
+            },
+          ],
         },
         {
           test: /\.js$/,
