@@ -84,6 +84,7 @@ module.exports = (env = {}) => {
 
   return {
     mode: isProd ? "production" : isDev && "development",
+    devtool: isDev ? "eval" : undefined,
     output: {
       filename: isProd ? "main-[hash:8].js" : undefined,
       pathinfo: isDev,
@@ -148,48 +149,10 @@ module.exports = (env = {}) => {
     plugins: getPlugins(),
 
     devServer: {
-      open: true,
+      inline: true,
+      hot: true,
+      contentBase: "dist",
+      host: "0.0.0.0",
     },
   };
 };
-
-/**
- * Проверка существования файла или папки
- * @param  {string} path      Путь до файла или папки
- * @return {boolean}
- */
-function fileExist(filepath) {
-  let flag = true;
-  try {
-    fs.accessSync(filepath, fs.F_OK);
-  } catch (e) {
-    flag = false;
-  }
-  return flag;
-}
-
-/**
- * Получение всех названий поддиректорий, содержащих файл указанного расширения, совпадающий по имени с поддиректорией
- * @param  {string} ext    Расширение файлов, которое проверяется
- * @return {array}         Массив из имён блоков
- */
-function getDirectories(ext) {
-  const source = `${nth.dir.blocks}/`;
-  let res = fs
-    .readdirSync(source)
-    .filter((item) => fs.lstatSync(source + item).isDirectory())
-    .filter((item) => fileExist(source + item + "/" + item + "." + ext));
-  return res;
-}
-
-/**
- * Получение разницы между двумя массивами.
- * @param  {array} a1 Первый массив
- * @param  {array} a2 Второй массив
- * @return {array}    Элементы, которые отличаются
- */
-function getArraysDiff(a1, a2) {
-  return a1
-    .filter((i) => !a2.includes(i))
-    .concat(a2.filter((i) => !a1.includes(i)));
-}
