@@ -1,6 +1,6 @@
 mixin card(props = {})
     - 
-        let { className = '' } = props || {};
+        let { className } = props || {};
         className = `card ${ className ? ` ${className}` : ''}`;
     div(class=className)
         if (block)

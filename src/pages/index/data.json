@@ -19,7 +19,9 @@
         "button": { "visible": true, "class": "arrow-down" }
       },
       "calendar": {
-        "minDateType": "current"
+        "minDateType": "current",
+        "buttonCleanText": "Очистить",
+        "buttonApplyText": "Применить"
       }
     },
     "dropdown": {
@@ -47,7 +49,7 @@
           "type": "SUBMIT",
           "payload": {
             "href": "search-room-filter.html"
-          } 
+          }
         }
       }
     ]

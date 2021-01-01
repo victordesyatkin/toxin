@@ -17,7 +17,15 @@
     "state": "hover"
   },
   "dropdown1": {
-    "dropdownOptions": { "expand": false, "type": 1, "controlVisible": true },
+    "dropdownOptions": {
+      "expand": false,
+      "type": 1,
+      "controlVisible": true,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
+    },
     "name": "guests",
     "stateText": "Default",
     "type": "text",
@@ -56,7 +64,11 @@
       "value": "19.08.2019",
       "button": { "visible": true, "class": "arrow-down" }
     },
-    "calendar": { "visible": false }
+    "calendar": {
+      "visible": false,
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
+    }
   },
   "filterDateDropdown1": {
     "label": "filter date dropdown",
@@ -65,7 +77,14 @@
     }
   },
   "dropdown3": {
-    "dropdownOptions": { "expand": false, "type": 0 },
+    "dropdownOptions": {
+      "expand": false,
+      "type": 0,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
+    },
     "name": "rooms",
     "stateText": "Default",
     "type": "text",
@@ -87,7 +106,15 @@
     "button": { "visible": true }
   },
   "dropdown4": {
-    "dropdownOptions": { "expand": true, "forcedExpand": false, "type": 0 },
+    "dropdownOptions": {
+      "expand": true,
+      "forcedExpand": false,
+      "type": 0,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
+    },
     "name": "rooms2",
     "stateText": "expanded",
     "type": "text",
@@ -189,7 +216,11 @@
       "expand": true,
       "type": 1,
       "controlVisible": true,
-      "forcedExpand": false
+      "forcedExpand": false,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
     },
     "name": "guests1",
     "stateText": "",
@@ -282,7 +313,7 @@
       }
     ]
   },
-  "buttons3":{
+  "buttons3": {
     "buttons": [
       {
         "text": "Click me",
@@ -294,7 +325,7 @@
       }
     ]
   },
-  "buttons4":{
+  "buttons4": {
     "buttons": [
       {
         "text": "Перейти к оплате",
@@ -306,12 +337,16 @@
       }
     ]
   },
-  "dropdown6":{
+  "dropdown6": {
     "dropdownOptions": {
       "expand": false,
       "type": 1,
       "controlVisible": true,
-      "forcedExpand": true
+      "forcedExpand": true,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
     },
     "name": "guests2",
     "stateText": "",

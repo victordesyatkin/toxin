@@ -3,9 +3,9 @@ include ../slider/slider
 include ../card-header/card-header
 include ../rate-button/rate-button
 
-mixin card-slider(props = {})
+mixin card-slider(props)
     -
-        let { slider = {}, info = {}, rating = {}, link } = props || {};
+        let { slider, info, rating, link } = props || {};
         let { button, comments } = rating || {};
     if (link)
         - let { href = "#", title = "" } = link || {};

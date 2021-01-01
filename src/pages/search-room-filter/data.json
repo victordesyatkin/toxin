@@ -205,7 +205,15 @@
     }
   },
   "dropdown1": {
-    "dropdownOptions": { "expand": false, "type": 1, "controlVisible": true },
+    "dropdownOptions": {
+      "expand": false,
+      "type": 1,
+      "controlVisible": true,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
+    },
     "name": "guests",
     "stateText": "",
     "type": "text",
@@ -259,7 +267,11 @@
   "dropdown2": {
     "dropdownOptions": {
       "forcedExpand": false,
-      "type": 0
+      "type": 0,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
     },
     "name": "rooms2",
     "type": "text",
@@ -287,48 +299,45 @@
   },
   "sliders": {
     "slider1": {
-          "slider": {
-              "images": [{"src": 1}, {"src": 2}, {"src": 1}, {"src": 2}]
-          },
-          "info": {
-              "number": 888,
-              "suite": "люкс",
-              "price": "9 990",
-              "duration": "в сутки",
-              "unit": "&#8381"
-          },
-          "rating": {
-              "button": {
-                  "buttons": [
-                      { "grade": 5, "name": "rating1", "count": 5 }
-                  ]
-              },
-              "comments": 145
-          },
-          "link": {
-            "title": "",
-            "href": "room-details.html"
-          }
+      "slider": {
+        "images": [{ "src": 1 }, { "src": 2 }, { "src": 1 }, { "src": 2 }]
+      },
+      "info": {
+        "number": 888,
+        "suite": "люкс",
+        "price": "9 990",
+        "duration": "в сутки",
+        "unit": "&#8381",
+        "headerNumberText": "№"
+      },
+      "rating": {
+        "button": {
+          "buttons": [{ "grade": 5, "name": "rating1", "count": 5 }]
+        },
+        "comments": 145
+      },
+      "link": {
+        "title": "",
+        "href": "room-details.html"
+      }
     },
     "slider2": {
       "slider": {
-          "images": [{"src": 2}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 2 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "840",
-          "suite": "",
-          "price": "9 990",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "840",
+        "suite": "",
+        "price": "9 990",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 4, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 65
+        "button": {
+          "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
+        },
+        "comments": 65
       },
       "link": {
         "title": "",
@@ -337,23 +346,21 @@
     },
     "slider3": {
       "slider": {
-          "images": [{"src": 3}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 3 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "980",
-          "suite": "люкс",
-          "price": "6 650",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "980",
+        "suite": "люкс",
+        "price": "6 650",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 3, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 35
+        "button": {
+          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
+        },
+        "comments": 35
       },
       "link": {
         "title": "",
@@ -362,23 +369,21 @@
     },
     "slider4": {
       "slider": {
-          "images": [{"src": 4}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 4 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "856",
-          "suite": "",
-          "price": "7 300",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "856",
+        "suite": "",
+        "price": "7 300",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 5, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 19
+        "button": {
+          "buttons": [{ "grade": 5, "name": "rating2", "count": 5 }]
+        },
+        "comments": 19
       },
       "link": {
         "title": "",
@@ -387,23 +392,21 @@
     },
     "slider5": {
       "slider": {
-          "images": [{"src": 5}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 5 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "740",
-          "suite": "",
-          "price": "6 000",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "740",
+        "suite": "",
+        "price": "6 000",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 4, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 44
+        "button": {
+          "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
+        },
+        "comments": 44
       },
       "link": {
         "title": "",
@@ -412,23 +415,21 @@
     },
     "slider6": {
       "slider": {
-          "images": [{"src": 6}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 6 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "982",
-          "suite": "",
-          "price": "5 800",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "982",
+        "suite": "",
+        "price": "5 800",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 3, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 56
+        "button": {
+          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
+        },
+        "comments": 56
       },
       "link": {
         "title": "",
@@ -437,23 +438,21 @@
     },
     "slider7": {
       "slider": {
-          "images": [{"src": 7}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 7 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "678",
-          "suite": "",
-          "price": "5 500",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "678",
+        "suite": "",
+        "price": "5 500",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 5, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 45
+        "button": {
+          "buttons": [{ "grade": 5, "name": "rating2", "count": 5 }]
+        },
+        "comments": 45
       },
       "link": {
         "title": "",
@@ -462,23 +461,21 @@
     },
     "slider8": {
       "slider": {
-          "images": [{"src": 8}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 8 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "450",
-          "suite": "",
-          "price": "5 300",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "450",
+        "suite": "",
+        "price": "5 300",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 4, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 39
+        "button": {
+          "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
+        },
+        "comments": 39
       },
       "link": {
         "title": "",
@@ -487,23 +484,21 @@
     },
     "slider9": {
       "slider": {
-          "images": [{"src": 9}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 9 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "350",
-          "suite": "",
-          "price": "5 000",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "350",
+        "suite": "",
+        "price": "5 000",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 3, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 77
+        "button": {
+          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
+        },
+        "comments": 77
       },
       "link": {
         "title": "",
@@ -512,23 +507,21 @@
     },
     "slider10": {
       "slider": {
-          "images": [{"src": 10}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 10 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "666",
-          "suite": "",
-          "price": "5 000",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "666",
+        "suite": "",
+        "price": "5 000",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 5, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 25
+        "button": {
+          "buttons": [{ "grade": 5, "name": "rating2", "count": 5 }]
+        },
+        "comments": 25
       },
       "link": {
         "title": "",
@@ -537,23 +530,21 @@
     },
     "slider11": {
       "slider": {
-          "images": [{"src": 11}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 11 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "444",
-          "suite": "",
-          "price": "5 000",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "444",
+        "suite": "",
+        "price": "5 000",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 3, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 15
+        "button": {
+          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
+        },
+        "comments": 15
       },
       "link": {
         "title": "",
@@ -562,23 +553,21 @@
     },
     "slider12": {
       "slider": {
-          "images": [{"src": 12}, {"src": 1}, {"src": 2}, {"src": 1}],
-          "control": false
+        "images": [{ "src": 12 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+        "control": false
       },
       "info": {
-          "number": "352",
-          "suite": "",
-          "price": "5 000",
-          "duration": "в сутки",
-          "unit": "&#8381"
+        "number": "352",
+        "suite": "",
+        "price": "5 000",
+        "duration": "в сутки",
+        "unit": "&#8381"
       },
       "rating": {
-          "button": {
-              "buttons": [
-                  { "grade": 3, "name": "rating2", "count": 5 }
-              ]
-          },
-          "comments": 55
+        "button": {
+          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
+        },
+        "comments": 55
       },
       "link": {
         "title": "",
@@ -586,7 +575,7 @@
       }
     }
   },
-  "pagination":  {
+  "pagination": {
     "start": 1,
     "end": 15,
     "current": 1,

@@ -1,8 +1,8 @@
 mixin color-sample(o)
     - 
-        let { background = '#1F2041', label = 'Dark Shade 100%', description = '#1F2041', classNames= [] } = o || {};
-        let style = `background: ${background}`;
-        classNames = classNames.join(' ');
+        let { background, label, description, classNames } = o || {};
+        classNames = classNames ? classNames.join(' ') : '';
+        let style = background ? `background: ${background}`: '';
     .color-sample(
         class=classNames
     )

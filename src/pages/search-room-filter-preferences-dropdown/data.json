@@ -205,7 +205,13 @@
     }
   },
   "dropdown1": {
-    "dropdownOptions": { "expand": false, "type": 1, "controlVisible": true },
+    "dropdownOptions": {
+      "expand": false,
+      "type": 1,
+      "controlVisible": true,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+"
+    },
     "name": "guests",
     "stateText": "",
     "type": "text",
@@ -260,7 +266,11 @@
     "dropdownOptions": {
       "forcedExpand": false,
       "type": 0,
-      "expand": true
+      "expand": true,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
     },
     "name": "rooms2",
     "type": "text",
@@ -296,7 +306,8 @@
         "suite": "люкс",
         "price": "9 990",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№"
       },
       "rating": {
         "button": {
