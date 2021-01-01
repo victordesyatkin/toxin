@@ -1,9 +1,8 @@
-mixin card-header(props = {})
-    - let { number = '', suite = '', price = '', duration = '', unit = '' } = props || {};
+mixin card-header(props)
+    - let { number, suite, price, duration, unit, headerNumberText } = props || {};
     .card-header
         .card-header__section-info
-            .card-header__number-info
-                |№
+            .card-header__number-info=headerNumberText
                 span.card-header__number=number
                 span.card-header__suite=suite
             .card-header__price

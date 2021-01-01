@@ -1,8 +1,9 @@
 mixin bullet-list(o = {})
     -
         let
-            {label = '', items = [], label_size_large = false} = o;
-        let classNames = label_size_large ? 'bullet-list__label_size_large' : '';            
+            {label, items, label_size_large} = o;
+        let classNames = label_size_large ? 'bullet-list__label_size_large' : '';
+        items = items || [];
     .bullet-list
         if (label)
             .bullet-list__label(

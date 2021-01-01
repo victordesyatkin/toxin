@@ -2,13 +2,15 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../buttons/buttons
 
-mixin book(o = {})
+mixin book(o)
     -
-        let {discount = '2 179', number = '888', suite = 'люкс', price = '9 990', duration = 'в сутки', unit = '&#8381', dropdown = {}, dateDropdown = {}, total = '38 081', totalInfo= 'Итого', buttons = []} = o || {};
+        let {
+            discount, number, suite, price, duration, unit, dropdown, dateDropdown, total, totalInfo, buttons, discountText, discountTotalPreset,
+            numberInfoText, feeText, feeTotal
+        } = o || {};
     .book(data-options = o)
         .book__section.js-book__section.book__section-title.margin-bottom-20(data-type="3")
-            .book__number-info
-                |№
+            .book__number-info=numberInfoText
                 span.book__number=number
                 span.book__suite=suite
             .book__price
@@ -24,17 +26,16 @@ mixin book(o = {})
         .book__section.js-book__section.margin-bottom-11 
             .book__section-info
                 span.book__section-content
-                    | Сбор за услуги: скидка #{discount}!{unit}
+                    | #{discountText} #{discount}!{unit}
                 span.book__info.icon-info
             .book__section-total.js-book__section-total
-                | 0!{unit}
+                | #{discountTotalPreset} !{unit}
         .book__section.js-book__section.margin-bottom-27
             .book__section-info
-                span.book__section-content
-                    | Сбор за дополнительные услуги
+                span.book__section-content=feeText
                 span.book__info.icon-info
             .book__section-total.js-book__section-total
-                | 300!{unit}                                
+                | #{feeTotal}!{unit}                                
         .book__section.js-book__section.book__total.margin-bottom-20(data-type=2)
             .book__section-info=totalInfo
             .book__separator

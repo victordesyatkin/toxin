@@ -1,7 +1,7 @@
-mixin dropdown(o = {})
+mixin dropdown(o)
     -
         let { dropdownOptions, ...inputOptions } = o || {};
-        let { expand = false, type = 0, controlVisible = false, forcedExpand = false } = dropdownOptions || {};
+        let { expand, type, controlVisible, forcedExpand, buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText } = dropdownOptions || {};
         let classDropdown = 'dropdown js-dropdown' + (expand ? ' dropdown_expanded' : '') + (forcedExpand ? ' dropdown_forced-expanded' : ''); 
         classDropdown += type === 0 ? ' dropdown_particular js-dropdown_particular' : '';
     div(class=classDropdown, data-type=type)
@@ -12,7 +12,7 @@ mixin dropdown(o = {})
                     let { items = [] } = o || {};
                 each item in items
                     - 
-                        let { title = '', value = 0, name = '' } = item || {};
+                        let { title, value, name } = item || {};
                         let buttonMinusClass = 'dropdown__button js-dropdown__button'  + (value === 0 ? ' dropdown__button_fade js-dropdown__button_fade' : '');
                     .dropdown__item.js-dropdown__item
                         input(
@@ -28,22 +28,20 @@ mixin dropdown(o = {})
                                 type="button"
                                 data-type="0"
                                 class=buttonMinusClass
-                            )="-"
+                            )=buttonDecreaseText
                             .dropdown__item-value.js-dropdown__item-value=value
                             button.dropdown__button(
                                 type="button"
                                 data-type="1"
-                            )="+"
+                            )=buttonIncreaseText
             if (controlVisible)
                 .dropdown__main-control
                     button.dropdown__control-button.dropdown__control-button_clean(
                         type="button",
                         name="clean"
-                    )   
-                        |Очистить
+                    )=buttonCleanText
                     button.dropdown__control-button.dropdown__control-button_apply(
                         type="button",
                         name="apply"
-                    )
-                        |Применить
+                    )=buttonApplyText
 

@@ -1,6 +1,6 @@
 mixin buttons(o = {})
     -
-        let { label = '', buttons = [] } = o || {};
+        let { label, buttons } = o || {};
     .buttons
         if (label)
             .buttons__section-head
@@ -9,7 +9,7 @@ mixin buttons(o = {})
             for b in buttons
                 -
                     let
-                        { text = '', type = 'button', disabled = false, view = 0, full = false, value = '', name = '', action = {} } = b || {};
+                        { text, type, disabled, view, full, value, name, action } = b || {};
                         classes = 'buttons__items';
                         classes += full ? ' buttons__items_full' : '';
                         classes += view !== undefined ? ` buttons__view buttons__view_${view}` : '';

@@ -220,11 +220,22 @@
         "button": { "visible": true, "class": "arrow-down" }
       },
       "calendar": {
-        "visible": false
+        "visible": false,
+        "buttonCleanText": "Очистить",
+        "buttonApplyText": "Применить"
       }
     },
     "dropdown": {
-      "dropdownOptions": { "expand": true, "type": 1, "controlVisible": true, "forcedExpand": false },
+      "dropdownOptions": {
+        "expand": true,
+        "type": 1,
+        "controlVisible": true,
+        "forcedExpand": false,
+        "buttonDecreaseText": "-",
+        "buttonIncreaseText": "+",
+        "buttonCleanText": "Очистить",
+        "buttonApplyText": "Применить"
+      },
       "name": "guests",
       "id": "guests",
       "type": "text",
@@ -249,7 +260,7 @@
           "type": "SUBMIT",
           "payload": {
             "href": "search-room-filter.html"
-          } 
+          }
         }
       }
     ]

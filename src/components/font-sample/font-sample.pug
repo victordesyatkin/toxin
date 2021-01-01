@@ -1,7 +1,8 @@
 mixin font-sample(o)
     - 
-        let { content = '', description = '', size = '', classNames = [] } = o || {};
-        classNames = classNames.join(' ') + (size ? `font-sample_size_${size}`: ''); 
+        let { content, description, size, classNames } = o || {};
+        classNames = classNames ? classNames.join(' ') : ''; 
+        classNames += size ? ` font-sample_size_${size}`: ''; 
     .font-sample(
         class=classNames
     )

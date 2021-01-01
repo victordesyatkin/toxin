@@ -199,7 +199,7 @@ module.exports = (env = {}) => {
       inline: true,
       hot: true,
       contentBase: "dist",
-      host: "0.0.0.0",
+      //host: "0.0.0.0",
     },
   };
 };

@@ -1,7 +1,7 @@
 mixin input(o = {})
   -
-    let { label = '', stateText = '', type = '', name = '', state = false, placeholder = '', button = {}, value, required, pattern, tabindex } = o || {};
-    let { visible:buttonVisible = false } = button || {};
+    let { label, stateText, type, name, state, placeholder, button, value, required, pattern, tabindex } = o || {};
+    let { visible:buttonVisible } = button || {};
     let 
       autofocus = state ? true : false;
       classesInputSection = 'input__section js-input__section' + (buttonVisible ? ' input__section_offset' : '') + (autofocus ? ' input__section_hovered' : '');
@@ -28,8 +28,9 @@ mixin input(o = {})
         )
         if buttonVisible
           - 
-            let { type:buttonType = 'button', class:buttonClass = 'default', name:buttonName, value:buttonValue } = button || {};
+            let { type:buttonType, class:buttonClass, name:buttonName, value:buttonValue } = button || {};
             let buttonClasses = 'input__button js-input__button';
+
             switch (buttonClass) {
               case 'arrow-down': {
                 buttonClasses += ' input__button_default';
