@@ -74,7 +74,7 @@ block main
                 .form-elements-block1.width-144.margin-bottom-31
                     +buttons(data.buttons3)
                 .form-elements-block1.margin-bottom-30
-                    +buttons(data.buttons4)
+                    +buttons({...data.buttons4, src: require('../../assets/images/arrow-forward.svg').default}) //TODO
                 .form-elements-block2.form-elements_margin-bottom-234.width-241
                     +pagination(data.pagination)                    
                 .form-elements-block2.form-elements_margin-bottom-258

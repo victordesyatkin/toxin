@@ -1,7 +1,7 @@
-mixin bullet-list(o = {})
+mixin bullet-list(options)
     -
         let
-            {label, items, label_size_large} = o;
+            {label, items, label_size_large} = options || {};
         let classNames = label_size_large ? 'bullet-list__label_size_large' : '';
         items = items || [];
     .bullet-list

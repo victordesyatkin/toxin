@@ -86,7 +86,8 @@
           }
         ]
       }
-    }
+    },
+    "fill": false
   },
   "footer": {
     "title": "title title",
@@ -401,6 +402,13 @@
           "full": true
         }
       ]
+    },
+    "numberFormat": "ru-RU",
+    "words": ["сутки", "суток", "суток"],
+    "options": {
+      "style": "decimal",
+      "currency": "RUB",
+      "minimumFractionDigits": 0
     }
   }
 }

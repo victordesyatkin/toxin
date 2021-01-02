@@ -5,10 +5,10 @@ include ../rate-button/rate-button
 
 mixin card-slider(props)
     -
-        let { slider, info, rating, link } = props || {};
+        let { slider, info, rating, link, commentsContent } = props || {};
         let { button, comments } = rating || {};
     if (link)
-        - let { href = "#", title = "" } = link || {};
+        - let { href, title } = link || {};
         a.card-slider-link(
             title=title
             href=href
@@ -27,7 +27,7 @@ mixin card-slider(props)
                         +rate-button(button)
                     .card-slider__comments
                         span.card-slider__comments-numbers=comments 
-                        span.card-slider__comments-content Отзывов
+                        span.card-slider__comments-content=commentsContent
     else
         +card
             .card-slider
@@ -42,4 +42,4 @@ mixin card-slider(props)
                     +rate-button(button)
                 .card-slider__comments
                     span.card-slider__comments-numbers=comments 
-                    span.card-slider__comments-content Отзывов
+                    span.card-slider__comments-content=commentsContent

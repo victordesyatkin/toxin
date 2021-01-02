@@ -86,7 +86,8 @@
           }
         ]
       }
-    }
+    },
+    "fill": false
   },
   "footer": {
     "title": "title title",
@@ -201,7 +202,16 @@
   "filterDateDropdown1": {
     "label": "даты пребывания в отеле",
     "input": {
+      "name": "search-room-filter-filter-date-dropdown",
+      "dummy": "ДД МЕС",
+      "placeholder": "ДД МЕС - ДД МЕС",
+      "separator": "-",
       "value": "[\"Wed Aug 19 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)\",\"Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)\"]"
+    },
+    "calendar": {
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить",
+      "isOpen": true
     }
   },
   "dropdown1": {
@@ -308,7 +318,9 @@
         "price": "9 990",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№"
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -319,7 +331,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider2": {
       "slider": {
@@ -331,7 +344,10 @@
         "suite": "",
         "price": "9 990",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -342,7 +358,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider3": {
       "slider": {
@@ -354,7 +371,10 @@
         "suite": "люкс",
         "price": "6 650",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -365,7 +385,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider4": {
       "slider": {
@@ -377,7 +398,10 @@
         "suite": "",
         "price": "7 300",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -388,7 +412,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider5": {
       "slider": {
@@ -400,7 +425,10 @@
         "suite": "",
         "price": "6 000",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -411,7 +439,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider6": {
       "slider": {
@@ -423,7 +452,10 @@
         "suite": "",
         "price": "5 800",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -434,7 +466,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider7": {
       "slider": {
@@ -446,7 +479,10 @@
         "suite": "",
         "price": "5 500",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -457,7 +493,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider8": {
       "slider": {
@@ -469,7 +506,10 @@
         "suite": "",
         "price": "5 300",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -480,7 +520,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider9": {
       "slider": {
@@ -492,7 +533,10 @@
         "suite": "",
         "price": "5 000",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -503,7 +547,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider10": {
       "slider": {
@@ -515,7 +560,10 @@
         "suite": "",
         "price": "5 000",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -526,7 +574,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider11": {
       "slider": {
@@ -538,7 +587,10 @@
         "suite": "",
         "price": "5 000",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -549,7 +601,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     },
     "slider12": {
       "slider": {
@@ -561,7 +614,10 @@
         "suite": "",
         "price": "5 000",
         "duration": "в сутки",
-        "unit": "&#8381"
+        "unit": "&#8381",
+        "headerNumberText": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
@@ -572,7 +628,8 @@
       "link": {
         "title": "",
         "href": "room-details.html"
-      }
+      },
+      "commentsContent": "Отзывов"
     }
   },
   "pagination": {

@@ -196,10 +196,9 @@ module.exports = (env = {}) => {
     plugins: getPlugins(),
 
     devServer: {
-      inline: true,
       hot: true,
-      contentBase: "dist",
-      //host: "0.0.0.0",
+      open: true,
+      watchContentBase: true,
     },
   };
 };

@@ -2,9 +2,9 @@ include ../logo-image/logo-image
 include ../nav/nav
 
 mixin header(props)
-    - let { nav = {}}  = props || {};
+    - let { nav = {}, fill } = props || {};
     header.header
         .header__logo
-            +logo-image({fill: false})
+            +logo-image({fill})
         .header__nav
             +nav(nav)

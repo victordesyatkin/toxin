@@ -124,6 +124,13 @@
           "full": true
         }
       ]
+    },
+    "numberFormat": "ru-RU",
+    "words": ["сутки", "суток", "суток"],
+    "options": {
+      "style": "decimal",
+      "currency": "RUB",
+      "minimumFractionDigits": 0
     }
   },
   "calendar": {
@@ -285,14 +292,17 @@
       "price": "9 990",
       "duration": "в сутки",
       "unit": "&#8381",
-      "headerNumberText": "№"
+      "headerNumberText": "№",
+      "numberFormat": "ru-RU",
+      "options": { "style": "decimal", "currency": "RUB" }
     },
     "rating": {
       "button": {
         "buttons": [{ "grade": 5, "name": "rating1", "count": 5 }]
       },
       "comments": 145
-    }
+    },
+    "commentsContent": "Отзывов"
   },
   "slider2": {
     "slider": {
@@ -305,13 +315,16 @@
       "price": "9 900",
       "duration": "в сутки",
       "unit": "&#8381",
-      "headerNumberText": "№"
+      "headerNumberText": "№",
+      "numberFormat": "ru-RU",
+      "options": { "style": "decimal", "currency": "RUB" }
     },
     "rating": {
       "button": {
         "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
       },
       "comments": 65
-    }
+    },
+    "commentsContent": "Отзывов"
   }
 }

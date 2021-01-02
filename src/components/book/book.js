@@ -1,4 +1,5 @@
 import datepicker from "air-datepicker";
+import get from "lodash/get";
 
 import "./book.scss";
 
@@ -11,7 +12,6 @@ class Book {
   constructor(component) {
     this._$component = $(component);
     this._init();
-    this._words = ["сутки", "суток", "суток"];
   }
 }
 
@@ -38,23 +38,20 @@ Book.prototype._init = function () {
   this._price = parseFloat(this._prepareNumber(this._props.price));
   this._discount = parseFloat(this._prepareNumber(this._props.discount));
   this._unit = this._props.unit;
-  this._$calendar = $("js-calendar", this._$component);
+  this._$calendar = $(".js-calendar", this._$component);
   this._$input = $(
     `.js-book__date-dropdown input[type="hidden"][date-isCalendar="${Book.IS_CALENDAR}"]`,
     this._$component
   );
+  this._words = get(this._props, ["words"], []);
+  this._numberFormat = get(this._props, ["numberFormat"]);
+  this._options = get(this._props, ["options"]);
   setTimeout(() => {
     this._datepicker = this._$input.datepicker().data("datepicker");
     this._prepareDirty();
     this._setCalc();
     this._$calendar.on("click", this._setCalc.bind(this));
-  }, 100);
-};
-
-Book.prototype._options = {
-  style: "decimal",
-  currency: "RUB",
-  minimumFractionDigits: 0,
+  }, 500);
 };
 
 Book.prototype._prepareNumber = function (n = "") {
@@ -63,6 +60,7 @@ Book.prototype._prepareNumber = function (n = "") {
 
 Book.prototype._setCalc = function () {
   let price = this._price;
+  console.log("_setCalc : ", price);
   const selectedDates = this._datepicker.selectedDates || [];
   const [start, end] = selectedDates;
   let count = (end - start) / (1000 * 60 * 60 * 24);
@@ -71,8 +69,12 @@ Book.prototype._setCalc = function () {
   }
   let total = price * count;
   this._setTotal(total);
-  price = new Intl.NumberFormat("ru-RU", this._options).format(price);
-  total = new Intl.NumberFormat("ru-RU", this._options).format(total);
+  price = new Intl.NumberFormat(this._numberFormat, this._options).format(
+    price
+  );
+  total = new Intl.NumberFormat(this._numberFormat, this._options).format(
+    total
+  );
   this._$calcInfo.html(
     `${price}${this._unit} x ${count} ${this._wordForm(count, this._words)}`
   );
@@ -84,7 +86,9 @@ Book.prototype._setTotal = function (total = 0) {
   if (total < 0) {
     total = 0;
   }
-  total = new Intl.NumberFormat("ru-RU", this._options).format(total);
+  total = new Intl.NumberFormat(this._numberFormat, this._options).format(
+    total
+  );
   this._$totalTotal.html(`${total}<span>${this._unit}</span>`);
 };
 

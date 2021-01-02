@@ -1,4 +1,4 @@
-mixin expandable(o = {})
+mixin expandable(o)
     -
         let { label, forcedExpanded = false, expanded = false } = o || {};
         let classes = 'expandable js-expandable' + (forcedExpanded ? ' expandable_forced-expanded' : '') + (expanded ? ' expandable_expanded' : '' )

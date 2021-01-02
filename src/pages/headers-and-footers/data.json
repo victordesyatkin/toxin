@@ -135,7 +135,8 @@
         "firstName": "Юлий",
         "lastName": "Цезарь"
       }
-    }
+    },
+    "fill": false
   },
   "footer": {
     "title": "title title",

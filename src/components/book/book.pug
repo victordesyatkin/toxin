@@ -2,13 +2,13 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../buttons/buttons
 
-mixin book(o)
+mixin book(options)
     -
         let {
             discount, number, suite, price, duration, unit, dropdown, dateDropdown, total, totalInfo, buttons, discountText, discountTotalPreset,
             numberInfoText, feeText, feeTotal
-        } = o || {};
-    .book(data-options = o)
+        } = options || {};
+    .book(data-options = options)
         .book__section.js-book__section.book__section-title.margin-bottom-20(data-type="3")
             .book__number-info=numberInfoText
                 span.book__number=number
@@ -20,7 +20,7 @@ mixin book(o)
             +date-dropdown(dateDropdown)
         .book__dropdown.margin-bottom-18
             +dropdown(dropdown)
-        .book__section.js-book__section.margin-bottom-12(data-type=1) 
+        .book__section.js-book__section.margin-bottom-12(data-type="1") 
                 .book__section-info.js-book__section-info
                 .book__section-total.js-book__section-total
         .book__section.js-book__section.margin-bottom-11 
@@ -36,7 +36,7 @@ mixin book(o)
                 span.book__info.icon-info
             .book__section-total.js-book__section-total
                 | #{feeTotal}!{unit}                                
-        .book__section.js-book__section.book__total.margin-bottom-20(data-type=2)
+        .book__section.js-book__section.book__total.margin-bottom-20(data-type="2")
             .book__section-info=totalInfo
             .book__separator
             .book__section-total.js-book__section-total

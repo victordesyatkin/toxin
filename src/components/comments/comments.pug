@@ -2,7 +2,7 @@ include ../like-button/like-button
 mixin comments(o = {})
     -
         let
-            {label = '', count = '', comments = [], units = [] } = o;
+            {label, count, comments = [], units = [] } = o;
             sources = {
                 'male': require('../../components/comments/img/example-avatar-male.png').default,
                 'female': require('../../components/comments/img/example-avatar-female.png').default,

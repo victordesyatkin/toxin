@@ -19,7 +19,6 @@ DateDropdown.prototype._toggleVisibleCalendar = function () {
   if (get(this._datepicker, ["visible"])) {
     this._datepicker.hide();
   } else {
-    console.log("this.datepicker", this._datepicker);
     this._datepicker.show();
   }
 };

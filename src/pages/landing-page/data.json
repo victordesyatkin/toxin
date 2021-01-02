@@ -149,7 +149,8 @@
           }
         ]
       }
-    }
+    },
+    "fill": false 
   },
   "footer": {
     "title": "title title",

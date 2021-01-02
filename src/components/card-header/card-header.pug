@@ -1,6 +1,9 @@
 mixin card-header(props)
-    - let { number, suite, price, duration, unit, headerNumberText } = props || {};
-    .card-header
+    - let { number, suite, price, duration, unit, headerNumberText, options, numberFormat } = props || {};
+    .card-header.js-card-header(
+        data-numberFormat = numberFormat
+        data-options=options
+    )
         .card-header__section-info
             .card-header__number-info=headerNumberText
                 span.card-header__number=number
