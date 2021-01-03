@@ -303,11 +303,10 @@
       {
         "text": "Click me",
         "type": "button",
-        "disabled": false,
         "value": "",
-        "view": 0,
-        "full": true
+        "view": 0
       }
+
     ]
   },
   "buttons2": {
@@ -315,7 +314,7 @@
       {
         "text": "Click me",
         "type": "button",
-        "disabled": false,
+        "hover": false,
         "value": "",
         "view": 1,
         "full": true

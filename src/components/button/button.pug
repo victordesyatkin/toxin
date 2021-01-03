@@ -1,0 +1,17 @@
+mixin button(props = {})
+    -
+        let
+            { text, type, disabled, view, value, name, action, src, hover } = props;
+            classes = "button"
+            classes += hover ? ' button__view_hover' : '';
+            classes += view !== undefined ? ` button__view_${view}` : '';
+    button(
+        class=classes
+        type=type
+        value=value
+        disabled=disabled ? disabled : false
+        name=name
+        data-action=action
+    )=text
+    if (src && view === 3)
+        img(src=src)

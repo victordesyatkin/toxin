@@ -1,29 +1,30 @@
-mixin checkbox-buttons(o = {buttons: [], label: ''})
+mixin checkbox-buttons(props = {})
     -
-        let { label = '', buttons = [] } = o || {};
-        let src = require('../../components/checkbox-buttons/img/checkbox-buttons.svg').default;
+        let { label, buttons = [] } = props;
     .checkbox-buttons
-        if (o.label)
+        if (props.label)
             h3.checkbox-buttons__label=label
-        for b in buttons
+        for button in buttons
             -
                 let
-                    id = b.name ? `checkbox-buttons__button-${b.name}`: '';
-                    classButtonLabel = b.classButtonLabel ? ` ${b.classButtonLabel}` : '';
+                    { name, src, classButtonLabel, tabindex, required, disabled, checked, label: buttonLabel } = button || {};
+                    id = name ? `checkbox-buttons__button-${name}`: '';
+                    classButtonLabel = classButtonLabel ? ` ${classButtonLabel}` : '';
                     classesButtonLabel = `checkbox-buttons__button-label${classButtonLabel}`;
             label.checkbox-buttons__button(for=id)
                 input.checkbox-buttons__input(
                     type = "checkbox"
-                    name = b.name
-                    tabindex = b.tabindex
-                    required = b.required
-                    disabled = b.disabled ? b.disabled : false
-                    checked = b.checked ? b.checked : false
+                    name = name
+                    tabindex = tabindex
+                    required = required ? required : false
+                    disabled = disabled ? disabled : false
+                    checked = checked ? checked : false
                     id = id
                 )
                 span.checkbox-buttons__check-mark
-                    img(src=src, alt=b.name)
-                span(class=classesButtonLabel)=b.label
+                    if (src)
+                        img(src=src, alt=name)
+                span(class=classesButtonLabel)=buttonLabel
                     
                 
                     

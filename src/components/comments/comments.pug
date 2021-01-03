@@ -1,12 +1,8 @@
 include ../like-button/like-button
-mixin comments(o = {})
+mixin comments(props = {})
     -
         let
-            {label, count, comments = [], units = [] } = o;
-            sources = {
-                'male': require('../../components/comments/img/example-avatar-male.png').default,
-                'female': require('../../components/comments/img/example-avatar-female.png').default,
-            }
+            { label, count, comments = [], units = [] } = props;
     .comments.js-comments(
         data-count=count                        
         data-units=units
@@ -22,17 +18,17 @@ mixin comments(o = {})
             each comment in comments
                 -
                     let
-                        src = sources[comment.src];
-                        style = `background: url(${src}) 45% 30%`; 
+                        { src, fullName, date, content, likeButton } = comment || {};
+                        style = src ? `background: url(${src}) 45% 30%` : ''; 
                 .comments__section
                     .comments__left
                         .comments__img(style=style)
                         .comments__like-button
-                            +like-button(comment.likeButton)
+                            +like-button(likeButton)
                     .comments__right
-                        .comments__full-name=comment.fullName
-                        .comments__date=comment.date
-                        .comments__content=comment.content
+                        .comments__full-name=fullName
+                        .comments__date=date
+                        .comments__content=content
 
 
 

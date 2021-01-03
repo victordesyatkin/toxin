@@ -1,12 +1,11 @@
 mixin pagination(o = {})
     -
         let
-            { start = 0, end = 0, current = 0, text = '', label = '', altPrevious='previous_l10n', altNext = 'next_l10n', limit = 2, count = 12 } = o || {};
+            { src, start, end, current, text, label, altPrevious, altNext, limit, count, emptyString = '...'} = o;
             pages = [];
-            src = require('../../components/pagination/img/arrow-forward.svg').default;
             isEmptyStart = true;
             isEmptyEnd = true;
-            emptyString = '...';
+            // emptyString = '...'; //TODO
             tmp = '';
             classesButtonPrevious = 'pagination__arrow pagination__arrow_previous' + (start === current ? ' pagination_hidden' : '');
             classesButtonNext = 'pagination__arrow pagination__arrow_next' + (end === current ? ' pagination_hidden' : '');

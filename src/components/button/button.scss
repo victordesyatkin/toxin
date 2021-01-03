@@ -1,0 +1,28 @@
+@import "~theme/variables.scss";
+
+.button {
+  outline: none;
+  border: none;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  @include font-family-first-bold;
+  color: $color-first-white;
+  white-space: nowrap;
+
+  &__view_0 {
+    @include linear-gradient(180deg, $color-purple, $color-purple-dark, 1);
+    color: $color-first-white;
+    border-radius: 22px;
+  }
+
+  &__view_hover,
+  &:hover {
+    @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.5);
+  }
+}

@@ -1,31 +1,31 @@
-mixin like-button(o = {buttons: [], label: ''})
+mixin like-button(props = {})
     -
-        let { label = '', buttons = [] } = o || {};
-        let like = require('../../components/like-button/img/favorite.svg').default;
-        let noLike = require('../../components/like-button/img/favorite-border.svg').default;
+        let { label, buttons = [] } = props;
     .like-button.js-like-button
-        if (o.label)
+        if (label)
             h3.like-button__label=label
         .like-button__section-buttons
-            for b in buttons
+            for button in buttons
                 -
-                    let id = b.name ? `like-button__button-${b.name}`: '';
+                    let
+                        { name, count, like, noLike, tabindex, required, disabled, checked, alt } = button || {};
+                        id = name ? `like-button__button-${name}`: '';
                 label.like-button__button.js-like-button__button(for=id)
                     input.like-button__input.js-like-button__input(
                         type = "checkbox"
-                        name = b.name
-                        tabindex = b.tabindex
-                        required = b.required
-                        disabled = b.disabled ? b.disabled : false
-                        checked = b.checked ? b.checked : false
+                        name = name
+                        tabindex = tabindex
+                        required = required ? required : false
+                        disabled = disabled ? disabled : false
+                        checked = checked ? checked : false
                         id = id
                     )
                     div.like-button__check-mark
                         div.like-button__check-mark-like
-                            img(src=like, alt='')
+                            img(src=like, alt=alt)
                         div.like-button__check-mark-no-like
-                            img(src=noLike, alt='')
-                        div.like-button__count.js-like-button__count #{b.count}
+                            img(src=noLike, alt=alt)
+                        div.like-button__count.js-like-button__count #{count}
                     
                 
                     

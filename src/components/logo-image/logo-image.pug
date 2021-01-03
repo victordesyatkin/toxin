@@ -1,24 +1,27 @@
-mixin logo-image(props = {fill: true, alt: 'TOXIN', href: "#", title: ""})
+mixin logo-image(props = {})
     -
-        let classes = `logo`;
-        classes += props.fill ? ' logo_fill' : ' logo_color';
-        let src = require('../../components/logo-image/img/logo-fill.svg').default;
-        if (!props.fill) {
-            src = require('../../components/logo-image/img/logo-color.svg').default;
-        }
+        let
+            { src, fill, alt, href, title} = props
     div(
         itemscope
         itemtype="http://schema.org/Brand"
-        class=classes
+        class='logo'
     )
-        a(
-            itemprop="url"
-            href=props.href || "#"
-            title=props.title || ''
-        )
+        if (href && src)
+            a(
+                itemprop="url"
+                href=href
+                title=title
+            )
+                img.logo__img(
+                    itemprop="logo"
+                    src=src
+                    alt=alt
+                )
+        else if (src)
             img.logo__img(
                 itemprop="logo"
                 src=src
-                alt = props.alt || ''
+                alt=alt
             )
         

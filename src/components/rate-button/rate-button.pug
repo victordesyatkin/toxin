@@ -1,22 +1,19 @@
-mixin rate-button(o = {buttons: [], label: ''})
+mixin rate-button(props = {})
     -
         let
-            { label = '', buttons = [], off = 1 } = o || {};
-            imgRate = require('../../components/rate-button/img/star.svg').default;
-            noImgRate = require('../../components/rate-button/img/star-border.svg').default;
+            { label = '', buttons = [], off = 1 } = props;
     .rate-button
         if (label)
             h3.rate-button__label=label
         .rate-button__section-buttons
-            for b in buttons
+            for button in buttons
                 -
                     let
-                        count = b.count;
-                        grade = b.grade;
+                        { count, grade, name, imgRate, noImgRate } = button || {}; 
                         n = 1;
                     if (grade > count) {
                         grade = count
-                    } else if (grade < 0 || typeof (b || {}).grade === undefined) {
+                    } else if (grade < 0 || typeof grade === undefined) {
                         grade = 0;
                     }
                 .rate-button__button.js-rate-button__button(
@@ -25,17 +22,19 @@ mixin rate-button(o = {buttons: [], label: ''})
                 )
                     input.rate-button__input(
                         type = "hidden"
-                        name = b.name
+                        name = name
                         value = grade
                     )
-                    while n <= b.count
+                    while n <= count
                         -
                             let 
                                 rate = n <= grade ? 1 : 0; 
                                 classes = `rate-button__rate js-rate-button__rate${rate ? ' rate-button__rate_checked' : ''}`;  
                         div(class=classes, data-index=n, data-rate=rate)
-                            img(src=imgRate, alt=b.name, class="rate-button__img rate-button__img_checked")
-                            img(src=noImgRate, alt=b.name, class="rate-button__img rate-button__img_not_checked")
+                            if (imgRate)
+                                img(src=imgRate, alt=name, class="rate-button__img rate-button__img_checked")
+                            if (noImgRate)
+                                img(src=noImgRate, alt=name, class="rate-button__img rate-button__img_not_checked")
                         -
                             ++n;
                     

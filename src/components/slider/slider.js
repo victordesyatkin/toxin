@@ -14,7 +14,6 @@ class Slider {
 
 Slider.prototype._init = function () {
   this._props = this._$component.data("props");
-  this._defaultSrc = this._$component.data("defaultsrc");
   this._images = get(this._props, ["images"]) || [];
   this._length = this._images.length;
   this._$points = $(".js-slider__point", this._$component);
@@ -57,7 +56,6 @@ Slider.prototype._onClickControl = function (type = 0, e) {
 Slider.prototype._setImage = function (index) {
   let src = get(this._images, [index, "src"]) || {};
   let alt = get(this._images, [index, "alt"]) || "";
-  src = this._defaultSrc[src] || src;
   this._$image.attr({ src, alt });
 };
 

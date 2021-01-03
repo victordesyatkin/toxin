@@ -1,34 +1,16 @@
 mixin slider(props = {})
     -
         
-        let { images = [], control = true } = props || {};
+        let { images = [], control } = props;
         let
             n = 0;
             length = images.length;
-            defaultSrc = {
-                1: require('../../components/slider/img/image-1.png').default,
-                2: require('../../components/slider/img/image-2.png').default,
-                3: require('../../components/slider/img/image-3.png').default,
-                4: require('../../components/slider/img/image-4.png').default,
-                5: require('../../components/slider/img/image-5.png').default,
-                6: require('../../components/slider/img/image-6.png').default,
-                7: require('../../components/slider/img/image-7.png').default,
-                8: require('../../components/slider/img/image-8.png').default,
-                9: require('../../components/slider/img/image-9.png').default,
-                10: require('../../components/slider/img/image-10.png').default,
-                11: require('../../components/slider/img/image-11.png').default,
-                12: require('../../components/slider/img/image-12.png').default,
-            }
     .slider.js-slider(
-        data-props=props,
-        data-defaultSrc=defaultSrc
+        data-props=props        
     )
         .slider__section-images.slider__section_not_selected.js-slider__section-images
             .slider__image-wrapper
-                img(
-                    src = ''
-                    alt = ''
-                )
+                img
         if (length !== 0)
             if (control === true)
                 .slider__control.slider__control_left.icon-expand_more_prev.js-slider__control(

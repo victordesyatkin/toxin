@@ -1,6 +1,6 @@
-mixin color-sample(o)
+mixin color-sample(props)
     - 
-        let { background, label, description, classNames } = o || {};
+        let { background, label, description, classNames } = props || {};
         classNames = classNames ? classNames.join(' ') : '';
         let style = background ? `background: ${background}`: '';
     .color-sample(

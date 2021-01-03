@@ -1,50 +1,30 @@
-mixin buttons(o = {})
+include ../button/button
+
+mixin buttons(props = {})
     -
-        let { label, buttons } = o || {};
+        let { label, buttons } = props;
     .buttons
         if (label)
-            .buttons__section-head
-                h3.buttons__label=label
+            .buttons__section-head=label
         .buttons__section-body
-            for b in buttons
-                -
-                    let
-                        { text, type, disabled, view, full, value, name, action, src } = b || {};
-                        classes = 'buttons__items';
-                        classes += full ? ' buttons__items_full' : '';
-                        classes += view !== undefined ? ` buttons__view buttons__view_${view}` : ''; 
-                    //- if (src && view === 3 ) {
-                    //-     src = require('../../components/buttons/img/arrow-forward.svg').default;
-                    //- }  
-                div(class=classes)
-                    if (full)
+            for button in buttons
+                .buttons__items
+                    .buttons__item
+                        +button(button)
+                    -
+                        let { view } = button || {};
+                    if (view !== 3)
                         .buttons__item
-                            button(
-                                type="button"
-                                disabled=false
-                                value=''
-                                name=name
-                                data-action=action
-                            )=text
-                            if (src && view === 3)
-                                img(src=src)
-                        if (view !== 3) 
-                            .buttons__item(disabled=true)
-                                button(
-                                    type="button"
-                                    disabled=true
-                                    value=''
-                                    name=name
-                                    data-action=action
-                                )=text
-                    else
-                        .buttons__item(disabled=disabled)
-                            button(
-                                type=type
-                                value=''
-                                disabled=disabled
-                                name=name
-                                data-action=action
-                            )=text
-                            if (src && view === 3)
-                                img(src=src)
+                            +button({...button, hover: true})
+                //- -
+                //-     let
+                //-         { text, type, disabled, view, full, value, name, action, src } = button || {};
+                //-         classes = 'buttons__items';
+                //-         classes += full ? ' buttons__items_full' : '';
+                //-         classes += view !== undefined ? ` buttons__view buttons__view_${view}` : '';  
+                //- div(class=classes)
+                //-     if (full)
+                //-         x
+                //-         +button({...button, })
+                //-     else
+                //-         +button(button)
