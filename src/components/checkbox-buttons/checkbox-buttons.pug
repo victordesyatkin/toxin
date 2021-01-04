@@ -1,30 +1,15 @@
-mixin checkbox-buttons(props = {})
+include ../checkbox-button/checkbox-button
+
+mixin checkbox-buttons(props = {}, src)
     -
         let { label, buttons = [] } = props;
     .checkbox-buttons
         if (props.label)
-            h3.checkbox-buttons__label=label
-        for button in buttons
-            -
-                let
-                    { name, src, classButtonLabel, tabindex, required, disabled, checked, label: buttonLabel } = button || {};
-                    id = name ? `checkbox-buttons__button-${name}`: '';
-                    classButtonLabel = classButtonLabel ? ` ${classButtonLabel}` : '';
-                    classesButtonLabel = `checkbox-buttons__button-label${classButtonLabel}`;
-            label.checkbox-buttons__button(for=id)
-                input.checkbox-buttons__input(
-                    type = "checkbox"
-                    name = name
-                    tabindex = tabindex
-                    required = required ? required : false
-                    disabled = disabled ? disabled : false
-                    checked = checked ? checked : false
-                    id = id
-                )
-                span.checkbox-buttons__check-mark
-                    if (src)
-                        img(src=src, alt=name)
-                span(class=classesButtonLabel)=buttonLabel
+            .checkbox-buttons__label=label
+        .checkbox-buttons__items
+            for button in buttons
+                .checkbox-buttons__item
+                    +checkbox-button({...button, src})
                     
                 
                     

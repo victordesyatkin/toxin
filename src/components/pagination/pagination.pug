@@ -1,7 +1,7 @@
-mixin pagination(o = {})
+mixin pagination(props = {})
     -
         let
-            { src, start, end, current, text, label, altPrevious, altNext, limit, count, emptyString = '...'} = o;
+            { src, start, end, current, text, label, altPrevious, altNext, limit, count, emptyString = '...'} = props;
             pages = [];
             isEmptyStart = true;
             isEmptyEnd = true;

@@ -1,28 +1,72 @@
 @import "~theme/variables.scss";
 
-.button {
-  outline: none;
+$parent: "button";
+.#{$parent} {
   border: none;
   font-size: 0.9rem;
   line-height: 1.1rem;
   text-transform: uppercase;
-  padding: 15px 20px;
+  padding: 14px 19px 15px 19px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  flex-grow: 0;
   @include font-family-first-bold;
   color: $color-first-white;
   white-space: nowrap;
+  background: none;
 
-  &__view_0 {
+  &__view {
     @include linear-gradient(180deg, $color-purple, $color-purple-dark, 1);
     color: $color-first-white;
     border-radius: 22px;
   }
 
-  &__view_hover,
-  &:hover {
-    @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.5);
+  &__view {
+    &_1 {
+      padding: 0;
+      color: $color-purple;
+      border: solid 2px transparent;
+
+      .#{$parent}__content {
+        border-radius: 22px;
+        background-color: white;
+        padding: 12px 17px 13px 17px;
+      }
+    }
+
+    &_2 {
+      padding: 0;
+      color: $color-purple;
+      background: none;
+
+      &.#{$parent}__view_2:hover,
+      &.#{$parent}__view_hover {
+        color: $color-third-dark;
+        background: none;
+      }
+    }
+
+    &_3 {
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .#{$parent}__image {
+        position: absolute;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &_hover,
+    &:hover {
+      @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.5);
+    }
   }
 }

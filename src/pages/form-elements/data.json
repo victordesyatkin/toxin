@@ -165,7 +165,7 @@
       { "label": "Шампунь", "checked": false, "name": "shampoo21" }
     ]
   },
-  "checkboxButtons1": {
+  "checkboxes": {
     "label": "Checkbox Buttons",
     "buttons": [
       { "label": "Можно курить", "checked": false, "name": "smoke" },
@@ -205,7 +205,7 @@
       }
     ]
   },
-  "likeButton1": {
+  "likes": {
     "label": "Like button",
     "buttons": [
       { "checked": false, "name": "male", "count": 2 },
@@ -297,7 +297,7 @@
     "max": 15000,
     "separator": 1000
   },
-  "buttons1": {
+  "buttons": {
     "label": "Buttons",
     "buttons": [
       {
@@ -305,43 +305,25 @@
         "type": "button",
         "value": "",
         "view": 0
-      }
-
-    ]
-  },
-  "buttons2": {
-    "buttons": [
+      },
       {
         "text": "Click me",
         "type": "button",
-        "hover": false,
         "value": "",
-        "view": 1,
-        "full": true
-      }
-    ]
-  },
-  "buttons3": {
-    "buttons": [
+        "view": 1
+      },
       {
         "text": "Click me",
         "type": "button",
-        "disabled": false,
         "value": "",
-        "view": 2,
-        "full": true
-      }
-    ]
-  },
-  "buttons4": {
-    "buttons": [
+        "view": 2
+      },
       {
         "text": "Перейти к оплате",
         "type": "button",
-        "disabled": false,
         "value": "",
         "view": 3,
-        "full": true
+        "src": ""
       }
     ]
   },

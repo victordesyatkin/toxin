@@ -12,10 +12,21 @@
 
   &__items {
     display: flex;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  &__items:first-child {
+    margin-top: 0;
+  }
+
+  &__items:last-child {
+    width: 320px;
   }
 
   &__item {
     margin-left: 20px;
+    width: 100%;
 
     &:first-child {
       margin-left: inherit;

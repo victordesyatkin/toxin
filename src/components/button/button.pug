@@ -1,8 +1,8 @@
 mixin button(props = {})
     -
         let
-            { text, type, disabled, view, value, name, action, src, hover } = props;
-            classes = "button"
+            { text, type, disabled, view, value, name, src, alt, hover } = props;
+            classes = "button button__view"
             classes += hover ? ' button__view_hover' : '';
             classes += view !== undefined ? ` button__view_${view}` : '';
     button(
@@ -11,7 +11,12 @@ mixin button(props = {})
         value=value
         disabled=disabled ? disabled : false
         name=name
-        data-action=action
-    )=text
-    if (src && view === 3)
-        img(src=src)
+    )
+        span.button__content=text
+        if (view === 3)
+            if (src)
+                span.button__image
+                    img(
+                        src=src
+                        alt=alt
+                    )

@@ -1,30 +1,19 @@
 include ../button/button
 
-mixin buttons(props = {})
+mixin buttons(props = {}, src)
     -
         let { label, buttons } = props;
     .buttons
         if (label)
             .buttons__section-head=label
         .buttons__section-body
-            for button in buttons
+            for button, index in buttons
                 .buttons__items
                     .buttons__item
-                        +button(button)
+                        +button({...button, src})
                     -
                         let { view } = button || {};
                     if (view !== 3)
                         .buttons__item
-                            +button({...button, hover: true})
-                //- -
-                //-     let
-                //-         { text, type, disabled, view, full, value, name, action, src } = button || {};
-                //-         classes = 'buttons__items';
-                //-         classes += full ? ' buttons__items_full' : '';
-                //-         classes += view !== undefined ? ` buttons__view buttons__view_${view}` : '';  
-                //- div(class=classes)
-                //-     if (full)
-                //-         x
-                //-         +button({...button, })
-                //-     else
-                //-         +button(button)
+                            - button = {...button, hover: true};
+                            +button(button)

@@ -1,0 +1,25 @@
+mixin checkbox-button(props = {})
+    -   
+        let
+            { name, src, tabindex, required, disabled, checked, label } = props;
+            id = name ? `checkbox-button-${name}`: '';
+    label.checkbox-button(for=id)
+        input.checkbox-button__input(
+            type = "checkbox"
+            name = name
+            tabindex = tabindex
+            required = required ? required : false
+            disabled = disabled ? disabled : false
+            checked = checked ? checked : false
+            id = id
+        )
+        span.checkbox-button__check-mark
+            if (src)
+                img(src=src, alt=name)
+        span.checkbox-button__label=label
+
+                    
+                
+                    
+
+
