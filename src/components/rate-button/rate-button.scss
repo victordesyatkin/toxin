@@ -1,34 +1,31 @@
 @import "~theme/variables.scss";
 
+$parent: "rate-button";
+
 .rate-button {
   display: flex;
   flex-direction: column;
-
-  &__label {
-    margin-bottom: 19px;
-  }
 
   &__button {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-right: 15px;
-    margin-top: -3px;
-    padding-left: 2px;
+
+    &:first-child {
+      padding-left: 2px;
+    }
   }
 
   &__rate {
-    margin-right: 5px;
     position: relative;
     width: 20px;
     height: 19px;
     cursor: pointer;
-  }
+    margin-left: 5px;
 
-  &__rate_checked {
-    .rate-button__img_checked {
-      display: inherit;
+    &:first-of-type {
+      margin-left: 0;
     }
   }
 
@@ -40,14 +37,13 @@
     display: none;
   }
 
-  .rate-button__img_not_checked {
+  &__img_not_checked {
     display: inherit;
   }
 
-  &__section-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+  &__rate_checked {
+    .#{$parent}__img_checked {
+      display: inherit;
+    }
   }
 }

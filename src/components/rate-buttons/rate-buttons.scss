@@ -1,20 +1,22 @@
 @import "~theme/variables.scss";
 
-.radio-buttons {
+.rate-buttons {
   display: flex;
   flex-direction: column;
 
   &__label {
-    margin-bottom: 17px;
+    margin-bottom: 1.14rem;
     @include h3;
   }
 
   &__items {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   &__item:not(:first-child) {
-    margin-left: 1.4rem;
+    margin-left: 1.42rem;
   }
 }

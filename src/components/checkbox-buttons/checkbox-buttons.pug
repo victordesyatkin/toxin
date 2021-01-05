@@ -1,8 +1,8 @@
 include ../checkbox-button/checkbox-button
 
-mixin checkbox-buttons(props = {}, src)
+mixin checkbox-buttons(props = {})
     -
-        let { label, buttons = [] } = props;
+        let { label, buttons = [], src } = props;
     .checkbox-buttons
         if (props.label)
             .checkbox-buttons__label=label

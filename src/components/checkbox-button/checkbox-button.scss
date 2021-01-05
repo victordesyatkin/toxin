@@ -1,6 +1,8 @@
 @import "~theme/variables.scss";
 
-.checkbox-button {
+$parent: "checkbox-button";
+
+.#{$parent} {
   display: flex;
   flex-basis: 100%;
   flex-shrink: 1;
@@ -9,6 +11,16 @@
   cursor: pointer;
   line-height: 1.29rem;
   color: $color-third-dark;
+  @include user-select-none;
+  align-items: center;
+
+  &_bold {
+    .#{$parent}__label {
+      @include h3;
+      font-size: 1rem;
+      text-transform: inherit;
+    }
+  }
 
   input {
     position: absolute;
@@ -38,7 +50,7 @@
   }
 
   input:checked ~ &__check-mark {
-    border: 1px solid #bc9cff;
+    border: 1px solid $color-seventh;
 
     img {
       width: 10px;

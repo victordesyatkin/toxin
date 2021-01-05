@@ -1,24 +1,12 @@
-mixin radio-buttons(o = {buttons: [], label: ''})
+include ../radio-button/radio-button
+
+mixin radio-buttons(props = {})
     -
-        let { label = '', buttons = [] } = o || {};
+        let { label, buttons = [] } = props;
     .radio-buttons
         if (label)
             .radio-buttons__label=label
-        .radio-buttons__section-buttons
-            for b in buttons
-                -
-                    let id = b.name ? `radio-buttons__button-${b.value}`: '';
-                label.radio-buttons__button(for=id)
-                    input.radio-buttons__input(
-                        type = "radio"
-                        name = b.name
-                        tabindex = b.tabindex
-                        required = b.required
-                        disabled = b.disabled ? b.disabled : false
-                        checked = b.checked ? b.checked : false
-                        value = b.value
-                        id = id
-                    )
-                    span.radio-buttons__check-mark
-                        span
-                    span.radio-buttons__button-label=b.label
+        .radio-buttons__items
+            for button in buttons
+                .radio-buttons__item
+                    +radio-button(button)

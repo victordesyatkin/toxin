@@ -1,0 +1,12 @@
+@import "~theme/variables.scss";
+
+$parent: ".rich-checkbox-buttons";
+
+.rich-checkbox-button {
+  &__info {
+    padding-left: 29px;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

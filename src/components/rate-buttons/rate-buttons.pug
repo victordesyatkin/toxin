@@ -1,0 +1,17 @@
+include ../rate-button/rate-button
+
+mixin rate-buttons(props = {})
+    -
+        let
+            { label, buttons = [], images } = props;
+    .rate-buttons
+        if (label)
+            .rate-buttons__label=label
+        .rate-buttons__items
+            for button in buttons
+                .rate-buttons__item
+                    +rate-button({...button, ...images})
+                
+                    
+
+

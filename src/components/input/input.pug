@@ -37,11 +37,13 @@ mixin input(o = {})
                 buttonClasses += ' icon-expand_more';
                 break;
               }
-              case 'arrow-forward':
-              default: {
+              case 'arrow-forward': {
                 buttonClasses += ' input__button_forwarded';
                 buttonClasses += ' icon-arrow_forward';
                 break;
+              }
+              default: {
+                buttonClasses += buttonClass ? ` ${buttonClass}` : '';
               }
             }
           button(

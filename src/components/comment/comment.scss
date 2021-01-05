@@ -1,0 +1,44 @@
+@import "~theme/variables.scss";
+
+.comment {
+  display: flex;
+
+  &__img {
+    width: 48px;
+    height: 48px;
+    border: 2px solid $color-first-white;
+    filter: drop-shadow(0px 10px 20px $color-fifth-dark);
+    border-radius: 24px;
+  }
+
+  &__like-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-right: -4px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+  }
+
+  &__full-name {
+    font-weight: bold;
+    color: $color-second-dark;
+    margin-left: -1px;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    padding-top: 2px;
+  }
+
+  &__count-units {
+    margin-left: 3px;
+  }
+}

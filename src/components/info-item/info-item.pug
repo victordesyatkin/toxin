@@ -1,0 +1,20 @@
+mixin info-item(props = {})
+    -
+        let
+            { src, alt, title, content, classIcon, withoutLine } = props;
+            classes = withoutLine ? 'info-items_without_line' : '';
+    .info-item(
+        class=classes
+    )
+        .info-item__img
+            if (classIcon)
+                span(class=classIcon)
+            else if (src)
+                img(src=src, alt=alt)
+        .info-item__body
+            .info-item__title
+                |#{title}
+            .info-item__content
+                |#{content}
+
+        

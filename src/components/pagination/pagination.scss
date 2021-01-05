@@ -11,6 +11,7 @@
 
   &__section-header {
     margin-bottom: 16.44px;
+    @include h3;
   }
   &__section-body,
   &__common {

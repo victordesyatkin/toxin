@@ -1,31 +1,31 @@
 mixin like-button(props = {})
     -
-        let { label, buttons = [] } = props;
-    .like-button.js-like-button
-        if (label)
-            h3.like-button__label=label
-        .like-button__section-buttons
-            for button in buttons
-                -
-                    let
-                        { name, count, like, noLike, tabindex, required, disabled, checked, alt } = button || {};
-                        id = name ? `like-button__button-${name}`: '';
-                label.like-button__button.js-like-button__button(for=id)
-                    input.like-button__input.js-like-button__input(
-                        type = "checkbox"
-                        name = name
-                        tabindex = tabindex
-                        required = required ? required : false
-                        disabled = disabled ? disabled : false
-                        checked = checked ? checked : false
-                        id = id
-                    )
-                    div.like-button__check-mark
-                        div.like-button__check-mark-like
-                            img(src=like, alt=alt)
-                        div.like-button__check-mark-no-like
-                            img(src=noLike, alt=alt)
-                        div.like-button__count.js-like-button__count #{count}
+        let
+            { name, count, srcLike, srcNoLike, tabindex, required, disabled, checked, alt } = props || {};
+            id = name ? `like-button__button-${name}`: '';
+            defaultSrcLike = require('../../assets/images/favorite.svg').default;
+            defaultSrcNoLike = require('../../assets/images/favorite-border.svg').default;
+        count = count !== undefined ? count : 0;
+        srcLike = srcLike || defaultSrcLike;
+        srcNoLike = srcNoLike || defaultSrcNoLike;               
+    label.like-button__button.js-like-button__button(for=id)
+        input.like-button__input.js-like-button__input(
+            type = "checkbox"
+            name = name
+            tabindex = tabindex
+            required = required ? required : false
+            disabled = disabled ? disabled : false
+            checked = checked ? checked : false
+            id = id
+        )
+        div.like-button__check-mark
+            if (srcLike)
+                div.like-button__check-mark-like
+                    img(src = srcLike, alt = alt)
+            if (srcNoLike)                    
+                div.like-button__check-mark-no-like
+                    img(src = srcNoLike, alt = alt)
+            div.like-button__count.js-like-button__count #{count}
                     
                 
                     

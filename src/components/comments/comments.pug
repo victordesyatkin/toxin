@@ -1,4 +1,4 @@
-include ../like-button/like-button
+include ../comment/comment
 mixin comments(props = {})
     -
         let
@@ -9,26 +9,14 @@ mixin comments(props = {})
     )
         if (label || count)
             .comments__header
-                .comments__label
-                    h2=label
+                .comments__label=label
                 .comments__count
                     span.comments__count-value=count
                     span.comments__count-units.js-comments__count-units
-        .comments__sections
+        .comments__items
             each comment in comments
-                -
-                    let
-                        { src, fullName, date, content, likeButton } = comment || {};
-                        style = src ? `background: url(${src}) 45% 30%` : ''; 
-                .comments__section
-                    .comments__left
-                        .comments__img(style=style)
-                        .comments__like-button
-                            +like-button(likeButton)
-                    .comments__right
-                        .comments__full-name=fullName
-                        .comments__date=date
-                        .comments__content=content
+                .comments__item
+                    +comment(comment)
 
 
 

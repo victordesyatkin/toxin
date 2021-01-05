@@ -1,15 +1,21 @@
 @import "~theme/variables.scss";
 
-.checkbox-buttons {
+.like-buttons {
   display: flex;
   flex-direction: column;
 
   &__label {
-    @include h3;
     margin-bottom: 1.1rem;
+    @include h3;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   &__item:not(:first-child) {
-    margin-top: 0.7rem;
+    margin-left: 0.7rem;
   }
 }

@@ -35,6 +35,8 @@ $color-fourth-dark: $color-dark-shade25;
 $color-fifth-dark: $color-dark-shade10;
 $color-sixth-dark: $color-dark-shade5;
 
+$color-seventh: $color-purple;
+
 $color-first-white: $color-white-shade100;
 
 $font-size-body: 14px;
@@ -54,6 +56,13 @@ $box-shadow-first-color: rgba(0, 0, 0, 0.2);
 $border-first-color: rgba(0, 0, 0, 0.12);
 
 /***** Mixin *****/
+
+@mixin user-select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 @mixin font-family-first-regular {
   font-family: $font-family-first;

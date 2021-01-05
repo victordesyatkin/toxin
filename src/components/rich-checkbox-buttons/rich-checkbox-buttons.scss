@@ -21,12 +21,6 @@ $parent: ".rich-checkbox-buttons";
     margin-top: 0;
   }
 
-  &__info {
-    padding-left: 30px;
-    margin-top: 5px;
-    font-size: 12px;
-    line-height: 14px;
-  }
   &__button:first-child {
     #{$parent}__info {
       padding-right: 34px;

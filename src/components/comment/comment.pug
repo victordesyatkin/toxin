@@ -1,0 +1,22 @@
+include ../like-button/like-button
+
+mixin comment(props = {})
+    -
+        let
+            { src, fullName, date, content, like } = props;
+            style = src ? `background: url(${src}) 45% 30%` : ''; 
+    .comment
+        .comment__left
+            .comment__img(style=style)
+            .comment__like-button
+                +like-button(like)
+        .comment__right
+            .comment__full-name=fullName
+            .comment__date=date
+            .comment__content=content
+                
+
+
+
+
+

@@ -1,15 +1,17 @@
 @import "~theme/variables.scss";
 
 $parent: "button";
+
 .#{$parent} {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   font-size: 0.9rem;
   line-height: 1.1rem;
   text-transform: uppercase;
   padding: 14px 19px 15px 19px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
   @include font-family-first-bold;
   color: $color-first-white;
   white-space: nowrap;
@@ -48,9 +50,6 @@ $parent: "button";
 
     &_3 {
       width: 100%;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
       position: relative;
 
       .#{$parent}__image {

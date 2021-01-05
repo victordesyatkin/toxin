@@ -1,17 +1,17 @@
-include ../checkbox-buttons/checkbox-buttons
+include ../rich-checkbox-button/rich-checkbox-button
 
 
-mixin rich-checkbox-buttons(o = {})
+mixin rich-checkbox-buttons(props = {})
     -
         let
-            {label, buttons = []} = o || {};
+            {label, buttons = []} = props || {};
     .rich-checkbox-buttons
         if (label) 
             .rich-checkbox-buttons__label
                 h3=label
         .rich-checkbox-buttons__buttons
             each button in buttons
-                .rich-checkbox-buttons__button
-                    +checkbox-buttons({buttons: [{...button, classButtonLabel: 'rich-checkbox-buttons__button-label'}]})
-                    if (button.info)
-                        .rich-checkbox-buttons__info=button.info
+                .rich-checkbox-buttons__button(
+                    data-data=button
+                )
+                    +rich-checkbox-button(button)

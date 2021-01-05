@@ -14,6 +14,9 @@ mixin button(props = {})
     )
         span.button__content=text
         if (view === 3)
+            - 
+                let defaultSrc = require('../../assets/images/arrow-forward.svg').default;
+                src = src || defaultSrc;
             if (src)
                 span.button__image
                     img(

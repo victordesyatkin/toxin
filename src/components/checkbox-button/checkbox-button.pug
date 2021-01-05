@@ -1,9 +1,17 @@
 mixin checkbox-button(props = {})
     -   
         let
-            { name, src, tabindex, required, disabled, checked, label } = props;
+            { name, src, tabindex, required, disabled, checked, label, bold } = props;
             id = name ? `checkbox-button-${name}`: '';
-    label.checkbox-button(for=id)
+            defaultSrc = require('../../assets/images/checkbox-buttons.svg').default;
+        src = src || defaultSrc;
+            className = 'checkbox-button';
+            classes = className;
+            classes += bold ? ` ${className}_bold` : '';
+    label(
+        for=id
+        class=classes
+    )
         input.checkbox-button__input(
             type = "checkbox"
             name = name

@@ -1,26 +1,13 @@
 @import "~theme/variables.scss";
 
 .like-button {
-  display: flex;
-  flex-direction: column;
-
-  &__label {
-    margin-bottom: 16px;
-  }
-
-  &__section-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
   &__button {
     display: flex;
     flex-shrink: 1;
     flex-direction: row;
     cursor: pointer;
     line-height: 1.29rem;
-    color: $color-third-dark;
+    @include user-select-none;
 
     input {
       position: absolute;

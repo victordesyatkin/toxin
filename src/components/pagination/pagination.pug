@@ -5,15 +5,16 @@ mixin pagination(props = {})
             pages = [];
             isEmptyStart = true;
             isEmptyEnd = true;
-            // emptyString = '...'; //TODO
             tmp = '';
             classesButtonPrevious = 'pagination__arrow pagination__arrow_previous' + (start === current ? ' pagination_hidden' : '');
             classesButtonNext = 'pagination__arrow pagination__arrow_next' + (end === current ? ' pagination_hidden' : '');
             tmpText = '';
+            defaultSrc = require('../../assets/images/arrow-forward.svg').default;
+        src = src || defaultSrc;
         if (text && typeof text === 'string' && text.trim().length) {
-            let startText = (current - 1) * count > 0  ? current * count - count : current;
-            let endText = current * count > 0  ? current * count : current;
-            let total = end * count > 100 ? '100+' : end * count; 
+            startText = (current - 1) * count > 0  ? current * count - count : current;
+            endText = current * count > 0  ? current * count : current;
+            total = end * count > 100 ? '100+' : end * count; 
             tmpText = `${startText} - ${endText} из ${total} ${text}`;
         }    
             classesSectionFooter = 'pagination__section-footer' + (typeof tmpText !== 'string' || !tmpText.trim().length ? ' pagination_hidden' : '');
@@ -42,12 +43,13 @@ mixin pagination(props = {})
         if (start > 0 & end > 0)
             if (label)
                 .pagination__section-header
-                    h3=label
+                    label
             .pagination__section-body.js-pagination__section-body
                 div(class=classesButtonPrevious, data-direction="prev")
                     .pagination__dummy
-                    .pagination__content 
-                        img(src=src, alt=altPrevious)
+                    .pagination__content
+                        if (src)
+                            img(src=src, alt=altPrevious)
                 each page in pages
                     - 
                         let
@@ -64,7 +66,8 @@ mixin pagination(props = {})
                         .pagination__content=page
                 div(class=classesButtonNext, data-direction="next")
                     .pagination__dummy
-                    .pagination__content 
-                        img(src=src, alt=altNext)
+                    .pagination__content
+                        if (src)  
+                            img(src=src, alt=altNext)
             div(class=classesSectionFooter)=tmpText
                 

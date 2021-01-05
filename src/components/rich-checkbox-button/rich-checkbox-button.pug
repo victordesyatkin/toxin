@@ -1,0 +1,8 @@
+include ../checkbox-button/checkbox-button
+
+mixin rich-checkbox-button(props = {})
+    .rich-checkbox-button
+        - let { info, ...other } = props;
+        +checkbox-button({...other, bold: true })
+        if (info)
+            .rich-checkbox-button__info=info

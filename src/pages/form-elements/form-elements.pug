@@ -10,15 +10,15 @@ include ../../components/expandable-checkbox-list/expandable-checkbox-list
 include ../../components/checkbox-buttons/checkbox-buttons
 include ../../components/radio-buttons/radio-buttons
 include ../../components/toggle-buttons/toggle-buttons
-include ../../components/like-button/like-button
-include ../../components/rate-button/rate-button
+include ../../components/like-buttons/like-buttons
+include ../../components/rate-buttons/rate-buttons
 include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
 include ../../components/range-slider/range-slider
 include ../../components/buttons/buttons
 include ../../components/pagination/pagination
 include ../../components/bullet-list/bullet-list
 include ../../components/info/info
-include ../../components/comments/comments
+include ../../components/comment/comment
 
 block title
     | Form Elements
@@ -51,19 +51,15 @@ block main
                     +expandable-checkbox-list(data.expandableCheckboxList2)
             section.form-elements-section.margin-left-126.width-320.section-second
                 .form-elements-block1.width-222
-                    +checkbox-buttons(data.checkboxes, require('../../assets/images/checkbox-buttons.svg').default)
+                    +checkbox-buttons(data.checkboxes)
                 .form-elements-block1.width-241.margin-top-40
-                    +radio-buttons(data.radioButtons1)
+                    +radio-buttons(data.radioButtons)
                 .form-elements-block1.width-280.margin-top-24
                     +toggle-buttons(data.toggleButtons1)
                 .form-elements-block1.width-90.form-elements_margin-top-46
-                    +like-button({
-                        ...data.likes,
-                        like: require('../../assets/images/favorite.svg').default,
-                        noLike: require('../../assets/images/favorite-border.svg').default,
-                    })
+                    +like-buttons(data.likes)
                 .form-elements-block1.width-260.form-elements_margin-top-41
-                    +rate-button(data.rateButton1)
+                    +rate-buttons(data.rateButton)
                 .form-elements-block1.form-elements_margin-top-199.margin-bottom-259
                     +dropdown(data.dropdown5) 
                 .form-elements-block1.width-253
@@ -72,9 +68,9 @@ block main
                 .form-elements-block1.width-266
                     +range-slider(data.rangeSlider)
                 .form-elements-block1.width-218.margin-top-40.margin-bottom-30.margin-top-31
-                    +buttons(data.buttons, require('../../assets/images/arrow-forward.svg').default)
+                    +buttons(data.buttons)
                 .form-elements-block2.form-elements_margin-bottom-234.width-241
-                    +pagination(data.pagination)                    
+                    +pagination(data.pagination)
                 .form-elements-block2.form-elements_margin-bottom-258
                     +dropdown(data.dropdown6)
                 .form-elements-block2.width-260
@@ -82,7 +78,7 @@ block main
         article.form-elements-down
             section.form-elements-section
                 .form-elements-block1.width-282
-                    +info(data.info1)
+                    +info(data.info)
             section.form-elements-section.width-auto.margin-left-124.section-down-second
-                +comments(data.comments1)
+                +comment({...data.comment, src: require('../../assets/images/example-avatar-male.png').default})
 block footer

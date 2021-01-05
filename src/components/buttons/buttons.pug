@@ -1,8 +1,8 @@
 include ../button/button
 
-mixin buttons(props = {}, src)
+mixin buttons(props = {})
     -
-        let { label, buttons } = props;
+        let { label, buttons, src } = props;
     .buttons
         if (label)
             .buttons__section-head=label

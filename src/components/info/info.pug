@@ -1,35 +1,22 @@
-mixin info(o = {})
+include ../info-item/info-item
+
+mixin info(props = {})
     -
         let
-            {label = '', sections = [], withoutLastLine = false} = o;
-            defaults = {
-                'comfort': 'icon-insert_emoticon',
-                'usability': 'icon-location_city',
-                'cosiness': 'icon-whatshot',
-            }
-            classNames = withoutLastLine ? 'info__sections_without_last_line' : '';
+            { label, sections = [], withoutLine } = props;
+            //- defaults = {
+            //-     'comfort': 'icon-insert_emoticon',
+            //-     'usability': 'icon-location_city',
+            //-     'cosiness': 'icon-whatshot',
+            //- }
     .info
         if (label)
-            h2=label
-    .info__sections(
-        class=classNames
-    )
-        each section in sections
-            -
-                section = section || {};
-                let
-                    src = section.src || '';
-                    classDefault = defaults[src];
-                    alt = section.alt || '';
+        .info__label=label
+    .info__sections
+        each section, index in sections
             .info__section
-                .info__img
-                    if (classDefault)
-                        span(class=classDefault)
-                    else if (src)
-                        img(src=src, alt=alt)
-                .info__body
-                    .info__title
-                        |#{section.title}
-                    .info__content
-                        |#{section.content}
+                if (withoutLine && index === sections.length - 1)
+                    - section = { ...section, withoutLine }
+                +info-item(section)
+
         
