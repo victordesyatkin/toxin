@@ -1,6 +1,6 @@
-mixin dropdown(o)
+mixin dropdown(props = {})
     -
-        let { dropdownOptions, ...inputOptions } = o || {};
+        let { dropdownOptions, ...inputOptions } = props;
         let { expand, type, controlVisible, forcedExpand, buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText } = dropdownOptions || {};
         let classDropdown = 'dropdown js-dropdown' + (expand ? ' dropdown_expanded' : '') + (forcedExpand ? ' dropdown_forced-expanded' : ''); 
         classDropdown += type === 0 ? ' dropdown_particular js-dropdown_particular' : '';
@@ -9,7 +9,7 @@ mixin dropdown(o)
         .dropdown__main.js-dropdown__main
             block dropdown__main
                 -
-                    let { items = [] } = o || {};
+                    let { items = [] } = props || {};
                 each item in items
                     - 
                         let { title, value, name } = item || {};
@@ -21,8 +21,7 @@ mixin dropdown(o)
                             value=value
                             data-title=title
                         )
-                        .dropdown__item-title
-                            h3=title
+                        .dropdown__item-title=title
                         .dropdown__item-control
                             button(
                                 type="button"

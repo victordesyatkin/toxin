@@ -2,9 +2,9 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../buttons/buttons
 
-mixin picker (o = {})
+mixin picker (props = {})
     .picker
-        - let {label = '', dateDropdown = {}, dropdown = {}, buttons = []} = o || {};
+        - let {label = '', dateDropdown = {}, dropdown = {}, buttons = []} = props;
         if (label)
             .picker__label= label
         .picker__date-dropdown

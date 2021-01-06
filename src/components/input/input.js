@@ -9,11 +9,6 @@ class Input {
 
 function renderComponent() {
   $($(".input")).each(function () {
-    // function _handlerIn() {
-    //   $(_this).toggleClass("input_hovered-focused");
-    // }
-    // const _button = $("button", this);
-    // $(_button).on("focus", _handlerIn);
     function _focusIn() {
       $(".js-input__section", this).addClass("input__section_hovered");
     }

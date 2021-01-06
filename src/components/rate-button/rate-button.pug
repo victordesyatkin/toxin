@@ -14,7 +14,7 @@ mixin rate-button(props = {})
         }
     .rate-button__button.js-rate-button__button(
         data-count = count
-        data-off = off
+        data-off = `${off}`
     )
         input.rate-button__input(
             type = "hidden"

@@ -3,6 +3,10 @@
 .dropdown {
   position: relative;
 
+  &__item-title {
+    @include h3;
+  }
+
   .input__stateText {
     margin-right: 2px;
   }

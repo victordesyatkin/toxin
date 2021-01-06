@@ -1,10 +1,10 @@
 include ../input/input
-include ../buttons/buttons
+include ../button/button
 include ../card-footer/card-footer
 
 mixin sign-in(props = {})
     - 
-        let { title = '', email = {}, password = {}, signIn = {}, signUp = {} } = props || {}; 
+        let { title, email = {}, password = {}, signIn = {}, signUp = {} } = props; 
     .sign-in
         if (title) 
             .sign-in__title.sign-in_margin-bottom-16
@@ -14,6 +14,6 @@ mixin sign-in(props = {})
         .sign-in__email.margin-bottom-20
             +input(password)
         .sign-in__button-sign-in.margin-bottom-30
-            +buttons(signIn)
+            +button(signIn)
         .sign-in__button-sign-in
             +card-footer(signUp)

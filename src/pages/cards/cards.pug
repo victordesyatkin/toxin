@@ -36,7 +36,21 @@ block main
                 +card({className: 'cards__calendar'})
                     +calendar(data.calendar)
             .cards__section.cards_width-273.margin-bottom-47.cards_margin-left--2
-                +card-slider(data.slider1)
+                +card-slider({...data.slider1, slider: { ...data.slider1.slider,
+                   images: [
+                       {src: require('../../assets/images/slider-1.png').default},
+                       {src: require('../../assets/images/slider-2.png').default},
+                       {src: require('../../assets/images/slider-3.png').default},
+                       {src: require('../../assets/images/slider-4.png').default}
+                   ]
+                }})
             .cards__section.cards_width-273.cards_margin-left--2
-                +card-slider(data.slider2)
+                +card-slider({...data.slider2, slider: { ...data.slider2.slider,
+                   images: [
+                       {src: require('../../assets/images/slider-2.png').default},
+                       {src: require('../../assets/images/slider-1.png').default},
+                       {src: require('../../assets/images/slider-3.png').default},
+                       {src: require('../../assets/images/slider-4.png').default}
+                   ]
+                }})
 block footer

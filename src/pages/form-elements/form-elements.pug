@@ -80,5 +80,5 @@ block main
                 .form-elements-block1.width-282
                     +info(data.info)
             section.form-elements-section.width-auto.margin-left-124.section-down-second
-                +comment({...data.comment, src: require('../../assets/images/example-avatar-male.png').default})
+                +comment({src: require('../../assets/images/example-avatar-male.png').default, ...data.comment})
 block footer

@@ -8,11 +8,14 @@ mixin card-slider(props)
         let { slider, info, rating, link, commentsContent } = props || {};
         let { button, comments } = rating || {};
     if (link)
-        - let { href, title } = link || {};
+        -
+            let { href, title, rel } = link || {};
+            let defaultRel = "noreferrer noopener";
+            rel =  rel || defaultRel;
         a.card-slider-link(
             title=title
             href=href
-            rel="noreferrer noopener"
+            rel=rel
         )
             +card
                 .card-slider

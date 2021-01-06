@@ -17,6 +17,11 @@
         "label": "выезд",
         "placeholder": "ДД.ММ.ГГГГ",
         "button": { "visible": true, "class": "arrow-down" }
+      },
+      "calendar": {
+        "visible": false,
+        "buttonCleanText": "Очистить",
+        "buttonApplyText": "Применить"
       }
     },
     "dropdown": {
@@ -41,16 +46,13 @@
         { "title": "младенцы", "value": 0 }
       ]
     },
-    "buttons": [
-      {
-        "text": "подобрать номер",
-        "type": "button",
-        "disabled": false,
-        "value": "",
-        "view": 3,
-        "full": true
-      }
-    ]
+    "button": {
+      "text": "подобрать номер",
+      "type": "button",
+      "disabled": false,
+      "value": "",
+      "view": 3
+    }
   },
   "book": {
     "discount": "2 179",
@@ -95,6 +97,7 @@
       "dropdownOptions": {
         "expand": false,
         "type": 1,
+        "controlVisible": true,
         "buttonDecreaseText": "-",
         "buttonIncreaseText": "+",
         "buttonCleanText": "Очистить",
@@ -113,17 +116,12 @@
     },
     "total": "38 081",
     "totalInfo": "Итого",
-    "buttons": {
-      "buttons": [
-        {
-          "text": "Забронировать",
-          "type": "button",
-          "disabled": false,
-          "value": "",
-          "view": 3,
-          "full": true
-        }
-      ]
+    "button": {
+      "text": "Забронировать",
+      "type": "button",
+      "disabled": false,
+      "value": "",
+      "view": 3
     },
     "numberFormat": "ru-RU",
     "words": ["сутки", "суток", "суток"],
@@ -213,25 +211,19 @@
           "disabled": false,
           "value": "",
           "view": 3,
-          "full": true,
           "name": "pay1"
         }
       ]
     },
     "signIn": {
       "content": "Уже есть аккаунт на Toxin",
-      "buttons": {
-        "buttons": [
-          {
-            "text": "войти",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 1,
-            "full": false,
-            "name": "signIn"
-          }
-        ]
+      "button": {
+        "text": "войти",
+        "type": "button",
+        "disabled": false,
+        "value": "",
+        "view": 1,
+        "name": "signIn"
       }
     }
   },
@@ -253,38 +245,29 @@
       "stateText": ""
     },
     "signIn": {
-      "buttons": [
-        {
-          "text": "Войти",
-          "type": "button",
-          "disabled": false,
-          "value": "",
-          "view": 3,
-          "full": true,
-          "name": "signIn1"
-        }
-      ]
+      "text": "Войти",
+      "type": "button",
+      "disabled": false,
+      "value": "",
+      "view": 3,
+      "name": "signIn1"
     },
     "signUp": {
       "content": "Нет аккаунта на Toxin?",
-      "buttons": {
-        "buttons": [
-          {
-            "text": "создать",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 1,
-            "full": false,
-            "name": "signUp2"
-          }
-        ]
+      "button": {
+        "text": "создать",
+        "type": "button",
+        "disabled": false,
+        "value": "",
+        "view": 1,
+        "name": "signUp2"
       }
     }
   },
   "slider1": {
     "slider": {
-      "images": [{ "src": 1 }, { "src": 2 }, { "src": 1 }, { "src": 2 }]
+      "images": [],
+      "control": true
     },
     "info": {
       "number": 888,
@@ -297,16 +280,14 @@
       "options": { "style": "decimal", "currency": "RUB" }
     },
     "rating": {
-      "button": {
-        "buttons": [{ "grade": 5, "name": "rating1", "count": 5 }]
-      },
+      "button": { "grade": 5, "name": "rating1", "count": 5, "off": true },
       "comments": 145
     },
     "commentsContent": "Отзывов"
   },
   "slider2": {
     "slider": {
-      "images": [{ "src": 2 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
+      "images": [],
       "control": false
     },
     "info": {
@@ -320,9 +301,7 @@
       "options": { "style": "decimal", "currency": "RUB" }
     },
     "rating": {
-      "button": {
-        "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
-      },
+      "button": { "grade": 4, "name": "rating2", "count": 5, "off": true},
       "comments": 65
     },
     "commentsContent": "Отзывов"

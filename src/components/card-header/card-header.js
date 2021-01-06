@@ -20,8 +20,12 @@ class CardHeader {
     });
   }
 }
+
 const renderComponent = () => {
   const options = { style: "decimal", currency: "RUB" };
+  $(".js-card-header").each(function () {
+    return new CardHeader(this);
+  });
 };
 
 document.addEventListener("DOMContentLoaded", renderComponent);
