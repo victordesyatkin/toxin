@@ -21,9 +21,8 @@ $parent: "button";
     @include linear-gradient(180deg, $color-purple, $color-purple-dark, 1);
     color: $color-first-white;
     border-radius: 22px;
-  }
+    @include focus;
 
-  &__view {
     &_1 {
       padding: 0;
       color: $color-purple;

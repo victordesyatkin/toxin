@@ -57,6 +57,12 @@ $border-first-color: rgba(0, 0, 0, 0.12);
 
 /***** Mixin *****/
 
+@mixin focus {
+  &:focus {
+    outline: 1px solid $color-fifth-dark;
+  }
+}
+
 @mixin user-select-none {
   -webkit-user-select: none;
   -moz-user-select: none;
