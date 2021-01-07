@@ -5,7 +5,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 const nth = {};
 nth.dir = {
@@ -60,10 +59,6 @@ module.exports = (env = {}) => {
         $: "jquery",
         jQuery: "jquery",
       }),
-      new FaviconsWebpackPlugin({
-        logo: "./src/theme/favicon.png",
-        publicPath: "./",
-      }),
       ...htmlPlugins,
       new webpack.HotModuleReplacementPlugin(),
     ];
@@ -84,7 +79,7 @@ module.exports = (env = {}) => {
 
   return {
     mode: isProd ? "production" : isDev && "development",
-    //devtool: isDev ? "eval" : undefined,
+    devtool: isDev ? "eval" : undefined,
     output: {
       filename: isProd ? "main-[hash:8].js" : undefined,
       pathinfo: isDev,
@@ -107,6 +102,7 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
+          exclude: /favicons/,
           use: [
             {
               loader: "file-loader",
