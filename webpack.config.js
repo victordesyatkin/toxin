@@ -2,6 +2,8 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const WriteFilePlugin = require("write-file-webpack-plugin");
 const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
@@ -60,6 +62,14 @@ module.exports = (env = {}) => {
         jQuery: "jquery",
       }),
       ...htmlPlugins,
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: "src/assets/favicons",
+            to: "assets/favicons",
+          },
+        ],
+      }),
       new webpack.HotModuleReplacementPlugin(),
     ];
 
@@ -102,13 +112,11 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
-          exclude: /favicons/,
           use: [
             {
               loader: "file-loader",
               options: {
-                outputPath: "./images/",
-                publicPath: "./images",
+                outputPath: "./assets/images/",
                 name: "[sha1:hash:7]-[sha1:hash:7].[ext]",
               },
             },
@@ -120,7 +128,7 @@ module.exports = (env = {}) => {
             {
               loader: "file-loader",
               options: {
-                outputPath: "fonts",
+                outputPath: "./assets/fonts/",
                 name: "[name].[ext]",
               },
             },
