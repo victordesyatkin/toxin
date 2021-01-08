@@ -1,3 +1,5 @@
+include ../bullet/bullet
+
 mixin bullet-list(options)
     -
         let
@@ -12,6 +14,5 @@ mixin bullet-list(options)
         .bullet-list__list
             each item in items
                 .bullet-list__item
-                    span.bullet-list__item-mark
-                    span.bullet-list__item-label=item.label
+                    +bullet(item)
 

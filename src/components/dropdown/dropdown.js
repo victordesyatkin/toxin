@@ -1,8 +1,22 @@
-import { wordForm } from "../../assets/helpers/utils";
+import { wordForm, renderComponents } from "../../assets/helpers/utils";
+
+import Input from "../input/input";
 
 import "./dropdown.scss";
 
-class Dropdown {
+export default class Dropdown {
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      render: Dropdown.renderComponent,
+      query: ".js-dropdown",
+    });
+  }
+
+  static renderComponent() {
+    new Dropdown(arguments[1]);
+  }
+
   constructor(element) {
     this._element = element;
     this._$element = $(element);
@@ -10,6 +24,7 @@ class Dropdown {
   }
 
   _init() {
+    Input.renderComponents(this._$element);
     this._inputs = {};
     this._type = parseInt(this._$element.attr("data-type"));
     this._$mainInput = $(".js-input__input", this._element);
@@ -303,11 +318,3 @@ class Element {
     }
   }
 }
-
-const renderComponent = () => {
-  const elements = Array.prototype.map.call($(".js-dropdown"), (element) => {
-    return new Dropdown(element);
-  });
-};
-
-document.addEventListener("DOMContentLoaded", renderComponent);

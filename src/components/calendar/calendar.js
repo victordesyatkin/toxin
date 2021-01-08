@@ -3,7 +3,7 @@ import get from "lodash/get";
 
 import "./calendar.scss";
 
-class Calendar {
+export default class Calendar {
   static OPTIONS = {
     inline: true,
     language: "ru",
@@ -17,6 +17,14 @@ class Calendar {
     nextHtml: '<span class="icon-arrow_forward"></span>',
     prevHtml: '<span class="icon-arrow_prev"></span>',
   };
+
+  static renderComponents() {
+    $(".js-calendar").each(Calendar.renderComponent());
+  }
+
+  static renderComponent() {
+    new Calendar(arguments[1]);
+  }
 
   constructor(component) {
     this._component = component;
@@ -180,12 +188,3 @@ class Calendar {
     return date;
   }
 }
-
-function renderComponent() {
-  const components = [];
-  $(".js-calendar", "body").each(function () {
-    components.push(new Calendar(this));
-  });
-}
-
-document.addEventListener("DOMContentLoaded", renderComponent);

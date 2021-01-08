@@ -2,9 +2,23 @@ import IMask from "imask";
 
 import "./masked-text-field.scss";
 
-export default function renderComponent() {
-  $(".js-masked-text-field").each(function () {
-    const selector = $("input", this);
+export default class MaskedTextField {
+  static renderComponents() {
+    $(".js-masked-text-field").each(MaskedTextField.renderComponent);
+  }
+
+  static renderComponent() {
+    new MaskedTextField(arguments[1]);
+  }
+
+  constructor(el) {
+    this._el = el;
+    this._$el = $(el);
+    this._init();
+  }
+
+  _init() {
+    const selector = $("input", this._$el);
     let maskOptions = selector.data("mask") || {
       mask: Date,
       lazy: false,
@@ -34,8 +48,6 @@ export default function renderComponent() {
         },
       },
     };
-    const im = IMask(selector.get(0), maskOptions);
-  });
+    IMask(selector.get(0), maskOptions);
+  }
 }
-
-document.addEventListener("DOMContentLoaded", renderComponent);

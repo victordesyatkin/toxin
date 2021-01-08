@@ -3,11 +3,17 @@ import upperFirst from "lodash/upperFirst";
 
 import "./date-dropdown.scss";
 
-class DateDropdown {
+export default class DateDropdown {
   static TYPE_CLEAN = 0;
   static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
   static TYPES = ["start", "end"];
+  static renderComponents() {
+    $(".js-date-dropdown").each(DateDropdown.renderComponent);
+  }
+  static renderComponent() {
+    new DateDropdown(arguments[1]);
+  }
 
   constructor(component) {
     this._component = component;
@@ -151,12 +157,3 @@ class DateDropdown {
     return DateDropdown.TYPES.indexOf(type) > -1;
   }
 }
-
-function renderComponent() {
-  const components = [];
-  Array.prototype.map.call($(".js-date-dropdown"), function (component) {
-    components.push(new DateDropdown(component));
-  });
-}
-
-document.addEventListener("DOMContentLoaded", renderComponent);

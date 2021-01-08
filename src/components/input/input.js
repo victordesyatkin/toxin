@@ -1,23 +1,36 @@
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./input.scss";
 
-class Input {
+export default class Input {
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      render: Input.renderComponent,
+      query: ".js-input",
+    });
+  }
+
+  static renderComponent() {
+    console.log("renderComponent : ");
+    new Input(arguments[1]);
+  }
+
   constructor(el) {
     this._el = el;
-    this._$el = $el;
+    this._$el = $(el);
+    this._init();
+  }
+
+  _init() {
+    this._$el.on("focusin", this._focusIn.bind(this));
+    this._$el.on("focusout", this._focusOut.bind(this));
+  }
+
+  _focusIn() {
+    $(".js-input__section", this._$el).addClass("input__section_hovered");
+  }
+  _focusOut() {
+    $(".js-input__section", this._$el).removeClass("input__section_hovered");
   }
 }
-
-function renderComponent() {
-  $($(".input")).each(function () {
-    function _focusIn() {
-      $(".js-input__section", this).addClass("input__section_hovered");
-    }
-    function _focusOut() {
-      $(".js-input__section", this).removeClass("input__section_hovered");
-    }
-    $(this).on("focusin", _focusIn);
-    $(this).on("focusout", _focusOut);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", renderComponent);

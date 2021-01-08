@@ -1,12 +1,12 @@
-mixin input(o = {})
+mixin input(props = {})
   -
-    let { label, stateText, type, name, state, placeholder, button, value, required, pattern, tabindex } = o || {};
-    let { visible:buttonVisible } = button || {};
+    let { label, stateText, type, name, state, placeholder, button = {}, value, required, pattern, tabindex } = props;
+    let { visible:buttonVisible } = button;
     let 
       autofocus = state ? true : false;
       classesInputSection = 'input__section js-input__section' + (buttonVisible ? ' input__section_offset' : '') + (autofocus ? ' input__section_hovered' : '');
       inputClasses = 'input__input js-input__input';
-  .input
+  .input.js-input
     .input__info
       if label
         .input__label
