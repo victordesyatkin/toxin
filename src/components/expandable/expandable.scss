@@ -24,6 +24,10 @@ $parent: ".expandable";
     cursor: pointer;
   }
 
+  &__label {
+    @include h3;
+  }
+
   &__control {
     font-size: 8px;
     -webkit-transition-property: -webkit-transform;

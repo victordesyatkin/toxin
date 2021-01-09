@@ -1,6 +1,8 @@
 import datepicker from "air-datepicker";
 import get from "lodash/get";
 
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./calendar.scss";
 
 export default class Calendar {
@@ -18,8 +20,12 @@ export default class Calendar {
     prevHtml: '<span class="icon-arrow_prev"></span>',
   };
 
-  static renderComponents() {
-    $(".js-calendar").each(Calendar.renderComponent());
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      query: ".js-calendar",
+      render: Calendar.renderComponent,
+    });
   }
 
   static renderComponent() {

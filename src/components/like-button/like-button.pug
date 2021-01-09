@@ -1,7 +1,7 @@
 mixin like-button(props = {})
     -
         let
-            { name, count, srcLike, srcNoLike, tabindex, required, disabled, checked, alt } = props || {};
+            { name, count, srcLike, srcNoLike, tabindex, required, disabled, checked, alt } = props;
             id = name ? `like-button__button-${name}`: '';
             defaultSrcLike = require('../../assets/images/favorite.svg').default;
             defaultSrcNoLike = require('../../assets/images/favorite-border.svg').default;

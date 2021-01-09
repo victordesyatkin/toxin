@@ -1,6 +1,6 @@
 import { wordForm, renderComponents } from "../../assets/helpers/utils";
 
-import Input from "../input/input";
+import Input from "../input";
 
 import "./dropdown.scss";
 

@@ -1,5 +1,5 @@
-include ../input/input
+include ../masked-text-field/masked-text-field
 
-mixin subscription-text-field(props)
-    .subscription-text-field
-        +input(props)
+mixin subscription-text-field(props = {})
+    .subscription-text-field.js-subscription-text-field
+        +masked-text-field(props)

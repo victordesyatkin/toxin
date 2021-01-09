@@ -12,7 +12,6 @@ function wordForm(num, word) {
 }
 
 function renderComponents(props = {}) {
-  console.log("render props : ", props);
   const { query, render } = props;
   let { parents } = props;
   if (!query) {
@@ -24,13 +23,11 @@ function renderComponents(props = {}) {
   if (!render || !isFunction(render)) {
     return;
   }
-  console.log("parents0 : ", parents);
   if (!parents || !isArray(parents)) {
     parents = [parents];
   } else if (isEmpty(parents)) {
     parents = [undefined];
   }
-  console.log("parents1 : ", parents);
   for (const parent of parents) {
     $(query, parent).each(render);
   }

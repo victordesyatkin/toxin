@@ -1,27 +1,13 @@
-mixin toggle-buttons(o = {buttons: [], label: ''})
-    -
-        let { label = '', buttons = [] } = o || {};
-    .toggle-buttons
-        if (o.label)
-            .toggle-buttons__label=label
-        for b in buttons
-            -
-                let id = b.name ? `toggle-buttons__button-${b.name}`: '';
-            label.toggle-buttons__button(for=id)
-                input.toggle-buttons__input(
-                    type = "checkbox"
-                    name = b.name
-                    tabindex = b.tabindex
-                    required = b.required
-                    disabled = b.disabled ? b.disabled : false
-                    checked = b.checked ? b.checked : false
-                    id = id
-                )
-                span.toggle-buttons__check-mark
-                    span
-                span.toggle-buttons__button-label=b.label
-                    
-                
-                    
+include ../toggle-button/toggle-button
 
+mixin toggle-buttons(props = {})
+    -
+        let { label, buttons = [] } = props;
+    .toggle-buttons
+        if (label)
+            .toggle-buttons__label=label
+        .toggle-buttons_items
+            for button in buttons
+                .toggle-buttons__item
+                    +toggle-button(button)
 

@@ -12,7 +12,6 @@ export default class Input {
   }
 
   static renderComponent() {
-    console.log("renderComponent : ");
     new Input(arguments[1]);
   }
 

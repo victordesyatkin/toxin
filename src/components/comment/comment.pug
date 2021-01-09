@@ -5,7 +5,7 @@ mixin comment(props = {})
         let
             { src, fullName, date, content, like } = props;
             style = src ? `background: url(${src}) 45% 30%` : ''; 
-    .comment
+    .comment.js-comment
         .comment__left
             .comment__img(style=style)
             .comment__like-button

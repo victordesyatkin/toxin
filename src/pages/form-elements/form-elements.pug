@@ -27,27 +27,27 @@ block main
     main.form-elements
         article.form-elements-up
             section.form-elements-section.width-320.section-first
-                .form-elements-block1.form-elements__input
+                .form-elements-block1.js-form-elements__input
                     +input(data.input1)
-                .form-elements-block1.form-elements__input
+                .form-elements-block1.js-form-elements__input
                     +input(data.input2)
-                .form-elements-block1
+                .form-elements-block1.js-form-elements__dropdown
                     +dropdown(data.dropdown1)
-                .form-elements-block1.margin-top-23
+                .form-elements-block1.margin-top-23.js-form-elements__masked-text-field
                     +masked-text-field(data.maskedTextField1)                    
-                .form-elements-block2
+                .form-elements-block2.js-form-elements__date-dropdown
                     +date-dropdown(data.dropdown2)
-                .form-elements-block2.form-elements-block3.margin-top-42
+                .form-elements-block2.form-elements-block3.margin-top-42.js-form-elements__filter-date-dropdown
                     +filter-date-dropdown(data.filterDateDropdown1)
-                .form-elements-block2.form-elements-block3.form-elements_margin-top-42
+                .form-elements-block2.form-elements-block3.form-elements_margin-top-42.js-form-elements__subscription-text-field
                     +subscription-text-field(data.subscriptionTextField1)
-                .form-elements-block2.form-elements-block3.form-elements_margin-top-102    
+                .form-elements-block2.form-elements-block3.form-elements_margin-top-102.js-form-elements__dropdown    
                     +dropdown(data.dropdown3)
-                .form-elements-block1.form-elements-block3.margin-bottom-172
+                .form-elements-block1.form-elements-block3.margin-bottom-172.js-form-elements__dropdown
                     +dropdown(data.dropdown4)
-                .form-elements-block2.form-elements-block3
+                .form-elements-block2.form-elements-block3.js-form-elements__expandable-checkbox-list
                     +expandable-checkbox-list(data.expandableCheckboxList1)
-                .form-elements-block2.form-elements-block3.margin-bottom-277.margin-top-49
+                .form-elements-block2.form-elements-block3.margin-bottom-277.margin-top-49.js-form-elements__expandable-checkbox-list
                     +expandable-checkbox-list(data.expandableCheckboxList2)
             section.form-elements-section.margin-left-126.width-320.section-second
                 .form-elements-block1.width-222
@@ -56,29 +56,29 @@ block main
                     +radio-buttons(data.radioButtons)
                 .form-elements-block1.width-280.margin-top-24
                     +toggle-buttons(data.toggleButtons1)
-                .form-elements-block1.width-90.form-elements_margin-top-46
+                .form-elements-block1.width-90.form-elements_margin-top-46.js-form-elements__like-buttons
                     +like-buttons(data.likes)
-                .form-elements-block1.width-260.form-elements_margin-top-41
+                .form-elements-block1.width-260.form-elements_margin-top-41.js-form-elements__rate-buttons
                     +rate-buttons(data.rateButton)
-                .form-elements-block1.form-elements_margin-top-199.margin-bottom-259
+                .form-elements-block1.form-elements_margin-top-199.margin-bottom-259.js-form-elements__dropdown
                     +dropdown(data.dropdown5) 
                 .form-elements-block1.width-253
                     +rich-checkbox-buttons(data.richCheckboxButtons1)
             section.form-elements-section.margin-left-72.width-320.section-third
-                .form-elements-block1.width-266
+                .form-elements-block1.width-266.js-form-elements__range-slider
                     +range-slider(data.rangeSlider)
                 .form-elements-block1.width-218.margin-top-40.margin-bottom-30.margin-top-31
                     +buttons(data.buttons)
-                .form-elements-block2.form-elements_margin-bottom-234.width-241
+                .form-elements-block2.form-elements_margin-bottom-234.width-241.js-form-elements__pagination
                     +pagination(data.pagination)
-                .form-elements-block2.form-elements_margin-bottom-258
-                    +dropdown(data.dropdown6)
+                .form-elements-block2.form-elements_margin-bottom-258.js-form-elements__dropdown
+                    +dropdown(data.dropdown6).js-form-elements__dropdown
                 .form-elements-block2.width-260
                     +bullet-list(data.bulletList)
         article.form-elements-down
             section.form-elements-section
                 .form-elements-block1.width-282
                     +info(data.info)
-            section.form-elements-section.width-auto.margin-left-124.section-down-second
+            section.form-elements-section.width-auto.margin-left-124.section-down-second.js-form-elements__comment
                 +comment({src: require('../../assets/images/example-avatar-male.png').default, ...data.comment})
 block footer

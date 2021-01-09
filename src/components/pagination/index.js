@@ -1,6 +1,20 @@
-import("./pagination.scss");
+import { renderComponents } from "../../assets/helpers/utils";
 
-class Pagination {
+import "./pagination.scss";
+
+export default class Pagination {
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      query: ".js-pagination",
+      render: Pagination.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new Pagination(arguments[1]);
+  }
+
   constructor(component) {
     this.component = component;
     this._attachEventHandler();
@@ -143,20 +157,3 @@ class Pagination {
     body.appendChild(fragment);
   };
 }
-
-export default function renderComponent(callbackWhenInitialized) {
-  (() => {
-    const components = Array.prototype.map.call(
-      document.querySelectorAll(".js-pagination"),
-      (component) => new Pagination(component)
-    );
-    if (
-      callbackWhenInitialized &&
-      typeof callbackWhenInitialized === "function"
-    ) {
-      callbackWhenInitialized(components);
-    }
-  })();
-}
-
-$(renderComponent);

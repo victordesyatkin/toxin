@@ -1,6 +1,10 @@
 import get from "lodash/get";
 import upperFirst from "lodash/upperFirst";
 
+import MaskedTextField from "../masked-text-field";
+import Calendar from "../calendar";
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./date-dropdown.scss";
 
 export default class DateDropdown {
@@ -8,9 +12,15 @@ export default class DateDropdown {
   static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
   static TYPES = ["start", "end"];
-  static renderComponents() {
-    $(".js-date-dropdown").each(DateDropdown.renderComponent);
+
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      query: ".js-date-dropdown",
+      render: DateDropdown.renderComponent,
+    });
   }
+
   static renderComponent() {
     new DateDropdown(arguments[1]);
   }
@@ -22,6 +32,8 @@ export default class DateDropdown {
   }
 
   _init() {
+    MaskedTextField.renderComponents(this._$component);
+    Calendar.renderComponents(this._$component);
     this._$sections = $(".js-input__section", this._$component);
     this._inputStart = $(".js-input__input", this._$sections.get(0));
     this._inputStart.attr("disabled", true);

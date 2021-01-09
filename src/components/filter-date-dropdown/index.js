@@ -1,6 +1,10 @@
+import Calendar from "../calendar";
+
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./filter-date-dropdown.scss";
 
-class FilterDateDropdown {
+export default class FilterDateDropdown {
   static TYPE_FAKE = 0;
   static TYPE_MAIN = 3;
   static TYPE_INPUT = 1;
@@ -8,10 +12,68 @@ class FilterDateDropdown {
   static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
 
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      query: ".js-filter-date-dropdown",
+      render: FilterDateDropdown.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new FilterDateDropdown(arguments[1]);
+  }
+
   constructor(component) {
     this._component = component;
     this._$component = $(component);
     this._init();
+  }
+
+  _init() {
+    Calendar.renderComponents(this._$component);
+    this._options = this._$component.data("options");
+    this._dummy = this._options.dummy || "ДД МЕС";
+    this._separator = this._options.separator || "-";
+    this._$fake = $(
+      `input[data-type="${FilterDateDropdown.TYPE_FAKE}"]`,
+      this._$component
+    );
+    this._$sectionUp = $(
+      ".js-filter-date-dropdown__section-up",
+      this._$component
+    );
+    this._$sectionUp.on("click", this._toggleMainBlock.bind(this));
+    this._$mainBlock = $(
+      `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
+      this._$component
+    );
+    this._$input = $(
+      `input[type="hidden"][data-type=${FilterDateDropdown.TYPE_INPUT}]`,
+      this._$component
+    );
+    this._datepicker = $(
+      `input[type="hidden"][date-isCalendar="${FilterDateDropdown.IS_CALENDAR}"]`,
+      this._$component
+    )
+      .datepicker()
+      .data("datepicker");
+    this._buttonClean = $(
+      `button[data-type="${FilterDateDropdown.TYPE_CLEAN}"]`,
+      this._$component
+    );
+    this._buttonApply = $(
+      `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
+      this._$component
+    );
+    this._buttonClean.on("click", this._handlerClean.bind(this));
+    this._buttonApply.on("click", this._handlerApply.bind(this));
+    $(document).on("click", this._handlerClickDocument.bind(this));
+    this._forcedVisible = this._$component.hasClass(
+      "filter-date-dropdown_forced-expanded"
+    );
+    this._setDates(this._getValue());
+    this._changeFake();
   }
 
   _prepareDate(date) {
@@ -68,51 +130,6 @@ class FilterDateDropdown {
     }
   }
 
-  _init() {
-    this._options = this._$component.data("options");
-    this._dummy = this._options.dummy || "ДД МЕС";
-    this._separator = this._options.separator || "-";
-    this._$fake = $(
-      `input[data-type="${FilterDateDropdown.TYPE_FAKE}"]`,
-      this._$component
-    );
-    this._$sectionUp = $(
-      ".js-filter-date-dropdown__section-up",
-      this._$component
-    );
-    this._$sectionUp.on("click", this._toggleMainBlock.bind(this));
-    this._$mainBlock = $(
-      `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
-      this._$component
-    );
-    this._$input = $(
-      `input[type="hidden"][data-type=${FilterDateDropdown.TYPE_INPUT}]`,
-      this._$component
-    );
-    this._datepicker = $(
-      `input[type="hidden"][date-isCalendar="${FilterDateDropdown.IS_CALENDAR}"]`,
-      this._$component
-    )
-      .datepicker()
-      .data("datepicker");
-    this._buttonClean = $(
-      `button[data-type="${FilterDateDropdown.TYPE_CLEAN}"]`,
-      this._$component
-    );
-    this._buttonApply = $(
-      `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
-      this._$component
-    );
-    this._buttonClean.on("click", this._handlerClean.bind(this));
-    this._buttonApply.on("click", this._handlerApply.bind(this));
-    $(document).on("click", this._handlerClickDocument.bind(this));
-    this._forcedVisible = this._$component.hasClass(
-      "filter-date-dropdown_forced-expanded"
-    );
-    this._setDates(this._getValue());
-    this._changeFake();
-  }
-
   _setDates([start, end] = []) {
     if (!start && !end) {
       return false;
@@ -159,15 +176,3 @@ class FilterDateDropdown {
     return JSON.parse(this._$input.val() || "[]");
   }
 }
-
-function renderComponent() {
-  const components = Array.prototype.map.call(
-    $(".js-filter-date-dropdown"),
-    (element) => {
-      return new FilterDateDropdown(element);
-    }
-  );
-  return components;
-}
-
-document.addEventListener("DOMContentLoaded", renderComponent);

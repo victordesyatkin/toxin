@@ -6,8 +6,7 @@ mixin expandable(o)
         class=classes
     )
         .expandable__header.js-expandable__header
-            .expandable__label
-                h3=label
+            .expandable__label=label
             .expandable__control.icon-expand_more
         .expandable__body.js-expandable__body
             block               

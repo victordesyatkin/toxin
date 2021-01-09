@@ -1,9 +1,22 @@
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./like-button.scss";
 
-class LikeButton {
+export default class LikeButton {
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      query: ".js-like-button__button",
+      render: LikeButton.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new LikeButton(arguments[1]);
+  }
   constructor(component) {
     this.component = component;
-    this.input = this.component.querySelector("input");
+    this.input = this.component.querySelector(".js-like-button__input");
     this.count = this.component.querySelector(".js-like-button__count");
     this._attachEventHandlers();
   }
@@ -33,23 +46,3 @@ class LikeButton {
     }
   };
 }
-
-export default function renderComponent(callbackWhenInitialized) {
-  (() => {
-    const buttons = Array.prototype.map.call(
-      document.querySelectorAll(".js-like-button__button"),
-      (node) => {
-        return new LikeButton(node);
-      }
-    );
-
-    if (
-      callbackWhenInitialized &&
-      typeof callbackWhenInitialized === "function"
-    ) {
-      callbackWhenInitialized(buttons);
-    }
-  })();
-}
-
-document.addEventListener("DOMContentLoaded", renderComponent);

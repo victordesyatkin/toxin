@@ -1,9 +1,23 @@
 import get from "lodash/get";
 
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./range-slider.scss";
 
-class RangeSlider {
+export default class RangeSlider {
   static TYPES = ["start", "end"];
+
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      query: ".js-range-slider",
+      render: RangeSlider.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new RangeSlider(arguments[1]);
+  }
 
   constructor(component) {
     this._component = component;
@@ -243,23 +257,3 @@ class RangeSlider {
     this._renderTrack();
   }
 }
-
-export default function renderComponent(callbackWhenInitialized) {
-  (() => {
-    const components = Array.prototype.map.call(
-      document.querySelectorAll(".js-range-slider"),
-      (node) => {
-        return new RangeSlider(node);
-      }
-    );
-
-    if (
-      callbackWhenInitialized &&
-      typeof callbackWhenInitialized === "function"
-    ) {
-      callbackWhenInitialized(components);
-    }
-  })();
-}
-
-document.addEventListener("DOMContentLoaded", renderComponent);

@@ -1,8 +1,8 @@
 include ../calendar/calendar
 
-mixin filter-date-dropdown(o)
+mixin filter-date-dropdown(props= {})
     - 
-        let {label, input, expanded, forcedExpanded, placeholder, separator, calendar} = o || {};
+        let {label, input, expanded, forcedExpanded, placeholder, separator, calendar} = props;
         let { name, value, dummy } = input;
         let classes = 'filter-date-dropdown js-filter-date-dropdown' + (expanded ? ' filter-date-dropdown_expanded' : '') + (forcedExpanded ? ' filter-date-dropdown_forced-expanded': '');
     div(

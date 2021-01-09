@@ -1,6 +1,20 @@
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./rate-button.scss";
 
-class RateButton {
+export default class RateButton {
+  static renderComponents(parents) {
+    renderComponents({
+      parents,
+      query: ".js-rate-button__button",
+      render: RateButton.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new RateButton(arguments[1]);
+  }
+
   constructor(component) {
     this.component = component;
     this.count = this.component.dataset.count;
@@ -58,23 +72,3 @@ class RateButton {
     }
   };
 }
-
-export default function renderComponent(callbackWhenInitialized) {
-  (() => {
-    const buttons = Array.prototype.map.call(
-      document.querySelectorAll(".js-rate-button__button"),
-      (node) => {
-        return new RateButton(node);
-      }
-    );
-
-    if (
-      callbackWhenInitialized &&
-      typeof callbackWhenInitialized === "function"
-    ) {
-      callbackWhenInitialized(buttons);
-    }
-  })();
-}
-
-$(renderComponent);

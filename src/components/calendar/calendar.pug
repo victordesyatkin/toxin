@@ -1,7 +1,7 @@
-mixin calendar(o)
-    .calendar.js-calendar(data-options=o)
+mixin calendar(props = {})
+    .calendar.js-calendar(data-options=props)
         - 
-            let {isOpen, classNames, forceVisible, buttonCleanText, buttonApplyText } = o || {};
+            let {isOpen, classNames, forceVisible, buttonCleanText, buttonApplyText } = props;
             classes = `calendar__main js-calendar__main${isOpen ? ' calendar__main_opened' : ' calendar__main_hidden'}${classNames && classNames.length ? ` ${classNames.join(' ')}` : ''}`;
         div(class = classes)
             input(type="hidden", date-isCalendar="1")

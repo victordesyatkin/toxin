@@ -1,0 +1,60 @@
+@import "~theme/global.scss";
+
+.toggle-button {
+  display: flex;
+  flex-basis: 100%;
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-direction: row;
+  cursor: pointer;
+  line-height: 1.3rem;
+  color: $color-second-dark;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: none;
+    height: 0;
+    width: 0;
+  }
+
+  &__check-mark {
+    min-width: 40px;
+    width: 40px;
+    height: 20px;
+    border: 1px solid $color-fourth-dark;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    padding: 0 4px;
+    position: relative;
+
+    span {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+      border-radius: 50%;
+      background: $color-fourth-dark;
+      transition: left 0.5s;
+      left: 4px;
+      position: absolute;
+    }
+  }
+
+  &__label {
+    margin-right: 20px;
+  }
+
+  input:checked ~ &__check-mark {
+    border: 1px solid $color-purple;
+    justify-content: flex-end;
+
+    span {
+      background: $gradient-first;
+      transition: left 0.5s;
+      left: calc(100% - 16px);
+    }
+  }
+}
