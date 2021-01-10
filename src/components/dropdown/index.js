@@ -270,8 +270,6 @@ class PlaceholderGuests extends Placeholder {
     }
     return placeholder;
   }
-
-  _inputs = {};
 }
 class Element {
   static TYPE_PLUS = 1;

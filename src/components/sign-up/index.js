@@ -1,20 +1,20 @@
 import { renderComponents } from "../../assets/helpers/utils";
-import DateDropdown from "../date-dropdown";
-import Dropdown from "../dropdown";
+import MaskedTextField from "../masked-text-field";
 
-import "./picker.scss";
+import "./sign-up.scss";
 
-export default class Picker {
-  static renderComponents(parents) {
+export default class SignUp {
+  static renderComponents(props = {}) {
+    const { parents } = props;
     renderComponents({
       parents,
-      query: ".js-picker",
+      query: ".js-sign-up",
       render: Picker.renderComponent,
     });
   }
 
   static renderComponent() {
-    new Picker(arguments[1]);
+    new SignUp(arguments[1]);
   }
 
   constructor(el) {
@@ -24,7 +24,7 @@ export default class Picker {
   }
 
   _init() {
-    DateDropdown.renderComponents(this._$el);
+    MaskedTextField.renderComponents(this._$el);
     Dropdown.renderComponents(this._$el);
   }
 }

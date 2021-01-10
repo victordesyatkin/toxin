@@ -28,6 +28,7 @@ mixin layout__container(options)
     classes += options.direction ? ' layout__container_' + options.direction : ''
     classes += options.align ? ' layout__container_' + options.align : ''
     classes += options.mix ? ' ' + options.mix : ''
+    classes += options.theme ? ' ' + 'layout__container_' + options.theme : ''
 
   .layout__container(class= classes)
     block

@@ -96,5 +96,9 @@
     &_basis-auto.layout__container {
       flex-basis: auto;
     }
+
+    &_color {
+      background-color: $color-eighth;
+    }
   }
 }

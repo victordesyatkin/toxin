@@ -1,3 +1,9 @@
+@import "~theme/variables.scss";
+
 .header-ui-kit {
   padding: 2.08vw 0 0 2.08vw;
+
+  &_color {
+    background-color: $color-eighth;
+  }
 }

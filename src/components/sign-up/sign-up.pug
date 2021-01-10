@@ -7,7 +7,7 @@ include ../card-footer/card-footer
 mixin sign-up(props = {})
     - 
         let { title, firstName, lastName, gender = {}, birthday, email, password, submit, contribute, pay, signIn } = props; 
-    .sign-up
+    .sign-up.js-sign-up
         if (title) 
             .sign-up__title.sign-up_margin-bottom-16=title
         .sign-up__first-name.margin-bottom-5

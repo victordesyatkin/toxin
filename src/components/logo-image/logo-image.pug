@@ -1,11 +1,14 @@
 mixin logo-image(props = {})
     -
         let
-            { src, fill, alt, href, title} = props
+            { src, alt, href, title, theme } = props
+            className = 'logo';
+            classNames = className;
+        classNames += theme ? ` ${className}_${theme}` : '';
     div(
         itemscope
         itemtype="http://schema.org/Brand"
-        class='logo'
+        class=classNames
     )
         if (href && src)
             a(

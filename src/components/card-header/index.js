@@ -1,9 +1,11 @@
+import get from "lodash/get";
+
 import "./card-header.scss";
 
 class CardHeader {
   constructor(el) {
     this._el = el;
-    this.$el = $(el);
+    this._$el = $(el);
     this.init();
   }
 

@@ -1,5 +1,5 @@
-mixin card-header(props)
-    - let { number, suite, price, duration, unit, headerNumberText, options, numberFormat } = props || {};
+mixin card-header(props = {})
+    - let { number, suite, price, duration, unit, headerNumberText, options, numberFormat } = props;
     .card-header.js-card-header(
         data-numberFormat = numberFormat
         data-options=options
