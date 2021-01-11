@@ -22,27 +22,21 @@ export default class Slider {
     new Slider(arguments[1]);
   }
 
-  constructor(component) {
-    this._$component = $(component);
+  constructor(element) {
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    this._props = this._$component.data("props");
+    this._props = this._$element.data("props");
     this._images = get(this._props, ["images"]) || [];
     this._length = this._images.length;
-    this._$points = $(".js-slider__point", this._$component);
-    this._$prev = $(
-      `[data-type="${Slider.TYPE_BUTTON_PREV}"]`,
-      this._$component
-    );
+    this._$points = $(".js-slider__point", this._$element);
+    this._$prev = $(`[data-type="${Slider.TYPE_BUTTON_PREV}"]`, this._$element);
     this._$prev.on("click", this._onClickControl.bind(this, 1));
-    this._$next = $(
-      `[data-type="${Slider.TYPE_BUTTON_NEXT}"]`,
-      this._$component
-    );
+    this._$next = $(`[data-type="${Slider.TYPE_BUTTON_NEXT}"]`, this._$element);
     this._$next.on("click", this._onClickControl.bind(this, 2));
-    this._$image = $(".js-slider__section-images img", this._$component);
+    this._$image = $(".js-slider__section-images img", this._$element);
     this._index = 0;
     this._$points.on("click", this._onClickPoint.bind(this));
     this._setImage(this._index);

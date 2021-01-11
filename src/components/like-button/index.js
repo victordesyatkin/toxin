@@ -16,10 +16,10 @@ export default class LikeButton {
     new LikeButton(arguments[1]);
   }
 
-  constructor(component) {
-    this.component = component;
-    this.input = this.component.querySelector(".js-like-button__input");
-    this.count = this.component.querySelector(".js-like-button__count");
+  constructor(element) {
+    this._element = element;
+    this.input = this._element.querySelector(".js-like-button__input");
+    this.count = this._element.querySelector(".js-like-button__count");
     this._attachEventHandlers();
   }
 

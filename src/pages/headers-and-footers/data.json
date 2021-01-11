@@ -242,9 +242,13 @@
       "field": {
         "name": "footer_subscription_email",
         "id": "footer_subscription_email",
-        "type": "email",
+        "type": "text",
         "placeholder": "Email",
-        "button": { "visible": true }
+        "button": { "visible": true, "class": "arrow-forward" },
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
     }
   },

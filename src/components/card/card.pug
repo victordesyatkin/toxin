@@ -1,7 +1,4 @@
 mixin card(props = {})
-    - 
-        let { className } = props || {};
-        className = `card ${ className ? ` ${className}` : ''}`;
-    div(class=className)
+    .card
         if (block)
             block

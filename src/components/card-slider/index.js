@@ -19,15 +19,15 @@ export default class CardSlider {
     new CardSlider(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    Slider.renderComponents({ parents: this._$el });
-    CardHeader.renderComponents({ parents: this._$el });
-    RateButton.renderComponents({ parents: this._$el });
+    Slider.renderComponents({ parents: this._$element });
+    CardHeader.renderComponents({ parents: this._$element });
+    RateButton.renderComponents({ parents: this._$element });
   }
 }

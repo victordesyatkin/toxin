@@ -6,13 +6,13 @@ import { wordForm } from "../../assets/helpers/utils";
 import "./rate.scss";
 
 class Rate {
-  constructor(component) {
-    this._$component = $(component);
+  constructor(element) {
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    this._data = this._$component.data();
+    this._data = this._$element.data();
     this._setUnits();
     this._initCircle();
     this._initCanvas();
@@ -109,7 +109,7 @@ class Rate {
   }
 
   _initCircle() {
-    this._$circle = $(".js-rate__circle", this._$component);
+    this._$circle = $(".js-rate__circle", this._$element);
     if (this._$circle.length) {
       this._widthCircle = this._$circle.width();
       this._heightCircle = this._$circle.height();
@@ -117,7 +117,7 @@ class Rate {
   }
 
   _initCanvas() {
-    this._$canvas = $(".rate__canvas", this._$component);
+    this._$canvas = $(".rate__canvas", this._$element);
     this._lineWidth = get(this._data, ["data", "lineWidth"]) || 2;
     if (this._$canvas.length) {
       this._canvas = this._$canvas.get(0);
@@ -139,7 +139,7 @@ class Rate {
   _setUnits() {
     this._total = get(this._data, ["data", "total"]);
     this._units = get(this._data, ["data", "units"]) || [];
-    this._$unit = $(".js-rate__unit", this._$component);
+    this._$unit = $(".js-rate__unit", this._$element);
     if (this._units.length) {
       this._$unit.html(wordForm(this._total, this._units));
     }

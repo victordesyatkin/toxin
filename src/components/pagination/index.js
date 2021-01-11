@@ -16,15 +16,15 @@ export default class Pagination {
     new Pagination(arguments[1]);
   }
 
-  constructor(component) {
-    this.component = component;
+  constructor(element) {
+    this._element = element;
     this._attachEventHandler();
   }
 
   _attachEventHandler() {
-    this.component &&
-      this.component.addEventListener &&
-      this.component.addEventListener("click", this._click);
+    this._element &&
+      this._element.addEventListener &&
+      this._element.addEventListener("click", this._click);
   }
 
   _click = (event) => {
@@ -39,21 +39,21 @@ export default class Pagination {
     if (parseFloat(current)) {
       return null;
     }
-    if (this.component.dataset.current && item && parseFloat(item)) {
-      this.component.dataset.current = parseFloat(item);
+    if (this._element.dataset.current && item && parseFloat(item)) {
+      this._element.dataset.current = parseFloat(item);
     } else if (direction === "next") {
-      this.component.dataset.current =
-        parseFloat(this.component.dataset.current) + 1;
+      this._element.dataset.current =
+        parseFloat(this._element.dataset.current) + 1;
     } else if (direction === "prev") {
-      this.component.dataset.current =
-        parseFloat(this.component.dataset.current) - 1;
+      this._element.dataset.current =
+        parseFloat(this._element.dataset.current) - 1;
     }
     this._renderCommon();
     this._renderText();
   };
 
   _setAttributeDirection = (direction) => {
-    const { start, end, current } = this.component.dataset;
+    const { start, end, current } = this._element.dataset;
     let hidden = false;
     if (
       (direction === "prev" && start === current) ||
@@ -61,14 +61,14 @@ export default class Pagination {
     ) {
       hidden = true;
     }
-    const element = this.component.querySelector(
+    const element = this._element.querySelector(
       `[data-direction="${direction}"]`
     );
     element && element.classList.toggle("pagination_hidden", hidden);
   };
 
   _renderText = () => {
-    let { end, current, text, count } = this.component.dataset;
+    let { end, current, text, count } = this._element.dataset;
     end = parseFloat(end);
     current = parseFloat(current);
     count = parseFloat(count);
@@ -93,7 +93,7 @@ export default class Pagination {
   };
 
   _renderCommon = () => {
-    let { start, end, current, limit } = this.component.dataset;
+    let { start, end, current, limit } = this._element.dataset;
     start = parseFloat(start);
     end = parseFloat(end);
     current = parseFloat(current);
@@ -123,9 +123,9 @@ export default class Pagination {
     if (end - current > limit) {
       pages.push(end);
     }
-    const prev = this.component.querySelector('[data-direction="prev"]');
-    const next = this.component.querySelector('[data-direction="next"]');
-    const body = this.component.querySelector(".js-pagination__section-body");
+    const prev = this._element.querySelector('[data-direction="prev"]');
+    const next = this._element.querySelector('[data-direction="next"]');
+    const body = this._element.querySelector(".js-pagination__section-body");
     body.innerHTML = "";
     const fragment = document.createDocumentFragment();
     fragment.appendChild(prev);

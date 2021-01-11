@@ -26,25 +26,22 @@ export default class DateDropdown {
     new DateDropdown(arguments[1]);
   }
 
-  constructor(component) {
-    this._component = component;
-    this._$component = $(component);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    MaskedTextField.renderComponents({ parents: this._$component });
-    Calendar.renderComponents({ parents: this._$component });
-    this._$sections = $(".js-input__section", this._$component);
+    MaskedTextField.renderComponents({ parents: this._$element });
+    Calendar.renderComponents({ parents: this._$element });
+    this._$sections = $(".js-input__section", this._$element);
     this._inputStart = $(".js-input__input", this._$sections.get(0));
     this._inputStart.attr("disabled", true);
     this._inputEnd = $(".js-input__input", this._$sections.get(1));
     this._inputEnd.attr("disabled", true);
     this._$sections.on("click", this._toggleVisibleCalendar.bind(this));
-    this._$calendar = $(
-      ".js-date-dropdown__section-calendar",
-      this._$component
-    );
+    this._$calendar = $(".js-date-dropdown__section-calendar", this._$element);
     this._datepicker = $(
       `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
       this._$calendar
@@ -112,9 +109,9 @@ export default class DateDropdown {
 
   _value2Date(value) {
     const parts = value.split(".");
-    const partDay = parts[0];
-    const partMonth = parts[1];
-    const partYear = parts[2];
+    const partDay = parseFloat(parts[0]);
+    const partMonth = parseFloat(parts[1]);
+    const partYear = parseFloat(parts[2]);
     let date = "";
     if (partDay && partMonth && partYear) {
       date = `${partMonth}.${partDay}.${partYear}`;
@@ -129,12 +126,12 @@ export default class DateDropdown {
   }
 
   _handlerClickDocument(event) {
-    const classTarget = `.${$(event.target, this._$component).attr("class")}`;
+    const classTarget = `.${$(event.target, this._$element).attr("class")}`;
 
     if (
-      !$(event.target).closest(this._$component).length &&
-      !$(event.target, this._$component).hasClass("datepicker--cell") &&
-      !$(classTarget, this._$component).length
+      !$(event.target).closest(this._$element).length &&
+      !$(event.target, this._$element).hasClass("datepicker--cell") &&
+      !$(classTarget, this._$element).length
     ) {
       this._datepicker.hide();
     }

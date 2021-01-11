@@ -7,15 +7,17 @@ include ../../components/copyright/copyright
 block title
     | Headers & Footers
 block header
-    +header-ui-kit({ full: true, classes: ['headers-and-footers']})
+    +layout__container({basis: 1440, align: 'center', theme: 'color'})
+        +header-ui-kit({ full: true, classes: ['headers-and-footers']})
 block main
+    +layout__container({basis: 1440, align: 'center', theme: 'color'})
         article.headers-and-footers
             - let data = htmlWebpackPlugin.options.getData()
             section.headers-and-footers__section    
                 +header(data.headerNotAuthorised)
             section.headers-and-footers__section.headers-and-footers__section_margin-top-39    
                 +header(data.headerAuthorised)
-            section.headers-and-footers__section.headers-and-footers__section_margin-top-39    
+            section.headers-and-footers__section.headers-and-footers__section_margin-top-39.js-headers-and-footers__footer
                 +footer(data.footer)
             section.headers-and-footers__section.headers-and-footers__section_margin-top-39.headers-and-footers__copyright 
                 +copyright(data.copyright)

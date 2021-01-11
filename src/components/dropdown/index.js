@@ -28,13 +28,13 @@ export default class Dropdown {
     Input.renderComponents({ parents: this._$element });
     this._inputs = {};
     this._type = parseInt(this._$element.attr("data-type"));
-    this._$mainInput = $(".js-input__input", this._element);
+    this._$mainInput = $(".js-input__input", this._$element);
     this._$mainInput.attr("disabled", true);
-    this._$inputSection = $(".js-input__section", this._element);
+    this._$inputSection = $(".js-input__section", this._$element);
     this._$inputSection.on("click", this._handlerClickExpand.bind(this));
     this._mainPlaceholder = this._$mainInput.attr("placeholder");
-    this._$dropdownMain = $(".js-dropdown__main", this._element);
-    this._$buttonExpand = $(".js-input__button", this._element);
+    this._$dropdownMain = $(".js-dropdown__main", this._$element);
+    this._$buttonExpand = $(".js-input__button", this._$element);
     this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
     this._$buttonClean.on("click", this._handlerClickClean.bind(this));
     this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
@@ -277,9 +277,9 @@ class Element {
   static TYPE_MINUS = 0;
 
   constructor(element, value) {
-    this._element = element;
+    this._$element = element;
     this._$element = $(element);
-    this._$hiddenInput = $("input", this._element);
+    this._$hiddenInput = $("input", this._$element);
     this._$buttonPlus = $(
       `button[data-type="${Element.TYPE_PLUS}"]`,
       this._$element
@@ -288,7 +288,7 @@ class Element {
       `button[data-type="${Element.TYPE_MINUS}"]`,
       this._$element
     ).on("click", this._handlerClickButton.bind(this, Element.TYPE_MINUS));
-    this._$fakeInput = $(".js-dropdown__item-value", this._element);
+    this._$fakeInput = $(".js-dropdown__item-value", this._$element);
     if (typeof value !== "undefined") {
       this._$fakeInput.html(value);
     }

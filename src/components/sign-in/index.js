@@ -17,13 +17,13 @@ export default class SignIn {
     new SignIn(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    MaskedTextField.renderComponents({ parents: this._$el });
+    MaskedTextField.renderComponents({ parents: this._$element });
   }
 }

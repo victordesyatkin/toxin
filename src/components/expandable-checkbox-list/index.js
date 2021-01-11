@@ -16,13 +16,13 @@ export default class ExpandableCheckboxList {
     new ExpandableCheckboxList(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    Expandable.renderComponents({ parents: this._$el });
+    Expandable.renderComponents({ parents: this._$element });
   }
 }

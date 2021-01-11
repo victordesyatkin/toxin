@@ -1,7 +1,7 @@
 mixin slider(props = {})
     -
         
-        let { images = [], control } = props;
+        let { images = [], control, max } = props;
         let
             n = 0;
             length = images.length;
@@ -21,6 +21,8 @@ mixin slider(props = {})
                 )
             .slider__pagination
                 while n < length
+                    if (max && n > max)
+                        continue
                     .slider__point.js-slider__point(data-index=n)
                     -
                         ++n

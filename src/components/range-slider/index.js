@@ -20,18 +20,18 @@ export default class RangeSlider {
     new RangeSlider(arguments[1]);
   }
 
-  constructor(component) {
-    this._component = component;
+  constructor(element) {
+    this._element = element;
     this._init();
   }
 
   _init() {
-    this._nodeListInputs = this._component.querySelectorAll("input") || [];
+    this._nodeListInputs = this._element.querySelectorAll("input") || [];
     this._inputs = {
       start: this._nodeListInputs[0],
       end: this._nodeListInputs[1],
     };
-    this._nodeListPoints = this._component.querySelectorAll(
+    this._nodeListPoints = this._element.querySelectorAll(
       ".js-range-slider__point"
     );
     this._points = {
@@ -40,21 +40,21 @@ export default class RangeSlider {
     };
     this._startPoint = this._nodeListPoints[0];
     this._endPoint = this._nodeListPoints[1];
-    this._fullTrack = this._component.querySelector(
+    this._fullTrack = this._element.querySelector(
       ".js-range-slider__section-body"
     );
     setTimeout(() => {
       this._pointWidth = parseFloat(this._startPoint.offsetWidth);
       this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
-      this._track = this._component.querySelector(".js-range-slider__track");
-      this._info = this._component.querySelector(".js-range-slider__info");
+      this._track = this._element.querySelector(".js-range-slider__track");
+      this._info = this._element.querySelector(".js-range-slider__info");
       this._type = "";
-      this._options = JSON.parse(this._component.dataset.options);
+      this._options = JSON.parse(this._element.dataset.options);
       this._min = this._options.min;
       this._max = this._options.max;
       this._separator = this._options.separator;
       this._calculateK();
-      this._shiftX = this._component.getBoundingClientRect().left;
+      this._shiftX = this._element.getBoundingClientRect().left;
       this._attachEventHandlers();
       this._setInputs(this._options.start, this._options.end);
       this._setInfo();
@@ -77,11 +77,11 @@ export default class RangeSlider {
   }
 
   _attachEventHandlers() {
-    if (!this._component) {
+    if (!this._element) {
       return false;
     }
-    this._component.addEventListener("mousedown", this._mousedown.bind(this));
-    this._component.addEventListener("mouseenter", this._mouseenter.bind(this));
+    this._element.addEventListener("mousedown", this._mousedown.bind(this));
+    this._element.addEventListener("mouseenter", this._mouseenter.bind(this));
     document.addEventListener("mouseleave", this._mouseleave.bind(this));
     document.addEventListener("mouseup", this._mouseup.bind(this));
     document.addEventListener("mousemove", this._mousemove.bind(this));
@@ -247,7 +247,7 @@ export default class RangeSlider {
   _resize() {
     this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
     this._calculateK();
-    this._shiftX = this._component.getBoundingClientRect().left;
+    this._shiftX = this._element.getBoundingClientRect().left;
     this._setPoints({
       start:
         this._calculateCoordinate(this._getValue("start")) -

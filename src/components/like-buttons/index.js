@@ -17,13 +17,13 @@ export default class LikeButtons {
     new LikeButtons(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    LikeButton.renderComponents({ parents: this._$el });
+    LikeButton.renderComponents({ parents: this._$element });
   }
 }

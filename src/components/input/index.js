@@ -16,21 +16,23 @@ export default class Input {
     new Input(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    this._$el.on("focusin", this._focusIn.bind(this));
-    this._$el.on("focusout", this._focusOut.bind(this));
+    this._$element.on("focusin", this._focusIn.bind(this));
+    this._$element.on("focusout", this._focusOut.bind(this));
   }
 
   _focusIn() {
-    $(".js-input__section", this._$el).addClass("input__section_hovered");
+    $(".js-input__section", this._$element).addClass("input__section_hovered");
   }
   _focusOut() {
-    $(".js-input__section", this._$el).removeClass("input__section_hovered");
+    $(".js-input__section", this._$element).removeClass(
+      "input__section_hovered"
+    );
   }
 }

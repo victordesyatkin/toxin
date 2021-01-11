@@ -49,15 +49,15 @@ export default class MaskedTextField {
     new MaskedTextField(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    const selector = $("input", this._$el);
-    const options = this._$el.data("options");
+    const selector = $("input", this._$element);
+    const options = this._$element.data("options");
     let maskOptions = {};
     const mask = get(options, ["mask"]);
     const regexp = get(options, ["regexp"]);

@@ -33,10 +33,10 @@ export default class Calendar {
     new Calendar(arguments[1]);
   }
 
-  constructor(component) {
-    this._component = component;
-    this._$component = $(component);
-    this._$input = $("input", this._$component);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
+    this._$input = $("input", this._$element);
     this._rangeFromDate = "";
     this._init();
   }
@@ -44,7 +44,7 @@ export default class Calendar {
   _init() {
     this._options = {
       ...Calendar.OPTIONS,
-      ...get(this._$component.data(), ["options"]),
+      ...get(this._$element.data(), ["options"]),
       onSelect: this._handlerSelect.bind(this),
       onRenderCell: this._onRenderCell.bind(this),
       onShow: this._toggleVisibleMain.bind(this),
@@ -53,18 +53,18 @@ export default class Calendar {
     this._options = this._prepareOptions(this._options);
     this._$input.datepicker(this._options);
     this._datepicker = this._$input.datepicker().data("datepicker");
-    this._$main = $(".js-calendar__main", this._$component);
-    this._$buttonClean = $(".js-calendar__button_clean", this._$component).on(
+    this._$main = $(".js-calendar__main", this._$element);
+    this._$buttonClean = $(".js-calendar__button_clean", this._$element).on(
       "click",
       this._handlerClean.bind(this)
     );
-    this._$buttonApply = $(".js-calendar__button_apply", this._$component).on(
+    this._$buttonApply = $(".js-calendar__button_apply", this._$element).on(
       "click",
       this._handlerApply.bind(this)
     );
-    this._$component.on("click", this._handlerClickCalendar.bind(this));
+    this._$element.on("click", this._handlerClickCalendar.bind(this));
     this._toggleVisibleButtonClean();
-    this._isOpen = get(this._$component.data(), ["options", "isOpen"]);
+    this._isOpen = get(this._$element.data(), ["options", "isOpen"]);
     this._isOpen && this._datepicker.show();
     this._selectDate();
   }
@@ -142,10 +142,7 @@ export default class Calendar {
 
   _prepareOptions(options) {
     options = { ...options };
-    const minDateType = get(this._$component.data(), [
-      "options",
-      "minDateType",
-    ]);
+    const minDateType = get(this._$element.data(), ["options", "minDateType"]);
     switch (minDateType) {
       case "current": {
         options = { ...options, minDate: new Date() };
@@ -159,11 +156,9 @@ export default class Calendar {
 
   _selectDate() {
     let start = this._value2Date(
-      get(this._$component.data(), ["options", "start"])
+      get(this._$element.data(), ["options", "start"])
     );
-    let end = this._value2Date(
-      get(this._$component.data(), ["options", "end"])
-    );
+    let end = this._value2Date(get(this._$element.data(), ["options", "end"]));
     if (end && !start) {
       start = new Date();
       start = start.setDate(end.getDate() - 1);

@@ -16,17 +16,16 @@ export default class RateButton {
     new RateButton(arguments[1]);
   }
 
-  constructor(component) {
-    this.component = component;
-    this.count = this.component.dataset.count;
-    this.input = this.component.querySelector("input");
-    this._off = $(this.component).data("off");
+  constructor(element) {
+    this._element = component;
+    this.count = this._element.dataset.count;
+    this.input = this._element.querySelector("input");
+    this._off = $(this._element).data("off");
     !this._off && this._attachEventHandlers();
   }
 
   _attachEventHandlers() {
-    this.component &&
-      this.component.addEventListener("click", this._toggleCount);
+    this._element && this._element.addEventListener("click", this._toggleCount);
   }
 
   _toggleCount = (event) => {
@@ -43,7 +42,7 @@ export default class RateButton {
     if (!rate) {
       this.input.value = index;
       for (let i = 1; i <= index; i++) {
-        const prev = this.component.querySelector(`[data-index="${i}"]`);
+        const prev = this._element.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 1;
         const classList = prev.classList;
         if (
@@ -60,7 +59,7 @@ export default class RateButton {
       el.dataset.rate = 0;
       el.classList.remove("rate-button__rate_checked");
       for (let i = this.count; i >= index; i--) {
-        const prev = this.component.querySelector(`[data-index="${i}"]`);
+        const prev = this._element.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 0;
         const classList = prev.classList;
         if (

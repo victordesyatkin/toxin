@@ -18,17 +18,17 @@ export default class CardHeader {
     new CardHeader(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this.init();
   }
 
   init() {
-    const data = this._$el.data();
+    const data = this._$element.data();
     const numberFormat = get(data, ["numberFormat"]);
     const options = get(data, ["options"]);
-    $(".js-card-header__price-content", this._$el).each(function () {
+    $(".js-card-header__price-content", this._$element).each(function () {
       $(this).html(
         new Intl.NumberFormat(numberFormat, options).format(
           parseFloat($(this).html().replace(" ", ""))

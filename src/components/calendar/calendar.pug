@@ -1,8 +1,12 @@
 mixin calendar(props = {})
     .calendar.js-calendar(data-options=props)
         - 
-            let {isOpen, classNames, forceVisible, buttonCleanText, buttonApplyText } = props;
-            classes = `calendar__main js-calendar__main${isOpen ? ' calendar__main_opened' : ' calendar__main_hidden'}${classNames && classNames.length ? ` ${classNames.join(' ')}` : ''}`;
+            let
+                { isOpen, forceVisible, buttonCleanText, buttonApplyText, withoutBorder } = props;
+                className = 'calendar'; 
+                classes = `${className}__main js-${className}__main`;
+            classes += isOpen ? ` ${className}__main_opened` : ` ${className}__main_hidden`;
+            classes += withoutBorder ? ' ${className}__main_with-out-border' : '';
         div(class = classes)
             input(type="hidden", date-isCalendar="1")
             .calendar__control

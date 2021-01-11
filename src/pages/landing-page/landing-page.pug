@@ -8,16 +8,16 @@ block title
     | Landing page
 block main
     - let data = htmlWebpackPlugin.options.getData();
-    main.landing-page(data-data=data)
+    main.landing-page.js-landing-page(data-data=data)
         article
             block landing-page-background-wrapper
-                - let src = require('../../pages/landing-page/img/landing-page.png').default;
+                - let src = require('../../assets/images/landing-page.png').default;
                 .landing-page__background
                     img(
                         src=src
                     )
             block landing-page-find-wrapper
-                section.landing-page__find
+                section.landing-page__find.js-landing-page__picker
                     form
                         block landing-page-find
                             +card
@@ -26,5 +26,5 @@ block main
                 block landing-page-info
                     | Лучшие номера для вашей работы, отдыха и просто вдохновения
 block footer
-    .landing-page__footer
+    .landing-page__footer.js-landing-page__footer
         +footer(data.footer)

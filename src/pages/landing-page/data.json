@@ -8,7 +8,7 @@
         "type": "text",
         "label": "прибытие",
         "placeholder": "ДД.ММ.ГГГГ",
-        "button": { "visible": true, "class": "arrow-down" }
+        "button": { "visible": true, "class": "arrow-down", "type": "button" }
       },
       "fieldEnd": {
         "name": "endDate",
@@ -16,7 +16,7 @@
         "type": "text",
         "label": "выезд",
         "placeholder": "ДД.ММ.ГГГГ",
-        "button": { "visible": true, "class": "arrow-down" }
+        "button": { "visible": true, "class": "arrow-down", "type": "button" }
       },
       "calendar": {
         "minDateType": "current",
@@ -38,29 +38,20 @@
       "type": "text",
       "label": "гости",
       "placeholder": "Сколько гостей",
-      "button": { "class": "arrow-down", "visible": true },
+      "button": { "class": "arrow-down", "visible": true, "type": "button" },
       "items": [
         { "title": "взрослые", "value": 0, "name": "adults" },
         { "title": "дети", "value": 0, "name": "children" },
         { "title": "младенцы", "value": 0, "name": "babies" }
       ]
     },
-    "buttons": [
-      {
-        "text": "подобрать номер",
-        "type": "button",
-        "disabled": false,
-        "value": "",
-        "view": 3,
-        "full": true,
-        "action": {
-          "type": "SUBMIT",
-          "payload": {
-            "href": "search-room-filter.html"
-          }
-        }
-      }
-    ]
+    "button": {
+      "text": "подобрать номер",
+      "type": "submit",
+      "disabled": false,
+      "value": "",
+      "view": 3
+    }
   },
   "headerNotAuthorised": {
     "nav": {
@@ -150,7 +141,7 @@
         ]
       }
     },
-    "fill": false 
+    "fill": false
   },
   "footer": {
     "title": "title title",
@@ -258,7 +249,7 @@
         "id": "footer_subscription_email",
         "type": "email",
         "placeholder": "Email",
-        "button": { "visible": true }
+        "button": { "visible": true, "class": "arrow-forward" }
       }
     }
   }

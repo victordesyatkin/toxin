@@ -18,14 +18,14 @@ export default class Picker {
     new Picker(arguments[1]);
   }
 
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    DateDropdown.renderComponents({ parents: this._$el });
-    Dropdown.renderComponents({ parents: this._$el });
+    DateDropdown.renderComponents({ parents: this._$element });
+    Dropdown.renderComponents({ parents: this._$element });
   }
 }

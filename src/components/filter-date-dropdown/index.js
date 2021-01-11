@@ -25,52 +25,52 @@ export default class FilterDateDropdown {
     new FilterDateDropdown(arguments[1]);
   }
 
-  constructor(component) {
-    this._component = component;
-    this._$component = $(component);
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
     this._init();
   }
 
   _init() {
-    Calendar.renderComponents({ parents: this._$component });
-    this._options = this._$component.data("options");
+    Calendar.renderComponents({ parents: this._$element });
+    this._options = this._$element.data("options");
     this._dummy = this._options.dummy || "ДД МЕС";
     this._separator = this._options.separator || "-";
     this._$fake = $(
       `input[data-type="${FilterDateDropdown.TYPE_FAKE}"]`,
-      this._$component
+      this._$element
     );
     this._$sectionUp = $(
       ".js-filter-date-dropdown__section-up",
-      this._$component
+      this._$element
     );
     this._$sectionUp.on("click", this._toggleMainBlock.bind(this));
     this._$mainBlock = $(
       `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
-      this._$component
+      this._$element
     );
     this._$input = $(
       `input[type="hidden"][data-type=${FilterDateDropdown.TYPE_INPUT}]`,
-      this._$component
+      this._$element
     );
     this._datepicker = $(
       `input[type="hidden"][date-isCalendar="${FilterDateDropdown.IS_CALENDAR}"]`,
-      this._$component
+      this._$element
     )
       .datepicker()
       .data("datepicker");
     this._buttonClean = $(
       `button[data-type="${FilterDateDropdown.TYPE_CLEAN}"]`,
-      this._$component
+      this._$element
     );
     this._buttonApply = $(
       `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
-      this._$component
+      this._$element
     );
     this._buttonClean.on("click", this._handlerClean.bind(this));
     this._buttonApply.on("click", this._handlerApply.bind(this));
     $(document).on("click", this._handlerClickDocument.bind(this));
-    this._forcedVisible = this._$component.hasClass(
+    this._forcedVisible = this._$element.hasClass(
       "filter-date-dropdown_forced-expanded"
     );
     this._setDates(this._getValue());
@@ -113,21 +113,21 @@ export default class FilterDateDropdown {
       return false;
     }
     this._$mainBlock.fadeToggle("fast");
-    this._$component.toggleClass("filter-date-dropdown_expanded");
+    this._$element.toggleClass("filter-date-dropdown_expanded");
   }
 
   _handlerClickDocument(event) {
     if (this._forcedVisible) {
       return false;
     }
-    const classTarget = `.${$(event.target, this._$component).attr("class")}`;
+    const classTarget = `.${$(event.target, this._$element).attr("class")}`;
     if (
       !$(event.target).closest(this._component).length &&
-      !$(event.target, this._$component).hasClass("datepicker--cell") &&
-      !$(classTarget, this._$component).length
+      !$(event.target, this._$element).hasClass("datepicker--cell") &&
+      !$(classTarget, this._$element).length
     ) {
       this._$mainBlock.slideUp();
-      this._$component.removeClass("filter-date-dropdown_expanded");
+      this._$element.removeClass("filter-date-dropdown_expanded");
     }
   }
 
