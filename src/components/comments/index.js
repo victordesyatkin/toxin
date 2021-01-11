@@ -4,14 +4,16 @@ import { wordForm, renderComponents } from "../../assets/helpers/utils";
 import("./comments.scss");
 
 export default class Comments {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-comments",
-      render: Comments.renderComponent,
+      query: query || ".js-comments",
+      render: render || Comments.renderComponent,
     });
   }
-  renderComponent() {
+
+  static renderComponent() {
     new Comments(arguments[1]);
   }
 

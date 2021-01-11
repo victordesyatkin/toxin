@@ -3,11 +3,12 @@ import { renderComponents } from "../../assets/helpers/utils";
 import "./rate-button.scss";
 
 export default class RateButton {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-rate-button__button",
-      render: RateButton.renderComponent,
+      query: query || ".js-rate-button__button",
+      render: render || RateButton.renderComponent,
     });
   }
 

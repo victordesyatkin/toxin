@@ -20,11 +20,12 @@ export default class Calendar {
     prevHtml: '<span class="icon-arrow_prev"></span>',
   };
 
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-calendar",
-      render: Calendar.renderComponent,
+      query: query || ".js-calendar",
+      render: render || Calendar.renderComponent,
     });
   }
 

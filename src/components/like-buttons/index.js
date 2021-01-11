@@ -4,11 +4,12 @@ import LikeButton from "../like-button";
 import "./like-buttons.scss";
 
 export default class LikeButtons {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-like-buttons",
-      render: LikeButtons.renderComponent,
+      query: query || ".js-like-buttons",
+      render: render || LikeButtons.renderComponent,
     });
   }
 
@@ -23,6 +24,6 @@ export default class LikeButtons {
   }
 
   _init() {
-    LikeButton.renderComponents(this._$el);
+    LikeButton.renderComponents({ parents: this._$el });
   }
 }

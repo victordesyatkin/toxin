@@ -5,11 +5,12 @@ import LikeButton from "../like-button";
 import "./comment.scss";
 
 export default class Comment {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-comment",
-      render: Comment.renderComponent,
+      query: query || ".js-comment",
+      render: render || Comment.renderComponent,
     });
   }
 
@@ -24,6 +25,6 @@ export default class Comment {
   }
 
   _init() {
-    LikeButton.renderComponents(this._$el);
+    LikeButton.renderComponents({ parents: this._$el });
   }
 }

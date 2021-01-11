@@ -1,16 +1,17 @@
 include ../input/input
 include ../button/button
 include ../card-footer/card-footer
+include ../masked-text-field/masked-text-field
 
 mixin sign-in(props = {})
     - 
         let { title, email = {}, password = {}, signIn = {}, signUp = {} } = props; 
-    .sign-in
+    .sign-in.js-sign-in
         if (title) 
             .sign-in__title.sign-in_margin-bottom-16
                 |#{title}
         .sign-in__email.margin-bottom-5
-            +input(email)
+            +masked-text-field(email)
         .sign-in__email.margin-bottom-20
             +input(password)
         .sign-in__button-sign-in.margin-bottom-30

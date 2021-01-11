@@ -5,11 +5,12 @@ import Input from "../input";
 import "./dropdown.scss";
 
 export default class Dropdown {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      render: Dropdown.renderComponent,
-      query: ".js-dropdown",
+      query: query || ".js-dropdown",
+      render: render || Dropdown.renderComponent,
     });
   }
 
@@ -24,7 +25,7 @@ export default class Dropdown {
   }
 
   _init() {
-    Input.renderComponents(this._$element);
+    Input.renderComponents({ parents: this._$element });
     this._inputs = {};
     this._type = parseInt(this._$element.attr("data-type"));
     this._$mainInput = $(".js-input__input", this._element);

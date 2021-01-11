@@ -1,19 +1,22 @@
 import { renderComponents } from "../../assets/helpers/utils";
+import Slider from "../slider";
+import CardHeader from "../card-header";
 import RateButton from "../rate-button";
 
-import "./rate-buttons.scss";
-export default class RateButtons {
+import "./card-slider.scss";
+
+export default class CardSlider {
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-rate-buttons",
-      render: render || RateButtons.renderComponent,
+      query: query || ".js-card-slider",
+      render: render || CardSlider.renderComponent,
     });
   }
 
   static renderComponent() {
-    new RateButtons(arguments[1]);
+    new CardSlider(arguments[1]);
   }
 
   constructor(el) {
@@ -23,6 +26,8 @@ export default class RateButtons {
   }
 
   _init() {
+    Slider.renderComponents({ parents: this._$el });
+    CardHeader.renderComponents({ parents: this._$el });
     RateButton.renderComponents({ parents: this._$el });
   }
 }

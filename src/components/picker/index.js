@@ -5,11 +5,12 @@ import Dropdown from "../dropdown";
 import "./picker.scss";
 
 export default class Picker {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-picker",
-      render: Picker.renderComponent,
+      query: query || ".js-picker",
+      render: render || Picker.renderComponent,
     });
   }
 
@@ -24,7 +25,7 @@ export default class Picker {
   }
 
   _init() {
-    DateDropdown.renderComponents(this._$el);
-    Dropdown.renderComponents(this._$el);
+    DateDropdown.renderComponents({ parents: this._$el });
+    Dropdown.renderComponents({ parents: this._$el });
   }
 }

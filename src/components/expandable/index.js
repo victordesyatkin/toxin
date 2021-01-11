@@ -2,11 +2,12 @@ import { renderComponents } from "../../assets/helpers/utils";
 import "./expandable.scss";
 
 export default class Expandable {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-expandable",
-      render: Expandable.renderComponent,
+      query: query || ".js-expandable",
+      render: render || Expandable.renderComponent,
     });
   }
 
@@ -36,5 +37,14 @@ export default class Expandable {
     }
     this._$el.toggleClass("expandable_expand");
     this._$body.fadeToggle(1000);
+    if (this._$el.hasClass("expandable_expand")) {
+      let zIndex = parseFloat(this._$el.css("z-index"));
+      if (zIndex) {
+        zIndex += 1;
+        this._$el.css({ "z-index": zIndex });
+      }
+    } else {
+      this._$el.css({ "z-index": "" });
+    }
   }
 }

@@ -14,24 +14,28 @@ import Comment from "../../components/comment";
 import "./form-elements.scss";
 
 function renderComponents() {
-  Input.renderComponents(".js-form-elements__input");
-  Dropdown.renderComponents(".js-form-elements__dropdown");
-  MaskTextField.renderComponents(".js-form-elements__masked-text-field");
-  DateDropdown.renderComponents(".js-form-elements__date-dropdown");
-  FilterDateDropdown.renderComponents(
-    ".js-form-elements__filter-date-dropdown"
-  );
-  SubscriptionTextField.renderComponents(
-    ".js-form-elements__subscription-text-field"
-  );
-  ExpandableCheckboxList.renderComponents(
-    ".js-form-elements__expandable-checkbox-list"
-  );
-  LikeButtons.renderComponents(".js-form-elements__like-buttons");
-  RateButtons.renderComponents(".js-form-elements__rate-buttons");
-  Pagination.renderComponents(".js-form-elements__pagination");
-  RangeSlider.renderComponents(".js-form-elements__range-slider");
-  Comment.renderComponents(".js-form-elements__comment");
+  Input.renderComponents({ parents: ".js-form-elements__input" });
+  Dropdown.renderComponents({ parents: ".js-form-elements__dropdown" });
+  MaskTextField.renderComponents({
+    parents: ".js-form-elements__masked-text-field",
+  });
+  DateDropdown.renderComponents({
+    parents: ".js-form-elements__date-dropdown",
+  });
+  FilterDateDropdown.renderComponents({
+    parents: ".js-form-elements__filter-date-dropdown",
+  });
+  SubscriptionTextField.renderComponents({
+    parents: ".js-form-elements__subscription-text-field",
+  });
+  ExpandableCheckboxList.renderComponents({
+    parents: ".js-form-elements__expandable-checkbox-list",
+  });
+  LikeButtons.renderComponents({ parents: ".js-form-elements__like-buttons" });
+  RateButtons.renderComponents({ parents: ".js-form-elements__rate-buttons" });
+  Pagination.renderComponents({ parents: ".js-form-elements__pagination" });
+  RangeSlider.renderComponents({ parents: ".js-form-elements__range-slider" });
+  Comment.renderComponents({ parents: ".js-form-elements__comment" });
 }
 
 document.addEventListener("DOMContentLoaded", renderComponents);

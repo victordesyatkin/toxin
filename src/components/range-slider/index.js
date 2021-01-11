@@ -7,11 +7,12 @@ import "./range-slider.scss";
 export default class RangeSlider {
   static TYPES = ["start", "end"];
 
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-range-slider",
-      render: RangeSlider.renderComponent,
+      query: query || ".js-range-slider",
+      render: render || RangeSlider.renderComponent,
     });
   }
 

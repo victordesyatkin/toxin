@@ -18,7 +18,7 @@ mixin card-slider(props)
             rel=rel
         )
             +card
-                .card-slider
+                .card-slider.js-card-slider
                     .card-slider__slider
                         +slider(slider)
                 .card-slider__info
@@ -33,7 +33,7 @@ mixin card-slider(props)
                         span.card-slider__comments-content=commentsContent
     else
         +card
-            .card-slider
+            .card-slider.js-card-slider
                 .card-slider__slider
                     +slider(slider)
             .card-slider__info

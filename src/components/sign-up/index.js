@@ -9,7 +9,7 @@ export default class SignUp {
     renderComponents({
       parents,
       query: ".js-sign-up",
-      render: Picker.renderComponent,
+      render: SignUp.renderComponent,
     });
   }
 
@@ -24,7 +24,6 @@ export default class SignUp {
   }
 
   _init() {
-    MaskedTextField.renderComponents(this._$el);
-    Dropdown.renderComponents(this._$el);
+    MaskedTextField.renderComponents({ parents: this._$el });
   }
 }

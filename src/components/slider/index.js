@@ -1,11 +1,26 @@
 import get from "lodash/get";
 
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./slider.scss";
 
-class Slider {
+export default class Slider {
   static TYPE_BUTTON_PREV = 1;
   static TYPE_BUTTON_NEXT = 2;
   static TYPES_BUTTONS = [1, 2];
+
+  static renderComponents(props = {}) {
+    const { parents } = props;
+    renderComponents({
+      parents,
+      query: ".js-slider",
+      render: Slider.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new Slider(arguments[1]);
+  }
 
   constructor(component) {
     this._$component = $(component);
@@ -81,13 +96,3 @@ class Slider {
     this._index = index;
   }
 }
-
-function renderItem(component) {
-  return new Slider(component);
-}
-
-function renderItems() {
-  const components = Array.prototype.map.call($(".js-slider"), renderItem);
-}
-
-document.addEventListener("DOMContentLoaded", renderItems);

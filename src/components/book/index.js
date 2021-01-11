@@ -1,7 +1,9 @@
 import datepicker from "air-datepicker";
 import get from "lodash/get";
 
-import { wordForm } from "../../assets/helpers/utils";
+import Dropdown from "../../components/dropdown";
+import DateDropdown from "../../components/date-dropdown";
+import { wordForm, renderComponents } from "../../assets/helpers/utils";
 
 import "./book.scss";
 
@@ -11,12 +13,28 @@ class Book {
   static TYPE_FEE = 2;
   static IS_CALENDAR = 1;
 
+  static renderComponents(options = {}) {
+    const { parents, query, render } = options;
+    renderComponents({
+      parents,
+      query: query || ".js-book",
+      render: render || Book.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new Book(arguments[1]);
+  }
+
   constructor(component) {
+    this._component = component;
     this._$component = $(component);
     this._init();
   }
 
   _init() {
+    Dropdown.renderComponents({ parents: this._$component });
+    DateDropdown.renderComponents({ parents: this._$component });
     this._$calc = $(
       `.js-book__section[data-type="${Book.TYPE_COUNT}"]`,
       this._$component

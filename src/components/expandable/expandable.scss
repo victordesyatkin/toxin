@@ -3,6 +3,7 @@
 $parent: ".expandable";
 
 @mixin expand {
+  z-index: 100;
   .expandable__control {
     transform: rotate(180deg);
     -webkit-transition-property: -webkit-transform;
@@ -16,6 +17,7 @@ $parent: ".expandable";
 
 .expandable {
   position: relative;
+  background-color: $color-white-shade100;
 
   &__header {
     display: flex;

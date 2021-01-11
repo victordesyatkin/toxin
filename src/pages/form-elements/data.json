@@ -109,7 +109,7 @@
   "subscriptionTextField1": {
     "name": "subscription_email",
     "id": "subscription_email",
-    "type": "email",
+    "type": "text",
     "label": "Subscription text field",
     "placeholder": "Email",
     "button": { "visible": true, "class": "arrow-forward" },

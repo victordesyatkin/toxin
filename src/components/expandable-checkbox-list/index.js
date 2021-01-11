@@ -3,11 +3,12 @@ import { renderComponents } from "../../assets/helpers/utils";
 
 import "./expandable-checkbox-list.scss";
 export default class ExpandableCheckboxList {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-expandable-checkbox-list",
-      render: ExpandableCheckboxList.renderComponent,
+      query: query || ".js-expandable-checkbox-list",
+      render: render || ExpandableCheckboxList.renderComponent,
     });
   }
 
@@ -22,6 +23,6 @@ export default class ExpandableCheckboxList {
   }
 
   _init() {
-    Expandable.renderComponents(this._$el);
+    Expandable.renderComponents({ parents: this._$el });
   }
 }

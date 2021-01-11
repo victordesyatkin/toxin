@@ -1,19 +1,20 @@
 import { renderComponents } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
 
-import "./subscription-text-field.scss";
-export default class SubscriptionTextField {
+import "./sign-in.scss";
+
+export default class SignIn {
   static renderComponents(props = {}) {
-    const { parents, query, render } = props;
+    const { parents } = props;
     renderComponents({
       parents,
-      query: query || ".js-subscription-text-field",
-      render: render || SubscriptionTextField.renderComponent,
+      query: ".js-sign-in",
+      render: SignIn.renderComponent,
     });
   }
 
   static renderComponent() {
-    new SubscriptionTextField(arguments[1]);
+    new SignIn(arguments[1]);
   }
 
   constructor(el) {

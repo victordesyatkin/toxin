@@ -2,13 +2,15 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 
-mixin book(options)
+mixin book(props={})
     -
         let {
             discount, number, suite, price, duration, unit, dropdown, dateDropdown, total, totalInfo, button, discountText, discountTotalPreset,
             numberInfoText, feeText, feeTotal
-        } = options || {};
-    .book(data-options = options)
+        } = props;
+    .book.js-book(
+        data-options=props
+    )
         .book__section.js-book__section.book__section-title.margin-bottom-20(data-type="3")
             .book__number-info=numberInfoText
                 span.book__number=number

@@ -1,8 +1,23 @@
 import get from "lodash/get";
 
+import { renderComponents } from "../../assets/helpers/utils";
+
 import "./card-header.scss";
 
-class CardHeader {
+export default class CardHeader {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
+    renderComponents({
+      parents,
+      query: query || ".js-card-header",
+      render: render || CardHeader.renderComponent,
+    });
+  }
+
+  static renderComponent() {
+    new CardHeader(arguments[1]);
+  }
+
   constructor(el) {
     this._el = el;
     this._$el = $(el);
@@ -22,12 +37,3 @@ class CardHeader {
     });
   }
 }
-
-const renderComponent = () => {
-  const options = { style: "decimal", currency: "RUB" };
-  $(".js-card-header").each(function () {
-    return new CardHeader(this);
-  });
-};
-
-document.addEventListener("DOMContentLoaded", renderComponent);

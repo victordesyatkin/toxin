@@ -3,11 +3,12 @@ import { renderComponents } from "../../assets/helpers/utils";
 import "./pagination.scss";
 
 export default class Pagination {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-pagination",
-      render: Pagination.renderComponent,
+      query: query || ".js-pagination",
+      render: render || Pagination.renderComponent,
     });
   }
 

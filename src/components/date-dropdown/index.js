@@ -13,11 +13,12 @@ export default class DateDropdown {
   static IS_CALENDAR = 1;
   static TYPES = ["start", "end"];
 
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-date-dropdown",
-      render: DateDropdown.renderComponent,
+      query: query || ".js-date-dropdown",
+      render: render || DateDropdown.renderComponent,
     });
   }
 
@@ -32,8 +33,8 @@ export default class DateDropdown {
   }
 
   _init() {
-    MaskedTextField.renderComponents(this._$component);
-    Calendar.renderComponents(this._$component);
+    MaskedTextField.renderComponents({ parents: this._$component });
+    Calendar.renderComponents({ parents: this._$component });
     this._$sections = $(".js-input__section", this._$component);
     this._inputStart = $(".js-input__input", this._$sections.get(0));
     this._inputStart.attr("disabled", true);

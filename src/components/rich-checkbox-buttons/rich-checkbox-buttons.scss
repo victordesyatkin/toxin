@@ -5,6 +5,7 @@ $parent: ".rich-checkbox-buttons";
 .rich-checkbox-buttons {
   &__label {
     margin-bottom: 16px;
+    @include h3;
   }
 
   &__button-label {

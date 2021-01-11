@@ -3,11 +3,12 @@ import { renderComponents } from "../../assets/helpers/utils";
 import "./input.scss";
 
 export default class Input {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      render: Input.renderComponent,
-      query: ".js-input",
+      query: query || ".js-input",
+      render: render || Input.renderComponent,
     });
   }
 

@@ -183,9 +183,13 @@
     "email": {
       "name": "email1",
       "id": "email1",
-      "type": "email",
+      "type": "text",
       "label": "данные для входа в сервис",
-      "placeholder": "Email"
+      "placeholder": "Email",
+      "mask": {
+        "mask": "^\\S*@?\\S*$",
+        "regexp": true
+      }
     },
     "password": {
       "name": "password1",
@@ -234,7 +238,11 @@
       "id": "email2",
       "type": "text",
       "label": "",
-      "placeholder": "Email"
+      "placeholder": "Email",
+      "mask": {
+        "mask": "^\\S*@?\\S*$",
+        "regexp": true
+      }
     },
     "password": {
       "name": "password2",
@@ -301,7 +309,7 @@
       "options": { "style": "decimal", "currency": "RUB" }
     },
     "rating": {
-      "button": { "grade": 4, "name": "rating2", "count": 5, "off": true},
+      "button": { "grade": 4, "name": "rating2", "count": 5, "off": true },
       "comments": 65
     },
     "commentsContent": "Отзывов"

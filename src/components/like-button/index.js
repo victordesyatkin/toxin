@@ -3,17 +3,19 @@ import { renderComponents } from "../../assets/helpers/utils";
 import "./like-button.scss";
 
 export default class LikeButton {
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-like-button__button",
-      render: LikeButton.renderComponent,
+      query: query || ".js-like-button__button",
+      render: render || LikeButton.renderComponent,
     });
   }
 
   static renderComponent() {
     new LikeButton(arguments[1]);
   }
+
   constructor(component) {
     this.component = component;
     this.input = this.component.querySelector(".js-like-button__input");

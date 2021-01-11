@@ -12,11 +12,12 @@ export default class FilterDateDropdown {
   static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
 
-  static renderComponents(parents) {
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-filter-date-dropdown",
-      render: FilterDateDropdown.renderComponent,
+      query: query || ".js-filter-date-dropdown",
+      render: render || FilterDateDropdown.renderComponent,
     });
   }
 
@@ -31,7 +32,7 @@ export default class FilterDateDropdown {
   }
 
   _init() {
-    Calendar.renderComponents(this._$component);
+    Calendar.renderComponents({ parents: this._$component });
     this._options = this._$component.data("options");
     this._dummy = this._options.dummy || "ДД МЕС";
     this._separator = this._options.separator || "-";
