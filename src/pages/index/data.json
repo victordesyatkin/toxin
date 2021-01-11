@@ -45,22 +45,20 @@
         { "title": "младенцы", "value": 0, "name": "babies" }
       ]
     },
-    "buttons": [
-      {
-        "text": "подобрать номер",
-        "type": "button",
-        "disabled": false,
-        "value": "",
-        "view": 3,
-        "full": true,
-        "action": {
-          "type": "SUBMIT",
-          "payload": {
-            "href": "search-room-filter.html"
-          }
+    "buttons": {
+      "text": "подобрать номер",
+      "type": "button",
+      "disabled": false,
+      "value": "",
+      "view": 3,
+      "full": true,
+      "action": {
+        "type": "SUBMIT",
+        "payload": {
+          "href": "search-room-filter.html"
         }
       }
-    ]
+    }
   },
   "headerNotAuthorised": {
     "nav": {
@@ -261,5 +259,6 @@
         "button": { "visible": true }
       }
     }
-  }
+  },
+  "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения"
 }

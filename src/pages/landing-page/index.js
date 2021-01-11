@@ -7,7 +7,7 @@ import Footer from "../../components/footer";
 
 import "./landing-page.scss";
 
-class LandingPage {
+export default class LandingPage {
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -29,7 +29,7 @@ class LandingPage {
 
   _init() {
     Picker.renderComponents({ parents: this._$element });
-    Footer.renderComponents({ parents: this._$element });
+    Footer.renderComponents({ parents: ".js-landing-page__footer" });
     localStorage.clear();
     this._$form = $("form", this._$element);
     this._$buttons = $("button[type=submit]", this._$form);
@@ -37,7 +37,7 @@ class LandingPage {
   }
 
   _handler = function (e) {
-    const type = $(get(e, ["target"])).attr("type");
+    const type = $(get(e, ["currentTarget"])).attr("type");
     switch (type) {
       case "submit": {
         e.preventDefault();

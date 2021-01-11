@@ -4,7 +4,8 @@ include ../../components/card/card
 include ../../components/picker/picker
 
 block title
-    | Landing page/Guests Dropdown
+    - let options = htmlWebpackPlugin.options.getData();
+    | #{options.title}
 block landing-page-find
         .landing-page-guests-dropdown__find
             form

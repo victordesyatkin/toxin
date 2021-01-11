@@ -5,10 +5,11 @@ include ../../components/picker/picker
 include ../../components/footer/footer
 
 block title
-    | Landing page
+    - let options = htmlWebpackPlugin.options.getData();
+    | #{options.title}
 block main
     - let data = htmlWebpackPlugin.options.getData();
-    main.landing-page.js-landing-page(data-data=data)
+    main.landing-page.js-landing-page
         article
             block landing-page-background-wrapper
                 - let src = require('../../assets/images/landing-page.png').default;
@@ -23,8 +24,7 @@ block main
                             +card
                                 +picker(data.picker)    
             section.landing-page__info
-                block landing-page-info
-                    | Лучшие номера для вашей работы, отдыха и просто вдохновения
+                block landing-page-info=options.slogan
 block footer
     .landing-page__footer.js-landing-page__footer
         +footer(data.footer)

@@ -193,9 +193,13 @@
       "field": {
         "name": "footer_subscription_email",
         "id": "footer_subscription_email",
-        "type": "email",
+        "type": "text",
         "placeholder": "Email",
-        "button": { "visible": true }
+        "button": { "visible": true, "class": "arrow-forward" },
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
     }
   },
@@ -209,7 +213,7 @@
         "label": "прибытие",
         "placeholder": "ДД.ММ.ГГГГ",
         "value": "19.08.2019",
-        "button": { "visible": true, "class": "arrow-down" }
+        "button": { "visible": true, "class": "arrow-down", "type": "button" }
       },
       "fieldEnd": {
         "name": "endDate",
@@ -218,7 +222,7 @@
         "label": "выезд",
         "placeholder": "ДД.ММ.ГГГГ",
         "value": "23.08.2019",
-        "button": { "visible": true, "class": "arrow-down" }
+        "button": { "visible": true, "class": "arrow-down", "type": "button" }
       },
       "calendar": {
         "visible": false,
@@ -242,28 +246,28 @@
       "type": "text",
       "label": "гости",
       "placeholder": "Сколько гостей",
-      "button": { "class": "arrow-down", "visible": true },
+      "button": { "class": "arrow-down", "visible": true, "type": "button" },
       "items": [
         { "title": "взрослые", "value": 2, "name": "adults" },
         { "title": "дети", "value": 1, "name": "children" },
         { "title": "младенцы", "value": 0, "name": "babies" }
       ]
     },
-    "buttons": [
-      {
-        "text": "подобрать номер",
-        "type": "button",
-        "disabled": false,
-        "value": "",
-        "view": 3,
-        "full": true,
-        "action": {
-          "type": "SUBMIT",
-          "payload": {
-            "href": "search-room-filter.html"
-          }
+    "button": {
+      "text": "подобрать номер",
+      "type": "submit",
+      "disabled": false,
+      "value": "",
+      "view": 3,
+      "full": true,
+      "action": {
+        "type": "SUBMIT",
+        "payload": {
+          "href": "search-room-filter.html"
         }
       }
-    ]
-  }
+    }
+  },
+  "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения",
+  "title": "Landing page/Guests Dropdown"
 }

@@ -1,4 +1,5 @@
 {
+  "title": "Landing page",
   "picker": {
     "label": "Найдём номера под ваши пожелания",
     "dateDropdown": {
@@ -247,10 +248,15 @@
       "field": {
         "name": "footer_subscription_email",
         "id": "footer_subscription_email",
-        "type": "email",
+        "type": "text",
         "placeholder": "Email",
-        "button": { "visible": true, "class": "arrow-forward" }
+        "button": { "visible": true, "class": "arrow-forward" },
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
     }
-  }
+  },
+  "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения"
 }

@@ -1,5 +1,6 @@
 extends ../landing-page/landing-page
 
 block title
-    | Landing page/Dates Dropdown
+    - let options = htmlWebpackPlugin.options.getData();
+    | #{options.title}
     
