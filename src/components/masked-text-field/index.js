@@ -41,11 +41,11 @@ export default class MaskedTextField {
     renderComponents({
       parents,
       query: query || ".js-masked-text-field",
-      render: render || MaskedTextField.renderComponent,
+      render: render || MaskedTextField._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new MaskedTextField(arguments[1]);
   }
 

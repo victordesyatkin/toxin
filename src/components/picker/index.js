@@ -10,11 +10,11 @@ export default class Picker {
     renderComponents({
       parents,
       query: query || ".js-picker",
-      render: render || Picker.renderComponent,
+      render: render || Picker._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Picker(arguments[1]);
   }
 

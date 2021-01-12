@@ -18,11 +18,11 @@ export default class DateDropdown {
     renderComponents({
       parents,
       query: query || ".js-date-dropdown",
-      render: render || DateDropdown.renderComponent,
+      render: render || DateDropdown._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new DateDropdown(arguments[1]);
   }
 

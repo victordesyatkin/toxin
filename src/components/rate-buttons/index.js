@@ -8,11 +8,11 @@ export default class RateButtons {
     renderComponents({
       parents,
       query: query || ".js-rate-buttons",
-      render: render || RateButtons.renderComponent,
+      render: render || RateButtons._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new RateButtons(arguments[1]);
   }
 

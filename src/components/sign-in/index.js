@@ -5,15 +5,15 @@ import "./sign-in.scss";
 
 export default class SignIn {
   static renderComponents(props = {}) {
-    const { parents } = props;
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-sign-in",
-      render: SignIn.renderComponent,
+      query: query || ".js-sign-in",
+      render: render || SignIn._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new SignIn(arguments[1]);
   }
 

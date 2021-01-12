@@ -17,11 +17,11 @@ export default class FilterDateDropdown {
     renderComponents({
       parents,
       query: query || ".js-filter-date-dropdown",
-      render: render || FilterDateDropdown.renderComponent,
+      render: render || FilterDateDropdown._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new FilterDateDropdown(arguments[1]);
   }
 

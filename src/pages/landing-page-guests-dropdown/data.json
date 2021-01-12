@@ -258,16 +258,10 @@
       "type": "submit",
       "disabled": false,
       "value": "",
-      "view": 3,
-      "full": true,
-      "action": {
-        "type": "SUBMIT",
-        "payload": {
-          "href": "search-room-filter.html"
-        }
-      }
+      "view": 3
     }
   },
   "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения",
-  "title": "Landing page/Guests Dropdown"
+  "title": "Landing page/Guests Dropdown",
+  "action": "search-room-filter.html"
 }

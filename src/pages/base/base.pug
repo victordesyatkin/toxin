@@ -55,6 +55,8 @@ html
     )
     title
       block title
+        - let options = htmlWebpackPlugin.options.getData();
+        | #{options.title}
   body
     - let data = htmlWebpackPlugin.options.getData() || {};
     +layout()

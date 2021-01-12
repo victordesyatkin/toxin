@@ -8,11 +8,11 @@ export default class LikeButton {
     renderComponents({
       parents,
       query: query || ".js-like-button__button",
-      render: render || LikeButton.renderComponent,
+      render: render || LikeButton._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new LikeButton(arguments[1]);
   }
 

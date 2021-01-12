@@ -7,11 +7,11 @@ export default class Expandable {
     renderComponents({
       parents,
       query: query || ".js-expandable",
-      render: render || Expandable.renderComponent,
+      render: render || Expandable._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Expandable(arguments[1]);
   }
 

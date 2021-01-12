@@ -5,11 +5,11 @@ import "./sign-up.scss";
 
 export default class SignUp {
   static renderComponents(props = {}) {
-    const { parents } = props;
+    const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: ".js-sign-up",
-      render: SignUp.renderComponent,
+      query: query || ".js-sign-up",
+      render: render || SignUp._renderComponent,
     });
   }
 

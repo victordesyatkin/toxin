@@ -1,5 +1,3 @@
-import get from "lodash/get";
-
 import { renderComponents } from "../../assets/helpers/utils";
 
 import Picker from "../../components/picker";
@@ -13,11 +11,11 @@ export default class LandingPage {
     renderComponents({
       parents,
       query: query || ".js-landing-page",
-      render: render || LandingPage.renderComponent,
+      render: render || LandingPage._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new LandingPage(arguments[1]);
   }
 
@@ -32,34 +30,23 @@ export default class LandingPage {
     Footer.renderComponents({ parents: ".js-landing-page__footer" });
     localStorage.clear();
     this._$form = $("form", this._$element);
-    this._$buttons = $("button[type=submit]", this._$form);
-    this._$buttons.on("click", this._handler.bind(this));
+    this._$form.on("submit", this._handler.bind(this));
   }
 
-  _handler = function (e) {
-    const type = $(get(e, ["currentTarget"])).attr("type");
-    switch (type) {
-      case "submit": {
-        e.preventDefault();
-        const href = "search-room-filter.html";
-        const data = {
-          startDate: "",
-          endDate: "",
-          adults: "",
-          children: "",
-          babies: "",
-        };
-        $("input[name]", this._$form).each(function () {
-          if (Object.keys(data).indexOf(this.name) !== -1) {
-            data[this.name] = $(this).val();
-          }
-        });
-        localStorage.setItem("landingPage", JSON.stringify(data));
-        window.location.href = href;
+  _handler = function () {
+    const data = {
+      startDate: "",
+      endDate: "",
+      adults: "",
+      children: "",
+      babies: "",
+    };
+    $("input[name]", this._$form).each(function () {
+      if (Object.keys(data).indexOf(this.name) !== -1) {
+        data[this.name] = $(this).val();
       }
-      default: {
-      }
-    }
+    });
+    localStorage.setItem("landingPage", JSON.stringify(data));
   };
 }
 

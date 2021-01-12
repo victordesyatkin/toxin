@@ -10,11 +10,11 @@ export default class Comment {
     renderComponents({
       parents,
       query: query || ".js-comment",
-      render: render || Comment.renderComponent,
+      render: render || Comment._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Comment(arguments[1]);
   }
 

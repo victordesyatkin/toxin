@@ -25,11 +25,11 @@ export default class Calendar {
     renderComponents({
       parents,
       query: query || ".js-calendar",
-      render: render || Calendar.renderComponent,
+      render: render || Calendar._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Calendar(arguments[1]);
   }
 

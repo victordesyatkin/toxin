@@ -257,5 +257,6 @@
         "button": { "visible": true }
       }
     }
-  }
+  },
+  "title": "Sign in"
 }

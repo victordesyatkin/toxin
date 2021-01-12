@@ -4,11 +4,10 @@ include ../../components/card/card
 include ../../components/picker/picker
 include ../../components/footer/footer
 
-block title
-    - let options = htmlWebpackPlugin.options.getData();
-    | #{options.title}
 block main
-    - let data = htmlWebpackPlugin.options.getData();
+    -
+        let data = htmlWebpackPlugin.options.getData() || {};
+        let { action, picker, footer } = data;
     main.landing-page.js-landing-page
         article
             block landing-page-background-wrapper
@@ -19,12 +18,14 @@ block main
                     )
             block landing-page-find-wrapper
                 section.landing-page__find.js-landing-page__picker
-                    form
+                    form(
+                        action=action
+                    )
                         block landing-page-find
                             +card
-                                +picker(data.picker)    
+                                +picker(picker)    
             section.landing-page__info
                 block landing-page-info=options.slogan
 block footer
     .landing-page__footer.js-landing-page__footer
-        +footer(data.footer)
+        +footer(footer)

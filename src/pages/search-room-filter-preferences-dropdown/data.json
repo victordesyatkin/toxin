@@ -309,7 +309,7 @@
   "sliders": {
     "slider1": {
       "slider": {
-        "images": [{ "src": 1 }, { "src": 2 }, { "src": 1 }, { "src": 2 }]
+        "control": true
       },
       "info": {
         "number": 888,
@@ -322,9 +322,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 5, "name": "rating1", "count": 5 }]
-        },
+        "button": { "grade": 5, "name": "rating1", "count": 5 },
         "comments": 145
       },
       "link": {
@@ -335,7 +333,6 @@
     },
     "slider2": {
       "slider": {
-        "images": [{ "src": 2 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -349,9 +346,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 4, "name": "rating2", "count": 5 },
         "comments": 65
       },
       "link": {
@@ -362,7 +357,6 @@
     },
     "slider3": {
       "slider": {
-        "images": [{ "src": 3 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -376,9 +370,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 3, "name": "rating2", "count": 5 },
         "comments": 35
       },
       "link": {
@@ -389,7 +381,6 @@
     },
     "slider4": {
       "slider": {
-        "images": [{ "src": 4 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -403,9 +394,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 5, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 5, "name": "rating2", "count": 5 },
         "comments": 19
       },
       "link": {
@@ -416,7 +405,6 @@
     },
     "slider5": {
       "slider": {
-        "images": [{ "src": 5 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -430,9 +418,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 4, "name": "rating2", "count": 5 },
         "comments": 44
       },
       "link": {
@@ -443,7 +429,6 @@
     },
     "slider6": {
       "slider": {
-        "images": [{ "src": 6 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -457,9 +442,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 3, "name": "rating2", "count": 5 },
         "comments": 56
       },
       "link": {
@@ -470,7 +453,6 @@
     },
     "slider7": {
       "slider": {
-        "images": [{ "src": 7 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -484,9 +466,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 5, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 5, "name": "rating2", "count": 5 },
         "comments": 45
       },
       "link": {
@@ -497,7 +477,6 @@
     },
     "slider8": {
       "slider": {
-        "images": [{ "src": 8 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -511,9 +490,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 4, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 4, "name": "rating2", "count": 5 },
         "comments": 39
       },
       "link": {
@@ -524,7 +501,6 @@
     },
     "slider9": {
       "slider": {
-        "images": [{ "src": 9 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -538,9 +514,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 3, "name": "rating2", "count": 5 },
         "comments": 77
       },
       "link": {
@@ -551,7 +525,6 @@
     },
     "slider10": {
       "slider": {
-        "images": [{ "src": 10 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -565,9 +538,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 5, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 5, "name": "rating2", "count": 5 },
         "comments": 25
       },
       "link": {
@@ -578,7 +549,6 @@
     },
     "slider11": {
       "slider": {
-        "images": [{ "src": 11 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -592,9 +562,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 3, "name": "rating2", "count": 5 },
         "comments": 15
       },
       "link": {
@@ -605,7 +573,6 @@
     },
     "slider12": {
       "slider": {
-        "images": [{ "src": 12 }, { "src": 1 }, { "src": 2 }, { "src": 1 }],
         "control": false
       },
       "info": {
@@ -619,9 +586,7 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": {
-          "buttons": [{ "grade": 3, "name": "rating2", "count": 5 }]
-        },
+        "button": { "grade": 3, "name": "rating2", "count": 5 },
         "comments": 55
       },
       "link": {
@@ -636,5 +601,8 @@
     "end": 15,
     "current": 1,
     "text": "вариантов аренды"
-  }
+  },
+  "title": "Search room/Filter/Preferences Dropdown",
+  "filterTitle": "Номера, которые мы для вас подобрали",
+  "filterDescription": "Стоимость за сутки пребывания в номере"
 }

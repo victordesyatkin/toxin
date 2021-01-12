@@ -18,11 +18,11 @@ class Book {
     renderComponents({
       parents,
       query: query || ".js-book",
-      render: render || Book.renderComponent,
+      render: render || Book._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Book(arguments[1]);
   }
 

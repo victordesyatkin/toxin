@@ -10,11 +10,11 @@ export default class CardHeader {
     renderComponents({
       parents,
       query: query || ".js-card-header",
-      render: render || CardHeader.renderComponent,
+      render: render || CardHeader._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new CardHeader(arguments[1]);
   }
 

@@ -8,11 +8,11 @@ export default class ExpandableCheckboxList {
     renderComponents({
       parents,
       query: query || ".js-expandable-checkbox-list",
-      render: render || ExpandableCheckboxList.renderComponent,
+      render: render || ExpandableCheckboxList._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new ExpandableCheckboxList(arguments[1]);
   }
 

@@ -3,11 +3,10 @@ extends ../landing-page/landing-page
 include ../../components/card/card
 include ../../components/picker/picker
 
-block title
-    - let options = htmlWebpackPlugin.options.getData();
-    | #{options.title}
 block landing-page-find
         .landing-page-guests-dropdown__find
-            form
+            form(
+                action=action
+            )
                 +card
-                    +picker(data.picker)
+                    +picker(picker)

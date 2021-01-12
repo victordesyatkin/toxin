@@ -8,11 +8,11 @@ export default class SubscriptionTextField {
     renderComponents({
       parents,
       query: query || ".js-subscription-text-field",
-      render: render || SubscriptionTextField.renderComponent,
+      render: render || SubscriptionTextField._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new SubscriptionTextField(arguments[1]);
   }
 

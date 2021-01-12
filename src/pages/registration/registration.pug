@@ -3,13 +3,11 @@ extends ../base/base
 include ../../components/card/card
 include ../../components/sign-up/sign-up
 
-block title
-    | Registration
 block main
     main.registration
         - let data = htmlWebpackPlugin.options.getData();
             block registration-background-wrapper
-                - let src = require('../../pages/registration/img/image-4.png').default;
+                - let src = require('../../assets/images/registration-1.png').default;
                 .registration__background
                     img(
                         src=src

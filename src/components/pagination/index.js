@@ -8,11 +8,11 @@ export default class Pagination {
     renderComponents({
       parents,
       query: query || ".js-pagination",
-      render: render || Pagination.renderComponent,
+      render: render || Pagination._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Pagination(arguments[1]);
   }
 

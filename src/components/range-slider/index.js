@@ -12,11 +12,11 @@ export default class RangeSlider {
     renderComponents({
       parents,
       query: query || ".js-range-slider",
-      render: render || RangeSlider.renderComponent,
+      render: render || RangeSlider._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new RangeSlider(arguments[1]);
   }
 

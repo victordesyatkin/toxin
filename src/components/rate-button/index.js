@@ -8,16 +8,16 @@ export default class RateButton {
     renderComponents({
       parents,
       query: query || ".js-rate-button__button",
-      render: render || RateButton.renderComponent,
+      render: render || RateButton._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new RateButton(arguments[1]);
   }
 
   constructor(element) {
-    this._element = component;
+    this._element = element;
     this.count = this._element.dataset.count;
     this.input = this._element.querySelector("input");
     this._off = $(this._element).data("off");

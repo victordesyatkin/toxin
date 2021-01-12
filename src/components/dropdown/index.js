@@ -10,11 +10,11 @@ export default class Dropdown {
     renderComponents({
       parents,
       query: query || ".js-dropdown",
-      render: render || Dropdown.renderComponent,
+      render: render || Dropdown._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Dropdown(arguments[1]);
   }
 

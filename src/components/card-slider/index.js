@@ -11,11 +11,11 @@ export default class CardSlider {
     renderComponents({
       parents,
       query: query || ".js-card-slider",
-      render: render || CardSlider.renderComponent,
+      render: render || CardSlider._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new CardSlider(arguments[1]);
   }
 

@@ -14,11 +14,11 @@ export default class Slider {
     renderComponents({
       parents,
       query: ".js-slider",
-      render: Slider.renderComponent,
+      render: Slider._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Slider(arguments[1]);
   }
 
@@ -69,6 +69,8 @@ export default class Slider {
   _setImage(index) {
     let src = get(this._images, [index, "src"]) || "";
     let alt = get(this._images, [index, "alt"]) || "";
+    console.log("src : ", src);
+    console.log("alt : ", alt);
     this._$image.attr({ src, alt });
   }
 

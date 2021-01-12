@@ -57,6 +57,7 @@
   .search-room-filter__title {
     padding-left: 1px;
     margin-top: -1px;
+    @include h1;
   }
 
   .card-slider__info .card-header__number {

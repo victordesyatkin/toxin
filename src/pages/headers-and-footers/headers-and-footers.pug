@@ -4,8 +4,6 @@ include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/copyright/copyright
 
-block title
-    | Headers & Footers
 block header
     +layout__container({basis: 1440, align: 'center', theme: 'color'})
         +header-ui-kit({ full: true, classes: ['headers-and-footers']})

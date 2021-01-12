@@ -8,11 +8,11 @@ export default class Input {
     renderComponents({
       parents,
       query: query || ".js-input",
-      render: render || Input.renderComponent,
+      render: render || Input._renderComponent,
     });
   }
 
-  static renderComponent() {
+  static _renderComponent() {
     new Input(arguments[1]);
   }
 
