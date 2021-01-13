@@ -193,9 +193,13 @@
       "field": {
         "name": "footer_subscription_email",
         "id": "footer_subscription_email",
-        "type": "email",
+        "type": "text",
         "placeholder": "Email",
-        "button": { "visible": true }
+        "button": { "visible": true, "class": "arrow-forward" },
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
     }
   },
@@ -601,7 +605,11 @@
     "start": 1,
     "end": 15,
     "current": 1,
-    "text": "вариантов аренды"
+    "text": "вариантов аренды",
+    "label": "pagination",
+    "limit": 2,
+    "count": 12,
+    "emptyString": "..."
   },
   "title": "Search room/Filter",
   "filterTitle": "Номера, которые мы для вас подобрали",

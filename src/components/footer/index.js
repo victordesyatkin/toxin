@@ -1,20 +1,27 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import SubscriptionTextField from "../subscription-text-field";
 
 import "./footer.scss";
 
 export default class Footer {
+  static CLASS_NAME = "FOOTER";
+
   static renderComponents(props = {}) {
-    const { parents } = props;
+    const { parents, query, render } = props;
+    console.log("renderComponents : ", props);
     renderComponents({
       parents,
-      query: ".js-footer",
-      render: Footer._renderComponent,
+      query: query || ".js-footer",
+      render: render || Footer._renderComponent,
     });
   }
 
   static _renderComponent() {
-    new Footer(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Footer.CLASS_NAME,
+      someClass: Footer,
+    });
   }
 
   constructor(element) {

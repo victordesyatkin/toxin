@@ -14,6 +14,7 @@ import Comment from "../../components/comment";
 import "./form-elements.scss";
 
 function renderComponents() {
+  console.log("form-elements");
   Input.renderComponents({ parents: ".js-form-elements__input" });
   Dropdown.renderComponents({ parents: ".js-form-elements__dropdown" });
   MaskTextField.renderComponents({
@@ -38,4 +39,4 @@ function renderComponents() {
   Comment.renderComponents({ parents: ".js-form-elements__comment" });
 }
 
-document.addEventListener("DOMContentLoaded", renderComponents);
+window.addEventListener("load", renderComponents);

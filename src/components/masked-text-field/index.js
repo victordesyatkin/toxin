@@ -1,11 +1,13 @@
 import get from "lodash/get";
 import IMask from "imask";
 
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
 import "./masked-text-field.scss";
 
 export default class MaskedTextField {
+  static CLASS_NAME = "MASKED_TEXT_FIELD";
+
   static defaultProps = {
     mask: Date,
     lazy: false,
@@ -46,7 +48,11 @@ export default class MaskedTextField {
   }
 
   static _renderComponent() {
-    new MaskedTextField(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: MaskedTextField.CLASS_NAME,
+      someClass: MaskedTextField,
+    });
   }
 
   constructor(element) {

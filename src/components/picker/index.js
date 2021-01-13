@@ -29,3 +29,5 @@ export default class Picker {
     Dropdown.renderComponents({ parents: this._$element });
   }
 }
+
+console.log("HELLO picker.js");

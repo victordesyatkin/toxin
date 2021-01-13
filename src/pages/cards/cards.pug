@@ -16,7 +16,9 @@ block header
 block main
     +layout__container({basis: 1440, align: 'center', theme: 'color'})
         - let data = htmlWebpackPlugin.options.getData()
-        article.cards
+        article.cards.js-cards(
+            data-options=htmlWebpackPlugin.files
+        )
             section.section__container.margin-right-41
                 .cards__section.width-380.margin-bottom-38.js-cards__picker
                     +card
@@ -54,3 +56,5 @@ block main
                     ]
                     }})
 block footer
+block scripts
+    script(src="cards.js")

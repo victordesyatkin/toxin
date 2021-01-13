@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const WriteFilePlugin = require("write-file-webpack-plugin");
 const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
@@ -15,33 +14,36 @@ nth.dir = {
   pages: path.resolve(__dirname, "src", "pages"),
 };
 
+const js = {};
+
 module.exports = (env = {}) => {
   const { mode = "development" } = env;
   const pages = [];
   fs.readdirSync(nth.dir.pages).forEach((file) => {
     pages.push(file);
   });
-  const htmlPlugins = pages.map(
-    (fileName) =>
-      new HtmlWebpackPlugin({
-        getData: () => {
-          try {
-            return JSON.parse(
-              fs.readFileSync(`${nth.dir.pages}/${fileName}/data.json`, "utf8")
-            );
-          } catch (e) {
-            console.warn(`data.json was not provided for page ${fileName}`);
-            return {};
-          }
-        },
-        filename: `${fileName}.html`,
-        template: `${nth.dir.pages}/${fileName}/${fileName}.pug`,
-        chuncks: [fileName],
-        alwaysWriteToDisk: true,
-        inject: true,
-        hash: true,
-      })
-  );
+  console.log("PAGES : ", pages);
+  const htmlPlugins = pages.map((fileName) => {
+    js[fileName] = `${nth.dir.pages}/${fileName}/${fileName}.js`;
+    return new HtmlWebpackPlugin({
+      getData: () => {
+        try {
+          return JSON.parse(
+            fs.readFileSync(`${nth.dir.pages}/${fileName}/data.json`, "utf8")
+          );
+        } catch (e) {
+          console.warn(`data.json was not provided for page ${fileName}`);
+          return {};
+        }
+      },
+      filename: `${fileName}.html`,
+      template: `${nth.dir.pages}/${fileName}/${fileName}.pug`,
+      chuncks: [fileName],
+      alwaysWriteToDisk: true,
+      inject: false,
+      hash: true,
+    });
+  });
 
   const isProd = mode === "production";
   const isDev = mode === "development";
@@ -90,8 +92,10 @@ module.exports = (env = {}) => {
   return {
     mode: isProd ? "production" : isDev && "development",
     devtool: isDev ? "eval" : undefined,
+    entry: { ...js },
     output: {
-      filename: isProd ? "main-[hash:8].js" : undefined,
+      //filename: isProd ? "main-[hash:8].js" : undefined,
+      filename: "[name].js",
       pathinfo: isDev,
     },
     resolve: {
@@ -117,7 +121,7 @@ module.exports = (env = {}) => {
               loader: "file-loader",
               options: {
                 outputPath: "./assets/images/",
-                name: "[sha1:hash:7]-[sha1:hash:7].[ext]",
+                name: "[name].[ext]",
               },
             },
           ],

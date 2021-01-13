@@ -53,5 +53,3 @@ export default class LandingPage {
 function renderComponent() {
   LandingPage.renderComponents();
 }
-
-document.addEventListener("DOMContentLoaded", renderComponent);

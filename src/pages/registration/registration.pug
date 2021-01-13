@@ -4,7 +4,7 @@ include ../../components/card/card
 include ../../components/sign-up/sign-up
 
 block main
-    main.registration
+    main.registration.js-registration
         - let data = htmlWebpackPlugin.options.getData();
             block registration-background-wrapper
                 - let src = require('../../assets/images/registration-1.png').default;

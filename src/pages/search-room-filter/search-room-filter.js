@@ -6,6 +6,7 @@ import RangeSlider from "../../components/range-slider";
 import ExpandableCheckboxList from "../../components/expandable-checkbox-list";
 import CardSlider from "../../components/card-slider";
 import Pagination from "../../components/pagination";
+import Footer from "../../components/footer";
 
 import "./search-room-filter.scss";
 
@@ -36,11 +37,10 @@ export default class SearchRoomFilter {
     ExpandableCheckboxList.renderComponents({ parents: this._$element });
     CardSlider.renderComponents({ parents: this._$element });
     Pagination.renderComponents({ parents: this._$element });
+    Footer.renderComponents();
   }
 }
 
 function renderComponent() {
   SearchRoomFilter.renderComponents();
 }
-
-document.addEventListener("DOMContentLoaded", renderComponent);

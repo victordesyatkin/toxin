@@ -1,8 +1,10 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
 
 import "./subscription-text-field.scss";
 export default class SubscriptionTextField {
+  static CLASS_NAME = "SUBSCRIPTION_TEXT_FIELD";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -13,7 +15,11 @@ export default class SubscriptionTextField {
   }
 
   static _renderComponent() {
-    new SubscriptionTextField(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: SubscriptionTextField.CLASS_NAME,
+      someClass: SubscriptionTextField,
+    });
   }
 
   constructor(element) {

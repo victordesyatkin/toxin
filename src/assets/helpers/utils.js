@@ -33,4 +33,15 @@ function renderComponents(props = {}) {
   }
 }
 
-export { wordForm, renderComponents };
+function renderComponent({ element, className, someClass }) {
+  if (!element || !className || !someClass) {
+    return;
+  }
+  const $element = $(element);
+  if ($element.data(className)) {
+    return;
+  }
+  $element.data(className, new someClass(element));
+}
+
+export { wordForm, renderComponents, renderComponent };
