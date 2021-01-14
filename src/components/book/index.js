@@ -1,17 +1,24 @@
 import datepicker from "air-datepicker";
 import get from "lodash/get";
 
-import Dropdown from "../../components/dropdown";
-import DateDropdown from "../../components/date-dropdown";
-import { wordForm, renderComponents } from "../../assets/helpers/utils";
+import Dropdown from "../dropdown";
+import DateDropdown from "../date-dropdown";
+import {
+  wordForm,
+  renderComponents,
+  renderComponent,
+} from "../../assets/helpers/utils";
+import "../button";
 
 import "./book.scss";
 
-class Book {
+export default class Book {
   static TYPE_PRICE = 3;
   static TYPE_COUNT = 1;
   static TYPE_FEE = 2;
   static IS_CALENDAR = 1;
+
+  static CLASS_NAME = "BOOK";
 
   static renderComponents(options = {}) {
     const { parents, query, render } = options;
@@ -23,7 +30,11 @@ class Book {
   }
 
   static _renderComponent() {
-    new Book(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Book.CLASS_NAME,
+      someClass: Book,
+    });
   }
 
   constructor(component) {
@@ -115,9 +126,3 @@ class Book {
     this._dirty = dirty;
   }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const books = Array.prototype.map.call($(".book"), function (component) {
-    return new Book(component);
-  });
-});

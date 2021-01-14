@@ -1,9 +1,13 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
+import "../radio-buttons";
+import "../toggle-buttons";
 
 import "./sign-up.scss";
 
 export default class SignUp {
+  static CLASS_NAME = "SIGN_UP";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -13,8 +17,12 @@ export default class SignUp {
     });
   }
 
-  static renderComponent() {
-    new SignUp(arguments[1]);
+  static _renderComponent() {
+    renderComponent({
+      element: arguments[1],
+      className: SignUp.CLASS_NAME,
+      someClass: SignUp,
+    });
   }
 
   constructor(element) {

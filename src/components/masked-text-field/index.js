@@ -3,6 +3,8 @@ import IMask from "imask";
 
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
+import "../input";
+
 import "./masked-text-field.scss";
 
 export default class MaskedTextField {

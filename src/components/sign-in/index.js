@@ -1,9 +1,13 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
+import "../button";
+import "../card-footer";
 
 import "./sign-in.scss";
 
 export default class SignIn {
+  static CLASS_NAME = "SIGN_IN";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -14,7 +18,11 @@ export default class SignIn {
   }
 
   static _renderComponent() {
-    new SignIn(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: SignIn.CLASS_NAME,
+      someClass: SignIn,
+    });
   }
 
   constructor(element) {

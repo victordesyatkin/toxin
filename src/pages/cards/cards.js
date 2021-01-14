@@ -4,8 +4,11 @@ import SignUp from "../../components/sign-up";
 import SignIn from "../../components/sign-in";
 import Calendar from "../../components/calendar";
 import CardSlider from "../../components/card-slider";
+import Book from "../../components/book";
+import "../../components/card";
 
 import "../../index";
+import "../demo-base/demo-base";
 
 import "./cards.scss";
 
@@ -41,6 +44,7 @@ export default class Cards {
     SignIn.renderComponents({ parents });
     Calendar.renderComponents({ parents });
     CardSlider.renderComponents({ parents });
+    Book.renderComponents({ parents });
   }
 }
 
