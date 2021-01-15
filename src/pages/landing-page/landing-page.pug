@@ -6,8 +6,8 @@ include ../../components/footer/footer
 
 block main
     -
-        let data = htmlWebpackPlugin.options.getData() || {};
-        let { action, picker, footer } = data;
+        let data = htmlWebpackPlugin.options.getData();
+        let { action, picker, footer } = data || {};
     main.landing-page.js-landing-page
         article
             block landing-page-background-wrapper
@@ -26,6 +26,3 @@ block main
                                 +picker(picker)    
             section.landing-page__info
                 block landing-page-info=options.slogan
-block footer
-    .landing-page__footer.js-landing-page__footer
-        +footer(footer)

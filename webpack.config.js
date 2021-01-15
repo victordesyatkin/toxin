@@ -70,6 +70,10 @@ module.exports = (env = {}) => {
             from: "src/assets/favicons",
             to: "assets/favicons",
           },
+          {
+            from: "src/assets/images",
+            to: "assets/images",
+          },
         ],
       }),
       new webpack.HotModuleReplacementPlugin(),

@@ -3,18 +3,18 @@ include ../list-links/list-links
 include ../subscription-text-field/subscription-text-field
 include ../copyright/copyright
 
-mixin footer(props)
+mixin footer(props = {})
     -
-        let { info, items = [], subscribe, copyright } = props || {};
-        let { content } = info || {};
-        let { header, description, field } = subscribe || {};
+        let { info = {}, items = [], subscribe = {}, copyright, logo } = props;
+        let { content } = info ;
+        let { header, description, field } = subscribe;
 
     .footer.js-footer
         .footer__up-wrapper
             .footer__up
                 .footer__info-section
                     .footer__logo
-                        +logo-image({full: false})
+                        +logo-image(logo)
                     .footer__info=content || ''
                 nav.footer__nav-items
                     each item in items

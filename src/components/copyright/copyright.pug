@@ -1,12 +1,12 @@
 include ../logo-image/logo-image
 
-mixin copyright(props)
+mixin copyright(props = {})
     -
-        let { items = [], content, showLogo } = props || {};
+        let { items = [], content, showLogo } = props;
     .copyright
         if showLogo
             .copyright__logo
-                +logo-image({full: false})
+                +logo-image(logo)
         .copyright__content=content
         ul.copyright__social-items
             each item in items

@@ -1,10 +1,37 @@
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import Footer from "../../components/footer";
+import "../demo-base/demo-base";
 
 import "./headers-and-footers.scss";
+export default class HeadersAndFooters {
+  static CLASS_NAME = "HEADERS_AND_FOOTERS";
 
-function renderComponents() {
-  console.log("headers-and-footers");
-  Footer.renderComponents({ parents: ".js-headers-and-footers__footer" });
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
+    renderComponents({
+      parents,
+      query: query || ".js-headers-and-footers__footer",
+      render: render || HeadersAndFooters._renderComponent,
+    });
+  }
+
+  static _renderComponent() {
+    renderComponent({
+      element: arguments[1],
+      className: HeadersAndFooters.CLASS_NAME,
+      someClass: HeadersAndFooters,
+    });
+  }
+
+  constructor(element) {
+    this._element = element;
+    this._$element = $(element);
+    this._init();
+  }
+
+  _init() {
+    Footer.renderComponents({ parents: this._$element });
+  }
 }
 
-document.addEventListener("DOMContentLoaded", renderComponents);
+window.addEventListener("load", HeadersAndFooters.renderComponents);

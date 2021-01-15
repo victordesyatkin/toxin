@@ -72,3 +72,6 @@ html
           block footer
             +footer(data.footer)
     block scripts
+      - let {scriptSrc} = htmlWebpackPlugin.options.getData() || {};
+      if (scriptSrc)
+        script(src=`${scriptSrc}.js`)

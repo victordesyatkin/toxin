@@ -1,11 +1,14 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
 import Picker from "../../components/picker";
 import Footer from "../../components/footer";
+import "../base/base";
+import "../cards/cards";
 
 import "./landing-page.scss";
 
 export default class LandingPage {
+  static CLASS_NAME = "LANDING_PAGE";
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -16,7 +19,11 @@ export default class LandingPage {
   }
 
   static _renderComponent() {
-    new LandingPage(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: LandingPage.CLASS_NAME,
+      someClass: LandingPage,
+    });
   }
 
   constructor(element) {
@@ -27,7 +34,7 @@ export default class LandingPage {
 
   _init() {
     Picker.renderComponents({ parents: this._$element });
-    Footer.renderComponents({ parents: ".js-landing-page__footer" });
+    Footer.renderComponents();
     localStorage.clear();
     this._$form = $("form", this._$element);
     this._$form.on("submit", this._handler.bind(this));
@@ -50,6 +57,4 @@ export default class LandingPage {
   };
 }
 
-function renderComponent() {
-  LandingPage.renderComponents();
-}
+window.addEventListener("load", LandingPage.renderComponents);

@@ -4,12 +4,14 @@ include ../../components/color-sample/color-sample
 include ../../components/font-sample/font-sample
 
 block main
-    - let data = htmlWebpackPlugin.options.getData()
+    -
+        let data = htmlWebpackPlugin.options.getData();
+        let { colors = [], fonts = [] } = data || {};
     .colors-and-type
         .colors-and-type__colors
-            for color in ((data || {}).colors || [])
+            for color in colors
                 +color-sample(color)
         .colors-and-type__fonts
-            for font in ((data || {}).fonts || [])
+            for font in fonts
                 +font-sample(font)
 block footer

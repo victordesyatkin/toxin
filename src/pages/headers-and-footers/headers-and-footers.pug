@@ -10,13 +10,15 @@ block header
 block main
     +layout__container({basis: 1440, align: 'center', theme: 'color'})
         article.headers-and-footers
-            - let data = htmlWebpackPlugin.options.getData()
+            -
+                let data = htmlWebpackPlugin.options.getData();
+                let { headerNotAuthorised, headerAuthorised, footer, copyright } = data || {};
             section.headers-and-footers__section    
-                +header(data.headerNotAuthorised)
+                +header(headerNotAuthorised)
             section.headers-and-footers__section.headers-and-footers__section_margin-top-39    
-                +header(data.headerAuthorised)
+                +header(headerAuthorised)
             section.headers-and-footers__section.headers-and-footers__section_margin-top-39.js-headers-and-footers__footer
-                +footer(data.footer)
+                +footer(footer)
             section.headers-and-footers__section.headers-and-footers__section_margin-top-39.headers-and-footers__copyright 
-                +copyright(data.copyright)
+                +copyright(copyright)
 block footer

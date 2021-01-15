@@ -1,4 +1,5 @@
 {
+  "scriptSrc": "cards",
   "picker": {
     "label": "Найдём номера под ваши пожелания",
     "dateDropdown": {

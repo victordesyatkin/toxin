@@ -1,7 +1,9 @@
 import get from "lodash/get";
 import { wordForm, renderComponents } from "../../assets/helpers/utils";
 
-import("./comments.scss");
+import "../comment";
+
+import "./comments.scss";
 
 export default class Comments {
   static renderComponents(props = {}) {

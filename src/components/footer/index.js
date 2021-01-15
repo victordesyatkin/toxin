@@ -1,5 +1,9 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import SubscriptionTextField from "../subscription-text-field";
+import "../logo-image";
+import "../list-links";
+import "../subscription-text-field";
+import "../copyright";
 
 import "./footer.scss";
 
@@ -17,6 +21,7 @@ export default class Footer {
   }
 
   static _renderComponent() {
+    console.log("_renderComponent");
     renderComponent({
       element: arguments[1],
       className: Footer.CLASS_NAME,
@@ -25,6 +30,7 @@ export default class Footer {
   }
 
   constructor(element) {
+    console.log("element : ", element);
     this._element = element;
     this._$element = $(element);
     this._init();

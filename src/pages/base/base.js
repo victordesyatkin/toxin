@@ -1,7 +1,13 @@
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import Footer from "../../components/footer";
 
 import "../../components/layout";
 import "../../components/header";
+
+import "normalize.css";
+import "../../theme/global.scss";
+
+import "./base.scss";
 
 export class Base {
   static CLASS_NAME = "BASE";

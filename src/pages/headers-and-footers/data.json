@@ -1,4 +1,5 @@
 {
+  "scriptSrc": "headers-and-footers",
   "headerNotAuthorised": {
     "nav": {
       "items": [
@@ -139,6 +140,9 @@
     "fill": false
   },
   "footer": {
+    "logo": {
+      "src": "./assets/images/logo-color.svg"
+    },
     "title": "title title",
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
@@ -234,7 +238,10 @@
           "title": "",
           "content": "icon-i"
         }
-      ]
+      ],
+      "logo": {
+        "src": "./assets/images/logo-color.svg"
+      }
     },
     "subscribe": {
       "header": "Подписка",

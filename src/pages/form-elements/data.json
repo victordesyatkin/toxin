@@ -1,4 +1,5 @@
 {
+  "scriptSrc": "form-elements",
   "input1": {
     "name": "email",
     "id": "email",
@@ -278,6 +279,7 @@
     ]
   },
   "comment": {
+    "src": "./assets/images/example-avatar-male.png",
     "like": { "checked": true, "name": "male2", "count": 12 },
     "fullName": "Мурад Сарафанов",
     "date": "5 дней назад",
