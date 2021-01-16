@@ -1,7 +1,7 @@
 mixin button(props = {})
     -
         let
-            { text, type, disabled, view, value, name, src, alt, hover } = props;
+            { text, type, disabled, view, value, name, src, alt, hover, defaultSrc } = props;
             classes = "button button__view"
             classes += hover ? ' button__view_hover' : '';
             classes += view !== undefined ? ` button__view_${view}` : '';
@@ -14,9 +14,7 @@ mixin button(props = {})
     )
         span.button__content=text
         if (view === 3)
-            - 
-                let defaultSrc = require('../../assets/images/arrow-forward.svg').default;
-                src = src || defaultSrc;
+            - src = src || defaultSrc;
             if (src)
                 span.button__image
                     img(

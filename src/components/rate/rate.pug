@@ -1,6 +1,6 @@
-mixin rate(props)
+mixin rate(props = {})
     -
-        let { title = '', votes = [], total = 0, units = [] } = props || {};
+        let { title, votes = [], total, units = [] } = props;
     .rate.js-rate(
         data-data=props
     )
@@ -8,9 +8,7 @@ mixin rate(props)
             .rate__title=title
         .rate__vote-section
             .rate__circle.js-rate__circle
-                canvas(
-                    class="rate__canvas"
-                )
+                canvas.rate__canvas
                 .rate__circle-inner
                     .rate__total=total
                     .rate__unit.js-rate__unit

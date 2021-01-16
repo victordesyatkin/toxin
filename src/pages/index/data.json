@@ -51,7 +51,8 @@
       "type": "submit",
       "disabled": false,
       "value": "",
-      "view": 3
+      "view": 3,
+      "defaultSrc": "./assets/images/arrow-forward.svg"
     }
   },
   "headerNotAuthorised": {
@@ -141,8 +142,7 @@
           }
         ]
       }
-    },
-    "fill": false
+    }
   },
   "footer": {
     "logo": { "src": "./assets/images/logo-color.svg" },

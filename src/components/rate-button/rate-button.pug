@@ -1,10 +1,10 @@
 mixin rate-button(props = {})
     -
         let
-            { count, grade, name, srcImgRate, srcNoImgRate, off } = props || {}; 
+            { count, grade, name, srcImgRate, srcNoImgRate, off, defaultSrcImgRate, defaultSrcNoImgRate } = props || {}; 
             n = 1;
-            defaultSrcImgRate = require('../../assets/images/star.svg').default;
-            defaultSrcNoImgRate = require('../../assets/images/star-border.svg').default;
+            //- defaultSrcImgRate = require('../../assets/images/star.svg').default;
+            //- defaultSrcNoImgRate = require('../../assets/images/star-border.svg').default;
         srcImgRate = srcImgRate || defaultSrcImgRate; 
         srcNoImgRate = srcNoImgRate || defaultSrcNoImgRate;
         if (grade > count) {

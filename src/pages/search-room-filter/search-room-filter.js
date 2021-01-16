@@ -1,4 +1,4 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
 import FilterDateDropdown from "../../components/filter-date-dropdown";
 import Dropdown from "../../components/dropdown";
@@ -7,10 +7,15 @@ import ExpandableCheckboxList from "../../components/expandable-checkbox-list";
 import CardSlider from "../../components/card-slider";
 import Pagination from "../../components/pagination";
 import Footer from "../../components/footer";
+import "../../components/checkbox-buttons";
+import "../../components/rich-checkbox-buttons";
+import "../base/base";
 
 import "./search-room-filter.scss";
 
 export default class SearchRoomFilter {
+  static CLASS_NAME = "SEARCH_ROOM_FILTER";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -21,7 +26,11 @@ export default class SearchRoomFilter {
   }
 
   static _renderComponent() {
-    new SearchRoomFilter(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: SearchRoomFilter.CLASS_NAME,
+      someClass: SearchRoomFilter,
+    });
   }
 
   constructor(element) {
@@ -41,6 +50,4 @@ export default class SearchRoomFilter {
   }
 }
 
-function renderComponent() {
-  SearchRoomFilter.renderComponents();
-}
+window.addEventListener("load", SearchRoomFilter.renderComponents);

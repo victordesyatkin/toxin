@@ -1,8 +1,9 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
 import "./input.scss";
 
 export default class Input {
+  static CLASS_NAME = "INPUT";
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -13,7 +14,11 @@ export default class Input {
   }
 
   static _renderComponent() {
-    new Input(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Input.CLASS_NAME,
+      someClass: Input,
+    });
   }
 
   constructor(element) {

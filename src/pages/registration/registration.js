@@ -1,10 +1,14 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
-import Picker from "../../components/picker";
+import SignUp from "../../components/sign-up";
 import Footer from "../../components/footer";
 
-import "./registration.scss";
+import "../../components/card";
+
+import "./index";
 export default class Registration {
+  static CLASS_NAME = "REGISTRATION";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -15,7 +19,11 @@ export default class Registration {
   }
 
   static _renderComponent() {
-    new Registration(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Registration.CLASS_NAME,
+      someClass: Registration,
+    });
   }
 
   constructor(element) {
@@ -25,10 +33,9 @@ export default class Registration {
   }
 
   _init() {
-    Picker.renderComponents({ parents: this._$element });
+    SignUp.renderComponents({ parents: this._$element });
+    Footer.renderComponents();
   }
 }
 
-function renderComponent() {
-  Registration.renderComponents();
-}
+window.addEventListener("load", Registration.renderComponents);

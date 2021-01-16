@@ -1,4 +1,5 @@
 {
+  "scriptSrc": "search-room-filter-preferences-dropdown",
   "headerNotAuthorised": {
     "nav": {
       "items": [
@@ -246,12 +247,23 @@
   "checkboxButtons1": {
     "label": "правила дома",
     "buttons": [
-      { "label": "Можно курить", "checked": false, "name": "smoke" },
-      { "label": "Можно с питомцами", "checked": true, "name": "pet" },
+      {
+        "label": "Можно курить",
+        "checked": false,
+        "name": "smoke",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Можно с питомцами",
+        "checked": true,
+        "name": "pet",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
         "checked": true,
-        "name": "guest"
+        "name": "guest",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
@@ -262,13 +274,15 @@
         "label": "Широкий коридор",
         "checked": false,
         "name": "widecorridor",
-        "info": "Ширина коридоров в номере не менее 91 см."
+        "info": "Ширина коридоров в номере не менее 91 см.",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       },
       {
         "label": "Помощник для инвалидов",
         "checked": false,
         "name": "helper",
-        "info": "На 1 этаже вас встретит специалист  и проводит до номера."
+        "info": "На 1 этаже вас встретит специалист  и проводит до номера.",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
@@ -296,14 +310,54 @@
   "expandableCheckboxList1": {
     "expandable": { "label": "дополнительные удобства" },
     "buttons": [
-      { "label": "Завтрак", "checked": false, "name": "breakfast" },
-      { "label": "Письменный стол", "checked": true, "name": "table" },
-      { "label": "Стул для кормления", "checked": true, "name": "chair" },
-      { "label": "Кроватка", "checked": true, "name": "cot" },
-      { "label": "Телевизор", "checked": false, "name": "tv1" },
-      { "label": "Шампунь", "checked": false, "name": "shampoo1" },
-      { "label": "Телевизор", "checked": false, "name": "tv2" },
-      { "label": "Шампунь", "checked": false, "name": "shampoo2" }
+      {
+        "label": "Завтрак",
+        "checked": false,
+        "name": "breakfast",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Письменный стол",
+        "checked": true,
+        "name": "table",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Стул для кормления",
+        "checked": true,
+        "name": "chair",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Кроватка",
+        "checked": true,
+        "name": "cot",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Телевизор",
+        "checked": false,
+        "name": "tv1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Шампунь",
+        "checked": false,
+        "name": "shampoo1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Телевизор",
+        "checked": false,
+        "name": "tv2",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Шампунь",
+        "checked": false,
+        "name": "shampoo2",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      }
     ]
   },
   "sliders": {
@@ -322,7 +376,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 5, "name": "rating1", "count": 5 },
+        "button": {
+          "grade": 5,
+          "name": "rating1",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 145
       },
       "link": {
@@ -346,7 +406,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 4, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 4,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 65
       },
       "link": {
@@ -370,7 +436,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 3, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 3,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 35
       },
       "link": {
@@ -394,7 +466,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 5, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 5,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 19
       },
       "link": {
@@ -418,7 +496,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 4, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 4,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 44
       },
       "link": {
@@ -442,7 +526,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 3, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 3,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 56
       },
       "link": {
@@ -466,7 +556,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 5, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 5,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 45
       },
       "link": {
@@ -490,7 +586,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 4, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 4,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 39
       },
       "link": {
@@ -514,7 +616,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 3, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 3,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 77
       },
       "link": {
@@ -538,7 +646,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 5, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 5,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 25
       },
       "link": {
@@ -562,7 +676,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 3, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 3,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 15
       },
       "link": {
@@ -586,7 +706,13 @@
         "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
-        "button": { "grade": 3, "name": "rating2", "count": 5 },
+        "button": {
+          "grade": 3,
+          "name": "rating2",
+          "count": 5,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        },
         "comments": 55
       },
       "link": {

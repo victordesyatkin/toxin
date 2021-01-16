@@ -1,8 +1,10 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
 import "./like-button.scss";
 
 export default class LikeButton {
+  static CLASS_NAME = "LIKE_BUTTON";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -13,7 +15,11 @@ export default class LikeButton {
   }
 
   static _renderComponent() {
-    new LikeButton(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: LikeButton.CLASS_NAME,
+      someClass: LikeButton,
+    });
   }
 
   constructor(element) {

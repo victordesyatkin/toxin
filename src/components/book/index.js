@@ -12,7 +12,7 @@ import "../button";
 
 import "./book.scss";
 
-export default class Book {
+class Book {
   static TYPE_PRICE = 3;
   static TYPE_COUNT = 1;
   static TYPE_FEE = 2;
@@ -126,3 +126,4 @@ export default class Book {
     this._dirty = dirty;
   }
 }
+export default Book;

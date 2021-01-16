@@ -10,21 +10,22 @@ mixin logo-image(props = {})
         itemtype="http://schema.org/Brand"
         class=classNames
     )
-        if (href && src)
-            a(
-                itemprop="url"
-                href=href
-                title=title
-            )
+        if (src)
+            if (href)
+                a(
+                    itemprop="url"
+                    href=href
+                    title=title
+                )
+                    img.logo__img(
+                        itemprop="logo"
+                        src=src
+                        alt=alt
+                    )
+            else
                 img.logo__img(
                     itemprop="logo"
                     src=src
                     alt=alt
                 )
-        else if (src)
-            img.logo__img(
-                itemprop="logo"
-                src=src
-                alt=alt
-            )
         

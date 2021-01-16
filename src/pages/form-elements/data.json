@@ -113,7 +113,7 @@
     "type": "text",
     "label": "Subscription text field",
     "placeholder": "Email",
-    "button": { "visible": true, "class": "arrow-forward" },
+    "button": { "visible": true, "type": "button", "class": "arrow-forward" },
     "mask": {
       "mask": "^\\S*@?\\S*$",
       "regexp": true
@@ -144,14 +144,54 @@
   "expandableCheckboxList1": {
     "expandable": { "label": "expandable checkbox list" },
     "buttons": [
-      { "label": "Завтрак", "checked": false, "name": "breakfast" },
-      { "label": "Письменный стол", "checked": true, "name": "table" },
-      { "label": "Стул для кормления", "checked": true, "name": "chair" },
-      { "label": "Кроватка", "checked": true, "name": "cot" },
-      { "label": "Телевизор", "checked": false, "name": "tv1" },
-      { "label": "Шампунь", "checked": false, "name": "shampoo1" },
-      { "label": "Телевизор", "checked": false, "name": "tv2" },
-      { "label": "Шампунь", "checked": false, "name": "shampoo2" }
+      {
+        "label": "Завтрак",
+        "checked": false,
+        "name": "breakfast",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Письменный стол",
+        "checked": true,
+        "name": "table",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Стул для кормления",
+        "checked": true,
+        "name": "chair",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Кроватка",
+        "checked": true,
+        "name": "cot",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Телевизор",
+        "checked": false,
+        "name": "tv1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Шампунь",
+        "checked": false,
+        "name": "shampoo1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Телевизор",
+        "checked": false,
+        "name": "tv2",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Шампунь",
+        "checked": false,
+        "name": "shampoo2",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      }
     ]
   },
   "expandableCheckboxList2": {
@@ -160,25 +200,76 @@
       "expanded": true
     },
     "buttons": [
-      { "label": "Завтрак", "checked": false, "name": "breakfast1" },
-      { "label": "Письменный стол", "checked": true, "name": "table1" },
-      { "label": "Стул для кормления", "checked": true, "name": "chair1" },
-      { "label": "Кроватка", "checked": true, "name": "cot1" },
-      { "label": "Телевизор", "checked": false, "name": "tv11" },
-      { "label": "Шампунь", "checked": false, "name": "shampoo11" },
-      { "label": "Телевизор", "checked": false, "name": "tv21" },
-      { "label": "Шампунь", "checked": false, "name": "shampoo21" }
+      {
+        "label": "Завтрак",
+        "checked": false,
+        "name": "breakfast1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Письменный стол",
+        "checked": true,
+        "name": "table1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Стул для кормления",
+        "checked": true,
+        "name": "chair1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Кроватка",
+        "checked": true,
+        "name": "cot1",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Телевизор",
+        "checked": false,
+        "name": "tv11",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Шампунь",
+        "checked": false,
+        "name": "shampoo11",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Телевизор",
+        "checked": false,
+        "name": "tv21",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Шампунь",
+        "checked": false,
+        "name": "shampoo21",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      }
     ]
   },
   "checkboxes": {
     "label": "Checkbox Buttons",
     "buttons": [
-      { "label": "Можно курить", "checked": false, "name": "smoke" },
-      { "label": "Можно с питомцами", "checked": true, "name": "pet" },
+      {
+        "label": "Можно курить",
+        "checked": false,
+        "name": "smoke",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "label": "Можно с питомцами",
+        "checked": true,
+        "name": "pet",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
         "checked": true,
-        "name": "guest"
+        "name": "guest",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
@@ -189,39 +280,71 @@
         "label": "Мужчина",
         "checked": true,
         "name": "gender",
-        "value": "male"
+        "value": "male",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       },
       {
         "label": "Женщина",
         "checked": false,
         "name": "gender",
-        "value": "female"
+        "value": "female",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
   "toggleButtons1": {
     "label": "Toggle",
     "buttons": [
-      { "label": "Получать спецпредложения", "checked": true, "name": "male" },
+      {
+        "label": "Получать спецпредложения",
+        "checked": true,
+        "name": "male",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
       {
         "label": "Получать спецпредложения",
         "checked": false,
-        "name": "female"
+        "name": "female",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
   "likes": {
     "label": "Like button",
     "buttons": [
-      { "checked": false, "name": "male", "count": 2 },
-      { "checked": true, "name": "female", "count": 12 }
+      {
+        "checked": false,
+        "name": "male",
+        "count": 2,
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      },
+      {
+        "checked": true,
+        "name": "female",
+        "count": 12,
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      }
     ]
   },
   "rateButton": {
     "label": "Rate button",
     "buttons": [
-      { "grade": 4, "name": "male2", "count": 5, "off": 0 },
-      { "grade": 5, "name": "female2", "count": 5, "off": 0 }
+      {
+        "grade": 4,
+        "name": "male2",
+        "count": 5,
+        "off": 0,
+        "defaultSrcLike": "./assets/images/favorite.svg",
+        "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+      },
+      {
+        "grade": 5,
+        "name": "female2",
+        "count": 5,
+        "off": 0,
+        "defaultSrcLike": "./assets/images/favorite.svg",
+        "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+      }
     ]
   },
   "dropdown5": {
@@ -254,13 +377,15 @@
         "label": "Широкий коридор",
         "checked": false,
         "name": "widecorridor",
-        "info": "Ширина коридоров в номере не менее 91 см."
+        "info": "Ширина коридоров в номере не менее 91 см.",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       },
       {
         "label": "Помощник для инвалидов",
         "checked": false,
         "name": "helper",
-        "info": "На 1 этаже вас встретит специалист и проводит до номера."
+        "info": "На 1 этаже вас встретит специалист и проводит до номера.",
+        "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
@@ -280,7 +405,12 @@
   },
   "comment": {
     "src": "./assets/images/example-avatar-male.png",
-    "like": { "checked": true, "name": "male2", "count": 12 },
+    "like": {
+      "checked": true,
+      "name": "male2",
+      "count": 12,
+      "defaultSrc": "./assets/images/checkbox-buttons.svg"
+    },
     "fullName": "Мурад Сарафанов",
     "date": "5 дней назад",
     "count": 12,
@@ -321,7 +451,7 @@
         "type": "button",
         "value": "",
         "view": 3,
-        "src": ""
+        "defaultSrc": "./assets/images/arrow-forward.svg"
       }
     ]
   },
@@ -364,7 +494,8 @@
     "label": "pagination",
     "limit": 2,
     "count": 12,
-    "emptyString": "..."
+    "emptyString": "...",
+    "defaultSrc": "./assets/images/arrow-forward.svg"
   },
   "title": "Form Elements"
 }

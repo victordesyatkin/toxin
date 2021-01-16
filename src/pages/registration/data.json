@@ -1,4 +1,9 @@
 {
+  "scriptSrc": "registration",
+  "backgroundImage": {
+    "src": "../assets/images/registration-1.png",
+    "alt": "Registration"
+  },
   "signUp": {
     "title": "Регистрация аккаунта",
     "firstName": {
@@ -42,9 +47,13 @@
     "email": {
       "name": "email1",
       "id": "email1",
-      "type": "email",
+      "type": "text",
       "label": "данные для входа в сервис",
-      "placeholder": "Email"
+      "placeholder": "Email",
+      "mask": {
+        "mask": "^\\S*@?\\S*$",
+        "regexp": true
+      }
     },
     "password": {
       "name": "password1",
@@ -54,51 +63,37 @@
     },
     "submit": "",
     "contribute": {
-      "buttons": [
-        {
-          "label": "Получать спецпредложения",
-          "checked": false,
-          "name": "contribute"
-        }
-      ]
+      "label": "Получать спецпредложения",
+      "checked": false,
+      "name": "contribute"
     },
     "pay": {
-      "buttons": [
-        {
-          "text": "Перейти к оплате",
-          "type": "button",
-          "disabled": false,
-          "value": "",
-          "view": 3,
-          "full": true,
-          "name": "pay1"
-        }
-      ]
+      "text": "Перейти к оплате",
+      "type": "submit",
+      "disabled": false,
+      "value": "",
+      "view": 3,
+      "name": "pay1"
     },
     "signIn": {
       "content": "Уже есть аккаунт на Toxin",
-      "buttons": {
-        "buttons": [
-          {
-            "text": "войти",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 1,
-            "full": false,
-            "name": "signIn",
-            "action": {
-              "type": "LINK",
-              "payload": {
-                "href": "registration-sign-in.html"
-              }
-            }
-          }
-        ]
+      "button": {
+        "text": "войти",
+        "type": "button",
+        "disabled": false,
+        "value": "",
+        "view": 1,
+        "name": "signIn"
       }
     }
   },
   "headerNotAuthorised": {
+    "logo": {
+      "src": "./assets/images/logo-color.svg",
+      "alt": "TOXIN",
+      "href": "/",
+      "title": "TOXIN"
+    },
     "nav": {
       "items": [
         {
@@ -154,7 +149,7 @@
       ],
       "authorised": false,
       "buttons": {
-                "buttons": [
+        "buttons": [
           {
             "text": "Войти",
             "type": "button",
@@ -185,10 +180,15 @@
           }
         ]
       }
-    },
-    "fill": false
+    }
   },
   "footer": {
+    "logo": {
+      "src": "./assets/images/logo-color.svg",
+      "alt": "TOXIN",
+      "href": "/",
+      "title": "TOXIN"
+    },
     "title": "title title",
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
@@ -292,9 +292,13 @@
       "field": {
         "name": "footer_subscription_email",
         "id": "footer_subscription_email",
-        "type": "email",
+        "type": "text",
         "placeholder": "Email",
-        "button": { "visible": true }
+        "button": { "visible": true, "class": "arrow-forward"},
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
     }
   },

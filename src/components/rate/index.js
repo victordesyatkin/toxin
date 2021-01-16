@@ -1,11 +1,34 @@
 import get from "lodash/get";
 import orderBy from "lodash/orderBy";
 
-import { wordForm } from "../../assets/helpers/utils";
+import {
+  renderComponents,
+  renderComponent,
+  wordForm,
+} from "../../assets/helpers/utils";
 
 import "./rate.scss";
 
 class Rate {
+  static CLASS_NAME = "RATE";
+
+  static renderComponents(props = {}) {
+    const { parents, query, render } = props;
+    renderComponents({
+      parents,
+      query: query || ".js-rate",
+      render: render || Rate._renderComponent,
+    });
+  }
+
+  static _renderComponent() {
+    renderComponent({
+      element: arguments[1],
+      className: Rate.CLASS_NAME,
+      someClass: Rate,
+    });
+  }
+
   constructor(element) {
     this._$element = $(element);
     this._init();
@@ -146,10 +169,4 @@ class Rate {
   }
 }
 
-const renderComponent = () => {
-  $(".js-rate").each(function () {
-    const components = new Rate(this);
-  });
-};
-
-document.addEventListener("DOMContentLoaded", renderComponent);
+export default Rate;

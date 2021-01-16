@@ -1,8 +1,9 @@
 include ../input/input
 include ../radio-buttons/radio-buttons
 include ../masked-text-field/masked-text-field
-include ../toggle-buttons/toggle-buttons
+include ../toggle-button/toggle-button
 include ../card-footer/card-footer
+include ../button/button
 
 mixin sign-up(props = {})
     - 
@@ -23,8 +24,8 @@ mixin sign-up(props = {})
         .sign-up__password.margin-bottom-10
             +input(password)
         .sign-up__contribute.margin-bottom-24 
-            +toggle-buttons(contribute) 
+            +toggle-button(contribute) 
         .sign-up__button-pay.margin-bottom-30
-            +buttons(pay)
+            +button(pay)
         .sign-up__section-sign-in
             +card-footer(signIn)

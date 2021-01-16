@@ -5,13 +5,17 @@ include ../../components/sign-up/sign-up
 
 block main
     main.registration.js-registration
-        - let data = htmlWebpackPlugin.options.getData();
+        - let data = htmlWebpackPlugin.options.getData() || {};
             block registration-background-wrapper
-                - let src = require('../../assets/images/registration-1.png').default;
+                -
+                    let { backgroundImage = {} } = data;
+                    let { src, alt } = backgroundImage;
                 .registration__background
-                    img(
-                        src=src
-                    )
+                    if (src)
+                        img(
+                            src=src
+                            alt=alt
+                        )
             block registration-sign-wrapper
                 section.registration__sign           
                     block registration__sign

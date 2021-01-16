@@ -4,6 +4,8 @@ import LikeButton from "../like-button";
 import "./like-buttons.scss";
 
 export default class LikeButtons {
+  static CLASS_NAME = "LIKE_BUTTONS";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -14,7 +16,11 @@ export default class LikeButtons {
   }
 
   static _renderComponent() {
-    new LikeButtons(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: LikeButtons.CLASS_NAME,
+      someClass: LikeButtons,
+    });
   }
 
   constructor(element) {

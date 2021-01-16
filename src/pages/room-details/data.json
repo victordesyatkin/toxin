@@ -1,4 +1,5 @@
 {
+  "scriptSrc": "room-details",
   "headerNotAuthorised": {
     "nav": {
       "items": [
@@ -87,9 +88,20 @@
         ]
       }
     },
-    "fill": false
+    "logo": {
+      "src": "../assets/images/logo-color.svg",
+      "alt": "TOXIN",
+      "href": "/",
+      "title": "TOXIN"
+    }
   },
   "footer": {
+    "logo": {
+      "src": "../assets/images/logo-color.svg",
+      "alt": "TOXIN",
+      "href": "/",
+      "title": "TOXIN"
+    },
     "title": "title title",
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
@@ -193,9 +205,13 @@
       "field": {
         "name": "footer_subscription_email",
         "id": "footer_subscription_email",
-        "type": "email",
+        "type": "true",
         "placeholder": "Email",
-        "button": { "visible": true }
+        "button": { "visible": true, "class": "arrow-forward" },
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
     }
   },
@@ -282,17 +298,17 @@
       {
         "title": "Комфорт",
         "content": "Шумопоглощающие стены",
-        "src": "comfort"
+        "classIcon": "icon-insert_emoticon"
       },
       {
         "title": "Удобство",
         "content": "Окно в каждой из спален",
-        "src": "usability"
+        "classIcon": "icon-location_city"
       },
       {
         "title": "Уют",
         "content": "Номер оснащён камином",
-        "src": "cosiness"
+        "classIcon": "icon-whatshot"
       }
     ]
   },
@@ -303,18 +319,26 @@
     "comments": [
       {
         "likeButton": {
-          "buttons": [{ "checked": true, "name": "male2", "count": 12 }]
+          "checked": true,
+          "name": "male2",
+          "count": 12,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
         },
-        "src": "male",
+        "src": "./assets/images/example-avatar-male.png",
         "fullName": "Мурад Сарафанов",
         "date": "5 дней назад",
         "content": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
       },
       {
         "likeButton": {
-          "buttons": [{ "checked": false, "name": "female3", "count": 2 }]
+          "checked": false,
+          "name": "female3",
+          "count": 2,
+          "defaultSrcLike": "./assets/images/favorite.svg",
+          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
         },
-        "src": "female",
+        "src": "./assets/images/example-avatar-female.png",
         "fullName": "Патрисия Стёклышкова",
         "date": "Неделю назад",
         "content": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
@@ -373,6 +397,7 @@
       "dropdownOptions": {
         "expand": false,
         "type": 1,
+        "controlVisible": true,
         "buttonDecreaseText": "-",
         "buttonIncreaseText": "+",
         "buttonCleanText": "Очистить",
@@ -391,17 +416,12 @@
     },
     "total": "38 081",
     "totalInfo": "Итого",
-    "buttons": {
-      "buttons": [
-        {
-          "text": "Забронировать",
-          "type": "button",
-          "disabled": false,
-          "value": "",
-          "view": 3,
-          "full": true
-        }
-      ]
+    "button": {
+      "text": "Забронировать",
+      "type": "submit",
+      "disabled": false,
+      "value": "",
+      "view": 3
     },
     "numberFormat": "ru-RU",
     "words": ["сутки", "суток", "суток"],
@@ -410,5 +430,22 @@
       "currency": "RUB",
       "minimumFractionDigits": 0
     }
-  }
+  },
+  "images": {
+    "image1": {
+      "src": "./assets/images/image-1.png",
+      "alt": "room-view--1"
+    },
+    "image2": {
+      "src": "./assets/images/image-2.png",
+      "alt": "room-view--2"
+    },
+    "image3": {
+      "src": "./assets/images/image-3.png",
+      "alt": "room-view--3"
+    }
+  },
+  "cancelTitle": "Отмена",
+  "cancelContent": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.",
+  "action": "/mock-address/change-me"
 }

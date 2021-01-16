@@ -1,8 +1,10 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
 import "./pagination.scss";
 
 export default class Pagination {
+  static CLASS_NAME = "PAGINATION";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -13,7 +15,11 @@ export default class Pagination {
   }
 
   static _renderComponent() {
-    new Pagination(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Pagination.CLASS_NAME,
+      someClass: Pagination,
+    });
   }
 
   constructor(element) {

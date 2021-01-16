@@ -1,7 +1,9 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
+import "../input";
 import "../radio-buttons";
-import "../toggle-buttons";
+import "../toggle-button";
+import "../button";
 
 import "./sign-up.scss";
 

@@ -52,7 +52,8 @@
       "type": "button",
       "disabled": false,
       "value": "",
-      "view": 3
+      "view": 3,
+      "defaultSrc": "./assets/images/arrow-forward.svg"
     }
   },
   "book": {
@@ -122,7 +123,8 @@
       "type": "button",
       "disabled": false,
       "value": "",
-      "view": 3
+      "view": 3,
+      "defaultSrc": "./assets/images/arrow-forward.svg"
     },
     "numberFormat": "ru-RU",
     "words": ["сутки", "суток", "суток"],
@@ -163,13 +165,15 @@
           "label": "Мужчина",
           "checked": true,
           "name": "gender1",
-          "value": "male"
+          "value": "male",
+          "defaultSrc": "./assets/images/checkbox-buttons.svg"
         },
         {
           "label": "Женщина",
           "checked": false,
           "name": "gender1",
-          "value": "female"
+          "value": "female",
+          "defaultSrc": "./assets/images/checkbox-buttons.svg"
         }
       ]
     },
@@ -203,7 +207,8 @@
         {
           "label": "Получать спецпредложения",
           "checked": false,
-          "name": "contribute"
+          "name": "contribute",
+          "defaultSrc": "./assets/images/checkbox-buttons.svg"
         }
       ]
     },
@@ -215,7 +220,8 @@
           "disabled": false,
           "value": "",
           "view": 3,
-          "name": "pay1"
+          "name": "pay1",
+          "defaultSrc": "./assets/images/arrow-forward.svg"
         }
       ]
     },
@@ -258,7 +264,8 @@
       "disabled": false,
       "value": "",
       "view": 3,
-      "name": "signIn1"
+      "name": "signIn1",
+      "defaultSrc": "./assets/images/arrow-forward.svg"
     },
     "signUp": {
       "content": "Нет аккаунта на Toxin?",

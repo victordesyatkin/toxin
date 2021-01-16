@@ -1,10 +1,10 @@
 include ../logo-image/logo-image
 include ../nav/nav
 
-mixin header(props)
-    - let { nav = {}, fill } = props || {};
+mixin header(props = {})
+    - let { nav, logo } = props;
     header.header
         .header__logo
-            +logo-image({fill})
+            +logo-image(logo)
         .header__nav
             +nav(nav)

@@ -11,27 +11,35 @@ block title
     | Room details
 block main
     - let data = htmlWebpackPlugin.options.getData();
-    article.room-details
+    article.room-details.js-room-details
         .room-details__images-section
             -   
-                let { images } = data || {};
-                let { src1, src2, src3 } = images || {};
-                src1 = src1 || require('../../pages/room-details/img/image-1.png').default;
-                src2 = src2 || require('../../pages/room-details/img/image-2.png').default;
-                src3 = src3 || require('../../pages/room-details/img/image-3.png').default;
-            .room-details__image1
-                img(
-                    src=src1
-                )
+                let { images = {}, cancelTitle, cancelContent, action } = data || {};
+                let { image1 = {}, image2 = {}, image3 = {} } = images;
+                let { src: src1, alt: alt1 } = image1;
+                let { src: src2, alt: alt2 } = image2;
+                let { src: src3, alt: alt3 } = image3;
+            .room-details__image1(
+                data-data=images.image1
+            )
+                if (src1)
+                    img(
+                        src=src1
+                        alt=alt1
+                    )
             .room-details__images
                 .room-details__image2
-                    img(
-                        src=src2
-                    )
+                    if (src2)
+                        img(
+                            src=src2
+                            alt=alt2
+                        )
                 .room-details__image3
-                    img(
-                        src=src3
-                    )
+                    if (src3)
+                        img(
+                            src=src3
+                            alt=alt3
+                        )
         .room-details__main-section
             .room-details__section-first
                 .room-details__info-section
@@ -45,10 +53,11 @@ block main
                     .room-details__rules
                         +bullet-list(data.bulletList1)
                     .room-details__cancel
-                        .room-details__cancel-title
-                            |Отмена
-                        .room-details__cancel-content
-                            |Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                        .room-details__cancel-title=cancelTitle
+                        .room-details__cancel-content=cancelContent
             .room-details__section-second
-                +card()
-                    +book(data.book)
+                form(
+                    action=action
+                )
+                    +card()
+                        +book(data.book)
