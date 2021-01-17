@@ -2,37 +2,37 @@
   "scriptSrc": "colors-and-type",
   "colors": [
     {
-      "background": "#1F2041",
+      "color": "first",
       "label": "Dark Shade 100%",
       "description": "#1F2041"
     },
     {
-      "background": "rgba(31, 32, 65, 0.75)",
+      "color": "second",
       "label": "Dark Shade 75%",
       "description": "#1F2041"
     },
     {
-      "background": "rgba(31, 32, 65, 0.50)",
+      "color": "third",
       "label": "Dark Shade 50%",
       "description": "#1F2041"
     },
     {
-      "background": "rgba(31, 32, 65, 0.25)",
+      "color": "fourth",
       "label": "Dark Shade 25%",
       "description": "#1F2041"
     },
     {
-      "background": "rgba(31, 32, 65, 0.05)",
+      "color": "fifth",
       "label": "Dark Shade 5%",
       "description": "#1F2041"
     },
     {
-      "background": "#bc9cff",
+      "color": "sixth",
       "label": "Purple",
       "description": "#BC9CFF"
     },
     {
-      "background": "#6fcf97",
+      "color": "seventh",
       "label": "Green",
       "description": "#6FCF97"
     }

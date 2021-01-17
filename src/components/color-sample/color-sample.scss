@@ -1,26 +1,48 @@
 @import "~theme/variables.scss";
 
-.color-sample {
-  flex-basis: 100%;
-  flex-grow: 1;
+$parent: ".color-sample";
+
+#{$parent} {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 
   &__section-rectangle {
     width: 70px;
     min-width: 70px;
     height: 70px;
-  }
-
-  &__rectangle {
-    width: 100%;
-    height: 100%;
     border-radius: 6px;
+    margin-right: 40px;
+
+    &_first {
+      background: $color-first-dark;
+    }
+
+    &_second {
+      background: $color-second-dark;
+    }
+
+    &_third {
+      background: $color-third-dark;
+    }
+
+    &_fourth {
+      background: $color-fourth-dark;
+    }
+
+    &_fifth {
+      background: $color-sixth-dark;
+    }
+
+    &_sixth {
+      background: $color-seventh;
+    }
+
+    &_seventh {
+      background: $color-ninth;
+    }
   }
 
   &__section-info {
-    margin-left: 14.1%;
     text-align: left;
   }
 

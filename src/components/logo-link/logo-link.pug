@@ -1,0 +1,16 @@
+include ../logo-image/logo-image
+
+mixin logo-link(props = {})
+    -
+        let
+            { href, title, ...logo } = props
+    a.logo-link(
+        itemscope
+        itemtype="http://schema.org/Brand"
+        class=className
+        href=href
+        title=title
+    )
+        +logo-image(logo)
+
+        

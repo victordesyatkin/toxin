@@ -1,12 +1,11 @@
-mixin font-sample(o)
+mixin font-sample(props = {})
     - 
-        let { content, description, size, classNames } = o || {};
-        classNames = classNames ? classNames.join(' ') : ''; 
-        classNames += size ? ` font-sample_size_${size}`: ''; 
-    .font-sample(
+        let { content, description, size } = props;
+        let sizes = { lg: "lg", md: "md", sm: "sm" };
+        let classNames = 'font-sample';
+        classNames += sizes[size] ? ` font-sample_size_${sizes[size]}`: ''; 
+    div(
         class=classNames
     )
-        if (content)
-            .font-sample__content=content
-        if (description)
-            .font-sample__description=description
+        .font-sample__content=content
+        .font-sample__description=description
