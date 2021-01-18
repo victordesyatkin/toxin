@@ -1,41 +1,5 @@
 @import "~theme/variables.scss";
 
-.margin-bottom-30 {
-  @include margin(30, "bottom");
-}
-
-.margin-bottom-27 {
-  @include margin(27, "bottom");
-}
-
-.margin-bottom-21 {
-  @include margin(21, "bottom");
-}
-
-.margin-bottom-20 {
-  @include margin(20, "bottom");
-}
-
-.margin-bottom-19 {
-  @include margin(19, "bottom");
-}
-
-.margin-bottom-18 {
-  @include margin(18, "bottom");
-}
-
-.margin-bottom-12 {
-  @include margin(12, "bottom");
-}
-
-.margin-bottom-11 {
-  @include margin(11, "bottom");
-}
-
-.margin-bottom-10 {
-  @include margin(10, "bottom");
-}
-
 .book {
   width: 100%;
   padding: 36px 24px 30px 27px;
@@ -145,10 +109,6 @@
     flex-grow: 1;
     flex-basis: 100%;
     margin-bottom: 4px;
-  }
-
-  &_margin-bottom-21 {
-    @include margin(21, "bottom");
   }
 
   &__date-dropdown {

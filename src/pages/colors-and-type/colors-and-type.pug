@@ -7,10 +7,12 @@ block main
     -
         let data = htmlWebpackPlugin.options.getData();
         let { colors = [], fonts = [] } = data || {};
-    .colors-and-type
-        .colors-and-type__colors
+    article.colors-and-type
+        section.colors-and-type__colors
             for color in colors
-                +color-sample(color)
-        .colors-and-type__fonts
+                .colors-and-type__color-item
+                    +color-sample(color)
+        section.colors-and-type__fonts
             for font in fonts
-                +font-sample(font)
+                .colors-and-type__font-item
+                    +font-sample(font)

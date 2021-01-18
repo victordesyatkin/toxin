@@ -50,34 +50,34 @@ export default class FormElements {
 
   _init() {
     const parents = this._$element;
-    Input.renderComponents({ parents: ".js-form-elements__input" });
-    Dropdown.renderComponents({ parents: ".js-form-elements__dropdown" });
+    Input.renderComponents({ parents });
+    Dropdown.renderComponents({ parents });
     MaskTextField.renderComponents({
-      parents: ".js-form-elements__masked-text-field",
+      parents,
     });
     DateDropdown.renderComponents({
-      parents: ".js-form-elements__date-dropdown",
+      parents,
     });
     FilterDateDropdown.renderComponents({
-      parents: ".js-form-elements__filter-date-dropdown",
+      parents,
     });
     SubscriptionTextField.renderComponents({
-      parents: ".js-form-elements__subscription-text-field",
+      parents,
     });
     ExpandableCheckboxList.renderComponents({
-      parents: ".js-form-elements__expandable-checkbox-list",
+      parents,
     });
     LikeButtons.renderComponents({
-      parents: ".js-form-elements__like-buttons",
+      parents,
     });
     RateButtons.renderComponents({
-      parents: ".js-form-elements__rate-buttons",
+      parents,
     });
-    Pagination.renderComponents({ parents: ".js-form-elements__pagination" });
+    Pagination.renderComponents({ parents });
     RangeSlider.renderComponents({
-      parents: ".js-form-elements__range-slider",
+      parents,
     });
-    Comment.renderComponents({ parents: ".js-form-elements__comment" });
+    Comment.renderComponents({ parents });
   }
 }
 

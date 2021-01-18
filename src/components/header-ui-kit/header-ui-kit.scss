@@ -1,9 +1,21 @@
 @import "~theme/variables.scss";
 
-.header-ui-kit {
-  padding: 2.08vw 0 0 2.08vw;
+$parent: ".header-ui-kit";
 
-  &_color {
-    background-color: $color-eighth;
+@include media-breakpoint-up($xl) {
+  #{$parent} {
+    padding: 2.14rem 0 0 2.14rem;
+  }
+}
+
+@include media-breakpoint-between($md, $xl) {
+  #{$parent} {
+    padding: 2rem 0 0 2rem;
+  }
+}
+
+@include media-breakpoint-down($md) {
+  #{$parent} {
+    padding: 1rem 0 0 1rem;
   }
 }

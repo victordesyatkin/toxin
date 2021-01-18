@@ -2,40 +2,52 @@ include ../input/input
 
 mixin dropdown(props = {})
     -
-        let { dropdownOptions, ...inputOptions } = props;
-        let { expand, type, controlVisible, forcedExpand, buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText } = dropdownOptions || {};
-        let classDropdown = 'dropdown js-dropdown' + (expand ? ' dropdown_expanded' : '') + (forcedExpand ? ' dropdown_forced-expanded' : ''); 
-        classDropdown += type === 0 ? ' dropdown_particular js-dropdown_particular' : '';
-    div(class=classDropdown, data-type=type)
-        +input(inputOptions)
+        let { dropdown = {}, input } = props;
+        let {
+            isExpand, type, isControlVisible, isForcedExpand, buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText,
+            isStraight
+        } = dropdown;
+        let className = 'dropdown';
+        let classNames = `${className} js-${className}`;
+        classNames += isExpand ? ` ${className}_expanded` : '';
+        classNames += isForcedExpand ? ` ${className}_forced-expanded` : ''; 
+        classNames += isStraight ? ` ${className}_straight` : '';
+    div(
+        class=classNames,
+        data-type=`${type}`,
+    )
+        div(
+            class=`${className}__input js-${className}__input`
+        )
+            +input(input)
         .dropdown__main.js-dropdown__main
-            block dropdown__main
-                -
-                    let { items = [] } = props || {};
-                each item in items
-                    - 
-                        let { title, value, name } = item || {};
-                        let buttonMinusClass = 'dropdown__button js-dropdown__button'  + (value === 0 ? ' dropdown__button_fade js-dropdown__button_fade' : '');
-                    .dropdown__item.js-dropdown__item
-                        input(
-                            name=name,
-                            type='hidden',
-                            value=value
-                            data-title=title
-                        )
-                        .dropdown__item-title=title
-                        .dropdown__item-control
-                            button(
-                                type="button"
-                                data-type="0"
-                                class=buttonMinusClass
-                            )=buttonDecreaseText
-                            .dropdown__item-value.js-dropdown__item-value=value
-                            button.dropdown__button(
-                                type="button"
-                                data-type="1"
-                            )=buttonIncreaseText
-            if (controlVisible)
+            -
+                let { items = [] } = props;
+            each item in items
+                - 
+                    let { title, value, name } = item || {};
+                    let buttonMinusClass = 'dropdown__button js-dropdown__button'
+                    buttonMinusClass += value === 0 ? ' dropdown__button_fade js-dropdown__button_fade' : '';
+                .dropdown__item.js-dropdown__item
+                    input(
+                        name=name,
+                        type='hidden',
+                        value=value
+                        data-title=title
+                    )
+                    .dropdown__item-title=title
+                    .dropdown__item-control
+                        button(
+                            type="button"
+                            data-type="0"
+                            class=buttonMinusClass
+                        )=buttonDecreaseText
+                        .dropdown__item-value.js-dropdown__item-value=value
+                        button.dropdown__button(
+                            type="button"
+                            data-type="1"
+                        )=buttonIncreaseText
+            if (isControlVisible)
                 .dropdown__main-control
                     button.dropdown__control-button.dropdown__control-button_clean(
                         type="button",

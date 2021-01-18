@@ -1,7 +1,7 @@
 mixin logo-image(props = {})
     -
         let
-            { src, alt, type } = props
+            { src, alt, type, itemType, itemScope, itemProp } = props
             className = 'logo-image';
             classNames = className;
             types = {
@@ -10,13 +10,13 @@ mixin logo-image(props = {})
             }
         classNames += types[type] ? ` ${className}_${types[type]}` : '';
     div(
-        itemscope
-        itemtype="http://schema.org/Brand"
+        itemscope=itemScope
+        itemtype=itemType
         class=classNames
     )
         if (src)
             img(
-                itemprop="logo"
+                itemprop=itemProp
                 src=src
                 alt=alt
                 class=`${className}__img`

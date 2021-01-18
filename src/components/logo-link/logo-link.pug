@@ -1,16 +1,19 @@
 include ../logo-image/logo-image
+include ../link/link
 
 mixin logo-link(props = {})
     -
         let
-            { href, title, ...logo } = props
-    a.logo-link(
-        itemscope
-        itemtype="http://schema.org/Brand"
-        class=className
-        href=href
-        title=title
-    )
-        +logo-image(logo)
+            { link, logo } = props
+    .logo-link
+        //- link({
+        //-     href=href,
+        //-     title=title,
+        //-     itemtype="http://schema.org/Brand"
+        //-     isItemscope 
+        //- })
+        +link(link)
+            block content
+                +logo-image(logo)
 
         

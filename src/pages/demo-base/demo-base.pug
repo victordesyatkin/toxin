@@ -2,6 +2,7 @@ extends ../base/base
 
 include ../../components/header-ui-kit/header-ui-kit
 
-block header 
-  +header-ui-kit({src: require('../../assets/images/logo-fill.svg').default, alt: 'TOXIN'})
+block header
+  - let { logo } = data || {};
+  +header-ui-kit(logo)
 block footer

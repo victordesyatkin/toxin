@@ -5,6 +5,9 @@ import Input from "../input";
 import "./dropdown.scss";
 
 export default class Dropdown {
+  static TYPE_FIRST = 0;
+  static TYPE_SECOND = 1;
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -28,9 +31,9 @@ export default class Dropdown {
     Input.renderComponents({ parents: this._$element });
     this._inputs = {};
     this._type = parseInt(this._$element.attr("data-type"));
-    this._$mainInput = $(".js-input__input", this._$element);
+    this._$mainInput = $(".js-dropdown__input input", this._$element);
     this._$mainInput.attr("disabled", true);
-    this._$inputSection = $(".js-input__section", this._$element);
+    this._$inputSection = $(".js-dropdown__input", this._$element);
     this._$inputSection.on("click", this._handlerClickExpand.bind(this));
     this._mainPlaceholder = this._$mainInput.attr("placeholder");
     this._$dropdownMain = $(".js-dropdown__main", this._$element);
@@ -41,7 +44,7 @@ export default class Dropdown {
     this._$buttonApply.on("click", this._handlerClickApply.bind(this));
     this._$main = $(".js-dropdown__main", this._$element);
     $("body").on("click", this._handlerClickDocument.bind(this));
-    this._forcedExpand = this._$element.hasClass("dropdown_forced-expanded");
+    this._isForcedExpand = this._$element.hasClass("dropdown_forced-expanded");
     this._prepareItems();
     this._createPlaceholder();
     this._updatePlaceholder();
@@ -65,7 +68,7 @@ export default class Dropdown {
   }
 
   _handlerClickExpand() {
-    if (this._forcedExpand) {
+    if (this._isForcedExpand) {
       return false;
     }
     if (this._$element.hasClass("dropdown_expanded")) {
@@ -95,21 +98,22 @@ export default class Dropdown {
 
   _createPlaceholder() {
     switch (this._type) {
-      case 0: {
+      case Dropdown.TYPE_FIRST: {
         this._placeholder = new PlaceholderRooms(this._inputs);
         break;
       }
-      case 1: {
+      case Dropdown.TYPE_SECOND: {
         this._placeholder = new PlaceholderGuests(this._inputs);
         break;
       }
       default: {
-        return new Placeholder(this._inputs);
+        this._placeholder = new Placeholder(this._inputs);
       }
     }
   }
 
   _updatePlaceholder() {
+    console.log(this._placeholder);
     let placeholder = this._placeholder._toString();
     if (placeholder) {
       this._$mainInput.attr("placeholder", placeholder);

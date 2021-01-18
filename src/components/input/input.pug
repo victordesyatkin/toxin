@@ -1,16 +1,28 @@
 mixin input(props = {})
   -
-    let { label, stateText, type, name, state, placeholder, button = {}, value, required, pattern, tabindex } = props;
-    let { visible:buttonVisible } = button;
+    let { label, stateText, type, name, isAutoFocus, placeholder, button = {}, value, required, pattern, tabindex, isFocus } = props;
+    let { isVisible: isVisibleButton } = button;
     let 
-      autofocus = state ? true : false;
-      classesInputSection = 'input__section js-input__section' + (buttonVisible ? ' input__section_offset' : '') + (autofocus ? ' input__section_hovered' : '');
-      inputClasses = 'input__input js-input__input';
-  .input.js-input
-    .input__info
-      if label
-        .input__label
-          label.input__label-text(for=name)=label
+      className = 'input';
+      classNames = `${className} js-${className}`;
+      classesInputSection = `${className}__section js-${className}__section`;
+      inputClasses = `${className}__input js-${className}__input`;
+    classesInputSection += isAutoFocus || isFocus ? ` ${className}__section_focused` : '';
+    classesInputSection += isVisibleButton ? ` ${className}__section_offset` : '';
+  div(
+    class=classNames
+  )
+    div(
+      class=`${className}__info`
+    )
+      if (label)
+        div(
+          class=`${className}__label`
+        )
+          label(
+            class=`${className}__label-text`
+            for=name
+          )=label
       if stateText
         .input__state-text=stateText
     div(class=classesInputSection)
@@ -22,28 +34,29 @@ mixin input(props = {})
           pattern = pattern
           tabindex = tabindex
           required = required
-          autofocus = autofocus
+          autofocus = isAutoFocus
           value = value
           class = inputClasses
         )
-        if buttonVisible
+        if (isVisibleButton)
           - 
-            let { type:buttonType, class:buttonClass, name:buttonName, value:buttonValue } = button || {};
-            let buttonClasses = 'input__button js-input__button';
+            let { type: buttonType, classIcon: buttonIconClass, name: buttonName, value: buttonValue } = button;
+            let buttonClass = `${className}__button`;
+            let buttonClasses = `${buttonClass} js-${buttonClass}`;
 
-            switch (buttonClass) {
+            switch (buttonIconClass) {
               case 'arrow-down': {
-                buttonClasses += ' input__button_default';
+                buttonClasses += ` ${buttonClass}_default`;
                 buttonClasses += ' icon-expand_more';
                 break;
               }
               case 'arrow-forward': {
-                buttonClasses += ' input__button_forwarded';
+                buttonClasses += ` ${buttonClass}_forwarded`;
                 buttonClasses += ' icon-arrow_forward';
                 break;
               }
               default: {
-                buttonClasses += buttonClass ? ` ${buttonClass}` : '';
+                buttonClasses += buttonIconClass ? ` ${buttonIconClass}` : '';
               }
             }
           button(

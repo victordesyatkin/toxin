@@ -7,11 +7,11 @@ $parent: ".color-sample";
   align-items: center;
 
   &__section-rectangle {
-    width: 70px;
-    min-width: 70px;
-    height: 70px;
-    border-radius: 6px;
-    margin-right: 40px;
+    width: 5rem;
+    min-width: 5rem;
+    height: 5rem;
+    border-radius: 0.42rem;
+    margin-right: 2.85rem;
 
     &_first {
       background: $color-first-dark;
@@ -52,12 +52,20 @@ $parent: ".color-sample";
   }
 
   &__label {
-    line-height: 28.5px;
-    padding-top: 3px;
+    line-height: 2.03rem;
+    padding-top: 0.21rem;
   }
 
   &__description {
-    line-height: 27.79px;
+    line-height: 1.98rem;
     @include font-family-first-regular;
+  }
+}
+
+@include media-breakpoint-down($sm) {
+  #{$parent} {
+    &__section-rectangle {
+      margin-right: 1rem;
+    }
   }
 }

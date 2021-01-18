@@ -1,5 +1,14 @@
 {
   "scriptSrc": "form-elements",
+  "logo": {
+    "itemScope": "http://schema.org/Brand",
+    "itemProp": "logo",
+    "type": "monochromatic",
+    "src": "assets/images/logo-fill.svg",
+    "alt": "TOXIN",
+    "itemType": "http://schema.org/Brand",
+    "isItemScope": true
+  },
   "input1": {
     "name": "email",
     "id": "email",
@@ -15,24 +24,27 @@
     "label": "text field",
     "placeholder": "This is pretty awesome",
     "stateText": "hover / focus",
-    "state": "hover"
+    "isAutoFocus": true
   },
   "dropdown1": {
-    "dropdownOptions": {
-      "expand": false,
+    "dropdown": {
       "type": 1,
-      "controlVisible": true,
+      "isExpand": false,
+      "isControlVisible": true,
+      "isStraight": false,
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
       "buttonCleanText": "Очистить",
       "buttonApplyText": "Применить"
     },
-    "name": "guests",
-    "stateText": "Default",
-    "type": "text",
-    "label": "dropdown",
-    "placeholder": "Сколько гостей",
-    "button": { "class": "arrow-down", "visible": true },
+    "input": {
+      "name": "guests",
+      "stateText": "Default",
+      "type": "text",
+      "label": "dropdown",
+      "placeholder": "Сколько гостей",
+      "button": { "classIcon": "arrow-down", "isVisible": true }
+    },
     "items": [
       { "title": "взрослые", "value": 0 },
       { "title": "дети", "value": 0 },

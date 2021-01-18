@@ -1,5 +1,14 @@
 {
   "scriptSrc": "colors-and-type",
+  "logo": {
+    "itemScope": "http://schema.org/Brand",
+    "itemProp": "logo",
+    "type": "monochromatic",
+    "src": "assets/images/logo-fill.svg",
+    "alt": "TOXIN",
+    "itemType": "http://schema.org/Brand",
+    "isItemScope": true
+  },
   "colors": [
     {
       "color": "first",

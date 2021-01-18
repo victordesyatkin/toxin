@@ -1,4 +1,4 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import LikeButton from "../like-button";
 
 import "./like-buttons.scss";

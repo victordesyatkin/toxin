@@ -3,12 +3,12 @@
 @import "~assets/fonts/Icomoon/style.css";
 
 /***** Variables *****/
-$xxs: 320px;
+$xxs: 319px;
 $xs: 575px;
 $sm: 767px;
 $md: 991px;
 $lg: 1199px;
-$xl: 1440px;
+$xl: 1439px;
 
 $color-dark-shade100: #1f2041;
 $color-dark-shade75: rgba(31, 32, 65, 0.75);
@@ -58,12 +58,6 @@ $box-shadow-first-color: rgba(0, 0, 0, 0.2);
 $border-first-color: rgba(0, 0, 0, 0.12);
 
 /***** Mixin *****/
-
-@mixin focus {
-  &:focus {
-    outline: 1px solid $color-fifth-dark;
-  }
-}
 
 @mixin user-select-none {
   -webkit-user-select: none;
@@ -117,20 +111,20 @@ $border-first-color: rgba(0, 0, 0, 0.12);
 @mixin h1 {
   @include base-h;
   font-size: 1.71rem;
-  line-height: 29.26px;
+  line-height: 2.09rem;
 }
 
 @mixin h2 {
   @include base-h;
   font-size: 1.36rem;
-  line-height: 23.16px;
+  line-height: 1.65rem;
 }
 
 @mixin h3 {
   @include base-h;
   font-size: 0.85rem;
   text-transform: uppercase;
-  line-height: 14.63px;
+  line-height: 1.04rem;
 }
 
 @mixin h3-lite {
@@ -158,10 +152,6 @@ $border-first-color: rgba(0, 0, 0, 0.12);
   @media (min-width: $min-width + 1) and (max-width: $max-width) {
     @content;
   }
-}
-
-@mixin margin($margin, $direction) {
-  margin-#{$direction}: #{$margin}px;
 }
 
 @mixin column($screen-width, $count) {

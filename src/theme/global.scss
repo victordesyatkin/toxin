@@ -13,6 +13,11 @@ body {
   @include font-family-first-regular;
 }
 
+body {
+  color: $color-dark-shade75;
+  line-height: 1.71rem;
+}
+
 h1 {
   @include h1;
 }
@@ -25,19 +30,6 @@ h3 {
   @include h3;
 }
 
-body {
-  color: $color-dark-shade75;
-  line-height: 1.7142rem;
-}
-
-.dark25 {
-  color: $color-dark-shade25;
-}
-
-.dark5 {
-  color: $color-dark-shade5;
-}
-
 ::-webkit-input-placeholder {
   color: $color-fourth-dark;
   @include font-family-first-regular;
@@ -47,107 +39,13 @@ body {
   color: $color-fourth-dark;
   @include font-family-first-regular;
 }
+
 :-ms-input-placeholder {
   color: $color-fourth-dark;
   @include font-family-first-regular;
 }
+
 :-moz-placeholder {
   color: $color-fourth-dark;
   @include font-family-first-regular;
-}
-
-.margin-right-41 {
-  @include margin(41, "right");
-}
-
-.margin-right-40 {
-  @include margin(40, "right");
-}
-
-.margin-top-72 {
-  @include margin(72, "top");
-}
-
-.margin-top-24 {
-  @include margin(24, "top");
-}
-
-.margin-bottom-47 {
-  @include margin(47, "bottom");
-}
-
-.margin-bottom-40 {
-  @include margin(40, "bottom");
-}
-
-.margin-bottom-39 {
-  @include margin(39, "bottom");
-}
-
-.margin-bottom-38 {
-  @include margin(38, "bottom");
-}
-
-.margin-bottom-37 {
-  @include margin(37, "bottom");
-}
-
-.margin-bottom-36 {
-  @include margin(36, "bottom");
-}
-
-.margin-bottom-35 {
-  @include margin(35, "bottom");
-}
-
-.margin-bottom-30 {
-  @include margin(30, "bottom");
-}
-
-.margin-bottom-24 {
-  @include margin(24, "bottom");
-}
-
-.margin-bottom-21 {
-  @include margin(21, "bottom");
-}
-
-.margin-bottom-20 {
-  @include margin(20, "bottom");
-}
-
-.margin-bottom-14 {
-  @include margin(14, "bottom");
-}
-
-.margin-bottom-13 {
-  @include margin(13, "bottom");
-}
-
-.margin-bottom-10 {
-  @include margin(10, "bottom");
-}
-
-.margin-bottom-6 {
-  @include margin(6, "bottom");
-}
-
-.margin-bottom-5 {
-  @include margin(5, "bottom");
-}
-
-.margin-bottom-4 {
-  @include margin(4, "bottom");
-}
-
-.width-380 {
-  width: 380px;
-}
-
-.width-320 {
-  width: 320px;
-}
-
-.width-270 {
-  width: 270px;
 }

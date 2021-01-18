@@ -10,10 +10,6 @@
     letter-spacing: 0px;
   }
 
-  &_margin-bottom-16 {
-    @include margin(16, "bottom");
-  }
-
   &__button-sign-in {
     .buttons__items.buttons__items_full.buttons__view.buttons__view_3 {
       button {

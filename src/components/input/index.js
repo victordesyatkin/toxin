@@ -33,11 +33,11 @@ export default class Input {
   }
 
   _focusIn() {
-    $(".js-input__section", this._$element).addClass("input__section_hovered");
+    $(".js-input__section", this._$element).addClass("input__section_focused");
   }
   _focusOut() {
     $(".js-input__section", this._$element).removeClass(
-      "input__section_hovered"
+      "input__section_focused"
     );
   }
 }
