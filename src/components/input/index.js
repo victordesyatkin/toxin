@@ -2,11 +2,11 @@ import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 
 import "./input.scss";
 
-export default class Input {
+class Input {
   static CLASS_NAME = "INPUT";
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
-    renderComponents({
+    return renderComponents({
       parents,
       query: query || ".js-input",
       render: render || Input._renderComponent,
@@ -14,7 +14,7 @@ export default class Input {
   }
 
   static _renderComponent() {
-    renderComponent({
+    return renderComponent({
       element: arguments[1],
       className: Input.CLASS_NAME,
       someClass: Input,
@@ -27,17 +27,41 @@ export default class Input {
     this._init();
   }
 
-  _init() {
-    this._$element.on("focusin", this._focusIn.bind(this));
-    this._$element.on("focusout", this._focusOut.bind(this));
+  toggleStraight() {
+    if (this._$element.hasClass("input_straight")) {
+      this._$element.removeClass("input_straight");
+    } else {
+      this._$element.addClass("input_straight");
+    }
   }
 
-  _focusIn() {
+  toggleExpand() {
+    if (this._$element.hasClass("input_expanded")) {
+      this._$element.removeClass("input_expanded");
+    } else {
+      this._$element.addClass("input_expanded");
+    }
+  }
+
+  get input() {
+    return this._input;
+  }
+
+  _init() {
+    this._$element.on("focusin", this._handleInputFocusIn.bind(this));
+    this._$element.on("focusout", this._handleInputFocusOut.bind(this));
+    this._input = $("input", this._$element);
+  }
+
+  _handleInputFocusIn() {
     $(".js-input__section", this._$element).addClass("input__section_focused");
   }
-  _focusOut() {
+
+  _handleInputFocusOut() {
     $(".js-input__section", this._$element).removeClass(
       "input__section_focused"
     );
   }
 }
+
+export default Input;

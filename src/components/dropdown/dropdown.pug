@@ -4,8 +4,8 @@ mixin dropdown(props = {})
     -
         let { dropdown = {}, input } = props;
         let {
-            isExpand, type, isControlVisible, isForcedExpand, buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText,
-            isStraight
+            isExpand, isForcedExpand, isControlVisible, isStraight,
+            buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText, type,
         } = dropdown;
         let className = 'dropdown';
         let classNames = `${className} js-${className}`;
@@ -19,7 +19,7 @@ mixin dropdown(props = {})
         div(
             class=`${className}__input js-${className}__input`
         )
-            +input(input)
+            +input({...input, theme: 'dropdown', isStraight: isStraight || type === 0, isExpand: isForcedExpand || isExpand})
         .dropdown__main.js-dropdown__main
             -
                 let { items = [] } = props;

@@ -1,7 +1,13 @@
 mixin input(props = {})
   -
-    let { label, stateText, type, name, isAutoFocus, placeholder, button = {}, value, required, pattern, tabindex, isFocus } = props;
+    let {
+      label, stateText, type, name, isAutoFocus, placeholder, button = {}, value, required, pattern, tabindex, isFocus, forDrop, theme,
+      isStraight, isExpand
+    } = props;
     let { isVisible: isVisibleButton } = button;
+    let themes = {
+      dropdown: 'dropdown',
+    }
     let 
       className = 'input';
       classNames = `${className} js-${className}`;
@@ -9,6 +15,9 @@ mixin input(props = {})
       inputClasses = `${className}__input js-${className}__input`;
     classesInputSection += isAutoFocus || isFocus ? ` ${className}__section_focused` : '';
     classesInputSection += isVisibleButton ? ` ${className}__section_offset` : '';
+    classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    classNames += isStraight ? ` ${className}_straight` : '';
+    classNames += isExpand ? ` ${className}_expanded` : '';
   div(
     class=classNames
   )

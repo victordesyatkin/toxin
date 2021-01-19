@@ -28,9 +28,11 @@ function renderComponents(props = {}) {
   } else if (isEmpty(parents)) {
     parents = [undefined];
   }
+  const $elements = [];
   for (const parent of parents) {
-    $(query, parent).each(render);
+    $elements.push($(query, parent).each(render));
   }
+  return $elements;
 }
 
 function renderComponent({ element, className, someClass }) {
