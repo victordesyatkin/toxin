@@ -22,6 +22,18 @@ $parent: ".form-elements";
   &__dropdown {
     margin-bottom: 1.61rem;
   }
+
+  &__masked-text-field {
+    margin-bottom: 2.85rem;
+  }
+
+  &__date-dropdown {
+    margin-bottom: 2.89rem;
+  }
+
+  &__filter-date-dropdown {
+    margin-bottom: 2.92rem;
+  }
 }
 
 @media (min-width: $xl) {

@@ -7,7 +7,7 @@ import { renderComponents } from "../../assets/helpers/utils";
 
 import "./date-dropdown.scss";
 
-export default class DateDropdown {
+class DateDropdown {
   static TYPE_CLEAN = 0;
   static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
@@ -40,7 +40,7 @@ export default class DateDropdown {
     this._inputStart.attr("disabled", true);
     this._inputEnd = $(".js-input__input", this._$sections.get(1));
     this._inputEnd.attr("disabled", true);
-    this._$sections.on("click", this._toggleVisibleCalendar.bind(this));
+    this._$sections.on("click", this._handleInputClick.bind(this));
     this._$calendar = $(".js-date-dropdown__section-calendar", this._$element);
     this._datepicker = $(
       `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
@@ -60,12 +60,12 @@ export default class DateDropdown {
       `button[data-type="${DateDropdown.TYPE_APPLY}"]`,
       this._$calendar
     );
-    this._buttonClean.on("click", this._handlerClean.bind(this));
-    this._buttonApply.on("click", this._handlerApply.bind(this));
-    $(document).on("click", this._handlerClickDocument.bind(this));
+    this._buttonClean.on("click", this._handleCleanButtonClick.bind(this));
+    this._buttonApply.on("click", this._handleApplyButtonClick.bind(this));
+    $(document).on("click", this._handleDocumentClick.bind(this));
   }
 
-  _toggleVisibleCalendar() {
+  _handleInputClick() {
     if (get(this._datepicker, ["visible"])) {
       this._datepicker.hide();
     } else {
@@ -73,12 +73,12 @@ export default class DateDropdown {
     }
   }
 
-  _handlerClean() {
+  _handleCleanButtonClick() {
     this._setValue("start", "");
     this._setValue("end", "");
   }
 
-  _handlerApply(isToggle = true) {
+  _handleApplyButtonClick(isToggle = true) {
     const [start, end] = this._datepicker.selectedDates;
     if (start) {
       this._setValue("start", this._prepareDate(start));
@@ -90,7 +90,7 @@ export default class DateDropdown {
     } else {
       this._setValue("end", "");
     }
-    isToggle && this._toggleVisibleCalendar();
+    isToggle && this._handleInputClick();
   }
 
   _prepareDate(date) {
@@ -125,13 +125,13 @@ export default class DateDropdown {
     return date;
   }
 
-  _handlerClickDocument(event) {
-    const classTarget = `.${$(event.target, this._$element).attr("class")}`;
+  _handleDocumentClick(event) {
+    const targetClass = `.${$(event.target, this._$element).attr("class")}`;
 
     if (
       !$(event.target).closest(this._$element).length &&
       !$(event.target, this._$element).hasClass("datepicker--cell") &&
-      !$(classTarget, this._$element).length
+      !$(targetClass, this._$element).length
     ) {
       this._datepicker.hide();
     }
@@ -167,3 +167,5 @@ export default class DateDropdown {
     return DateDropdown.TYPES.indexOf(type) > -1;
   }
 }
+
+export default DateDropdown;

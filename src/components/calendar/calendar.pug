@@ -1,13 +1,23 @@
 mixin calendar(props = {})
-    .calendar.js-calendar(data-options=props)
+    - 
+        let
+            { isOpen, isForceVisible, buttonCleanText, buttonApplyText, withoutBorder, theme } = props;
+            className = 'calendar'; 
+            classNames = `${className} js-${className}`;
+            themes = {
+                dateDropDown: 'date_dropdown'
+            }
+        classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    div(
+        class=classNames
+        data-options=props
+    )
         - 
             let
-                { isOpen, forceVisible, buttonCleanText, buttonApplyText, withoutBorder } = props;
-                className = 'calendar'; 
-                classes = `${className}__main js-${className}__main`;
-            classes += isOpen ? ` ${className}__main_opened` : ` ${className}__main_hidden`;
-            classes += withoutBorder ? ' ${className}__main_with-out-border' : '';
-        div(class = classes)
+                mainClassNames = `${className}__main js-${className}__main`;
+            mainClassNames += isOpen ? ` ${className}__main_opened` : ` ${className}__main_hidden`;
+            mainClassNames += withoutBorder ? ` ${className}_with-out-border` : '';
+        div(class = mainClassNames)
             input(type="hidden", date-isCalendar="1")
             .calendar__control
                 button.calendar__button.calendar__button_clean.js-calendar__button_clean(type="button", data-type=0)

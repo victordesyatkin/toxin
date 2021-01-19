@@ -7,7 +7,7 @@ import "../input";
 
 import "./masked-text-field.scss";
 
-export default class MaskedTextField {
+class MaskedTextField {
   static CLASS_NAME = "MASKED_TEXT_FIELD";
 
   static defaultProps = {
@@ -79,3 +79,5 @@ export default class MaskedTextField {
     IMask(selector.get(0), maskOptions);
   }
 }
+
+export default MaskedTextField;

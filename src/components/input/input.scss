@@ -55,6 +55,7 @@ $parent: ".input";
   &__section_offset {
     padding-right: 3.14rem;
   }
+
   &__section_hovered,
   &__section_focused,
   &__section:hover,
@@ -133,30 +134,41 @@ $parent: ".input";
     }
   }
 
-  #{$parent}__input:hover,
-  #{$parent}__input:focus {
-    color: $color-second-dark;
-
-    #{$parent}__input::placeholder,
-    #{$parent}__input::placeholder,
-    #{$parent}__button_default {
+  &_not-focused {
+    #{$parent}__section,
+    #{$parent}__section:hover,
+    #{$parent}__section:focus,
+    #{$parent}__section:active {
       color: $color-second-dark;
+      border: 1px solid $color-fourth;
+
+      #{$parent}__button_default {
+        color: $color-third;
+      }
+
+      #{$parent}__input,
+      #{$parent}__input::placeholder {
+        color: $color-second;
+      }
     }
   }
 
   &_theme_dropdown {
     #{$parent}__section {
-      // border-radius: 4px;
       #{$parent}__input {
-        color: $color-second-dark;
+        color: $color-second;
       }
 
       input::placeholder {
-        color: $color-second-dark;
+        color: $color-second;
       }
 
       input#{$parent}__input:disabled {
         background: none;
+      }
+
+      #{$parent}__button_default {
+        color: $color-second;
       }
     }
   }
@@ -172,8 +184,8 @@ $parent: ".input";
     #{$parent}__section {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      color: $color-second-dark;
-      border-color: $color-third-dark;
+      color: $color-second;
+      border-color: $color-third;
       outline: 1px solid $color-sixth-dark;
 
       #{$parent}__input::placeholder,

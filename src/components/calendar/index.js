@@ -5,7 +5,7 @@ import { renderComponents } from "../../assets/helpers/utils";
 
 import "./calendar.scss";
 
-export default class Calendar {
+class Calendar {
   static OPTIONS = {
     inline: true,
     language: "ru",
@@ -56,13 +56,13 @@ export default class Calendar {
     this._$main = $(".js-calendar__main", this._$element);
     this._$buttonClean = $(".js-calendar__button_clean", this._$element).on(
       "click",
-      this._handlerClean.bind(this)
+      this._handleCleanButtonClick.bind(this)
     );
     this._$buttonApply = $(".js-calendar__button_apply", this._$element).on(
       "click",
-      this._handlerApply.bind(this)
+      this._handleApplyButtonClick.bind(this)
     );
-    this._$element.on("click", this._handlerClickCalendar.bind(this));
+    this._$element.on("click", this._handleBlockClick.bind(this));
     this._toggleVisibleButtonClean();
     this._isOpen = get(this._$element.data(), ["options", "isOpen"]);
     this._isOpen && this._datepicker.show();
@@ -97,11 +97,11 @@ export default class Calendar {
     }
   }
 
-  _handlerClean() {
+  _handleCleanButtonClick() {
     this._datepicker.clear();
   }
 
-  _handlerApply() {}
+  _handleApplyButtonClick() {}
 
   _toggleVisibleButtonClean() {
     const selectedDatesLength = get(this._datepicker, ["selectedDates"], [])
@@ -120,23 +120,23 @@ export default class Calendar {
   }
 
   _toggleVisibleMain() {
-    if (get(this._options, ["forceVisible"])) {
+    if (get(this._options, ["isForceVisible"])) {
       return false;
     }
-    const visible = get(this._datepicker, ["visible"]);
-    if (visible && this._$main.hasClass("calendar__main_hidden")) {
+    const isVisible = get(this._datepicker, ["visible"]);
+    if (isVisible && this._$main.hasClass("calendar__main_hidden")) {
       this._$main.removeClass("calendar__main_hidden");
-    } else if (!visible && !this._$main.hasClass("calendar__main_hidden")) {
+    } else if (!isVisible && !this._$main.hasClass("calendar__main_hidden")) {
       this._$main.addClass("calendar__main_hidden");
       this._$main.removeClass("calendar__main_opened");
-    } else if (!visible && this._$main.hasClass("calendar__main_opened")) {
+    } else if (!isVisible && this._$main.hasClass("calendar__main_opened")) {
       this._$main.removeClass("calendar__main_opened");
       this._$main.addClass("calendar__main_hidden");
     }
     return false;
   }
 
-  _handlerClickCalendar() {
+  _handleBlockClick() {
     this._toggleVisibleButtonClean();
   }
 
@@ -190,3 +190,5 @@ export default class Calendar {
     return date;
   }
 }
+
+export default Calendar;

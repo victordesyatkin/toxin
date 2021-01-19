@@ -2,43 +2,19 @@
 
 $parent: ".date-dropdown";
 
-body #{$parent} {
+#{$parent} {
   &__section-dropdown {
     display: flex;
     justify-content: space-between;
-
-    .input__input,
-    .input__input:focus,
-    .input__input:hover,
-    .input__input::placeholder {
-      border-color: $color-fourth-dark;
-      color: $color-second-dark;
-    }
-
-    .input__section {
-      cursor: pointer;
-
-      button.input__button {
-        color: $color-third-dark;
-      }
-    }
   }
 
   &__section-dropdown > div:nth-child(2) {
-    margin-left: 20px;
+    margin-left: 1.42rem;
   }
 
   &__section-calendar {
     position: relative;
     width: 100%;
-
-    .calendar {
-      position: absolute;
-      width: 100%;
-    }
-
-    .calendar__main {
-      top: 5px;
-    }
+    margin-top: 0.35rem;
   }
 }

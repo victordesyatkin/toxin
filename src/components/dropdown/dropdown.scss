@@ -7,10 +7,6 @@
     @include h3;
   }
 
-  // .input__stateText {
-  //   margin-right: 2px;
-  // }
-
   &_forced-expanded,
   &_expanded {
     .dropdown__main {
@@ -35,11 +31,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 7px 0 14px;
+    padding: 0.42rem 0.5rem 0 1rem;
   }
 
   &__item:last-child {
-    padding-bottom: 8px;
+    padding-bottom: 0.57rem;
   }
 
   &__item-control,
@@ -52,8 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
+    width: 2.14rem;
+    height: 2.14rem;
   }
 
   &__button {
@@ -62,7 +58,7 @@
     color: $color-third-dark;
     box-sizing: border-box;
     background-color: transparent;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: normal;
     cursor: pointer;
   }
@@ -78,13 +74,13 @@
   }
 
   &__item-value {
-    width: 32px;
+    width: 2.28rem;
   }
 
   &__main-control {
     display: flex;
     justify-content: space-between;
-    padding: 19px 7px 14px 13px;
+    padding: 1.35rem 0.5rem 1rem 0.92rem;
   }
 
   &__control-button,

@@ -3,8 +3,8 @@ include ../input/input
 mixin masked-text-field(props = {})
     -
         let
-            { mask, ...rest } = props;
+            { mask, input } = props;
     .masked-text-field.js-masked-text-field(
         data-options=mask
     )
-        +input(rest)
+        +input(input)

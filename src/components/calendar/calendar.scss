@@ -4,6 +4,10 @@
 .calendar {
   position: relative;
 
+  &_theme_date_dropdown {
+    top: 0.35rem;
+  }
+
   &__main {
     position: absolute;
     width: 100%;

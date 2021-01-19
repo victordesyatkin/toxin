@@ -4,7 +4,7 @@ include ../calendar/calendar
 mixin date-dropdown(props = {})
     .date-dropdown.js-date-dropdown
         .date-dropdown__section-dropdown.js-date-dropdown__section-dropdown
-            - let {fieldStart, fieldEnd, calendar } = props || {};
+            - let {fieldStart, fieldEnd, calendar } = props;
             +masked-text-field(fieldStart)
             +masked-text-field(fieldEnd)
         .date-dropdown__section-calendar.js-date-dropdown__section-calendar

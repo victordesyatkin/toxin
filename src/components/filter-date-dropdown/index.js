@@ -4,7 +4,7 @@ import { renderComponents } from "../../assets/helpers/utils";
 
 import "./filter-date-dropdown.scss";
 
-export default class FilterDateDropdown {
+class FilterDateDropdown {
   static TYPE_FAKE = 0;
   static TYPE_MAIN = 3;
   static TYPE_INPUT = 1;
@@ -44,7 +44,7 @@ export default class FilterDateDropdown {
       ".js-filter-date-dropdown__section-up",
       this._$element
     );
-    this._$sectionUp.on("click", this._toggleMainBlock.bind(this));
+    this._$sectionUp.on("click", this._handleMainBlockClick.bind(this));
     this._$mainBlock = $(
       `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
       this._$element
@@ -67,9 +67,9 @@ export default class FilterDateDropdown {
       `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
       this._$element
     );
-    this._buttonClean.on("click", this._handlerClean.bind(this));
-    this._buttonApply.on("click", this._handlerApply.bind(this));
-    $(document).on("click", this._handlerClickDocument.bind(this));
+    this._buttonClean.on("click", this._handleCleanButtonClick.bind(this));
+    this._buttonApply.on("click", this._handleApplyButtonClick.bind(this));
+    $(document).on("click", this._handleDocumentClick.bind(this));
     this._forcedVisible = this._$element.hasClass(
       "filter-date-dropdown_forced-expanded"
     );
@@ -83,7 +83,10 @@ export default class FilterDateDropdown {
     }
     date = new Date(date);
     date = date
-      .toLocaleString("ru", { day: "2-digit", month: "short" })
+      .toLocaleString("ru", {
+        day: "2-digit",
+        month: "short",
+      })
       .replace(".", "");
     return date;
   }
@@ -96,19 +99,19 @@ export default class FilterDateDropdown {
     );
   }
 
-  _handlerClean() {
+  _handleCleanButtonClick() {
     this._$input.val("");
     this._changeFake();
   }
 
-  _handlerApply() {
+  _handleApplyButtonClick() {
     const selectedDates = this._datepicker.selectedDates || [];
     this._$input.val(JSON.stringify(selectedDates));
     this._changeFake();
-    this._toggleMainBlock();
+    this._handleMainBlockClick();
   }
 
-  _toggleMainBlock() {
+  _handleMainBlockClick() {
     if (this._forcedVisible) {
       return false;
     }
@@ -116,18 +119,19 @@ export default class FilterDateDropdown {
     this._$element.toggleClass("filter-date-dropdown_expanded");
   }
 
-  _handlerClickDocument(event) {
+  _handleDocumentClick(event) {
     if (this._forcedVisible) {
       return false;
     }
     const classTarget = `.${$(event.target, this._$element).attr("class")}`;
     if (
-      !$(event.target).closest(this._component).length &&
+      !$(event.target).closest(this._$element).length &&
       !$(event.target, this._$element).hasClass("datepicker--cell") &&
       !$(classTarget, this._$element).length
     ) {
       this._$mainBlock.slideUp();
       this._$element.removeClass("filter-date-dropdown_expanded");
+      console.log("_handleDocumentClick ");
     }
   }
 
@@ -177,3 +181,5 @@ export default class FilterDateDropdown {
     return JSON.parse(this._$input.val() || "[]");
   }
 }
+
+export default FilterDateDropdown;

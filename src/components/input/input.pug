@@ -2,7 +2,7 @@ mixin input(props = {})
   -
     let {
       label, stateText, type, name, isAutoFocus, placeholder, button = {}, value, required, pattern, tabindex, isFocus, forDrop, theme,
-      isStraight, isExpand
+      isStraight, isExpand, notFocus
     } = props;
     let { isVisible: isVisibleButton } = button;
     let themes = {
@@ -18,6 +18,7 @@ mixin input(props = {})
     classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     classNames += isStraight ? ` ${className}_straight` : '';
     classNames += isExpand ? ` ${className}_expanded` : '';
+    classNames += notFocus ? ` ${className}_not-focused` : '';
   div(
     class=classNames
   )
@@ -36,20 +37,20 @@ mixin input(props = {})
         .input__state-text=stateText
     div(class=classesInputSection)
         input(
-          id = name
-          type = type
-          name = name
-          placeholder = placeholder
-          pattern = pattern
-          tabindex = tabindex
-          required = required
-          autofocus = isAutoFocus
-          value = value
-          class = inputClasses
+          id=name
+          type=type
+          name=name
+          placeholder=placeholder
+          pattern=pattern
+          tabindex=tabindex
+          required=required
+          autofocus=isAutoFocus
+          value=value
+          class=inputClasses
         )
         if (isVisibleButton)
           - 
-            let { type: buttonType, classIcon: buttonIconClass, name: buttonName, value: buttonValue } = button;
+            let { type: buttonType, iconClass: buttonIconClass, name: buttonName, value: buttonValue } = button;
             let buttonClass = `${className}__button`;
             let buttonClasses = `${buttonClass} js-${buttonClass}`;
 
@@ -72,4 +73,5 @@ mixin input(props = {})
             type=buttonType
             name=buttonName
             class=buttonClasses
+            data-class=buttonClasses
           )
