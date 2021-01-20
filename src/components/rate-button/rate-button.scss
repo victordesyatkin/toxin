@@ -13,16 +13,16 @@ $parent: "rate-button";
     align-items: center;
 
     &:first-child {
-      padding-left: 2px;
+      padding-left: 0.14rem;
     }
   }
 
   &__rate {
     position: relative;
-    width: 20px;
-    height: 19px;
+    width: 1.42rem;
+    height: 1.35rem;
     cursor: pointer;
-    margin-left: 5px;
+    margin-left: 0.35rem;
 
     &:first-of-type {
       margin-left: 0;
@@ -33,7 +33,7 @@ $parent: "rate-button";
     position: absolute;
     top: 0;
     left: 0;
-    height: 19px;
+    height: 1.35rem;
     display: none;
   }
 

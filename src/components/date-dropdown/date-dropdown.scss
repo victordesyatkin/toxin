@@ -16,5 +16,10 @@ $parent: ".date-dropdown";
     position: relative;
     width: 100%;
     margin-top: 0.35rem;
+    display: none;
+
+    &__expanded {
+      display: block;
+    }
   }
 }

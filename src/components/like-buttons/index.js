@@ -1,9 +1,8 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import LikeButton from "../like-button";
-
 import "./like-buttons.scss";
 
-export default class LikeButtons {
+class LikeButtons {
   static CLASS_NAME = "LIKE_BUTTONS";
 
   static renderComponents(props = {}) {
@@ -33,3 +32,5 @@ export default class LikeButtons {
     LikeButton.renderComponents({ parents: this._$element });
   }
 }
+
+export default LikeButtons;

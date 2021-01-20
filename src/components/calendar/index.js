@@ -47,8 +47,6 @@ class Calendar {
       ...get(this._$element.data(), ["options"]),
       onSelect: this._handlerSelect.bind(this),
       onRenderCell: this._onRenderCell.bind(this),
-      onShow: this._toggleVisibleMain.bind(this),
-      onHide: this._toggleVisibleMain.bind(this),
     };
     this._options = this._prepareOptions(this._options);
     this._$input.datepicker(this._options);
@@ -64,8 +62,6 @@ class Calendar {
     );
     this._$element.on("click", this._handleBlockClick.bind(this));
     this._toggleVisibleButtonClean();
-    this._isOpen = get(this._$element.data(), ["options", "isOpen"]);
-    this._isOpen && this._datepicker.show();
     this._selectDate();
   }
 
@@ -117,23 +113,6 @@ class Calendar {
     ) {
       this._$buttonClean.removeClass("calendar__button_hide");
     }
-  }
-
-  _toggleVisibleMain() {
-    if (get(this._options, ["isForceVisible"])) {
-      return false;
-    }
-    const isVisible = get(this._datepicker, ["visible"]);
-    if (isVisible && this._$main.hasClass("calendar__main_hidden")) {
-      this._$main.removeClass("calendar__main_hidden");
-    } else if (!isVisible && !this._$main.hasClass("calendar__main_hidden")) {
-      this._$main.addClass("calendar__main_hidden");
-      this._$main.removeClass("calendar__main_opened");
-    } else if (!isVisible && this._$main.hasClass("calendar__main_opened")) {
-      this._$main.removeClass("calendar__main_opened");
-      this._$main.addClass("calendar__main_hidden");
-    }
-    return false;
   }
 
   _handleBlockClick() {

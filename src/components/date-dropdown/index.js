@@ -66,10 +66,10 @@ class DateDropdown {
   }
 
   _handleInputClick() {
-    if (get(this._datepicker, ["visible"])) {
-      this._datepicker.hide();
+    if (this._$calendar.is(":visible")) {
+      this._$calendar.hide("slow");
     } else {
-      this._datepicker.show();
+      this._$calendar.show("slow");
     }
   }
 

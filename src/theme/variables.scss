@@ -35,13 +35,25 @@ $color-fourth-dark: $color-dark-shade25;
 $color-fifth-dark: $color-dark-shade10;
 $color-sixth-dark: $color-dark-shade5;
 
-$color-second: rgba(31, 32, 65, 0.75);
-$color-third: rgba(31, 32, 65, 0.5);
-$color-fourth: rgba(31, 32, 65, 0.25);
-
-$color-seventh: $color-purple;
-$color-eighth: #f4f4f6;
-$color-ninth: $color-green;
+$color-1: rgba(31, 32, 65, 1);
+$color-2: rgba(31, 32, 65, 0.75);
+$color-3: rgba(31, 32, 65, 0.5);
+$color-4: rgba(31, 32, 65, 0.25);
+$color-5: rgba(31, 32, 65, 0.1);
+$color-6: rgba(31, 32, 65, 0.5);
+$color-7: #bc9cff;
+$color-8: #f4f4f6;
+$color-9: #6fcf97;
+$color-10: #4eb7a8;
+$color-11: #e75735;
+$color-12: #66d2ea;
+$color-13: #e5e5e5;
+$color-14: #ffffff;
+$color-15: #000000;
+$color-16: #e5e5e5;
+$color-17: rgba(0, 0, 0, 0.2);
+$color-18: rgba(0, 0, 0, 0.12);
+$color-19: #8ba4f9;
 
 $color-first-white: $color-white-shade100;
 
@@ -49,15 +61,10 @@ $font-size-body: 14px;
 
 $font-family-first: Montserrat, Arial, sans-serif;
 
-$background-color-first: #e5e5e5;
+$gradient-1: linear-gradient(180deg, $color-7 0%, $color-19 100%);
+$gradient-2: linear-gradient(180deg, $color-9 0%, $color-12 100%);
 
-$gradient-first: linear-gradient(
-  180deg,
-  $color-purple 0%,
-  $color-purple-dark 100%
-);
-
-$gradient-second: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
+$gradient-second: linear-gradient(180deg, $color-9 0%, $color-12 100%);
 $box-shadow-first-color: rgba(0, 0, 0, 0.2);
 $border-first-color: rgba(0, 0, 0, 0.12);
 
@@ -109,7 +116,7 @@ $border-first-color: rgba(0, 0, 0, 0.12);
 
 @mixin base-h {
   @include font-family-first-bold;
-  color: $color-first-dark;
+  color: $color-1;
 }
 
 @mixin h1 {

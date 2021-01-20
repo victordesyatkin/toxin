@@ -43,6 +43,20 @@ class Input {
     }
   }
 
+  addTheme(theme) {
+    const themeClass = `input_theme_${theme}`;
+    if (!this._$element.hasClass(themeClass)) {
+      this._$element.addClass(themeClass);
+    }
+  }
+
+  removeTheme(theme) {
+    const themeClass = `input_theme_${theme}`;
+    if (this._$element.hasClass(themeClass)) {
+      this._$element.removeClass(themeClass);
+    }
+  }
+
   get input() {
     return this._input;
   }

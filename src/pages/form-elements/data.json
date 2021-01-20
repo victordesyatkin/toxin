@@ -29,7 +29,6 @@
   "dropdown1": {
     "dropdown": {
       "type": 1,
-      "isExpand": false,
       "isControlVisible": true,
       "isStraight": false,
       "buttonDecreaseText": "-",
@@ -39,7 +38,6 @@
     },
     "input": {
       "name": "guests",
-      "stateText": "Default",
       "type": "text",
       "label": "dropdown",
       "placeholder": "Сколько гостей",
@@ -51,7 +49,7 @@
       { "title": "младенцы", "value": 0 }
     ]
   },
-  "maskedTextField1": {
+  "maskedTextField": {
     "input": {
       "name": "birthday",
       "id": "birthday",
@@ -86,12 +84,11 @@
       }
     },
     "calendar": {
-      "visible": false,
       "buttonCleanText": "Очистить",
       "buttonApplyText": "Применить"
     }
   },
-  "filterDateDropdown1": {
+  "filterDateDropdown": {
     "label": "filter date dropdown",
     "input": {
       "name": "form-elements-filter-date-dropdown",
@@ -103,8 +100,7 @@
     },
     "calendar": {
       "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить",
-      "isOpen": true
+      "buttonApplyText": "Применить"
     }
   },
   "dropdown3": {
@@ -128,13 +124,19 @@
       { "title": "ванные комнаты", "value": 0 }
     ]
   },
-  "subscriptionTextField1": {
-    "name": "subscription_email",
-    "id": "subscription_email",
-    "type": "text",
-    "label": "Subscription text field",
-    "placeholder": "Email",
-    "button": { "visible": true, "type": "button", "class": "arrow-forward" },
+  "subscriptionTextField": {
+    "input": {
+      "name": "subscription_email",
+      "id": "subscription_email",
+      "type": "text",
+      "label": "Subscription text field",
+      "placeholder": "Email",
+      "button": {
+        "isVisible": true,
+        "type": "button",
+        "iconClass": "arrow-forward"
+      }
+    },
     "mask": {
       "mask": "^\\S*@?\\S*$",
       "regexp": true
@@ -271,24 +273,24 @@
       }
     ]
   },
-  "checkboxes": {
+  "checkboxButtons": {
     "label": "Checkbox Buttons",
     "buttons": [
       {
         "label": "Можно курить",
-        "checked": false,
+        "isChecked": false,
         "name": "smoke",
         "defaultSrc": "./assets/images/checkbox-buttons.svg"
       },
       {
         "label": "Можно с питомцами",
-        "checked": true,
+        "isChecked": true,
         "name": "pet",
         "defaultSrc": "./assets/images/checkbox-buttons.svg"
       },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
-        "checked": true,
+        "isChecked": true,
         "name": "guest",
         "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
@@ -299,55 +301,61 @@
     "buttons": [
       {
         "label": "Мужчина",
-        "checked": true,
+        "isChecked": true,
         "name": "gender",
         "value": "male",
         "defaultSrc": "./assets/images/checkbox-buttons.svg"
       },
       {
         "label": "Женщина",
-        "checked": false,
+        "isChecked": false,
         "name": "gender",
         "value": "female",
         "defaultSrc": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
-  "toggleButtons1": {
+  "toggleButtons": {
     "label": "Toggle",
     "buttons": [
       {
         "label": "Получать спецпредложения",
-        "checked": true,
+        "isChecked": true,
         "name": "male",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "src": "./assets/images/checkbox-buttons.svg"
       },
       {
         "label": "Получать спецпредложения",
-        "checked": false,
+        "isChecked": false,
         "name": "female",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "src": "./assets/images/checkbox-buttons.svg"
       }
     ]
   },
-  "likes": {
+  "likeButtons": {
     "label": "Like button",
     "buttons": [
       {
-        "checked": false,
+        "isChecked": false,
         "name": "male",
         "count": 2,
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "srcLike": "./assets/images/favorite.svg",
+        "altLike": "Like",
+        "srcNoLike": "./assets/images/favorite-border.svg",
+        "altNoLike": "No like"
       },
       {
-        "checked": true,
-        "name": "female",
+        "isChecked": true,
+        "name": "Like",
         "count": 12,
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "srcLike": "./assets/images/favorite.svg",
+        "altLike": "Like",
+        "srcNoLike": "./assets/images/favorite-border.svg",
+        "altNoLike": "No like"
       }
     ]
   },
-  "rateButton": {
+  "rateButtons": {
     "label": "Rate button",
     "buttons": [
       {
@@ -355,16 +363,20 @@
         "name": "male2",
         "count": 5,
         "off": 0,
-        "defaultSrcLike": "./assets/images/favorite.svg",
-        "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        "srcImgRate": "./assets/images/star.svg",
+        "altImgRate": "Rate",
+        "srcImgNoRate": "./assets/images/star-border.svg",
+        "altImgNoRate": "No rate"
       },
       {
         "grade": 5,
         "name": "female2",
         "count": 5,
         "off": 0,
-        "defaultSrcLike": "./assets/images/favorite.svg",
-        "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+        "srcImgRate": "./assets/images/star.svg",
+        "altImgRate": "Rate",
+        "srcImgNoRate": "./assets/images/star-border.svg",
+        "altImgNoRate": "No rate"
       }
     ]
   },
@@ -391,7 +403,7 @@
       { "title": "младенцы", "value": 0 }
     ]
   },
-  "richCheckboxButtons1": {
+  "richCheckboxButtons": {
     "label": "rich checkbox buttons",
     "buttons": [
       {
@@ -444,7 +456,8 @@
     "end": 10000,
     "min": 0,
     "max": 15000,
-    "separator": 1000
+    "separator": 1000,
+    "description": "Стоимость за сутки пребывания в номере"
   },
   "buttons": {
     "label": "Buttons",
@@ -466,15 +479,16 @@
         "type": "button",
         "value": "",
         "view": 2
-      },
-      {
-        "text": "Перейти к оплате",
-        "type": "button",
-        "value": "",
-        "view": 3,
-        "defaultSrc": "./assets/images/arrow-forward.svg"
       }
     ]
+  },
+  "button": {
+    "text": "Перейти к оплате",
+    "type": "button",
+    "value": "",
+    "view": 3,
+    "src": "./assets/images/arrow-forward.svg",
+    "alt": "Перейти к оплате"
   },
   "dropdown6": {
     "dropdownOptions": {

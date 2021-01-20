@@ -1,23 +1,23 @@
 mixin checkbox-button(props = {})
     -   
         let
-            { name, src, tabindex, required, disabled, checked, label, bold, defaultSrc } = props;
+            { name, src, tabindex, isRequired, isDisabled, isChecked, label, bold, defaultSrc } = props;
+            className = 'checkbox-button';
+            classNames = className;
             id = name ? `checkbox-button-${name}`: '';
         src = src || defaultSrc;
-            className = 'checkbox-button';
-            classes = className;
-            classes += bold ? ` ${className}_bold` : '';
+        classNames += bold ? ` ${className}_bold` : '';
     label(
         for=id
-        class=classes
+        class=classNames
     )
         input.checkbox-button__input(
-            type = "checkbox"
-            name = name
-            tabindex = tabindex
-            required = required ? required : false
-            disabled = disabled ? disabled : false
-            checked = checked ? checked : false
+            type="checkbox"
+            name=name
+            tabindex=tabindex
+            required=isRequired
+            disabled=isDisabled
+            checked=isChecked
             id = id
         )
         span.checkbox-button__check-mark

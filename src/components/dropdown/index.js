@@ -128,9 +128,11 @@ class Dropdown {
     if (placeholder) {
       this._$mainInput.attr("placeholder", placeholder);
       this._$mainInput.val(placeholder);
+      this._input.addTheme("dropdown_fill");
     } else {
       this._$mainInput.attr("placeholder", this._mainPlaceholder);
       this._$mainInput.val(this._mainPlaceholder);
+      this._input.removeTheme("dropdown_fill");
     }
   }
 

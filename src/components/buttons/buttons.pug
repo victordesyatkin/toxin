@@ -2,7 +2,7 @@ include ../button/button
 
 mixin buttons(props = {})
     -
-        let { label, buttons, src } = props;
+        let { label, buttons } = props;
     .buttons
         if (label)
             .buttons__section-head=label
@@ -10,10 +10,6 @@ mixin buttons(props = {})
             for button, index in buttons
                 .buttons__items
                     .buttons__item
-                        +button({...button, src})
-                    -
-                        let { view } = button || {};
-                    if (view !== 3)
-                        .buttons__item
-                            - button = {...button, hover: true};
-                            +button(button)
+                        +button(button)
+                    .buttons__item
+                        +button({...button, isHover: true})

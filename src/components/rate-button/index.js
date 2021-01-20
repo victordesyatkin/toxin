@@ -1,8 +1,7 @@
 import { renderComponents } from "../../assets/helpers/utils";
-
 import "./rate-button.scss";
 
-export default class RateButton {
+class RateButton {
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -25,10 +24,11 @@ export default class RateButton {
   }
 
   _attachEventHandlers() {
-    this._element && this._element.addEventListener("click", this._toggleCount);
+    this._element &&
+      this._element.addEventListener("click", this._handleInputClick);
   }
 
-  _toggleCount = (event) => {
+  _handleInputClick = (event) => {
     let el = (event || {}).target;
     if (!el || !this.input) {
       return null;
@@ -72,3 +72,5 @@ export default class RateButton {
     }
   };
 }
+
+export default RateButton;

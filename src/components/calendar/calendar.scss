@@ -1,12 +1,10 @@
 @import "~theme/variables.scss";
 @import "~air-datepicker/dist/css/datepicker.min.css";
 
-.calendar {
-  position: relative;
+$parent: ".calendar";
 
-  &_theme_date_dropdown {
-    top: 0.35rem;
-  }
+#{$parent} {
+  position: relative;
 
   &__main {
     position: absolute;
@@ -14,13 +12,13 @@
     top: 0;
     left: 0;
     z-index: 99;
-    border: 1px solid $color-fourth-dark;
+    border: 1px solid $color-4;
     box-sizing: border-box;
-    box-shadow: 0px 10px 20px $color-sixth-dark;
+    box-shadow: 0px 10px 20px $color-6;
     border-radius: 4px;
-    background-color: $color-first-white;
+    background-color: $color-14;
 
-    &_opened {
+    &_relative {
       position: relative;
     }
   }
@@ -41,7 +39,7 @@
   }
 
   .datepicker--nav {
-    padding: 19px 16px 36px 15px;
+    padding: 1.35rem 1.14rem 2.57rem 1.07rem;
     border: none;
     position: relative;
   }
@@ -49,7 +47,7 @@
   .datepicker--nav-action {
     span {
       color: $color-purple;
-      font-size: 18px;
+      font-size: 1.28rem;
     }
   }
 
@@ -70,7 +68,7 @@
     text-align: center;
     left: 50%;
     transform: translateX(-50%);
-    top: 18px;
+    top: 1.28rem;
   }
 
   .datepicker--nav-title:hover,
@@ -80,17 +78,16 @@
 
   .datepicker--days-names {
     margin: 0;
-    margin-top: -1px;
+    margin-top: -0.07rem;
   }
 
   .datepicker--content {
-    padding: 0 20px;
+    padding: 0 1.42rem;
   }
 
   .datepicker--day-name,
   .datepicker--cell {
-    min-height: 40px;
-    //min-width: 40px;
+    min-height: 2.85rem;
   }
 
   .datepicker--day-name {
@@ -136,8 +133,8 @@
   .-range-to-::after,
   .-selected-::after,
   .-current-::after {
-    width: 39.88px;
-    height: 40px;
+    width: 2.84rem;
+    height: 2.85rem;
     content: "";
     position: absolute;
     top: 50%;
@@ -154,7 +151,7 @@
   .-selected-::after,
   .-range-from-::after,
   .-range-to-::after {
-    background: $gradient-first;
+    background: $gradient-1;
   }
 
   .-range-from-,
@@ -203,7 +200,7 @@
 
   &__control {
     width: 100%;
-    padding: 20px 20px 20px 18px;
+    padding: 1.42rem 1.42rem 1.42rem 1.42rem;
     display: flex;
     justify-content: space-between;
   }

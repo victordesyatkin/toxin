@@ -1,13 +1,9 @@
 mixin calendar(props = {})
     - 
         let
-            { isOpen, isForceVisible, buttonCleanText, buttonApplyText, withoutBorder, theme } = props;
+            { isRelative, buttonCleanText, buttonApplyText, withoutBorder } = props;
             className = 'calendar'; 
             classNames = `${className} js-${className}`;
-            themes = {
-                dateDropDown: 'date_dropdown'
-            }
-        classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     div(
         class=classNames
         data-options=props
@@ -15,7 +11,7 @@ mixin calendar(props = {})
         - 
             let
                 mainClassNames = `${className}__main js-${className}__main`;
-            mainClassNames += isOpen ? ` ${className}__main_opened` : ` ${className}__main_hidden`;
+                mainClassNames += isRelative ? ` ${className}__main_relative` : '';
             mainClassNames += withoutBorder ? ` ${className}_with-out-border` : '';
         div(class = mainClassNames)
             input(type="hidden", date-isCalendar="1")

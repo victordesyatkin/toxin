@@ -15,6 +15,7 @@ include ../../components/rate-buttons/rate-buttons
 include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
 include ../../components/range-slider/range-slider
 include ../../components/buttons/buttons
+include ../../components/button/button
 include ../../components/pagination/pagination
 include ../../components/bullet-list/bullet-list
 include ../../components/info/info
@@ -30,17 +31,17 @@ block main
                 dropdown2,
                 dropdown3,
                 dropdown4,
-                maskedTextField1,
-                filterDateDropdown1,
-                subscriptionTextField1,
+                maskedTextField,
+                filterDateDropdown,
+                subscriptionTextField,
                 expandableCheckboxList1,
                 expandableCheckboxList2,
                 richCheckboxButtons1,
-                checkboxes,
+                checkboxButtons,
                 radioButtons,
-                toggleButtons1,
-                likes,
-                rateButton,
+                toggleButtons,
+                likeButtons,
+                rateButtons,
                 dropdown5,
                 rangeSlider,
                 buttons,
@@ -49,6 +50,7 @@ block main
                 bulletList,
                 info,
                 comment,
+                button,
             } = data || {};
     main.form-elements.js-form-elements
         article.form-elements__article
@@ -60,13 +62,37 @@ block main
                 .form-elements__dropdown
                     +dropdown(dropdown1)
                 .form-elements__masked-text-field
-                    +masked-text-field(maskedTextField1)                    
+                    +masked-text-field(maskedTextField)                    
                 .form-elements__date-dropdown
                     +date-dropdown(dropdown2)
                 .form-elements__filter-date-dropdown
-                    +filter-date-dropdown(filterDateDropdown1)
+                    +filter-date-dropdown(filterDateDropdown)
                 .form-elements__subscription-text-field
-                    +subscription-text-field(subscriptionTextField1)
+                    +subscription-text-field(subscriptionTextField)
+            section.form-elements__section
+                .form-elements__checkbox-buttons
+                    +checkbox-buttons(checkboxButtons)
+                .form-elements__radio-buttons
+                    +radio-buttons(radioButtons)
+                .form-elements__toggle-buttons
+                    +toggle-buttons(toggleButtons)
+                .form-elements__like-buttons
+                    +like-buttons(likeButtons)
+                .form-elements__rate-buttons
+                    +rate-buttons(rateButtons)
+            section.form-elements__section
+                .form-elements__range-slider
+                    +range-slider(rangeSlider)
+                .form-elements__buttons
+                    +buttons(buttons)
+                .form-elements__button
+                    +button(button)
+                .form-elements__pagination
+                    +pagination(pagination)
+        article.form-elements__article
+            section.form-elements__section
+                .form-elements__dropdown
+                    +dropdown(dropdown2)
         //-     section.form-elements-section
         //-         .form-elements__item
         //-             +dropdown(dropdown3)
@@ -76,28 +102,10 @@ block main
         //-             +expandable-checkbox-list(expandableCheckboxList1)
         //-         .form-elements__item
         //-             +expandable-checkbox-list(expandableCheckboxList2)
-        //-         .form-elements__item
-        //-             +checkbox-buttons(checkboxes)
-        //-         .form-elements__item
-        //-             +radio-buttons(radioButtons)
-        //-         .form-elements__item
-        //-             +toggle-buttons(toggleButtons1)
-        //-         .form-elements__item
-        //-             +like-buttons(likes)
-        //-         .form-elements__item
-        //-             +rate-buttons(rateButton)
-        //-         .form-elements__item
-        //-             +dropdown(dropdown5) 
-        //-         .form-elements__item
-        //-             +rich-checkbox-buttons(richCheckboxButtons1)
-        //-     section.form-elements-section
-        //-         .form-elements__item
-        //-             +range-slider(rangeSlider)
-        //-         .form-elements__item
-        //-             +buttons(buttons)
-        //-         .form-elements__item
-        //-             +pagination(pagination)
-        //-         .form-elements__item
+        //-                          .form-elements__item
+                    +rich-checkbox-buttons(richCheckboxButtons1)
+                        .form-elements__item
+                            +dropdown(dropdown5) 
         //-             +dropdown(dropdown6)
         //-         .form-elements__item
         //-             +bullet-list(bulletList)

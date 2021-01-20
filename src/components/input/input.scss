@@ -20,16 +20,16 @@ $parent: ".input";
   &__state-text {
     @include h3;
     font-weight: normal;
-    color: $color-third-dark;
+    color: $color-3;
     text-transform: uppercase;
     text-align: right;
   }
 
   &__section {
     position: relative;
-    border: 1px solid $color-fourth-dark;
+    border: 1px solid $color-4;
     border-radius: 4px;
-    color: $color-fourth-dark;
+    color: $color-4;
     padding: 0 1rem;
     width: 100%;
     padding: 0.71rem 0 0.71rem 1.07rem;
@@ -37,8 +37,8 @@ $parent: ".input";
     &:hover,
     &:focus,
     &:active {
-      color: $color-second-dark;
-      border: 1px solid $color-third-dark;
+      color: $color-2;
+      border: 1px solid $color-3;
     }
 
     input,
@@ -60,15 +60,15 @@ $parent: ".input";
   &__section_focused,
   &__section:hover,
   &__section:focus {
-    border: 1px solid $color-third-dark;
+    border: 1px solid $color-3;
 
     #{$parent}__button_default {
-      color: $color-second-dark;
+      color: $color-2;
     }
 
     #{$parent}__input,
     #{$parent}__input::placeholder {
-      color: $color-second-dark;
+      color: $color-2;
     }
   }
 
@@ -88,18 +88,14 @@ $parent: ".input";
   }
 
   &__button_default {
-    color: $color-third-dark;
+    color: $color-3;
     background-color: transparent;
     font-size: 0.57rem;
     cursor: pointer;
   }
 
   &__button_forwarded {
-    background: linear-gradient(
-      180deg,
-      $color-purple 0%,
-      $color-purple-dark 100%
-    );
+    background: $gradient-1;
     font-size: 1.28rem;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -117,18 +113,18 @@ $parent: ".input";
     font-size: 1rem;
     line-height: 1.7rem;
     text-overflow: ellipsis;
-    color: $color-fourth-dark;
+    color: $color-4;
     background: none;
 
     &:hover::placeholder,
     &:focus::placeholder {
-      color: $color-second-dark;
+      color: $color-2;
     }
   }
 
   &_hovered-focused {
     #{$parent}__input {
-      color: $color-second-dark;
+      color: $color-2;
       outline: none;
       text-overflow: ellipsis;
     }
@@ -139,28 +135,29 @@ $parent: ".input";
     #{$parent}__section:hover,
     #{$parent}__section:focus,
     #{$parent}__section:active {
-      color: $color-second-dark;
-      border: 1px solid $color-fourth;
+      color: $color-2;
+      border: 1px solid $color-4;
 
       #{$parent}__button_default {
-        color: $color-third;
+        color: $color-3;
       }
 
       #{$parent}__input,
       #{$parent}__input::placeholder {
-        color: $color-second;
+        color: $color-2;
       }
     }
   }
 
+  &_theme_dropdown_fill,
   &_theme_dropdown {
     #{$parent}__section {
       #{$parent}__input {
-        color: $color-second;
+        color: $color-2;
       }
 
       input::placeholder {
-        color: $color-second;
+        color: $color-2;
       }
 
       input#{$parent}__input:disabled {
@@ -168,7 +165,15 @@ $parent: ".input";
       }
 
       #{$parent}__button_default {
-        color: $color-second;
+        color: $color-3;
+      }
+    }
+  }
+
+  &_theme_dropdown_fill {
+    #{$parent}__section {
+      #{$parent}__button_default {
+        color: $color-2;
       }
     }
   }
@@ -184,14 +189,13 @@ $parent: ".input";
     #{$parent}__section {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      color: $color-second;
-      border-color: $color-third;
-      outline: 1px solid $color-sixth-dark;
+      color: $color-2;
+      border-color: $color-3;
 
       #{$parent}__input::placeholder,
       #{$parent}__input::placeholder,
       #{$parent}__button_default {
-        color: $color-second-dark;
+        color: $color-2;
       }
     }
   }

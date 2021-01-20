@@ -2,7 +2,7 @@ import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
 
 import "./subscription-text-field.scss";
-export default class SubscriptionTextField {
+class SubscriptionTextField {
   static CLASS_NAME = "SUBSCRIPTION_TEXT_FIELD";
 
   static renderComponents(props = {}) {
@@ -32,3 +32,5 @@ export default class SubscriptionTextField {
     MaskedTextField.renderComponents({ parents: this._$element });
   }
 }
+
+export default SubscriptionTextField;

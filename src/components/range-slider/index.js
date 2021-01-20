@@ -1,10 +1,8 @@
 import get from "lodash/get";
 
 import { renderComponents } from "../../assets/helpers/utils";
-
 import "./range-slider.scss";
-
-export default class RangeSlider {
+class RangeSlider {
   static TYPES = ["start", "end"];
 
   static renderComponents(props = {}) {
@@ -66,26 +64,46 @@ export default class RangeSlider {
     }, 500);
   }
 
-  _ondrag() {
+  _handleBlockDrag() {
+    return false;
+  }
+
+  _handleBlockDragDrop() {
+    return false;
+  }
+
+  _handleBlockDragStart() {
     return false;
   }
 
   _attachPointHandlers(el) {
-    el.addEventListener("ondrag", this._ondrag);
-    el.addEventListener("ondragdrop", this._ondrag);
-    el.addEventListener("ondragstart", this._ondrag);
+    el.addEventListener("ondrag", this._handleBlockDrag);
+    el.addEventListener("ondragdrop", this._handleBlockDragDrop);
+    el.addEventListener("ondragstart", this._handleBlockDragStart);
   }
 
   _attachEventHandlers() {
     if (!this._element) {
       return false;
     }
-    this._element.addEventListener("mousedown", this._mousedown.bind(this));
-    this._element.addEventListener("mouseenter", this._mouseenter.bind(this));
-    document.addEventListener("mouseleave", this._mouseleave.bind(this));
-    document.addEventListener("mouseup", this._mouseup.bind(this));
-    document.addEventListener("mousemove", this._mousemove.bind(this));
-    window.addEventListener("resize", this._resize.bind(this));
+    this._element.addEventListener(
+      "mousedown",
+      this._handleBlockMouseDown.bind(this)
+    );
+    this._element.addEventListener(
+      "mouseenter",
+      this._handleBlockMouseEnter.bind(this)
+    );
+    document.addEventListener(
+      "mouseleave",
+      this._handleBlockMouseLeave.bind(this)
+    );
+    document.addEventListener("mouseup", this._handleBlockMouseUp.bind(this));
+    document.addEventListener(
+      "mousemove",
+      this._handleBlockMouseMove.bind(this)
+    );
+    window.addEventListener("resize", this._handleWindowResize.bind(this));
     Array.prototype.forEach.call(
       this._nodeListPoints,
       this._attachPointHandlers.bind(this)
@@ -188,22 +206,22 @@ export default class RangeSlider {
     this._k = this._max / this._maxTrackLength;
   }
 
-  _mouseenter() {}
+  _handleBlockMouseEnter() {}
 
-  _mouseleave() {
+  _handleBlockMouseLeave() {
     this._type = "";
   }
 
-  _mouseup(e) {
+  _handleBlockMouseUp(e) {
     this._type = "";
   }
 
-  _mousedown(e) {
+  _handleBlockMouseDown(e) {
     e.preventDefault();
     this._type = this._getTypePoint(e);
   }
 
-  _mousemove(e) {
+  _handleBlockMouseMove(e) {
     if (!this._type) {
       return false;
     }
@@ -244,7 +262,7 @@ export default class RangeSlider {
     return type;
   }
 
-  _resize() {
+  _handleWindowResize() {
     this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);
     this._calculateK();
     this._shiftX = this._element.getBoundingClientRect().left;
@@ -258,3 +276,5 @@ export default class RangeSlider {
     this._renderTrack();
   }
 }
+
+export default RangeSlider;

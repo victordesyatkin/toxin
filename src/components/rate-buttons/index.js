@@ -1,8 +1,7 @@
 import { renderComponents } from "../../assets/helpers/utils";
 import RateButton from "../rate-button";
-
 import "./rate-buttons.scss";
-export default class RateButtons {
+class RateButtons {
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -26,3 +25,5 @@ export default class RateButtons {
     RateButton.renderComponents({ parents: this._$element });
   }
 }
+
+export default RateButtons;

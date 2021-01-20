@@ -1,8 +1,7 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-
 import "./like-button.scss";
 
-export default class LikeButton {
+class LikeButton {
   static CLASS_NAME = "LIKE_BUTTON";
 
   static renderComponents(props = {}) {
@@ -32,10 +31,10 @@ export default class LikeButton {
   _attachEventHandlers() {
     this.input &&
       this.input.addEventListener &&
-      this.input.addEventListener("click", this._toggleCount);
+      this.input.addEventListener("click", this._handleInputClick);
   }
 
-  _toggleCount = () => {
+  _handleInputClick = () => {
     if (
       this.input &&
       this.input.checked !== undefined &&
@@ -54,3 +53,5 @@ export default class LikeButton {
     }
   };
 }
+
+export default LikeButton;

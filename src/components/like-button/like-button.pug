@@ -1,28 +1,45 @@
 mixin like-button(props = {})
     -
         let
-            { name, count, srcLike, srcNoLike, tabindex, required, disabled, checked, alt, defaultSrcLike, defaultSrcNoLike } = props;
+            {
+                name,
+                count,
+                tabindex,
+                srcLike,
+                altLike,
+                srcNoLike,
+                altNoLike,
+                isRequired,
+                isDisabled,
+                isChecked
+            } = props;
             id = name ? `like-button__button-${name}`: '';
-        count = count !== undefined ? count : 0;
-        srcLike = srcLike || defaultSrcLike;
-        srcNoLike = srcNoLike || defaultSrcNoLike;               
-    label.like-button__button.js-like-button__button(for=id)
+        count = count !== undefined ? count : 0;            
+    label.like-button__button.js-like-button__button(
+        for=id
+    )
         input.like-button__input.js-like-button__input(
-            type = "checkbox"
-            name = name
-            tabindex = tabindex
-            required = required ? required : false
-            disabled = disabled ? disabled : false
-            checked = checked ? checked : false
-            id = id
+            type="checkbox"
+            name=name
+            tabindex=tabindex
+            required=isRequired
+            disabled=isDisabled
+            checked=isChecked
+            id=id
         )
         div.like-button__check-mark
             if (srcLike)
                 div.like-button__check-mark-like
-                    img(src = srcLike, alt = alt)
+                    img(
+                        src=srcLike,
+                        alt=altLike
+                    )
             if (srcNoLike)                    
                 div.like-button__check-mark-no-like
-                    img(src = srcNoLike, alt = alt)
+                    img(
+                        src=srcNoLike,
+                        alt=altNoLike
+                    )
             div.like-button__count.js-like-button__count #{count}
                     
                 

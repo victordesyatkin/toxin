@@ -1,16 +1,30 @@
-mixin range-slider(o = {buttons: [], label: ''})
+mixin range-slider(props)
     -
         let
-            { label = '', start = 0, end = 100, nameStart = 'start', nameEnd = 'end', separator = 10, min = 0, max = 100 } = o || {};
-    .range-slider.js-range-slider(data-options = o)
-        input(type="hidden", value=start, name=nameStart, data-type="start")
-        input(type="hidden", value=end, name=nameEnd, data-type="end")
-
+            { label, start, end, nameStart, nameEnd, separator, min, max, description } = props;
+    .range-slider.js-range-slider(data-options = props)
+        input(
+            name=nameStart,
+            value=start,
+            data-type="start",
+            type="hidden"
+        )
+        input(
+            name=nameEnd,
+            value=end,
+            data-type="end",
+            type="hidden"
+        )
         .range-slider__section-head
             if (label)
-                h3.range-slider__label=label
+                .range-slider__label=label
             .range-slider__info.js-range-slider__info
         .range-slider__section-body.js-range-slider__section-body
-            .range-slider__point.js-range-slider__point.range-slider__point_start(data-type="start")
+            .range-slider__point.js-range-slider__point.range-slider__point_start(
+                data-type="start"
+            )
             .range-slider__track.js-range-slider__track
-            .range-slider__point.js-range-slider__point.range-slider__point_end(data-type="end")
+            .range-slider__point.js-range-slider__point.range-slider__point_end(
+                data-type="end"
+            )
+        .range-slider__description=description

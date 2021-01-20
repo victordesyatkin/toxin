@@ -5,7 +5,7 @@ $parent: ".form-elements";
 #{$parent} {
   width: 100%;
   height: 100%;
-  background-color: $color-first-white;
+  background-color: $color-14;
 
   &__article {
     display: flex;
@@ -27,21 +27,81 @@ $parent: ".form-elements";
     margin-bottom: 2.85rem;
   }
 
-  &__date-dropdown {
+  &__date-dropdown-first {
     margin-bottom: 2.89rem;
   }
 
   &__filter-date-dropdown {
     margin-bottom: 2.92rem;
+    width: 19rem;
+  }
+
+  &__subscription-text-field {
+    width: 19.07rem;
+  }
+
+  &__checkbox-buttons {
+    margin-bottom: 2.92rem;
+    width: 15.85rem;
+  }
+
+  &__radio-buttons {
+    margin-bottom: 2.92rem;
+    width: 15.76rem;
+  }
+
+  &__toggle-buttons {
+    margin-bottom: 2.92rem;
+    width: 18.57rem;
+  }
+
+  &__like-buttons {
+    margin-bottom: 2.92rem;
+    width: 6.4rem;
+  }
+
+  &__rate-buttons {
+    width: 18.57rem;
+  }
+
+  &__range-slider {
+    width: 19rem;
+    margin-bottom: 3.11rem;
+  }
+
+  &__buttons {
+    width: 15.57rem;
+    margin-bottom: 2.14rem;
+  }
+
+  &__button {
+    width: 22.71rem;
+    margin-bottom: 2.85rem;
+  }
+
+  &__pagination {
+    width: 15.28rem;
   }
 }
 
-@media (min-width: $xl) {
+@include media-breakpoint-up($xxs) {
   #{$parent} {
     padding: 4.64rem 10.07rem 0 10.07rem;
 
-    &__section {
-      width: 22.85rem;
+    &__article:nth-child(1) {
+      #{$parent}__section:nth-child(1) {
+        margin-right: 9rem;
+        width: 22.85rem;
+      }
+
+      #{$parent}__section:nth-child(2) {
+        margin-right: 5.14rem;
+        width: 18.57rem;
+      }
+
+      #{$parent}__section:nth-child(3) {
+        width: 22.85rem;
+      }
     }
   }
 }

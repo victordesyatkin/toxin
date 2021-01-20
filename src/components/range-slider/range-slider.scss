@@ -3,10 +3,14 @@
 .range-slider {
   display: flex;
   flex-direction: column;
-  padding-bottom: 12px;
+  padding-bottom: 0.85rem;
 
   input {
     display: none;
+  }
+
+  &__label {
+    @include h3;
   }
 
   &__section-head {
@@ -14,11 +18,11 @@
     flex-direction: row;
     justify-content: space-between;
     line-height: initial;
-    margin-bottom: 23px;
+    margin-bottom: 1.64rem;
   }
 
   &__info {
-    font-size: 12px;
+    font-size: 0.85rem;
     color: $color-third-dark;
   }
 
@@ -37,7 +41,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    background: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
+    background: $gradient-2;
     border: 2px solid $color-first-white;
     border-radius: 10px;
     top: 50%;
@@ -59,7 +63,14 @@
     height: 6px;
     top: 50%;
     transform: translate(0%, -50%);
-    background: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
+    background: $gradient-2;
     z-index: 2;
+  }
+
+  &__description {
+    font-size: 0.85rem;
+    line-height: 1rem;
+    color: $color-3;
+    margin-top: 0.96rem;
   }
 }

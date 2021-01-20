@@ -8,7 +8,7 @@
   flex-direction: row;
   cursor: pointer;
   line-height: 1.3rem;
-  color: $color-second-dark;
+  color: $color-2;
 
   &__input {
     position: absolute;
@@ -22,7 +22,7 @@
     min-width: 40px;
     width: 40px;
     height: 20px;
-    border: 1px solid $color-fourth-dark;
+    border: 1px solid $color-4;
     box-sizing: border-box;
     border-radius: 10px;
     display: flex;
@@ -36,7 +36,7 @@
       height: 12px;
       opacity: 1;
       border-radius: 50%;
-      background: $color-fourth-dark;
+      background: $color-4;
       transition: left 0.5s;
       left: 4px;
       position: absolute;
@@ -48,11 +48,11 @@
   }
 
   input:checked ~ &__check-mark {
-    border: 1px solid $color-purple;
+    border: 1px solid $color-7;
     justify-content: flex-end;
 
     span {
-      background: $gradient-first;
+      background: $gradient-1;
       transition: left 0.5s;
       left: calc(100% - 16px);
     }

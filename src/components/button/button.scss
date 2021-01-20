@@ -13,7 +13,7 @@ $parent: "button";
   padding: 14px 19px 15px 19px;
   cursor: pointer;
   @include font-family-first-bold;
-  color: $color-first-white;
+  color: $color-14;
   white-space: nowrap;
   background: none;
 
@@ -21,7 +21,6 @@ $parent: "button";
     @include linear-gradient(180deg, $color-purple, $color-purple-dark, 1);
     color: $color-first-white;
     border-radius: 22px;
-    outline: 1px solid $color-fifth-dark;
 
     &_1 {
       padding: 0;
