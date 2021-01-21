@@ -2,14 +2,14 @@
 
 .bullet-list {
   &__label {
-    margin-bottom: 16px;
+    margin-bottom: 1.14rem;
     @include h3;
 
     &_size_large {
       @include h2;
       text-transform: inherit;
-      padding-left: 21px;
-      margin-bottom: 20px;
+      padding-left: 1.5rem;
+      margin-bottom: 1.42rem;
     }
   }
 
@@ -19,8 +19,10 @@
   }
 
   &__item {
-    margin-bottom: 10px;
-    padding-left: 21px;
-    text-indent: -20px;
+    margin-bottom: 0.71rem;
+
+    &:last-child {
+      margin-bottom: inherit;
+    }
   }
 }

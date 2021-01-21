@@ -1,1 +1,8 @@
 @import "~theme/variables.scss";
+
+$parent: ".demo-base";
+
+#{$parent}__header {
+  width: 100%;
+  background-color: $color-14;
+}

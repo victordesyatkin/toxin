@@ -59,7 +59,7 @@
       "stateText": "Default"
     }
   },
-  "dropdown2": {
+  "dateDropdown": {
     "fieldStart": {
       "input": {
         "name": "startDate",
@@ -103,21 +103,24 @@
       "buttonApplyText": "Применить"
     }
   },
-  "dropdown3": {
-    "dropdownOptions": {
-      "expand": false,
+  "dropdown2": {
+    "dropdown": {
+      "isExpand": false,
       "type": 0,
+      "isStraight": true,
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
       "buttonCleanText": "Очистить",
       "buttonApplyText": "Применить"
     },
-    "name": "rooms",
-    "stateText": "Default",
-    "type": "text",
-    "label": "dropdown",
-    "placeholder": "",
-    "button": { "class": "arrow-down", "visible": true },
+    "input": {
+      "name": "rooms",
+      "stateText": "Default",
+      "type": "text",
+      "label": "dropdown",
+      "placeholder": "Виды удобств",
+      "button": { "iconClass": "arrow-down", "isVisible": true }
+    },
     "items": [
       { "title": "спальни", "value": 2 },
       { "title": "кровати", "value": 2 },
@@ -142,157 +145,207 @@
       "regexp": true
     }
   },
-  "dropdown4": {
-    "dropdownOptions": {
-      "expand": true,
-      "forcedExpand": false,
+  "dropdown3": {
+    "dropdown": {
+      "isExpand": true,
       "type": 0,
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
       "buttonCleanText": "Очистить",
       "buttonApplyText": "Применить"
     },
-    "name": "rooms2",
-    "stateText": "expanded",
-    "type": "text",
-    "label": "dropdown",
-    "placeholder": "",
-    "button": { "class": "arrow-down", "visible": true },
+    "input": {
+      "name": "rooms2",
+      "stateText": "expanded",
+      "type": "text",
+      "label": "dropdown",
+      "placeholder": "",
+      "button": { "iconClass": "arrow-down", "isVisible": true },
+      "theme": "dropdown"
+    },
     "items": [
       { "title": "спальни", "value": 2 },
       { "title": "кровати", "value": 2 },
       { "title": "ванные комнаты", "value": 0 }
     ]
   },
+  "dropdown4": {
+    "dropdown": {
+      "isExpand": true,
+      "isControlVisible": true,
+      "type": 1,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
+    },
+    "input": {
+      "name": "guests1",
+      "stateText": "",
+      "type": "text",
+      "label": "dropdown",
+      "placeholder": "Сколько гостей",
+      "button": { "iconClass": "arrow-down", "isVisible": true }
+    },
+    "items": [
+      { "title": "взрослые", "value": 0 },
+      { "title": "дети", "value": 0 },
+      { "title": "младенцы", "value": 0 }
+    ]
+  },
+  "dropdown5": {
+    "dropdown": {
+      "isExpand": true,
+      "isControlVisible": true,
+      "type": 1,
+      "buttonDecreaseText": "-",
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
+    },
+    "input": {
+      "name": "guests2",
+      "stateText": "",
+      "type": "text",
+      "label": "dropdown",
+      "placeholder": "Сколько гостей",
+      "button": { "iconClass": "arrow-down", "isVisible": true }
+    },
+    "items": [
+      { "title": "взрослые", "value": 2 },
+      { "title": "дети", "value": 1 },
+      { "title": "младенцы", "value": 0 }
+    ]
+  },
   "expandableCheckboxList1": {
     "expandable": { "label": "expandable checkbox list" },
+    "src": "./assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Завтрак",
-        "checked": false,
-        "name": "breakfast",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": false,
+        "name": "breakfast1",
+        "alt": "Завтрак"
       },
       {
         "label": "Письменный стол",
-        "checked": true,
-        "name": "table",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": true,
+        "name": "table1",
+        "alt": "Письменный стол"
       },
       {
         "label": "Стул для кормления",
-        "checked": true,
-        "name": "chair",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": true,
+        "name": "chair1",
+        "alt": "Стул для кормления"
       },
       {
         "label": "Кроватка",
-        "checked": true,
-        "name": "cot",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": true,
+        "name": "cot1",
+        "alt": "Кроватка"
       },
       {
         "label": "Телевизор",
-        "checked": false,
-        "name": "tv1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": false,
+        "name": "tv11",
+        "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "checked": false,
-        "name": "shampoo1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": false,
+        "name": "shampoo11",
+        "alt": "Шампунь"
       },
       {
         "label": "Телевизор",
-        "checked": false,
-        "name": "tv2",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": false,
+        "name": "tv21",
+        "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "checked": false,
-        "name": "shampoo2",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "isChecked": false,
+        "name": "shampoo21",
+        "alt": "Шампунь"
       }
     ]
   },
   "expandableCheckboxList2": {
     "expandable": {
       "label": "expandable checkbox list",
-      "expanded": true
+      "isExpanded": true
     },
+    "src": "./assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Завтрак",
-        "checked": false,
+        "isChecked": false,
         "name": "breakfast1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Завтрак"
       },
       {
         "label": "Письменный стол",
-        "checked": true,
+        "isChecked": true,
         "name": "table1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Письменный стол"
       },
       {
         "label": "Стул для кормления",
-        "checked": true,
+        "isChecked": true,
         "name": "chair1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Стул для кормления"
       },
       {
         "label": "Кроватка",
-        "checked": true,
+        "isChecked": true,
         "name": "cot1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Кроватка"
       },
       {
         "label": "Телевизор",
-        "checked": false,
+        "isChecked": false,
         "name": "tv11",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "checked": false,
+        "isChecked": false,
         "name": "shampoo11",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Шампунь"
       },
       {
         "label": "Телевизор",
-        "checked": false,
+        "isChecked": false,
         "name": "tv21",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "checked": false,
+        "isChecked": false,
         "name": "shampoo21",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Шампунь"
       }
     ]
   },
   "checkboxButtons": {
     "label": "Checkbox Buttons",
+    "src": "./assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Можно курить",
         "isChecked": false,
-        "name": "smoke",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "name": "smoke"
       },
       {
         "label": "Можно с питомцами",
         "isChecked": true,
-        "name": "pet",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "name": "pet"
       },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
         "isChecked": true,
-        "name": "guest",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "name": "guest"
       }
     ]
   },
@@ -380,45 +433,22 @@
       }
     ]
   },
-  "dropdown5": {
-    "dropdownOptions": {
-      "expand": true,
-      "type": 1,
-      "controlVisible": true,
-      "forcedExpand": false,
-      "buttonDecreaseText": "-",
-      "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
-    },
-    "name": "guests1",
-    "stateText": "",
-    "type": "text",
-    "label": "dropdown",
-    "placeholder": "Сколько гостей",
-    "button": { "class": "arrow-down", "visible": true },
-    "items": [
-      { "title": "взрослые", "value": 0 },
-      { "title": "дети", "value": 0 },
-      { "title": "младенцы", "value": 0 }
-    ]
-  },
   "richCheckboxButtons": {
     "label": "rich checkbox buttons",
+    "src": "./assets/images/checkbox-buttons.svg",
+    "theme": "bold",
     "buttons": [
       {
         "label": "Широкий коридор",
         "checked": false,
         "name": "widecorridor",
-        "info": "Ширина коридоров в номере не менее 91 см.",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "info": "Ширина коридоров в номере не менее 91 см."
       },
       {
         "label": "Помощник для инвалидов",
         "checked": false,
         "name": "helper",
-        "info": "На 1 этаже вас встретит специалист и проводит до номера.",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "info": "На 1 этаже вас встретит специалист и проводит до номера."
       }
     ]
   },
@@ -427,22 +457,26 @@
       {
         "title": "Комфорт",
         "content": "Шумопоглощающие стены",
-        "classIcon": "icon-insert_emoticon"
+        "iconClass": "icon-insert_emoticon"
       },
       {
         "title": "Удобство",
         "content": "Окно в каждой из спален",
-        "classIcon": "icon-location_city"
+        "iconClass": "icon-location_city"
       }
     ]
   },
   "comment": {
     "src": "./assets/images/example-avatar-male.png",
-    "like": {
-      "checked": true,
+    "likeButton": {
+      "isChecked": true,
       "name": "male2",
       "count": 12,
-      "defaultSrc": "./assets/images/checkbox-buttons.svg"
+      "srcLike": "./assets/images/favorite.svg",
+      "altLike": "Like",
+      "srcNoLike": "./assets/images/favorite-border.svg",
+      "altNoLike": "No like"
+
     },
     "fullName": "Мурад Сарафанов",
     "date": "5 дней назад",
@@ -490,29 +524,7 @@
     "src": "./assets/images/arrow-forward.svg",
     "alt": "Перейти к оплате"
   },
-  "dropdown6": {
-    "dropdownOptions": {
-      "expand": true,
-      "type": 1,
-      "controlVisible": true,
-      "forcedExpand": false,
-      "buttonDecreaseText": "-",
-      "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
-    },
-    "name": "guests2",
-    "stateText": "",
-    "type": "text",
-    "label": "dropdown",
-    "placeholder": "Сколько гостей",
-    "button": { "class": "arrow-down", "visible": true },
-    "items": [
-      { "title": "взрослые", "value": 2 },
-      { "title": "дети", "value": 1 },
-      { "title": "младенцы", "value": 0 }
-    ]
-  },
+
   "bulletList": {
     "label": "bullet list",
     "items": [

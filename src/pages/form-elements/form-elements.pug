@@ -31,26 +31,26 @@ block main
                 dropdown2,
                 dropdown3,
                 dropdown4,
-                maskedTextField,
+                dropdown5,
+                dateDropdown,
                 filterDateDropdown,
+                maskedTextField,
                 subscriptionTextField,
                 expandableCheckboxList1,
                 expandableCheckboxList2,
-                richCheckboxButtons1,
+                button,
+                buttons,
+                richCheckboxButtons,
                 checkboxButtons,
                 radioButtons,
                 toggleButtons,
                 likeButtons,
                 rateButtons,
-                dropdown5,
                 rangeSlider,
-                buttons,
                 pagination,
-                dropdown6,
                 bulletList,
                 info,
                 comment,
-                button,
             } = data || {};
     main.form-elements.js-form-elements
         article.form-elements__article
@@ -59,12 +59,12 @@ block main
                     +input(input1)
                 .form-elements__text-field-hover-focus
                     +input(input2)
-                .form-elements__dropdown
+                .form-elements__dropdown-first
                     +dropdown(dropdown1)
                 .form-elements__masked-text-field
                     +masked-text-field(maskedTextField)                    
                 .form-elements__date-dropdown
-                    +date-dropdown(dropdown2)
+                    +date-dropdown(dateDropdown)
                 .form-elements__filter-date-dropdown
                     +filter-date-dropdown(filterDateDropdown)
                 .form-elements__subscription-text-field
@@ -91,27 +91,32 @@ block main
                     +pagination(pagination)
         article.form-elements__article
             section.form-elements__section
-                .form-elements__dropdown
+                .form-elements__dropdown-second
                     +dropdown(dropdown2)
-        //-     section.form-elements-section
-        //-         .form-elements__item
-        //-             +dropdown(dropdown3)
-        //-         .form-elements__item
-        //-             +dropdown(dropdown4)
-        //-         .form-elements__item
-        //-             +expandable-checkbox-list(expandableCheckboxList1)
-        //-         .form-elements__item
-        //-             +expandable-checkbox-list(expandableCheckboxList2)
-        //-                          .form-elements__item
-                    +rich-checkbox-buttons(richCheckboxButtons1)
-                        .form-elements__item
-                            +dropdown(dropdown5) 
-        //-             +dropdown(dropdown6)
-        //-         .form-elements__item
-        //-             +bullet-list(bulletList)
-        //- article.form-elements-down
-        //-     section.form-elements-section
-        //-         .form-elements__item
-        //-             +info(info)
-        //-     section.form-elements-section
-        //-         +comment(comment)
+                .form-elements__dropdown-third
+                    +dropdown(dropdown3)
+            section.form-elements__section
+                .form-elements__dropdown-fourth
+                    +dropdown(dropdown4)
+            section.form-elements__section
+                .form-elements__dropdown-fifth
+                    +dropdown(dropdown5)    
+        article.form-elements__article
+            section.form-elements__section
+                .form-elements__expandable-checkbox-list-first
+                    +expandable-checkbox-list(expandableCheckboxList1)
+                .form-elements__expandable-checkbox-list-first
+                    +expandable-checkbox-list(expandableCheckboxList2)
+            section.form-elements__section
+                .form-elements__rich-checkbox-buttons
+                    +rich-checkbox-buttons(richCheckboxButtons)
+            section.form-elements__section
+                .form-elements__bullet-list
+                    +bullet-list(bulletList)
+        article.form-elements__article
+            section.form-elements__section
+                .form-elements__info
+                    +info(info)
+            section.form-elements__section
+                .form-elements__comment
+                    +comment(comment)

@@ -1,10 +1,9 @@
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import Calendar from "../calendar";
-
-import { renderComponents } from "../../assets/helpers/utils";
-
 import "./filter-date-dropdown.scss";
 
 class FilterDateDropdown {
+  static CLASS_NAME = "FILTER_DATE_DROPDOWN";
   static TYPE_FAKE = 0;
   static TYPE_MAIN = 3;
   static TYPE_INPUT = 1;
@@ -22,7 +21,11 @@ class FilterDateDropdown {
   }
 
   static _renderComponent() {
-    new FilterDateDropdown(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: FilterDateDropdown.CLASS_NAME,
+      someClass: FilterDateDropdown,
+    });
   }
 
   constructor(element) {

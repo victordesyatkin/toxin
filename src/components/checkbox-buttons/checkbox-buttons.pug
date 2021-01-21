@@ -9,7 +9,7 @@ mixin checkbox-buttons(props = {})
         .checkbox-buttons__items
             for button in buttons
                 .checkbox-buttons__item
-                    +checkbox-button({...button, src})
+                    +checkbox-button({...button, src: button.src || src})
                     
                 
                     

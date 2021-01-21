@@ -4,7 +4,7 @@ include ../rich-checkbox-button/rich-checkbox-button
 mixin rich-checkbox-buttons(props = {})
     -
         let
-            { label, buttons = [] } = props;
+            { label, buttons = [], src, theme } = props;
     .rich-checkbox-buttons.js-rich-checkbox-buttons
         if (label) 
             .rich-checkbox-buttons__label=label
@@ -13,4 +13,4 @@ mixin rich-checkbox-buttons(props = {})
                 .rich-checkbox-buttons__button(
                     data-data=button
                 )
-                    +rich-checkbox-button(button)
+                    +rich-checkbox-button({...button, src: button.src || src, theme: button.theme || theme})

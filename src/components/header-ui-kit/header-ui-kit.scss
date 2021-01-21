@@ -2,6 +2,15 @@
 
 $parent: ".header-ui-kit";
 
+#{$parent} {
+  width: 100%;
+
+  &__logo-image {
+    width: 3.43rem;
+    height: 3.43rem;
+  }
+}
+
 @include media-breakpoint-up($xl) {
   #{$parent} {
     padding: 2.14rem 0 0 2.14rem;

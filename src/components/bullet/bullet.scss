@@ -1,12 +1,19 @@
 @import "~theme/variables.scss";
 
-.bullet {
+$parent: ".bullet";
+
+#{$parent} {
+  display: flex;
+
+  &__section-mark {
+    margin-right: 0.74rem;
+  }
+
   &__item-mark {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: $color-fourth-dark;
+    width: 0.71rem;
+    height: 0.71rem;
+    background-color: $color-4;
     border-radius: 50%;
-    margin-right: 10.43px;
   }
 }

@@ -6,13 +6,11 @@ import Calendar from "../../components/calendar";
 import CardSlider from "../../components/card-slider";
 import Book from "../../components/book";
 import "../../components/card";
-
 import "../../index";
 import "../demo-base/demo-base";
-
 import "./cards.scss";
 
-export default class Cards {
+class Cards {
   static CLASS_NAME = "CARDS";
 
   static renderComponents(props = {}) {
@@ -31,6 +29,7 @@ export default class Cards {
       someClass: Cards,
     });
   }
+
   constructor(element) {
     this._element = element;
     this._$element = $(element);
@@ -40,12 +39,14 @@ export default class Cards {
   _init() {
     const parents = this._$element;
     Picker.renderComponents({ parents });
+    Book.renderComponents({ parents });
     SignUp.renderComponents({ parents });
     SignIn.renderComponents({ parents });
     Calendar.renderComponents({ parents });
     CardSlider.renderComponents({ parents });
-    Book.renderComponents({ parents });
   }
 }
 
 window.addEventListener("load", Cards.renderComponents);
+
+export default Cards;

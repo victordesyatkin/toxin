@@ -11,10 +11,11 @@ body {
   height: 100%;
   font-size: $font-size-body;
   @include font-family-first-regular;
+  background-color: $color-8;
 }
 
 body {
-  color: $color-dark-shade75;
+  color: $color-2;
   line-height: 1.71rem;
 }
 

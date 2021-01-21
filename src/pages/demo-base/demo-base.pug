@@ -4,5 +4,6 @@ include ../../components/header-ui-kit/header-ui-kit
 
 block header
   - let { logo } = data || {};
-  +header-ui-kit(logo)
+  .demo-base__header
+    +header-ui-kit(logo)
 block footer

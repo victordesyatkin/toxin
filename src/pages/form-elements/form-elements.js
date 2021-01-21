@@ -11,7 +11,6 @@ import RateButtons from "../../components/rate-buttons";
 import RangeSlider from "../../components/range-slider";
 import Pagination from "../../components/pagination";
 import Comment from "../../components/comment";
-
 import "../../components/input";
 import "../../components/checkbox-buttons";
 import "../../components/toggle-buttons";
@@ -20,9 +19,8 @@ import "../../components/rich-checkbox-buttons";
 import "../../components/bullet-list";
 import "../../components/info";
 import "../demo-base/demo-base";
-
 import "./form-elements.scss";
-export default class FormElements {
+class FormElements {
   static CLASS_NAME = "FORM_ELEMENTS";
 
   static renderComponents(props = {}) {
@@ -82,3 +80,5 @@ export default class FormElements {
 }
 
 window.addEventListener("load", FormElements.renderComponents);
+
+export default FormElements;

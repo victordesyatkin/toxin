@@ -10,47 +10,45 @@ include ../../components/book/book
 include ../../components/sign-in/sign-in
 
 block header
-    +layout__container({basis: 1440, align: 'center', theme: 'color'})
-        .cards__header
-            +header-ui-kit({src: require('../../assets/images/logo-fill.svg').default, alt: 'TOXIN', theme: 'fill'})
+    - let { logo } = htmlWebpackPlugin.options.getData();
+    .cards__header
+        +header-ui-kit(logo)
 block main
-    +layout__container({basis: 1440, align: 'center', theme: 'color'})
-        - let data = htmlWebpackPlugin.options.getData()
-        article.cards.js-cards
-            section.section__container.margin-right-41
-                .cards__section.width-380.margin-bottom-38.js-cards__picker
-                    +card
-                        +picker(data.picker)
-                .cards__section.width-380.js-cards__sign-up
-                    +card
-                        +sign-up(data.signUp)  
-            section.section__container.cards_margin-right-40
-                .cards__section.width-380.margin-bottom-39.js-cards__book
-                    +card
-                        +book(data.book)
-                .cards__section.width-380.js-cards__sign-in
-                    +card
-                        +sign-in(data.signIn)
-            section.section__container
-                .cards__section.width-320.margin-bottom-39.cards__calendar.js-cards__calendar
-                    +card
-                        +calendar(data.calendar)
-                .cards__section.cards_width-273.margin-bottom-47.cards_margin-left--2.js-cards__card-slider
-                    +card-slider({...data.slider1, slider: { ...data.slider1.slider,
-                    images: [
-                        {src: require('../../assets/images/slider-1.png').default},
-                        {src: require('../../assets/images/slider-2.png').default},
-                        {src: require('../../assets/images/slider-3.png').default},
-                        {src: require('../../assets/images/slider-4.png').default}
-                    ]
-                    }})
-                .cards__section.cards_width-273.cards_margin-left--2.js-cards__card-slider
-                    +card-slider({...data.slider2, slider: { ...data.slider2.slider,
-                    images: [
-                        {src: require('../../assets/images/slider-2.png').default},
-                        {src: require('../../assets/images/slider-1.png').default},
-                        {src: require('../../assets/images/slider-3.png').default},
-                        {src: require('../../assets/images/slider-4.png').default}
-                    ]
-                    }})
-block footer
+    - let data = htmlWebpackPlugin.options.getData()
+    article.cards.js-cards
+        section.section__container
+            .cards__section.width-380.margin-bottom-38.js-cards__picker
+                +card
+                    +picker(data.picker)
+            .cards__section.width-380.js-cards__sign-up
+                +card
+                    +sign-up(data.signUp)  
+        section.section__container.cards_margin-right-40
+            .cards__section.width-380.margin-bottom-39.js-cards__book
+                +card
+                    +book(data.book)
+            .cards__section.width-380.js-cards__sign-in
+                +card
+                    +sign-in(data.signIn)
+        section.section__container
+            .cards__section.width-320.margin-bottom-39.cards__calendar.js-cards__calendar
+                +card
+                    +calendar(data.calendar)
+            .cards__section.cards_width-273.margin-bottom-47.cards_margin-left--2.js-cards__card-slider
+                +card-slider({...data.slider1, slider: { ...data.slider1.slider,
+                images: [
+                    {src: require('../../assets/images/slider-1.png').default},
+                    {src: require('../../assets/images/slider-2.png').default},
+                    {src: require('../../assets/images/slider-3.png').default},
+                    {src: require('../../assets/images/slider-4.png').default}
+                ]
+                }})
+            .cards__section.cards_width-273.cards_margin-left--2.js-cards__card-slider
+                +card-slider({...data.slider2, slider: { ...data.slider2.slider,
+                images: [
+                    {src: require('../../assets/images/slider-2.png').default},
+                    {src: require('../../assets/images/slider-1.png').default},
+                    {src: require('../../assets/images/slider-3.png').default},
+                    {src: require('../../assets/images/slider-4.png').default}
+                ]
+                }})

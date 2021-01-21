@@ -1,10 +1,10 @@
-import { renderComponents } from "../../assets/helpers/utils";
-
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import LikeButton from "../like-button";
-
 import "./comment.scss";
 
-export default class Comment {
+class Comment {
+  static CLASS_NAME = "COMMENT";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -15,7 +15,11 @@ export default class Comment {
   }
 
   static _renderComponent() {
-    new Comment(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Comment.CLASS_NAME,
+      someClass: Comment,
+    });
   }
 
   constructor(element) {
@@ -28,3 +32,5 @@ export default class Comment {
     LikeButton.renderComponents({ parents: this._$element });
   }
 }
+
+export default Comment;

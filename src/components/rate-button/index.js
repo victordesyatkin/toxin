@@ -1,7 +1,9 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./rate-button.scss";
 
 class RateButton {
+  static CLASS_NAME = "RATE_BUTTON";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -12,7 +14,11 @@ class RateButton {
   }
 
   static _renderComponent() {
-    new RateButton(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: RateButton.CLASS_NAME,
+      someClass: RateButton,
+    });
   }
 
   constructor(element) {

@@ -1,11 +1,12 @@
 import get from "lodash/get";
+
 import { wordForm, renderComponents } from "../../assets/helpers/utils";
-
 import "../comment";
-
 import "./comments.scss";
 
-export default class Comments {
+class Comments {
+  static CLASS_NAME = "COMMENTS";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -16,7 +17,11 @@ export default class Comments {
   }
 
   static _renderComponent() {
-    new Comments(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Comments.CLASS_NAME,
+      someClass: Comments,
+    });
   }
 
   constructor(el) {
@@ -35,3 +40,5 @@ export default class Comments {
     }
   }
 }
+
+export default Comments;

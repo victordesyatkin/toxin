@@ -3,20 +3,13 @@ include ../info-item/info-item
 mixin info(props = {})
     -
         let
-            { label, sections = [], withoutLine } = props;
-            //- defaults = {
-            //-     'comfort': 'icon-insert_emoticon',
-            //-     'usability': 'icon-location_city',
-            //-     'cosiness': 'icon-whatshot',
-            //- }
+            { label, sections = [] } = props;
     .info
-        if (label)
-        .info__label=label
+        if label
+            .info__label=label
     .info__sections
         each section, index in sections
             .info__section
-                if (withoutLine && index === sections.length - 1)
-                    - section = { ...section, withoutLine }
                 +info-item(section)
 
         

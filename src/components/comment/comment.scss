@@ -1,44 +1,44 @@
 @import "~theme/variables.scss";
 
-.comment {
+$parent: ".comment";
+
+#{$parent} {
   display: flex;
 
   &__img {
-    width: 48px;
-    height: 48px;
-    border: 2px solid $color-first-white;
-    filter: drop-shadow(0px 10px 20px $color-fifth-dark);
-    border-radius: 24px;
+    width: 3.42rem;
+    height: 3.42rem;
+    border: 2px solid $color-14;
+    filter: drop-shadow(0rem 0.71rem 1.42rem $color-5);
+    border-radius: 1.71rem;
   }
 
   &__like-button {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    margin-right: -4px;
+    margin-top: 0.71rem;
   }
 
   &__left {
     display: flex;
     flex-direction: column;
-    margin-right: 12px;
+    margin-right: 0.71rem;
   }
 
   &__full-name {
     font-weight: bold;
-    color: $color-second-dark;
-    margin-left: -1px;
+    color: $color-2;
   }
 
   &__date {
-    margin-bottom: 10px;
+    margin-bottom: 0.71rem;
   }
 
   &__content {
-    padding-top: 2px;
+    padding-top: 0.14rem;
   }
 
   &__count-units {
-    margin-left: 3px;
+    margin-left: 0.21rem;
   }
 }

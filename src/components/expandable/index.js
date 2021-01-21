@@ -1,7 +1,9 @@
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./expandable.scss";
 
-export default class Expandable {
+class Expandable {
+  static CLASS_NAME = "EXPANDABLE";
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -12,7 +14,11 @@ export default class Expandable {
   }
 
   static _renderComponent() {
-    new Expandable(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Expandable.CLASS_NAME,
+      someClass: Expandable,
+    });
   }
 
   constructor(element) {
@@ -48,3 +54,5 @@ export default class Expandable {
     }
   }
 }
+
+export default Expandable;

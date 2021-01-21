@@ -1,5 +1,10 @@
 {
   "scriptSrc": "cards",
+  "logo": {
+    "src": "../../assets/images/logo-fill.svg",
+    "alt": "TOXIN",
+    "theme": "fill"
+  },
   "picker": {
     "label": "Найдём номера под ваши пожелания",
     "dateDropdown": {

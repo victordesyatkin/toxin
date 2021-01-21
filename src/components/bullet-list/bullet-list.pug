@@ -1,16 +1,16 @@
 include ../bullet/bullet
 
-mixin bullet-list(options)
+mixin bullet-list(props = {})
     -
         let
-            {label, items, label_size_large} = options || {};
-        let classNames = label_size_large ? 'bullet-list__label_size_large' : '';
-        items = items || [];
-    .bullet-list
+            { label, items = [], size } = props;
+            className = "bullet-list";
+            classNames = `${className}`;
+    div(
+        class=classNames
+    )
         if (label)
-            .bullet-list__label(
-                class=classNames
-            )=label 
+            .bullet-list__label=label 
         .bullet-list__list
             each item in items
                 .bullet-list__item

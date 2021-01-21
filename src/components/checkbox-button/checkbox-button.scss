@@ -9,16 +9,21 @@ $parent: "checkbox-button";
   flex-grow: 1;
   flex-direction: row;
   cursor: pointer;
-  line-height: 1.29rem;
-  color: $color-3;
+  color: $color-2;
   @include user-select-none;
-  align-items: flex-start;
 
-  &_bold {
+  &__label {
+    line-height: 1.29rem;
+    color: $color-2;
+  }
+
+  &_theme_bold {
     .#{$parent}__label {
       @include h3;
       font-size: 1rem;
       text-transform: inherit;
+      line-height: 1.29rem;
+      color: $color-2;
     }
   }
 

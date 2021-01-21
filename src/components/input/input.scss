@@ -152,6 +152,8 @@ $parent: ".input";
   &_theme_dropdown_fill,
   &_theme_dropdown {
     #{$parent}__section {
+      padding-right: 6.2rem;
+
       #{$parent}__input {
         color: $color-2;
       }

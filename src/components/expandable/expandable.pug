@@ -1,9 +1,13 @@
-mixin expandable(o)
+mixin expandable(props = {})
     -
-        let { label, forcedExpanded = false, expanded = false } = o || {};
-        let classes = 'expandable js-expandable' + (forcedExpanded ? ' expandable_forced-expanded' : '') + (expanded ? ' expandable_expanded' : '' )
+        let
+            { label, isForcedExpanded, isExpanded } = props;
+            className = 'expandable'; 
+            classNames = `${className} js-${className}`;
+        classNames += isForcedExpanded ? ` ${className}_forced-expanded` : '';
+        classNames += isExpanded ? ` expandable_expanded` : '';
     div(
-        class=classes
+        class=classNames
     )
         .expandable__header.js-expandable__header
             .expandable__label=label
