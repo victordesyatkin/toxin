@@ -3,9 +3,12 @@
 $parent: ".date-dropdown";
 
 #{$parent} {
+  position: relative;
+
   &__section-dropdown {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 0.35rem;
   }
 
   &__section-dropdown > div:nth-child(2) {
@@ -13,9 +16,8 @@ $parent: ".date-dropdown";
   }
 
   &__section-calendar {
-    position: relative;
+    position: absolute;
     width: 100%;
-    margin-top: 0.35rem;
     display: none;
 
     &__expanded {

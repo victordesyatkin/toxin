@@ -35,7 +35,7 @@ $parent: ".calendar";
   .datepicker,
   .-in-range- {
     @include h3-lite;
-    color: $color-third-dark;
+    color: $color-3;
   }
 
   .datepicker--nav {
@@ -212,11 +212,11 @@ $parent: ".calendar";
   }
 
   &__button_clean {
-    color: $color-third-dark;
+    color: $color-7;
   }
 
   &__button_apply {
-    color: $color-purple;
+    color: $color-7;
   }
 
   &__button_hide {

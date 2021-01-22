@@ -2,50 +2,55 @@
   "scriptSrc": "cards",
   "logo": {
     "src": "../../assets/images/logo-fill.svg",
-    "alt": "TOXIN",
-    "theme": "fill"
+    "alt": "TOXIN"
   },
   "picker": {
     "label": "Найдём номера под ваши пожелания",
     "dateDropdown": {
       "fieldStart": {
-        "name": "startDate2",
-        "id": "startDate2",
-        "type": "text",
-        "label": "прибытие",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "button": { "visible": true, "class": "arrow-down" }
+        "input": {
+          "name": "startDate2",
+          "id": "startDate2",
+          "type": "text",
+          "label": "прибытие",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "button": { "isVisible": true, "iconClass": "arrow-down" },
+          "notFocus": true
+        }
       },
       "fieldEnd": {
-        "name": "endDate2",
-        "id": "endDate2",
-        "type": "text",
-        "label": "выезд",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "button": { "visible": true, "class": "arrow-down" }
+        "input": {
+          "name": "endDate2",
+          "id": "endDate2",
+          "type": "text",
+          "label": "выезд",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "button": { "isVisible": true, "iconClass": "arrow-down" },
+          "notFocus": true
+        }
       },
       "calendar": {
-        "visible": false,
         "buttonCleanText": "Очистить",
         "buttonApplyText": "Применить"
       }
     },
     "dropdown": {
-      "dropdownOptions": {
-        "expand": false,
+      "dropdown": {
         "type": 1,
-        "controlVisible": true,
+        "isControlVisible": true,
         "buttonDecreaseText": "-",
         "buttonIncreaseText": "+",
         "buttonCleanText": "Очистить",
         "buttonApplyText": "Применить"
       },
-      "name": "guests3",
-      "stateText": "",
-      "type": "text",
-      "label": "гости",
-      "placeholder": "Сколько гостей",
-      "button": { "class": "arrow-down", "visible": true },
+      "input": {
+        "name": "guests3",
+        "stateText": "",
+        "type": "text",
+        "label": "гости",
+        "placeholder": "Сколько гостей",
+        "button": { "iconClass": "arrow-down", "isVisible": true }
+      },
       "items": [
         { "title": "взрослые", "value": 0 },
         { "title": "дети", "value": 0 },
@@ -55,10 +60,9 @@
     "button": {
       "text": "подобрать номер",
       "type": "button",
-      "disabled": false,
       "value": "",
       "view": 3,
-      "defaultSrc": "./assets/images/arrow-forward.svg"
+      "src": "./assets/images/arrow-forward.svg"
     }
   },
   "book": {
