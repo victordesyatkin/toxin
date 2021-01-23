@@ -16,7 +16,7 @@
 
   &__main {
     display: none;
-    border: 1px solid $color-third-dark;
+    border: 1px solid $color-3;
     border-top: none;
     box-sizing: border-box;
     border-bottom-left-radius: 7px;
@@ -54,8 +54,8 @@
 
   &__button {
     border-radius: 100%;
-    border: 1px solid $color-fourth-dark;
-    color: $color-third-dark;
+    border: 1px solid $color-4;
+    color: $color-3;
     box-sizing: border-box;
     background-color: transparent;
     font-size: 1rem;
@@ -93,11 +93,11 @@
   }
 
   &__control-button_apply {
-    color: $color-purple;
+    color: $color-7;
   }
 
   &__control-button_clean {
-    color: $color-third-dark;
+    color: $color-7;
   }
 
   &__control-button:hover,

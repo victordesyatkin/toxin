@@ -4,27 +4,13 @@
 $parent: ".calendar";
 
 #{$parent} {
-  position: relative;
-
   &__main {
-    position: absolute;
     width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 99;
     border: 1px solid $color-4;
     box-sizing: border-box;
     box-shadow: 0px 10px 20px $color-6;
     border-radius: 4px;
     background-color: $color-14;
-
-    &_relative {
-      position: relative;
-    }
-  }
-
-  &__main_hidden {
-    display: none;
   }
 
   .datepicker {

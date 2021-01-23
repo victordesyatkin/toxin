@@ -85,7 +85,7 @@
         "label": "прибытие",
         "placeholder": "ДД.ММ.ГГГГ",
         "value": "19.08.2019",
-        "button": { "visible": true, "class": "arrow-down" }
+        "button": { "isVisible": true, "iconClass": "arrow-down" }
       },
       "fieldEnd": {
         "name": "endDate3",
@@ -94,31 +94,32 @@
         "label": "выезд",
         "placeholder": "ДД.ММ.ГГГГ",
         "value": "23.08.2019",
-        "button": { "visible": true, "class": "arrow-down" }
+        "button": { "isVisible": true, "iconClass": "arrow-down" }
       },
       "calendar": {
         "start": "19.08.2019",
         "end": "23.08.2019",
-        "visible": false,
+        "isVisible": false,
         "buttonCleanText": "Очистить",
         "buttonApplyText": "Применить"
       }
     },
     "dropdown": {
-      "dropdownOptions": {
-        "expand": false,
+      "dropdown": {
         "type": 1,
-        "controlVisible": true,
+        "isControlVisible": true,
         "buttonDecreaseText": "-",
         "buttonIncreaseText": "+",
         "buttonCleanText": "Очистить",
         "buttonApplyText": "Применить"
       },
-      "name": "guests2",
-      "type": "text",
-      "label": "гости",
-      "placeholder": "Сколько гостей",
-      "button": { "class": "arrow-down", "visible": true },
+      "input": {
+        "name": "guests2",
+        "type": "text",
+        "label": "гости",
+        "placeholder": "Сколько гостей",
+        "button": { "iconClass": "arrow-down", "isVisible": true }
+      },
       "items": [
         { "title": "взрослые", "value": 2 },
         { "title": "дети", "value": 1 },
@@ -130,10 +131,9 @@
     "button": {
       "text": "Забронировать",
       "type": "button",
-      "disabled": false,
       "value": "",
       "view": 3,
-      "defaultSrc": "./assets/images/arrow-forward.svg"
+      "src": "./assets/images/arrow-forward.svg"
     },
     "numberFormat": "ru-RU",
     "words": ["сутки", "суток", "суток"],
@@ -144,10 +144,8 @@
     }
   },
   "calendar": {
-    "visible": true,
     "start": "19.08.2019",
     "end": "23.08.2019",
-    "isOpen": true,
     "buttonCleanText": "Очистить",
     "buttonApplyText": "Применить"
   },
@@ -172,17 +170,16 @@
       "buttons": [
         {
           "label": "Мужчина",
-          "checked": true,
+          "isChecked": true,
           "name": "gender1",
           "value": "male",
-          "defaultSrc": "./assets/images/checkbox-buttons.svg"
+          "src": "./assets/images/checkbox-buttons.svg"
         },
         {
           "label": "Женщина",
-          "checked": false,
           "name": "gender1",
           "value": "female",
-          "defaultSrc": "./assets/images/checkbox-buttons.svg"
+          "src": "./assets/images/checkbox-buttons.svg"
         }
       ]
     },
@@ -194,11 +191,13 @@
       "placeholder": "ДД.ММ.ГГГГ"
     },
     "email": {
-      "name": "email1",
-      "id": "email1",
-      "type": "text",
-      "label": "данные для входа в сервис",
-      "placeholder": "Email",
+      "input": {
+        "name": "email1",
+        "id": "email1",
+        "type": "text",
+        "label": "данные для входа в сервис",
+        "placeholder": "Email"
+      },
       "mask": {
         "mask": "^\\S*@?\\S*$",
         "regexp": true
@@ -212,34 +211,23 @@
     },
     "submit": "",
     "contribute": {
-      "buttons": [
-        {
-          "label": "Получать спецпредложения",
-          "checked": false,
-          "name": "contribute",
-          "defaultSrc": "./assets/images/checkbox-buttons.svg"
-        }
-      ]
+      "label": "Получать спецпредложения",
+      "name": "contribute",
+      "src": "./assets/images/checkbox-buttons.svg"
     },
     "pay": {
-      "buttons": [
-        {
-          "text": "Перейти к оплате",
-          "type": "button",
-          "disabled": false,
-          "value": "",
-          "view": 3,
-          "name": "pay1",
-          "defaultSrc": "./assets/images/arrow-forward.svg"
-        }
-      ]
+      "text": "Перейти к оплате",
+      "type": "button",
+      "value": "",
+      "view": 3,
+      "name": "pay1",
+      "src": "./assets/images/arrow-forward.svg"
     },
     "signIn": {
       "content": "Уже есть аккаунт на Toxin",
       "button": {
         "text": "войти",
         "type": "button",
-        "disabled": false,
         "value": "",
         "view": 1,
         "name": "signIn"
@@ -249,11 +237,13 @@
   "signIn": {
     "title": "Войти",
     "email": {
-      "name": "email2",
-      "id": "email2",
-      "type": "text",
-      "label": "",
-      "placeholder": "Email",
+      "input": {
+        "name": "email2",
+        "id": "email2",
+        "type": "text",
+        "label": "",
+        "placeholder": "Email"
+      },
       "mask": {
         "mask": "^\\S*@?\\S*$",
         "regexp": true
@@ -270,18 +260,16 @@
     "signIn": {
       "text": "Войти",
       "type": "button",
-      "disabled": false,
       "value": "",
       "view": 3,
       "name": "signIn1",
-      "defaultSrc": "./assets/images/arrow-forward.svg"
+      "src": "./assets/images/arrow-forward.svg"
     },
     "signUp": {
       "content": "Нет аккаунта на Toxin?",
       "button": {
         "text": "создать",
         "type": "button",
-        "disabled": false,
         "value": "",
         "view": 1,
         "name": "signUp2"
@@ -290,8 +278,25 @@
   },
   "slider1": {
     "slider": {
-      "images": [],
-      "control": true
+      "images": [
+        {
+          "src": "../../assets/images/slider-1.png",
+          "alt": "view-1"
+        },
+        {
+          "src": "../../assets/images/slider-2.png",
+          "alt": "view-2"
+        },
+        {
+          "src": "../../assets/images/slider-3.png",
+          "alt": "view-3"
+        },
+        {
+          "src": "../../assets/images/slider-4.png",
+          "alt": "view-4"
+        }
+      ],
+      "isControl": true
     },
     "info": {
       "number": 888,
@@ -304,15 +309,41 @@
       "options": { "style": "decimal", "currency": "RUB" }
     },
     "rating": {
-      "button": { "grade": 5, "name": "rating1", "count": 5, "off": true },
+      "button": {
+        "grade": 5,
+        "name": "rating1",
+        "count": 5,
+        "isOff": true,
+        "srcImgRate": "../assets/images/star.svg",
+        "altImgRate": "Rate",
+        "srcImgNoRate": "../assets/images/star-border.svg",
+        "altImgNoRate": "No rate"
+      },
       "comments": 145
     },
     "commentsContent": "Отзывов"
   },
   "slider2": {
     "slider": {
-      "images": [],
-      "control": false
+      "images": [
+        {
+          "src": "../../assets/images/slider-2.png",
+          "alt": "view-2"
+        },
+        {
+          "src": "../../assets/images/slider-1.png",
+          "alt": "view-1"
+        },
+        {
+          "src": "../../assets/images/slider-3.png",
+          "alt": "view-3"
+        },
+        {
+          "src": "../../assets/images/slider-4.png",
+          "alt": "view-4"
+        }
+      ],
+      "isControl": false
     },
     "info": {
       "number": "840",
@@ -325,7 +356,16 @@
       "options": { "style": "decimal", "currency": "RUB" }
     },
     "rating": {
-      "button": { "grade": 4, "name": "rating2", "count": 5, "off": true },
+      "button": {
+        "grade": 4,
+        "name": "rating2",
+        "count": 5,
+        "isOff": true,
+        "srcImgRate": "../assets/images/star.svg",
+        "altImgRate": "Rate",
+        "srcImgNoRate": "../assets/images/star-border.svg",
+        "altImgNoRate": "No rate"
+      },
       "comments": 65
     },
     "commentsContent": "Отзывов"

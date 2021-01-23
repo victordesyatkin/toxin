@@ -5,44 +5,19 @@ include ../rate-button/rate-button
 
 mixin card-slider(props)
     -
-        let { slider, info, rating, link, commentsContent } = props || {};
+        let { slider, info, rating, commentsContent } = props || {};
         let { button, comments } = rating || {};
-    if (link)
-        -
-            let { href, title, rel } = link || {};
-            let defaultRel = "noreferrer noopener";
-            rel =  rel || defaultRel;
-        a.card-slider-link(
-            title=title
-            href=href
-            rel=rel
-        )
-            +card
-                .card-slider.js-card-slider
-                    .card-slider__slider
-                        +slider(slider)
-                .card-slider__info
-                    +card-header(info)
-                .card-slider__separator-wrap
-                    .card-slider__separator
-                .card-slider__score
-                    .card-slider__rating
-                        +rate-button(button)
-                    .card-slider__comments
-                        span.card-slider__comments-numbers=comments 
-                        span.card-slider__comments-content=commentsContent
-    else
-        +card
-            .card-slider.js-card-slider
-                .card-slider__slider
-                    +slider(slider)
-            .card-slider__info
-                +card-header(info)
-            .card-slider__separator-wrap
-                .card-slider__separator
-            .card-slider__score
-                .card-slider__rating
-                    +rate-button(button)
-                .card-slider__comments
-                    span.card-slider__comments-numbers=comments 
-                    span.card-slider__comments-content=commentsContent
+    +card
+        .card-slider.js-card-slider
+            .card-slider__slider
+                +slider(slider)
+        .card-slider__info
+            +card-header(info)
+        .card-slider__separator-wrap
+            .card-slider__separator
+        .card-slider__score
+            .card-slider__rating
+                +rate-button(button)
+            .card-slider__comments
+                span.card-slider__comments-numbers=comments 
+                span.card-slider__comments-content=commentsContent

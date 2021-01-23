@@ -1,7 +1,7 @@
 mixin calendar(props = {})
     - 
         let
-            { isRelative, buttonCleanText, buttonApplyText, withoutBorder } = props;
+            { buttonCleanText, buttonApplyText } = props;
             className = 'calendar'; 
             classNames = `${className} js-${className}`;
     div(
@@ -11,8 +11,6 @@ mixin calendar(props = {})
         - 
             let
                 mainClassNames = `${className}__main js-${className}__main`;
-                mainClassNames += isRelative ? ` ${className}__main_relative` : '';
-            mainClassNames += withoutBorder ? ` ${className}_with-out-border` : '';
         div(class = mainClassNames)
             input(type="hidden", date-isCalendar="1")
             .calendar__control

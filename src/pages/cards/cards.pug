@@ -16,47 +16,24 @@ block header
 block main
     -
         let data = htmlWebpackPlugin.options.getData() || {};
-        let { picker, book, calendar } = data;
+        let { picker, book, calendar, signUp, signIn, slider1, slider2 } = data;
 
     article.cards.js-cards
         section.cards__section
             +card
-                +picker(data.picker)
+                +picker(picker)
         section.cards__section
             +card
-                +picker(data.book)
+                +book(book)
+        section.cards__section
+            +calendar(calendar)
         section.cards__section
             +card
-                +picker(data.calendar)
-        //-     .cards__section.width-380.js-cards__sign-up
-        //-         +card
-        //-             +sign-up(data.signUp)  
-        //- section.section__container.cards_margin-right-40
-        //-     .cards__section.width-380.margin-bottom-39.js-cards__book
-        //-         +card
-        //-             +book(data.book)
-        //-     .cards__section.width-380.js-cards__sign-in
-        //-         +card
-        //-             +sign-in(data.signIn)
-        //- section.section__container
-        //-     .cards__section.width-320.margin-bottom-39.cards__calendar.js-cards__calendar
-        //-         +card
-        //-             +calendar(data.calendar)
-        //-     .cards__section.cards_width-273.margin-bottom-47.cards_margin-left--2.js-cards__card-slider
-        //-         +card-slider({...data.slider1, slider: { ...data.slider1.slider,
-        //-         images: [
-        //-             {src: require('../../assets/images/slider-1.png').default},
-        //-             {src: require('../../assets/images/slider-2.png').default},
-        //-             {src: require('../../assets/images/slider-3.png').default},
-        //-             {src: require('../../assets/images/slider-4.png').default}
-        //-         ]
-        //-         }})
-        //-     .cards__section.cards_width-273.cards_margin-left--2.js-cards__card-slider
-        //-         +card-slider({...data.slider2, slider: { ...data.slider2.slider,
-        //-         images: [
-        //-             {src: require('../../assets/images/slider-2.png').default},
-        //-             {src: require('../../assets/images/slider-1.png').default},
-        //-             {src: require('../../assets/images/slider-3.png').default},
-        //-             {src: require('../../assets/images/slider-4.png').default}
-        //-         ]
-        //-         }})
+                +sign-up(signUp)
+        section.cards__section
+            +card
+                +sign-in(signIn)
+        section.cards__section
+            +card-slider(slider1)
+            +card-slider(slider2)
+                
