@@ -65,11 +65,16 @@ class DateDropdown {
     $(document).on("click", this._handleDocumentClick.bind(this));
   }
 
+  _setZIndex(value) {
+    this._$calendar.css({ "z-index": value });
+  }
+
   _handleInputClick() {
     if (this._$calendar.is(":visible")) {
-      this._$calendar.hide("slow");
+      this._$calendar.slideUp("slow", this._setZIndex.bind(this, ""));
     } else {
-      this._$calendar.show("slow");
+      this._setZIndex(99);
+      this._$calendar.slideDown("slow");
     }
   }
 

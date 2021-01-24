@@ -20,20 +20,25 @@ block main
 
     article.cards.js-cards
         section.cards__section
-            +card
-                +picker(picker)
+            .cards__picker
+                +card
+                    +picker(picker)
+            .cards__sign-up
+                +card
+                    +sign-up(signUp)        
         section.cards__section
-            +card
-                +book(book)
+            .cards__book
+                +card
+                    +book(book)
+            .cards__sign-in
+                +card
+                    +sign-in(signIn)
         section.cards__section
-            +calendar(calendar)
-        section.cards__section
-            +card
-                +sign-up(signUp)
-        section.cards__section
-            +card
-                +sign-in(signIn)
-        section.cards__section
-            +card-slider(slider1)
-            +card-slider(slider2)
+            .cards__calendar
+                +calendar(calendar)
+            .cards__sliders
+                .cards__slider
+                    +card-slider(slider1)
+                .cards__slider
+                    +card-slider(slider2)
                 

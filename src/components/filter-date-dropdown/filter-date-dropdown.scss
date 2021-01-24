@@ -2,11 +2,14 @@
 
 $parent: ".filter-date-dropdown";
 
-.filter-date-dropdown {
+#{$parent} {
+  position: relative;
+
   &_forced-expanded,
   &_expanded {
     #{$parent}__section-down {
       display: block;
+      z-index: 99;
     }
   }
 
@@ -24,6 +27,7 @@ $parent: ".filter-date-dropdown";
   &__section-down {
     margin-top: 0.39rem;
     display: none;
+    position: absolute;
   }
 
   &__label {

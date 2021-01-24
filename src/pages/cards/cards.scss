@@ -4,44 +4,41 @@ $parent: ".cards";
 
 #{$parent} {
   width: 100%;
+  display: flex;
   padding: 5.14rem 6.07rem 10rem 10rem;
 
   &__header {
     background-color: $color-8;
   }
-
-  &__section:nth-child(1) {
-    display: inline-block;
-    width: 27.14rem;
-  }
-
-  &__section:nth-child(2) {
-    display: inline-block;
-    width: 27.14rem;
-  }
-
-  &__section:nth-child(3) {
-    display: inline-block;
-    width: 27.14rem;
-  }
-
-  &__section:nth-child(4) {
-    display: inline-block;
-    width: 27.14rem;
-  }
-
-  &__section:nth-child(5) {
-    display: inline-block;
-    width: 27.14rem;
-  }
-
-  &__section:nth-child(6) {
-    display: inline-block;
-    width: 19.28rem;
-  }
 }
 
 @include media-breakpoint-up($xxs) {
   #{$parent} {
+    &__section:nth-child(1) {
+      width: 27.14rem;
+      margin-right: 2.85rem;
+    }
+
+    &__section:nth-child(2) {
+      width: 27.14rem;
+      margin-right: 2.85rem;
+    }
+
+    &__section:nth-child(3) {
+      width: 22.86rem;
+    }
+
+    &__sliders {
+      width: 19.28rem;
+    }
+
+    &__picker,
+    &__sign-up,
+    &__book,
+    &__sign-in,
+    &__calendar,
+    &__slider {
+      margin-top: 2.86rem;
+    }
   }
 }

@@ -195,6 +195,9 @@ $parent: ".calendar";
     @include reset-button;
     @include h3;
     cursor: pointer;
+    &:hover {
+      color: $color-3;
+    }
   }
 
   &__button_clean {

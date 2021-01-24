@@ -73,7 +73,7 @@ class FilterDateDropdown {
     this._buttonClean.on("click", this._handleCleanButtonClick.bind(this));
     this._buttonApply.on("click", this._handleApplyButtonClick.bind(this));
     $(document).on("click", this._handleDocumentClick.bind(this));
-    this._forcedVisible = this._$element.hasClass(
+    this._isForcedVisible = this._$element.hasClass(
       "filter-date-dropdown_forced-expanded"
     );
     this._setDates(this._getValue());
@@ -115,7 +115,7 @@ class FilterDateDropdown {
   }
 
   _handleMainBlockClick() {
-    if (this._forcedVisible) {
+    if (this._isForcedVisible) {
       return false;
     }
     this._$mainBlock.fadeToggle("fast");
