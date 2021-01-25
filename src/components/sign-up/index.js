@@ -4,10 +4,9 @@ import "../input";
 import "../radio-buttons";
 import "../toggle-button";
 import "../button";
-
 import "./sign-up.scss";
 
-export default class SignUp {
+class SignUp {
   static CLASS_NAME = "SIGN_UP";
 
   static renderComponents(props = {}) {
@@ -37,3 +36,5 @@ export default class SignUp {
     MaskedTextField.renderComponents({ parents: this._$element });
   }
 }
+
+export default SignUp;

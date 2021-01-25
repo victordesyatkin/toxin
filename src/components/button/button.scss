@@ -18,8 +18,8 @@ $parent: "button";
   background: none;
 
   &__view {
-    @include linear-gradient(180deg, $color-purple, $color-purple-dark, 1);
-    color: $color-first-white;
+    background: $gradient-1;
+    color: $color-14;
     border-radius: 22px;
 
     &_1 {
@@ -36,12 +36,12 @@ $parent: "button";
 
     &_2 {
       padding: 0;
-      color: $color-purple;
+      color: $color-7;
       background: none;
 
       &.#{$parent}__view_2:hover,
       &.#{$parent}__view_hover {
-        color: $color-third-dark;
+        color: $color-3;
         background: none;
       }
     }
@@ -64,6 +64,22 @@ $parent: "button";
     &_hover,
     &:hover {
       @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.5);
+    }
+  }
+
+  &_sizes_1 {
+    &.#{$parent}__view_1 {
+      .#{$parent}__content {
+        padding: 12px 23px 12px 22px;
+      }
+    }
+  }
+
+  &_sizes_2 {
+    &.#{$parent}__view_1 {
+      .#{$parent}__content {
+        padding: 12px 14px 11px 15px;
+      }
     }
   }
 }

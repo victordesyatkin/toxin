@@ -1,20 +1,22 @@
 mixin link(props = {})
     -
         let
-            { href, title, content, target, rel, itemType, isItemScope, isFill } = props;
+            { href, title, target, rel, content, isBlock, isCurrent }  = props;
             if (target === "_blank") {
                 rel="noopener noreferrer";
             }
         let className = "link";
         let classNames = className;
-        classNames += isFill ? ` ${className}_fill` : '';
-    a.link(
+        classNames += isBlock ? ` ${className}_block` : '';
+        classNames += isCurrent ? ` ${className}_current` : '';
+    a(
         href=href
         title=title
         target=target
         rel=rel
-        itemtype=itemType
-        itemscope=isItemScope
+        class=classNames
     )
-    block content
-        #{!content}
+        if block
+            block
+        else 
+            | #{content}

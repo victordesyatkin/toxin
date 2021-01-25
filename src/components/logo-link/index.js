@@ -1,3 +1,3 @@
-import "./logo-image.scss";
-
+import "../logo-image";
+import "../link";
 import "./logo-link.scss";

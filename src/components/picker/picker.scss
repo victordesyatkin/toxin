@@ -1,21 +1,21 @@
 @import "~theme/variables.scss";
 
 .picker {
-  width: 380px;
+  width: 100%;
 
   height: auto;
-  padding: 38px 30px 30px 30px;
+  padding: 40px 30px 30px 28px;
 
   &__label {
     @include h1;
-    margin-bottom: 23px;
-  }
-
-  &__date-dropdown {
     margin-bottom: 21px;
   }
 
+  &__date-dropdown {
+    margin-bottom: 22px;
+  }
+
   &__dropdown {
-    margin-bottom: 32px;
+    margin-bottom: 31px;
   }
 }

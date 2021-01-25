@@ -1,6 +1,8 @@
 @import "~theme/global.scss";
 
-.card-header {
+$parent: "card-header";
+
+.#{$parent} {
   &__section-info {
     display: flex;
     flex-direction: row;
@@ -39,5 +41,24 @@
     font-size: 12px;
     margin-left: 5px;
     @include font-family-first-regular;
+  }
+
+  &_theme_slider {
+    .#{$parent}__number-info {
+      font-size: 14px;
+    }
+
+    .#{$parent}__number {
+      font-size: 19px;
+      margin: 0 2px 0 4px;
+    }
+
+    .#{$parent}__suite {
+      font-size: 0.85rem;
+    }
+
+    .#{$parent}__price {
+      font-size: 1rem;
+    }
   }
 }

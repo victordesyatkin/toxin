@@ -5,45 +5,47 @@ include ../button/button
 mixin book(props={})
     -
         let {
-            discount, number, suite, price, duration, unit, dropdown, dateDropdown, total, totalInfo, button, discountText, discountTotalPreset,
-            numberInfoText, feeText, feeTotal
+            discount, number, suite, price, duration, unit, dropdown, dateDropdown, total, totalInfo, button,
+            discountText, discountTotalPreset, numberInfoText, feeText, feeTotal
         } = props;
     .book.js-book(
         data-options=props
     )
-        .book__section.js-book__section.book__section-title.margin-bottom-20(data-type="3")
+        .book__section.js-book__section.book__section-title(data-type="3")
             .book__number-info=numberInfoText
                 span.book__number=number
                 span.book__suite=suite
             .book__price
                 |#{price}!{unit}
                 span.book__duration=duration
-        .book__date-dropdown.js-book__date-dropdown.book_margin-bottom-21
+        .book__date-dropdown.js-book__date-dropdown
             +date-dropdown(dateDropdown)
-        .book__dropdown.margin-bottom-18
+        .book__dropdown
             +dropdown(dropdown)
-        .book__section.js-book__section.margin-bottom-12(data-type="1") 
-                .book__section-info.js-book__section-info
+        .book__sections
+            .book__section.js-book__section(data-type="1") 
+                    .book__section-info.js-book__section-info
+                    .book__section-total.js-book__section-total
+            .book__section.js-book__section
+                .book__section-info
+                    span.book__section-content
+                        | #{discountText} #{discount}!{unit}
+                    span.book__info.icon-info
                 .book__section-total.js-book__section-total
-        .book__section.js-book__section.margin-bottom-11 
-            .book__section-info
-                span.book__section-content
-                    | #{discountText} #{discount}!{unit}
-                span.book__info.icon-info
-            .book__section-total.js-book__section-total
-                | #{discountTotalPreset} !{unit}
-        .book__section.js-book__section.margin-bottom-27
-            .book__section-info
-                span.book__section-content=feeText
-                span.book__info.icon-info
-            .book__section-total.js-book__section-total
-                | #{feeTotal}!{unit}                                
-        .book__section.js-book__section.book__total.margin-bottom-20(data-type="2")
-            .book__section-info=totalInfo
-            .book__separator
-            .book__section-total.js-book__section-total
-                |#{total}
-                span !{unit}
+                    | #{discountTotalPreset}!{unit}
+            .book__section.js-book__section
+                .book__section-info
+                    span.book__section-content=feeText
+                    span.book__info.icon-info
+                .book__section-total.js-book__section-total
+                    | #{feeTotal}!{unit}                                
+            .book__section.js-book__section.book__total(data-type="2")
+                .book__section-info=totalInfo
+                .book__separator
+                    .book__separator-dummy
+                .book__section-total.js-book__section-total
+                    |#{total}
+                    span !{unit}
         .book__buttons
             +button(button)
         

@@ -2,10 +2,9 @@ import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
 import "../button";
 import "../card-footer";
-
 import "./sign-in.scss";
 
-export default class SignIn {
+class SignIn {
   static CLASS_NAME = "SIGN_IN";
 
   static renderComponents(props = {}) {
@@ -35,3 +34,5 @@ export default class SignIn {
     MaskedTextField.renderComponents({ parents: this._$element });
   }
 }
+
+export default SignIn;

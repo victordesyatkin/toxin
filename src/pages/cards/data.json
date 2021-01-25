@@ -79,22 +79,28 @@
     "feeTotal": 300,
     "dateDropdown": {
       "fieldStart": {
-        "name": "startDate3",
-        "id": "startDate3",
-        "type": "text",
-        "label": "прибытие",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "value": "19.08.2019",
-        "button": { "isVisible": true, "iconClass": "arrow-down" }
+        "input": {
+          "name": "startDate3",
+          "id": "startDate3",
+          "type": "text",
+          "label": "прибытие",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "value": "19.08.2019",
+          "button": { "isVisible": true, "iconClass": "arrow-down" },
+          "notFocus": true
+        }
       },
       "fieldEnd": {
-        "name": "endDate3",
-        "id": "endDate3",
-        "type": "text",
-        "label": "выезд",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "value": "23.08.2019",
-        "button": { "isVisible": true, "iconClass": "arrow-down" }
+        "input": {
+          "name": "endDate3",
+          "id": "endDate3",
+          "type": "text",
+          "label": "выезд",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "value": "23.08.2019",
+          "button": { "isVisible": true, "iconClass": "arrow-down" },
+          "notFocus": true
+        }
       },
       "calendar": {
         "start": "19.08.2019",
@@ -151,14 +157,14 @@
   },
   "signUp": {
     "title": "Регистрация аккаунта",
-    "firstName": {
+    "input1": {
       "name": "firstName1",
       "id": "firstName1",
       "type": "text",
       "label": "",
       "placeholder": "Имя"
     },
-    "lastName": {
+    "input2": {
       "name": "lastName1",
       "id": "lastName1",
       "type": "text",
@@ -166,29 +172,27 @@
       "placeholder": "Фамилия",
       "stateText": ""
     },
-    "gender": {
-      "buttons": [
-        {
-          "label": "Мужчина",
-          "isChecked": true,
-          "name": "gender1",
-          "value": "male",
-          "src": "./assets/images/checkbox-buttons.svg"
-        },
-        {
-          "label": "Женщина",
-          "name": "gender1",
-          "value": "female",
-          "src": "./assets/images/checkbox-buttons.svg"
-        }
-      ]
+    "radioButton1": {
+      "label": "Мужчина",
+      "isChecked": true,
+      "name": "gender1",
+      "value": "male",
+      "src": "./assets/images/checkbox-buttons.svg"
+    },
+    "radioButton2": {
+      "label": "Женщина",
+      "name": "gender1",
+      "value": "female",
+      "src": "./assets/images/checkbox-buttons.svg"
     },
     "birthday": {
-      "name": "birthday1",
-      "id": "birthday1",
-      "type": "text",
-      "label": "дата рождения",
-      "placeholder": "ДД.ММ.ГГГГ"
+      "input": {
+        "name": "birthday1",
+        "id": "birthday1",
+        "type": "text",
+        "label": "дата рождения",
+        "placeholder": "ДД.ММ.ГГГГ"
+      }
     },
     "email": {
       "input": {
@@ -209,7 +213,6 @@
       "type": "password",
       "placeholder": "Пароль"
     },
-    "submit": "",
     "contribute": {
       "label": "Получать спецпредложения",
       "name": "contribute",
@@ -230,7 +233,8 @@
         "type": "button",
         "value": "",
         "view": 1,
-        "name": "signIn"
+        "name": "signIn",
+        "size": 1
       }
     }
   },
@@ -272,7 +276,8 @@
         "type": "button",
         "value": "",
         "view": 1,
-        "name": "signUp2"
+        "name": "signUp2",
+        "size": 2
       }
     }
   },
@@ -306,7 +311,8 @@
       "unit": "&#8381",
       "headerNumberText": "№",
       "numberFormat": "ru-RU",
-      "options": { "style": "decimal", "currency": "RUB" }
+      "options": { "style": "decimal", "currency": "RUB" },
+      "theme": "slider"
     },
     "rating": {
       "button": {
@@ -353,7 +359,8 @@
       "unit": "&#8381",
       "headerNumberText": "№",
       "numberFormat": "ru-RU",
-      "options": { "style": "decimal", "currency": "RUB" }
+      "options": { "style": "decimal", "currency": "RUB" },
+      "theme": "slider"
     },
     "rating": {
       "button": {

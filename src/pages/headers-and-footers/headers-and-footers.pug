@@ -5,20 +5,20 @@ include ../../components/footer/footer
 include ../../components/copyright/copyright
 
 block header
-    +layout__container({basis: 1440, align: 'center', theme: 'color'})
-        +header-ui-kit({ full: true, classes: ['headers-and-footers']})
+    .headers-and-footers__header
+        - let { logo } = htmlWebpackPlugin.options.getData() || {};
+        +header-ui-kit(logo)
 block main
-    +layout__container({basis: 1440, align: 'center', theme: 'color'})
-        article.headers-and-footers
-            -
-                let data = htmlWebpackPlugin.options.getData();
-                let { headerNotAuthorised, headerAuthorised, footer, copyright } = data || {};
-            section.headers-and-footers__section    
-                +header(headerNotAuthorised)
-            section.headers-and-footers__section.headers-and-footers__section_margin-top-39    
-                +header(headerAuthorised)
-            section.headers-and-footers__section.headers-and-footers__section_margin-top-39.js-headers-and-footers__footer
-                +footer(footer)
-            section.headers-and-footers__section.headers-and-footers__section_margin-top-39.headers-and-footers__copyright 
-                +copyright(copyright)
+    article.headers-and-footers
+        -
+            let data = htmlWebpackPlugin.options.getData();
+            let { headerNotAuthorized, headerAuthorized, footer, copyright } = data || {};
+        section.headers-and-footers__section    
+            +header(headerNotAuthorized)
+        //- section.headers-and-footers__section
+        //-     +header(headerAuthorized)
+        //- section.headers-and-footers__section
+        //-     +footer(footer)
+        //- section.headers-and-footers__section
+        //-     +copyright(copyright)
 block footer

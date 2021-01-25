@@ -5,7 +5,6 @@ $parent: ".cards";
 #{$parent} {
   width: 100%;
   display: flex;
-  padding: 5.14rem 6.07rem 10rem 10rem;
 
   &__header {
     background-color: $color-8;
@@ -14,6 +13,8 @@ $parent: ".cards";
 
 @include media-breakpoint-up($xxs) {
   #{$parent} {
+    padding: 72px 6.07rem 10rem 10rem;
+
     &__section:nth-child(1) {
       width: 27.14rem;
       margin-right: 2.85rem;
@@ -21,7 +22,7 @@ $parent: ".cards";
 
     &__section:nth-child(2) {
       width: 27.14rem;
-      margin-right: 2.85rem;
+      margin-right: 2.8rem;
     }
 
     &__section:nth-child(3) {
@@ -32,13 +33,14 @@ $parent: ".cards";
       width: 19.28rem;
     }
 
-    &__picker,
     &__sign-up,
-    &__book,
     &__sign-in,
-    &__calendar,
-    &__slider {
+    &__slider:nth-child(1) {
       margin-top: 2.86rem;
+    }
+
+    &__slider:nth-child(2) {
+      margin-top: 2.6rem;
     }
   }
 }

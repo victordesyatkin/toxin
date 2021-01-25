@@ -5,16 +5,16 @@ include ../masked-text-field/masked-text-field
 
 mixin sign-in(props = {})
     - 
-        let { title, email = {}, password = {}, signIn = {}, signUp = {} } = props; 
+        let { title, email, password, signIn, signUp } = props; 
     .sign-in.js-sign-in
         if (title) 
-            .sign-in__title.sign-in_margin-bottom-16
+            .sign-in__title
                 |#{title}
-        .sign-in__email.margin-bottom-5
+        .sign-in__email
             +masked-text-field(email)
-        .sign-in__email.margin-bottom-20
+        .sign-in__password
             +input(password)
-        .sign-in__button-sign-in.margin-bottom-30
-            +button(signIn)
         .sign-in__button-sign-in
+            +button(signIn)
+        .sign-in__button-sign-up
             +card-footer(signUp)

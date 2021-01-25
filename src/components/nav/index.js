@@ -1,4 +1,3 @@
 import "../nav-item";
-import "../buttons";
-
+import "../button";
 import "./nav.scss";

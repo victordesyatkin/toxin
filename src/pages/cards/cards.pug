@@ -10,8 +10,8 @@ include ../../components/book/book
 include ../../components/sign-in/sign-in
 
 block header
-    - let { logo } = htmlWebpackPlugin.options.getData();
     .cards__header
+        - let { logo } = htmlWebpackPlugin.options.getData();
         +header-ui-kit(logo)
 block main
     -
@@ -41,4 +41,3 @@ block main
                     +card-slider(slider1)
                 .cards__slider
                     +card-slider(slider2)
-                

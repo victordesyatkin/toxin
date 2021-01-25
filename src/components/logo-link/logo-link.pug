@@ -6,14 +6,5 @@ mixin logo-link(props = {})
         let
             { link, logo } = props
     .logo-link
-        //- link({
-        //-     href=href,
-        //-     title=title,
-        //-     itemtype="http://schema.org/Brand"
-        //-     isItemscope 
-        //- })
         +link(link)
-            block content
-                +logo-image(logo)
-
-        
+            +logo-image(logo)

@@ -1,5 +1,5 @@
 include ../input/input
-include ../radio-buttons/radio-buttons
+include ../radio-button/radio-button
 include ../masked-text-field/masked-text-field
 include ../toggle-button/toggle-button
 include ../card-footer/card-footer
@@ -7,25 +7,30 @@ include ../button/button
 
 mixin sign-up(props = {})
     - 
-        let { title, firstName, lastName, gender = {}, birthday, email, password, submit, contribute, pay, signIn } = props; 
+        let {
+            title, input1, input2, radioButton1, radioButton2, birthday, email, password, submit, contribute, pay, signIn
+        } = props; 
     .sign-up.js-sign-up
         if (title) 
-            .sign-up__title.sign-up_margin-bottom-16=title
-        .sign-up__first-name.margin-bottom-5
-            +input(firstName)
-        .sign-up__last-name.sign-up_margin-bottom-11
-            +input(lastName)
-        .sign-up__gender.sign-up_margin-bottom-7
-            +radio-buttons(gender)
-        .sign-up__birthday.margin-bottom-21
+            .sign-up__title=title
+        .sign-up__first-name
+            +input(input1)
+        .sign-up__last-name
+            +input(input2)
+        .sign-up__genders
+            .sign-up__gender
+                +radio-button(radioButton1)
+            .sign-up__gender
+                +radio-button(radioButton2)
+        .sign-up__birthday
             +masked-text-field(birthday)
-        .sign-up__email.margin-bottom-4
+        .sign-up__email
             +masked-text-field(email)
-        .sign-up__password.margin-bottom-10
+        .sign-up__password
             +input(password)
-        .sign-up__contribute.margin-bottom-24 
+        .sign-up__contribute
             +toggle-button(contribute) 
-        .sign-up__button-pay.margin-bottom-30
+        .sign-up__button-pay
             +button(pay)
         .sign-up__section-sign-in
             +card-footer(signIn)

@@ -71,10 +71,10 @@ class DateDropdown {
 
   _handleInputClick() {
     if (this._$calendar.is(":visible")) {
-      this._$calendar.slideUp("slow", this._setZIndex.bind(this, ""));
+      this._$calendar.slideUp("fast", this._setZIndex.bind(this, ""));
     } else {
       this._setZIndex(99);
-      this._$calendar.slideDown("slow");
+      this._$calendar.slideDown("fast");
     }
   }
 

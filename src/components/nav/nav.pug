@@ -1,20 +1,22 @@
 include ../nav-item/nav-item
-include ../buttons/buttons
+include ../button/button
 
-mixin nav(props)
+mixin nav(props = {})
     -
-        let {items = [], user, authorised = false, buttons = {} } = props || {};
-        let { firstName = '' , lastName = '' } = user || {}
+        let { items = [], user = {}, isAuthorized, buttons = [] } = props;
+        let { firstName, lastName } = user;
     .nav
         nav.nav__nav-section
             each item in items
                 +nav-item(item)
-        if authorised
+        if isAuthorized
             .nav__separator
             .nav__user-section
                 |#{firstName} #{lastName}
         else
             .nav__control-section
-                +buttons(buttons)
+                each button in buttons
+                    .nav__control-item                
+                        +button(button)
 
 

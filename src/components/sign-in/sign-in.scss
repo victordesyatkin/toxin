@@ -3,27 +3,22 @@
 .sign-in {
   width: 100%;
   padding: 38px 30px 32px 28px;
-  background-color: $color-first-white;
 
   &__title {
     @include h1;
     letter-spacing: 0px;
+    margin-bottom: 20px;
+  }
+
+  &__email {
+    margin-bottom: 10px;
+  }
+
+  &__password {
+    margin-bottom: 20px;
   }
 
   &__button-sign-in {
-    .buttons__items.buttons__items_full.buttons__view.buttons__view_3 {
-      button {
-        padding-right: 0;
-      }
-    }
-  }
-
-  .card-footer {
-    .buttons__items.buttons__view.buttons__view_1 {
-      button {
-        padding-right: 18px;
-        padding-left: 16px;
-      }
-    }
+    margin-bottom: 30px;
   }
 }

@@ -23,19 +23,20 @@ mixin input(props = {})
   div(
     class=classNames
   )
-    div(
-      class=`${className}__info`
-    )
-      if (label)
-        div(
-          class=`${className}__label`
-        )
-          label(
-            class=`${className}__label-text`
-            for=name
-          )=label
-      if stateText
-        .input__state-text=stateText
+    if (label || stateText)
+      div(
+        class=`${className}__info`
+      )
+        if (label)
+          div(
+            class=`${className}__label`
+          )
+            label(
+              class=`${className}__label-text`
+              for=name
+            )=label
+        if stateText
+          .input__state-text=stateText
     div(class=classesInputSection)
         input(
           id=name

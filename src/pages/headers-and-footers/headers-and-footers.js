@@ -1,9 +1,8 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import Footer from "../../components/footer";
 import "../demo-base/demo-base";
-
 import "./headers-and-footers.scss";
-export default class HeadersAndFooters {
+class HeadersAndFooters {
   static CLASS_NAME = "HEADERS_AND_FOOTERS";
 
   static renderComponents(props = {}) {
@@ -35,3 +34,5 @@ export default class HeadersAndFooters {
 }
 
 window.addEventListener("load", HeadersAndFooters.renderComponents);
+
+export default HeadersAndFooters;

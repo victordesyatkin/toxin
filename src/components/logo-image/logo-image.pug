@@ -1,7 +1,7 @@
 mixin logo-image(props = {})
     -
         let
-            { src, alt, type, itemType, itemScope, itemProp } = props
+            { src, alt, type } = props
             className = 'logo-image';
             classNames = className;
             types = {
@@ -9,16 +9,10 @@ mixin logo-image(props = {})
                 color: 'color',
             }
         classNames += types[type] ? ` ${className}_${types[type]}` : '';
-    div(
-        itemscope=itemScope
-        itemtype=itemType
+    img(
+        src=src
+        alt=alt
         class=classNames
     )
-        if (src)
-            img(
-                itemprop=itemProp
-                src=src
-                alt=alt
-                class=`${className}__img`
-            )
+
         

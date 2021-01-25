@@ -2,17 +2,49 @@
 
 .sign-up {
   width: 100%;
-  padding: 43px 28px 30px 30px;
-  background-color: $color-first-white;
+  padding: 38px 30px 30px 28px;
 
   &__title {
     @include h1;
-    letter-spacing: 0px;
+    margin-bottom: 20px;
+  }
+
+  &__first-name {
+    margin-bottom: 10px;
+  }
+
+  &__last-name {
+    margin-bottom: 10px;
+  }
+
+  &__genders {
+    display: flex;
+    width: 100%;
+    justify-self: flex-start;
+    margin-bottom: 24px;
+  }
+
+  &__gender:first-child {
+    margin-right: 20px;
+  }
+
+  &__birthday {
+    margin-bottom: 20px;
+  }
+
+  &__email {
+    margin-bottom: 10px;
+  }
+
+  &__password {
+    margin-bottom: 8px;
+  }
+
+  &__contribute {
+    margin-bottom: 24px;
   }
 
   &__button-pay {
-    button {
-      padding-left: 4px;
-    }
+    margin-bottom: 30px;
   }
 }

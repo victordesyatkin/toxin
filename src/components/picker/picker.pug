@@ -3,7 +3,7 @@ include ../dropdown/dropdown
 include ../button/button
 
 mixin picker (props = {})
-    - let { label, dateDropdown = {}, dropdown = {}, button } = props;
+    - let { label, dateDropdown, dropdown, button } = props;
     .picker.js-picker
         if (label)
             .picker__label=label

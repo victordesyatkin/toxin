@@ -42,7 +42,7 @@
     height: 100%;
     position: absolute;
     top: 0;
-    color: $color-white-shade100;
+    color: $color-14;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +71,7 @@
     flex-direction: row;
     justify-content: flex-start;
     position: absolute;
-    right: 14px;
+    right: 13px;
     bottom: 16px;
     z-index: 3;
   }
@@ -81,7 +81,7 @@
     height: 8px;
     border-radius: 100%;
     border: 1px solid $color-white-shade100;
-    margin-left: 4px;
+    margin-left: 3.75px;
     cursor: pointer;
   }
 

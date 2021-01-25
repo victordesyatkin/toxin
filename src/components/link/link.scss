@@ -1,16 +1,30 @@
 @import "~theme/variables.scss";
 
-.link {
+$parent: "link";
+
+.#{$parent} {
+  color: $color-3;
+  cursor: pointer;
+  color: $color-3;
   text-decoration: none;
   text-transform: none;
-  color: $color-dark-shade50;
-  cursor: pointer;
 
-  &_fill {
+  &_block {
     width: 100%;
     height: 100%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+  }
+
+  &_current {
+    font-weight: bold;
+    color: $color-2;
+  }
+
+  &:hover {
+    color: lighten($color-2, 20%);
+    text-decoration: none;
+    text-transform: none;
   }
 }
