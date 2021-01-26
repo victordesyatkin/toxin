@@ -1,6 +1,8 @@
 @import "~theme/variables.scss";
 
-.buttons {
+$parent: "buttons";
+
+.#{$parent} {
   &__section-head {
     @include h3;
     margin-bottom: 1.2rem;

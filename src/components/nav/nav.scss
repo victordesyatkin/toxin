@@ -42,4 +42,13 @@ $parent: "nav";
   &__control-section {
     display: flex;
   }
+
+  &__control-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__control-item:nth-child(2) {
+    margin-left: 20px;
+  }
 }

@@ -1,29 +1,31 @@
-include ../logo-image/logo-image
+include ../logo-link/logo-link
 include ../list-links/list-links
 include ../subscription-text-field/subscription-text-field
 include ../copyright/copyright
 
 mixin footer(props = {})
     -
-        let { info = {}, items = [], subscribe = {}, copyright, logo } = props;
-        let { content } = info ;
+        let { info = {}, items = [], subscribe = {}, copyright, logo, action } = props;
+        let { content } = info;
         let { header, description, field } = subscribe;
 
     .footer.js-footer
-        .footer__up-wrapper
-            .footer__up
-                .footer__info-section
-                    .footer__logo
-                        +logo-image(logo)
-                    .footer__info=content || ''
-                nav.footer__nav-items
-                    each item in items
+        .footer__main-section
+            .footer__info-section
+                .footer__logo
+                    +logo-link(logo)
+                .footer__info=content
+            nav.footer__nav-items
+                each item in items
+                    .footer__nav-item
                         +list-links(item)
-                .footer__subscribe
+                form(
+                    class="footer__subscribe-section"
+                    action=action
+                )
                     .footer__subscribe-header=header
                     .footer__subscribe-description=description
                     .footer__subscribe-field
                         +subscription-text-field(field)
-        .footer__down
-            .footer__copyright
-                +copyright(copyright)
+        .footer__copyright-section
+            +copyright(copyright)

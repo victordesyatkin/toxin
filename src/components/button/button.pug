@@ -12,10 +12,14 @@ mixin button(props = {})
             sizes = {
                 1: 1,
                 2: 2,
+                3: 3,
             };
         classNames += isHover ? ` ${className}__view_hover` : '';
         classNames += views[view] ? ` ${className}__view_${views[view]}` : '';
         classNames += sizes[size] ? ` ${className}_sizes_${sizes[size]}` : '';
+        if (sizes[size] && sizes[size] === 3 && src) {
+            classNames += ` ${className}_with_image`;
+        }
     button(
         class=classNames
         name=name

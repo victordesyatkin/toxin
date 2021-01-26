@@ -7,10 +7,9 @@ $parent: "button";
   align-items: center;
   justify-content: center;
   border: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.1rem;
   text-transform: uppercase;
-  padding: 14px 19px 15px 19px;
   cursor: pointer;
   @include font-family-first-bold;
   color: $color-14;
@@ -23,7 +22,6 @@ $parent: "button";
     border-radius: 22px;
 
     &_1 {
-      padding: 0;
       color: $color-purple;
       border: solid 2px transparent;
 
@@ -48,6 +46,7 @@ $parent: "button";
 
     &_3 {
       width: 100%;
+      padding: 14px 19px 15px 21px;
       position: relative;
 
       .#{$parent}__image {
@@ -67,10 +66,16 @@ $parent: "button";
     }
   }
 
+  &_with_image {
+    &_3 {
+      padding-right: 44px;
+    }
+  }
+
   &_sizes_1 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        padding: 12px 23px 12px 22px;
+        padding: 10px 23px 10px 22px;
       }
     }
   }
@@ -78,8 +83,21 @@ $parent: "button";
   &_sizes_2 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        padding: 12px 14px 11px 15px;
+        padding: 10px 14px 9px 15px;
       }
+    }
+  }
+
+  &_sizes_3 {
+    &.#{$parent}__view_1 {
+      .#{$parent}__content {
+        padding: 7px 20px 8px 18px;
+      }
+    }
+
+    &.#{$parent}__view_3 {
+      width: auto;
+      padding: 9px 20px 10px 21px;
     }
   }
 }

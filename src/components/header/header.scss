@@ -1,9 +1,17 @@
 @import "~theme/variables.scss";
 
-.header {
+$parent: "header";
+
+.#{$parent} {
   width: 100%;
   display: flex;
   justify-content: space-between;
   background: $color-14;
   box-shadow: 0px 10px 20px $color-6;
+}
+
+@include media-breakpoint-up($xxs) {
+  .#{$parent} {
+    padding: 15px 140px;
+  }
 }

@@ -15,10 +15,12 @@ block main
             let { headerNotAuthorized, headerAuthorized, footer, copyright } = data || {};
         section.headers-and-footers__section    
             +header(headerNotAuthorized)
-        //- section.headers-and-footers__section
-        //-     +header(headerAuthorized)
-        //- section.headers-and-footers__section
-        //-     +footer(footer)
-        //- section.headers-and-footers__section
-        //-     +copyright(copyright)
+        section.headers-and-footers__section
+            +header(headerAuthorized)
+        section.headers-and-footers__section
+            .headers-and-footers__footer.js-headers-and-footers__footer
+                +footer(footer)
+        section.headers-and-footers__section
+            .headers-and-footers__copyright.js-headers-and-footers__copyright
+                +copyright(copyright)
 block footer

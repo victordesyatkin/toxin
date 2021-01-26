@@ -65,13 +65,15 @@
           "text": "Войти",
           "type": "button",
           "value": "",
-          "view": 1
+          "view": 1,
+          "size": 3
         },
         {
           "text": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "view": 3
+          "view": 3,
+          "size": 3
         }
       ]
     },
@@ -136,13 +138,31 @@
         "firstName": "Юлий",
         "lastName": "Цезарь"
       }
+    },
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN",
+        "isBlock": true
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN"
+      }
     }
   },
   "footer": {
     "logo": {
-      "src": "./assets/images/logo-color.svg"
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN"
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN",
+        "type": "color"
+      }
     },
-    "title": "title title",
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     },
@@ -151,22 +171,22 @@
         "header": "навигация",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О нас",
             "content": "О нас"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Новости",
             "content": "Новости"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Служба поддержки",
             "content": "Служба поддержки"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Услуги",
             "content": "Услуги"
           }
@@ -176,22 +196,22 @@
         "header": "о нас",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О сервисе",
             "content": "О сервисе"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Наша команда",
             "content": "Наша команда"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Вакансии",
             "content": "Вакансии"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Инвесторы",
             "content": "Инвесторы "
           }
@@ -201,17 +221,17 @@
         "header": "Служба поддержки",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Соглашения",
             "content": "Соглашения"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Сообщества",
             "content": "Сообщества"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Связь с нами",
             "content": "Связь с нами"
           }
@@ -219,65 +239,93 @@
       }
     ],
     "copyright": {
+      "logo": {
+        "link": {
+          "href": "/mock-address/change-me",
+          "title": "TOXIN"
+        },
+        "logo": {
+          "src": "../../assets/images/logo-color.svg",
+          "alt": "TOXIN",
+          "type": "color"
+        }
+      },
       "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
-      "showLogo": false,
       "items": [
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-t"
+          "href": "/mock-address/change-me",
+          "title": "twitter",
+          "icon": "twitter",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-f"
+          "href": "/mock-address/change-me",
+          "title": "facebook",
+          "icon": "facebook",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-i"
+          "href": "/mock-address/change-me",
+          "title": "instagram",
+          "icon": "instagram",
+          "isBlock": true
         }
-      ],
-      "logo": {
-        "src": "./assets/images/logo-color.svg"
-      }
+      ]
     },
     "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
-        "name": "footer_subscription_email",
-        "id": "footer_subscription_email",
-        "type": "text",
-        "placeholder": "Email",
-        "button": { "visible": true, "class": "arrow-forward" },
+        "input": {
+          "name": "footer_subscription_email",
+          "id": "footer_subscription_email",
+          "type": "text",
+          "placeholder": "Email",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-forward",
+            "type": "submit"
+          }
+        },
         "mask": {
           "mask": "^\\S*@?\\S*$",
           "regexp": true
         }
       }
-    }
+    },
+    "action": "/mock-address/change-me"
   },
   "copyright": {
+    "size": "sm",
     "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
-    "showLogo": true,
     "items": [
       {
-        "href": "#",
-        "title": "",
-        "content": "icon-t"
+        "href": "/mock-address/change-me",
+        "title": "twitter",
+        "icon": "twitter"
       },
       {
-        "href": "#",
-        "title": "",
-        "content": "icon-f"
+        "href": "/mock-address/change-me",
+        "title": "facebook",
+        "icon": "facebook"
       },
       {
-        "href": "#",
-        "title": "",
-        "content": "icon-i"
+        "href": "/mock-address/change-me",
+        "title": "instagram",
+        "icon": "instagram"
       }
-    ]
+    ],
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN"
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN",
+        "type": "color"
+      }
+    }
   },
   "title": "Headers & Footers"
 }

@@ -18,6 +18,7 @@ import "../../components/radio-buttons";
 import "../../components/rich-checkbox-buttons";
 import "../../components/bullet-list";
 import "../../components/info";
+import "../../components/buttons";
 import "../demo-base/demo-base";
 import "./form-elements.scss";
 class FormElements {

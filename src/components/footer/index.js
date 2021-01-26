@@ -1,13 +1,11 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import SubscriptionTextField from "../subscription-text-field";
-import "../logo-image";
+import "../logo-link";
 import "../list-links";
-import "../subscription-text-field";
 import "../copyright";
-
 import "./footer.scss";
 
-export default class Footer {
+class Footer {
   static CLASS_NAME = "FOOTER";
 
   static renderComponents(props = {}) {
@@ -40,3 +38,5 @@ export default class Footer {
     SubscriptionTextField.renderComponents({ parents: this._$element });
   }
 }
+
+export default Footer;

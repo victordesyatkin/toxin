@@ -1,22 +1,36 @@
 @import "~theme/variables.scss";
 
-.copyright {
+$parent: "copyright";
+
+@mixin sm {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0;
+
+  .#{$parent}__logo {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .#{$parent}__social-items {
+    margin-top: 20px;
+  }
+}
+
+.#{$parent} {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: $color-first-white;
-  box-shadow: 0px 10px 20px $color-dark-shade5;
+  background-color: $color-14;
+  box-shadow: 0px 10px 20px $color-6;
 
   &__logo {
-    margin-top: 121px;
     text-align: center;
   }
 
   &__content {
     text-align: center;
-    margin-bottom: 17px;
   }
 
   &__social-items {
@@ -28,31 +42,38 @@
     width: 24px;
     height: 24px;
     margin-right: 20px;
-    font-size: 21px;
+
+    &:last-child {
+      margin-right: inherit;
+    }
   }
 
-  &__social-item-link {
-    text-transform: none;
-    text-decoration: none;
-    display: inline;
-    background: linear-gradient(
-      180deg,
-      $color-purple 0%,
-      $color-purple-dark 100%
-    );
+  &__icon {
+    color: transparent;
+    font-size: 21px;
+    background: $gradient-1;
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
-  }
-
-  &__social-item:last-child {
-    margin: 0;
   }
 }
 
-@media (max-width: 1023px) {
-  .copyright {
-    height: auto;
-    padding: 15px;
+@include media-breakpoint-up($sm) {
+  .#{$parent} {
+    justify-content: space-between;
+    padding: 26px 140px;
+
+    &__logo {
+      display: none;
+    }
+
+    &.#{$parent}_size_sm {
+      @include sm;
+    }
+  }
+}
+
+@include media-breakpoint-down($sm) {
+  .#{$parent} {
+    @include sm;
   }
 }

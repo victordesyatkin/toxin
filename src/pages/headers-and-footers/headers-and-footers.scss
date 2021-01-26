@@ -1,6 +1,33 @@
 @import "~theme/variables.scss";
 
-.headers-and-footers {
+$parent: "headers-and-footers";
+
+.#{$parent} {
   width: 100%;
-  margin-top: 62px;
+  margin-top: 59px;
+}
+
+@include media-breakpoint-up($xxs) {
+  .#{$parent}__section {
+    outline: 1px solid red;
+  }
+
+  .#{$parent}__section:nth-child(1) {
+    margin-bottom: 33px;
+  }
+
+  .#{$parent}__section:nth-child(2) {
+    margin-bottom: 36px;
+  }
+
+  .#{$parent}__section:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    padding-top: 34px;
+    padding-bottom: 140px;
+  }
+
+  .#{$parent}__copyright {
+    width: 768px;
+  }
 }
