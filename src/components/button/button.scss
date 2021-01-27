@@ -75,7 +75,8 @@ $parent: "button";
   &_sizes_1 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        padding: 10px 23px 10px 22px;
+        // padding: 10px 23px 10px 22px;
+        padding: 12px 23px 13px 25px;
       }
     }
   }
@@ -98,6 +99,14 @@ $parent: "button";
     &.#{$parent}__view_3 {
       width: auto;
       padding: 9px 20px 10px 21px;
+    }
+  }
+
+  &_sizes_4 {
+    &.#{$parent}__view_1 {
+      .#{$parent}__content {
+        padding: 14px 18px 15px 20px;
+      }
     }
   }
 }

@@ -15,10 +15,23 @@ $parent: "buttons";
   &__items {
     display: flex;
     width: 100%;
-    margin-top: 2.2rem;
+    margin-top: 29px;
 
     &:first-child {
       margin-top: 0;
+    }
+
+    &:nth-child(3) {
+      margin-top: 27px;
+
+      .#{$parent}__item {
+        width: auto;
+        margin-left: 22px;
+
+        &:first-child {
+          margin-left: inherit;
+        }
+      }
     }
   }
 

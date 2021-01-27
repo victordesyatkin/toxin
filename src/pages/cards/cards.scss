@@ -13,7 +13,7 @@ $parent: ".cards";
 
 @include media-breakpoint-up($xxs) {
   #{$parent} {
-    padding: 72px 6.07rem 10rem 10rem;
+    padding: 5.14rem 6.07rem 10rem 10rem;
 
     &__section:nth-child(1) {
       width: 27.14rem;

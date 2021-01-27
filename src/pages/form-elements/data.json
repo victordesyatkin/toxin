@@ -489,9 +489,8 @@
     "start": 5000,
     "end": 10000,
     "min": 0,
-    "max": 15000,
-    "separator": 1000,
-    "description": "Стоимость за сутки пребывания в номере"
+    "max": 17000,
+    "separator": 1000
   },
   "buttons": {
     "label": "Buttons",
