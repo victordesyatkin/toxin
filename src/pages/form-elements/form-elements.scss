@@ -12,7 +12,7 @@ $parent: ".form-elements";
   }
 
   &__text-field-default {
-    margin-bottom: 21.44px;
+    margin-bottom: 1.5314rem;
   }
 
   &__text-field-hover-focus {
@@ -20,7 +20,7 @@ $parent: ".form-elements";
   }
 
   &__dropdown-first {
-    margin-bottom: 23.44px;
+    margin-bottom: 1.6742rem;
   }
 
   &__masked-text-field {
@@ -32,7 +32,7 @@ $parent: ".form-elements";
   }
 
   &__filter-date-dropdown {
-    margin-bottom: 43px;
+    margin-bottom: 3.0714rem;
     width: 19rem;
   }
 
@@ -46,12 +46,12 @@ $parent: ".form-elements";
   }
 
   &__radio-buttons {
-    margin-bottom: 43px;
+    margin-bottom: 3.0714rem;
     width: 15.76rem;
   }
 
   &__toggle-buttons {
-    margin-bottom: 45px;
+    margin-bottom: 3.2142rem;
     width: 18.57rem;
   }
 
@@ -66,16 +66,16 @@ $parent: ".form-elements";
 
   &__range-slider {
     width: 19rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.4285rem;
   }
 
   &__buttons {
     width: 15.57rem;
-    margin-bottom: 26px;
+    margin-bottom: 1.8571rem;
   }
 
   &__button {
-    margin-bottom: 41px;
+    margin-bottom: 2.9285rem;
   }
 
   &__dropdown-second {
@@ -87,7 +87,7 @@ $parent: ".form-elements";
   }
 
   &__comment {
-    padding-top: 10px;
+    padding-top: 0.7142rem;
   }
 }
 
@@ -96,7 +96,7 @@ $parent: ".form-elements";
     padding: 4.64rem 10.07rem 10.07rem 10.07rem;
 
     &__article:nth-child(1) {
-      margin-bottom: 101px;
+      margin-bottom: 7.2142rem;
 
       #{$parent}__section:nth-child(1) {
         margin-right: 9rem;
@@ -123,7 +123,7 @@ $parent: ".form-elements";
 
       #{$parent}__section:nth-child(2) {
         margin-right: 5.14rem;
-        width: 320px;
+        width: 22.8571rem;
       }
 
       #{$parent}__section:nth-child(3) {
@@ -151,8 +151,8 @@ $parent: ".form-elements";
 
     &__article:nth-child(4) {
       #{$parent}__section:nth-child(1) {
-        margin-right: 165px;
-        min-width: 280px;
+        margin-right: 11.7857rem;
+        min-width: 20rem;
       }
     }
   }

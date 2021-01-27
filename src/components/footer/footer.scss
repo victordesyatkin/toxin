@@ -38,27 +38,35 @@ $parent: "footer";
 
   &__nav-item:nth-child(3) {
     width: 149px;
-    margin-right: 51px;
+    margin-right: 3.6428rem;
   }
 
   &__subscribe-section {
-    width: 260px;
+    width: 18.5714rem;
   }
 
   &__subscribe-header {
     @include h3;
-    margin-bottom: 20px;
+    margin-bottom: 1.4285rem;
   }
 
   &__subscribe-description {
-    margin-bottom: 23px;
+    margin-bottom: 1.6428rem;
   }
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-up($sm) {
   .#{$parent} {
     &__main-section {
-      padding: 100px 120px 82px 140px;
+      padding: 7.1428rem 8.5714rem 5.8571rem 10rem;
+    }
+  }
+}
+
+@include media-breakpoint-down($sm) {
+  .#{$parent} {
+    &__main-section {
+      display: none;
     }
   }
 }
