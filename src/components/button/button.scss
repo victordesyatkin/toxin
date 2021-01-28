@@ -1,6 +1,6 @@
-@import "~theme/variables.scss";
+@import '~theme/variables.scss';
 
-$parent: "button";
+$parent: 'button';
 
 .#{$parent} {
   display: inline-flex;

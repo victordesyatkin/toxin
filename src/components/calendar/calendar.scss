@@ -1,7 +1,7 @@
-@import "~theme/variables.scss";
-@import "~air-datepicker/dist/css/datepicker.min.css";
+@import '~theme/variables.scss';
+@import '~air-datepicker/dist/css/datepicker.min.css';
 
-$parent: ".calendar";
+$parent: '.calendar';
 
 #{$parent} {
   &__main {
@@ -121,7 +121,7 @@ $parent: ".calendar";
   .-current-::after {
     width: 2.84rem;
     height: 2.85rem;
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -166,7 +166,7 @@ $parent: ".calendar";
   .datepicker--cell-day.-range-from-::before {
     width: 50%;
     height: 100%;
-    content: "";
+    content: '';
     position: absolute;
     @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.25);
     z-index: -2;

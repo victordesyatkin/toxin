@@ -11,7 +11,7 @@
   //   "project": "tsconfig.json",
   //   "tsconfigRootDir": "."
   // },
-  "plugins": ["fsd", "babel"],
+  "plugins": ["fsd", "babel", "prettier"],
   "rules": {
     "fsd/hof-name-prefix": "error",
     "fsd/no-heavy-constructor": "error",

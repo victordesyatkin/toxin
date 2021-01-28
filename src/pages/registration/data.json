@@ -294,7 +294,7 @@
         "id": "footer_subscription_email",
         "type": "text",
         "placeholder": "Email",
-        "button": { "visible": true, "class": "arrow-forward"},
+        "button": { "visible": true, "class": "arrow-forward" },
         "mask": {
           "mask": "^\\S*@?\\S*$",
           "regexp": true
