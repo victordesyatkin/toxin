@@ -6,23 +6,23 @@ include ../../components/footer/footer
 
 block main
     -
-        let data = htmlWebpackPlugin.options.getData();
-        let { action, picker, footer } = data || {};
-    main.landing-page.js-landing-page
-        article
-            block landing-page-background-wrapper
-                - let src = require('../../assets/images/landing-page.png').default;
-                .landing-page__background
-                    img(
-                        src=src
-                    )
-            block landing-page-find-wrapper
-                section.landing-page__find.js-landing-page__picker
-                    form(
-                        action=action
-                    )
-                        block landing-page-find
-                            +card
-                                +picker(picker)    
-            section.landing-page__info
-                block landing-page-info=options.slogan
+        let data = htmlWebpackPlugin.options.getData() || {};
+        let { action, picker, footer, backgroundSrc, backgroundAlt, slogan } = data;
+    article.landing-page.js-landing-page
+        block landing-page-background
+            .landing-page__background
+                img(
+                    src=backgroundSrc
+                    alt=backgroundAlt
+                    class="landing-page__background-image"
+                )
+        block landing-page-find
+            form(
+                action=action
+                class="landing-page__find js-landing-page__picker"
+            )
+                block landing-page-find
+                    +card
+                        +picker(picker)    
+        block landing-page-info
+            .landing-page__info=slogan

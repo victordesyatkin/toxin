@@ -2,7 +2,7 @@ include ../calendar/calendar
 
 mixin filter-date-dropdown(props= {})
     - 
-        let { label, input, isExpanded, isForcedExpanded, placeholder, separator, calendar } = props;
+        let { label, input = {}, isExpanded, isForcedExpanded, placeholder, separator, calendar } = props;
         let { name, value, dummy } = input;
         let className = 'filter-date-dropdown';
         let classNames = `${className} js-${className}`;

@@ -1,84 +1,179 @@
 {
-  "scriptSrc": "landing-page-dates-dropdown",
-  "headerNotAuthorised": {
+  "scriptSrc": "landing-page",
+  "title": "Landing page/Dates Dropdown",
+  "picker": {
+    "label": "Найдём номера под ваши пожелания",
+    "dateDropdown": {
+      "fieldStart": {
+        "input": {
+          "name": "startDate",
+          "id": "startDate",
+          "type": "text",
+          "label": "прибытие",
+          "value": "19.08.2019",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-down",
+            "type": "button"
+          },
+          "notFocus": true
+        }
+      },
+      "fieldEnd": {
+        "input": {
+          "name": "endDate",
+          "id": "endDate",
+          "type": "text",
+          "label": "выезд",
+          "value": "23.08.2019",
+          "placeholder": "ДД.ММ.ГГГГ",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-down",
+            "type": "button"
+          },
+          "notFocus": true
+        }
+      },
+      "calendar": {
+        "buttonCleanText": "Очистить",
+        "buttonApplyText": "Применить"
+      },
+      "isExpand": true
+    },
+    "dropdown": {
+      "dropdown": {
+        "type": 1,
+        "isControlVisible": true,
+        "buttonDecreaseText": "-",
+        "buttonIncreaseText": "+",
+        "buttonCleanText": "Очистить",
+        "buttonApplyText": "Применить"
+      },
+      "input": {
+        "name": "guests",
+        "stateText": "",
+        "type": "text",
+        "label": "гости",
+        "placeholder": "Сколько гостей",
+        "button": {
+          "iconClass": "arrow-down",
+          "isVisible": true,
+          "type": "button"
+        }
+      },
+      "items": [
+        { "title": "взрослые", "value": 0, "name": "adults" },
+        { "title": "дети", "value": 0, "name": "children" },
+        { "title": "младенцы", "value": 0, "name": "babies" }
+      ]
+    },
+    "button": {
+      "text": "подобрать номер",
+      "type": "submit",
+      "value": "",
+      "view": 3,
+      "src": "./assets/images/arrow-forward.svg"
+    }
+  },
+  "headerNotAuthorized": {
     "nav": {
       "items": [
         {
           "id": 1,
-          "label": "О нас",
-          "children": [],
-          "current": false,
+          "content": "О нас",
+          "title": "О нас",
+          "href": "/mock-address/change-me",
+          "isCurrent": true,
           "parent": 0
         },
         {
           "id": 2,
-          "label": "Услуги",
-          "current": false,
+          "content": "Услуги",
+          "title": "Услуги",
           "parent": 0,
           "children": [
             {
               "id": 7,
-              "label": "",
-              "parent": 2,
-              "current": false,
-              "children": []
+              "content": "Специальные услуги",
+              "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
             }
           ]
         },
         {
           "id": 3,
-          "label": "Вакансии",
-          "children": [],
-          "current": false,
+          "content": "Вакансии",
+          "title": "Вакансии",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 4,
-          "label": "Новости",
-          "children": [],
-          "current": false,
+          "content": "Новости",
+          "title": "Новости",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 5,
-          "label": "Соглашения",
+          "content": "Соглашения",
+          "title": "Соглашения",
           "parent": 0,
-          "current": false,
           "children": [
             {
               "id": 6,
-              "label": "",
-              "parent": 5,
-              "children": []
+              "content": "Соглашения",
+              "title": "Соглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
             }
           ]
         }
       ],
-      "authorised": false,
-      "buttons": {
-        "buttons": [
-          {
-            "text": "Войти",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 1
-          },
-          {
-            "text": "Зарегистрироваться",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 0
-          }
-        ]
-      }
+      "buttons": [
+        {
+          "text": "Войти",
+          "type": "button",
+          "value": "",
+          "view": 1,
+          "size": 3
+        },
+        {
+          "text": "Зарегистрироваться",
+          "type": "button",
+          "value": "",
+          "view": 3,
+          "size": 3
+        }
+      ]
     },
-    "fill": false
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN",
+        "isBlock": true
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN"
+      }
+    }
   },
   "footer": {
-    "logo": { "src": "./assets/images/logo-color.svg" },
-    "title": "title title",
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN"
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN",
+        "type": "color"
+      }
+    },
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     },
@@ -87,22 +182,22 @@
         "header": "навигация",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О нас",
             "content": "О нас"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Новости",
             "content": "Новости"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Служба поддержки",
             "content": "Служба поддержки"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Услуги",
             "content": "Услуги"
           }
@@ -112,22 +207,22 @@
         "header": "о нас",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О сервисе",
             "content": "О сервисе"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Наша команда",
             "content": "Наша команда"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Вакансии",
             "content": "Вакансии"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Инвесторы",
             "content": "Инвесторы "
           }
@@ -137,17 +232,17 @@
         "header": "Служба поддержки",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Соглашения",
             "content": "Соглашения"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Сообщества",
             "content": "Сообщества"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Связь с нами",
             "content": "Связь с нами"
           }
@@ -155,23 +250,36 @@
       }
     ],
     "copyright": {
+      "logo": {
+        "link": {
+          "href": "/mock-address/change-me",
+          "title": "TOXIN"
+        },
+        "logo": {
+          "src": "../../assets/images/logo-color.svg",
+          "alt": "TOXIN",
+          "type": "color"
+        }
+      },
       "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
-      "showLogo": false,
       "items": [
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-t"
+          "href": "/mock-address/change-me",
+          "title": "twitter",
+          "icon": "twitter",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-f"
+          "href": "/mock-address/change-me",
+          "title": "facebook",
+          "icon": "facebook",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-i"
+          "href": "/mock-address/change-me",
+          "title": "instagram",
+          "icon": "instagram",
+          "isBlock": true
         }
       ]
     },
@@ -179,77 +287,27 @@
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
-        "name": "footer_subscription_email",
-        "id": "footer_subscription_email",
-        "type": "text",
-        "placeholder": "Email",
-        "button": { "visible": true, "class": "arrow-forward" },
+        "input": {
+          "name": "footer_subscription_email",
+          "id": "footer_subscription_email",
+          "type": "text",
+          "placeholder": "Email",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-forward",
+            "type": "submit"
+          }
+        },
         "mask": {
           "mask": "^\\S*@?\\S*$",
           "regexp": true
         }
       }
-    }
-  },
-  "picker": {
-    "label": "Найдём номера под ваши пожелания",
-    "dateDropdown": {
-      "fieldStart": {
-        "name": "startDate",
-        "id": "startDate",
-        "type": "text",
-        "label": "прибытие",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "value": "19.08.2019",
-        "button": { "visible": true, "class": "arrow-down", "type": "button" }
-      },
-      "fieldEnd": {
-        "name": "endDate",
-        "id": "endDate",
-        "type": "text",
-        "label": "выезд",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "value": "23.08.2019",
-        "button": { "visible": true, "class": "arrow-down", "type": "button" }
-      },
-      "calendar": {
-        "isOpen": true,
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
-      }
     },
-    "dropdown": {
-      "dropdownOptions": {
-        "expand": false,
-        "type": 1,
-        "controlVisible": true,
-        "buttonDecreaseText": "-",
-        "buttonIncreaseText": "+",
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
-      },
-      "name": "guests",
-      "id": "guests",
-      "type": "text",
-      "label": "гости",
-      "placeholder": "Сколько гостей",
-      "button": { "class": "arrow-down", "visible": true, "type": "button" },
-      "items": [
-        { "title": "взрослые", "value": 2, "name": "adults" },
-        { "title": "дети", "value": 1, "name": "children" },
-        { "title": "младенцы", "value": 0, "name": "babies" }
-      ]
-    },
-    "button": {
-      "text": "подобрать номер",
-      "type": "submit",
-      "disabled": false,
-      "value": "",
-      "view": 3,
-      "defaultSrc": "./assets/images/arrow-forward.svg"
-    }
+    "action": "/mock-address/change-me"
   },
   "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения",
-  "title": "Landing page/Dates Dropdown",
-  "action": "search-room-filter.html"
+  "action": "search-room-filter.html",
+  "backgroundSrc": "../../assets/images/landing-page.png",
+  "backgroundAlt": "Landing page/Dates Dropdown"
 }

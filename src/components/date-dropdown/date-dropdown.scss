@@ -19,9 +19,10 @@ $parent: '.date-dropdown';
     position: absolute;
     width: 100%;
     display: none;
+  }
 
-    &__expanded {
-      display: block;
-    }
+  &__section-calendar_expanded {
+    display: block;
+    z-index: 99;
   }
 }

@@ -5,11 +5,19 @@ include ../copyright/copyright
 
 mixin footer(props = {})
     -
-        let { info = {}, items = [], subscribe = {}, copyright, logo, action } = props;
+        let { info = {}, items = [], subscribe = {}, copyright, logo, action, size } = props;
         let { content } = info;
-        let { header, description, field } = subscribe;
-
-    .footer.js-footer
+        let
+            { header, description, field } = subscribe;
+            sizes = {
+                'sm': 'size_sm'
+            };
+            className = 'footer';
+            classNames = `${className} js-${className}`;
+        classNames += sizes[size] ? ` ${className}_${sizes[size]}` : '';
+    div(
+        class=classNames
+    )
         .footer__main-section
             .footer__info-section
                 .footer__logo

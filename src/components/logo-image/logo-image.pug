@@ -9,10 +9,11 @@ mixin logo-image(props = {})
                 color: 'color',
             }
         classNames += types[type] ? ` ${className}_${types[type]}` : '';
-    img(
-        src=src
-        alt=alt
-        class=classNames
-    )
+    if src
+        img(
+            src=src
+            alt=alt
+            class=classNames
+        )
 
         

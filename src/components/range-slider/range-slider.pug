@@ -1,4 +1,4 @@
-mixin range-slider(props)
+mixin range-slider(props = {})
     -
         let
             { label, start, end, nameStart, nameEnd, separator, min, max, description } = props;
@@ -7,13 +7,15 @@ mixin range-slider(props)
             name=nameStart,
             value=start,
             data-type="start",
-            type="hidden"
+            type="hidden",
+            class="range-slider__input"
         )
         input(
             name=nameEnd,
             value=end,
             data-type="end",
-            type="hidden"
+            type="hidden",
+            class="range-slider__input"
         )
         .range-slider__section-head
             if (label)

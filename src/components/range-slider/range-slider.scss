@@ -1,11 +1,13 @@
 @import '~theme/variables.scss';
 
-.range-slider {
+$parent: 'range-slider';
+
+.#{$parent} {
   display: flex;
   flex-direction: column;
   padding-bottom: 0.85rem;
 
-  input {
+  &__input {
     display: none;
   }
 
@@ -29,21 +31,21 @@
   &__section-body {
     position: relative;
     width: 100%;
-    height: 6px;
+    height: 0.4285rem;
     background: $color-first-white;
-    border: 1px solid $color-fourth-dark;
+    border: 0.0714rem solid $color-fourth-dark;
     box-sizing: border-box;
-    border-radius: 3px;
+    border-radius: 0.2142rem;
     cursor: pointer;
   }
 
   &__point {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 1.1428rem;
+    height: 1.1428rem;
     background: $gradient-2;
-    border: 2px solid $color-first-white;
-    border-radius: 10px;
+    border: 0.1428rem solid $color-first-white;
+    border-radius: 0.7142rem;
     top: 50%;
     cursor: pointer;
   }
@@ -60,7 +62,7 @@
 
   &__track {
     position: absolute;
-    height: 6px;
+    height: 0.4285rem;
     top: 50%;
     transform: translate(0%, -50%);
     background: $gradient-2;

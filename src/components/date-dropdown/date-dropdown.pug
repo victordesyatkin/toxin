@@ -4,15 +4,14 @@ include ../calendar/calendar
 mixin date-dropdown(props = {})
     .date-dropdown.js-date-dropdown
         .date-dropdown__section-dropdown.js-date-dropdown__section-dropdown
-            - let {fieldStart, fieldEnd, calendar } = props;
+            - let { fieldStart, fieldEnd, calendar, isExpand } = props;
             +masked-text-field(fieldStart)
             +masked-text-field(fieldEnd)
-        - 
-            let
-                { isExpand } = props;
-                sectionCalendarClassName = 'date-dropdown__section-calendar';
-                sectionCalendarClassNames = `${sectionCalendarClassName} js-${sectionCalendarClassName}`;
-            sectionCalendarClassNames += isExpand ? ` ${sectionCalendarClassName}_expanded` : '';
+            - 
+                let
+                    sectionCalendarClassName = 'date-dropdown__section-calendar';
+                    sectionCalendarClassNames = `${sectionCalendarClassName} js-${sectionCalendarClassName}`;
+                sectionCalendarClassNames += isExpand ? ` ${sectionCalendarClassName}_expanded` : '';
         div(
             class=sectionCalendarClassNames
         )

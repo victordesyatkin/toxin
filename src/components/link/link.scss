@@ -4,16 +4,12 @@ $parent: 'link';
 
 .#{$parent} {
   color: $color-3;
-  cursor: pointer;
   text-decoration: none;
   text-transform: none;
+  cursor: pointer;
 
   &_block {
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
   }
 
   &_current {

@@ -1,13 +1,11 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-
 import Picker from "../../components/picker";
 import Footer from "../../components/footer";
 import "../base/base";
 import "../cards/cards";
-
 import "./landing-page.scss";
 
-export default class LandingPage {
+class LandingPage {
   static CLASS_NAME = "LANDING_PAGE";
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
@@ -37,10 +35,17 @@ export default class LandingPage {
     Footer.renderComponents();
     localStorage.clear();
     this._$form = $("form", this._$element);
-    this._$form.on("submit", this._handler.bind(this));
+    this._$form.on("submit", this._handleSubmitButtonClick.bind(this));
   }
 
-  _handler = function () {
+  _parseFormItem(data, index, element) {
+    const name = element.name;
+    if (Object.keys(data).indexOf(name) !== -1) {
+      data[name] = $(element).val();
+    }
+  }
+
+  _handleSubmitButtonClick() {
     const data = {
       startDate: "",
       endDate: "",
@@ -48,13 +53,11 @@ export default class LandingPage {
       children: "",
       babies: "",
     };
-    $("input[name]", this._$form).each(function () {
-      if (Object.keys(data).indexOf(this.name) !== -1) {
-        data[this.name] = $(this).val();
-      }
-    });
+    $("input[name]", this._$form).each(this._parseFormItem.bind(this, data));
     localStorage.setItem("landingPage", JSON.stringify(data));
-  };
+  }
 }
 
 window.addEventListener("load", LandingPage.renderComponents);
+
+export default LandingPage;

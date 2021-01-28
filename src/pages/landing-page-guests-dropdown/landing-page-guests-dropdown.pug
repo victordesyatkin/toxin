@@ -1,12 +1,1 @@
 extends ../landing-page/landing-page
-
-include ../../components/card/card
-include ../../components/picker/picker
-
-block landing-page-find
-        .landing-page-guests-dropdown__find
-            form(
-                action=action
-            )
-                +card
-                    +picker(picker)

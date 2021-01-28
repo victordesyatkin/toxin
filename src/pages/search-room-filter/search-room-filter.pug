@@ -11,48 +11,44 @@ include ../../components/pagination/pagination
 
 
 block main
-    .search-room-filter.js-search-room-filter
-        article.search-room-filter__article
-            section.search-room-filter__section.search-room-filter__panel
-                .search-room-filter__block.search-room-filter_margin-bottom-21
-                    +filter-date-dropdown(data.filterDateDropdown1)
-                .search-room-filter__block.search-room-filter_margin-bottom-32
-                    +dropdown(data.dropdown1)
-                .search-room-filter__block.search-room-filter_margin-bottom-25
-                    +range-slider(data.rangeSlider1)
-                    .search-room-filter__description=data.filterDescription
-                .search-room-filter__block.search-room-filter_margin-bottom-31
-                    +checkbox-buttons(data.checkboxButtons1)
-                .search-room-filter__block.search-room-filter_margin-bottom-30
-                    +rich-checkbox-buttons(data.richCheckboxButtons1)
-                .search-room-filter__block.search-room-filter_margin-bottom-30
-                    +dropdown(data.dropdown2)
-                .search-room-filter__block
-                    +expandable-checkbox-list(data.expandableCheckboxList1)
-            section.search-room-filter__section
-                .search-room-filter__title=data.filterTitle
-                .search-room-filter__sliders-list.search-room-filter_margin-bottom-47
-                    - let index = 1;
-                    each slider in data.sliders
+    -
+        let {
+                filterDateDropdown,
+                dropdown1,
+                dropdown2,
+                checkboxButtons,
+                richCheckboxButtons,
+                expandableCheckboxList,
+                filterTitle,
+                sliders = [],
+                pagination
+        } = data;
+    article.search-room-filter.js-search-room-filter
+        aside.search-room-filter__aside
+            form(
+                class="search-room-filter__form"
+                action=action
+            )
+                .search-room-filter__filter-date-dropdown
+                    +filter-date-dropdown(filterDateDropdown)
+                .search-room-filter__dropdown
+                    +dropdown(dropdown1)
+                .search-room-filter__range-slider
+                    +range-slider(rangeSlider)
+                .search-room-filter__checkbox-buttons
+                    +checkbox-buttons(checkboxButtons)
+                .search-room-filter__rich-checkbox-buttons
+                    +rich-checkbox-buttons(richCheckboxButtons)
+                .search-room-filter__dropdown
+                    +dropdown(dropdown2)
+                .search-room-filter__expandable-checkbox-list
+                    +expandable-checkbox-list(expandableCheckboxList)
+        section.search-room-filter__section
+                .search-room-filter__title=filterTitle
+                .search-room-filter__sliders
+                    each slider in sliders
                         .search-room-filter__slider
-                            -
-                                let
-                                    src = require(`../../assets/images/slider-${index}.png`).default;
-                                    alt = 'slider';
-                                slider = {
-                                    ...slider,
-                                    slider: {
-                                        images: [
-                                            {src, alt},
-                                            {src: require('../../assets/images/slider-2.png').default, alt},
-                                            {src: require('../../assets/images/slider-3.png').default, alt},
-                                            {src: require('../../assets/images/slider-4.png').default, alt}
-                                        ],
-                                        ...slider.slider,
-                                    }
-                                };
-                                index += 1;
                             +card-slider(slider)
                 .search-room-filter__pagination
-                    +pagination(data.pagination)
+                    +pagination(pagination)
 

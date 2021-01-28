@@ -2,9 +2,18 @@
 
 $parent: 'footer';
 
+@mixin sm {
+  max-width: 54.8571rem;
+
+  .#{$parent}__main-section {
+    display: none;
+  }
+}
+
 .#{$parent} {
   width: 100%;
   background-color: $color-14;
+  box-shadow: 0rem 0.7142rem 1.4285rem $color-6;
 
   &__main-section {
     width: 100%;
@@ -12,32 +21,32 @@ $parent: 'footer';
   }
 
   &__info-section {
-    width: 260px;
-    margin-right: 40px;
+    width: 18.5714rem;
+    margin-right: 2.8571rem;
   }
 
   &__logo {
-    margin-bottom: 20px;
+    margin-bottom: 1.4285rem;
   }
 
   &__nav-items {
-    margin-top: 5px;
+    margin-top: 0.35714rem;
     display: flex;
     flex-grow: 1;
   }
 
   &__nav-item:nth-child(1) {
-    width: 143px;
-    margin-right: 57px;
+    width: 10.2142rem;
+    margin-right: 4.0714rem;
   }
 
   &__nav-item:nth-child(2) {
-    width: 108px;
-    margin-right: 92px;
+    width: 7.7142rem;
+    margin-right: 6.5714rem;
   }
 
   &__nav-item:nth-child(3) {
-    width: 149px;
+    width: 10.6428rem;
     margin-right: 3.6428rem;
   }
 
@@ -53,6 +62,10 @@ $parent: 'footer';
   &__subscribe-description {
     margin-bottom: 1.6428rem;
   }
+
+  &_size_sm {
+    @include sm;
+  }
 }
 
 @include media-breakpoint-up($sm) {
@@ -65,8 +78,6 @@ $parent: 'footer';
 
 @include media-breakpoint-down($sm) {
   .#{$parent} {
-    &__main-section {
-      display: none;
-    }
+    @include sm;
   }
 }

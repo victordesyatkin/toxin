@@ -9,19 +9,21 @@ $parent: 'headers-and-footers';
 
 @include media-breakpoint-up($xxs) {
   .#{$parent}__section {
-    outline: 1px solid red;
+    outline: 0.0714rem solid red;
   }
 
   .#{$parent}__section:nth-child(1) {
     margin-bottom: 2.3571rem;
+    box-shadow: 0rem 0.7142rem 1.4285rem $color-6;
   }
 
   .#{$parent}__section:nth-child(2) {
     margin-bottom: 2.5714rem;
+    box-shadow: 0rem 0.7142rem 1.4285rem $color-6;
   }
 
   .#{$parent}__section:nth-child(4) {
-    padding-top: 2.4285rem;
+    padding-top: 2.65rem;
     padding-bottom: 10rem;
   }
 
@@ -29,5 +31,6 @@ $parent: 'headers-and-footers';
     width: 100%;
     max-width: 54.8571rem;
     margin: 0 auto;
+    background-color: $color-14;
   }
 }

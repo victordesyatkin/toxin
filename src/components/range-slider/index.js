@@ -1,8 +1,9 @@
 import get from "lodash/get";
 
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./range-slider.scss";
 class RangeSlider {
+  static CLASS_NAME = "RANGE_SLIDER";
   static TYPES = ["start", "end"];
 
   static renderComponents(props = {}) {
@@ -15,7 +16,11 @@ class RangeSlider {
   }
 
   static _renderComponent() {
-    new RangeSlider(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: RangeSlider.CLASS_NAME,
+      someClass: RangeSlider,
+    });
   }
 
   constructor(element) {

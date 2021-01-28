@@ -1,13 +1,11 @@
-import get from "lodash/get";
 import upperFirst from "lodash/upperFirst";
-
 import MaskedTextField from "../masked-text-field";
 import Calendar from "../calendar";
-import { renderComponents } from "../../assets/helpers/utils";
-
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./date-dropdown.scss";
 
 class DateDropdown {
+  static CLASS_NAME = "DATE_DROPDOWN";
   static TYPE_CLEAN = 0;
   static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
@@ -23,7 +21,11 @@ class DateDropdown {
   }
 
   static _renderComponent() {
-    new DateDropdown(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: DateDropdown.CLASS_NAME,
+      someClass: DateDropdown,
+    });
   }
 
   constructor(element) {

@@ -1,7 +1,12 @@
-import { wordForm, renderComponents } from "../../assets/helpers/utils";
+import {
+  wordForm,
+  renderComponents,
+  renderComponent,
+} from "../../assets/helpers/utils";
 import Input from "../input";
 import "./dropdown.scss";
 class Dropdown {
+  static CLASS_NAME = "DROPDOWN";
   static TYPE_FIRST = 0;
   static TYPE_SECOND = 1;
 
@@ -15,7 +20,11 @@ class Dropdown {
   }
 
   static _renderComponent() {
-    new Dropdown(arguments[1]);
+    renderComponent({
+      element: arguments[1],
+      className: Dropdown.CLASS_NAME,
+      someClass: Dropdown,
+    });
   }
 
   constructor(element) {
