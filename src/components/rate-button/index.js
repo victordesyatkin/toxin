@@ -6,6 +6,7 @@ class RateButton {
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
+    console.log("renderComponents : ", props);
     renderComponents({
       parents,
       query: query || ".js-rate-button__button",
@@ -13,25 +14,31 @@ class RateButton {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
+    console.log("_renderComponent : ", element);
     renderComponent({
-      element: arguments[1],
+      element,
       className: RateButton.CLASS_NAME,
       someClass: RateButton,
     });
   }
 
   constructor(element) {
+    console.log("element : ", element);
     this._element = element;
     this.count = this._element.dataset.count;
     this.input = this._element.querySelector("input");
-    this._off = $(this._element).data("off");
-    !this._off && this._attachEventHandlers();
+    this._on = parseFloat($(this._element).data("on"));
+    this._on && this._attachEventHandlers();
   }
 
   _attachEventHandlers() {
-    this._element &&
-      this._element.addEventListener("click", this._handleInputClick);
+    if (this._element) {
+      this._element.addEventListener(
+        "click",
+        this._handleInputClick.bind(this)
+      );
+    }
   }
 
   _handleInputClick = (event) => {

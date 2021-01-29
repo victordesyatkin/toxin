@@ -26,8 +26,9 @@ export default class CardSlider {
   }
 
   _init() {
-    Slider.renderComponents({ parents: this._$element });
-    CardHeader.renderComponents({ parents: this._$element });
-    RateButton.renderComponents({ parents: this._$element });
+    const parents = this._$element;
+    Slider.renderComponents({ parents });
+    CardHeader.renderComponents({ parents });
+    RateButton.renderComponents({ parents });
   }
 }

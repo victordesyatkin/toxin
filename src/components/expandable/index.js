@@ -13,9 +13,9 @@ class Expandable {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Expandable.CLASS_NAME,
       someClass: Expandable,
     });

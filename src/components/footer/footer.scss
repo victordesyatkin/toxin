@@ -13,11 +13,11 @@ $parent: 'footer';
 .#{$parent} {
   width: 100%;
   background-color: $color-14;
-  box-shadow: 0rem 0.7142rem 1.4285rem $color-6;
 
   &__main-section {
     width: 100%;
     display: flex;
+    box-shadow: 0rem 0.0714rem 0rem $color-5;
   }
 
   &__info-section {
@@ -26,7 +26,7 @@ $parent: 'footer';
   }
 
   &__logo {
-    margin-bottom: 1.4285rem;
+    margin-bottom: 1.3rem;
   }
 
   &__nav-items {
@@ -65,6 +65,10 @@ $parent: 'footer';
 
   &_size_sm {
     @include sm;
+  }
+
+  &__copyright-section {
+    box-shadow: 0rem 0.7142rem 1.4285rem $color-6;
   }
 }
 

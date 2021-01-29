@@ -7,6 +7,7 @@ $parent: 'header';
   display: flex;
   justify-content: space-between;
   background: $color-14;
+  box-shadow: 0rem 0.7142rem 1.4285rem $color-6;
 
   &__logo {
     width: 7.5492rem;
@@ -16,6 +17,6 @@ $parent: 'header';
 
 @include media-breakpoint-up($xxs) {
   .#{$parent} {
-    padding: 1.0714rem 10rem;
+    padding: 1.1rem 10rem;
   }
 }

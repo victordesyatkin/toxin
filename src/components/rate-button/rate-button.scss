@@ -2,7 +2,7 @@
 
 $parent: 'rate-button';
 
-.rate-button {
+.#{$parent} {
   display: flex;
   flex-direction: column;
 
@@ -21,8 +21,8 @@ $parent: 'rate-button';
     position: relative;
     width: 1.42rem;
     height: 1.35rem;
-    cursor: pointer;
     margin-left: 0.35rem;
+    cursor: pointer;
 
     &:first-of-type {
       margin-left: 0;
@@ -30,20 +30,20 @@ $parent: 'rate-button';
   }
 
   &__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1.35rem;
-    display: none;
+    width: 100%;
+    height: 100%;
   }
 
-  &__img_not_checked {
-    display: inherit;
+  &__img_checked {
+    display: none;
   }
 
   &__rate_checked {
     .#{$parent}__img_checked {
       display: inherit;
+    }
+    .#{$parent}__img_not_checked {
+      display: none;
     }
   }
 }

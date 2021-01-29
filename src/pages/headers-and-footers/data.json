@@ -277,8 +277,8 @@
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
         "input": {
-          "name": "footer_subscription_email",
-          "id": "footer_subscription_email",
+          "name": "footer_subscription_email2",
+          "id": "footer_subscription_email2",
           "type": "text",
           "placeholder": "Email",
           "button": {
@@ -422,8 +422,8 @@
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
         "input": {
-          "name": "footer_subscription_email",
-          "id": "footer_subscription_email",
+          "name": "footer_subscription_email1",
+          "id": "footer_subscription_email1",
           "type": "text",
           "placeholder": "Email",
           "button": {

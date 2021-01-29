@@ -69,8 +69,6 @@ export default class Slider {
   _setImage(index) {
     let src = get(this._images, [index, "src"]) || "";
     let alt = get(this._images, [index, "alt"]) || "";
-    console.log("src : ", src);
-    console.log("alt : ", alt);
     this._$image.attr({ src, alt });
   }
 

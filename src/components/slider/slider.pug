@@ -1,7 +1,7 @@
 mixin slider(props = {})
     -
         
-        let { images = [], control, max } = props;
+        let { images = [], isControl, max } = props;
         let
             n = 0;
             length = images.length;
@@ -12,7 +12,7 @@ mixin slider(props = {})
             .slider__image-wrapper
                 img
         if (length !== 0)
-            if (control === true)
+            if (isControl === true)
                 .slider__control.slider__control_left.icon-expand_more_prev.js-slider__control(
                     data-type = 1
                 )

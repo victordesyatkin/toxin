@@ -10,7 +10,6 @@ class Footer {
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
-    console.log("renderComponents : ", props);
     renderComponents({
       parents,
       query: query || ".js-footer",
@@ -18,17 +17,15 @@ class Footer {
     });
   }
 
-  static _renderComponent() {
-    console.log("_renderComponent");
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Footer.CLASS_NAME,
       someClass: Footer,
     });
   }
 
   constructor(element) {
-    console.log("element : ", element);
     this._element = element;
     this._$element = $(element);
     this._init();

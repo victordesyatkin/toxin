@@ -13,9 +13,9 @@ class ExpandableCheckboxList {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: ExpandableCheckboxList.CLASS_NAME,
       someClass: ExpandableCheckboxList,
     });

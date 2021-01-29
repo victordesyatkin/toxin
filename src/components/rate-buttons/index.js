@@ -13,9 +13,9 @@ class RateButtons {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: RateButtons.CLASS_NAME,
       someClass: RateButtons,
     });

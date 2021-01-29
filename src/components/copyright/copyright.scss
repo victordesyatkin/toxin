@@ -7,11 +7,11 @@ $parent: 'copyright';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 8.5714rem 0;
+  padding: 8.714rem 0;
 
   .#{$parent}__logo {
     display: block;
-    margin-bottom: 1.4285rem;
+    margin-bottom: 1.2285rem;
   }
 
   .#{$parent}__social-items {
@@ -60,7 +60,7 @@ $parent: 'copyright';
   .#{$parent} {
     border-top: 0.0714rem solid $color-6;
     justify-content: space-between;
-    padding: 1.7142rem 10rem;
+    padding: 1.5542rem 10rem;
 
     &__logo {
       display: none;

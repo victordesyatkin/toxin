@@ -14,6 +14,7 @@ block main
     -
         let {
                 filterDateDropdown,
+                rangeSlider,
                 dropdown1,
                 dropdown2,
                 checkboxButtons,
@@ -31,7 +32,7 @@ block main
             )
                 .search-room-filter__filter-date-dropdown
                     +filter-date-dropdown(filterDateDropdown)
-                .search-room-filter__dropdown
+                .search-room-filter__dropdown-first
                     +dropdown(dropdown1)
                 .search-room-filter__range-slider
                     +range-slider(rangeSlider)
@@ -39,7 +40,7 @@ block main
                     +checkbox-buttons(checkboxButtons)
                 .search-room-filter__rich-checkbox-buttons
                     +rich-checkbox-buttons(richCheckboxButtons)
-                .search-room-filter__dropdown
+                .search-room-filter__dropdown-second
                     +dropdown(dropdown2)
                 .search-room-filter__expandable-checkbox-list
                     +expandable-checkbox-list(expandableCheckboxList)

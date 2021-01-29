@@ -16,20 +16,15 @@ $parent: 'nav-item';
 
   &__control {
     width: 24px;
-    height: 21px;
+    height: 100%;
     background: none;
     border: none;
-    color: $color-dark-shade50;
+    color: $color-3;
     font-size: 8px;
     cursor: pointer;
-    position: relative;
-
-    i {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &:hover {

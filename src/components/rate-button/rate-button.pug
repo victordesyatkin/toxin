@@ -5,7 +5,7 @@ mixin rate-button(props = {})
                 count,
                 grade,
                 name,
-                isOff,
+                isOn,
                 srcImgRate,
                 altImgRate,
                 srcImgNoRate,
@@ -19,7 +19,7 @@ mixin rate-button(props = {})
         }
     .rate-button__button.js-rate-button__button(
         data-count=count
-        data-off=`${off}`
+        data-on=isOn ? 1 : 0
     )
         input.rate-button__input(
             type="hidden"
@@ -30,9 +30,11 @@ mixin rate-button(props = {})
             -
                 let 
                     rate = n <= grade ? 1 : 0; 
-                    classes = `rate-button__rate js-rate-button__rate${rate ? ' rate-button__rate_checked' : ''}`;  
+                    className = `rate-button__rate`;  
+                    classNames = `${className} js-${className}`;
+                classNames += rate ? ` ${className}_checked` : '';
             div(
-                class=classes,
+                class=classNames,
                 data-index=n,
                 data-rate=rate
             )
