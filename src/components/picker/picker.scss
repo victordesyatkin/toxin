@@ -4,18 +4,18 @@
   width: 100%;
 
   height: auto;
-  padding: 40px 30px 30px 28px;
+  padding: 2.8571rem 2.1428rem 2.0714rem 2rem;
 
   &__label {
     @include h1;
-    margin-bottom: 21px;
+    margin-bottom: 1.5rem;
   }
 
   &__date-dropdown {
-    margin-bottom: 22px;
+    margin-bottom: 1.5714rem;
   }
 
   &__dropdown {
-    margin-bottom: 31px;
+    margin-bottom: 2.2142rem;
   }
 }

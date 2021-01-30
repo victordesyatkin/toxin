@@ -8,20 +8,20 @@ include ../button/button
 mixin sign-up(props = {})
     - 
         let {
-            title, input1, input2, radioButton1, radioButton2, birthday, email, password, submit, contribute, pay, signIn
+            title, firstName, lastName, genderMale, genderFemale, birthday, email, password, contribute, pay, signIn
         } = props; 
     .sign-up.js-sign-up
         if (title) 
             .sign-up__title=title
         .sign-up__first-name
-            +input(input1)
+            +input(firstName)
         .sign-up__last-name
-            +input(input2)
+            +input(lastName)
         .sign-up__genders
             .sign-up__gender
-                +radio-button(radioButton1)
+                +radio-button(genderMale)
             .sign-up__gender
-                +radio-button(radioButton2)
+                +radio-button(genderFemale)
         .sign-up__birthday
             +masked-text-field(birthday)
         .sign-up__email

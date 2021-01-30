@@ -1,12 +1,9 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-
 import SignUp from "../../components/sign-up";
 import Footer from "../../components/footer";
-
 import "../../components/card";
-
 import "./index";
-export default class Registration {
+class Registration {
   static CLASS_NAME = "REGISTRATION";
 
   static renderComponents(props = {}) {
@@ -18,9 +15,9 @@ export default class Registration {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Registration.CLASS_NAME,
       someClass: Registration,
     });
@@ -39,3 +36,5 @@ export default class Registration {
 }
 
 window.addEventListener("load", Registration.renderComponents);
+
+export default Registration;

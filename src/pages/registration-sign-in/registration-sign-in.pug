@@ -1,9 +1,13 @@
 extends ../registration/registration
-
 include ../../components/card/card
 include ../../components/sign-in/sign-in
 
-block registration__sign
-    .registration__sign-in.js-registration__sign-in
+block sign
+    -
+        let { signIn, action } = data || {};
+    form(
+        action=action
+        class=`${className}__sign-in js-${className}__sign-in`
+    )
         +card
-            +sign-in(data.signIn)
+            +sign-in(signIn)

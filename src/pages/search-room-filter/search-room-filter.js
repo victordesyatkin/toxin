@@ -23,9 +23,9 @@ class SearchRoomFilter {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(inde, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: SearchRoomFilter.CLASS_NAME,
       someClass: SearchRoomFilter,
     });

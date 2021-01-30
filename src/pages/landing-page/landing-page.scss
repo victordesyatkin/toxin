@@ -3,33 +3,34 @@
 $parent: 'landing-page';
 
 .#{$parent} {
-  height: 59.2857rem;
   width: 100%;
-  overflow: hidden;
-  position: relative;
-
-  &__background-image {
-    object-position: 0 -5rem;
-  }
-
-  &__find {
-    width: 27.1428rem;
-    position: absolute;
-    top: 5rem;
-    left: 10rem;
-    z-index: 1;
-  }
 
   &__info {
-    width: 21.2142rem;
-    text-align: right;
-    position: absolute;
-    bottom: 1.5585rem;
-    right: 9.5714rem;
-    z-index: 3;
-  }
-
-  &__footer {
     width: 100%;
+  }
+}
+
+@include media-breakpoint-up($xxs) {
+  .#{$parent} {
+    background-position: 0 -5rem;
+
+    &__picker {
+      width: 27.1428rem;
+      margin-top: 5rem;
+      margin-left: 10.0714rem;
+      margin-bottom: 22.6971rem;
+    }
+
+    &__info {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 9.5371rem;
+      margin-bottom: 1.5714rem;
+    }
+
+    &__slogan {
+      width: 21.2142rem;
+      text-align: right;
+    }
   }
 }

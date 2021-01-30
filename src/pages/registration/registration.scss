@@ -1,126 +1,19 @@
 @import '~theme/variables.scss';
 
-.registration {
+$parent: 'registration';
+
+.#{$parent} {
   width: 100%;
-  position: relative;
-  padding: 20px;
-  overflow: hidden;
-
-  &__background {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-  }
-
-  &__sign,
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-
-    .card {
-      z-index: 2;
-
-      .sign-up {
-        padding-top: 36px;
-
-        .radio-buttons__button {
-          flex-grow: 0;
-        }
-
-        .buttons__view_3 .buttons__item button {
-          padding-left: 3px;
-        }
-
-        .buttons__item {
-          button {
-            padding-left: 25px;
-            padding-right: 24px;
-          }
-        }
-      }
-    }
-  }
 }
 
-@media (min-width: 1441px) {
-  .registration {
-    &__background {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-}
+@include media-breakpoint-up($xxs) {
+  .#{$parent} {
+    background-position: 0rem -5.0714rem;
+    background-repeat: no-repeat;
 
-@media (max-width: 1440px) and (min-width: 1440px) {
-  .registration {
-    height: 684px;
-    &__background {
-      top: -70px;
-    }
-
-    &__sign {
-      .card {
-        margin-left: 0;
-        margin-left: 19px;
-      }
-    }
-  }
-}
-
-@media (max-width: 1439px) {
-  .registration {
-    &__background {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
-@media (max-width: 1023px) and (min-width: 769px) {
-}
-
-@media (max-width: 768px) {
-}
-
-@media (max-width: 768px) and (min-width: 425px) {
-}
-
-@media (max-width: 425px) {
-  .registration {
-    padding: 0;
-
-    .card {
-      width: 100%;
-
-      .buttons__item {
-        width: 100%;
-      }
-    }
-  }
-}
-
-@media (max-width: 424px) and (min-width: 376px) {
-}
-
-@media (max-width: 375px) {
-}
-
-@media (max-width: 315px) {
-  .registration {
-    .radio-buttons__button:last-child {
-      margin-top: 10px;
+    &__sign-up {
+      width: 27.1428rem;
+      margin: 1.4285rem auto 1.4285rem;
     }
   }
 }

@@ -1,12 +1,10 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import SignIn from "../../components/sign-in";
 import Footer from "../../components/footer";
-
 import "../../components/card";
 import "../registration";
-
 import "./registration-sign-in.scss";
-export default class RegistrationSignIn {
+class RegistrationSignIn {
   static CLASS_NAME = "REGISTRATION_SIGN_IN";
 
   static renderComponents(props = {}) {
@@ -18,9 +16,9 @@ export default class RegistrationSignIn {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: RegistrationSignIn.CLASS_NAME,
       someClass: RegistrationSignIn,
     });
@@ -39,3 +37,5 @@ export default class RegistrationSignIn {
 }
 
 window.addEventListener("load", RegistrationSignIn.renderComponents);
+
+export default RegistrationSignIn;

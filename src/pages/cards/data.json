@@ -157,14 +157,14 @@
   },
   "signUp": {
     "title": "Регистрация аккаунта",
-    "input1": {
+    "firstName": {
       "name": "firstName1",
       "id": "firstName1",
       "type": "text",
       "label": "",
       "placeholder": "Имя"
     },
-    "input2": {
+    "lastname": {
       "name": "lastName1",
       "id": "lastName1",
       "type": "text",
@@ -172,14 +172,14 @@
       "placeholder": "Фамилия",
       "stateText": ""
     },
-    "radioButton1": {
+    "ganderMale": {
       "label": "Мужчина",
       "isChecked": true,
       "name": "gender1",
       "value": "male",
       "src": "./assets/images/checkbox-buttons.svg"
     },
-    "radioButton2": {
+    "ganderFemale": {
       "label": "Женщина",
       "name": "gender1",
       "value": "female",

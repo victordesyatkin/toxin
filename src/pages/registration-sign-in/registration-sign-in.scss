@@ -1,40 +1,12 @@
 @import '~theme/variables.scss';
 
-.registration__sign-in {
-  z-index: 3;
-}
+$parent: 'registration';
 
-@media (max-width: 1440px) and (min-width: 1440px) {
-  .registration {
-    section.registration__sign {
-      .registration__sign-in {
-        z-index: 3;
-        .card {
-          margin-left: 16px;
-          margin-top: 1px;
-
-          .sign-in {
-            padding: 36px 28px 32px 29px;
-
-            .buttons__items.buttons__items_full.buttons__view.buttons__view_3 {
-              .buttons__item {
-                button {
-                  padding-left: 0px;
-                }
-              }
-            }
-
-            .buttons__items.buttons__view.buttons__view_1 {
-              .buttons__item {
-                padding: 3px;
-              }
-              button {
-                padding: 17px 16px 15px 17px;
-              }
-            }
-          }
-        }
-      }
+@include media-breakpoint-up($xxs) {
+  .#{$parent} {
+    &__sign-in {
+      width: 27.1428rem;
+      margin: 1.4285rem auto 1.4285rem;
     }
   }
 }

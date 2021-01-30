@@ -2,27 +2,23 @@ extends ../base/base
 
 include ../../components/card/card
 include ../../components/picker/picker
-include ../../components/footer/footer
 
 block main
     -
         let data = htmlWebpackPlugin.options.getData() || {};
-        let { action, picker, footer, backgroundSrc, backgroundAlt, slogan } = data;
-    article.landing-page.js-landing-page
-        block landing-page-background
-            .landing-page__background
-                img(
-                    src=backgroundSrc
-                    alt=backgroundAlt
-                    class="landing-page__background-image"
-                )
-        block landing-page-find
-            form(
-                action=action
-                class="landing-page__find js-landing-page__picker"
-            )
-                block landing-page-find
-                    +card
-                        +picker(picker)    
-        block landing-page-info
-            .landing-page__info=slogan
+        let { action, picker, footer, backgroundImage, slogan } = data;
+        let className = "landing-page";
+        let classNames = `${className} js-${className}`;
+        let style = backgroundImage ? `background-image: url(${backgroundImage});` : '';
+    article(
+        class=classNames
+        style=style
+    )
+        form(
+            action=action
+            class=`${className}__picker js-landing-page__picker`
+        )
+            +card
+                +picker(picker)    
+        .landing-page__info
+            .landing-page__slogan=slogan

@@ -2,10 +2,8 @@ import get from "lodash/get";
 import IMask from "imask";
 
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-
-import "../input";
-
 import "./masked-text-field.scss";
+import Input from "../input";
 
 class MaskedTextField {
   static CLASS_NAME = "MASKED_TEXT_FIELD";
@@ -49,9 +47,9 @@ class MaskedTextField {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: MaskedTextField.CLASS_NAME,
       someClass: MaskedTextField,
     });
@@ -64,6 +62,7 @@ class MaskedTextField {
   }
 
   _init() {
+    Input.renderComponents({ parents: this._$element });
     const selector = $("input", this._$element);
     const options = this._$element.data("options");
     let maskOptions = {};

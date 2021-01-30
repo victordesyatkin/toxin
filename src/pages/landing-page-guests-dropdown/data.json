@@ -308,6 +308,5 @@
   },
   "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения",
   "action": "search-room-filter.html",
-  "backgroundSrc": "../../assets/images/landing-page.jpg",
-  "backgroundAlt": "Landing page/Guests Dropdown"
+  "backgroundImage": "../../assets/images/landing-page.jpg"
 }

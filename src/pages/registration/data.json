@@ -1,9 +1,6 @@
 {
   "scriptSrc": "registration",
-  "backgroundImage": {
-    "src": "../assets/images/registration-1.png",
-    "alt": "Registration"
-  },
+  "backgroundImage": "../assets/images/registration.jpg",
   "signUp": {
     "title": "Регистрация аккаунта",
     "firstName": {
@@ -21,35 +18,35 @@
       "placeholder": "Фамилия",
       "stateText": ""
     },
-    "gender": {
-      "buttons": [
-        {
-          "label": "Мужчина",
-          "checked": true,
-          "name": "gender1",
-          "value": "male"
-        },
-        {
-          "label": "Женщина",
-          "checked": false,
-          "name": "gender1",
-          "value": "female"
-        }
-      ]
+    "genderMale": {
+      "label": "Мужчина",
+      "isChecked": true,
+      "name": "gender1",
+      "value": "male"
+    },
+    "genderFemale": {
+      "label": "Женщина",
+      "isChecked": false,
+      "name": "gender1",
+      "value": "female"
     },
     "birthday": {
-      "name": "birthday1",
-      "id": "birthday1",
-      "type": "text",
-      "label": "дата рождения",
-      "placeholder": "ДД.ММ.ГГГГ"
+      "input": {
+        "name": "birthday1",
+        "id": "birthday1",
+        "type": "text",
+        "label": "Дата рождения",
+        "placeholder": "ДД.ММ.ГГГГ"
+      }
     },
     "email": {
-      "name": "email1",
-      "id": "email1",
-      "type": "text",
-      "label": "данные для входа в сервис",
-      "placeholder": "Email",
+      "input": {
+        "name": "email1",
+        "id": "email1",
+        "type": "text",
+        "label": "данные для входа в сервис",
+        "placeholder": "Email"
+      },
       "mask": {
         "mask": "^\\S*@?\\S*$",
         "regexp": true
@@ -68,7 +65,7 @@
       "name": "contribute"
     },
     "pay": {
-      "text": "Перейти к оплате",
+      "text": "Зарегистрироваться",
       "type": "submit",
       "disabled": false,
       "value": "",
@@ -83,113 +80,108 @@
         "disabled": false,
         "value": "",
         "view": 1,
-        "name": "signIn"
+        "name": "signIn",
+        "size": 1
       }
     }
   },
-  "headerNotAuthorised": {
-    "logo": {
-      "src": "./assets/images/logo-color.svg",
-      "alt": "TOXIN",
-      "href": "/",
-      "title": "TOXIN"
-    },
+  "headerNotAuthorized": {
     "nav": {
       "items": [
         {
           "id": 1,
-          "label": "О нас",
-          "children": [],
-          "current": false,
+          "content": "О нас",
+          "title": "О нас",
+          "href": "/mock-address/change-me",
+          "isCurrent": true,
           "parent": 0
         },
         {
           "id": 2,
-          "label": "Услуги",
-          "current": false,
+          "content": "Услуги",
+          "title": "Услуги",
           "parent": 0,
           "children": [
             {
               "id": 7,
-              "label": "",
-              "parent": 2,
-              "current": false,
-              "children": []
+              "content": "Специальные услуги",
+              "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
             }
           ]
         },
         {
           "id": 3,
-          "label": "Вакансии",
-          "children": [],
-          "current": false,
+          "content": "Вакансии",
+          "title": "Вакансии",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 4,
-          "label": "Новости",
-          "children": [],
-          "current": false,
+          "content": "Новости",
+          "title": "Новости",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 5,
-          "label": "Соглашения",
+          "content": "Соглашения",
+          "title": "Соглашения",
           "parent": 0,
-          "current": false,
           "children": [
             {
               "id": 6,
-              "label": "",
-              "parent": 5,
-              "children": []
+              "content": "Соглашения",
+              "title": "Соглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
             }
           ]
         }
       ],
-      "authorised": false,
-      "buttons": {
-        "buttons": [
-          {
-            "text": "Войти",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 1,
-            "full": false,
-            "action": {
-              "type": "LINK",
-              "payload": {
-                "href": "registration-sign-in.html"
-              }
-            }
-          },
-          {
-            "text": "Зарегистрироваться",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 0,
-            "full": false,
-            "action": {
-              "type": "LINK",
-              "payload": {
-                "href": "registration.html"
-              }
-            }
-          }
-        ]
+      "buttons": [
+        {
+          "text": "Войти",
+          "type": "button",
+          "value": "",
+          "view": 1,
+          "size": 3
+        },
+        {
+          "text": "Зарегистрироваться",
+          "type": "button",
+          "value": "",
+          "view": 3,
+          "size": 3
+        }
+      ]
+    },
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN",
+        "isBlock": true
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN"
       }
     }
   },
   "footer": {
     "logo": {
-      "src": "./assets/images/logo-color.svg",
-      "alt": "TOXIN",
-      "href": "/",
-      "title": "TOXIN"
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN"
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN",
+        "type": "color"
+      }
     },
-    "title": "title title",
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     },
@@ -198,22 +190,22 @@
         "header": "навигация",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О нас",
             "content": "О нас"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Новости",
             "content": "Новости"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Служба поддержки",
             "content": "Служба поддержки"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Услуги",
             "content": "Услуги"
           }
@@ -223,22 +215,22 @@
         "header": "о нас",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О сервисе",
             "content": "О сервисе"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Наша команда",
             "content": "Наша команда"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Вакансии",
             "content": "Вакансии"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Инвесторы",
             "content": "Инвесторы "
           }
@@ -248,17 +240,17 @@
         "header": "Служба поддержки",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Соглашения",
             "content": "Соглашения"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Сообщества",
             "content": "Сообщества"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Связь с нами",
             "content": "Связь с нами"
           }
@@ -266,23 +258,36 @@
       }
     ],
     "copyright": {
+      "logo": {
+        "link": {
+          "href": "/mock-address/change-me",
+          "title": "TOXIN"
+        },
+        "logo": {
+          "src": "../../assets/images/logo-color.svg",
+          "alt": "TOXIN",
+          "type": "color"
+        }
+      },
       "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
-      "showLogo": false,
       "items": [
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-t"
+          "href": "/mock-address/change-me",
+          "title": "twitter",
+          "icon": "twitter",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-f"
+          "href": "/mock-address/change-me",
+          "title": "facebook",
+          "icon": "facebook",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-i"
+          "href": "/mock-address/change-me",
+          "title": "instagram",
+          "icon": "instagram",
+          "isBlock": true
         }
       ]
     },
@@ -290,17 +295,25 @@
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
-        "name": "footer_subscription_email",
-        "id": "footer_subscription_email",
-        "type": "text",
-        "placeholder": "Email",
-        "button": { "visible": true, "class": "arrow-forward" },
+        "input": {
+          "name": "footer_subscription_email",
+          "id": "footer_subscription_email",
+          "type": "text",
+          "placeholder": "Email",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-forward",
+            "type": "submit"
+          }
+        },
         "mask": {
           "mask": "^\\S*@?\\S*$",
           "regexp": true
         }
       }
-    }
+    },
+    "action": "/mock-address/change-me"
   },
-  "title": "Registration"
+  "title": "Registration",
+  "action": "/mock-address/change-me"
 }

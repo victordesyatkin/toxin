@@ -1,9 +1,10 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
-import "../input";
+import Input from "../input";
 import "../radio-buttons";
 import "../toggle-button";
 import "../button";
+import "../card-footer";
 import "./sign-up.scss";
 
 class SignUp {
@@ -18,9 +19,9 @@ class SignUp {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: SignUp.CLASS_NAME,
       someClass: SignUp,
     });
@@ -33,7 +34,9 @@ class SignUp {
   }
 
   _init() {
-    MaskedTextField.renderComponents({ parents: this._$element });
+    const parents = this._$element;
+    MaskedTextField.renderComponents({ parents });
+    Input.renderComponents({ parents });
   }
 }
 
