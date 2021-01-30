@@ -7,17 +7,18 @@ $parent: 'card-header';
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: $color-second-dark;
+    color: $color-2;
   }
 
   &__number-info {
     @include h3;
     text-transform: uppercase;
+    padding-top: 0.0714rem;
   }
 
   &__number {
     @include h1;
-    margin: 0 5px;
+    margin: 0 0.3571rem;
   }
 
   &__suite {
@@ -31,30 +32,30 @@ $parent: 'card-header';
 
   &__price {
     @include base-h;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
     color: $color-dark-shade50;
   }
 
   &__duration {
     font-weight: normal;
-    font-size: 12px;
-    margin-left: 5px;
+    font-size: 0.8571rem;
+    margin-left: 0.3571rem;
     @include font-family-first-regular;
   }
 
   &_theme_slider {
     .#{$parent}__number-info {
-      font-size: 14px;
+      font-size: 1rem;
     }
 
     .#{$parent}__number {
-      font-size: 19px;
-      margin: 0 2px 0 4px;
+      font-size: 1.3571rem;
+      margin: 0 0.5857rem 0 0.2857rem;
     }
 
     .#{$parent}__suite {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
     }
 
     .#{$parent}__price {

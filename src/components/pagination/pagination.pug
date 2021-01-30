@@ -1,7 +1,9 @@
 mixin pagination(props = {})
     -
         let
-            { src, start, end, current, text, label, altPrevious, altNext, limit, count, emptyString = '...', defaultSrc } = props;
+            {
+                src, start, end, current, text, label, altPrevious, altNext, limit,count, emptyString = '...',
+            } = props;
             pages = [];
             isEmptyStart = true;
             isEmptyEnd = true;
@@ -9,7 +11,6 @@ mixin pagination(props = {})
             classesButtonPrevious = 'pagination__arrow pagination__arrow_previous' + (start === current ? ' pagination_hidden' : '');
             classesButtonNext = 'pagination__arrow pagination__arrow_next' + (end === current ? ' pagination_hidden' : '');
             tmpText = '';
-        src = src || defaultSrc;
         if (text && typeof text === 'string' && text.trim().length) {
             startText = (current - 1) * count > 0  ? current * count - count : current;
             endText = current * count > 0  ? current * count : current;

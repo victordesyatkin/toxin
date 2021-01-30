@@ -90,16 +90,16 @@ class Dropdown {
     }
     if (this._$element.hasClass("dropdown_expanded")) {
       this._$dropdownMain.slideUp("slow", () => {
-        this._toggleClassExpand();
+        this._toggleClassExpanded();
         this._toggleZIndex(10);
       });
     } else {
       this._$dropdownMain.slideDown("slow", () => {
-        this._toggleClassExpand();
+        this._toggleClassExpanded();
         this._toggleZIndex(100);
       });
     }
-    this._input.toggleExpand();
+    this._input.toggleExpanded();
   }
 
   _cleanInputValue(index, element) {
@@ -174,7 +174,7 @@ class Dropdown {
     }
   }
 
-  _toggleClassExpand() {
+  _toggleClassExpanded() {
     this._$element.toggleClass("dropdown_expanded");
   }
 

@@ -35,7 +35,7 @@ class Input {
     }
   }
 
-  toggleExpand() {
+  toggleExpanded() {
     if (this._$element.hasClass("input_expanded")) {
       this._$element.removeClass("input_expanded");
     } else {

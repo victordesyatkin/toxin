@@ -1,97 +1,102 @@
 {
   "scriptSrc": "search-room-filter-preferences-expandable-checkbox-list",
-  "headerNotAuthorised": {
+  "headerNotAuthorized": {
     "nav": {
       "items": [
         {
           "id": 1,
-          "label": "О нас",
-          "children": [],
-          "current": false,
+          "content": "О нас",
+          "title": "О нас",
+          "href": "/mock-address/change-me",
+          "isCurrent": true,
           "parent": 0
         },
         {
           "id": 2,
-          "label": "Услуги",
-          "current": false,
+          "content": "Услуги",
+          "title": "Услуги",
           "parent": 0,
           "children": [
             {
               "id": 7,
-              "label": "",
-              "parent": 2,
-              "current": false,
-              "children": []
+              "content": "Специальные услуги",
+              "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
             }
           ]
         },
         {
           "id": 3,
-          "label": "Вакансии",
-          "children": [],
-          "current": false,
+          "content": "Вакансии",
+          "title": "Вакансии",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 4,
-          "label": "Новости",
-          "children": [],
-          "current": false,
+          "content": "Новости",
+          "title": "Новости",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 5,
-          "label": "Соглашения",
+          "content": "Соглашения",
+          "title": "Соглашения",
           "parent": 0,
-          "current": false,
           "children": [
             {
               "id": 6,
-              "label": "",
-              "parent": 5,
-              "children": []
+              "content": "Соглашения",
+              "title": "Соглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
             }
           ]
         }
       ],
-      "authorised": false,
-      "buttons": {
-        "buttons": [
-          {
-            "text": "Войти",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 1,
-            "full": false,
-            "action": {
-              "type": "LINK",
-              "payload": {
-                "href": "registration-sign-in.html"
-              }
-            }
-          },
-          {
-            "text": "Зарегистрироваться",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 0,
-            "full": false,
-            "action": {
-              "type": "LINK",
-              "payload": {
-                "href": "registration.html"
-              }
-            }
-          }
-        ]
-      }
+      "buttons": [
+        {
+          "text": "Войти",
+          "type": "button",
+          "value": "",
+          "view": 1,
+          "size": 3
+        },
+        {
+          "text": "Зарегистрироваться",
+          "type": "button",
+          "value": "",
+          "view": 3,
+          "size": 3
+        }
+      ]
     },
-    "fill": false
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN",
+        "isBlock": true
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN"
+      }
+    }
   },
   "footer": {
-    "title": "title title",
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN"
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN",
+        "type": "color"
+      }
+    },
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     },
@@ -100,22 +105,22 @@
         "header": "навигация",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О нас",
             "content": "О нас"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Новости",
             "content": "Новости"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Служба поддержки",
             "content": "Служба поддержки"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Услуги",
             "content": "Услуги"
           }
@@ -125,22 +130,22 @@
         "header": "о нас",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О сервисе",
             "content": "О сервисе"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Наша команда",
             "content": "Наша команда"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Вакансии",
             "content": "Вакансии"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Инвесторы",
             "content": "Инвесторы "
           }
@@ -150,17 +155,17 @@
         "header": "Служба поддержки",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Соглашения",
             "content": "Соглашения"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Сообщества",
             "content": "Сообщества"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Связь с нами",
             "content": "Связь с нами"
           }
@@ -168,23 +173,36 @@
       }
     ],
     "copyright": {
+      "logo": {
+        "link": {
+          "href": "/mock-address/change-me",
+          "title": "TOXIN"
+        },
+        "logo": {
+          "src": "../../assets/images/logo-color.svg",
+          "alt": "TOXIN",
+          "type": "color"
+        }
+      },
       "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
-      "showLogo": false,
       "items": [
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-t"
+          "href": "/mock-address/change-me",
+          "title": "twitter",
+          "icon": "twitter",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-f"
+          "href": "/mock-address/change-me",
+          "title": "facebook",
+          "icon": "facebook",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-i"
+          "href": "/mock-address/change-me",
+          "title": "instagram",
+          "icon": "instagram",
+          "isBlock": true
         }
       ]
     },
@@ -192,15 +210,26 @@
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
-        "name": "footer_subscription_email",
-        "id": "footer_subscription_email",
-        "type": "email",
-        "placeholder": "Email",
-        "button": { "visible": true }
+        "input": {
+          "name": "footer_subscription_email",
+          "id": "footer_subscription_email",
+          "type": "text",
+          "placeholder": "Email",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-forward",
+            "type": "submit"
+          }
+        },
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
-    }
+    },
+    "action": "/mock-address/change-me"
   },
-  "filterDateDropdown1": {
+  "filterDateDropdown": {
     "label": "даты пребывания в отеле",
     "input": {
       "name": "search-room-filter-filter-date-dropdown",
@@ -216,154 +245,183 @@
     }
   },
   "dropdown1": {
-    "dropdownOptions": {
-      "expand": false,
+    "dropdown": {
       "type": 1,
-      "controlVisible": true,
+      "isControlVisible": true,
       "buttonDecreaseText": "-",
-      "buttonIncreaseText": "+"
+      "buttonIncreaseText": "+",
+      "buttonCleanText": "Очистить",
+      "buttonApplyText": "Применить"
     },
-    "name": "guests",
-    "stateText": "",
-    "type": "text",
-    "label": "гости",
-    "placeholder": "Сколько гостей",
-    "button": { "class": "arrow-down", "visible": true },
+    "input": {
+      "name": "guests",
+      "stateText": "",
+      "type": "text",
+      "label": "гости",
+      "placeholder": "Сколько гостей",
+      "button": {
+        "iconClass": "arrow-down",
+        "isVisible": true,
+        "type": "button"
+      },
+      "theme": "dropdown"
+    },
     "items": [
-      { "title": "взрослые", "value": 2 },
-      { "title": "дети", "value": 1 },
-      { "title": "младенцы", "value": 1 }
+      { "title": "взрослые", "value": 2, "name": "adults", "type": "button" },
+      { "title": "дети", "value": 1, "name": "children", "type": "button" },
+      { "title": "младенцы", "value": 1, "name": "babies", "type": "button" }
     ]
   },
-  "rangeSlider1": {
+  "rangeSlider": {
     "label": "диапазон цены",
     "unit": "&#8381;",
     "start": 5000,
     "end": 10000,
     "min": 0,
-    "max": 15000,
-    "separator": 1000
+    "max": 17600,
+    "separator": 1000,
+    "description": "Стоимость за сутки пребывания в номере"
   },
-  "checkboxButtons1": {
+  "checkboxButtons": {
     "label": "правила дома",
+    "src": "./assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Можно курить",
-        "checked": false,
         "name": "smoke",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Можно курить"
       },
       {
         "label": "Можно с питомцами",
-        "checked": true,
+        "isChecked": true,
         "name": "pet",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Можно с питомцами"
       },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
-        "checked": true,
+        "isChecked": true,
         "name": "guest",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Можно пригласить гостей (до 10 человек)"
       }
     ]
   },
-  "richCheckboxButtons1": {
+  "richCheckboxButtons": {
     "label": "доступность",
+    "src": "./assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Широкий коридор",
         "checked": false,
         "name": "widecorridor",
         "info": "Ширина коридоров в номере не менее 91 см.",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Широкий коридор"
       },
       {
         "label": "Помощник для инвалидов",
         "checked": false,
         "name": "helper",
         "info": "На 1 этаже вас встретит специалист  и проводит до номера.",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Помощник для инвалидов"
       }
     ]
   },
   "dropdown2": {
-    "dropdownOptions": {
-      "forcedExpand": false,
+    "dropdown": {
       "type": 0,
-      "expand": false,
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
       "buttonCleanText": "Очистить",
       "buttonApplyText": "Применить"
     },
-    "name": "rooms2",
-    "type": "text",
-    "label": "удобства номера",
-    "placeholder": "",
-    "button": { "class": "arrow-down", "visible": true },
+    "input": {
+      "name": "rooms2",
+      "type": "text",
+      "label": "удобства номера",
+      "placeholder": "",
+      "button": {
+        "iconClass": "arrow-down",
+        "isVisible": true,
+        "type": "button"
+      },
+      "theme": "dropdown"
+    },
     "items": [
       { "title": "спальни", "value": 2 },
       { "title": "кровати", "value": 2 },
       { "title": "ванные комнаты", "value": 0 }
     ]
   },
-  "expandableCheckboxList1": {
-    "expandable": { "label": "дополнительные удобства", "expanded": true },
+  "expandableCheckboxList": {
+    "expandable": { "label": "дополнительные удобства", "isExpanded": true },
+    "src": "./assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Завтрак",
-        "checked": false,
         "name": "breakfast",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Завтрак"
       },
       {
         "label": "Письменный стол",
-        "checked": true,
+        "isChecked": true,
         "name": "table",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Письменный"
       },
       {
         "label": "Стул для кормления",
-        "checked": true,
+        "isChecked": true,
         "name": "chair",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Стул для кормления"
       },
       {
         "label": "Кроватка",
-        "checked": true,
+        "isChecked": true,
         "name": "cot",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Кроватка"
       },
       {
         "label": "Телевизор",
-        "checked": false,
         "name": "tv1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "checked": false,
         "name": "shampoo1",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Шампунь"
       },
       {
         "label": "Телевизор",
-        "checked": false,
         "name": "tv2",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "checked": false,
         "name": "shampoo2",
-        "defaultSrc": "./assets/images/checkbox-buttons.svg"
+        "alt": "Шампунь"
       }
     ]
   },
   "sliders": {
     "slider1": {
       "slider": {
-        "control": true
+        "isControl": true,
+        "images": [
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-2.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": 888,
@@ -373,27 +431,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 5,
           "name": "rating1",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 145
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider2": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-2.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "840",
@@ -403,27 +477,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 4,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 65
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider3": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "980",
@@ -433,27 +523,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 35
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider4": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "856",
@@ -463,27 +569,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 5,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 19
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider5": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-5.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "740",
@@ -493,27 +615,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 4,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 44
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider6": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-6.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "982",
@@ -523,27 +661,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 56
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider7": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-7.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "678",
@@ -553,27 +707,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 5,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 45
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider8": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-8.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "450",
@@ -583,27 +753,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 4,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 39
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider9": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-9.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "350",
@@ -613,27 +799,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 77
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider10": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-10.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "666",
@@ -643,27 +845,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 5,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 25
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider11": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-11.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "444",
@@ -673,27 +891,43 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 15
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     },
     "slider12": {
       "slider": {
-        "control": false
+        "images": [
+          {
+            "src": "../../assets/images/slider-12.jpg",
+            "alt": "slider-1"
+          },
+          {
+            "src": "../../assets/images/slider-1.jpg",
+            "alt": "slider-2"
+          },
+          {
+            "src": "../../assets/images/slider-3.jpg",
+            "alt": "slider-3"
+          },
+          {
+            "src": "../../assets/images/slider-4.jpg",
+            "alt": "slider-4"
+          }
+        ]
       },
       "info": {
         "number": "352",
@@ -703,21 +937,20 @@
         "unit": "&#8381",
         "headerNumberText": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
       },
       "rating": {
         "button": {
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcImgRate": "./assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "./assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
         },
         "comments": 55
-      },
-      "link": {
-        "title": "",
-        "href": "room-details.html"
       },
       "commentsContent": "Отзывов"
     }
@@ -726,7 +959,13 @@
     "start": 1,
     "end": 15,
     "current": 1,
-    "text": "вариантов аренды"
+    "text": "вариантов аренды",
+    "limit": 2,
+    "count": 12,
+    "emptyString": "...",
+    "src": "./assets/images/arrow-forward.svg",
+    "altNext": "Next",
+    "altPrevious": "Previous"
   },
   "title": "Search room/Filter/Preferences Expandable Checkbox list",
   "filterTitle": "Номера, которые мы для вас подобрали",

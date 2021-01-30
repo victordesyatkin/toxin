@@ -4,6 +4,7 @@ $parent: 'search-room-filter';
 .#{$parent} {
   width: 100%;
   background-color: $color-14;
+  border-bottom: 0.0714rem solid $color-4;
 
   &__article {
     width: 100%;
@@ -12,12 +13,8 @@ $parent: 'search-room-filter';
     justify-content: flex-start;
   }
 
-  &__pagination {
-    width: 100%;
-  }
-
   &__description {
-    font-size: 12px;
+    font-size: 0.8571rem;
     color: $color-3;
   }
 }
@@ -29,12 +26,12 @@ $parent: 'search-room-filter';
 
     &__aside {
       width: 19rem;
-      margin-right: 4.2857rem;
+      margin-right: 4.2957rem;
     }
 
     &__title {
       @include h1;
-      margin-bottom: 2.09rem;
+      margin-bottom: 1.55rem;
       font-size: 1.7142rem;
       line-height: 2.09rem;
     }
@@ -72,110 +69,17 @@ $parent: 'search-room-filter';
 
     &__sliders {
       display: grid;
-      grid-gap: 2rem 0.8571rem;
+      grid-gap: 1.29rem 0.8571rem;
       grid-template-columns: 19.2857rem 19.2857rem 19.2857rem;
     }
 
     &__slider {
       width: 19.2857rem;
     }
+
+    &__pagination {
+      width: 17.2142rem;
+      margin: 2.6485rem auto 5.1842rem;
+    }
   }
 }
-
-// @media (min-width: 1441px) {
-//   .search-room-filter {
-//     &__article {
-//       justify-content: center;
-//     }
-//   }
-// }
-
-// @media (max-width: 1440px) and (min-width: 1440px) {
-//   .search-room-filter {
-//     padding: 0 75px 70px 140px;
-//   }
-// }
-
-// @media (max-width: 1439px) {
-//   .search-room-filter {
-//     padding: 0 15px;
-
-//     &__article {
-//       justify-content: center;
-//     }
-
-//     &__panel {
-//       margin-right: 20px;
-//     }
-
-//     &__slider {
-//       width: 320px;
-//     }
-
-//     &__title {
-//       text-align: center;
-//     }
-
-//     &__sliders-list {
-//       display: grid;
-//       grid-gap: 12px 12px;
-//       grid-template-columns: 320px 320px;
-//       padding-left: 2px;
-//     }
-//   }
-// }
-
-// @media (max-width: 1023px) and (min-width: 769px) {
-//   .search-room-filter {
-//     &__slider {
-//       width: 320px;
-//     }
-
-//     &__title {
-//       text-align: center;
-//     }
-
-//     &__sliders-list {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       padding-left: 2px;
-//     }
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .search-room-filter {
-//     &__panel {
-//       margin-right: 15px;
-//     }
-
-//     &__slider {
-//       width: 405px;
-//     }
-
-//     &__sliders-list {
-//       width: 100%;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//     }
-//   }
-// }
-
-// @media (max-width: 425px) {
-//   .search-room-filter {
-//     &__panel {
-//       margin: 0;
-//       width: 100%;
-//     }
-
-//     &__article {
-//       flex-direction: column;
-//     }
-
-//     &__slider {
-//       width: 100%;
-//     }
-//   }
-// }

@@ -6,7 +6,6 @@ class RateButton {
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
-    console.log("renderComponents : ", props);
     renderComponents({
       parents,
       query: query || ".js-rate-button__button",
@@ -15,7 +14,6 @@ class RateButton {
   }
 
   static _renderComponent(index, element) {
-    console.log("_renderComponent : ", element);
     renderComponent({
       element,
       className: RateButton.CLASS_NAME,
@@ -24,7 +22,6 @@ class RateButton {
   }
 
   constructor(element) {
-    console.log("element : ", element);
     this._element = element;
     this.count = this._element.dataset.count;
     this.input = this._element.querySelector("input");

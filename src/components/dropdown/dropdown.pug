@@ -4,13 +4,13 @@ mixin dropdown(props = {})
     -
         let { dropdown = {}, input } = props;
         let {
-            isExpand, isForcedExpand, isControlVisible, isStraight,
+            isExpanded, isForcedExpanded, isControlVisible, isStraight,
             buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText, type,
         } = dropdown;
         let className = 'dropdown';
         let classNames = `${className} js-${className}`;
-        classNames += isExpand ? ` ${className}_expanded` : '';
-        classNames += isForcedExpand ? ` ${className}_forced-expanded` : ''; 
+        classNames += isExpanded ? ` ${className}_expanded` : '';
+        classNames += isForcedExpanded ? ` ${className}_forced-expanded` : ''; 
         classNames += isStraight ? ` ${className}_straight` : '';
     div(
         class=classNames,
@@ -19,7 +19,7 @@ mixin dropdown(props = {})
         div(
             class=`${className}__input js-${className}__input`
         )
-            +input({...input, theme: 'dropdown', isStraight: isStraight || type === 0, isExpand: isForcedExpand || isExpand})
+            +input({...input, theme: 'dropdown', isStraight: isStraight || type === 0, isExpanded: isForcedExpanded || isExpanded})
         .dropdown__main.js-dropdown__main
             -
                 let { items = [] } = props;

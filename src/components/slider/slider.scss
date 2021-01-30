@@ -4,8 +4,8 @@
   width: 100%;
   height: 100%;
   position: relative;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 0.2857rem;
+  border-top-right-radius: 0.2857rem;
   overflow: hidden;
 
   &__section-images {
@@ -38,7 +38,7 @@
   }
 
   &__control {
-    width: 44px;
+    width: 3.1428rem;
     height: 100%;
     position: absolute;
     top: 0;
@@ -54,7 +54,7 @@
       rgba(255, 255, 255, 0) 100%
     );
     cursor: pointer;
-    font-size: 12px;
+    font-size: 0.8571rem;
   }
 
   &__control_left {
@@ -71,22 +71,22 @@
     flex-direction: row;
     justify-content: flex-start;
     position: absolute;
-    right: 13px;
-    bottom: 16px;
+    right: 0.9285rem;
+    bottom: 1.1428rem;
     z-index: 3;
   }
 
   &__point {
-    width: 8px;
-    height: 8px;
+    width: 0.5714rem;
+    height: 0.5714rem;
     border-radius: 100%;
-    border: 1px solid $color-white-shade100;
-    margin-left: 3.75px;
+    border: 0.0714rem solid $color-14;
+    margin-left: 0.2678rem;
     cursor: pointer;
   }
 
   &__point_full {
-    background-color: $color-white-shade100;
+    background-color: $color-14;
   }
 
   &__point:first-child {

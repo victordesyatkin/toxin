@@ -26,14 +26,20 @@ export default class CardHeader {
 
   init() {
     const data = this._$element.data();
-    const numberFormat = get(data, ["numberFormat"]);
+    const numberFormat = get(data, ["numberformat"]);
     const options = get(data, ["options"]);
-    $(".js-card-header__price-content", this._$element).each(function () {
-      $(this).html(
-        new Intl.NumberFormat(numberFormat, options).format(
-          parseFloat($(this).html().replace(" ", ""))
-        )
-      );
-    });
+    $(".js-card-header__price-content", this._$element).each(
+      this.parserPriceContent.bind(this, numberFormat, options)
+    );
+  }
+
+  parserPriceContent(numberFormat, options, index, element) {
+    console.log("numberFormat : ", numberFormat);
+    console.log("$(element).html() : ", $(element).html());
+    $(element).html(
+      new Intl.NumberFormat(numberFormat, options).format(
+        parseFloat($(element).html().replace(" ", ""))
+      )
+    );
   }
 }

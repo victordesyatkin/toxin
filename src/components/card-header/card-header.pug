@@ -14,7 +14,8 @@ mixin card-header(props = {})
         data-options=options
     )
         .card-header__section-info
-            .card-header__number-info=headerNumberText
+            .card-header__number-info
+                span.card_header__info-text=headerNumberText
                 span.card-header__number=number
                 span.card-header__suite=suite
             .card-header__price
