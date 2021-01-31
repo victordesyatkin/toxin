@@ -1,57 +1,17 @@
 @import '~theme/variables.scss';
 
-.layout__container_center {
-  overflow: hidden;
-}
+$parent: 'room-details';
 
-.room-details {
+.#{$parent} {
   width: 100%;
+  background-color: $color-14;
 
   &__rate {
-    max-width: 500px;
-    .rate {
-      padding-top: 2px;
-      padding-left: 1px;
-    }
-  }
-
-  &__images-section {
-    display: flex;
-    width: 100%;
-    height: 485px;
-    overflow: hidden;
-  }
-
-  &__images {
-    display: flex;
-    flex-direction: column;
-    width: 459px;
-    overflow: hidden;
-  }
-
-  &__image1 {
-    width: 1013px;
-    height: 100%;
-  }
-
-  &__image2 {
-    width: 100%;
-    height: 50%;
-  }
-
-  &__image3 {
-    width: 100%;
-    height: 50%;
-  }
-
-  &__image1,
-  &__image2,
-  &__image3 {
-    overflow: hidden;
+    max-width: 35.7142rem;
   }
 
   &__main-section {
-    padding: 69px 125px 65px 139px;
+    padding: 4.9285rem 8.9285rem 4.6428rem 9.9285rem;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -60,52 +20,15 @@
   &__info-section {
     width: 100%;
     display: flex;
-    margin-bottom: 16px;
-
-    .info__sections {
-      padding-top: 11px;
-      padding-left: 2px;
-
-      .info__title {
-        letter-spacing: 0.39px;
-      }
-    }
-  }
-
-  .comments__full-name {
-    letter-spacing: 0.39px;
-  }
-
-  .comments__right {
-    padding-right: 7px;
+    margin-bottom: 1.1428rem;
   }
 
   &__info {
-    margin-right: 105px;
+    margin-right: 7.5rem;
   }
 
   &__comments-section {
-    margin-bottom: 32px;
-
-    .comments__header {
-      margin-top: -2px;
-      position: relative;
-      padding-right: 90px;
-    }
-
-    .comments__sections {
-      margin-left: -2px;
-    }
-
-    .comments__section:nth-child(2) {
-      margin-top: 27px;
-    }
-
-    .comments__count {
-      position: absolute;
-      top: 3px;
-      right: 13px;
-    }
+    margin-bottom: 2.2857rem;
   }
 
   &__rules-section {
@@ -113,203 +36,64 @@
   }
 
   &__rules {
-    margin-right: 99px;
-    width: 263px;
-
-    .bullet-list {
-      padding-top: 2px;
-    }
-
-    .bullet-list__lable {
-      @include h2;
-      text-transform: capitalize;
-      padding-left: 21px;
-      margin-bottom: 18px;
-    }
+    margin-right: 7.071rem;
+    width: 18.7857rem;
   }
 
   &__cancel {
     width: 50%;
-    padding-right: 25px;
+    padding-right: 1.7857rem;
   }
 
   &__cancel-title {
     @include h2;
-    margin-bottom: 20px;
+    margin-bottom: 1.4285rem;
   }
 
   &__section-first {
-    margin-right: 57px;
+    margin-right: 4.0714rem;
   }
 
   &__section-second {
-    width: 380px;
-    height: 511px;
-    margin-top: 2px;
-  }
-
-  &__slider {
-    display: none;
-  }
-
-  .book__suite {
-    margin-left: 8px;
-  }
-
-  .footer__up {
-    padding-top: 95px;
-  }
-
-  .card {
-    width: 381px;
-  }
-
-  .book {
-    padding: 39px 24px 30px 28px;
-  }
-
-  .comments__content {
-    padding-right: 6px;
+    width: 27.1428rem;
+    height: 36.5rem;
+    margin-top: 0.1428rem;
   }
 }
 
-@media (min-width: 1441px) {
-  .room-details {
-    &__images {
-      width: 29%;
-    }
-
-    &__image1 {
-      width: 71%;
-    }
-
-    &__image1,
-    &__image2,
-    &__image3 {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
-@media (max-width: 1439px) {
-  .room-details {
-    &__images-section {
-      height: 359px;
-    }
-
-    &__images {
-      width: 29%;
-    }
-
-    &__image1 {
-      width: 71%;
-    }
-
-    &__image1,
-    &__image2,
-    &__image3 {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .room-details {
-    &__main-section {
-      padding: 15px;
-      flex-direction: column;
-    }
-
-    &__section-first {
-      margin: 0;
-      margin-bottom: 20px;
-    }
-
-    &__section-second {
+@include media-breakpoint-up($xxs) {
+  .#{$parent} {
+    &__views-section {
       width: 100%;
+      height: 34.7128rem;
       display: flex;
-      justify-content: center;
     }
 
-    .buttons__items.buttons__items_full.buttons__view.buttons__view_3 {
-      display: flex;
-      justify-content: center;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .room-details {
-    &__images-section {
-      height: 230px;
-    }
-  }
-}
-
-@media (max-width: 425px) {
-  .room-details {
-    &__main-section {
-      padding: 0;
+    &__views {
+      width: 32.9285rem;
+      height: 100%;
     }
 
-    &__section-first {
-      padding: 15px;
+    &__view-first {
+      width: 70.1414rem;
+      height: 100%;
     }
 
-    .card {
+    &__view-second {
       width: 100%;
-      padding: 15px;
+      height: 50%;
     }
 
-    .book {
-      padding: 0;
-    }
-
-    &__info-section {
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    &__rules-section {
-      flex-direction: column;
-    }
-
-    &__rules {
-      margin: 0;
+    &__view-third {
       width: 100%;
-
-      .bullet-list__lable {
-        padding-left: 0;
-      }
+      height: 50%;
     }
 
-    &__cancel {
-      width: 100%;
-      padding-right: 0;
+    &__view-first,
+    &__view-second,
+    &__view-third {
+      background-repeat: no-repeat;
+      overflow: hidden;
     }
-
-    &__images-section {
-      height: 150px;
-    }
-  }
-}
-
-@media (max-width: 375px) {
-  .rate__vote-section {
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .rate__circle {
-    margin: 0;
-    margin-bottom: 10px;
   }
 }

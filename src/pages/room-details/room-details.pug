@@ -1,63 +1,54 @@
 extends ../base/base
-
 include ../../components/info/info
 include ../../components/rate/rate
 include ../../components/bullet-list/bullet-list
 include ../../components/comments/comments
+include ../../components/comment/comment
 include ../../components/card/card
 include ../../components/book/book
 
-block title
-    | Room details
 block main
-    - let data = htmlWebpackPlugin.options.getData();
+    -
+        let data = htmlWebpackPlugin.options.getData() || {};
+        let { action, info, rate, comments, bulletList, cancel, book, images = {} } = data;
+        let { image1, image2, image3 } = images;
+        let { src: backgroundImage1 } = image1;
+        let { src: backgroundImage2 } = image2;
+        let { src: backgroundImage3 } = image3;
+        let styleFirst = backgroundImage1 ? `background-image: url(${backgroundImage1});` : '';
+        let styleSecond = backgroundImage2 ? `background-image: url(${backgroundImage2});` : '';
+        let styleThird = backgroundImage3 ? `background-image: url(${backgroundImage3});` : '';
     article.room-details.js-room-details
-        .room-details__images-section
-            -   
-                let { images = {}, cancelTitle, cancelContent, action } = data || {};
-                let { image1 = {}, image2 = {}, image3 = {} } = images;
-                let { src: src1, alt: alt1 } = image1;
-                let { src: src2, alt: alt2 } = image2;
-                let { src: src3, alt: alt3 } = image3;
-            .room-details__image1(
-                data-data=images.image1
+        .room-details__views-section
+            .room-details__view-first(
+                style=styleFirst
             )
-                if (src1)
-                    img(
-                        src=src1
-                        alt=alt1
-                    )
-            .room-details__images
-                .room-details__image2
-                    if (src2)
-                        img(
-                            src=src2
-                            alt=alt2
-                        )
-                .room-details__image3
-                    if (src3)
-                        img(
-                            src=src3
-                            alt=alt3
-                        )
+            .room-details__views
+                .room-details__view-second(
+                    style=styleSecond
+                )
+                .room-details__view-third(
+                    style=styleThird
+                )
         .room-details__main-section
-            .room-details__section-first
+            .room-details__section
                 .room-details__info-section
                     .room-details__info
-                        +info(data.info1)
+                        +info(data.info)
                     .room-details__rate
                         +rate(data.rate)
                 .room-details__comments-section
-                        +comments(data.comments1)
+                        +comments(data.comments)
                 .room-details__rules-section
                     .room-details__rules
-                        +bullet-list(data.bulletList1)
+                        +bullet-list(data.bulletList)
                     .room-details__cancel
-                        .room-details__cancel-title=cancelTitle
-                        .room-details__cancel-content=cancelContent
-            .room-details__section-second
-                form(
+                        +comment(cancel)
+                        //- .room-details__cancel-title=cancelTitle
+                        //- .room-details__cancel-content=cancelContent   
+            .room-details__section
+                form.room-details__book(
                     action=action
                 )
                     +card()
-                        +book(data.book)
+                        +book(book)

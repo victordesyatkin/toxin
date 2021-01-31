@@ -6,7 +6,6 @@ import {
   renderComponent,
   wordForm,
 } from "../../assets/helpers/utils";
-
 import "./rate.scss";
 
 class Rate {
@@ -21,9 +20,9 @@ class Rate {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Rate.CLASS_NAME,
       someClass: Rate,
     });

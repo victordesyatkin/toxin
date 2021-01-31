@@ -1,108 +1,102 @@
 {
   "scriptSrc": "room-details",
-  "headerNotAuthorised": {
+  "headerNotAuthorized": {
     "nav": {
       "items": [
         {
           "id": 1,
-          "label": "О нас",
-          "children": [],
-          "current": false,
+          "content": "О нас",
+          "title": "О нас",
+          "href": "/mock-address/change-me",
+          "isCurrent": true,
           "parent": 0
         },
         {
           "id": 2,
-          "label": "Услуги",
-          "current": false,
+          "content": "Услуги",
+          "title": "Услуги",
           "parent": 0,
           "children": [
             {
               "id": 7,
-              "label": "",
-              "parent": 2,
-              "current": false,
-              "children": []
+              "content": "Специальные услуги",
+              "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
             }
           ]
         },
         {
           "id": 3,
-          "label": "Вакансии",
-          "children": [],
-          "current": false,
+          "content": "Вакансии",
+          "title": "Вакансии",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 4,
-          "label": "Новости",
-          "children": [],
-          "current": false,
+          "content": "Новости",
+          "title": "Новости",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 5,
-          "label": "Соглашения",
+          "content": "Соглашения",
+          "title": "Соглашения",
           "parent": 0,
-          "current": false,
           "children": [
             {
               "id": 6,
-              "label": "",
-              "parent": 5,
-              "children": []
+              "content": "Соглашения",
+              "title": "Соглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
             }
           ]
         }
       ],
-      "authorised": false,
-      "buttons": {
-        "buttons": [
-          {
-            "text": "Войти",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 1,
-            "full": false,
-            "action": {
-              "type": "LINK",
-              "payload": {
-                "href": "registration-sign-in.html"
-              }
-            }
-          },
-          {
-            "text": "Зарегистрироваться",
-            "type": "button",
-            "disabled": false,
-            "value": "",
-            "view": 0,
-            "full": false,
-            "action": {
-              "type": "LINK",
-              "payload": {
-                "href": "registration.html"
-              }
-            }
-          }
-        ]
-      }
+      "buttons": [
+        {
+          "text": "Войти",
+          "type": "button",
+          "value": "",
+          "view": 1,
+          "size": 3
+        },
+        {
+          "text": "Зарегистрироваться",
+          "type": "button",
+          "value": "",
+          "view": 3,
+          "size": 3
+        }
+      ]
     },
     "logo": {
-      "src": "../assets/images/logo-color.svg",
-      "alt": "TOXIN",
-      "href": "/",
-      "title": "TOXIN"
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN",
+        "isBlock": true
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN"
+      }
     }
   },
   "footer": {
     "logo": {
-      "src": "../assets/images/logo-color.svg",
-      "alt": "TOXIN",
-      "href": "/",
-      "title": "TOXIN"
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN"
+      },
+      "logo": {
+        "src": "../../assets/images/logo-color.svg",
+        "alt": "TOXIN",
+        "type": "color"
+      }
     },
-    "title": "title title",
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     },
@@ -111,22 +105,22 @@
         "header": "навигация",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О нас",
             "content": "О нас"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Новости",
             "content": "Новости"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Служба поддержки",
             "content": "Служба поддержки"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Услуги",
             "content": "Услуги"
           }
@@ -136,22 +130,22 @@
         "header": "о нас",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О сервисе",
             "content": "О сервисе"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Наша команда",
             "content": "Наша команда"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Вакансии",
             "content": "Вакансии"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Инвесторы",
             "content": "Инвесторы "
           }
@@ -161,17 +155,17 @@
         "header": "Служба поддержки",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Соглашения",
             "content": "Соглашения"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Сообщества",
             "content": "Сообщества"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Связь с нами",
             "content": "Связь с нами"
           }
@@ -179,23 +173,36 @@
       }
     ],
     "copyright": {
+      "logo": {
+        "link": {
+          "href": "/mock-address/change-me",
+          "title": "TOXIN"
+        },
+        "logo": {
+          "src": "../../assets/images/logo-color.svg",
+          "alt": "TOXIN",
+          "type": "color"
+        }
+      },
       "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
-      "showLogo": false,
       "items": [
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-t"
+          "href": "/mock-address/change-me",
+          "title": "twitter",
+          "icon": "twitter",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-f"
+          "href": "/mock-address/change-me",
+          "title": "facebook",
+          "icon": "facebook",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-i"
+          "href": "/mock-address/change-me",
+          "title": "instagram",
+          "icon": "instagram",
+          "isBlock": true
         }
       ]
     },
@@ -203,17 +210,24 @@
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
-        "name": "footer_subscription_email",
-        "id": "footer_subscription_email",
-        "type": "true",
-        "placeholder": "Email",
-        "button": { "visible": true, "class": "arrow-forward" },
+        "input": {
+          "name": "footer_subscription_email",
+          "id": "footer_subscription_email",
+          "type": "text",
+          "placeholder": "Email",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-forward",
+            "type": "submit"
+          }
+        },
         "mask": {
           "mask": "^\\S*@?\\S*$",
           "regexp": true
         }
       }
-    }
+    },
+    "action": "/mock-address/change-me"
   },
   "rate": {
     "title": "Впечатления от номера",
@@ -291,41 +305,45 @@
     },
     "units": ["голос", "голоса", "голосов"]
   },
-  "info1": {
+  "info": {
     "label": "Сведения о номере",
     "withoutLastLine": true,
     "sections": [
       {
         "title": "Комфорт",
         "content": "Шумопоглощающие стены",
-        "classIcon": "icon-insert_emoticon"
+        "iconClass": "icon-insert_emoticon"
       },
       {
         "title": "Удобство",
         "content": "Окно в каждой из спален",
-        "classIcon": "icon-location_city"
+        "iconClass": "icon-location_city"
       },
       {
         "title": "Уют",
         "content": "Номер оснащён камином",
-        "classIcon": "icon-whatshot"
+        "iconClass": "icon-whatshot"
       }
     ]
   },
-  "comments1": {
+  "comments": {
     "label": "Отзывы посетителей номера",
     "count": 2,
     "units": ["отзыв", "отзыва", "отзывов"],
     "comments": [
       {
         "likeButton": {
-          "checked": true,
+          "isChecked": true,
           "name": "male2",
           "count": 12,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcLike": "./assets/images/favorite.svg",
+          "altLike": "Like",
+          "srcNoLike": "./assets/images/favorite-border.svg",
+          "altNoLike": "No like",
+          "isDisabled": true
         },
         "src": "./assets/images/example-avatar-male.png",
+        "alt": "Avatar",
         "fullName": "Мурад Сарафанов",
         "date": "5 дней назад",
         "content": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
@@ -335,17 +353,20 @@
           "checked": false,
           "name": "female3",
           "count": 2,
-          "defaultSrcLike": "./assets/images/favorite.svg",
-          "defaultSrcNoLike": "./assets/images/favorite-border.svg"
+          "srcLike": "./assets/images/favorite.svg",
+          "altLike": "Like",
+          "srcNoLike": "./assets/images/favorite-border.svg",
+          "altNoLike": "No like"
         },
         "src": "./assets/images/example-avatar-female.png",
+        "alt": "Avatar",
         "fullName": "Патрисия Стёклышкова",
         "date": "Неделю назад",
         "content": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"
       }
     ]
   },
-  "bulletList1": {
+  "bulletList": {
     "label": "Правила",
     "label_size_large": true,
     "items": [
@@ -394,7 +415,7 @@
       }
     },
     "dropdown": {
-      "dropdownOptions": {
+      "dropdown": {
         "expand": false,
         "type": 1,
         "controlVisible": true,
@@ -403,11 +424,13 @@
         "buttonCleanText": "Очистить",
         "buttonApplyText": "Применить"
       },
-      "name": "guests2",
-      "type": "text",
-      "label": "гости",
-      "placeholder": "Сколько гостей",
-      "button": { "class": "arrow-down", "visible": true },
+      "input": {
+        "name": "guests2",
+        "type": "text",
+        "label": "гости",
+        "placeholder": "Сколько гостей",
+        "button": { "iconClass": "arrow-down", "isVisible": true }
+      },
       "items": [
         { "title": "взрослые", "value": 2 },
         { "title": "дети", "value": 1 },
@@ -433,16 +456,16 @@
   },
   "images": {
     "image1": {
-      "src": "./assets/images/image-1.png",
-      "alt": "room-view--1"
+      "src": "./assets/images/room-view-1.jpg",
+      "alt": "room-view-1"
     },
     "image2": {
-      "src": "./assets/images/image-2.png",
-      "alt": "room-view--2"
+      "src": "./assets/images/room-view-2.jpg",
+      "alt": "room-view-2"
     },
     "image3": {
-      "src": "./assets/images/image-3.png",
-      "alt": "room-view--3"
+      "src": "./assets/images/room-view-3.jpg",
+      "alt": "room-view-3"
     }
   },
   "cancelTitle": "Отмена",

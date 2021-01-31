@@ -1,6 +1,10 @@
 import get from "lodash/get";
 
-import { wordForm, renderComponents } from "../../assets/helpers/utils";
+import {
+  wordForm,
+  renderComponents,
+  renderComponent,
+} from "../../assets/helpers/utils";
 import "../comment";
 import "./comments.scss";
 
@@ -16,9 +20,9 @@ class Comments {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Comments.CLASS_NAME,
       someClass: Comments,
     });

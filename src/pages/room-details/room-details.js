@@ -8,7 +8,6 @@ import "../../components/info";
 import "../../components/card";
 import "../../components/bullet-list";
 import "../base/base";
-
 import "./room-details.scss";
 
 class RoomDetails {
@@ -22,9 +21,9 @@ class RoomDetails {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: RoomDetails.CLASS_NAME,
       someClass: RoomDetails,
     });
