@@ -3,8 +3,6 @@
 $parent: 'footer';
 
 @mixin sm {
-  max-width: 54.8571rem;
-
   .#{$parent}__main-section {
     display: none;
   }
@@ -32,7 +30,6 @@ $parent: 'footer';
   &__nav-items {
     margin-top: 0.35714rem;
     display: flex;
-    flex-grow: 1;
   }
 
   &__nav-item:nth-child(1) {
@@ -72,7 +69,7 @@ $parent: 'footer';
   }
 }
 
-@include media-breakpoint-up($sm) {
+@include media-breakpoint-up($xl) {
   .#{$parent} {
     &__main-section {
       padding: 7.1428rem 8.5714rem 5.8571rem 10rem;
@@ -80,7 +77,27 @@ $parent: 'footer';
   }
 }
 
-@include media-breakpoint-down($sm) {
+@include media-breakpoint-between($md, $xl) {
+  .#{$parent} {
+    &__main-section {
+      padding: 2rem;
+      justify-content: center;
+    }
+
+    &__info-section,
+    &__nav-items {
+      .#{$parent}__nav-item {
+        margin-right: 1.4285rem;
+      }
+    }
+
+    &__nav-items {
+      flex-grow: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down($lg) {
   .#{$parent} {
     @include sm;
   }

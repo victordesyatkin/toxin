@@ -7,6 +7,7 @@ import LikeButton from "../../components/like-button";
 import "../../components/info";
 import "../../components/card";
 import "../../components/bullet-list";
+import "../../components/description";
 import "../base/base";
 import "./room-details.scss";
 

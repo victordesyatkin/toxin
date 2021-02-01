@@ -1,0 +1,10 @@
+@import '~theme/variables.scss';
+
+$parent: 'description';
+
+.#{$parent} {
+  &__title {
+    @include h2;
+    margin-bottom: 1.4285rem;
+  }
+}

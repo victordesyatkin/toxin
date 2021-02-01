@@ -1,16 +1,20 @@
 @import '~theme/variables.scss';
 
-.bullet-list {
-  &__label {
-    margin-bottom: 15px;
-    @include h3;
+$parent: 'bullet-list';
 
-    &_size_large {
+.#{$parent} {
+  &_size_large {
+    .#{$parent}__label {
       @include h2;
       text-transform: inherit;
       padding-left: 1.5rem;
       margin-bottom: 1.42rem;
     }
+  }
+
+  &__label {
+    margin-bottom: 15px;
+    @include h3;
   }
 
   &__list {

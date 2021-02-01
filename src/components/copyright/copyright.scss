@@ -72,7 +72,7 @@ $parent: 'copyright';
   }
 }
 
-@include media-breakpoint-down($sm) {
+@include media-breakpoint-down($lg) {
   .#{$parent} {
     @include sm;
   }

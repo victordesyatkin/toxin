@@ -4,7 +4,13 @@ $parent: 'book';
 
 .#{$parent} {
   width: 100%;
-  padding: 40px 30px 30px 27px;
+  padding: 2.8571rem 2.1428rem 2.1428rem 1.9285rem;
+
+  &_theme_room-details {
+    .#{$parent}__number {
+      margin-right: 0.6899rem;
+    }
+  }
 
   &__section-info {
     display: flex;
@@ -15,19 +21,19 @@ $parent: 'book';
 
   &__number-info {
     @include base-h;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
   }
 
   &__number {
     @include h1;
-    margin: 0 0px 0 4px;
+    margin: 0 0 0 0.3057rem;
   }
 
   &__suite {
     color: $color-7;
-    font-size: 13px;
+    font-size: 0.9285;
     letter-spacing: -0.61px;
   }
 
@@ -35,14 +41,14 @@ $parent: 'book';
     display: flex;
     align-items: flex-end;
     @include base-h;
-    font-size: 15px;
+    font-size: 1.0714rem;
     font-weight: bold;
     color: $color-3;
   }
 
   &__duration {
     font-weight: normal;
-    font-size: 12px;
+    font-size: 0.8571rem;
     @include font-family-first-regular;
   }
 
@@ -118,5 +124,17 @@ $parent: 'book';
     .#{$parent}__section:nth-child(3) {
       margin-bottom: 28px;
     }
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    padding: 1.1rem;
+  }
+}
+
+@include media-breakpoint-down($xxs) {
+  .#{$parent} {
+    padding: 0.5rem;
   }
 }

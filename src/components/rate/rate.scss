@@ -1,23 +1,25 @@
 @import '~theme/variables.scss';
 
-.rate {
+$parent: 'rate';
+
+.#{$parent} {
   width: 100%;
 
   &__title {
     @include h2;
-    font-size: 19px;
-    line-height: 23.75px;
-    margin-bottom: 21px;
+    font-size: 1.3571;
+    line-height: 1.6964rem;
+    margin-bottom: 1.7rem;
   }
 
   &__circle {
-    width: 120px;
-    height: 120px;
+    width: 8.5714rem;
+    height: 8.5714rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-right: 31px;
+    margin-right: 2.1428rem;
   }
 
   &__dummy {
@@ -47,7 +49,7 @@
     @include h3;
     color: $color-purple;
     padding: 0;
-    margin-bottom: 6px;
+    margin-bottom: 0.4285rem;
   }
 
   &__vote-section {
@@ -64,9 +66,24 @@
   }
 
   &__vote-mark {
-    width: 10px;
-    height: 10px;
+    width: 0.7142rem;
+    height: 0.7142rem;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 0.35714rem;
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    &__vote-section {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__circle {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
   }
 }

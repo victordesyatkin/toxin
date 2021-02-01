@@ -6,6 +6,7 @@ include ../../components/comments/comments
 include ../../components/comment/comment
 include ../../components/card/card
 include ../../components/book/book
+include ../../components/description/description
 
 block main
     -
@@ -43,9 +44,7 @@ block main
                     .room-details__rules
                         +bullet-list(data.bulletList)
                     .room-details__cancel
-                        +comment(cancel)
-                        //- .room-details__cancel-title=cancelTitle
-                        //- .room-details__cancel-content=cancelContent   
+                        +description(cancel)
             .room-details__section
                 form.room-details__book(
                     action=action

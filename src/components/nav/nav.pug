@@ -8,7 +8,8 @@ mixin nav(props = {})
     .nav
         nav.nav__nav-section
             each item in items
-                +nav-item(item)
+                .nav__nav-section-item
+                    +nav-item(item)
         if isAuthorized
             .nav__separator
             .nav__user-section

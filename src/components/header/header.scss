@@ -15,8 +15,25 @@ $parent: 'header';
   }
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-up($xl) {
   .#{$parent} {
     padding: 1.1rem 10rem 1.01rem;
+  }
+}
+
+@include media-breakpoint-between($md, $xl) {
+  .#{$parent} {
+    padding: 1.1rem;
+  }
+}
+
+@include media-breakpoint-down($md) {
+  .#{$parent} {
+    flex-direction: column;
+    justify-content: center;
+
+    &__logo {
+      margin: 1rem auto;
+    }
   }
 }

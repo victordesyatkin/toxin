@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.42rem;
+    margin-bottom: 1.54rem;
   }
 
   &__label {
@@ -16,8 +16,20 @@
     color: $color-third-dark;
   }
 
+  &__count-value {
+    margin-right: 3px;
+  }
+
   &__section {
     display: flex;
     margin-top: 22px;
+  }
+
+  &__item {
+    margin-bottom: 1.6rem;
+
+    &:last-child {
+      margin-bottom: inherit;
+    }
   }
 }

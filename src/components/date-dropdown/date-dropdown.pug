@@ -5,8 +5,10 @@ mixin date-dropdown(props = {})
     .date-dropdown.js-date-dropdown
         .date-dropdown__section-dropdown.js-date-dropdown__section-dropdown
             - let { fieldStart, fieldEnd, calendar, isExpand } = props;
-            +masked-text-field(fieldStart)
-            +masked-text-field(fieldEnd)
+            .date-dropdown__section-dropdown-input
+                +masked-text-field(fieldStart)
+            .date-dropdown__section-dropdown-input
+                +masked-text-field(fieldEnd)
             - 
                 let
                     sectionCalendarClassName = 'date-dropdown__section-calendar';

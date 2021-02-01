@@ -1,16 +1,22 @@
 @import '~theme/variables.scss';
 
-$parent: '.info';
+$parent: 'info';
 
-#{$parent} {
+.#{$parent} {
+  &_with-last-line {
+    .#{$parent}__section:last-child {
+      border-bottom: 0.0714rem solid $color-5;
+    }
+  }
+
   &__label {
-    margin-bottom: 1.42rem;
+    margin-bottom: 1.59rem;
     @include h2;
   }
 
   &__section {
-    border-bottom: 1px solid $color-5;
-    padding: 19px 0;
+    border-bottom: 0.0714rem solid $color-5;
+    padding: 1.3571rem 0;
 
     &:first-child {
       padding-top: inherit;

@@ -1,0 +1,8 @@
+mixin description(props = {})
+    - let { title, content } = props;
+    .description
+        if title
+            .description__title=title
+        if content
+            .description__content=content
+

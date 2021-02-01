@@ -3,13 +3,18 @@ include ../info-item/info-item
 mixin info(props = {})
     -
         let
-            { label, sections = [] } = props;
-    .info
+            { label, sections = [], withLastLine } = props;
+            className = 'info';
+            classNames = `${className}`;
+        classNames += withLastLine ? ` ${className}_with-last-line` : '';
+    div(
+        class=classNames
+    )
         if label
             .info__label=label
-    .info__sections
-        each section, index in sections
-            .info__section
-                +info-item(section)
+        .info__sections
+            each section, index in sections
+                .info__section
+                    +info-item(section)
 
         

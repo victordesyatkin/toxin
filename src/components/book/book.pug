@@ -6,9 +6,16 @@ mixin book(props={})
     -
         let {
             discount, number, suite, price, duration, unit, dropdown, dateDropdown, total, totalInfo, button,
-            discountText, discountTotalPreset, numberInfoText, feeText, feeTotal
+            discountText, discountTotalPreset, numberInfoText, feeText, feeTotal, theme
         } = props;
-    .book.js-book(
+        let themes = {
+            'room-details': 'room-details'
+        }
+        let className = 'book';
+        let classNames = `${className} js-${className}`;
+        classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    div(
+        class=classNames
         data-options=props
     )
         .book__section.js-book__section.book__section-title(data-type="3")

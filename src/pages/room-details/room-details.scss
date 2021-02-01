@@ -5,63 +5,9 @@ $parent: 'room-details';
 .#{$parent} {
   width: 100%;
   background-color: $color-14;
-
-  &__rate {
-    max-width: 35.7142rem;
-  }
-
-  &__main-section {
-    padding: 4.9285rem 8.9285rem 4.6428rem 9.9285rem;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  &__info-section {
-    width: 100%;
-    display: flex;
-    margin-bottom: 1.1428rem;
-  }
-
-  &__info {
-    margin-right: 7.5rem;
-  }
-
-  &__comments-section {
-    margin-bottom: 2.2857rem;
-  }
-
-  &__rules-section {
-    display: flex;
-  }
-
-  &__rules {
-    margin-right: 7.071rem;
-    width: 18.7857rem;
-  }
-
-  &__cancel {
-    width: 50%;
-    padding-right: 1.7857rem;
-  }
-
-  &__cancel-title {
-    @include h2;
-    margin-bottom: 1.4285rem;
-  }
-
-  &__section-first {
-    margin-right: 4.0714rem;
-  }
-
-  &__section-second {
-    width: 27.1428rem;
-    height: 36.5rem;
-    margin-top: 0.1428rem;
-  }
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-up($xl) {
   .#{$parent} {
     &__views-section {
       width: 100%;
@@ -70,12 +16,12 @@ $parent: 'room-details';
     }
 
     &__views {
-      width: 32.9285rem;
+      width: calc(100% - 70.0414rem);
       height: 100%;
     }
 
     &__view-first {
-      width: 70.1414rem;
+      width: 70.0414rem;
       height: 100%;
     }
 
@@ -94,6 +40,243 @@ $parent: 'room-details';
     &__view-third {
       background-repeat: no-repeat;
       overflow: hidden;
+    }
+
+    &__main-section {
+      padding: 4.9285rem 8.9285rem 4.6428rem 10.0285rem;
+      width: 100%;
+      display: flex;
+      margin-bottom: 0.7142rem;
+    }
+
+    &__section:nth-child(1) {
+      margin-right: 5.0914rem;
+      width: 50.6857rem;
+    }
+
+    &__section:nth-child(2) {
+      width: 27.0428rem;
+      height: 36.5rem;
+      margin-top: 0.1428rem;
+    }
+
+    &__rate {
+      max-width: 35.7142rem;
+    }
+
+    &__info-section {
+      width: 100%;
+      display: flex;
+      margin-bottom: 1.2828rem;
+    }
+
+    &__info {
+      margin-right: 7.7rem;
+    }
+
+    &__comments-section {
+      margin-bottom: 2.2857rem;
+    }
+
+    &__rules-section {
+      display: flex;
+    }
+
+    &__rules {
+      margin-right: 7.2rem;
+      width: 18.7857rem;
+    }
+
+    &__cancel {
+      width: 50%;
+      padding-right: 1.7857rem;
+    }
+  }
+}
+
+@include media-breakpoint-between($md, $xl) {
+  .#{$parent} {
+    &__views-section {
+      width: 100%;
+      height: 34.7128rem;
+      display: flex;
+    }
+
+    &__views {
+      width: 30%;
+      height: 100%;
+    }
+
+    &__view-first {
+      width: 70%;
+      height: 100%;
+    }
+
+    &__view-second {
+      width: 100%;
+      height: 50%;
+    }
+
+    &__view-third {
+      width: 100%;
+      height: 50%;
+    }
+
+    &__view-first,
+    &__view-second,
+    &__view-third {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    &__main-section {
+      padding: 4.9285rem 2rem;
+      width: 100%;
+      display: flex;
+      margin-bottom: 0.7142rem;
+      justify-content: space-between;
+    }
+
+    &__section:nth-child(1) {
+      margin-right: 1.1rem;
+      width: 55%;
+    }
+
+    &__section:nth-child(2) {
+      width: 27%;
+      height: 36.5rem;
+      margin-top: 0.1428rem;
+      min-width: 27.1428rem;
+    }
+
+    &__rate {
+      max-width: 35.7142rem;
+    }
+
+    &__info-section {
+      width: 100%;
+      display: flex;
+      margin-bottom: 1.2828rem;
+    }
+
+    &__comments-section {
+      margin-bottom: 2.2857rem;
+    }
+
+    &__rules-section {
+      display: flex;
+    }
+
+    &__rules {
+      margin-right: 7.2rem;
+      width: 18.7857rem;
+    }
+
+    &__cancel {
+      width: 50%;
+      padding-right: 1.7857rem;
+    }
+  }
+}
+
+@include media-breakpoint-between($lg, $xl) {
+  .#{$parent} {
+    &__info {
+      margin-right: 5rem;
+    }
+  }
+}
+
+@include media-breakpoint-between($md, $lg) {
+  .#{$parent} {
+    &__info {
+      margin-right: 1.1rem;
+    }
+  }
+}
+
+@include media-breakpoint-down($md) {
+  .#{$parent} {
+    &__views-section {
+      width: 100%;
+      height: 24.7128rem;
+    }
+
+    &__view-first {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__view-second,
+    &__view-third {
+      display: none;
+    }
+
+    &__view-first {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    &__main-section {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__section,
+    &__info,
+    &__rules,
+    &__cancel,
+    &__rate,
+    &__comments-section {
+      margin-bottom: 2rem;
+    }
+
+    &__book {
+      max-width: 27.1428rem;
+      margin: 0 auto;
+    }
+  }
+}
+
+@include media-breakpoint-down($sm) {
+  .#{$parent} {
+    &__views-section {
+      width: 100%;
+      height: 14.7128rem;
+    }
+
+    &__view-first {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__view-second,
+    &__view-third {
+      display: none;
+    }
+
+    &__main-section {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    &__main-section {
+      display: flex;
+      padding: 0;
+    }
+
+    &__section:nth-child(1) {
+      padding: 1rem;
     }
   }
 }

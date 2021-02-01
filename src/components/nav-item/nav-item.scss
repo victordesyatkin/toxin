@@ -10,17 +10,13 @@ $parent: 'nav-item';
   cursor: pointer;
   white-space: nowrap;
 
-  &__nav-section {
-    margin-right: 22px;
-  }
-
   &__control {
-    width: 24px;
+    width: 1.4285rem;
     height: 100%;
     background: none;
     border: none;
     color: $color-3;
-    font-size: 8px;
+    font-size: 0.5714rem;
     cursor: pointer;
     display: inline-flex;
     justify-content: center;
