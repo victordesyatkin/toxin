@@ -1,12 +1,20 @@
 @import '~theme/global.scss';
 
-.slider {
+$parent: 'slider';
+
+.#{$parent} {
   width: 100%;
   height: 100%;
   position: relative;
   border-top-left-radius: 0.2857rem;
   border-top-right-radius: 0.2857rem;
   overflow: hidden;
+
+  &_cover {
+    .#{$parent}__image {
+      object-fit: cover;
+    }
+  }
 
   &__section-images {
     position: absolute;
@@ -30,11 +38,11 @@
     flex-shrink: 0;
     flex-grow: 1;
     width: 100%;
+  }
 
-    img {
-      object-position: 50% 50%;
-      width: 100%;
-    }
+  &__image {
+    object-position: 50% 50%;
+    width: 100%;
   }
 
   &__control {

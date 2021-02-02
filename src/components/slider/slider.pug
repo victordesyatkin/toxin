@@ -1,16 +1,20 @@
 mixin slider(props = {})
     -
         
-        let { images = [], isControl, max } = props;
+        let { images = [], max, isControl, isCover  } = props;
         let
             n = 0;
             length = images.length;
-    .slider.js-slider(
+            className = 'slider';
+            classNames = `${className} js-${className}`;
+        classNames += isCover ? ` ${className}_cover` : ''; 
+    div(
+        class=classNames
         data-props=props        
     )
         .slider__section-images.slider__section_not_selected.js-slider__section-images
             .slider__image-wrapper
-                img
+                img.slider__image
         if (length !== 0)
             if (isControl === true)
                 .slider__control.slider__control_left.icon-expand_more_prev.js-slider__control(

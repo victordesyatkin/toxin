@@ -1,24 +1,32 @@
 @import '~theme/global.scss';
 
-.sign-in {
+$parent: 'sign-in';
+
+.#{$parent} {
   width: 100%;
-  padding: 38px 30px 32px 28px;
+  padding: 2.7142rem 2.1428rem 2.2857rem 2rem;
 
   &__title {
     @include h1;
-    letter-spacing: 0px;
-    margin-bottom: 20px;
+    letter-spacing: 0;
+    margin-bottom: 1.4285rem;
   }
 
   &__email {
-    margin-bottom: 10px;
+    margin-bottom: 0.7142rem;
   }
 
   &__password {
-    margin-bottom: 20px;
+    margin-bottom: 1.4285rem;
   }
 
   &__button-sign-in {
-    margin-bottom: 30px;
+    margin-bottom: 2.1428rem;
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    padding: 1rem;
   }
 }

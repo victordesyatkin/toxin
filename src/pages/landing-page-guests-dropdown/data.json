@@ -49,7 +49,7 @@
         "buttonIncreaseText": "+",
         "buttonCleanText": "Очистить",
         "buttonApplyText": "Применить",
-        "isExpand": true
+        "isExpanded": true
       },
       "input": {
         "name": "guests",

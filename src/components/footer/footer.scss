@@ -32,21 +32,6 @@ $parent: 'footer';
     display: flex;
   }
 
-  &__nav-item:nth-child(1) {
-    width: 10.2142rem;
-    margin-right: 4.0714rem;
-  }
-
-  &__nav-item:nth-child(2) {
-    width: 7.7142rem;
-    margin-right: 6.5714rem;
-  }
-
-  &__nav-item:nth-child(3) {
-    width: 10.6428rem;
-    margin-right: 3.6428rem;
-  }
-
   &__subscribe-section {
     width: 18.5714rem;
   }
@@ -74,14 +59,29 @@ $parent: 'footer';
     &__main-section {
       padding: 7.1428rem 8.5714rem 5.8571rem 10rem;
     }
+
+    &__nav-item:nth-child(1) {
+      width: 10.2142rem;
+      margin-right: 4.0714rem;
+    }
+
+    &__nav-item:nth-child(2) {
+      width: 7.7142rem;
+      margin-right: 6.5714rem;
+    }
+
+    &__nav-item:nth-child(3) {
+      width: 10.6428rem;
+      margin-right: 3.6428rem;
+    }
   }
 }
 
-@include media-breakpoint-between($md, $xl) {
+@include media-breakpoint-between($lg, $xl) {
   .#{$parent} {
     &__main-section {
       padding: 2rem;
-      justify-content: center;
+      justify-content: space-around;
     }
 
     &__info-section,
@@ -94,10 +94,63 @@ $parent: 'footer';
     &__nav-items {
       flex-grow: 0;
     }
+
+    &__nav-items {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__nav-item {
+      margin-right: 2rem;
+    }
   }
 }
 
-@include media-breakpoint-down($lg) {
+@include media-breakpoint-between($sm, $lg) {
+  .#{$parent} {
+    &__main-section {
+      padding: 2rem;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__info-section {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-right: 0;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    &__logo {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__info {
+      width: 100%;
+      text-align: center;
+    }
+
+    &__nav-items {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    &__nav-item {
+      margin: 0;
+    }
+
+    &__nav-items {
+      flex-grow: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down($sm) {
   .#{$parent} {
     @include sm;
   }

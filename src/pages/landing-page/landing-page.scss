@@ -10,7 +10,7 @@ $parent: 'landing-page';
   }
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-up($xs) {
   .#{$parent} {
     background-position: 0 -5rem;
 
@@ -31,6 +31,22 @@ $parent: 'landing-page';
     &__slogan {
       width: 21.2142rem;
       text-align: right;
+    }
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    &__picker {
+      width: 100%;
+      margin: 5rem auto;
+      max-width: 27.1428rem;
+    }
+
+    &__info {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
     }
   }
 }

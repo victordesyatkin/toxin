@@ -16,25 +16,25 @@ $parent: 'nav';
   }
 
   .#{$parent}__nav-section-item:first-child {
-    margin-right: 22px;
+    margin-right: 1.5714rem;
   }
 
   .#{$parent}__nav-section-item:nth-child(2) {
-    margin-right: 21px;
+    margin-right: 1.5214rem;
   }
 
   .#{$parent}__nav-section-item {
-    margin-right: 20px;
+    margin-right: 1.504rem;
   }
 
   &__separator {
-    width: 1px;
-    height: 30px;
+    width: 0.0714rem;
+    height: 2.1428rem;
     background: $color-5;
   }
 
   &__user-section {
-    margin-left: 21px;
+    margin-left: 1.5rem;
     color: $color-3;
   }
 
@@ -45,7 +45,7 @@ $parent: 'nav';
   &__control-item {
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    margin-left: 1.4057rem;
   }
 
   &__control-item:nth-child(1) {
@@ -85,6 +85,15 @@ $parent: 'nav';
       padding: 0.5rem 1.1rem;
       display: flex;
       justify-content: center;
+    }
+
+    &__separator {
+      display: none;
+    }
+
+    &__user-section {
+      margin: 0;
+      padding: 0.5rem;
     }
   }
 }

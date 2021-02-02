@@ -1,50 +1,58 @@
 @import '~theme/global.scss';
 
-.sign-up {
+$parent: 'sign-up';
+
+.#{$parent} {
   width: 100%;
-  padding: 38px 30px 30px 28px;
+  padding: 2.7142rem 2.1428rem 2.1428rem 2rem;
 
   &__title {
     @include h1;
-    margin-bottom: 20px;
+    margin-bottom: 1.4285rem;
   }
 
   &__first-name {
-    margin-bottom: 10px;
+    margin-bottom: 0.7142rem;
   }
 
   &__last-name {
-    margin-bottom: 10px;
+    margin-bottom: 0.7142rem;
   }
 
   &__genders {
     display: flex;
     width: 100%;
     justify-self: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 1.7142rem;
   }
 
   &__gender:first-child {
-    margin-right: 20px;
+    margin-right: 1.4285rem;
   }
 
   &__birthday {
-    margin-bottom: 20px;
+    margin-bottom: 1.4285rem;
   }
 
   &__email {
-    margin-bottom: 10px;
+    margin-bottom: 0.7142rem;
   }
 
   &__password {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 
   &__contribute {
-    margin-bottom: 24px;
+    margin-bottom: 1.7142rem;
   }
 
   &__button-pay {
-    margin-bottom: 30px;
+    margin-bottom: 2.1428rem;
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    padding: 1rem;
   }
 }

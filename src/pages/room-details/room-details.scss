@@ -178,6 +178,10 @@ $parent: 'room-details';
       width: 50%;
       padding-right: 1.7857rem;
     }
+
+    &__slider {
+      display: none;
+    }
   }
 }
 
@@ -187,6 +191,10 @@ $parent: 'room-details';
       margin-right: 5rem;
     }
   }
+
+  &__slider {
+    display: none;
+  }
 }
 
 @include media-breakpoint-between($md, $lg) {
@@ -194,27 +202,48 @@ $parent: 'room-details';
     &__info {
       margin-right: 1.1rem;
     }
+
+    &__slider {
+      display: none;
+    }
   }
 }
 
 @include media-breakpoint-down($md) {
   .#{$parent} {
-    &__views-section {
-      width: 100%;
-      height: 24.7128rem;
-    }
-
-    &__view-first {
-      width: 100%;
-      height: 100%;
-    }
-
-    &__view-second,
-    &__view-third {
+    &__slider {
       display: none;
     }
 
+    &__views-section {
+      width: 100%;
+      height: 24.7128rem;
+      display: flex;
+    }
+
+    &__views {
+      width: 30%;
+      height: 100%;
+    }
+
     &__view-first {
+      width: 70%;
+      height: 100%;
+    }
+
+    &__view-second {
+      width: 100%;
+      height: 50%;
+    }
+
+    &__view-third {
+      width: 100%;
+      height: 50%;
+    }
+
+    &__view-first,
+    &__view-second,
+    &__view-third {
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -238,6 +267,7 @@ $parent: 'room-details';
 
     &__book {
       max-width: 27.1428rem;
+      width: 100%;
       margin: 0 auto;
     }
   }
@@ -248,22 +278,46 @@ $parent: 'room-details';
     &__views-section {
       width: 100%;
       height: 14.7128rem;
+      display: flex;
     }
 
-    &__view-first {
-      width: 100%;
-      height: 100%;
-    }
-
-    &__view-second,
-    &__view-third {
+    &__slider {
       display: none;
     }
 
-    &__main-section {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column-reverse;
+    &__views {
+      width: 30%;
+      height: 100%;
+    }
+
+    &__view-first {
+      width: 70%;
+      height: 100%;
+    }
+
+    &__view-second {
+      width: 100%;
+      height: 50%;
+    }
+
+    &__view-third {
+      width: 100%;
+      height: 50%;
+    }
+
+    &__view-first,
+    &__view-second,
+    &__view-third {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    &__book {
+      max-width: 27.1428rem;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }
@@ -277,6 +331,17 @@ $parent: 'room-details';
 
     &__section:nth-child(1) {
       padding: 1rem;
+    }
+
+    &__views-section {
+      display: none;
+    }
+
+    &__slider {
+      width: 100%;
+      height: 14.7128rem;
+      display: block;
+      margin-bottom: 1rem;
     }
   }
 }

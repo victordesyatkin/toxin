@@ -31,20 +31,20 @@ $parent: '.expandable';
   }
 
   &__control {
-    font-size: 8px;
+    font-size: 0.5714rem;
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     -ms-transition-property: -ms-transform;
     -o-transition-property: -o-transform;
     transition-property: transform;
     transition-duration: 1s;
-    margin-right: 16px;
+    margin-right: 1.1428rem;
   }
 
   &__body {
     display: none;
     position: absolute;
-    top: 32.44px;
+    padding: 2.3171rem 0;
     left: 0;
     z-index: 2;
     width: 100%;

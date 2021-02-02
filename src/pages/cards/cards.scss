@@ -11,7 +11,7 @@ $parent: '.cards';
   }
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-up($xl) {
   #{$parent} {
     padding: 5.14rem 6.07rem 10rem 10rem;
 
@@ -23,6 +23,39 @@ $parent: '.cards';
     &__section:nth-child(2) {
       width: 27.14rem;
       margin-right: 2.8rem;
+    }
+
+    &__section:nth-child(3) {
+      width: 22.86rem;
+    }
+
+    &__sliders {
+      width: 19.28rem;
+    }
+
+    &__sign-up,
+    &__sign-in,
+    &__slider:nth-child(1) {
+      margin-top: 2.86rem;
+    }
+
+    &__slider:nth-child(2) {
+      margin-top: 2.6rem;
+    }
+  }
+}
+
+@include media-breakpoint-down($xl) {
+  #{$parent} {
+    padding: 2rem;
+    justify-content: space-around;
+
+    &__section:nth-child(1) {
+      width: 27.14rem;
+    }
+
+    &__section:nth-child(2) {
+      width: 27.14rem;
     }
 
     &__section:nth-child(3) {

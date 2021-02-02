@@ -5,15 +5,13 @@ $parent: 'headers-and-footers';
 .#{$parent} {
   width: 100%;
   margin-top: 4.4042rem;
-}
 
-@include media-breakpoint-up($xxs) {
   .#{$parent}__section:nth-child(1) {
-    margin-bottom: 2.7971rem;
+    margin-bottom: 2.9271rem;
   }
 
   .#{$parent}__section:nth-child(2) {
-    margin-bottom: 2.7971rem;
+    margin-bottom: 2.8971rem;
   }
 
   .#{$parent}__section:nth-child(4) {

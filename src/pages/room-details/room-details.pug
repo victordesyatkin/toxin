@@ -7,11 +7,12 @@ include ../../components/comment/comment
 include ../../components/card/card
 include ../../components/book/book
 include ../../components/description/description
+include ../../components/slider/slider
 
 block main
     -
         let data = htmlWebpackPlugin.options.getData() || {};
-        let { action, info, rate, comments, bulletList, cancel, book, images = {} } = data;
+        let { action, info, rate, comments, bulletList, cancel, book, images = {}, slider } = data;
         let { image1, image2, image3 } = images;
         let { src: backgroundImage1 } = image1;
         let { src: backgroundImage2 } = image2;
@@ -31,6 +32,8 @@ block main
                 .room-details__view-third(
                     style=styleThird
                 )
+        .room-details__slider
+            +slider(slider)
         .room-details__main-section
             .room-details__section
                 .room-details__info-section

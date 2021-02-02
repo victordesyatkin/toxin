@@ -6,13 +6,26 @@ $parent: 'registration';
   width: 100%;
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-up($xs) {
   .#{$parent} {
     background-position: 0rem -5.0714rem;
     background-repeat: no-repeat;
 
     &__sign-up {
       width: 27.1428rem;
+      margin: 1.4285rem auto 1.4285rem;
+    }
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    background-position: 0rem -5.0714rem;
+    background-repeat: no-repeat;
+
+    &__sign-up {
+      width: 100%;
+      max-width: 27.1428rem;
       margin: 1.4285rem auto 1.4285rem;
     }
   }

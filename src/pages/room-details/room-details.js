@@ -4,6 +4,7 @@ import Comments from "../../components/comments";
 import Footer from "../../components/footer";
 import Rate from "../../components/rate";
 import LikeButton from "../../components/like-button";
+import Slider from "../../components/slider";
 import "../../components/info";
 import "../../components/card";
 import "../../components/bullet-list";
@@ -42,6 +43,7 @@ class RoomDetails {
     Rate.renderComponents({ parents });
     LikeButton.renderComponents({ parents });
     Comments.renderComponents({ parents });
+    Slider.renderComponents({ parents });
     Footer.renderComponents();
   }
 }

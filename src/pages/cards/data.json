@@ -164,7 +164,7 @@
       "label": "",
       "placeholder": "Имя"
     },
-    "lastname": {
+    "lastName": {
       "name": "lastName1",
       "id": "lastName1",
       "type": "text",
@@ -172,14 +172,14 @@
       "placeholder": "Фамилия",
       "stateText": ""
     },
-    "ganderMale": {
+    "genderMale": {
       "label": "Мужчина",
       "isChecked": true,
       "name": "gender1",
       "value": "male",
       "src": "./assets/images/checkbox-buttons.svg"
     },
-    "ganderFemale": {
+    "genderFemale": {
       "label": "Женщина",
       "name": "gender1",
       "value": "female",

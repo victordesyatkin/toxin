@@ -5,6 +5,8 @@ $parent: 'search-room-filter';
   width: 100%;
   background-color: $color-14;
   border-bottom: 0.0714rem solid $color-4;
+  padding: 2.1428rem 10rem 0;
+  display: flex;
 
   &__article {
     width: 100%;
@@ -17,69 +19,117 @@ $parent: 'search-room-filter';
     font-size: 0.8571rem;
     color: $color-3;
   }
+
+  &__aside {
+    width: 19rem;
+    margin-right: 4.2857rem;
+  }
+
+  &__title {
+    @include h1;
+    margin-bottom: 1.55rem;
+    font-size: 1.7142rem;
+    line-height: 2.09rem;
+  }
+
+  &__filter-date-dropdown {
+    margin-bottom: 1.51rem;
+  }
+
+  &__dropdown-first {
+    margin-bottom: 2.1742rem;
+  }
+
+  &__range-slider {
+    margin-bottom: 1.3228rem;
+  }
+
+  &__checkbox-buttons {
+    width: 15.8571rem;
+    margin-bottom: 2.257rem;
+  }
+
+  &__rich-checkbox-buttons {
+    width: 19rem;
+    margin-bottom: 2.13rem;
+  }
+
+  &__rich-checkbox-buttons {
+    width: 19rem;
+    margin-bottom: 2.13rem;
+  }
+
+  &__dropdown-second {
+    margin-bottom: 2.1428rem;
+  }
+
+  &__sliders {
+    display: grid;
+    grid-gap: 1.29rem 0.8571rem;
+    grid-template-columns: repeat(3, 19.2857rem);
+  }
+
+  &__slider {
+    width: 19.2857rem;
+  }
+
+  &__pagination {
+    width: 17.2142rem;
+    margin: 2.6485rem auto 5.1842rem;
+  }
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-down($lg) {
   .#{$parent} {
-    padding: 2.1428rem 10rem 0;
+    padding: 2.1428rem 0 2rem;
     display: flex;
-
-    &__aside {
-      width: 19rem;
-      margin-right: 4.2957rem;
-    }
-
-    &__title {
-      @include h1;
-      margin-bottom: 1.55rem;
-      font-size: 1.7142rem;
-      line-height: 2.09rem;
-    }
-
-    &__filter-date-dropdown {
-      margin-bottom: 1.51rem;
-    }
-
-    &__dropdown-first {
-      margin-bottom: 2.1742rem;
-    }
-
-    &__range-slider {
-      margin-bottom: 1.3228rem;
-    }
-
-    &__checkbox-buttons {
-      width: 15.8571rem;
-      margin-bottom: 2.257rem;
-    }
-
-    &__rich-checkbox-buttons {
-      width: 19rem;
-      margin-bottom: 2.13rem;
-    }
-
-    &__rich-checkbox-buttons {
-      width: 19rem;
-      margin-bottom: 2.13rem;
-    }
-
-    &__dropdown-second {
-      margin-bottom: 2.1428rem;
-    }
+    justify-content: center;
 
     &__sliders {
       display: grid;
       grid-gap: 1.29rem 0.8571rem;
-      grid-template-columns: 19.2857rem 19.2857rem 19.2857rem;
+      grid-template-columns: repeat(2, 19.2857rem);
+    }
+  }
+}
+
+@include media-breakpoint-down($md) {
+  .#{$parent} {
+    padding: 2.1428rem 1rem 0;
+    display: flex;
+    justify-content: center;
+
+    &__sliders {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
 
-    &__slider {
-      width: 19.2857rem;
+    &__aside {
+      margin-right: 2rem;
+    }
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  .#{$parent} {
+    padding: 2.1428rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__sliders {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
 
-    &__pagination {
-      width: 17.2142rem;
-      margin: 2.6485rem auto 5.1842rem;
+    &__aside {
+      margin-right: 0;
+      margin-bottom: 1rem;
+      width: 100%;
     }
   }
 }

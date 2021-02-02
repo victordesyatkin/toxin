@@ -487,5 +487,23 @@
     "title": "Отмена",
     "content": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
   },
+  "slider": {
+    "images": [
+      {
+        "src": "./assets/images/room-view-1.jpg",
+        "alt": "room-view-1"
+      },
+      {
+        "src": "./assets/images/room-view-2.jpg",
+        "alt": "room-view-2"
+      },
+      {
+        "src": "./assets/images/room-view-3.jpg",
+        "alt": "room-view-3"
+      }
+    ],
+    "isControl": true,
+    "isCover": true
+  },
   "action": "/mock-address/change-me"
 }
