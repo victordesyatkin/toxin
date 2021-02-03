@@ -23,7 +23,7 @@
     border-bottom-right-radius: 7px;
     position: absolute;
     width: 100%;
-    background-color: white;
+    background-color: $dropdown-background-color;
     z-index: 10;
   }
 
@@ -35,7 +35,7 @@
   }
 
   &__item:nth-child(1) {
-    padding-top: 5px;
+    padding-top: 4.8854rem;
   }
 
   &__item:last-child {
@@ -58,8 +58,8 @@
 
   &__button {
     border-radius: 100%;
-    border: 1px solid $color-4;
-    color: $color-3;
+    border: 1px solid $dropdown-button-border-color;
+    color: $dropdown-text-color-button-active;
     box-sizing: border-box;
     background-color: transparent;
     font-size: 1rem;
@@ -84,7 +84,7 @@
   &__main-control {
     display: flex;
     justify-content: space-between;
-    padding: 22px 7px 14px 12.88px;
+    padding: 1.5714rem 0.5rem 1rem 6.2857rem;
   }
 
   &__control-button,
@@ -97,11 +97,11 @@
   }
 
   &__control-button_apply {
-    color: $color-7;
+    color: $dropdown-text-color-control;
   }
 
   &__control-button_clean {
-    color: $color-7;
+    color: $dropdown-text-color-control;
   }
 
   &__control-button:hover,

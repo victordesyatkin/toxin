@@ -22,7 +22,6 @@ module.exports = (env = {}) => {
   fs.readdirSync(nth.dir.pages).forEach((file) => {
     pages.push(file);
   });
-  console.log("PAGES : ", pages);
   const htmlPlugins = pages.map((fileName) => {
     js[fileName] = `${nth.dir.pages}/${fileName}/${fileName}.js`;
     return new HtmlWebpackPlugin({
@@ -98,7 +97,6 @@ module.exports = (env = {}) => {
     devtool: isDev ? "eval" : undefined,
     entry: { ...js },
     output: {
-      //filename: isProd ? "main-[hash:8].js" : undefined,
       filename: "[name].js",
       pathinfo: isDev,
     },

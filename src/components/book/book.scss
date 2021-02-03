@@ -16,7 +16,7 @@ $parent: 'book';
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: $color-2;
+    color: $paragraph-text-color;
   }
 
   &__number-info {
@@ -32,7 +32,7 @@ $parent: 'book';
   }
 
   &__suite {
-    color: $color-7;
+    color: $book-text-color-suite;
     font-size: 0.9285rem;
     letter-spacing: -0.0435rem;
   }
@@ -43,7 +43,7 @@ $parent: 'book';
     @include base-h;
     font-size: 1.0714rem;
     font-weight: bold;
-    color: $color-3;
+    color: $book-text-color-price;
   }
 
   &__duration {
@@ -66,10 +66,14 @@ $parent: 'book';
     line-height: 1.4285rem;
   }
 
+  &__section-total {
+    color: $paragraph-text-color;
+  }
+
   &__info {
     margin-left: 0.3571rem;
     font-size: 1.4285rem;
-    color: $color-4;
+    color: $book-text-color-info;
   }
 
   &__total {
@@ -78,11 +82,12 @@ $parent: 'book';
 
     .#{$parent}__section-info {
       letter-spacing: 0.0249rem;
-      color: $color-1;
+      color: $header-text-color;
     }
 
     .#{$parent}__section-total {
       letter-spacing: -0.0278rem;
+      color: $header-text-color;
     }
   }
 
@@ -98,7 +103,7 @@ $parent: 'book';
   &__separator-dummy {
     width: 100%;
     height: 100%;
-    border-bottom: 0.0714rem dashed $color-4;
+    border-bottom: 0.0714rem dashed $book-border-separator;
   }
 
   &__date-dropdown {

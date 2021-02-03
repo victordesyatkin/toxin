@@ -20,16 +20,16 @@ $parent: '.input';
   &__state-text {
     @include h3;
     font-weight: normal;
-    color: $color-3;
+    color: $input-text-color-status;
     text-transform: uppercase;
     text-align: right;
   }
 
   &__section {
     position: relative;
-    border: 1px solid $color-4;
+    border: 1px solid $input-border-color-default;
     border-radius: 4px;
-    color: $color-4;
+    color: $input-text-color-default;
     padding: 0 1rem;
     width: 100%;
     padding: 0.71rem 0 0.71rem 1.07rem;
@@ -37,19 +37,23 @@ $parent: '.input';
     &:hover,
     &:focus,
     &:active {
-      color: $color-2;
-      border: 1px solid $color-3;
+      color: $input-text-color-hover;
+      border: 1px solid $input-border-color-hover;
     }
 
-    input,
-    input:hover,
-    input:focus {
+    #{$parent}__input,
+    #{$parent}__input:hover,
+    #{$parent}__input:focus {
       border: none;
       box-shadow: none;
       background: transparent;
       outline: none;
       cursor: pointer;
-      color: $color-2;
+    }
+
+    #{$parent}__input:hover,
+    #{$parent}__input:focus {
+      color: $input-text-color-hover;
     }
   }
 
@@ -61,15 +65,15 @@ $parent: '.input';
   &__section_focused,
   &__section:hover,
   &__section:focus {
-    border: 1px solid $color-3;
+    border: 1px solid $input-border-color-hover;
 
     #{$parent}__button_default {
-      color: $color-2;
+      color: $input-text-color-hover;
     }
 
     #{$parent}__input,
     #{$parent}__input::placeholder {
-      color: $color-2;
+      color: $input-text-color-hover;
     }
   }
 
@@ -89,14 +93,14 @@ $parent: '.input';
   }
 
   &__button_default {
-    color: $color-3;
+    color: $input-text-color-button-default;
     background-color: transparent;
     font-size: 0.57rem;
     cursor: pointer;
   }
 
   &__button_forwarded {
-    background: $gradient-1;
+    background: $input-button-background;
     font-size: 1.28rem;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -114,18 +118,18 @@ $parent: '.input';
     font-size: 1rem;
     line-height: 1.7rem;
     text-overflow: ellipsis;
-    color: $color-4;
+    color: $input-text-color-default;
     background: none;
 
     &:hover::placeholder,
     &:focus::placeholder {
-      color: $color-2;
+      color: $input-text-color-hover;
     }
   }
 
   &_hovered-focused {
     #{$parent}__input {
-      color: $color-2;
+      color: $input-text-color-hover;
       outline: none;
       text-overflow: ellipsis;
     }
@@ -136,16 +140,16 @@ $parent: '.input';
     #{$parent}__section:hover,
     #{$parent}__section:focus,
     #{$parent}__section:active {
-      color: $color-2;
-      border: 1px solid $color-4;
+      color: $input-text-color-hover;
+      border: 1px solid $input-border-color-default;
 
       #{$parent}__button_default {
-        color: $color-3;
+        color: $input-text-color-button-default;
       }
 
       #{$parent}__input,
       #{$parent}__input::placeholder {
-        color: $color-2;
+        color: $input-text-color-hover;
       }
     }
   }
@@ -156,11 +160,11 @@ $parent: '.input';
       padding-right: 6.2rem;
 
       #{$parent}__input {
-        color: $color-2;
+        color: $input-text-color-hover;
       }
 
-      input::placeholder {
-        color: $color-2;
+      #{$parent}::placeholder {
+        color: $input-text-color-hover;
       }
 
       input#{$parent}__input:disabled {
@@ -168,7 +172,7 @@ $parent: '.input';
       }
 
       #{$parent}__button_default {
-        color: $color-3;
+        color: $input-text-color-button-default;
       }
     }
   }
@@ -192,13 +196,13 @@ $parent: '.input';
     #{$parent}__section {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      color: $color-2;
-      border-color: $color-3;
+      color: $input-text-color-hover;
+      border-color: $input-border-color-hover;
 
       #{$parent}__input::placeholder,
       #{$parent}__input::placeholder,
       #{$parent}__button_default {
-        color: $color-2;
+        color: $input-text-color-hover;
       }
     }
   }

@@ -59,7 +59,7 @@ $color-first-white: $color-white-shade100;
 
 $font-size-body: 14px;
 
-$font-family-first: Montserrat, Arial, sans-serif;
+$font-family-body: Montserrat, Arial, sans-serif;
 
 $gradient-1: linear-gradient(180deg, $color-7 0%, $color-19 100%);
 $gradient-2: linear-gradient(180deg, $color-9 0%, $color-12 100%);
@@ -68,7 +68,94 @@ $gradient-second: linear-gradient(180deg, $color-9 0%, $color-12 100%);
 $box-shadow-first-color: rgba(0, 0, 0, 0.2);
 $border-first-color: rgba(0, 0, 0, 0.12);
 
+/***** Text *****/
+$header-text-color: rgba(31, 32, 65, 1);
+$paragraph-text-color: rgba(31, 32, 65, 0.75);
+$input-text-color-default: rgba(31, 32, 65, 0.25);
+$input-text-color-hover: rgba(31, 32, 65, 0.75);
+$input-text-color-status: rgba(31, 32, 65, 0.5);
+$input-text-color-button-default: rgba(31, 32, 65, 0.5);
+$input-text-color-focus: $input-text-color-hover;
+$dropdown-text-color-control: #bc9cff;
+$dropdown-text-color-button-default: rgba(31, 32, 65, 0.25);
+$dropdown-text-color-button-active: rgba(26, 30, 131, 0.5);
+$book-text-color-info: rgba(31, 32, 65, 0.25);
+$book-text-color-price: rgba(31, 32, 65, 0.5);
+$book-text-color-suite: #bc9cff;
+$button-text-color-default-first: #bc9cff;
+$button-text-color-default-second: #bc9cff;
+$button-text-color-default-third: #bc9cff;
+$button-text-color-hover-first: #ffffff;
+$button-text-color-hover-second: #bc9cff;
+$button-text-color-hover-third: rgba(31, 32, 65, 0.5);
+$rich-checkbox-text-color-default: rgba(31, 32, 65, 0.75);
+$rich-checkbox-text-color-additional: rgba(31, 32, 65, 0.5);
+$pagination-text-color-button: #ffffff;
+$pagination-text-color-default: rgba(31, 32, 65, 0.5);
+$pagination-text-color-description: rgba(31, 32, 65, 0.75);
+
+/***** Background *****/
+$body-background-color: #f4f4f6;
+$expandable-background-color: #ffffff;
+$dropdown-background-color: #ffffff;
+$card-background-color: #ffffff;
+$info-background-color: #bc9cff;
+$checkbox-button-background-color: #bc9cff;
+$radio-button-background-color: #bc9cff;
+$checkbox-button-background-color: #bc9cff;
+$like-button-background-color: #bc9cff;
+$rate-button-background-color: #bc9cff;
+$button-background-color-default: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
+$pagination-button-previous-background-color: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
+$pagination-button-next-background-color: linear-gradient(
+  180deg,
+  #6fcf97 0%,
+  #66d2ea 100%
+);
+$range-slider-background-color: linear-gradient(
+  180deg,
+  #6fcf97 0%,
+  #66d2ea 100%
+);
+$slider-background-color-current: linear-gradient(
+  180deg,
+  #6fcf97 0%,
+  #66d2ea 100%
+);
+$input-button-background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$bullet-button-background: rgba(31, 32, 65, 0.25);
+
+/***** Border *****/
+$card-border-color: rgba(0, 0, 0, 0.12);
+$dropdown-border-color-default: #ffffff;
+$dropdown-border-color-default: rgba(31, 32, 65, 0.25);
+$dropdown-border-color-expanded: rgba(31, 32, 65, 0.5);
+$input-border-color-default: rgba(31, 32, 65, 0.25);
+$input-border-color-hover: rgba(31, 32, 65, 0.5);
+$input-border-color-focus: $input-border-color-hover;
+$checkbox-border-color: rgba(31, 32, 65, 0.25);
+$checkbox-border-color-checked: #bc9cff;
+$range-slider-border-color: #ffffff;
+$dropdown-button-border-color: rgba(31, 32, 65, 0.5);
+$book-border-separator: rgba(31, 32, 65, 0.25);
+
 /***** Mixin *****/
+
+@mixin background-button-hover {
+  @include linear-gradient(180deg, #bc9cff, #8ba4f9, 0.5);
+}
+
+@mixin background-calendar-selected {
+  @include linear-gradient(180deg, #bc9cff, #8ba4f9, 0.25);
+}
 
 @mixin user-select-none {
   -webkit-user-select: none;
@@ -78,13 +165,13 @@ $border-first-color: rgba(0, 0, 0, 0.12);
 }
 
 @mixin font-family-first-regular {
-  font-family: $font-family-first;
+  font-family: $font-family-body;
   font-weight: 400;
   font-style: normal;
 }
 
 @mixin font-family-first-bold {
-  font-family: $font-family-first;
+  font-family: $font-family-body;
   font-weight: 700;
   font-style: normal;
 }

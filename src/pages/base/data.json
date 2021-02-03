@@ -1,4 +1,68 @@
 {
+  "meta": [
+    { "charset": "utf-8" },
+    {
+      "name": "viewport",
+      "content": "initial-scale=1.0, width=device-width"
+    },
+    {
+      "name": "msapplication-TileColor",
+      "content": "#da532c"
+    },
+    {
+      "name": "theme-color",
+      "content": "#ffffff"
+    },
+    {
+      "name": "description",
+      "content": "Toxin page base"
+    },
+    {
+      "name": "keywords",
+      "content": "toxin, pages, page base"
+    }
+  ],
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "sizes": "180x180",
+      "href": "assets/favicons/apple-touch-icon.png"
+    },
+    {
+      "rel": "icon",
+      "type": "image/png",
+      "sizes": "32x32",
+      "href": "assets/favicons/favicon-32x32.png"
+    },
+    {
+      "rel": "icon",
+      "type": "image/png",
+      "sizes": "16x16",
+      "href": "assets/favicons/favicon-16x16.png"
+    },
+    {
+      "rel": "icon",
+      "href": "assets/favicons/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/vnd.microsoft.icon"
+    },
+
+    {
+      "rel": "icon",
+      "href": "assets/favicons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "rel": "manifest",
+      "href": "assets/favicons/site.webmanifest"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "assets/favicons/safari-pinned-tab.svg",
+      "color": "#5bbad5"
+    }
+  ],
   "headerNotAuthorized": {
     "nav": {
       "items": [
@@ -186,11 +250,21 @@
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
       "field": {
-        "name": "footer_subscription_email",
-        "id": "footer_subscription_email",
-        "type": "email",
-        "placeholder": "Email",
-        "button": { "visible": true }
+        "input": {
+          "name": "footer_subscription_email",
+          "id": "footer_subscription_email",
+          "type": "text",
+          "placeholder": "Email",
+          "button": {
+            "isVisible": true,
+            "iconClass": "arrow-forward",
+            "type": "submit"
+          }
+        },
+        "mask": {
+          "mask": "^\\S*@?\\S*$",
+          "regexp": true
+        }
       }
     }
   }

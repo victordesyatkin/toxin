@@ -2,10 +2,8 @@ import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import DateDropdown from "../date-dropdown";
 import Dropdown from "../dropdown";
 import "../button";
-
 import "./picker.scss";
-
-export default class Picker {
+class Picker {
   static CLASS_NAME = "PICKER";
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
@@ -16,9 +14,9 @@ export default class Picker {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Picker.CLASS_NAME,
       someClass: Picker,
     });
@@ -36,4 +34,4 @@ export default class Picker {
   }
 }
 
-console.log("HELLO picker.js");
+export default Picker;

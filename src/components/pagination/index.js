@@ -1,8 +1,7 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-
 import "./pagination.scss";
 
-export default class Pagination {
+class Pagination {
   static CLASS_NAME = "PAGINATION";
 
   static renderComponents(props = {}) {
@@ -14,9 +13,9 @@ export default class Pagination {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Pagination.CLASS_NAME,
       someClass: Pagination,
     });
@@ -164,3 +163,5 @@ export default class Pagination {
     body.appendChild(fragment);
   };
 }
+
+export default Pagination;

@@ -1,6 +1,70 @@
 {
   "scriptSrc": "landing-page-dates-dropdown",
   "title": "Landing page/Dates Dropdown",
+  "meta": [
+    { "charset": "utf-8" },
+    {
+      "name": "viewport",
+      "content": "initial-scale=1.0, width=device-width"
+    },
+    {
+      "name": "msapplication-TileColor",
+      "content": "#da532c"
+    },
+    {
+      "name": "theme-color",
+      "content": "#ffffff"
+    },
+    {
+      "name": "description",
+      "content": "Toxin page landing page dates dropdown"
+    },
+    {
+      "name": "keywords",
+      "content": "toxin, pages, page landing page dates dropdown"
+    }
+  ],
+  "links": [
+    {
+      "rel": "apple-touch-icon",
+      "sizes": "180x180",
+      "href": "assets/favicons/apple-touch-icon.png"
+    },
+    {
+      "rel": "icon",
+      "type": "image/png",
+      "sizes": "32x32",
+      "href": "assets/favicons/favicon-32x32.png"
+    },
+    {
+      "rel": "icon",
+      "type": "image/png",
+      "sizes": "16x16",
+      "href": "assets/favicons/favicon-16x16.png"
+    },
+    {
+      "rel": "icon",
+      "href": "assets/favicons/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/vnd.microsoft.icon"
+    },
+
+    {
+      "rel": "icon",
+      "href": "assets/favicons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "rel": "manifest",
+      "href": "assets/favicons/site.webmanifest"
+    },
+    {
+      "rel": "mask-icon",
+      "href": "assets/favicons/safari-pinned-tab.svg",
+      "color": "#5bbad5"
+    }
+  ],
   "picker": {
     "label": "Найдём номера под ваши пожелания",
     "dateDropdown": {
@@ -17,7 +81,7 @@
             "iconClass": "arrow-down",
             "type": "button"
           },
-          "notFocus": true
+          "notFocused": true
         }
       },
       "fieldEnd": {
@@ -33,14 +97,14 @@
             "iconClass": "arrow-down",
             "type": "button"
           },
-          "notFocus": true
+          "notFocused": true
         }
       },
       "calendar": {
         "buttonCleanText": "Очистить",
         "buttonApplyText": "Применить"
       },
-      "isExpand": true
+      "isExpanded": true
     },
     "dropdown": {
       "dropdown": {

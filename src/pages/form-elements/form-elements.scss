@@ -91,7 +91,7 @@ $parent: '.form-elements';
   }
 }
 
-@include media-breakpoint-up($xxs) {
+@include media-breakpoint-up($xl) {
   #{$parent} {
     padding: 4.64rem 10.07rem 10.07rem 10.07rem;
 
@@ -155,5 +155,124 @@ $parent: '.form-elements';
         min-width: 20rem;
       }
     }
+  }
+}
+
+@include media-breakpoint-down($xl) {
+  #{$parent} {
+    padding: 5rem 4rem;
+
+    &__article:nth-child(1) {
+      margin-bottom: 7.2142rem;
+
+      #{$parent}__section:nth-child(1) {
+        margin-right: 4.8611vw;
+        max-width: 22.85rem;
+        width: 100%;
+      }
+
+      #{$parent}__section:nth-child(2) {
+        margin-right: 4.8611vw;
+        max-width: 22.85rem;
+        width: 100%;
+      }
+
+      #{$parent}__section:nth-child(3) {
+        max-width: 22.85rem;
+        width: 100%;
+      }
+    }
+
+    &__article:nth-child(2) {
+      margin-bottom: 12.31rem;
+
+      #{$parent}__section:nth-child(1) {
+        margin-right: 6.8055vw;
+        max-width: 19rem;
+        width: 100%;
+      }
+
+      #{$parent}__section:nth-child(2) {
+        margin-right: 4.8611vw;
+        max-width: 22.8571rem;
+        width: 100%;
+      }
+
+      #{$parent}__section:nth-child(3) {
+        max-width: 22.85rem;
+        width: 100%;
+      }
+    }
+
+    &__article:nth-child(3) {
+      margin-bottom: 15.85rem;
+
+      #{$parent}__section:nth-child(1) {
+        margin-right: 6.8055vw;
+        max-width: 19rem;
+        width: 100%;
+      }
+
+      #{$parent}__section:nth-child(2) {
+        margin-right: 6.8055vw;
+        max-width: 19rem;
+        width: 100%;
+      }
+
+      #{$parent}__section:nth-child(3) {
+        max-width: 18rem;
+        width: 100%;
+      }
+    }
+
+    &__article:nth-child(4) {
+      #{$parent}__section:nth-child(1) {
+        margin-right: 6.8055vw;
+        min-width: 20rem;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down($lg) {
+  #{$parent} {
+    padding: 5rem 3rem;
+  }
+}
+
+@include media-breakpoint-down($md) {
+  #{$parent} {
+    padding: 5rem 2rem;
+
+    &__article {
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    &__article:nth-child(1),
+    &__article:nth-child(2),
+    &__article:nth-child(3),
+    &__article:nth-child(4) {
+      margin-bottom: 2rem;
+
+      #{$parent}__section:nth-child(1),
+      #{$parent}__section:nth-child(2),
+      #{$parent}__section:nth-child(3),
+      #{$parent}__section:nth-child(4) {
+        margin-right: 0;
+        margin-left: 0;
+        min-width: 0;
+      }
+    }
+
+    &__section {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@include media-breakpoint-down($xs) {
+  #{$parent} {
+    padding: 5rem 1rem;
   }
 }

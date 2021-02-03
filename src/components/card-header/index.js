@@ -34,8 +34,6 @@ export default class CardHeader {
   }
 
   parserPriceContent(numberFormat, options, index, element) {
-    console.log("numberFormat : ", numberFormat);
-    console.log("$(element).html() : ", $(element).html());
     $(element).html(
       new Intl.NumberFormat(numberFormat, options).format(
         parseFloat($(element).html().replace(" ", ""))
