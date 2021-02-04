@@ -7,19 +7,19 @@ $parent: 'rate';
 
   &__title {
     @include h2;
-    font-size: 1.3571;
-    line-height: 1.6964rem;
+    font-size: 1.357rem;
+    line-height: 1.696rem;
     margin-bottom: 1.7rem;
   }
 
   &__circle {
-    width: 8.5714rem;
-    height: 8.5714rem;
+    width: 8.571rem;
+    height: 8.571rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-right: 2.1428rem;
+    margin-right: 2.143rem;
   }
 
   &__dummy {
@@ -42,14 +42,14 @@ $parent: 'rate';
 
   &__total {
     @include h1;
-    color: $color-purple;
+    color: $rate-text-color-total;
   }
 
   &__unit {
     @include h3;
-    color: $color-purple;
+    color: $rate-text-color-unit;
     padding: 0;
-    margin-bottom: 0.4285rem;
+    margin-bottom: 0.429rem;
   }
 
   &__vote-section {

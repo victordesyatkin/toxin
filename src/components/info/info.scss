@@ -5,7 +5,7 @@ $parent: 'info';
 .#{$parent} {
   &_with-last-line {
     .#{$parent}__section:last-child {
-      border-bottom: 0.0714rem solid $color-5;
+      border-bottom: 0.0714rem solid $info-border-color-separator;
     }
   }
 
@@ -15,7 +15,7 @@ $parent: 'info';
   }
 
   &__section {
-    border-bottom: 0.0714rem solid $color-5;
+    border-bottom: 0.0714rem solid $info-border-color-separator;
     padding: 1.3571rem 0;
 
     &:first-child {

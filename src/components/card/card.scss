@@ -1,9 +1,9 @@
 @import '~theme/variables.scss';
 
 .card {
-  background: $color-14;
-  border: 1px solid $color-17;
+  background: $card-background-color;
+  border: 0.071rem solid $card-border-color;
   box-sizing: border-box;
-  box-shadow: 0px 0px 25px $color-18;
+  box-shadow: $card-box-shadow;
   border-radius: 4px;
 }

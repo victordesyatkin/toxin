@@ -26,7 +26,7 @@
     min-width: 2.85rem;
     width: 2.85rem;
     height: 1.42rem;
-    border: 1px solid $color-fourth-dark;
+    border: 0.0714rem solid $like-border-color-default;
     box-sizing: border-box;
     border-radius: 10px;
     display: flex;
@@ -61,7 +61,7 @@
   }
 
   input:checked ~ &__check-mark {
-    border: 1px solid $color-purple;
+    border: 0.0714rem solid $like-border-color-checked;
 
     .like-button__check-mark-like {
       display: flex;
@@ -72,7 +72,7 @@
     }
 
     .like-button__count {
-      color: $color-purple;
+      color: $like-border-color-checked;
     }
   }
 }

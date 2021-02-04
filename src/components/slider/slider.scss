@@ -6,8 +6,8 @@ $parent: 'slider';
   width: 100%;
   height: 100%;
   position: relative;
-  border-top-left-radius: 0.2857rem;
-  border-top-right-radius: 0.2857rem;
+  border-top-left-radius: 0.286rem;
+  border-top-right-radius: 0.286rem;
   overflow: hidden;
 
   &_cover {
@@ -46,7 +46,7 @@ $parent: 'slider';
   }
 
   &__control {
-    width: 3.1428rem;
+    width: 3.143rem;
     height: 100%;
     position: absolute;
     top: 0;
@@ -55,14 +55,9 @@ $parent: 'slider';
     justify-content: center;
     align-items: center;
     z-index: 2;
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0) 99.99%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    background: $slider-background-color-control;
     cursor: pointer;
-    font-size: 0.8571rem;
+    font-size: 0.857rem;
   }
 
   &__control_left {
@@ -79,22 +74,22 @@ $parent: 'slider';
     flex-direction: row;
     justify-content: flex-start;
     position: absolute;
-    right: 0.9285rem;
-    bottom: 1.1428rem;
+    right: 0.929rem;
+    bottom: 1.143rem;
     z-index: 3;
   }
 
   &__point {
-    width: 0.5714rem;
-    height: 0.5714rem;
+    width: 0.571rem;
+    height: 0.571rem;
     border-radius: 100%;
-    border: 0.0714rem solid $color-14;
-    margin-left: 0.2678rem;
+    border: 0.071rem solid $slider-border-color-point;
+    margin-left: 0.269rem;
     cursor: pointer;
   }
 
   &__point_full {
-    background-color: $color-14;
+    background-color: $slider-background-color-point;
   }
 
   &__point:first-child {

@@ -1,6 +1,8 @@
 @import '~theme/variables.scss';
 
-.pagination {
+$parent: 'pagination';
+
+.#{$parent} {
   width: 100%;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -10,7 +12,7 @@
   user-select: none;
 
   &__section-header {
-    margin-bottom: 16.44px;
+    margin-bottom: 1.1742rem;
     @include h3;
   }
   &__section-body,
@@ -43,11 +45,11 @@
   }
 
   &__arrow {
-    max-width: 40px;
+    max-width: 2.8571rem;
   }
 
   &__item {
-    max-width: 40px;
+    max-width: 2.8571rem;
   }
 
   &__dummy {
@@ -63,35 +65,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $color-third-dark;
+    color: $pagination-text-color-default;
     line-height: normal;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 0.8571rem;
   }
 
   &__item_empty {
-    .pagination__content {
+    .#{pagination}__content {
       cursor: default;
     }
   }
 
   &__arrow {
-    background: linear-gradient(180deg, $color-green 0%, $color-blue 100%);
+    background: $pagination-button-background-color-next;
     border-radius: 22px;
     opacity: 1;
     transition: 0.3s opacity;
   }
   &__arrow_previous {
     transform: rotate(180deg);
+    background: $pagination-button-background-color-previous;
   }
 
   &__item_current {
-    .pagination__content {
-      background: linear-gradient(
-        180deg,
-        $color-purple 0%,
-        $color-purple-dark 100%
-      );
+    .#{$parent}__content {
+      background: $pagination-background-color-current;
       border-radius: 22px;
       color: $color-first-white;
       @include font-family-first-regular;
@@ -99,8 +98,8 @@
   }
 
   &__section-footer {
-    margin-top: 9px;
-    padding-left: 7px;
+    margin-top: 0.6428rem;
+    padding-left: 0.5rem;
   }
 
   &_hidden {

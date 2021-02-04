@@ -7,7 +7,7 @@ $parent: '.cards';
   display: flex;
 
   &__header {
-    background-color: $color-8;
+    background-color: $cards-header-background-color;
   }
 }
 

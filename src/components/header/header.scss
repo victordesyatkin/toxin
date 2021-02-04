@@ -6,8 +6,8 @@ $parent: 'header';
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background: $color-14;
-  box-shadow: 0rem 0.7142rem 1.4285rem $color-6;
+  background: $header-background-color;
+  box-shadow: $header-box-shadow;
 
   &__logo {
     width: 7.5492rem;

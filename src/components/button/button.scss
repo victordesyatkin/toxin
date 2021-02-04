@@ -17,43 +17,45 @@ $parent: 'button';
   background: none;
 
   &__view {
-    background: $gradient-1;
-    color: $color-14;
     border-radius: 22px;
 
     &_1 {
-      color: $color-purple;
-      border: solid 2px transparent;
+      color: $button-text-color-default-first;
+      background: $button-background-color-first-default;
+      border: solid 0.1428rem transparent;
 
       .#{$parent}__content {
         border-radius: 22px;
-        background-color: white;
-        padding: 12px 17px 13px 17px;
+        background-color: $button-background-color-first-inner-default;
+        color: $button-text-color-default-first;
+        padding: 0.8571rem 1.2142rem 0.9285rem 1.2142rem;
       }
     }
 
     &_2 {
       padding: 0;
-      color: $color-7;
+      color: $button-text-color-default-second;
       background: none;
 
       &.#{$parent}__view_2:hover,
       &.#{$parent}__view_hover {
-        color: $color-3;
+        color: $button-text-color-hover-second;
         background: none;
       }
     }
 
     &_3 {
       width: 100%;
-      padding: 14px 19px 15px 21px;
+      padding: 1rem 1.3571rem 1.0714rem 1.5rem;
       position: relative;
+      color: $button-text-color-default-third;
+      background: $button-background-color-third-default;
 
       .#{$parent}__image {
         position: absolute;
         right: 0;
-        width: 44px;
-        height: 44px;
+        width: 3.1428rem;
+        height: 3.1428rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -62,21 +64,20 @@ $parent: 'button';
 
     &_hover,
     &:hover {
-      @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.5);
+      @include background-button-hover;
     }
   }
 
   &_with_image {
     &_3 {
-      padding-right: 44px;
+      padding-right: 3.1428rem;
     }
   }
 
   &_sizes_1 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        // padding: 10px 23px 10px 22px;
-        padding: 12px 23px 13px 25px;
+        padding: 0.8571rem 1.6428rem 0.9285rem 1.7857rem;
       }
     }
   }
@@ -84,7 +85,7 @@ $parent: 'button';
   &_sizes_2 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        padding: 10px 14px 9px 15px;
+        padding: 0.7142rem 1rem 0.6428rem 1.0714rem;
       }
     }
   }
@@ -92,20 +93,20 @@ $parent: 'button';
   &_sizes_3 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        padding: 7px 20px 8px 18px;
+        padding: 0.5rem 1.4285rem 0.5714rem 11.2857rem;
       }
     }
 
     &.#{$parent}__view_3 {
       width: auto;
-      padding: 9px 20px 10px 21px;
+      padding: 0.6428rem 1.4285rem 0.7142rem 1.5rem;
     }
   }
 
   &_sizes_4 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        padding: 14px 18px 15px 20px;
+        padding: 1rem 1.2857rem 1.0714rem 1.4285rem;
       }
     }
   }

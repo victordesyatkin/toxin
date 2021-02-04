@@ -15,7 +15,7 @@ $parent: 'nav-item';
     height: 100%;
     background: none;
     border: none;
-    color: $color-3;
+    color: $link-text-color-default;
     font-size: 0.5914rem;
     cursor: pointer;
     display: inline-flex;
@@ -23,10 +23,19 @@ $parent: 'nav-item';
     align-items: center;
   }
 
-  &:hover {
-    color: lighten($color-2, 20%);
+  &_current {
+    color: $link-text-color-current;
+
     .#{$parent}__control {
-      color: lighten($color-2, 20%);
+      color: $link-text-color-current;
+    }
+  }
+
+  &:hover {
+    color: $link-text-color-hover;
+
+    .#{$parent}__control {
+      color: $link-text-color-hover;
     }
   }
 

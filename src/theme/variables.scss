@@ -10,67 +10,14 @@ $md: 991px;
 $lg: 1199px;
 $xl: 1439px;
 
-$color-dark-shade100: #1f2041;
-$color-dark-shade75: rgba(31, 32, 65, 0.75);
-$color-dark-shade50: rgba(31, 32, 65, 0.5);
-$color-dark-shade25: rgba(31, 32, 65, 0.25);
-$color-dark-shade10: rgba(31, 32, 65, 0.1);
-$color-dark-shade5: rgba(31, 32, 65, 0.05);
-$color-purple: #bc9cff;
-$color-purple-dark: #8ba4f9;
-$color-green: #6fcf97;
-$color-blue: #66d2ea;
-
-$color-first: #4eb7a8;
-$color-second: #e75735;
-$color-disabled: #e5e5e5;
-
-$color-white-shade100: #ffffff;
-$color-black-shade100: #000000;
-
-$color-first-dark: $color-dark-shade100;
-$color-second-dark: $color-dark-shade75;
-$color-third-dark: $color-dark-shade50;
-$color-fourth-dark: $color-dark-shade25;
-$color-fifth-dark: $color-dark-shade10;
-$color-sixth-dark: $color-dark-shade5;
-
-$color-1: rgba(31, 32, 65, 1);
-$color-2: rgba(31, 32, 65, 0.75);
-$color-3: rgba(31, 32, 65, 0.5);
-$color-4: rgba(31, 32, 65, 0.25);
-$color-5: rgba(31, 32, 65, 0.1);
-$color-6: rgba(31, 32, 65, 0.05);
-$color-7: #bc9cff;
-$color-8: #f4f4f6;
-$color-9: #6fcf97;
-$color-10: #4eb7a8;
-$color-11: #e75735;
-$color-12: #66d2ea;
-$color-13: #e5e5e5;
-$color-14: #ffffff;
-$color-15: #000000;
-$color-16: #e5e5e5;
-$color-17: rgba(0, 0, 0, 0.2);
-$color-18: rgba(0, 0, 0, 0.12);
-$color-19: #8ba4f9;
-
-$color-first-white: $color-white-shade100;
-
 $font-size-body: 14px;
 
 $font-family-body: Montserrat, Arial, sans-serif;
 
-$gradient-1: linear-gradient(180deg, $color-7 0%, $color-19 100%);
-$gradient-2: linear-gradient(180deg, $color-9 0%, $color-12 100%);
-
-$gradient-second: linear-gradient(180deg, $color-9 0%, $color-12 100%);
-$box-shadow-first-color: rgba(0, 0, 0, 0.2);
-$border-first-color: rgba(0, 0, 0, 0.12);
-
 /***** Text *****/
 $header-text-color: rgba(31, 32, 65, 1);
 $paragraph-text-color: rgba(31, 32, 65, 0.75);
+$additional-text-color: rgba(31, 32, 65, 0.25);
 $input-text-color-default: rgba(31, 32, 65, 0.25);
 $input-text-color-hover: rgba(31, 32, 65, 0.75);
 $input-text-color-status: rgba(31, 32, 65, 0.5);
@@ -84,38 +31,69 @@ $book-text-color-price: rgba(31, 32, 65, 0.5);
 $book-text-color-suite: #bc9cff;
 $button-text-color-default-first: #bc9cff;
 $button-text-color-default-second: #bc9cff;
-$button-text-color-default-third: #bc9cff;
-$button-text-color-hover-first: #ffffff;
-$button-text-color-hover-second: #bc9cff;
-$button-text-color-hover-third: rgba(31, 32, 65, 0.5);
+$button-text-color-default-third: #ffffff;
+$button-text-color-hover-first: #bc9cff;
+$button-text-color-hover-second: rgba(31, 32, 65, 0.5);
+$button-text-color-hover-third: #ffffff;
 $rich-checkbox-text-color-default: rgba(31, 32, 65, 0.75);
-$rich-checkbox-text-color-additional: rgba(31, 32, 65, 0.5);
+$rich-checkbox-text-color-info: rgba(31, 32, 65, 0.5);
 $pagination-text-color-button: #ffffff;
 $pagination-text-color-default: rgba(31, 32, 65, 0.5);
 $pagination-text-color-description: rgba(31, 32, 65, 0.75);
+$calendar-text-color-hover: #ffffff;
+$calendar-text-color-default: rgba(31, 32, 65, 0.5);
+$comment-text-color-count: rgba(31, 32, 65, 0.5);
+$link-text-color-default: rgba(31, 32, 65, 0.5);
+$link-text-color-hover: lighten($link-text-color-default, 20%);
+$link-text-color-current: rgba(31, 32, 65, 0.75);
+$nav-text-color-user: rgba(31, 32, 65, 0.5);
+$radio-button-text-color-checked: rgba(31, 32, 65, 0.75);
+$radio-button-text-color-default: rgba(31, 32, 65, 0.5);
+$range-slider-text-color: rgba(31, 32, 65, 0.5);
+$rate-text-color-total: #bc9cff;
+$rate-text-color-unit: $rate-text-color-total;
+$slider-text-color-control: #ffffff;
+$toggle-button-text-color: rgba(31, 32, 65, 0.75);
+$filter-date-dropdown-text-color-button: rgba(31, 32, 65, 0.5);
 
 /***** Background *****/
+$demo-body-background-color: #ffffff;
 $body-background-color: #f4f4f6;
 $expandable-background-color: #ffffff;
 $dropdown-background-color: #ffffff;
 $card-background-color: #ffffff;
 $info-background-color: #bc9cff;
 $checkbox-button-background-color: #bc9cff;
-$radio-button-background-color: #bc9cff;
+$radio-button-background-color-checked: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
 $checkbox-button-background-color: #bc9cff;
 $like-button-background-color: #bc9cff;
 $rate-button-background-color: #bc9cff;
-$button-background-color-default: linear-gradient(
+$button-background-color-first-default: linear-gradient(
   180deg,
   #bc9cff 0%,
   #8ba4f9 100%
 );
-$pagination-button-previous-background-color: linear-gradient(
+$button-background-color-first-inner-default: #ffffff;
+$button-background-color-third-default: linear-gradient(
   180deg,
   #bc9cff 0%,
   #8ba4f9 100%
 );
-$pagination-button-next-background-color: linear-gradient(
+$pagination-background-color-current: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
+$pagination-button-background-color-previous: linear-gradient(
+  180deg,
+  #6fcf97 0%,
+  #66d2ea 100%
+);
+$pagination-button-background-color-next: linear-gradient(
   180deg,
   #6fcf97 0%,
   #66d2ea 100%
@@ -125,27 +103,81 @@ $range-slider-background-color: linear-gradient(
   #6fcf97 0%,
   #66d2ea 100%
 );
-$slider-background-color-current: linear-gradient(
+$range-slider-background-color-body: #ffffff;
+$slider-background-color-control: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 0.5) 0%,
+  rgba(0, 0, 0, 0) 99.99%,
+  rgba(255, 255, 255, 0) 100%
+);
+$slider-background-color-point: #ffffff;
+$input-button-background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$bullet-button-background: rgba(31, 32, 65, 0.25);
+$calendar-background-color: #ffffff;
+$calendar-background-color-disabled: rgba(31, 32, 65, 0.25);
+$calendar-background-color-selected: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
+$calendar-background-color-current: linear-gradient(
   180deg,
   #6fcf97 0%,
   #66d2ea 100%
 );
-$input-button-background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-$bullet-button-background: rgba(31, 32, 65, 0.25);
+$card-background-color-separator: rgba(31, 32, 65, 0.1);
+$copyright-background-color-icon: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
+$footer-background-color: #ffffff;
+$header-background-color: #ffffff;
+$nav-background-color-separator: rgba(31, 32, 65, 0.1);
+$toggle-button-background-color-default: rgba(31, 32, 65, 0.25);
+$toggle-button-background-color-checked: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
+$cards-header-background-color: #f4f4f6;
+
+/***** Shadow *****/
+$calendar-box-shadow: 0 0.7142rem 1.4285rem rgba(31, 32, 65, 0.05);
+$card-box-shadow: 0 0 1.7857rem rgba(0, 0, 0, 0.2);
+$copyright-box-shadow: 0 0.7142rem 1.4285rem rgba(31, 32, 65, 0.05);
+$footer-box-shadow: 0rem 0.0714rem 0rem rgba(31, 32, 65, 0.1);
+$header-box-shadow: 0rem 0.7142rem 1.4285rem rgba(31, 32, 65, 0.25);
+
+/***** Filter *****/
+$comment-filter: drop-shadow(0rem 0.71rem 1.42rem rgba(31, 32, 65, 0.1));
 
 /***** Border *****/
 $card-border-color: rgba(0, 0, 0, 0.12);
 $dropdown-border-color-default: #ffffff;
 $dropdown-border-color-default: rgba(31, 32, 65, 0.25);
 $dropdown-border-color-expanded: rgba(31, 32, 65, 0.5);
+$dropdown-button-border-color: rgba(31, 32, 65, 0.5);
 $input-border-color-default: rgba(31, 32, 65, 0.25);
 $input-border-color-hover: rgba(31, 32, 65, 0.5);
 $input-border-color-focus: $input-border-color-hover;
 $checkbox-border-color: rgba(31, 32, 65, 0.25);
 $checkbox-border-color-checked: #bc9cff;
-$range-slider-border-color: #ffffff;
-$dropdown-button-border-color: rgba(31, 32, 65, 0.5);
-$book-border-separator: rgba(31, 32, 65, 0.25);
+$range-slider-border-color-point: #ffffff;
+$range-slider-border-color-body: rgba(31, 32, 65, 0.25);
+$book-border-color-separator: rgba(31, 32, 65, 0.25);
+$calendar-border-color: rgba(31, 32, 65, 0.25);
+$comment-border-color: #ffffff;
+$copyright-border-color: #ffffff;
+$filter-date-dropdown-border-color: rgba(31, 32, 65, 0.25);
+$info-border-color-separator: rgba(31, 32, 65, 0.1);
+$like-border-color-default: rgba(31, 32, 65, 0.25);
+$like-border-color-checked: #bc9cff;
+$radio-button-border-color-default: rgba(31, 32, 65, 0.25);
+$radio-button-border-color-checked: #bc9cff;
+$slider-border-color-point: #bc9cff;
+$toggle-button-border-color-default: rgba(31, 32, 65, 0.25);
+$toggle-button-border-color-checked: #bc9cff;
 
 /***** Mixin *****/
 
@@ -153,7 +185,7 @@ $book-border-separator: rgba(31, 32, 65, 0.25);
   @include linear-gradient(180deg, #bc9cff, #8ba4f9, 0.5);
 }
 
-@mixin background-calendar-selected {
+@mixin background-calendar-period {
   @include linear-gradient(180deg, #bc9cff, #8ba4f9, 0.25);
 }
 

@@ -8,7 +8,7 @@
   flex-direction: row;
   cursor: pointer;
   line-height: 1.3rem;
-  color: $color-2;
+  color: $toggle-button-text-color;
 
   &__input {
     position: absolute;
@@ -19,42 +19,42 @@
   }
 
   &__check-mark {
-    min-width: 40px;
-    width: 40px;
-    height: 20px;
-    border: 1px solid $color-4;
+    min-width: 2.857rem;
+    width: 2.857rem;
+    height: 1.429rem;
+    border: 0.071rem solid $toggle-button-border-color-default;
     box-sizing: border-box;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    margin-right: 10px;
-    padding: 0 4px;
+    margin-right: 0.714rem;
+    padding: 0 0.286rem;
     position: relative;
 
     span {
-      width: 12px;
-      height: 12px;
+      width: 0.857rem;
+      height: 0.857rem;
       opacity: 1;
       border-radius: 50%;
-      background: $color-4;
+      background: $toggle-button-background-color-default;
       transition: left 0.5s;
-      left: 4px;
+      left: 0.286rem;
       position: absolute;
     }
   }
 
   &__label {
-    margin-right: 20px;
+    margin-right: 1.429rem;
   }
 
   input:checked ~ &__check-mark {
-    border: 1px solid $color-7;
+    border: 0.0714rem solid $toggle-button-background-color-checked;
     justify-content: flex-end;
 
     span {
-      background: $gradient-1;
+      background: $toggle-button-background-color-checked;
       transition: left 0.5s;
-      left: calc(100% - 16px);
+      left: calc(100% - 1.142rem);
     }
   }
 }

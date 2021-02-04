@@ -1,21 +1,10 @@
 mixin color-sample(props = {})
     - 
-        let { color, label, description } = props;
-        let colors = {
-            first: 'first',
-            second: 'second',
-            third: 'third',
-            fourth: 'fourth',
-            fifth: 'fifth',
-            sixth: 'sixth',
-            seventh: 'seventh',
-        };
-        let className = 'color-sample__section-rectangle';
-        let classNames = className;
-        classNames += colors[color] ? ` ${className}_${colors[color]}` : '';
+        let { background, label, description } = props;
+        let style = background ? `background: ${background};`: '';
     .color-sample
-        div(
-            class=classNames
+        .color-sample__section-rectangle(
+            style=style
         )
         .color-sample__section-info
             .color-sample__label=label

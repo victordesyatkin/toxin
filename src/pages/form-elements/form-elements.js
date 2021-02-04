@@ -21,6 +21,7 @@ import "../../components/info";
 import "../../components/buttons";
 import "../demo-base/demo-base";
 import "./form-elements.scss";
+
 class FormElements {
   static CLASS_NAME = "FORM_ELEMENTS";
 

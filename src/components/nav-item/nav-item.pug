@@ -3,9 +3,12 @@ mixin nav-item(props = {})
     -
         let
             { children = [], ...link } = props;
+        let
+            { isCurrent } = link || {};
             className = "nav-item";
             classNames = `${className}`
             length = children.length;
+            classNames += isCurrent ? ` ${className}_current`: '';
     div(
         class=classNames
     )

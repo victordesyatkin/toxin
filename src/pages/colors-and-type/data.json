@@ -75,37 +75,37 @@
   },
   "colors": [
     {
-      "color": "first",
+      "background": "#1F2041",
       "label": "Dark Shade 100%",
       "description": "#1F2041"
     },
     {
-      "color": "second",
+      "background": "rgba(31, 32, 65, 0.75)",
       "label": "Dark Shade 75%",
       "description": "#1F2041"
     },
     {
-      "color": "third",
+      "background": "rgba(31, 32, 65, 0.50)",
       "label": "Dark Shade 50%",
       "description": "#1F2041"
     },
     {
-      "color": "fourth",
+      "background": "rgba(31, 32, 65, 0.25)",
       "label": "Dark Shade 25%",
       "description": "#1F2041"
     },
     {
-      "color": "fifth",
+      "background": "rgba(31, 32, 65, 0.05)",
       "label": "Dark Shade 5%",
       "description": "#1F2041"
     },
     {
-      "color": "sixth",
+      "background": "#BC9CFF",
       "label": "Purple",
       "description": "#BC9CFF"
     },
     {
-      "color": "seventh",
+      "background": "#6FCF97",
       "label": "Green",
       "description": "#6FCF97"
     }

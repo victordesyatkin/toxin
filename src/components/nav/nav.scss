@@ -30,12 +30,12 @@ $parent: 'nav';
   &__separator {
     width: 0.0714rem;
     height: 2.1428rem;
-    background: $color-5;
+    background: $nav-background-color-separator;
   }
 
   &__user-section {
     margin-left: 1.5rem;
-    color: $color-3;
+    color: $nav-text-color-user;
   }
 
   &__control-section {

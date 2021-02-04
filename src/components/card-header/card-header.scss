@@ -7,7 +7,7 @@ $parent: 'card-header';
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: $color-2;
+    color: $paragraph-text-color;
   }
 
   &__number-info {
@@ -22,7 +22,7 @@ $parent: 'card-header';
   }
 
   &__suite {
-    color: $color-purple;
+    color: $book-text-color-suite;
   }
 
   &__price {
@@ -34,7 +34,7 @@ $parent: 'card-header';
     @include base-h;
     font-size: 1rem;
     font-weight: bold;
-    color: $color-dark-shade50;
+    color: $book-text-color-price;
   }
 
   &__duration {

@@ -16,7 +16,7 @@
 
   &__main {
     display: none;
-    border: 1px solid $color-3;
+    border: 0.0714rem solid $dropdown-border-color-expanded;
     border-top: none;
     box-sizing: border-box;
     border-bottom-left-radius: 7px;
@@ -35,7 +35,7 @@
   }
 
   &__item:nth-child(1) {
-    padding-top: 4.8854rem;
+    padding-top: 0.357rem;
   }
 
   &__item:last-child {
@@ -58,7 +58,7 @@
 
   &__button {
     border-radius: 100%;
-    border: 1px solid $dropdown-button-border-color;
+    border: 0.071rem solid $dropdown-button-border-color;
     color: $dropdown-text-color-button-active;
     box-sizing: border-box;
     background-color: transparent;
@@ -84,7 +84,7 @@
   &__main-control {
     display: flex;
     justify-content: space-between;
-    padding: 1.5714rem 0.5rem 1rem 6.2857rem;
+    padding: 1.5714rem 0.5rem 1rem 0.92rem;
   }
 
   &__control-button,

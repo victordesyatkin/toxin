@@ -11,11 +11,11 @@ body {
   height: 100%;
   font-size: $font-size-body;
   @include font-family-first-regular;
-  background-color: $color-8;
+  background-color: $body-background-color;
 }
 
 body {
-  color: $color-2;
+  color: $paragraph-text-color;
   line-height: 1.71rem;
 }
 
@@ -29,24 +29,4 @@ h2 {
 
 h3 {
   @include h3;
-}
-
-::-webkit-input-placeholder {
-  color: $color-fourth-dark;
-  @include font-family-first-regular;
-}
-
-::-moz-placeholder {
-  color: $color-fourth-dark;
-  @include font-family-first-regular;
-}
-
-:-ms-input-placeholder {
-  color: $color-fourth-dark;
-  @include font-family-first-regular;
-}
-
-:-moz-placeholder {
-  color: $color-fourth-dark;
-  @include font-family-first-regular;
 }

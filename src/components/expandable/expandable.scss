@@ -17,7 +17,7 @@ $parent: '.expandable';
 
 #{$parent} {
   position: relative;
-  background-color: $color-14;
+  background-color: $expandable-background-color;
 
   &__header {
     display: flex;
@@ -48,7 +48,7 @@ $parent: '.expandable';
     left: 0;
     z-index: 2;
     width: 100%;
-    background-color: $color-14;
+    background-color: $expandable-background-color;
   }
 
   &_forced-expanded {

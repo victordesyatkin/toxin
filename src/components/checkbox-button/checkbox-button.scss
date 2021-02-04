@@ -9,12 +9,12 @@ $parent: 'checkbox-button';
   flex-grow: 1;
   flex-direction: row;
   cursor: pointer;
-  color: $color-2;
+  color: $paragraph-text-color;
   @include user-select-none;
 
   &__label {
     line-height: 1.29rem;
-    color: $color-2;
+    color: $paragraph-text-color;
   }
 
   &_theme_bold {
@@ -23,7 +23,7 @@ $parent: 'checkbox-button';
       font-size: 1rem;
       text-transform: inherit;
       line-height: 1.29rem;
-      color: $color-2;
+      color: $paragraph-text-color;
     }
   }
 
@@ -39,7 +39,7 @@ $parent: 'checkbox-button';
     min-width: 1.42rem;
     width: 1.42rem;
     height: 1.42rem;
-    border: 1px solid $color-4;
+    border: 0.0714rem solid $checkbox-border-color;
     box-sizing: border-box;
     border-radius: 4px;
     display: flex;
@@ -55,7 +55,7 @@ $parent: 'checkbox-button';
   }
 
   input:checked ~ &__check-mark {
-    border: 1px solid $color-7;
+    border: 1px solid $checkbox-border-color-checked;
 
     img {
       width: 0.71rem;

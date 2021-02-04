@@ -1,6 +1,5 @@
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./rate-button.scss";
-
 class RateButton {
   static CLASS_NAME = "RATE_BUTTON";
 

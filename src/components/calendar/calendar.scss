@@ -6,11 +6,11 @@ $parent: '.calendar';
 #{$parent} {
   &__main {
     width: 100%;
-    border: 1px solid $color-4;
+    border: 0.0714rem solid $calendar-border-color;
     box-sizing: border-box;
-    box-shadow: 0px 10px 20px $color-6;
+    box-shadow: $calendar-box-shadow;
     border-radius: 4px;
-    background-color: $color-14;
+    background-color: $calendar-background-color;
   }
 
   .datepicker {
@@ -21,7 +21,7 @@ $parent: '.calendar';
   .datepicker,
   .-in-range- {
     @include h3-lite;
-    color: $color-3;
+    color: $calendar-text-color-default;
   }
 
   .datepicker--nav {
@@ -97,7 +97,7 @@ $parent: '.calendar';
   .-other-month-.-focus-,
   .-other-month-.-selected- {
     @include h3;
-    color: $color-first-white;
+    color: $calendar-text-color-hover;
   }
 
   .-current-,
@@ -109,7 +109,7 @@ $parent: '.calendar';
   }
 
   .datepicker--cell.-focus-.-disabled-::after {
-    background: $color-dark-shade25;
+    background: $calendar-background-color-disabled;
   }
 
   .-range-from-.-focus-::after,
@@ -126,7 +126,7 @@ $parent: '.calendar';
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: $gradient-second;
+    background: $calendar-background-color-current;
     border-radius: 100%;
     z-index: -1;
   }
@@ -137,7 +137,7 @@ $parent: '.calendar';
   .-selected-::after,
   .-range-from-::after,
   .-range-to-::after {
-    background: $gradient-1;
+    background: $calendar-background-color-selected;
   }
 
   .-range-from-,
@@ -159,7 +159,7 @@ $parent: '.calendar';
   .-other-month-.-focus-.-in-range-,
   .-other-month-.-selected-.-in-range-,
   .datepicker--cell.-in-range- {
-    @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.25);
+    @include background-calendar-period;
   }
 
   .datepicker--cell-day.-range-to-::before,
@@ -168,7 +168,7 @@ $parent: '.calendar';
     height: 100%;
     content: '';
     position: absolute;
-    @include linear-gradient(180deg, $color-purple, $color-purple-dark, 0.25);
+    @include background-calendar-period;
     z-index: -2;
   }
 
@@ -196,16 +196,16 @@ $parent: '.calendar';
     @include h3;
     cursor: pointer;
     &:hover {
-      color: $color-3;
+      color: $button-text-color-hover-second;
     }
   }
 
   &__button_clean {
-    color: $color-7;
+    color: $button-text-color-default-second;
   }
 
   &__button_apply {
-    color: $color-7;
+    color: $button-text-color-default-second;
   }
 
   &__button_hide {

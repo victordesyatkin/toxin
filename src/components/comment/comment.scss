@@ -8,8 +8,8 @@ $parent: '.comment';
   &__img {
     width: 3.42rem;
     height: 3.42rem;
-    border: 2px solid $color-14;
-    filter: drop-shadow(0rem 0.71rem 1.42rem $color-5);
+    border: 2px solid $comment-border-color;
+    filter: $comment-filter;
     border-radius: 1.71rem;
   }
 

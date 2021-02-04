@@ -15,7 +15,7 @@ $parent: '.info-item';
 
     span {
       font-size: 2.85rem;
-      background: $gradient-1;
+      background: $info-background-color;
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -34,6 +34,6 @@ $parent: '.info-item';
 
   &__title {
     font-weight: bold;
-    color: $color-2;
+    color: $paragraph-text-color;
   }
 }

@@ -3,7 +3,7 @@
 $parent: 'link';
 
 .#{$parent} {
-  color: $color-3;
+  color: $link-text-color-default;
   text-decoration: none;
   text-transform: none;
   cursor: pointer;
@@ -14,11 +14,11 @@ $parent: 'link';
 
   &_current {
     font-weight: bold;
-    color: $color-2;
+    color: $link-text-color-current;
   }
 
   &:hover {
-    color: lighten($color-2, 20%);
+    color: $link-text-color-hover;
     text-decoration: none;
     text-transform: none;
   }
