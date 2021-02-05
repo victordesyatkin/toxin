@@ -1,19 +1,5 @@
 {
-  "scriptSrc": "registration-sign-in",
   "meta": [
-    { "charset": "utf-8" },
-    {
-      "name": "viewport",
-      "content": "initial-scale=1.0, width=device-width"
-    },
-    {
-      "name": "msapplication-TileColor",
-      "content": "#da532c"
-    },
-    {
-      "name": "theme-color",
-      "content": "#ffffff"
-    },
     {
       "name": "description",
       "content": "Toxin page registration sign in"
@@ -64,7 +50,7 @@
       "color": "#5bbad5"
     }
   ],
-  "backgroundImage": "../assets/images/registration.jpg",
+  "backgroundImage": ".assets/images/registration.jpg",
   "signIn": {
     "title": "Войти",
     "email": {
@@ -94,7 +80,7 @@
       "value": "",
       "view": 3,
       "name": "signIn",
-      "src": "./assets/images/arrow-forward.svg",
+      "src": "assets/images/arrow-forward.svg",
       "alt": "sign in"
     },
     "signUp": {
@@ -189,7 +175,7 @@
         "isBlock": true
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "..assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
     }
@@ -201,7 +187,7 @@
         "title": "TOXIN"
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "..assets/images/logo-color.svg",
         "alt": "TOXIN",
         "type": "color"
       }
@@ -288,7 +274,7 @@
           "title": "TOXIN"
         },
         "logo": {
-          "src": "../../assets/images/logo-color.svg",
+          "src": "..assets/images/logo-color.svg",
           "alt": "TOXIN",
           "type": "color"
         }

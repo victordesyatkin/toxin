@@ -1,18 +1,5 @@
 {
   "meta": [
-    { "charset": "utf-8" },
-    {
-      "name": "viewport",
-      "content": "initial-scale=1.0, width=device-width"
-    },
-    {
-      "name": "msapplication-TileColor",
-      "content": "#da532c"
-    },
-    {
-      "name": "theme-color",
-      "content": "#ffffff"
-    },
     {
       "name": "description",
       "content": "Toxin page cards"
@@ -65,7 +52,7 @@
   ],
   "scriptSrc": "cards",
   "logo": {
-    "src": "../../assets/images/logo-fill.svg",
+    "src": "assets/images/logo-fill.svg",
     "alt": "TOXIN"
   },
   "picker": {
@@ -126,7 +113,7 @@
       "type": "button",
       "value": "",
       "view": 3,
-      "src": "./assets/images/arrow-forward.svg"
+      "src": "assets/images/arrow-forward.svg"
     }
   },
   "book": {
@@ -203,7 +190,7 @@
       "type": "button",
       "value": "",
       "view": 3,
-      "src": "./assets/images/arrow-forward.svg"
+      "src": "assets/images/arrow-forward.svg"
     },
     "numberFormat": "ru-RU",
     "words": ["сутки", "суток", "суток"],
@@ -241,13 +228,13 @@
       "isChecked": true,
       "name": "gender1",
       "value": "male",
-      "src": "./assets/images/checkbox-buttons.svg"
+      "src": "assets/images/checkbox-buttons.svg"
     },
     "genderFemale": {
       "label": "Женщина",
       "name": "gender1",
       "value": "female",
-      "src": "./assets/images/checkbox-buttons.svg"
+      "src": "assets/images/checkbox-buttons.svg"
     },
     "birthday": {
       "input": {
@@ -280,7 +267,7 @@
     "contribute": {
       "label": "Получать спецпредложения",
       "name": "contribute",
-      "src": "./assets/images/checkbox-buttons.svg"
+      "src": "assets/images/checkbox-buttons.svg"
     },
     "pay": {
       "text": "Перейти к оплате",
@@ -288,7 +275,7 @@
       "value": "",
       "view": 3,
       "name": "pay1",
-      "src": "./assets/images/arrow-forward.svg"
+      "src": "assets/images/arrow-forward.svg"
     },
     "signIn": {
       "content": "Уже есть аккаунт на Toxin",
@@ -331,7 +318,7 @@
       "value": "",
       "view": 3,
       "name": "signIn1",
-      "src": "./assets/images/arrow-forward.svg"
+      "src": "assets/images/arrow-forward.svg"
     },
     "signUp": {
       "content": "Нет аккаунта на Toxin?",
@@ -349,19 +336,19 @@
     "slider": {
       "images": [
         {
-          "src": "../../assets/images/slider-1.jpg",
+          "src": "assets/images/slider-1.jpg",
           "alt": "view-1"
         },
         {
-          "src": "../../assets/images/slider-2.jpg",
+          "src": "assets/images/slider-2.jpg",
           "alt": "view-2"
         },
         {
-          "src": "../../assets/images/slider-3.jpg",
+          "src": "assets/images/slider-3.jpg",
           "alt": "view-3"
         },
         {
-          "src": "../../assets/images/slider-4.jpg",
+          "src": "assets/images/slider-4.jpg",
           "alt": "view-4"
         }
       ],
@@ -384,9 +371,9 @@
         "name": "rating1",
         "count": 5,
         "isOff": true,
-        "srcImgRate": "../assets/images/star.svg",
+        "srcImgRate": "assets/images/star.svg",
         "altImgRate": "Rate",
-        "srcImgNoRate": "../assets/images/star-border.svg",
+        "srcImgNoRate": "assets/images/star-border.svg",
         "altImgNoRate": "No rate"
       },
       "comments": 145
@@ -397,19 +384,19 @@
     "slider": {
       "images": [
         {
-          "src": "../../assets/images/slider-2.jpg",
+          "src": "assets/images/slider-2.jpg",
           "alt": "view-2"
         },
         {
-          "src": "../../assets/images/slider-1.jpg",
+          "src": "assets/images/slider-1.jpg",
           "alt": "view-1"
         },
         {
-          "src": "../../assets/images/slider-3.jpg",
+          "src": "assets/images/slider-3.jpg",
           "alt": "view-3"
         },
         {
-          "src": "../../assets/images/slider-4.jpg",
+          "src": "assets/images/slider-4.jpg",
           "alt": "view-4"
         }
       ],
@@ -432,9 +419,9 @@
         "name": "rating2",
         "count": 5,
         "isOff": true,
-        "srcImgRate": "../assets/images/star.svg",
+        "srcImgRate": "assets/images/star.svg",
         "altImgRate": "Rate",
-        "srcImgNoRate": "../assets/images/star-border.svg",
+        "srcImgNoRate": "assets/images/star-border.svg",
         "altImgNoRate": "No rate"
       },
       "comments": 65

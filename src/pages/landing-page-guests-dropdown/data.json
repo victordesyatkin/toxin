@@ -1,20 +1,6 @@
 {
-  "scriptSrc": "landing-page-guests-dropdown",
   "title": "Landing page/Guests Dropdown",
   "meta": [
-    { "charset": "utf-8" },
-    {
-      "name": "viewport",
-      "content": "initial-scale=1.0, width=device-width"
-    },
-    {
-      "name": "msapplication-TileColor",
-      "content": "#da532c"
-    },
-    {
-      "name": "theme-color",
-      "content": "#ffffff"
-    },
     {
       "name": "description",
       "content": "Toxin page landing page guests dropdown"
@@ -138,7 +124,7 @@
       "type": "submit",
       "value": "",
       "view": 3,
-      "src": "./assets/images/arrow-forward.svg"
+      "src": "assets/images/arrow-forward.svg"
     }
   },
   "headerNotAuthorized": {
@@ -220,7 +206,7 @@
         "isBlock": true
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "..assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
     }
@@ -232,7 +218,7 @@
         "title": "TOXIN"
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "..assets/images/logo-color.svg",
         "alt": "TOXIN",
         "type": "color"
       }
@@ -319,7 +305,7 @@
           "title": "TOXIN"
         },
         "logo": {
-          "src": "../../assets/images/logo-color.svg",
+          "src": "..assets/images/logo-color.svg",
           "alt": "TOXIN",
           "type": "color"
         }
@@ -371,5 +357,5 @@
   },
   "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения",
   "action": "search-room-filter.html",
-  "backgroundImage": "../../assets/images/landing-page.jpg"
+  "backgroundImage": "..assets/images/landing-page.jpg"
 }

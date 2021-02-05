@@ -1,18 +1,5 @@
 {
   "meta": [
-    { "charset": "utf-8" },
-    {
-      "name": "viewport",
-      "content": "initial-scale=1.0, width=device-width"
-    },
-    {
-      "name": "msapplication-TileColor",
-      "content": "#da532c"
-    },
-    {
-      "name": "theme-color",
-      "content": "#ffffff"
-    },
     {
       "name": "description",
       "content": "Toxin page base"
@@ -143,7 +130,7 @@
         "isBlock": true
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
     }

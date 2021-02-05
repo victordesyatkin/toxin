@@ -1,6 +1,8 @@
 @import '~theme/global.scss';
 
-.toggle-button {
+$parent: 'toggle-button';
+
+.#{$parent} {
   display: flex;
   flex-basis: 100%;
   flex-shrink: 1;
@@ -8,7 +10,6 @@
   flex-direction: row;
   cursor: pointer;
   line-height: 1.3rem;
-  color: $toggle-button-text-color;
 
   &__input {
     position: absolute;
@@ -18,7 +19,7 @@
     width: 0;
   }
 
-  &__check-mark {
+  &__check-mark-area {
     min-width: 2.857rem;
     width: 2.857rem;
     height: 1.429rem;
@@ -31,9 +32,9 @@
     padding: 0 0.286rem;
     position: relative;
 
-    span {
-      width: 12px; // width rem oval shape
-      height: 12px; // width rem oval shape
+    .#{$parent}__mark {
+      width: 12px; // with rem oval shape
+      height: 12px; // with rem oval shape
       opacity: 1;
       border-radius: 50%;
       background: $toggle-button-background-color-default;
@@ -44,17 +45,21 @@
   }
 
   &__label {
-    margin-right: 1.429rem;
+    color: $toggle-button-text-color-default;
   }
 
-  input:checked ~ &__check-mark {
+  &__input:checked ~ &__check-mark-area {
     border: 0.0714rem solid $toggle-button-background-color-checked;
     justify-content: flex-end;
 
-    span {
+    .#{$parent}__mark {
       background: $toggle-button-background-color-checked;
       transition: left 0.5s;
       left: calc(100% - 1.142rem);
     }
+  }
+
+  &__input:checked ~ &__label {
+    color: $toggle-button-text-color-checked;
   }
 }

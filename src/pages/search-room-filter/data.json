@@ -1,19 +1,5 @@
 {
-  "scriptSrc": "search-room-filter",
   "meta": [
-    { "charset": "utf-8" },
-    {
-      "name": "viewport",
-      "content": "initial-scale=1.0, width=device-width"
-    },
-    {
-      "name": "msapplication-TileColor",
-      "content": "#da532c"
-    },
-    {
-      "name": "theme-color",
-      "content": "#ffffff"
-    },
     {
       "name": "description",
       "content": "Toxin page search room filter"
@@ -143,7 +129,7 @@
         "isBlock": true
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
     }
@@ -155,7 +141,7 @@
         "title": "TOXIN"
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "assets/images/logo-color.svg",
         "alt": "TOXIN",
         "type": "color"
       }
@@ -242,7 +228,7 @@
           "title": "TOXIN"
         },
         "logo": {
-          "src": "../../assets/images/logo-color.svg",
+          "src": "assets/images/logo-color.svg",
           "alt": "TOXIN",
           "type": "color"
         }
@@ -347,7 +333,7 @@
   },
   "checkboxButtons": {
     "label": "правила дома",
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Можно курить",
@@ -370,7 +356,7 @@
   },
   "richCheckboxButtons": {
     "label": "доступность",
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Широкий коридор",
@@ -416,7 +402,7 @@
   },
   "expandableCheckboxList": {
     "expandable": { "label": "дополнительные удобства" },
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Завтрак",
@@ -469,19 +455,19 @@
         "isControl": true,
         "images": [
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-2.jpg",
+            "src": "assets/images/slider-2.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -502,9 +488,9 @@
           "grade": 5,
           "name": "rating1",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 145
@@ -515,19 +501,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-2.jpg",
+            "src": "assets/images/slider-2.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -548,9 +534,9 @@
           "grade": 4,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 65
@@ -561,19 +547,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -594,9 +580,9 @@
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 35
@@ -607,19 +593,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -640,9 +626,9 @@
           "grade": 5,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 19
@@ -653,19 +639,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-5.jpg",
+            "src": "assets/images/slider-5.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -686,9 +672,9 @@
           "grade": 4,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 44
@@ -699,19 +685,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-6.jpg",
+            "src": "assets/images/slider-6.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -732,9 +718,9 @@
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 56
@@ -745,19 +731,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-7.jpg",
+            "src": "assets/images/slider-7.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -778,9 +764,9 @@
           "grade": 5,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 45
@@ -791,19 +777,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-8.jpg",
+            "src": "assets/images/slider-8.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -824,9 +810,9 @@
           "grade": 4,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 39
@@ -837,19 +823,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-9.jpg",
+            "src": "assets/images/slider-9.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -870,9 +856,9 @@
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 77
@@ -883,19 +869,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-10.jpg",
+            "src": "assets/images/slider-10.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -916,9 +902,9 @@
           "grade": 5,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 25
@@ -929,19 +915,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-11.jpg",
+            "src": "assets/images/slider-11.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -962,9 +948,9 @@
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 15
@@ -975,19 +961,19 @@
       "slider": {
         "images": [
           {
-            "src": "../../assets/images/slider-12.jpg",
+            "src": "assets/images/slider-12.jpg",
             "alt": "slider-1"
           },
           {
-            "src": "../../assets/images/slider-1.jpg",
+            "src": "assets/images/slider-1.jpg",
             "alt": "slider-2"
           },
           {
-            "src": "../../assets/images/slider-3.jpg",
+            "src": "assets/images/slider-3.jpg",
             "alt": "slider-3"
           },
           {
-            "src": "../../assets/images/slider-4.jpg",
+            "src": "assets/images/slider-4.jpg",
             "alt": "slider-4"
           }
         ]
@@ -1008,9 +994,9 @@
           "grade": 3,
           "name": "rating2",
           "count": 5,
-          "srcImgRate": "./assets/images/star.svg",
+          "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
-          "srcImgNoRate": "./assets/images/star-border.svg",
+          "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
         },
         "comments": 55
@@ -1026,7 +1012,7 @@
     "limit": 2,
     "count": 12,
     "emptyString": "...",
-    "src": "./assets/images/arrow-forward.svg",
+    "src": "assets/images/arrow-forward.svg",
     "altNext": "Next",
     "altPrevious": "Previous"
   },

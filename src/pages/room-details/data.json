@@ -1,19 +1,5 @@
 {
-  "scriptSrc": "room-details",
   "meta": [
-    { "charset": "utf-8" },
-    {
-      "name": "viewport",
-      "content": "initial-scale=1.0, width=device-width"
-    },
-    {
-      "name": "msapplication-TileColor",
-      "content": "#da532c"
-    },
-    {
-      "name": "theme-color",
-      "content": "#ffffff"
-    },
     {
       "name": "description",
       "content": "Toxin page room details"
@@ -143,7 +129,7 @@
         "isBlock": true
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
     }
@@ -155,7 +141,7 @@
         "title": "TOXIN"
       },
       "logo": {
-        "src": "../../assets/images/logo-color.svg",
+        "src": "assets/images/logo-color.svg",
         "alt": "TOXIN",
         "type": "color"
       }
@@ -242,7 +228,7 @@
           "title": "TOXIN"
         },
         "logo": {
-          "src": "../../assets/images/logo-color.svg",
+          "src": "assets/images/logo-color.svg",
           "alt": "TOXIN",
           "type": "color"
         }
@@ -398,13 +384,13 @@
           "isChecked": true,
           "name": "male2",
           "count": 12,
-          "srcLike": "./assets/images/favorite.svg",
+          "srcLike": "assets/images/favorite.svg",
           "altLike": "Like",
-          "srcNoLike": "./assets/images/favorite-border.svg",
+          "srcNoLike": "assets/images/favorite-border.svg",
           "altNoLike": "No like",
           "isDisabled": true
         },
-        "src": "./assets/images/example-avatar-male.png",
+        "src": "assets/images/example-avatar-male.png",
         "alt": "Avatar",
         "fullName": "Мурад Сарафанов",
         "date": "5 дней назад",
@@ -415,12 +401,12 @@
           "checked": false,
           "name": "female3",
           "count": 2,
-          "srcLike": "./assets/images/favorite.svg",
+          "srcLike": "assets/images/favorite.svg",
           "altLike": "Like",
-          "srcNoLike": "./assets/images/favorite-border.svg",
+          "srcNoLike": "assets/images/favorite-border.svg",
           "altNoLike": "No like"
         },
-        "src": "./assets/images/example-avatar-female.png",
+        "src": "assets/images/example-avatar-female.png",
         "alt": "Avatar",
         "fullName": "Патрисия Стёклышкова",
         "date": "Неделю назад",
@@ -537,15 +523,15 @@
   },
   "images": {
     "image1": {
-      "src": "./assets/images/room-view-1.jpg",
+      "src": "assets/images/room-view-1.jpg",
       "alt": "room-view-1"
     },
     "image2": {
-      "src": "./assets/images/room-view-2.jpg",
+      "src": "assets/images/room-view-2.jpg",
       "alt": "room-view-2"
     },
     "image3": {
-      "src": "./assets/images/room-view-3.jpg",
+      "src": "assets/images/room-view-3.jpg",
       "alt": "room-view-3"
     }
   },
@@ -556,15 +542,15 @@
   "slider": {
     "images": [
       {
-        "src": "./assets/images/room-view-1.jpg",
+        "src": "assets/images/room-view-1.jpg",
         "alt": "room-view-1"
       },
       {
-        "src": "./assets/images/room-view-2.jpg",
+        "src": "assets/images/room-view-2.jpg",
         "alt": "room-view-2"
       },
       {
-        "src": "./assets/images/room-view-3.jpg",
+        "src": "assets/images/room-view-3.jpg",
         "alt": "room-view-3"
       }
     ],

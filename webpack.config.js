@@ -37,10 +37,15 @@ module.exports = (env = {}) => {
       },
       filename: `${fileName}.html`,
       template: `${nth.dir.pages}/${fileName}/${fileName}.pug`,
-      chuncks: [fileName],
+      chunks: [fileName],
       alwaysWriteToDisk: true,
-      inject: false,
+      inject: true,
       hash: true,
+      meta: {
+        viewport: "initial-scale=1.0, width=device-width",
+        "msapplication-TileColor": "#da532c",
+        "theme-color": "#ffffff",
+      },
     });
   });
 
@@ -77,14 +82,14 @@ module.exports = (env = {}) => {
       }),
       new webpack.HotModuleReplacementPlugin(),
     ];
-
     if (isProd) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: "[name].css",
-          chunkFilename: "[id].css",
-          hmr: isDev,
-          reloadAll: true,
+          filename: isDev ? "[name].css" : "[name].[hash].css",
+          chunkFilename: isDev ? "[id].css" : "[id].[hash].css",
+          insertAt: {
+            after: "title",
+          },
         })
       );
     }

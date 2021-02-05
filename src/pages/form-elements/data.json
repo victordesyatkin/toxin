@@ -1,19 +1,5 @@
 {
-  "scriptSrc": "form-elements",
   "meta": [
-    { "charset": "utf-8" },
-    {
-      "name": "viewport",
-      "content": "initial-scale=1.0, width=device-width"
-    },
-    {
-      "name": "msapplication-TileColor",
-      "content": "#da532c"
-    },
-    {
-      "name": "theme-color",
-      "content": "#ffffff"
-    },
     {
       "name": "description",
       "content": "Toxin page form elements"
@@ -283,7 +269,7 @@
   },
   "expandableCheckboxList1": {
     "expandable": { "label": "expandable checkbox list" },
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
     "buttons": [
       {
@@ -341,7 +327,7 @@
       "label": "expandable checkbox list",
       "isExpanded": true
     },
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
     "buttons": [
       {
@@ -396,7 +382,7 @@
   },
   "checkboxButtons": {
     "label": "Checkbox Buttons",
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
     "buttons": [
       {
@@ -424,7 +410,7 @@
         "isChecked": true,
         "name": "gender",
         "value": "male",
-        "src": "./assets/images/checkbox-buttons.svg",
+        "src": "assets/images/checkbox-buttons.svg",
         "alt": "Checked"
       },
       {
@@ -432,7 +418,7 @@
         "isChecked": false,
         "name": "gender",
         "value": "female",
-        "src": "./assets/images/checkbox-buttons.svg",
+        "src": "assets/images/checkbox-buttons.svg",
         "alt": "Checked"
       }
     ]
@@ -444,14 +430,14 @@
         "label": "Получать спецпредложения",
         "isChecked": true,
         "name": "male",
-        "src": "./assets/images/checkbox-buttons.svg",
+        "src": "assets/images/checkbox-buttons.svg",
         "alt": "Checked"
       },
       {
         "label": "Получать спецпредложения",
         "isChecked": false,
         "name": "female",
-        "src": "./assets/images/checkbox-buttons.svg",
+        "src": "assets/images/checkbox-buttons.svg",
         "alt": "Checked"
       }
     ]
@@ -463,18 +449,18 @@
         "isChecked": false,
         "name": "male",
         "count": 2,
-        "srcLike": "./assets/images/favorite.svg",
+        "srcLike": "assets/images/favorite.svg",
         "altLike": "Like",
-        "srcNoLike": "./assets/images/favorite-border.svg",
+        "srcNoLike": "assets/images/favorite-border.svg",
         "altNoLike": "No like"
       },
       {
         "isChecked": true,
         "name": "Like",
         "count": 12,
-        "srcLike": "./assets/images/favorite.svg",
+        "srcLike": "assets/images/favorite.svg",
         "altLike": "Like",
-        "srcNoLike": "./assets/images/favorite-border.svg",
+        "srcNoLike": "assets/images/favorite-border.svg",
         "altNoLike": "No like"
       }
     ]
@@ -487,9 +473,9 @@
         "name": "male2",
         "count": 5,
         "off": 0,
-        "srcImgRate": "./assets/images/star.svg",
+        "srcImgRate": "assets/images/star.svg",
         "altImgRate": "Rate",
-        "srcImgNoRate": "./assets/images/star-border.svg",
+        "srcImgNoRate": "assets/images/star-border.svg",
         "altImgNoRate": "No rate",
         "isOn": true
       },
@@ -498,9 +484,9 @@
         "name": "female2",
         "count": 5,
         "off": 0,
-        "srcImgRate": "./assets/images/star.svg",
+        "srcImgRate": "assets/images/star.svg",
         "altImgRate": "Rate",
-        "srcImgNoRate": "./assets/images/star-border.svg",
+        "srcImgNoRate": "assets/images/star-border.svg",
         "altImgNoRate": "No rate",
         "isOn": true
       }
@@ -508,7 +494,7 @@
   },
   "richCheckboxButtons": {
     "label": "rich checkbox buttons",
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
     "theme": "bold",
     "buttons": [
@@ -542,14 +528,14 @@
     ]
   },
   "comment": {
-    "src": "./assets/images/example-avatar-male.png",
+    "src": "assets/images/example-avatar-male.png",
     "likeButton": {
       "isChecked": true,
       "name": "male2",
       "count": 12,
-      "srcLike": "./assets/images/favorite.svg",
+      "srcLike": "assets/images/favorite.svg",
       "altLike": "Like",
-      "srcNoLike": "./assets/images/favorite-border.svg",
+      "srcNoLike": "assets/images/favorite-border.svg",
       "altNoLike": "No like"
     },
     "fullName": "Мурад Сарафанов",
@@ -594,7 +580,7 @@
     "type": "button",
     "value": "",
     "view": 3,
-    "src": "./assets/images/arrow-forward.svg",
+    "src": "assets/images/arrow-forward.svg",
     "alt": "Перейти к оплате"
   },
 
@@ -615,7 +601,7 @@
     "limit": 2,
     "count": 12,
     "emptyString": "...",
-    "src": "./assets/images/arrow-forward.svg",
+    "src": "assets/images/arrow-forward.svg",
     "altPrevious": "Previous",
     "altNext": "Next"
   },

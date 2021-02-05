@@ -5,12 +5,12 @@ include ../../components/footer/footer
 doctype html
 html
   head
+    <meta charset="utf-8"/>
     block meta
       - let { meta = [] } = htmlWebpackPlugin.options.getData() || {};
       each item in meta
-        - let { name, content, charset } = item || {};
+        - let { name, content } = item || {};
           meta(
-            charset=charset
             name=name,
             content=content
           )
@@ -44,9 +44,3 @@ html
           block footer
             - let { footer } = htmlWebpackPlugin.options.getData() || {};
             +footer(footer)
-    block scripts
-      - let { scriptSrc } = htmlWebpackPlugin.options.getData() || {};
-      if scriptSrc
-        script(
-          src=`${scriptSrc}.js`
-        )

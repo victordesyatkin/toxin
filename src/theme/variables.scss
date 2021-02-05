@@ -49,17 +49,20 @@ $comment-text-color-full-name: rgba(31, 32, 65, 0.75);
 $link-text-color-default: rgba(31, 32, 65, 0.5);
 $link-text-color-hover: lighten($link-text-color-default, 20%);
 $link-text-color-current: rgba(31, 32, 65, 0.75);
-$radio-button-text-color-checked: rgba(31, 32, 65, 0.75);
 $radio-button-text-color-default: rgba(31, 32, 65, 0.5);
+$radio-button-text-color-checked: rgba(31, 32, 65, 0.75);
 $range-slider-text-color: rgba(31, 32, 65, 0.5);
 $rate-text-color-total: #bc9cff;
 $rate-text-color-unit: $rate-text-color-total;
 $filter-date-dropdown-text-color-button: rgba(31, 32, 65, 0.5);
 $filter-date-dropdown-text-color: rgba(31, 32, 65, 0.75);
 $slider-text-color-control: #ffffff;
-$toggle-button-text-color: rgba(31, 32, 65, 0.75);
+$toggle-button-text-color-default: rgba(31, 32, 65, 0.5);
+$toggle-button-text-color-checked: rgba(31, 32, 65, 0.75);
 $card-footer-text-color: #000000;
 $nav-text-color-user: rgba(31, 32, 65, 0.5);
+$checkbox-button-text-color-default: rgba(31, 32, 65, 0.5);
+$checkbox-button-text-color-checked: rgba(31, 32, 65, 0.75);
 
 /***** Background *****/
 $page-background-color: #ffffff;
