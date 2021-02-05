@@ -333,24 +333,27 @@
   },
   "checkboxButtons": {
     "label": "правила дома",
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Можно курить",
         "name": "smoke",
-        "alt": "Можно курить"
+        "alt": "Можно курить",
+        "theme": "bold"
       },
       {
         "label": "Можно с питомцами",
         "isChecked": true,
         "name": "pet",
-        "alt": "Можно с питомцами"
+        "alt": "Можно с питомцами",
+        "theme": "bold"
       },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
         "isChecked": true,
         "name": "guest",
-        "alt": "Можно пригласить гостей (до 10 человек)"
+        "alt": "Можно пригласить гостей (до 10 человек)",
+        "theme": "bold"
       }
     ]
   },
