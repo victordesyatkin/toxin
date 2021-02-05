@@ -180,7 +180,7 @@ $parent: '.input';
   &_theme_dropdown_fill {
     #{$parent}__section {
       #{$parent}__button_default {
-        color: $color-2;
+        color: $input-text-color-hover;
       }
     }
   }

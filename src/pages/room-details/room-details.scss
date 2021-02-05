@@ -4,7 +4,7 @@ $parent: 'room-details';
 
 .#{$parent} {
   width: 100%;
-  background-color: $color-14;
+  background-color: $page-background-color;
 }
 
 @include media-breakpoint-up($xl) {

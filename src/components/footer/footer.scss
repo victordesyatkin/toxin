@@ -16,6 +16,7 @@ $parent: 'footer';
     width: 100%;
     display: flex;
     box-shadow: $footer-box-shadow;
+    border-top: 0.071rem solid $footer-border-color;
   }
 
   &__info-section {

@@ -32,8 +32,8 @@
     position: relative;
 
     span {
-      width: 0.857rem;
-      height: 0.857rem;
+      width: 12px; // width rem oval shape
+      height: 12px; // width rem oval shape
       opacity: 1;
       border-radius: 50%;
       background: $toggle-button-background-color-default;

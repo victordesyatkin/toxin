@@ -12,7 +12,6 @@ $parent: 'button';
   text-transform: uppercase;
   cursor: pointer;
   @include font-family-first-bold;
-  color: $color-14;
   white-space: nowrap;
   background: none;
 
@@ -93,7 +92,7 @@ $parent: 'button';
   &_sizes_3 {
     &.#{$parent}__view_1 {
       .#{$parent}__content {
-        padding: 0.5rem 1.4285rem 0.5714rem 11.2857rem;
+        padding: 0.5rem 1.4285rem 0.5714rem 1.4285rem;
       }
     }
 

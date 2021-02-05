@@ -27,7 +27,7 @@ $parent: '.comment';
 
   &__full-name {
     font-weight: bold;
-    color: $color-2;
+    color: $comment-text-color-full-name;
   }
 
   &__date {

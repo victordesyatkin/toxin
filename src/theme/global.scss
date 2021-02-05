@@ -30,3 +30,23 @@ h2 {
 h3 {
   @include h3;
 }
+
+::-webkit-input-placeholder {
+  color: $input-text-color-default;
+  @include font-family-first-regular;
+}
+
+::-moz-placeholder {
+  color: $input-text-color-default;
+  @include font-family-first-regular;
+}
+
+:-ms-input-placeholder {
+  color: $input-text-color-default;
+  @include font-family-first-regular;
+}
+
+:-moz-placeholder {
+  color: $input-text-color-default;
+  @include font-family-first-regular;
+}

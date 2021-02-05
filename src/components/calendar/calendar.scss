@@ -32,7 +32,7 @@ $parent: '.calendar';
 
   .datepicker--nav-action {
     span {
-      color: $color-purple;
+      color: $calendar-text-color-nav;
       font-size: 1.28rem;
     }
   }
@@ -78,7 +78,7 @@ $parent: '.calendar';
 
   .datepicker--day-name {
     @include h3;
-    color: $color-purple;
+    color: $calendar-text-color-day-name;
     text-transform: initial;
   }
 

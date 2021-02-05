@@ -462,7 +462,8 @@
             "isVisible": true,
             "iconClass": "arrow-down",
             "type": "button"
-          }
+          },
+          "notFocused": true
         }
       },
       "fieldEnd": {
@@ -477,7 +478,8 @@
             "isVisible": true,
             "iconClass": "arrow-down",
             "type": "button"
-          }
+          },
+          "notFocused": true
         }
       },
       "calendar": {

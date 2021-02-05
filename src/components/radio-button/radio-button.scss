@@ -21,10 +21,10 @@
   }
 
   &__check-mark {
-    min-width: 1.4285rem;
-    width: 1.4285rem;
-    height: 1.4285rem;
-    border: 0.07142rem solid $radio-button-border-color-default;
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    border: 0.0714rem solid $radio-button-border-color-default;
     box-sizing: border-box;
     border-radius: 50%;
     display: flex;
@@ -37,8 +37,8 @@
     border: 0.0714rem solid $radio-button-border-color-checked;
 
     span {
-      width: 0.85rem;
-      height: 0.85rem;
+      width: 12px; // width rem oval shape
+      height: 12px; // width rem oval shape
       opacity: 1;
       border-radius: 50%;
       background: $radio-button-background-color-checked;

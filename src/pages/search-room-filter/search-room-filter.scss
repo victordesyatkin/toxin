@@ -3,8 +3,7 @@ $parent: 'search-room-filter';
 
 .#{$parent} {
   width: 100%;
-  background-color: $color-14;
-  border-bottom: 0.0714rem solid $color-4;
+  background-color: $page-background-color;
   padding: 2.1428rem 10rem 0;
   display: flex;
 

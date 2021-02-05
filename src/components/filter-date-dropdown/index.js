@@ -130,11 +130,11 @@ class FilterDateDropdown {
     if (
       !$(event.target).closest(this._$element).length &&
       !$(event.target, this._$element).hasClass("datepicker--cell") &&
-      !$(classTarget, this._$element).length
+      !$(classTarget, this._$element).length &&
+      this._$element.hasClass("filter-date-dropdown_expanded")
     ) {
       this._$mainBlock.slideUp();
       this._$element.removeClass("filter-date-dropdown_expanded");
-      console.log("_handleDocumentClick ");
     }
   }
 

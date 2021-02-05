@@ -92,7 +92,7 @@ $parent: 'pagination';
     .#{$parent}__content {
       background: $pagination-background-color-current;
       border-radius: 22px;
-      color: $color-first-white;
+      color: $pagination-text-color-button;
       @include font-family-first-regular;
     }
   }

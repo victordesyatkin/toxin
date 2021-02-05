@@ -19,7 +19,7 @@ $parent: '.filter-date-dropdown';
     position: relative;
     border: 1px solid $filter-date-dropdown-border-color;
     border-radius: 4px;
-    color: $color-2;
+    color: $filter-date-dropdown-text-color;
     padding: 0 3.14rem 0 1rem;
     cursor: pointer;
   }
@@ -66,7 +66,7 @@ $parent: '.filter-date-dropdown';
   }
 
   #{$parent}__input::placeholder {
-    color: $color-2;
+    color: $filter-date-dropdown-text-color;
   }
 
   &__input:disabled {
