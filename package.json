@@ -56,7 +56,7 @@
     "start": "webpack-dev-server",
     "build": "webpack --env.mode=production",
     "build:dev": "webpack --env.mode=development",
-    "publish": "git checkout master && git merge development && npm run build && git commit -am 'Deploy' && git push origin",
+    "publish": "git checkout master && git merge development && npm run build && git commit -am 'Deploy' && git push origin && git checkout @{-1}",
     "eslint": "eslint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
