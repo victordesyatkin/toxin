@@ -1,5 +1,6 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
+import bind from "bind-decorator";
 
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./input.scss";
 
 class Input {
@@ -62,15 +63,17 @@ class Input {
   }
 
   _init() {
-    this._$element.on("focusin", this._handleInputFocusIn.bind(this));
-    this._$element.on("focusout", this._handleInputFocusOut.bind(this));
+    this._$element.on("focusin", this._handleInputFocusIn);
+    this._$element.on("focusout", this._handleInputFocusOut);
     this._input = $("input", this._$element);
   }
 
+  @bind
   _handleInputFocusIn() {
     $(".js-input__section", this._$element).addClass("input__section_focused");
   }
 
+  @bind
   _handleInputFocusOut() {
     $(".js-input__section", this._$element).removeClass(
       "input__section_focused"

@@ -1,3 +1,5 @@
+import bind from "bind-decorator";
+
 import {
   wordForm,
   renderComponents,
@@ -30,17 +32,7 @@ class Dropdown {
   constructor(element) {
     this._element = element;
     this._$element = $(element);
-    this._binder();
     this._init();
-  }
-
-  _binder() {
-    this._handleExpandButtonClick = this._handleExpandButtonClick.bind(this);
-    this._handleDocumentClick = this._handleDocumentClick.bind(this);
-    this._handleCleanButtonClick = this._handleCleanButtonClick.bind(this);
-    this._handleApplyButtonClick = this._handleApplyButtonClick.bind(this);
-    this._handleChangeChildInput = this._handleChangeChildInput.bind(this);
-    this._cleanInputValue = this._cleanInputValue.bind(this);
   }
 
   _init() {
@@ -84,6 +76,7 @@ class Dropdown {
     }
   }
 
+  @bind
   _handleExpandButtonClick() {
     if (this._isForcedExpand) {
       return false;
@@ -102,11 +95,13 @@ class Dropdown {
     this._input.toggleExpanded();
   }
 
+  @bind
   _cleanInputValue(index, element) {
     $("input", element).val(0);
     $(".js-dropdown__item-value", element).text(0);
   }
 
+  @bind
   _handleCleanButtonClick() {
     Object.keys(this._inputs).forEach((key) => {
       this._inputs[key] = 0;
@@ -145,6 +140,7 @@ class Dropdown {
     }
   }
 
+  @bind
   _handleChangeChildInput(event = {}) {
     const { target } = event;
     const $input = $(target);
@@ -159,12 +155,14 @@ class Dropdown {
     return false;
   }
 
+  @bind
   _handleApplyButtonClick() {
     this._handleExpandButtonClick();
   }
 
   _rollOtherDropdown() {}
 
+  @bind
   _handleDocumentClick(event) {
     if (
       this._$element.hasClass("dropdown_expanded") &&

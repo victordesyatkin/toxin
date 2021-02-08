@@ -1,3 +1,5 @@
+import bind from "bind-decorator";
+
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import Picker from "../../components/picker";
 import Footer from "../../components/footer";
@@ -35,7 +37,7 @@ class LandingPage {
     Footer.renderComponents();
     localStorage.clear();
     this._$form = $("form", this._$element);
-    this._$form.on("submit", this._handleSubmitButtonClick.bind(this));
+    this._$form.on("submit", this._handleSubmitButtonClick);
   }
 
   _parseFormItem(data, index, element) {
@@ -45,6 +47,7 @@ class LandingPage {
     }
   }
 
+  @bind
   _handleSubmitButtonClick() {
     const data = {
       startDate: "",

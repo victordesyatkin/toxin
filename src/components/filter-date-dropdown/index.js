@@ -1,3 +1,5 @@
+import bind from "bind-decorator";
+
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import Calendar from "../calendar";
 import "./filter-date-dropdown.scss";
@@ -47,7 +49,7 @@ class FilterDateDropdown {
       ".js-filter-date-dropdown__section-up",
       this._$element
     );
-    this._$sectionUp.on("click", this._handleMainBlockClick.bind(this));
+    this._$sectionUp.on("click", this._handleMainBlockClick);
     this._$mainBlock = $(
       `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
       this._$element
@@ -70,9 +72,9 @@ class FilterDateDropdown {
       `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
       this._$element
     );
-    this._buttonClean.on("click", this._handleCleanButtonClick.bind(this));
-    this._buttonApply.on("click", this._handleApplyButtonClick.bind(this));
-    $(document).on("click", this._handleDocumentClick.bind(this));
+    this._buttonClean.on("click", this._handleCleanButtonClick);
+    this._buttonApply.on("click", this._handleApplyButtonClick);
+    $(document).on("click", this._handleDocumentClick);
     this._isForcedVisible = this._$element.hasClass(
       "filter-date-dropdown_forced-expanded"
     );
@@ -102,11 +104,13 @@ class FilterDateDropdown {
     );
   }
 
+  @bind
   _handleCleanButtonClick() {
     this._$input.val("");
     this._changeFake();
   }
 
+  @bind
   _handleApplyButtonClick() {
     const selectedDates = this._datepicker.selectedDates || [];
     this._$input.val(JSON.stringify(selectedDates));
@@ -114,6 +118,7 @@ class FilterDateDropdown {
     this._handleMainBlockClick();
   }
 
+  @bind
   _handleMainBlockClick() {
     if (this._isForcedVisible) {
       return false;
@@ -122,6 +127,7 @@ class FilterDateDropdown {
     this._$element.toggleClass("filter-date-dropdown_expanded");
   }
 
+  @bind
   _handleDocumentClick(event) {
     if (this._forcedVisible) {
       return false;

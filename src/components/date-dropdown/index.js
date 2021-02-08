@@ -1,7 +1,9 @@
 import upperFirst from "lodash/upperFirst";
+import bind from "bind-decorator";
+
+import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import MaskedTextField from "../masked-text-field";
 import Calendar from "../calendar";
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./date-dropdown.scss";
 
 class DateDropdown {
@@ -42,7 +44,7 @@ class DateDropdown {
     this._inputStart.attr("disabled", true);
     this._inputEnd = $(".js-input__input", this._$sections.get(1));
     this._inputEnd.attr("disabled", true);
-    this._$sections.on("click", this._handleInputClick.bind(this));
+    this._$sections.on("click", this._handleInputClick);
     this._$calendar = $(".js-date-dropdown__section-calendar", this._$element);
     this._datepicker = $(
       `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
@@ -62,15 +64,16 @@ class DateDropdown {
       `button[data-type="${DateDropdown.TYPE_APPLY}"]`,
       this._$calendar
     );
-    this._buttonClean.on("click", this._handleCleanButtonClick.bind(this));
-    this._buttonApply.on("click", this._handleApplyButtonClick.bind(this));
-    $(document).on("click", this._handleDocumentClick.bind(this));
+    this._buttonClean.on("click", this._handleCleanButtonClick);
+    this._buttonApply.on("click", this._handleApplyButtonClick);
+    $(document).on("click", this._handleDocumentClick);
   }
 
   _setZIndex(value) {
     this._$calendar.css({ "z-index": value });
   }
 
+  @bind
   _handleInputClick() {
     if (this._$calendar.is(":visible")) {
       this._$calendar.slideUp("fast", this._setZIndex.bind(this, ""));
@@ -85,6 +88,7 @@ class DateDropdown {
     this._setValue("end", "");
   }
 
+  @bind
   _handleApplyButtonClick(isToggle = true) {
     const [start, end] = this._datepicker.selectedDates;
     if (start) {
@@ -132,9 +136,9 @@ class DateDropdown {
     return date;
   }
 
+  @bind
   _handleDocumentClick(event) {
     const targetClass = `.${$(event.target, this._$element).attr("class")}`;
-
     if (
       !$(event.target).closest(this._$element).length &&
       !$(event.target, this._$element).hasClass("datepicker--cell") &&

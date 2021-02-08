@@ -1,3 +1,5 @@
+import bind from "bind-decorator";
+
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./like-button.scss";
 
@@ -34,7 +36,8 @@ class LikeButton {
       this.input.addEventListener("click", this._handleInputClick);
   }
 
-  _handleInputClick = () => {
+  @bind
+  _handleInputClick() {
     if (
       this.input &&
       this.input.checked !== undefined &&
@@ -51,7 +54,7 @@ class LikeButton {
             : this.count.innerHTML;
       }
     }
-  };
+  }
 }
 
 export default LikeButton;

@@ -1,7 +1,7 @@
 import get from "lodash/get";
+import bind from "bind-decorator";
 
 import { renderComponents } from "../../assets/helpers/utils";
-
 import "./slider.scss";
 
 export default class Slider {
@@ -38,11 +38,12 @@ export default class Slider {
     this._$next.on("click", this._onClickControl.bind(this, 2));
     this._$image = $(".js-slider__section-images img", this._$element);
     this._index = 0;
-    this._$points.on("click", this._onClickPoint.bind(this));
+    this._$points.on("click", this._onClickPoint);
     this._setImage(this._index);
     this._setPoint(this._index);
   }
 
+  @bind
   _onClickPoint(e) {
     e.preventDefault();
     const index = get($(e.target).data(), ["index"]);

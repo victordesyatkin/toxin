@@ -1,3 +1,5 @@
+import bind from "bind-decorator";
+
 import { renderComponents, renderComponent } from "../../assets/helpers/utils";
 import "./expandable.scss";
 
@@ -30,9 +32,10 @@ class Expandable {
   _init() {
     this._$header = $(".js-expandable__header", this._$element);
     this._$body = $(".js-expandable__body", this._$element);
-    this._$header.on("click", this._toggleClass.bind(this));
+    this._$header.on("click", this._toggleClass);
   }
 
+  @bind
   _toggleClass() {
     if (this._$element.hasClass("expandable_forced-expanded")) {
       return false;
