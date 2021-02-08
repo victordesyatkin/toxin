@@ -4,8 +4,8 @@
 <h5>UI Kit</h5>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/colors-and-type.html" rel="noopener noreferrer" target="_blank">Colors & Type</a></p>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/cards.html" rel="noopener noreferrer" target="_blank">Cards</a></p>
-  <p><a href="https://victordesyatkin.github.io/toxin/dist/form-elements.html" rel="noopener noreferrer" target="_blank">Headers & Footers</a></p>
-  <p><a href="https://victordesyatkin.github.io/toxin/dist/headers-and-footers.html" rel="noopener noreferrer" target="_blank">Form Elements</a></p>
+  <p><a href="https://victordesyatkin.github.io/toxin/dist/form-elements.html" rel="noopener noreferrer" target="_blank">Form Elements</a></p>
+  <p><a href="https://victordesyatkin.github.io/toxin/dist/headers-and-footers.html" rel="noopener noreferrer" target="_blank">Headers & Footers</a></p>
 <h5>Website pages</h5>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/landing-page.html" rel="noopener noreferrer" target="_blank">Landing page</a></p>
   <p><a href="https://victordesyatkin.github.io/toxin/dist/landing-page-dates-dropdown.html" rel="noopener noreferrer" target="_blank">Landing page/Dates Dropdown</a></p>
