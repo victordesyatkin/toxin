@@ -85,8 +85,8 @@ module.exports = (env = {}) => {
     if (isProd) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: isDev ? "[name].css" : "[name].[hash].css",
-          chunkFilename: isDev ? "[id].css" : "[id].[hash].css",
+          filename: "[name].[hash].css",
+          chunkFilename: "[id].[hash].css",
           insertAt: {
             after: "title",
           },
