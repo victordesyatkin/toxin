@@ -49,12 +49,12 @@ module.exports = (env = {}) => {
     });
   });
 
-  const isProd = mode === "production";
-  const isDev = mode === "development";
+  const isProduction = mode === "production";
+  const isDevelopment = mode === "development";
 
   const getStyleLoaders = () => {
     return [
-      isProd ? MiniCssExtractPlugin.loader : "style-loader",
+      isProduction ? MiniCssExtractPlugin.loader : "style-loader",
       "css-loader",
     ];
   };
@@ -82,11 +82,11 @@ module.exports = (env = {}) => {
       }),
       new webpack.HotModuleReplacementPlugin(),
     ];
-    if (isProd) {
+    if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: isDev ? "[name].css" : "[name].[hash].css",
-          chunkFilename: isDev ? "[id].css" : "[id].[hash].css",
+          filename: isDevelopment ? "[name].css" : "[name].[hash].css",
+          chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css",
           insertAt: {
             after: "title",
           },
@@ -98,12 +98,12 @@ module.exports = (env = {}) => {
   };
 
   return {
-    mode: isProd ? "production" : isDev && "development",
-    devtool: isDev ? "eval" : undefined,
+    mode: isProduction ? "production" : "development",
+    devtool: isDevelopment ? "eval" : undefined,
     entry: { ...js },
     output: {
-      filename: "[name].js",
-      pathinfo: isDev,
+      filename: isDevelopment ? "[name].js" : "[name].[hash].js",
+      pathinfo: isDevelopment,
     },
     resolve: {
       modules: ["src", "node_modules"],
@@ -128,7 +128,7 @@ module.exports = (env = {}) => {
               loader: "file-loader",
               options: {
                 outputPath: "./assets/images/",
-                name: "[name].[ext]",
+                name: isDevelopment ? "[name].[ext]" : "[name].[hash].[ext]",
               },
             },
           ],
@@ -140,7 +140,7 @@ module.exports = (env = {}) => {
               loader: "file-loader",
               options: {
                 outputPath: "./assets/fonts/",
-                name: "[name].[ext]",
+                name: isDevelopment ? "[name].[ext]" : "[name].[hash].[ext]",
               },
             },
           ],
