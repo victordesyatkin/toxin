@@ -1,7 +1,7 @@
 import get from 'lodash/get';
 import IMask from 'imask';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import './masked-text-field.scss';
 import Input from '../input';
 

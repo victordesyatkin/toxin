@@ -1,4 +1,4 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import Input from '../../components/input';
 import Dropdown from '../../components/dropdown';
 import MaskTextField from '../../components/masked-text-field';
@@ -11,7 +11,6 @@ import RateButtons from '../../components/rate-buttons';
 import RangeSlider from '../../components/range-slider';
 import Pagination from '../../components/pagination';
 import Comment from '../../components/comment';
-import '../../components/input';
 import '../../components/checkbox-buttons';
 import '../../components/toggle-buttons';
 import '../../components/radio-buttons';
@@ -34,9 +33,9 @@ class FormElements {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: FormElements.CLASS_NAME,
       someClass: FormElements,
     });

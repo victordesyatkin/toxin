@@ -1,3 +1,4 @@
+/* eslint comma-dangle: ["error", {"functions": "never"}] */
 import isString from 'lodash/isString';
 import isArray from 'lodash/isArray';
 import trim from 'lodash/trim';
@@ -15,35 +16,39 @@ function renderComponents(props = {}) {
   const { query, render } = props;
   let { parents } = props;
   if (!query) {
-    return;
+    return undefined;
   }
   if (isString(query) && !trim(query)) {
-    return;
+    return undefined;
   }
   if (!render || !isFunction(render)) {
-    return;
+    return undefined;
   }
   if (!parents || !isArray(parents)) {
     parents = [parents];
   } else if (isEmpty(parents)) {
     parents = [undefined];
   }
-  const $elements = [];
-  for (const parent of parents) {
-    $elements.push($(query, parent).each(render));
-  }
-  return $elements;
+  return parents.reduce(
+    (accumulator, parent) => accumulator.push($(query, parent).each(render)),
+    []
+  );
 }
 
-function renderComponent({ element, className, someClass }) {
-  if (!element || !className || !someClass) {
-    return;
+function isRenderComponent({ element, className, SomeClass }) {
+  return !element || !className || !SomeClass;
+}
+
+function renderComponent(options = {}) {
+  const { element, className, SomeClass } = options;
+  if (!isRenderComponent(options)) {
+    return undefined;
   }
   const $element = $(element);
   if ($element.data(className)) {
-    return;
+    return undefined;
   }
-  $element.data(className, new someClass(element));
+  return $element.data(className, new SomeClass(element));
 }
 
 export { wordForm, renderComponents, renderComponent };

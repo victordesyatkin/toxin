@@ -1,7 +1,7 @@
 import get from 'lodash/get';
 import bind from 'bind-decorator';
 
-import { renderComponents } from '../../assets/helpers/utils';
+import { renderComponents } from '../../helpers/utils';
 import './slider.scss';
 
 export default class Slider {

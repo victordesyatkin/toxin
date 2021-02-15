@@ -1,9 +1,10 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import SignIn from '../../components/sign-in';
 import Footer from '../../components/footer';
 import '../../components/card';
 import '../registration';
 import './registration-sign-in.scss';
+
 class RegistrationSignIn {
   static CLASS_NAME = 'REGISTRATION_SIGN_IN';
 

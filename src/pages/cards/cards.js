@@ -1,4 +1,4 @@
-import { renderComponent, renderComponents } from '../../assets/helpers/utils';
+import { renderComponent, renderComponents } from '../../helpers/utils';
 import Picker from '../../components/picker';
 import SignUp from '../../components/sign-up';
 import SignIn from '../../components/sign-in';
@@ -22,9 +22,9 @@ class Cards {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Cards.CLASS_NAME,
       someClass: Cards,
     });

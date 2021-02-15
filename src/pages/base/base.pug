@@ -6,7 +6,7 @@ include ../../components/footer/footer
 doctype html
 html(lang="en")
   head
-    <meta charset="utf-8"/>
+    meta(charset="utf-8")
     block meta
       - let { meta = [] } = htmlWebpackPlugin.options.getData() || {};
       each item in meta
@@ -25,15 +25,15 @@ html(lang="en")
     - let data = htmlWebpackPlugin.options.getData() || {};
     +layout
       +layout__header
-        +layout__container({basis: 1440, align: "center"})
+        +layout__container({basis: 1440, align: 'center'})
           block header
             - let { headerNotAuthorized } = htmlWebpackPlugin.options.getData() || {};
             +header(headerNotAuthorized)
       +layout__main
-        +layout__container({basis: 1440, align: "center"})
+        +layout__container({basis: 1440, align: 'center'})
           block main
       +layout__footer
-        +layout__container({basis: 1440, align: "center"})
+        +layout__container({basis: 1440, align: 'center'})
           block footer
             - let { footer } = htmlWebpackPlugin.options.getData() || {};
             +footer(footer)

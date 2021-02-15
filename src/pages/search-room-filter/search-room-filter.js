@@ -1,4 +1,4 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import FilterDateDropdown from '../../components/filter-date-dropdown';
 import Dropdown from '../../components/dropdown';
 import RangeSlider from '../../components/range-slider';

@@ -6,7 +6,7 @@ import {
   wordForm,
   renderComponents,
   renderComponent,
-} from '../../assets/helpers/utils';
+} from '../../helpers/utils';
 import Dropdown from '../dropdown';
 import DateDropdown from '../date-dropdown';
 import '../button';
@@ -15,8 +15,11 @@ import './book.scss';
 
 class Book {
   static TYPE_PRICE = 3;
+
   static TYPE_COUNT = 1;
+
   static TYPE_FEE = 2;
+
   static IS_CALENDAR = 1;
 
   static CLASS_NAME = 'BOOK';
@@ -30,12 +33,16 @@ class Book {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Book.CLASS_NAME,
       someClass: Book,
     });
+  }
+
+  static prepareNumber(n = '') {
+    return n.split(' ').join('') || 0;
   }
 
   constructor(component) {
@@ -59,8 +66,8 @@ class Book {
     );
     this._$totalTotal = $('.js-book__section-total', this._$total);
     this._props = this._$component.data('options');
-    this._price = parseFloat(this._prepareNumber(this._props.price));
-    this._discount = parseFloat(this._prepareNumber(this._props.discount));
+    this._price = parseFloat(Book.prepareNumber(this._props.price));
+    this._discount = parseFloat(Book.prepareNumber(this._props.discount));
     this._unit = this._props.unit;
     this._$calendar = $('.js-calendar', this._$component);
     this._$input = $(
@@ -77,11 +84,8 @@ class Book {
     this._$calendar.on('click', this._setCalc);
   }
 
-  _prepareNumber(n = '') {
-    return n.split(' ').join('') || 0;
-  }
-
-  _setTotal(total = 0) {
+  _setTotal(tempTotal = 0) {
+    let total = tempTotal;
     total += this._dirty - this._discount;
     if (total < 0) {
       total = 0;
@@ -99,7 +103,7 @@ class Book {
 
   @bind
   _prepareDirtyItem(index, element) {
-    this._dirty += parseFloat(this._prepareNumber($(element).html()));
+    this._dirty += parseFloat(Book.prepareNumber($(element).html()));
   }
 
   @bind

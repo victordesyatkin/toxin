@@ -2,7 +2,7 @@ import datepicker from 'air-datepicker';
 import get from 'lodash/get';
 import bind from 'bind-decorator';
 
-import { renderComponents } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 
 import './calendar.scss';
 
@@ -30,8 +30,51 @@ class Calendar {
     });
   }
 
-  static _renderComponent() {
-    new Calendar(arguments[1]);
+  static _renderComponent(index, element) {
+    renderComponent({
+      element,
+      className: Calendar.CLASS_NAME,
+      SomeClass: Calendar,
+    });
+  }
+
+  static _isValidDate({ partDay, partMonth, partYear }) {
+    return partDay && partMonth && partYear;
+  }
+
+  static _isHideInRange({ cellType, date }) {
+    return (
+      this._rangeFromDate &&
+      cellType === 'day' &&
+      this._rangeFromDate === new Date(date).getTime()
+    );
+  }
+
+  static _onRenderCell(date, cellType) {
+    if (Calendar._isHideInRange({ cellType, date })) {
+      return {
+        classes: '-hide-in-range-',
+      };
+    }
+    return undefined;
+  }
+
+  static _value2Date(value = '') {
+    const parts = value.split('.');
+    const partDay = parts[0];
+    const partMonth = parts[1];
+    const partYear = parts[2];
+    let date = '';
+    if (Calendar._isValidDate()) {
+      date = `${partMonth}.${partDay}.${partYear}`;
+    }
+    if (date) {
+      date = new Date(date);
+      if (!(date instanceof Date)) {
+        date = '';
+      }
+    }
+    return date;
   }
 
   constructor(element) {
@@ -47,7 +90,7 @@ class Calendar {
       ...Calendar.OPTIONS,
       ...get(this._$element.data(), ['options']),
       onSelect: this._handlerSelect,
-      onRenderCell: this._onRenderCell(this),
+      onRenderCell: Calendar._onRenderCell(this),
     };
     this._options = this._prepareOptions(this._options);
     this._$input.datepicker(this._options);
@@ -57,22 +100,18 @@ class Calendar {
       'click',
       this._handleCleanButtonClick
     );
-    this._$buttonApply = $('.js-calendar__button_apply', this._$element).on(
-      'click',
-      this._handleApplyButtonClick
-    );
     this._$element.on('click', this._handleBlockClick);
     this._toggleVisibleButtonClean();
     this._selectDate();
   }
 
   @bind
-  _handlerSelect(formattedDate, date = {}, inst) {
+  _handlerSelect(formattedDate, date = {}) {
     if (this._options.range) {
       if (Object.prototype.toString.call(date) !== '[object Array]') {
         return false;
       }
-      const length = date.length;
+      const { length } = date;
       if (length === 1) {
         this._rangeFromDate = new Date(date[0]).getTime();
       } else if (this._rangeFromDate) {
@@ -84,25 +123,9 @@ class Calendar {
   }
 
   @bind
-  _onRenderCell(date, cellType) {
-    if (
-      this._rangeFromDate &&
-      cellType === 'day' &&
-      this._rangeFromDate === new Date(date).getTime()
-    ) {
-      return {
-        classes: '-hide-in-range-',
-      };
-    }
-  }
-
-  @bind
   _handleCleanButtonClick() {
     this._datepicker.clear();
   }
-
-  @bind
-  _handleApplyButtonClick() {}
 
   _toggleVisibleButtonClean() {
     const selectedDatesLength = get(this._datepicker, ['selectedDates'], [])
@@ -125,8 +148,8 @@ class Calendar {
     this._toggleVisibleButtonClean();
   }
 
-  _prepareOptions(options) {
-    options = { ...options };
+  _prepareOptions(tempOptions) {
+    let options = { ...tempOptions };
     const minDateType = get(this._$element.data(), ['options', 'minDateType']);
     switch (minDateType) {
       case 'current': {
@@ -134,16 +157,19 @@ class Calendar {
         break;
       }
       default: {
+        break;
       }
     }
     return options;
   }
 
   _selectDate() {
-    let start = this._value2Date(
+    let start = Calendar._value2Date(
       get(this._$element.data(), ['options', 'start'])
     );
-    let end = this._value2Date(get(this._$element.data(), ['options', 'end']));
+    let end = Calendar._value2Date(
+      get(this._$element.data(), ['options', 'end'])
+    );
     if (end && !start) {
       start = new Date();
       start = start.setDate(end.getDate() - 1);
@@ -155,24 +181,6 @@ class Calendar {
     if (start && end) {
       this._datepicker.selectDate([start, end]);
     }
-  }
-
-  _value2Date(value = '') {
-    const parts = value.split('.');
-    const partDay = parts[0];
-    const partMonth = parts[1];
-    const partYear = parts[2];
-    let date = '';
-    if (partDay && partMonth && partYear) {
-      date = `${partMonth}.${partDay}.${partYear}`;
-    }
-    if (date) {
-      date = new Date(date);
-      if (!(date instanceof Date)) {
-        date = '';
-      }
-    }
-    return date;
   }
 }
 

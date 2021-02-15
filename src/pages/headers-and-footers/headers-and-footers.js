@@ -1,7 +1,8 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import Footer from '../../components/footer';
 import '../demo-base/demo-base';
 import './headers-and-footers.scss';
+
 class HeadersAndFooters {
   static CLASS_NAME = 'HEADERS_AND_FOOTERS';
 
@@ -14,9 +15,9 @@ class HeadersAndFooters {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: HeadersAndFooters.CLASS_NAME,
       someClass: HeadersAndFooters,
     });

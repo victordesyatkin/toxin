@@ -6,7 +6,7 @@ import {
   renderComponents,
   renderComponent,
   wordForm,
-} from '../../assets/helpers/utils';
+} from '../../helpers/utils';
 import './rate.scss';
 
 class Rate {

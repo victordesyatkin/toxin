@@ -1,6 +1,6 @@
 import 'normalize.css';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import Footer from '../../components/footer';
 import '../../components/layout';
 import '../../components/header';
@@ -15,13 +15,13 @@ class Base {
     renderComponents({
       parents,
       query: query || 'body',
-      render: render || SignIn._renderComponent,
+      render: render || Base._renderComponent,
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: Base.CLASS_NAME,
       someClass: Base,
     });

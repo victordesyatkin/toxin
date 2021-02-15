@@ -1,7 +1,7 @@
 import upperFirst from 'lodash/upperFirst';
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
 import Calendar from '../calendar';
 import './date-dropdown.scss';

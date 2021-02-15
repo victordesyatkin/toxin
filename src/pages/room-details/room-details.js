@@ -1,4 +1,4 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import Book from '../../components/book';
 import Comments from '../../components/comments';
 import Footer from '../../components/footer';
@@ -14,6 +14,7 @@ import './room-details.scss';
 
 class RoomDetails {
   static CLASS_NAME = 'ROOM_DETAILS';
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({

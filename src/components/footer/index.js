@@ -1,4 +1,4 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import SubscriptionTextField from '../subscription-text-field';
 import '../logo-link';
 import '../list-links';

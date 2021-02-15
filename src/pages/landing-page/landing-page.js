@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import Picker from '../../components/picker';
 import Footer from '../../components/footer';
 import '../base/base';
@@ -9,6 +9,7 @@ import './landing-page.scss';
 
 class LandingPage {
   static CLASS_NAME = 'LANDING_PAGE';
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
@@ -18,13 +19,21 @@ class LandingPage {
     });
   }
 
-  static _renderComponent() {
+  static _renderComponent(index, element) {
     renderComponent({
-      element: arguments[1],
+      element,
       className: LandingPage.CLASS_NAME,
       someClass: LandingPage,
     });
   }
+
+  data = {
+    startDate: '',
+    endDate: '',
+    adults: '',
+    children: '',
+    babies: '',
+  };
 
   constructor(element) {
     this._element = element;
@@ -40,24 +49,18 @@ class LandingPage {
     this._$form.on('submit', this._handleSubmitButtonClick);
   }
 
-  _parseFormItem(data, index, element) {
-    const name = element.name;
-    if (Object.keys(data).indexOf(name) !== -1) {
-      data[name] = $(element).val();
+  @bind
+  _parseFormItem(index, element) {
+    const { name } = element;
+    if (Object.keys(this.data).indexOf(name) !== -1) {
+      this.data[name] = $(element).val();
     }
   }
 
   @bind
   _handleSubmitButtonClick() {
-    const data = {
-      startDate: '',
-      endDate: '',
-      adults: '',
-      children: '',
-      babies: '',
-    };
-    $('input[name]', this._$form).each(this._parseFormItem.bind(this, data));
-    localStorage.setItem('landingPage', JSON.stringify(data));
+    $('input[name]', this._$form).each(this._parseFormItem);
+    localStorage.setItem('landingPage', JSON.stringify(this.data));
   }
 }
 

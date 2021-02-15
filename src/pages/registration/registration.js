@@ -1,8 +1,9 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import SignUp from '../../components/sign-up';
 import Footer from '../../components/footer';
 import '../../components/card';
 import './index';
+
 class Registration {
   static CLASS_NAME = 'REGISTRATION';
 

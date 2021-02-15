@@ -4,7 +4,7 @@ import {
   wordForm,
   renderComponents,
   renderComponent,
-} from '../../assets/helpers/utils';
+} from '../../helpers/utils';
 import Input from '../input';
 import './dropdown.scss';
 class Dropdown {

@@ -1,3 +1,3 @@
 import '../../components/header-ui-kit';
-import '../base/base.js';
+import '../base/base';
 import './demo-base.scss';
