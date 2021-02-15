@@ -4,17 +4,17 @@ include ../card-footer/card-footer
 include ../masked-text-field/masked-text-field
 
 mixin sign-in(props = {})
-    - 
-        let { title, email, password, signIn, signUp } = props; 
-    .sign-in.js-sign-in
-        if (title) 
-            .sign-in__title
-                |#{title}
-        .sign-in__email
-            +masked-text-field(email)
-        .sign-in__password
-            +input(password)
-        .sign-in__button-sign-in
-            +button(signIn)
-        .sign-in__button-sign-up
-            +card-footer(signUp)
+  -
+    let { title, email, password, signIn, signUp } = props; 
+  .sign-in.js-sign-in
+    if (title)
+      .sign-in__title
+        | #{title}
+    .sign-in__email
+      +masked-text-field(email)
+    .sign-in__password
+      +input(password)
+    .sign-in__button-sign-in
+      +button(signIn)
+    .sign-in__button-sign-up
+      +card-footer(signUp)

@@ -1,8 +1,8 @@
-import get from "lodash/get";
-import bind from "bind-decorator";
+import get from 'lodash/get';
+import bind from 'bind-decorator';
 
-import { renderComponents } from "../../assets/helpers/utils";
-import "./slider.scss";
+import { renderComponents } from '../../assets/helpers/utils';
+import './slider.scss';
 
 export default class Slider {
   static TYPE_BUTTON_PREV = 1;
@@ -13,7 +13,7 @@ export default class Slider {
     const { parents } = props;
     renderComponents({
       parents,
-      query: ".js-slider",
+      query: '.js-slider',
       render: Slider._renderComponent,
     });
   }
@@ -28,17 +28,17 @@ export default class Slider {
   }
 
   _init() {
-    this._props = this._$element.data("props");
-    this._images = get(this._props, ["images"]) || [];
+    this._props = this._$element.data('props');
+    this._images = get(this._props, ['images']) || [];
     this._length = this._images.length;
-    this._$points = $(".js-slider__point", this._$element);
+    this._$points = $('.js-slider__point', this._$element);
     this._$prev = $(`[data-type="${Slider.TYPE_BUTTON_PREV}"]`, this._$element);
-    this._$prev.on("click", this._onClickControl.bind(this, 1));
+    this._$prev.on('click', this._onClickControl.bind(this, 1));
     this._$next = $(`[data-type="${Slider.TYPE_BUTTON_NEXT}"]`, this._$element);
-    this._$next.on("click", this._onClickControl.bind(this, 2));
-    this._$image = $(".js-slider__section-images img", this._$element);
+    this._$next.on('click', this._onClickControl.bind(this, 2));
+    this._$image = $('.js-slider__section-images img', this._$element);
     this._index = 0;
-    this._$points.on("click", this._onClickPoint);
+    this._$points.on('click', this._onClickPoint);
     this._setImage(this._index);
     this._setPoint(this._index);
   }
@@ -46,8 +46,8 @@ export default class Slider {
   @bind
   _onClickPoint(e) {
     e.preventDefault();
-    const index = get($(e.target).data(), ["index"]);
-    if (typeof index !== "undefined" && this.index !== index) {
+    const index = get($(e.target).data(), ['index']);
+    if (typeof index !== 'undefined' && this.index !== index) {
       this._cleanPoint(this._index);
       this._index = index;
       this._setImage(this._index);
@@ -68,17 +68,17 @@ export default class Slider {
   }
 
   _setImage(index) {
-    let src = get(this._images, [index, "src"]) || "";
-    let alt = get(this._images, [index, "alt"]) || "";
+    let src = get(this._images, [index, 'src']) || '';
+    let alt = get(this._images, [index, 'alt']) || '';
     this._$image.attr({ src, alt });
   }
 
   _setPoint(index) {
-    $(this._$points.get(index)).addClass("slider__point_full");
+    $(this._$points.get(index)).addClass('slider__point_full');
   }
 
   _cleanPoint(index) {
-    $(this._$points.get(index)).removeClass("slider__point_full");
+    $(this._$points.get(index)).removeClass('slider__point_full');
   }
 
   _changeIndex(k) {

@@ -1,23 +1,23 @@
-import upperFirst from "lodash/upperFirst";
-import bind from "bind-decorator";
+import upperFirst from 'lodash/upperFirst';
+import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import MaskedTextField from "../masked-text-field";
-import Calendar from "../calendar";
-import "./date-dropdown.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import MaskedTextField from '../masked-text-field';
+import Calendar from '../calendar';
+import './date-dropdown.scss';
 
 class DateDropdown {
-  static CLASS_NAME = "DATE_DROPDOWN";
+  static CLASS_NAME = 'DATE_DROPDOWN';
   static TYPE_CLEAN = 0;
   static TYPE_APPLY = 1;
   static IS_CALENDAR = 1;
-  static TYPES = ["start", "end"];
+  static TYPES = ['start', 'end'];
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-date-dropdown",
+      query: query || '.js-date-dropdown',
       render: render || DateDropdown._renderComponent,
     });
   }
@@ -39,22 +39,22 @@ class DateDropdown {
   _init() {
     MaskedTextField.renderComponents({ parents: this._$element });
     Calendar.renderComponents({ parents: this._$element });
-    this._$sections = $(".js-input__section", this._$element);
-    this._inputStart = $(".js-input__input", this._$sections.get(0));
-    this._inputStart.attr("disabled", true);
-    this._inputEnd = $(".js-input__input", this._$sections.get(1));
-    this._inputEnd.attr("disabled", true);
-    this._$sections.on("click", this._handleInputClick);
-    this._$calendar = $(".js-date-dropdown__section-calendar", this._$element);
+    this._$sections = $('.js-input__section', this._$element);
+    this._inputStart = $('.js-input__input', this._$sections.get(0));
+    this._inputStart.attr('disabled', true);
+    this._inputEnd = $('.js-input__input', this._$sections.get(1));
+    this._inputEnd.attr('disabled', true);
+    this._$sections.on('click', this._handleInputClick);
+    this._$calendar = $('.js-date-dropdown__section-calendar', this._$element);
     this._datepicker = $(
       `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
       this._$calendar
     )
       .datepicker()
-      .data("datepicker");
+      .data('datepicker');
     this._setDates({
-      start: this._value2Date(this._getValue("start")),
-      end: this._value2Date(this._getValue("end")),
+      start: this._value2Date(this._getValue('start')),
+      end: this._value2Date(this._getValue('end')),
     });
     this._buttonClean = $(
       `button[data-type="${DateDropdown.TYPE_CLEAN}"]`,
@@ -64,42 +64,42 @@ class DateDropdown {
       `button[data-type="${DateDropdown.TYPE_APPLY}"]`,
       this._$calendar
     );
-    this._buttonClean.on("click", this._handleCleanButtonClick);
-    this._buttonApply.on("click", this._handleApplyButtonClick);
-    $(document).on("click", this._handleDocumentClick);
+    this._buttonClean.on('click', this._handleCleanButtonClick);
+    this._buttonApply.on('click', this._handleApplyButtonClick);
+    $(document).on('click', this._handleDocumentClick);
   }
 
   _setZIndex(value) {
-    this._$calendar.css({ "z-index": value });
+    this._$calendar.css({ 'z-index': value });
   }
 
   @bind
   _handleInputClick() {
-    if (this._$calendar.is(":visible")) {
-      this._$calendar.slideUp("fast", this._setZIndex.bind(this, ""));
+    if (this._$calendar.is(':visible')) {
+      this._$calendar.slideUp('fast', this._setZIndex.bind(this, ''));
     } else {
       this._setZIndex(99);
-      this._$calendar.slideDown("fast");
+      this._$calendar.slideDown('fast');
     }
   }
 
   _handleCleanButtonClick() {
-    this._setValue("start", "");
-    this._setValue("end", "");
+    this._setValue('start', '');
+    this._setValue('end', '');
   }
 
   @bind
   _handleApplyButtonClick(isToggle = true) {
     const [start, end] = this._datepicker.selectedDates;
     if (start) {
-      this._setValue("start", this._prepareDate(start));
+      this._setValue('start', this._prepareDate(start));
     } else {
-      this._setValue("start", "");
+      this._setValue('start', '');
     }
     if (end) {
-      this._setValue("end", this._prepareDate(end));
+      this._setValue('end', this._prepareDate(end));
     } else {
-      this._setValue("end", "");
+      this._setValue('end', '');
     }
     isToggle && this._handleInputClick();
   }
@@ -119,18 +119,18 @@ class DateDropdown {
   }
 
   _value2Date(value) {
-    const parts = value.split(".");
+    const parts = value.split('.');
     const partDay = parseFloat(parts[0]);
     const partMonth = parseFloat(parts[1]);
     const partYear = parseFloat(parts[2]);
-    let date = "";
+    let date = '';
     if (partDay && partMonth && partYear) {
       date = `${partMonth}.${partDay}.${partYear}`;
     }
     if (date) {
       date = new Date(date);
       if (!(date instanceof Date)) {
-        date = "";
+        date = '';
       }
     }
     return date;
@@ -138,10 +138,10 @@ class DateDropdown {
 
   @bind
   _handleDocumentClick(event) {
-    const targetClass = `.${$(event.target, this._$element).attr("class")}`;
+    const targetClass = `.${$(event.target, this._$element).attr('class')}`;
     if (
       !$(event.target).closest(this._$element).length &&
-      !$(event.target, this._$element).hasClass("datepicker--cell") &&
+      !$(event.target, this._$element).hasClass('datepicker--cell') &&
       !$(targetClass, this._$element).length
     ) {
       this._datepicker.hide();
@@ -160,21 +160,21 @@ class DateDropdown {
     this._datepicker.selectDate([start, end]);
   }
 
-  _getValue(type = "") {
+  _getValue(type = '') {
     if (this._checkType(type)) {
       return this[`_input${upperFirst(type)}`].val();
     }
-    return "";
+    return '';
   }
 
-  _setValue(type = "", value = "") {
+  _setValue(type = '', value = '') {
     if (this._checkType(type)) {
       return this[`_input${upperFirst(type)}`].val(value);
     }
-    return "";
+    return '';
   }
 
-  _checkType(type = "") {
+  _checkType(type = '') {
     return DateDropdown.TYPES.indexOf(type) > -1;
   }
 }

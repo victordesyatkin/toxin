@@ -1,37 +1,25 @@
 mixin checkbox-button(props = {})
-    -   
-        let
-            { name, src, alt, tabindex, isRequired, isDisabled, isChecked, label, theme } = props;
-            className = 'checkbox-button';
-            classNames = className;
-            id = name ? `checkbox-button-${name}`: '';
-            themes = {
-                bold: 'bold',
-            }
-        classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    label(
-        for=id
-        class=classNames
+  -
+    let
+        { name, src, alt, tabindex, isRequired, isDisabled, isChecked, label, theme } = props;
+        className = 'checkbox-button';
+        classNames = className;
+        id = name ? `checkbox-button-${name}`: '';
+        themes = {
+            bold: 'bold',
+        }
+    classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+  label(for=id, class=classNames)
+    input.checkbox-button__input(
+      type="checkbox",
+      name=name,
+      tabindex=tabindex,
+      required=isRequired,
+      disabled=isDisabled,
+      checked=isChecked,
+      id=id
     )
-        input.checkbox-button__input(
-            type="checkbox"
-            name=name
-            tabindex=tabindex
-            required=isRequired
-            disabled=isDisabled
-            checked=isChecked
-            id=id
-        )
-        span.checkbox-button__check-mark
-            if (src)
-                img.checkbox-button__mark(
-                    src=src,
-                    alt=alt
-                )
-        span.checkbox-button__label=label
-
-                    
-                
-                    
-
-
+    span.checkbox-button__check-mark
+      if (src)
+        img.checkbox-button__mark(src=src, alt=alt)
+    span.checkbox-button__label= label

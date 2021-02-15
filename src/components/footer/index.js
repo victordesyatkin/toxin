@@ -1,18 +1,18 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import SubscriptionTextField from "../subscription-text-field";
-import "../logo-link";
-import "../list-links";
-import "../copyright";
-import "./footer.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import SubscriptionTextField from '../subscription-text-field';
+import '../logo-link';
+import '../list-links';
+import '../copyright';
+import './footer.scss';
 
 class Footer {
-  static CLASS_NAME = "FOOTER";
+  static CLASS_NAME = 'FOOTER';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-footer",
+      query: query || '.js-footer',
       render: render || Footer._renderComponent,
     });
   }

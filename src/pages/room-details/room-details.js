@@ -1,24 +1,24 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import Book from "../../components/book";
-import Comments from "../../components/comments";
-import Footer from "../../components/footer";
-import Rate from "../../components/rate";
-import LikeButton from "../../components/like-button";
-import Slider from "../../components/slider";
-import "../../components/info";
-import "../../components/card";
-import "../../components/bullet-list";
-import "../../components/description";
-import "../base/base";
-import "./room-details.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import Book from '../../components/book';
+import Comments from '../../components/comments';
+import Footer from '../../components/footer';
+import Rate from '../../components/rate';
+import LikeButton from '../../components/like-button';
+import Slider from '../../components/slider';
+import '../../components/info';
+import '../../components/card';
+import '../../components/bullet-list';
+import '../../components/description';
+import '../base/base';
+import './room-details.scss';
 
 class RoomDetails {
-  static CLASS_NAME = "ROOM_DETAILS";
+  static CLASS_NAME = 'ROOM_DETAILS';
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-room-details",
+      query: query || '.js-room-details',
       render: render || RoomDetails._renderComponent,
     });
   }
@@ -48,4 +48,4 @@ class RoomDetails {
   }
 }
 
-window.addEventListener("load", RoomDetails.renderComponents);
+window.addEventListener('load', RoomDetails.renderComponents);

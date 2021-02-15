@@ -1,14 +1,14 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import Expandable from "../expandable";
-import "./expandable-checkbox-list.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import Expandable from '../expandable';
+import './expandable-checkbox-list.scss';
 class ExpandableCheckboxList {
-  static CLASS_NAME = "EXPANDABLE_CHECKBOX_LIST";
+  static CLASS_NAME = 'EXPANDABLE_CHECKBOX_LIST';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-expandable-checkbox-list",
+      query: query || '.js-expandable-checkbox-list',
       render: render || ExpandableCheckboxList._renderComponent,
     });
   }

@@ -1,36 +1,27 @@
 mixin button(props = {})
-    -
-        let
-            { text, type, view, value, name, src, alt, isHover, isDisabled, size } = props;
-            className = "button";
-            classNames = `${className} ${className}__view`;
-            views = {
-                1: 1,
-                2: 2,
-                3: 3,
-            };
-            sizes = {
-                1: 1,
-                2: 2,
-                3: 3,
-            };
-        classNames += isHover ? ` ${className}__view_hover` : '';
-        classNames += views[view] ? ` ${className}__view_${views[view]}` : '';
-        classNames += sizes[size] ? ` ${className}_sizes_${sizes[size]}` : '';
-        if (sizes[size] && sizes[size] === 3 && src) {
-            classNames += ` ${className}_with_image`;
-        }
-    button(
-        class=classNames
-        name=name
-        type=type
-        value=value
-        disabled=isDisabled
-    )
-        span.button__content=text
-        if (view === 3 && src)
-            span.button__image
-                img(
-                    src=src
-                    alt=alt
-                )
+  -
+    let
+        { text, type, view, value, name, src, alt, isHover, isDisabled, size } = props;
+        className = "button";
+        classNames = `${className} ${className}__view`;
+        views = {
+            1: 1,
+            2: 2,
+            3: 3,
+        };
+        sizes = {
+            1: 1,
+            2: 2,
+            3: 3,
+        };
+    classNames += isHover ? ` ${className}__view_hover` : '';
+    classNames += views[view] ? ` ${className}__view_${views[view]}` : '';
+    classNames += sizes[size] ? ` ${className}_sizes_${sizes[size]}` : '';
+    if (sizes[size] && sizes[size] === 3 && src) {
+        classNames += ` ${className}_with_image`;
+    }
+  button(class=classNames, name=name, type=type, value=value, disabled=isDisabled)
+    span.button__content= text
+    if (view === 3 && src)
+      span.button__image
+        img(src=src, alt=alt)

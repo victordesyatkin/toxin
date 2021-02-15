@@ -4,20 +4,20 @@ include ../card-header/card-header
 include ../rate-button/rate-button
 
 mixin card-slider(props)
-    -
-        let { slider, info, rating, commentsContent } = props || {};
-        let { button, comments } = rating || {};
-    +card
-        .card-slider.js-card-slider
-            .card-slider__slider
-                +slider(slider)
-            .card-slider__info
-                +card-header(info)
-            .card-slider__separator-wrap
-                .card-slider__separator
-            .card-slider__score
-                .card-slider__rating
-                    +rate-button(button)
-                .card-slider__comments
-                    span.card-slider__comments-numbers=comments 
-                    span.card-slider__comments-content=commentsContent
+  -
+    let { slider, info, rating, commentsContent } = props || {};
+    let { button, comments } = rating || {};
+  +card
+    .card-slider.js-card-slider
+      .card-slider__slider
+        +slider(slider)
+      .card-slider__info
+        +card-header(info)
+      .card-slider__separator-wrap
+        .card-slider__separator
+      .card-slider__score
+        .card-slider__rating
+          +rate-button(button)
+        .card-slider__comments
+          span.card-slider__comments-numbers= comments
+          span.card-slider__comments-content= commentsContent

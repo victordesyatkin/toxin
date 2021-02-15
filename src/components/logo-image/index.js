@@ -1,1 +1,1 @@
-import "./logo-image.scss";
+import './logo-image.scss';

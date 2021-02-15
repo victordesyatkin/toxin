@@ -1,23 +1,23 @@
-import { renderComponent, renderComponents } from "../../assets/helpers/utils";
-import Picker from "../../components/picker";
-import SignUp from "../../components/sign-up";
-import SignIn from "../../components/sign-in";
-import Calendar from "../../components/calendar";
-import CardSlider from "../../components/card-slider";
-import Book from "../../components/book";
-import "../../components/card";
-import "../../index";
-import "../demo-base/demo-base";
-import "./cards.scss";
+import { renderComponent, renderComponents } from '../../assets/helpers/utils';
+import Picker from '../../components/picker';
+import SignUp from '../../components/sign-up';
+import SignIn from '../../components/sign-in';
+import Calendar from '../../components/calendar';
+import CardSlider from '../../components/card-slider';
+import Book from '../../components/book';
+import '../../components/card';
+import '../../index';
+import '../demo-base/demo-base';
+import './cards.scss';
 
 class Cards {
-  static CLASS_NAME = "CARDS";
+  static CLASS_NAME = 'CARDS';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-cards",
+      query: query || '.js-cards',
       render: render || Cards._renderComponent,
     });
   }
@@ -47,6 +47,6 @@ class Cards {
   }
 }
 
-window.addEventListener("load", Cards.renderComponents);
+window.addEventListener('load', Cards.renderComponents);
 
 export default Cards;

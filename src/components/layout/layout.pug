@@ -1,22 +1,22 @@
-mixin layout()
+mixin layout
   .layout
     block
 
-mixin layout__header()
+mixin layout__header
   header.layout__header
     block
 
-mixin layout__main()
+mixin layout__main
   main.layout__main
     block
 
-mixin layout__footer()
+mixin layout__footer
   footer.layout__footer
     block
 
 mixin layout__container(options)
   if !options
-    - options = {}
+    - options = {};
 
   -
     var classes = ''
@@ -30,5 +30,5 @@ mixin layout__container(options)
     classes += options.mix ? ' ' + options.mix : ''
     classes += options.theme ? ' ' + 'layout__container_' + options.theme : ''
 
-  .layout__container(class= classes)
+  .layout__container(class=classes)
     block

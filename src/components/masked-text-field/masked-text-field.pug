@@ -1,10 +1,8 @@
 include ../input/input
 
 mixin masked-text-field(props = {})
-    -
-        let
-            { mask, input } = props;
-    .masked-text-field.js-masked-text-field(
-        data-options=mask
-    )
-        +input(input)
+  -
+    let
+        { mask, input } = props;
+  .masked-text-field.js-masked-text-field(data-options=mask)
+    +input(input)

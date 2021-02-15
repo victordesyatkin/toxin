@@ -4,36 +4,31 @@ include ../subscription-text-field/subscription-text-field
 include ../copyright/copyright
 
 mixin footer(props = {})
-    -
-        let { info = {}, items = [], subscribe = {}, copyright, logo, action, size } = props;
-        let { content } = info;
-        let
-            { header, description, field } = subscribe;
-            sizes = {
-                'sm': 'size_sm'
-            };
-            className = 'footer';
-            classNames = `${className} js-${className}`;
-        classNames += sizes[size] ? ` ${className}_${sizes[size]}` : '';
-    div(
-        class=classNames
-    )
-        .footer__main-section
-            .footer__info-section
-                .footer__logo
-                    +logo-link(logo)
-                .footer__info=content
-            nav.footer__nav-items
-                each item in items
-                    .footer__nav-item
-                        +list-links(item)
-                form(
-                    class="footer__subscribe-section"
-                    action=action
-                )
-                    .footer__subscribe-header=header
-                    .footer__subscribe-description=description
-                    .footer__subscribe-field
-                        +subscription-text-field(field)
-        .footer__copyright-section
-            +copyright(copyright)
+  -
+    let { info = {}, items = [], subscribe = {}, copyright, logo, action, size } = props;
+    let { content } = info;
+    let
+        { header, description, field } = subscribe;
+        sizes = {
+            'sm': 'size_sm'
+        };
+        className = 'footer';
+        classNames = `${className} js-${className}`;
+    classNames += sizes[size] ? ` ${className}_${sizes[size]}` : '';
+  div(class=classNames)
+    .footer__main-section
+      .footer__info-section
+        .footer__logo
+          +logo-link(logo)
+        .footer__info= content
+      nav.footer__nav-items
+        each item in items
+          .footer__nav-item
+            +list-links(item)
+        form.footer__subscribe-section(action=action)
+          .footer__subscribe-header= header
+          .footer__subscribe-description= description
+          .footer__subscribe-field
+            +subscription-text-field(field)
+    .footer__copyright-section
+      +copyright(copyright)

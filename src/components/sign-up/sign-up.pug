@@ -6,31 +6,31 @@ include ../card-footer/card-footer
 include ../button/button
 
 mixin sign-up(props = {})
-    - 
-        let {
-            title, firstName, lastName, genderMale, genderFemale, birthday, email, password, contribute, pay, signIn
-        } = props; 
-    .sign-up.js-sign-up
-        if (title) 
-            .sign-up__title=title
-        .sign-up__first-name
-            +input(firstName)
-        .sign-up__last-name
-            +input(lastName)
-        .sign-up__genders
-            .sign-up__gender
-                +radio-button(genderMale)
-            .sign-up__gender
-                +radio-button(genderFemale)
-        .sign-up__birthday
-            +masked-text-field(birthday)
-        .sign-up__email
-            +masked-text-field(email)
-        .sign-up__password
-            +input(password)
-        .sign-up__contribute
-            +toggle-button(contribute) 
-        .sign-up__button-pay
-            +button(pay)
-        .sign-up__section-sign-in
-            +card-footer(signIn)
+  -
+    let {
+        title, firstName, lastName, genderMale, genderFemale, birthday, email, password, contribute, pay, signIn
+    } = props; 
+  .sign-up.js-sign-up
+    if (title)
+      .sign-up__title= title
+    .sign-up__first-name
+      +input(firstName)
+    .sign-up__last-name
+      +input(lastName)
+    .sign-up__genders
+      .sign-up__gender
+        +radio-button(genderMale)
+      .sign-up__gender
+        +radio-button(genderFemale)
+    .sign-up__birthday
+      +masked-text-field(birthday)
+    .sign-up__email
+      +masked-text-field(email)
+    .sign-up__password
+      +input(password)
+    .sign-up__contribute
+      +toggle-button(contribute) 
+    .sign-up__button-pay
+      +button(pay)
+    .sign-up__section-sign-in
+      +card-footer(signIn)

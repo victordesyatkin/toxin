@@ -2,14 +2,14 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 
-mixin picker (props = {})
-    - let { label, dateDropdown, dropdown, button } = props;
-    .picker.js-picker
-        if (label)
-            .picker__label=label
-        .picker__date-dropdown
-            +date-dropdown(dateDropdown)
-        .picker__dropdown
-            +dropdown(dropdown)
-        .picker__buttons
-            +button(button)
+mixin picker(props = {})
+  - let { label, dateDropdown, dropdown, button } = props;
+  .picker.js-picker
+    if (label)
+      .picker__label= label
+    .picker__date-dropdown
+      +date-dropdown(dateDropdown)
+    .picker__dropdown
+      +dropdown(dropdown)
+    .picker__buttons
+      +button(button)

@@ -1,35 +1,25 @@
 include ../calendar/calendar
 
 mixin filter-date-dropdown(props= {})
-    - 
-        let { label, input = {}, isExpanded, isForcedExpanded, placeholder, separator, calendar } = props;
-        let { name, value, dummy } = input;
-        let className = 'filter-date-dropdown';
-        let classNames = `${className} js-${className}`;
-        classNames += isExpanded ? ` ${className}_expanded` : '';
-        classNames += isForcedExpanded ? ` ${className}_forced-expanded` : '';
-    div(
-        data-options={dummy, separator}
-        class=classNames
+  -
+    let { label, input = {}, isExpanded, isForcedExpanded, placeholder, separator, calendar } = props;
+    let { name, value, dummy } = input;
+    let className = 'filter-date-dropdown';
+    let classNames = `${className} js-${className}`;
+    classNames += isExpanded ? ` ${className}_expanded` : '';
+    classNames += isForcedExpanded ? ` ${className}_forced-expanded` : '';
+  div(data-options={ dummy, separator }, class=classNames)
+    input(type="hidden", name=name, value=value, data-type="1")
+    if (label)
+      .filter-date-dropdown__label= label
+    .filter-date-dropdown__section-up.js-filter-date-dropdown__section-up
+      input.filter-date-dropdown__input(
+        data-type="0",
+        placeholder=placeholder,
+        disabled
+      )
+      button.filter-date-dropdown__button.icon-expand_more(type="button")
+    .filter-date-dropdown__section-down.js-filter-date-dropdown__section-down(
+      data-type="3"
     )
-        input(
-            type="hidden",
-            name=name
-            value=value
-            data-type="1"
-        )
-        if (label)
-            .filter-date-dropdown__label=label
-        .filter-date-dropdown__section-up.js-filter-date-dropdown__section-up
-            input.filter-date-dropdown__input(
-                data-type="0"
-                placeholder=placeholder
-                disabled=true
-            )
-            button.filter-date-dropdown__button(
-                    type="button",
-                    class="icon-expand_more"
-            )
-        .filter-date-dropdown__section-down.js-filter-date-dropdown__section-down(data-type="3")
-            +calendar(calendar)
-
+      +calendar(calendar)

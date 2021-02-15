@@ -1,8 +1,8 @@
 include ../checkbox-button/checkbox-button
 
 mixin rich-checkbox-button(props = {})
-    .rich-checkbox-button
-        - let { info, ...other } = props;
-        +checkbox-button(other)
-        if (info)
-            .rich-checkbox-button__info=info
+  .rich-checkbox-button
+    - let { info, ...other } = props;
+    +checkbox-button(other)
+    if (info)
+      .rich-checkbox-button__info= info

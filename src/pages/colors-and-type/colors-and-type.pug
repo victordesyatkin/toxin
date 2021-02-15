@@ -4,15 +4,15 @@ include ../../components/color-sample/color-sample
 include ../../components/font-sample/font-sample
 
 block main
-    -
-        let data = htmlWebpackPlugin.options.getData();
-        let { colors = [], fonts = [] } = data || {};
-    article.colors-and-type
-        section.colors-and-type__colors
-            for color in colors
-                .colors-and-type__color-item
-                    +color-sample(color)
-        section.colors-and-type__fonts
-            for font in fonts
-                .colors-and-type__font-item
-                    +font-sample(font)
+  -
+    let data = htmlWebpackPlugin.options.getData();
+    let { colors = [], fonts = [] } = data || {};
+  article.colors-and-type
+    section.colors-and-type__colors
+      each color in colors
+        .colors-and-type__color-item
+          +color-sample(color)
+    section.colors-and-type__fonts
+      each font in fonts
+        .colors-and-type__font-item
+          +font-sample(font)

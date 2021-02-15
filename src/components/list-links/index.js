@@ -1,2 +1,2 @@
-import "../link";
-import "./list-links.scss";
+import '../link';
+import './list-links.scss';

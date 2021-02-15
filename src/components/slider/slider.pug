@@ -1,32 +1,28 @@
 mixin slider(props = {})
-    -
-        
-        let { images = [], max, isControl, isCover  } = props;
-        let
-            n = 0;
-            length = images.length;
-            className = 'slider';
-            classNames = `${className} js-${className}`;
-        classNames += isCover ? ` ${className}_cover` : ''; 
-    div(
-        class=classNames
-        data-props=props        
-    )
-        .slider__section-images.slider__section_not_selected.js-slider__section-images
-            .slider__image-wrapper
-                img.slider__image
-        if (length !== 0)
-            if (isControl === true)
-                .slider__control.slider__control_left.icon-expand_more_prev.js-slider__control(
-                    data-type = 1
-                )
-                .slider__control.slider__control_right.icon-expand_more_prev.js-slider__control(
-                    data-type = 2
-                )
-            .slider__pagination
-                while n < length
-                    if (max && n > max)
-                        continue
-                    .slider__point.js-slider__point(data-index=n)
-                    -
-                        ++n
+  -
+    let { images = [], max, isControl, isCover  } = props;
+    let
+        n = 0;
+        length = images.length;
+        className = 'slider';
+        classNames = `${className} js-${className}`;
+    classNames += isCover ? ` ${className}_cover` : ''; 
+  div(class=classNames, data-props=props)
+    .slider__section-images.slider__section_not_selected.js-slider__section-images
+      .slider__image-wrapper
+        img.slider__image
+    if (length !== 0)
+      if (isControl === true)
+        .slider__control.slider__control_left.icon-expand_more_prev.js-slider__control(
+          data-type=1
+        )
+        .slider__control.slider__control_right.icon-expand_more_prev.js-slider__control(
+          data-type=2
+        )
+      .slider__pagination
+        while n < length
+          if (max && n > max)
+            continue
+          .slider__point.js-slider__point(data-index=n)
+          -
+            ++n

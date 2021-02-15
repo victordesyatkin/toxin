@@ -20,60 +20,51 @@ mixin input(props = {})
     classNames += isStraight ? ` ${className}_straight` : '';
     classNames += isExpanded ? ` ${className}_expanded` : '';
     classNames += notFocused ? ` ${className}_not-focused` : '';
-  div(
-    class=classNames
-  )
+  div(class=classNames)
     if (label || stateText)
-      div(
-        class=`${className}__info`
-      )
+      div(class=`${className}__info`)
         if (label)
-          div(
-            class=`${className}__label`
-          )
-            label(
-              class=`${className}__label-text`
-              for=name
-            )=label
+          div(class=`${className}__label`)
+            label(class=`${className}__label-text`, for=name)= label
         if stateText
-          .input__state-text=stateText
+          .input__state-text= stateText
     div(class=classesInputSection)
-        input(
-          id=name
-          type=type
-          name=name
-          placeholder=placeholder
-          pattern=pattern
-          tabindex=tabindex
-          required=required
-          autofocus=isAutoFocus
-          value=value
-          class=inputClasses
-        )
-        if (isVisibleButton)
-          - 
-            let { type: buttonType, iconClass: buttonIconClass, name: buttonName, value: buttonValue } = button;
-            let buttonClass = `${className}__button`;
-            let buttonClasses = `${buttonClass} js-${buttonClass}`;
+      input(
+        id=name,
+        type=type,
+        name=name,
+        placeholder=placeholder,
+        pattern=pattern,
+        tabindex=tabindex,
+        required=required,
+        autofocus=isAutoFocus,
+        value=value,
+        class=inputClasses
+      )
+      if (isVisibleButton)
+        -
+          let { type: buttonType, iconClass: buttonIconClass, name: buttonName, value: buttonValue } = button;
+          let buttonClass = `${className}__button`;
+          let buttonClasses = `${buttonClass} js-${buttonClass}`;
 
-            switch (buttonIconClass) {
-              case 'arrow-down': {
-                buttonClasses += ` ${buttonClass}_default`;
-                buttonClasses += ' icon-expand_more';
-                break;
-              }
-              case 'arrow-forward': {
-                buttonClasses += ` ${buttonClass}_forwarded`;
-                buttonClasses += ' icon-arrow_forward';
-                break;
-              }
-              default: {
-                buttonClasses += buttonIconClass ? ` ${buttonIconClass}` : '';
-              }
+          switch (buttonIconClass) {
+            case 'arrow-down': {
+              buttonClasses += ` ${buttonClass}_default`;
+              buttonClasses += ' icon-expand_more';
+              break;
             }
-          button(
-            type=buttonType
-            name=buttonName
-            class=buttonClasses
-            data-class=buttonClasses
-          )
+            case 'arrow-forward': {
+              buttonClasses += ` ${buttonClass}_forwarded`;
+              buttonClasses += ' icon-arrow_forward';
+              break;
+            }
+            default: {
+              buttonClasses += buttonIconClass ? ` ${buttonIconClass}` : '';
+            }
+          }
+        button(
+          type=buttonType,
+          name=buttonName,
+          class=buttonClasses,
+          data-class=buttonClasses
+        )

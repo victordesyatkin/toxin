@@ -1,16 +1,16 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import SignUp from "../../components/sign-up";
-import Footer from "../../components/footer";
-import "../../components/card";
-import "./index";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import SignUp from '../../components/sign-up';
+import Footer from '../../components/footer';
+import '../../components/card';
+import './index';
 class Registration {
-  static CLASS_NAME = "REGISTRATION";
+  static CLASS_NAME = 'REGISTRATION';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-registration",
+      query: query || '.js-registration',
       render: render || Registration._renderComponent,
     });
   }
@@ -35,6 +35,6 @@ class Registration {
   }
 }
 
-window.addEventListener("load", Registration.renderComponents);
+window.addEventListener('load', Registration.renderComponents);
 
 export default Registration;

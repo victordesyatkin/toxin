@@ -1,8 +1,8 @@
-import isString from "lodash/isString";
-import isArray from "lodash/isArray";
-import trim from "lodash/trim";
-import isFunction from "lodash/isFunction";
-import isEmpty from "lodash/isEmpty";
+import isString from 'lodash/isString';
+import isArray from 'lodash/isArray';
+import trim from 'lodash/trim';
+import isFunction from 'lodash/isFunction';
+import isEmpty from 'lodash/isEmpty';
 
 function wordForm(num, word) {
   const cases = [2, 0, 1, 1, 1, 2];

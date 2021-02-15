@@ -1,20 +1,20 @@
-import "normalize.css";
+import 'normalize.css';
 
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import Footer from "../../components/footer";
-import "../../components/layout";
-import "../../components/header";
-import "../../theme/global.scss";
-import "./base.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import Footer from '../../components/footer';
+import '../../components/layout';
+import '../../components/header';
+import '../../theme/global.scss';
+import './base.scss';
 
 class Base {
-  static CLASS_NAME = "BASE";
+  static CLASS_NAME = 'BASE';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || "body",
+      query: query || 'body',
       render: render || SignIn._renderComponent,
     });
   }

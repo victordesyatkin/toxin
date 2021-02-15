@@ -1,1 +1,1 @@
-import "./font-sample.scss";
+import './font-sample.scss';

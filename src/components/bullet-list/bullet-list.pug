@@ -1,21 +1,18 @@
 include ../bullet/bullet
 
 mixin bullet-list(props = {})
-    -
-        let { label, items = [], size } = props;
-        let className = "bullet-list";
-        let classNames = `${className}`;
-        let sizes = {
-            large: 'large',
-        }
-        classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
-    div(
-        class=classNames
-    )
-        if (label)
-            .bullet-list__label=label 
-        .bullet-list__list
-            each item in items
-                .bullet-list__item
-                    +bullet(item)
-
+  -
+    let { label, items = [], size } = props;
+    let className = "bullet-list";
+    let classNames = `${className}`;
+    let sizes = {
+        large: 'large',
+    }
+    classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
+  div(class=classNames)
+    if (label)
+      .bullet-list__label= label
+    .bullet-list__list
+      each item in items
+        .bullet-list__item
+          +bullet(item)

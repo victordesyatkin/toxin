@@ -1,17 +1,17 @@
-import datepicker from "air-datepicker";
-import get from "lodash/get";
-import bind from "bind-decorator";
+import datepicker from 'air-datepicker';
+import get from 'lodash/get';
+import bind from 'bind-decorator';
 
 import {
   wordForm,
   renderComponents,
   renderComponent,
-} from "../../assets/helpers/utils";
-import Dropdown from "../dropdown";
-import DateDropdown from "../date-dropdown";
-import "../button";
+} from '../../assets/helpers/utils';
+import Dropdown from '../dropdown';
+import DateDropdown from '../date-dropdown';
+import '../button';
 
-import "./book.scss";
+import './book.scss';
 
 class Book {
   static TYPE_PRICE = 3;
@@ -19,13 +19,13 @@ class Book {
   static TYPE_FEE = 2;
   static IS_CALENDAR = 1;
 
-  static CLASS_NAME = "BOOK";
+  static CLASS_NAME = 'BOOK';
 
   static renderComponents(options = {}) {
     const { parents, query, render } = options;
     renderComponents({
       parents,
-      query: query || ".js-book",
+      query: query || '.js-book',
       render: render || Book._renderComponent,
     });
   }
@@ -51,34 +51,34 @@ class Book {
       `.js-book__section[data-type="${Book.TYPE_COUNT}"]`,
       this._$component
     );
-    this._$calcInfo = $(".js-book__section-info", this._$calc);
-    this._$calcTotal = $(".js-book__section-total", this._$calc);
+    this._$calcInfo = $('.js-book__section-info', this._$calc);
+    this._$calcTotal = $('.js-book__section-total', this._$calc);
     this._$total = $(
       `.js-book__section[data-type="${Book.TYPE_FEE}"]`,
       this._$component
     );
-    this._$totalTotal = $(".js-book__section-total", this._$total);
-    this._props = this._$component.data("options");
+    this._$totalTotal = $('.js-book__section-total', this._$total);
+    this._props = this._$component.data('options');
     this._price = parseFloat(this._prepareNumber(this._props.price));
     this._discount = parseFloat(this._prepareNumber(this._props.discount));
     this._unit = this._props.unit;
-    this._$calendar = $(".js-calendar", this._$component);
+    this._$calendar = $('.js-calendar', this._$component);
     this._$input = $(
       `.js-book__date-dropdown input[type="hidden"][date-isCalendar="${Book.IS_CALENDAR}"]`,
       this._$component
     );
-    this._words = get(this._props, ["words"], []);
-    this._numberFormat = get(this._props, ["numberFormat"]);
-    this._options = get(this._props, ["options"]);
+    this._words = get(this._props, ['words'], []);
+    this._numberFormat = get(this._props, ['numberFormat']);
+    this._options = get(this._props, ['options']);
     this._dirty = 0;
-    this._datepicker = this._$input.datepicker().data("datepicker");
+    this._datepicker = this._$input.datepicker().data('datepicker');
     this._prepareDirty();
     this._setCalc();
-    this._$calendar.on("click", this._setCalc);
+    this._$calendar.on('click', this._setCalc);
   }
 
-  _prepareNumber(n = "") {
-    return n.split(" ").join("") || 0;
+  _prepareNumber(n = '') {
+    return n.split(' ').join('') || 0;
   }
 
   _setTotal(total = 0) {
@@ -93,8 +93,8 @@ class Book {
   }
 
   _prepareDirty() {
-    const $dates = $(".js-book__section:not([data-type])");
-    $(".js-book__section-total", $dates).each(this._prepareDirtyItem);
+    const $dates = $('.js-book__section:not([data-type])');
+    $('.js-book__section-total', $dates).each(this._prepareDirtyItem);
   }
 
   @bind

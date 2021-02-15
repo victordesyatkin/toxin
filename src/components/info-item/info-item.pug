@@ -1,24 +1,17 @@
 mixin info-item(props = {})
-    -
-        let
-            { src, alt, title, content, iconClass } = props;
-            className = 'info-item';
-            classNames = `${className}`;
-    div(
-        class=classNames
-    )
-        .info-item__img
-            if iconClass
-                span(class=iconClass)
-            else if src
-                img(
-                    src=src,
-                    alt=alt
-                )
-        .info-item__body
-            .info-item__title
-                |#{title}
-            .info-item__content
-                |#{content}
-
-        
+  -
+    let
+        { src, alt, title, content, iconClass } = props;
+        className = 'info-item';
+        classNames = `${className}`;
+  div(class=classNames)
+    .info-item__img
+      if iconClass
+        span(class=iconClass)
+      else if src
+        img(src=src, alt=alt)
+    .info-item__body
+      .info-item__title
+        | #{title}
+      .info-item__content
+        | #{content}

@@ -1,12 +1,12 @@
 include ../radio-button/radio-button
 
 mixin radio-buttons(props = {})
-    -
-        let { label, buttons = [] } = props;
-    .radio-buttons
-        if (label)
-            .radio-buttons__label=label
-        .radio-buttons__items
-            for button in buttons
-                .radio-buttons__item
-                    +radio-button(button)
+  -
+    let { label, buttons = [] } = props;
+  .radio-buttons
+    if (label)
+      .radio-buttons__label= label
+    .radio-buttons__items
+      each button in buttons
+        .radio-buttons__item
+          +radio-button(button)

@@ -1,3 +1,3 @@
-import "../nav-item";
-import "../button";
-import "./nav.scss";
+import '../nav-item';
+import '../button';
+import './nav.scss';

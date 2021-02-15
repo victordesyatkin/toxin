@@ -1,12 +1,12 @@
 include ../toggle-button/toggle-button
 
 mixin toggle-buttons(props = {})
-    -
-        let { label, buttons = [] } = props;
-    .toggle-buttons
-        if (label)
-            .toggle-buttons__label=label
-        .toggle-buttons_items
-            for button in buttons
-                .toggle-buttons__item
-                    +toggle-button(button)
+  -
+    let { label, buttons = [] } = props;
+  .toggle-buttons
+    if (label)
+      .toggle-buttons__label= label
+    .toggle-buttons_items
+      each button in buttons
+        .toggle-buttons__item
+          +toggle-button(button)

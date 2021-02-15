@@ -1,14 +1,14 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import "./pagination.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import './pagination.scss';
 
 class Pagination {
-  static CLASS_NAME = "PAGINATION";
+  static CLASS_NAME = 'PAGINATION';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-pagination",
+      query: query || '.js-pagination',
       render: render || Pagination._renderComponent,
     });
   }
@@ -29,16 +29,16 @@ class Pagination {
   _attachEventHandler() {
     this._element &&
       this._element.addEventListener &&
-      this._element.addEventListener("click", this._click);
+      this._element.addEventListener('click', this._click);
   }
 
   _click = (event) => {
     let target = (event || {}).target || {} || {};
     const { tagName } = target;
-    if (target.closest("div[data-direction]")) {
-      target = target.closest("div[data-direction]");
-    } else if (target.closest("div[data-item]")) {
-      target = target.closest("div[data-item]");
+    if (target.closest('div[data-direction]')) {
+      target = target.closest('div[data-direction]');
+    } else if (target.closest('div[data-item]')) {
+      target = target.closest('div[data-item]');
     }
     const { current, direction, item } = target.dataset || {};
     if (parseFloat(current)) {
@@ -46,10 +46,10 @@ class Pagination {
     }
     if (this._element.dataset.current && item && parseFloat(item)) {
       this._element.dataset.current = parseFloat(item);
-    } else if (direction === "next") {
+    } else if (direction === 'next') {
       this._element.dataset.current =
         parseFloat(this._element.dataset.current) + 1;
-    } else if (direction === "prev") {
+    } else if (direction === 'prev') {
       this._element.dataset.current =
         parseFloat(this._element.dataset.current) - 1;
     }
@@ -61,15 +61,15 @@ class Pagination {
     const { start, end, current } = this._element.dataset;
     let hidden = false;
     if (
-      (direction === "prev" && start === current) ||
-      (direction === "next" && end === current)
+      (direction === 'prev' && start === current) ||
+      (direction === 'next' && end === current)
     ) {
       hidden = true;
     }
     const element = this._element.querySelector(
       `[data-direction="${direction}"]`
     );
-    element && element.classList.toggle("pagination_hidden", hidden);
+    element && element.classList.toggle('pagination_hidden', hidden);
   };
 
   _renderText = () => {
@@ -79,7 +79,7 @@ class Pagination {
     count = parseFloat(count);
     if (
       text &&
-      typeof text === "string" &&
+      typeof text === 'string' &&
       text.trim().length &&
       count &&
       current &&
@@ -88,9 +88,9 @@ class Pagination {
       let startText =
         (current - 1) * count > 0 ? (current - 1) * count : current;
       let endText = current * count > 0 ? current * count : current;
-      let total = end * count > 100 ? "100+" : end * count;
+      let total = end * count > 100 ? '100+' : end * count;
       text = `${startText} - ${endText} из ${total} ${text}`;
-      const element = document.querySelector(".pagination__section-footer");
+      const element = document.querySelector('.pagination__section-footer');
       if (element) {
         element.innerHTML = text;
       }
@@ -103,9 +103,9 @@ class Pagination {
     end = parseFloat(end);
     current = parseFloat(current);
     limit = parseFloat(limit);
-    this._setAttributeDirection("prev");
-    this._setAttributeDirection("next");
-    const emptyString = "...";
+    this._setAttributeDirection('prev');
+    this._setAttributeDirection('next');
+    const emptyString = '...';
     const pages = [];
     if (current - start > limit) {
       pages.push(start);
@@ -130,29 +130,29 @@ class Pagination {
     }
     const prev = this._element.querySelector('[data-direction="prev"]');
     const next = this._element.querySelector('[data-direction="next"]');
-    const body = this._element.querySelector(".js-pagination__section-body");
-    body.innerHTML = "";
+    const body = this._element.querySelector('.js-pagination__section-body');
+    body.innerHTML = '';
     const fragment = document.createDocumentFragment();
     fragment.appendChild(prev);
     pages.forEach((page) => {
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("pagination__item");
+      const newDiv = document.createElement('div');
+      newDiv.classList.add('pagination__item');
 
-      const newDivDummy = document.createElement("div");
-      newDivDummy.classList.add("pagination__dummy");
+      const newDivDummy = document.createElement('div');
+      newDivDummy.classList.add('pagination__dummy');
       newDiv.appendChild(newDivDummy);
 
-      const newDivContent = document.createElement("div");
-      newDivContent.classList.add("pagination__content");
+      const newDivContent = document.createElement('div');
+      newDivContent.classList.add('pagination__content');
       newDiv.appendChild(newDivContent);
 
       const newContent = document.createTextNode(page);
       newDivContent.appendChild(newContent);
       let dataCurrent = 0;
       if (page === emptyString) {
-        newDiv.classList.add("pagination__item_empty");
+        newDiv.classList.add('pagination__item_empty');
       } else if (page === current) {
-        newDiv.classList.add("pagination__item_current");
+        newDiv.classList.add('pagination__item_current');
         dataCurrent = 1;
       }
       newDiv.dataset.current = dataCurrent;
