@@ -10,47 +10,39 @@ include ../../components/description/description
 include ../../components/slider/slider
 
 block main
-    -
-        let data = htmlWebpackPlugin.options.getData() || {};
-        let { action, info, rate, comments, bulletList, cancel, book, images = {}, slider } = data;
-        let { image1, image2, image3 } = images;
-        let { src: backgroundImage1 } = image1;
-        let { src: backgroundImage2 } = image2;
-        let { src: backgroundImage3 } = image3;
-        let styleFirst = backgroundImage1 ? `background-image: url(${backgroundImage1});` : '';
-        let styleSecond = backgroundImage2 ? `background-image: url(${backgroundImage2});` : '';
-        let styleThird = backgroundImage3 ? `background-image: url(${backgroundImage3});` : '';
-    article.room-details.js-room-details
-        .room-details__views-section
-            .room-details__view-first(
-                style=styleFirst
-            )
-            .room-details__views
-                .room-details__view-second(
-                    style=styleSecond
-                )
-                .room-details__view-third(
-                    style=styleThird
-                )
-        .room-details__slider
-            +slider(slider)
-        .room-details__main-section
-            .room-details__section
-                .room-details__info-section
-                    .room-details__info
-                        +info(data.info)
-                    .room-details__rate
-                        +rate(data.rate)
-                .room-details__comments-section
-                        +comments(data.comments)
-                .room-details__rules-section
-                    .room-details__rules
-                        +bullet-list(data.bulletList)
-                    .room-details__cancel
-                        +description(cancel)
-            .room-details__section
-                form.room-details__book(
-                    action=action
-                )
-                    +card()
-                        +book(book)
+  -
+    let data = htmlWebpackPlugin.options.getData() || {};
+    let { action, info, rate, comments, bulletList, cancel, book, images = {}, slider } = data;
+    let { image1, image2, image3 } = images;
+    let { src: backgroundImage1 } = image1;
+    let { src: backgroundImage2 } = image2;
+    let { src: backgroundImage3 } = image3;
+    let styleFirst = backgroundImage1 ? `background-image: url(${backgroundImage1});` : '';
+    let styleSecond = backgroundImage2 ? `background-image: url(${backgroundImage2});` : '';
+    let styleThird = backgroundImage3 ? `background-image: url(${backgroundImage3});` : '';
+  article.room-details.js-room-details
+    .room-details__views-section
+      .room-details__view-first(style=styleFirst)
+      .room-details__views
+        .room-details__view-second(style=styleSecond)
+        .room-details__view-third(style=styleThird)
+    .room-details__slider
+      +slider(slider)
+    .room-details__main-section
+      .room-details__section
+        .room-details__info-section
+          .room-details__info
+            +info(data.info)
+          .room-details__rate
+            +rate(data.rate)
+        .room-details__comments-section
+          +comments(data.comments)
+        .room-details__rules-section
+          .room-details__rules
+            +bullet-list(data.bulletList)
+          .room-details__cancel
+            +description(cancel)
+      .room-details__section
+        form.room-details__book(action=action)
+          +card
+            +book(book)

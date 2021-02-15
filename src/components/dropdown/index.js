@@ -2,11 +2,11 @@ import {
   wordForm,
   renderComponents,
   renderComponent,
-} from "../../assets/helpers/utils";
-import Input from "../input";
-import "./dropdown.scss";
+} from '../../assets/helpers/utils';
+import Input from '../input';
+import './dropdown.scss';
 class Dropdown {
-  static CLASS_NAME = "DROPDOWN";
+  static CLASS_NAME = 'DROPDOWN';
   static TYPE_FIRST = 0;
   static TYPE_SECOND = 1;
 
@@ -14,7 +14,7 @@ class Dropdown {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-dropdown",
+      query: query || '.js-dropdown',
       render: render || Dropdown._renderComponent,
     });
   }
@@ -46,22 +46,22 @@ class Dropdown {
   _init() {
     this._$mainInputs = Input.renderComponents({ parents: this._$element });
     this._inputs = {};
-    this._type = parseInt(this._$element.attr("data-type"));
-    this._input = this._$mainInputs[0].data("INPUT");
+    this._type = parseInt(this._$element.attr('data-type'));
+    this._input = this._$mainInputs[0].data('INPUT');
     this._$mainInput = this._input.input;
-    this._$mainInput.attr("disabled", true);
-    this._$inputSection = $(".js-dropdown__input", this._$element);
-    this._$inputSection.on("click", this._handleExpandButtonClick);
-    this._mainPlaceholder = this._$mainInput.attr("placeholder");
-    this._$dropdownMain = $(".js-dropdown__main", this._$element);
-    this._$buttonExpand = $(".js-input__button", this._$element);
+    this._$mainInput.attr('disabled', true);
+    this._$inputSection = $('.js-dropdown__input', this._$element);
+    this._$inputSection.on('click', this._handleExpandButtonClick);
+    this._mainPlaceholder = this._$mainInput.attr('placeholder');
+    this._$dropdownMain = $('.js-dropdown__main', this._$element);
+    this._$buttonExpand = $('.js-input__button', this._$element);
     this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
-    this._$buttonClean.on("click", this._handleCleanButtonClick);
+    this._$buttonClean.on('click', this._handleCleanButtonClick);
     this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
-    this._$buttonApply.on("click", this._handleApplyButtonClick);
-    this._$main = $(".js-dropdown__main", this._$element);
-    $("body").on("click", this._handleDocumentClick);
-    this._isForcedExpand = this._$element.hasClass("dropdown_forced-expanded");
+    this._$buttonApply.on('click', this._handleApplyButtonClick);
+    this._$main = $('.js-dropdown__main', this._$element);
+    $('body').on('click', this._handleDocumentClick);
+    this._isForcedExpand = this._$element.hasClass('dropdown_forced-expanded');
     this._prepareItems();
     this._createPlaceholder();
     this._updatePlaceholder();
@@ -78,9 +78,9 @@ class Dropdown {
       }
     }
     if (flag) {
-      this._$buttonClean.removeClass("dropdown__control-button_hide");
+      this._$buttonClean.removeClass('dropdown__control-button_hide');
     } else {
-      this._$buttonClean.addClass("dropdown__control-button_hide");
+      this._$buttonClean.addClass('dropdown__control-button_hide');
     }
   }
 
@@ -88,13 +88,13 @@ class Dropdown {
     if (this._isForcedExpand) {
       return false;
     }
-    if (this._$element.hasClass("dropdown_expanded")) {
-      this._$dropdownMain.slideUp("slow", () => {
+    if (this._$element.hasClass('dropdown_expanded')) {
+      this._$dropdownMain.slideUp('slow', () => {
         this._toggleClassExpanded();
         this._toggleZIndex(10);
       });
     } else {
-      this._$dropdownMain.slideDown("slow", () => {
+      this._$dropdownMain.slideDown('slow', () => {
         this._toggleClassExpanded();
         this._toggleZIndex(100);
       });
@@ -103,15 +103,15 @@ class Dropdown {
   }
 
   _cleanInputValue(index, element) {
-    $("input", element).val(0);
-    $(".js-dropdown__item-value", element).text(0);
+    $('input', element).val(0);
+    $('.js-dropdown__item-value', element).text(0);
   }
 
   _handleCleanButtonClick() {
     Object.keys(this._inputs).forEach((key) => {
       this._inputs[key] = 0;
     });
-    $(".js-dropdown__item", this._$dropdownMain).each(this._cleanInputValue);
+    $('.js-dropdown__item', this._$dropdownMain).each(this._cleanInputValue);
     this._updatePlaceholder();
     this._toggleCleanButton();
   }
@@ -135,27 +135,27 @@ class Dropdown {
   _updatePlaceholder() {
     let placeholder = this._placeholder._toString();
     if (placeholder) {
-      this._$mainInput.attr("placeholder", placeholder);
+      this._$mainInput.attr('placeholder', placeholder);
       this._$mainInput.val(placeholder);
-      this._input.addTheme("dropdown_fill");
+      this._input.addTheme('dropdown_fill');
     } else {
-      this._$mainInput.attr("placeholder", this._mainPlaceholder);
+      this._$mainInput.attr('placeholder', this._mainPlaceholder);
       this._$mainInput.val(this._mainPlaceholder);
-      this._input.removeTheme("dropdown_fill");
+      this._input.removeTheme('dropdown_fill');
     }
   }
 
   _handleChangeChildInput(event = {}) {
     const { target } = event;
     const $input = $(target);
-    const title = $input.attr("data-title");
+    const title = $input.attr('data-title');
     this._inputs[title] = $input.val();
     this._updatePlaceholder();
     this._toggleCleanButton();
   }
 
   _toggleZIndex(zIndex = 1) {
-    this._$main.css("z-index", zIndex);
+    this._$main.css('z-index', zIndex);
     return false;
   }
 
@@ -167,7 +167,7 @@ class Dropdown {
 
   _handleDocumentClick(event) {
     if (
-      this._$element.hasClass("dropdown_expanded") &&
+      this._$element.hasClass('dropdown_expanded') &&
       !$(event.target).closest(this._$element).length
     ) {
       this._handleExpandButtonClick();
@@ -175,15 +175,15 @@ class Dropdown {
   }
 
   _toggleClassExpanded() {
-    this._$element.toggleClass("dropdown_expanded");
+    this._$element.toggleClass('dropdown_expanded');
   }
 
   _prepareItems() {
-    this._$items = $(".js-dropdown__item", this._$dropdownMain);
+    this._$items = $('.js-dropdown__item', this._$dropdownMain);
     const data = {};
-    const names = ["adults", "babies", "children"];
-    if (localStorage && localStorage.getItem("landingPage")) {
-      let landingPage = localStorage.getItem("landingPage") || "{}";
+    const names = ['adults', 'babies', 'children'];
+    if (localStorage && localStorage.getItem('landingPage')) {
+      let landingPage = localStorage.getItem('landingPage') || '{}';
       landingPage = JSON.parse(landingPage);
       Object.keys(landingPage).forEach((name) => {
         if (names.indexOf(name) === -1) {
@@ -196,11 +196,11 @@ class Dropdown {
     }
 
     Array.prototype.map.call(this._$items, (item) => {
-      const $input = $($("input", item));
-      const title = $input.attr("data-title");
-      $input.on("input", this._handleChangeChildInput);
-      const name = $input.attr("name");
-      if (typeof data[name] !== "undefined") {
+      const $input = $($('input', item));
+      const title = $input.attr('data-title');
+      $input.on('input', this._handleChangeChildInput);
+      const name = $input.attr('name');
+      if (typeof data[name] !== 'undefined') {
         const value = data[name];
         $input.val(value);
       }
@@ -217,7 +217,7 @@ class Placeholder {
   _inputs = {};
 
   _toString() {
-    return "";
+    return '';
   }
 }
 
@@ -229,15 +229,15 @@ class PlaceholderRooms extends Placeholder {
 
   _init() {
     this._words = {
-      спальни: ["спальня", "спальни", "спален"],
-      кровати: ["кровать", "кровати", "кроватей"],
-      "ванные комнаты": ["ванная комната", "ванные комнаты", "ванных комнат"],
+      спальни: ['спальня', 'спальни', 'спален'],
+      кровати: ['кровать', 'кровати', 'кроватей'],
+      'ванные комнаты': ['ванная комната', 'ванные комнаты', 'ванных комнат'],
     };
   }
 
   _toString() {
-    let placeholder = "";
-    let separator = "";
+    let placeholder = '';
+    let separator = '';
     Object.keys(this._inputs).forEach((key) => {
       const value = parseInt(this._inputs[key]);
       if (value > -1) {
@@ -246,7 +246,7 @@ class PlaceholderRooms extends Placeholder {
           this._words[key] || []
         )}`;
         if (!separator) {
-          separator = ", ";
+          separator = ', ';
         }
       }
     });
@@ -262,36 +262,36 @@ class PlaceholderGuests extends Placeholder {
 
   _init() {
     this._words = {
-      гость: ["гость", "гостя", "гостей"],
-      младенцы: ["младенец", "младенца", "младенцев"],
+      гость: ['гость', 'гостя', 'гостей'],
+      младенцы: ['младенец', 'младенца', 'младенцев'],
     };
   }
 
   _toString() {
-    let placeholder = "";
+    let placeholder = '';
     let countGuests = 0;
     let countBaby = 0;
-    let separator = "";
+    let separator = '';
     Object.keys(this._inputs).forEach((key) => {
-      if (["взрослые", "дети"].indexOf(key) > -1) {
+      if (['взрослые', 'дети'].indexOf(key) > -1) {
         countGuests += parseInt(this._inputs[key]);
-      } else if (["младенцы"].indexOf(key) > -1) {
+      } else if (['младенцы'].indexOf(key) > -1) {
         countBaby += parseInt(this._inputs[key]);
       }
     });
     if (countGuests > 0) {
       placeholder = `${separator}${countGuests} ${wordForm(
         countGuests,
-        this._words["гость"] || []
+        this._words['гость'] || []
       )}`;
       if (!separator) {
-        separator = ", ";
+        separator = ', ';
       }
     }
     if (countBaby > 0) {
       placeholder += `${separator}${countBaby} ${wordForm(
         countBaby,
-        this._words["младенцы"] || []
+        this._words['младенцы'] || []
       )}`;
     }
     return placeholder;
@@ -315,21 +315,21 @@ class Element {
   }
 
   _init() {
-    this._$hiddenInput = $("input", this._$element);
+    this._$hiddenInput = $('input', this._$element);
     this._$buttonPlus = $(
       `button[data-type="${Element.TYPE_PLUS}"]`,
       this._$element
-    ).on("click", Element.TYPE_PLUS, this._handleDecreaseOrIncreaseButtonClick);
+    ).on('click', Element.TYPE_PLUS, this._handleDecreaseOrIncreaseButtonClick);
     this._$buttonMinus = $(
       `button[data-type="${Element.TYPE_MINUS}"]`,
       this._$element
     ).on(
-      "click",
+      'click',
       Element.TYPE_MINUS,
       this._handleDecreaseOrIncreaseButtonClick
     );
-    this._$fakeInput = $(".js-dropdown__item-value", this._$element);
-    if (typeof value !== "undefined") {
+    this._$fakeInput = $('.js-dropdown__item-value', this._$element);
+    if (typeof value !== 'undefined') {
       this._$fakeInput.html(value);
     }
   }
@@ -347,13 +347,13 @@ class Element {
     }
     if (flag) {
       if (value > 0) {
-        this._$buttonMinus.removeClass("dropdown__button_fade");
+        this._$buttonMinus.removeClass('dropdown__button_fade');
       } else {
-        this._$buttonMinus.addClass("dropdown__button_fade");
+        this._$buttonMinus.addClass('dropdown__button_fade');
       }
       this._$fakeInput.text(value);
       this._$hiddenInput.val(value);
-      const event = new Event("input");
+      const event = new Event('input');
       this._$hiddenInput[0].dispatchEvent(event);
     }
   }

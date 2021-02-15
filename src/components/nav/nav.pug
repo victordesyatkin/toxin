@@ -2,22 +2,20 @@ include ../nav-item/nav-item
 include ../button/button
 
 mixin nav(props = {})
-    -
-        let { items = [], user = {}, isAuthorized, buttons = [] } = props;
-        let { firstName, lastName } = user;
-    .nav
-        nav.nav__nav-section
-            each item in items
-                .nav__nav-section-item
-                    +nav-item(item)
-        if isAuthorized
-            .nav__separator
-            .nav__user-section
-                |#{firstName} #{lastName}
-        else
-            .nav__control-section
-                each button in buttons
-                    .nav__control-item                
-                        +button(button)
-
-
+  -
+    let { items = [], user = {}, isAuthorized, buttons = [] } = props;
+    let { firstName, lastName } = user;
+  .nav
+    nav.nav__nav-section
+      each item in items
+        .nav__nav-section-item
+          +nav-item(item)
+    if isAuthorized
+      .nav__separator
+      .nav__user-section
+        | #{firstName} #{lastName}
+    else
+      .nav__control-section
+        each button in buttons
+          .nav__control-item 
+            +button(button)

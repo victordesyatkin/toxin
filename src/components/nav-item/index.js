@@ -1,2 +1,2 @@
-import "../link";
-import "./nav-item.scss";
+import '../link';
+import './nav-item.scss';

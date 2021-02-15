@@ -1,1 +1,1 @@
-import "./info-item.scss";
+import './info-item.scss';

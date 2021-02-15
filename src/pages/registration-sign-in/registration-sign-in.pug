@@ -3,11 +3,8 @@ include ../../components/card/card
 include ../../components/sign-in/sign-in
 
 block sign
-    -
-        let { signIn, action } = data || {};
-    form(
-        action=action
-        class=`${className}__sign-in js-${className}__sign-in`
-    )
-        +card
-            +sign-in(signIn)
+  -
+    let { signIn, action } = data || {};
+  form(action=action, class=`${className}__sign-in js-${className}__sign-in`)
+    +card
+      +sign-in(signIn)

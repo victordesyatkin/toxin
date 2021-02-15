@@ -1,20 +1,20 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import MaskedTextField from "../masked-text-field";
-import Input from "../input";
-import "../radio-buttons";
-import "../toggle-button";
-import "../button";
-import "../card-footer";
-import "./sign-up.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import MaskedTextField from '../masked-text-field';
+import Input from '../input';
+import '../radio-buttons';
+import '../toggle-button';
+import '../button';
+import '../card-footer';
+import './sign-up.scss';
 
 class SignUp {
-  static CLASS_NAME = "SIGN_UP";
+  static CLASS_NAME = 'SIGN_UP';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-sign-up",
+      query: query || '.js-sign-up',
       render: render || SignUp._renderComponent,
     });
   }

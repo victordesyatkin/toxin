@@ -1,9 +1,9 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import Calendar from "../calendar";
-import "./filter-date-dropdown.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import Calendar from '../calendar';
+import './filter-date-dropdown.scss';
 
 class FilterDateDropdown {
-  static CLASS_NAME = "FILTER_DATE_DROPDOWN";
+  static CLASS_NAME = 'FILTER_DATE_DROPDOWN';
   static TYPE_FAKE = 0;
   static TYPE_MAIN = 3;
   static TYPE_INPUT = 1;
@@ -15,7 +15,7 @@ class FilterDateDropdown {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-filter-date-dropdown",
+      query: query || '.js-filter-date-dropdown',
       render: render || FilterDateDropdown._renderComponent,
     });
   }
@@ -36,18 +36,18 @@ class FilterDateDropdown {
 
   _init() {
     Calendar.renderComponents({ parents: this._$element });
-    this._options = this._$element.data("options");
-    this._dummy = this._options.dummy || "ДД МЕС";
-    this._separator = this._options.separator || "-";
+    this._options = this._$element.data('options');
+    this._dummy = this._options.dummy || 'ДД МЕС';
+    this._separator = this._options.separator || '-';
     this._$fake = $(
       `input[data-type="${FilterDateDropdown.TYPE_FAKE}"]`,
       this._$element
     );
     this._$sectionUp = $(
-      ".js-filter-date-dropdown__section-up",
+      '.js-filter-date-dropdown__section-up',
       this._$element
     );
-    this._$sectionUp.on("click", this._handleMainBlockClick.bind(this));
+    this._$sectionUp.on('click', this._handleMainBlockClick.bind(this));
     this._$mainBlock = $(
       `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
       this._$element
@@ -61,7 +61,7 @@ class FilterDateDropdown {
       this._$element
     )
       .datepicker()
-      .data("datepicker");
+      .data('datepicker');
     this._buttonClean = $(
       `button[data-type="${FilterDateDropdown.TYPE_CLEAN}"]`,
       this._$element
@@ -70,11 +70,11 @@ class FilterDateDropdown {
       `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
       this._$element
     );
-    this._buttonClean.on("click", this._handleCleanButtonClick.bind(this));
-    this._buttonApply.on("click", this._handleApplyButtonClick.bind(this));
-    $(document).on("click", this._handleDocumentClick.bind(this));
+    this._buttonClean.on('click', this._handleCleanButtonClick.bind(this));
+    this._buttonApply.on('click', this._handleApplyButtonClick.bind(this));
+    $(document).on('click', this._handleDocumentClick.bind(this));
     this._isForcedVisible = this._$element.hasClass(
-      "filter-date-dropdown_forced-expanded"
+      'filter-date-dropdown_forced-expanded'
     );
     this._setDates(this._getValue());
     this._changeFake();
@@ -86,11 +86,11 @@ class FilterDateDropdown {
     }
     date = new Date(date);
     date = date
-      .toLocaleString("ru", {
-        day: "2-digit",
-        month: "short",
+      .toLocaleString('ru', {
+        day: '2-digit',
+        month: 'short',
       })
-      .replace(".", "");
+      .replace('.', '');
     return date;
   }
 
@@ -103,7 +103,7 @@ class FilterDateDropdown {
   }
 
   _handleCleanButtonClick() {
-    this._$input.val("");
+    this._$input.val('');
     this._changeFake();
   }
 
@@ -118,23 +118,23 @@ class FilterDateDropdown {
     if (this._isForcedVisible) {
       return false;
     }
-    this._$mainBlock.fadeToggle("fast");
-    this._$element.toggleClass("filter-date-dropdown_expanded");
+    this._$mainBlock.fadeToggle('fast');
+    this._$element.toggleClass('filter-date-dropdown_expanded');
   }
 
   _handleDocumentClick(event) {
     if (this._forcedVisible) {
       return false;
     }
-    const classTarget = `.${$(event.target, this._$element).attr("class")}`;
+    const classTarget = `.${$(event.target, this._$element).attr('class')}`;
     if (
       !$(event.target).closest(this._$element).length &&
-      !$(event.target, this._$element).hasClass("datepicker--cell") &&
+      !$(event.target, this._$element).hasClass('datepicker--cell') &&
       !$(classTarget, this._$element).length &&
-      this._$element.hasClass("filter-date-dropdown_expanded")
+      this._$element.hasClass('filter-date-dropdown_expanded')
     ) {
       this._$mainBlock.slideUp();
-      this._$element.removeClass("filter-date-dropdown_expanded");
+      this._$element.removeClass('filter-date-dropdown_expanded');
     }
   }
 
@@ -150,26 +150,26 @@ class FilterDateDropdown {
   }
 
   _value2Date(value) {
-    const parts = value.split(".");
+    const parts = value.split('.');
     const partDay = parts[0];
     const partMonth = parts[1];
     const partYear = parts[2];
-    let date = "";
+    let date = '';
     if (partDay && partMonth && partYear) {
       date = `${partMonth}.${partDay}.${partYear}`;
     }
     if (date) {
       date = new Date(date);
       if (!(date instanceof Date)) {
-        date = "";
+        date = '';
       }
     }
     return date;
   }
 
   _getValue() {
-    if (localStorage && localStorage.getItem("landingPage")) {
-      let landingPage = localStorage.getItem("landingPage") || "{}";
+    if (localStorage && localStorage.getItem('landingPage')) {
+      let landingPage = localStorage.getItem('landingPage') || '{}';
       landingPage = JSON.parse(landingPage);
       let { startDate, endDate } = landingPage;
       if (!isNaN(parseFloat(startDate)) && !isNaN(parseFloat(endDate))) {
@@ -181,7 +181,7 @@ class FilterDateDropdown {
         }
       }
     }
-    return JSON.parse(this._$input.val() || "[]");
+    return JSON.parse(this._$input.val() || '[]');
   }
 }
 

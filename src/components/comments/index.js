@@ -1,21 +1,21 @@
-import get from "lodash/get";
+import get from 'lodash/get';
 
 import {
   wordForm,
   renderComponents,
   renderComponent,
-} from "../../assets/helpers/utils";
-import "../comment";
-import "./comments.scss";
+} from '../../assets/helpers/utils';
+import '../comment';
+import './comments.scss';
 
 class Comments {
-  static CLASS_NAME = "COMMENTS";
+  static CLASS_NAME = 'COMMENTS';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-comments",
+      query: query || '.js-comments',
       render: render || Comments._renderComponent,
     });
   }
@@ -36,9 +36,9 @@ class Comments {
 
   _init() {
     const data = this._$el.data();
-    const units = get(data, ["units"]) || [];
-    const count = get(data, ["count"]) || [];
-    const $units = $(".js-comments__count-units", this._$el);
+    const units = get(data, ['units']) || [];
+    const count = get(data, ['count']) || [];
+    const $units = $('.js-comments__count-units', this._$el);
     if (units.length) {
       $units.html(wordForm(count, units));
     }

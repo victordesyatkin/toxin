@@ -1,15 +1,15 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import LikeButton from "../like-button";
-import "./comment.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import LikeButton from '../like-button';
+import './comment.scss';
 
 class Comment {
-  static CLASS_NAME = "COMMENT";
+  static CLASS_NAME = 'COMMENT';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-comment",
+      query: query || '.js-comment',
       render: render || Comment._renderComponent,
     });
   }

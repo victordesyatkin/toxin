@@ -2,45 +2,38 @@ block variables
 include ../../components/layout/layout
 include ../../components/header/header
 include ../../components/footer/footer
+
 doctype html
-html
+html(lang="en")
   head
     <meta charset="utf-8"/>
     block meta
       - let { meta = [] } = htmlWebpackPlugin.options.getData() || {};
       each item in meta
         - let { name, content } = item || {};
-          meta(
-            name=name,
-            content=content
-          )
+          meta(name=name, content=content)
     block links
       - let { links = [] } = htmlWebpackPlugin.options.getData() || {};
       each link in links
         - let { rel, href, sizes, type } = link || {};
-          link(
-            rel=rel,
-            href=href,
-            sizes=sizes,
-            type=type
-          )     
+          link(rel=rel, href=href, sizes=sizes, type=type) 
     title
       block title
         - let { title } = htmlWebpackPlugin.options.getData() || {};
         | #{title}
   body
     - let data = htmlWebpackPlugin.options.getData() || {};
-    +layout()
-      +layout__header()
-        +layout__container({basis: 1440, align: 'center'})
+    +layout
+      +layout__header
+        +layout__container({basis: 1440, align: "center"})
           block header
             - let { headerNotAuthorized } = htmlWebpackPlugin.options.getData() || {};
             +header(headerNotAuthorized)
-      +layout__main()
-        +layout__container({basis: 1440, align: 'center'})
+      +layout__main
+        +layout__container({basis: 1440, align: "center"})
           block main
-      +layout__footer()
-        +layout__container({basis: 1440, align: 'center'})
+      +layout__footer
+        +layout__container({basis: 1440, align: "center"})
           block footer
             - let { footer } = htmlWebpackPlugin.options.getData() || {};
             +footer(footer)

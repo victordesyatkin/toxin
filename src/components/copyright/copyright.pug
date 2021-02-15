@@ -2,39 +2,34 @@ include ../logo-image/logo-image
 include ../link/link
 
 mixin copyright(props = {})
-    -
-        let
-            { items = [], content, logo, size } = props;
-            
-            icons = {
-                instagram: 'icon-i',
-                facebook: 'icon-f',
-                twitter: 'icon-t',
-            };
-            sizes = {
-                sm: 'size_sm',
-            }
-            mainClassName = 'copyright';
-            mainClassNames = `${mainClassName}`;
-        mainClassNames += sizes[size] ? ` ${mainClassName}_${sizes[size]}` : '';
-    div(
-        class=mainClassNames
-    )
-        if logo
-            .copyright__logo
-                +logo-link(logo)
-        .copyright__content=content
-        ul.copyright__social-items
-            each item in items
-                - 
-                    let
-                        { icon, ...link } = item || {};
-                        className = "copyright__icon";
-                        classNames = `${className}`;
-                    classNames += icons[icon] ? ` ${icons[icon]}` : '';
-                li.copyright__social-item
-                    +link(link)
-                        i(
-                            class=classNames
-                        )
-
+  -
+    let
+        { items = [], content, logo, size } = props;
+    
+        icons = {
+            instagram: 'icon-i',
+            facebook: 'icon-f',
+            twitter: 'icon-t',
+        };
+        sizes = {
+            sm: 'size_sm',
+        }
+        mainClassName = 'copyright';
+        mainClassNames = `${mainClassName}`;
+    mainClassNames += sizes[size] ? ` ${mainClassName}_${sizes[size]}` : '';
+  div(class=mainClassNames)
+    if logo
+      .copyright__logo
+        +logo-link(logo)
+    .copyright__content= content
+    ul.copyright__social-items
+      each item in items
+        -
+          let
+              { icon, ...link } = item || {};
+              className = "copyright__icon";
+              classNames = `${className}`;
+          classNames += icons[icon] ? ` ${icons[icon]}` : '';
+        li.copyright__social-item
+          +link(link)
+            i(class=classNames)

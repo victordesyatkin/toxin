@@ -1,20 +1,23 @@
 mixin calendar(props = {})
-    - 
-        let
-            { buttonCleanText, buttonApplyText } = props;
-            className = 'calendar'; 
-            classNames = `${className} js-${className}`;
-    div(
-        class=classNames
-        data-options=props
-    )
-        - 
-            let
-                mainClassNames = `${className}__main js-${className}__main`;
-        div(class = mainClassNames)
-            input(type="hidden", date-isCalendar="1")
-            .calendar__control
-                button.calendar__button.calendar__button_clean.js-calendar__button_clean(type="button", data-type=0)
-                    | #{buttonCleanText}
-                button.calendar__button.calendar__button_apply.js-calendar__button_apply(type="button", data-type=1)
-                    | #{buttonApplyText}
+  -
+    let
+        { buttonCleanText, buttonApplyText } = props;
+        className = 'calendar'; 
+        classNames = `${className} js-${className}`;
+  div(class=classNames, data-options=props)
+    -
+      let
+          mainClassNames = `${className}__main js-${className}__main`;
+    div(class=mainClassNames)
+      input(type="hidden", date-isCalendar="1")
+      .calendar__control
+        button.calendar__button.calendar__button_clean.js-calendar__button_clean(
+          type="button",
+          data-type=0
+        )
+          | #{buttonCleanText}
+        button.calendar__button.calendar__button_apply.js-calendar__button_apply(
+          type="button",
+          data-type=1
+        )
+          | #{buttonApplyText}

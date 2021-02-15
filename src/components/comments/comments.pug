@@ -1,24 +1,16 @@
 include ../comment/comment
 mixin comments(props = {})
-    -
-        let
-            { label, count, comments = [], units = [] } = props;
-    .comments.js-comments(
-        data-count=count                        
-        data-units=units
-    )
-        if (label || count)
-            .comments__header
-                .comments__label=label
-                .comments__count
-                    span.comments__count-value=count
-                    span.comments__count-units.js-comments__count-units
-        .comments__items
-            each comment in comments
-                .comments__item
-                    +comment(comment)
-
-
-
-
-
+  -
+    let
+        { label, count, comments = [], units = [] } = props;
+  .comments.js-comments(data-count=count, data-units=units)
+    if (label || count)
+      .comments__header
+        .comments__label= label
+        .comments__count
+          span.comments__count-value= count
+          span.comments__count-units.js-comments__count-units
+    .comments__items
+      each comment in comments
+        .comments__item
+          +comment(comment)

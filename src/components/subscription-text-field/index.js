@@ -1,15 +1,15 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import MaskedTextField from "../masked-text-field";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import MaskedTextField from '../masked-text-field';
 
-import "./subscription-text-field.scss";
+import './subscription-text-field.scss';
 class SubscriptionTextField {
-  static CLASS_NAME = "SUBSCRIPTION_TEXT_FIELD";
+  static CLASS_NAME = 'SUBSCRIPTION_TEXT_FIELD';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-subscription-text-field",
+      query: query || '.js-subscription-text-field',
       render: render || SubscriptionTextField._renderComponent,
     });
   }

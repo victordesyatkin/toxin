@@ -1,1 +1,1 @@
-import "./card-footer.scss";
+import './card-footer.scss';

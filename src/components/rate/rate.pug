@@ -1,25 +1,21 @@
 mixin rate(props = {})
-    -
-        let { title, votes = [], total, units = [] } = props;
-    .rate.js-rate(
-        data-data=props
-    )
-        if (title)
-            .rate__title=title
-        .rate__vote-section
-            .rate__circle.js-rate__circle
-                canvas.rate__canvas
-                .rate__circle-inner
-                    .rate__total=total
-                    .rate__unit.js-rate__unit
-                .rate__dummy
-            .rate__clarification
-                each vote in votes
-                    -   
-                        let { color , background, label } = vote || {};
-                        let style = (color ? `color: ${color};` : '') + (background ? `background: ${background}`: '');
-                    .rate__vote
-                        .rate__vote-mark(
-                            style=style
-                        )
-                        .rate__vote-label=label
+  -
+    let { title, votes = [], total, units = [] } = props;
+  .rate.js-rate(data-data=props)
+    if (title)
+      .rate__title= title
+    .rate__vote-section
+      .rate__circle.js-rate__circle
+        canvas.rate__canvas
+        .rate__circle-inner
+          .rate__total= total
+          .rate__unit.js-rate__unit
+        .rate__dummy
+      .rate__clarification
+        each vote in votes
+          -
+            let { color , background, label } = vote || {};
+            let style = (color ? `color: ${color};` : '') + (background ? `background: ${background}`: '');
+          .rate__vote
+            .rate__vote-mark(style=style)
+            .rate__vote-label= label

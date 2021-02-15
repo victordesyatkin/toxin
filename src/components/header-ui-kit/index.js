@@ -1,1 +1,1 @@
-import "./header-ui-kit.scss";
+import './header-ui-kit.scss';

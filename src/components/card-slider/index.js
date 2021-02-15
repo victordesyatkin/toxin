@@ -1,16 +1,16 @@
-import { renderComponents } from "../../assets/helpers/utils";
-import Slider from "../slider";
-import CardHeader from "../card-header";
-import RateButton from "../rate-button";
+import { renderComponents } from '../../assets/helpers/utils';
+import Slider from '../slider';
+import CardHeader from '../card-header';
+import RateButton from '../rate-button';
 
-import "./card-slider.scss";
+import './card-slider.scss';
 
 export default class CardSlider {
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-card-slider",
+      query: query || '.js-card-slider',
       render: render || CardSlider._renderComponent,
     });
   }

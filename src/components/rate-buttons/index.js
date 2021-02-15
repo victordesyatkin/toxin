@@ -1,14 +1,14 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import RateButton from "../rate-button";
-import "./rate-buttons.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import RateButton from '../rate-button';
+import './rate-buttons.scss';
 class RateButtons {
-  static CLASS_NAME = "RATE_BUTTONS";
+  static CLASS_NAME = 'RATE_BUTTONS';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-rate-buttons",
+      query: query || '.js-rate-buttons',
       render: render || RateButtons._renderComponent,
     });
   }

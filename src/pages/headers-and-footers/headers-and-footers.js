@@ -1,15 +1,15 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import Footer from "../../components/footer";
-import "../demo-base/demo-base";
-import "./headers-and-footers.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import Footer from '../../components/footer';
+import '../demo-base/demo-base';
+import './headers-and-footers.scss';
 class HeadersAndFooters {
-  static CLASS_NAME = "HEADERS_AND_FOOTERS";
+  static CLASS_NAME = 'HEADERS_AND_FOOTERS';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-headers-and-footers__footer",
+      query: query || '.js-headers-and-footers__footer',
       render: render || HeadersAndFooters._renderComponent,
     });
   }
@@ -33,6 +33,6 @@ class HeadersAndFooters {
   }
 }
 
-window.addEventListener("load", HeadersAndFooters.renderComponents);
+window.addEventListener('load', HeadersAndFooters.renderComponents);
 
 export default HeadersAndFooters;

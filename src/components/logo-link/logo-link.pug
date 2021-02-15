@@ -2,8 +2,8 @@ include ../logo-image/logo-image
 include ../link/link
 
 mixin logo-link(props = {})
-    -
-        let
-            { link, logo } = props
-    +link(link)
-        +logo-image(logo)
+  -
+    let
+        { link, logo } = props
+  +link(link)
+    +logo-image(logo)

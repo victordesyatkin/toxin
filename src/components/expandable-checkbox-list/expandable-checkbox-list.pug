@@ -2,7 +2,7 @@ include ../expandable/expandable
 include ../checkbox-buttons/checkbox-buttons
 
 mixin expandable-checkbox-list(props = {})
-    .expandable-checkbox-list.js-expandable-checkbox-list
-        - let { expandable, ...checkBoxButtons } = props;
-        +expandable(expandable)
-            +checkbox-buttons(checkBoxButtons)
+  .expandable-checkbox-list.js-expandable-checkbox-list
+    - let { expandable, ...checkBoxButtons } = props;
+    +expandable(expandable)
+      +checkbox-buttons(checkBoxButtons)

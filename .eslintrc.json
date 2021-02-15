@@ -2,15 +2,13 @@
   "env": {
     "browser": true,
     "es6": true,
-    "es2021": true,
-    "esnext": true
+    "es2021": true
   },
-  // "parser": "@typescript-eslint/parser",
-  "extends": ["airbnb", "plugin:fsd/all"],
-  // "parserOptions": {
-  //   "project": "tsconfig.json",
-  //   "tsconfigRootDir": "."
-  // },
+  // "parser": "babel-eslint",
+  "extends": ["airbnb-base", "eslint:recommended", "plugin:fsd/all"],
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "plugins": ["fsd", "babel", "prettier"],
   "rules": {
     "fsd/hof-name-prefix": "error",

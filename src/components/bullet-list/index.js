@@ -1,2 +1,2 @@
-import "../bullet";
-import "./bullet-list.scss";
+import '../bullet';
+import './bullet-list.scss';

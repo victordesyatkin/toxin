@@ -1,24 +1,20 @@
 mixin card-header(props = {})
-    -
-        let
-            { number, suite, price, duration, unit, headerNumberText, options, numberFormat, theme } = props;
-            themes = {
-                slider: "slider"
-            };
-            className = "card-header";
-            classNames = `${className} js-${className}`;
-        classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    div(
-        class=classNames
-        data-numberFormat = numberFormat
-        data-options=options
-    )
-        .card-header__section-info
-            .card-header__number-info
-                span.card_header__info-text=headerNumberText
-                span.card-header__number=number
-                span.card-header__suite=suite
-            .card-header__price
-                span.card-header__price-content.js-card-header__price-content #{price}
-                span !{unit}
-                span.card-header__duration=duration
+  -
+    let
+        { number, suite, price, duration, unit, headerNumberText, options, numberFormat, theme } = props;
+        themes = {
+            slider: "slider"
+        };
+        className = "card-header";
+        classNames = `${className} js-${className}`;
+    classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+  div(class=classNames, data-numberFormat=numberFormat, data-options=options)
+    .card-header__section-info
+      .card-header__number-info
+        span.card_header__info-text= headerNumberText
+        span.card-header__number= number
+        span.card-header__suite= suite
+      .card-header__price
+        span.card-header__price-content.js-card-header__price-content #{price}
+        span !{unit}
+        span.card-header__duration= duration

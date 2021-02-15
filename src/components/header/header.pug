@@ -2,9 +2,9 @@ include ../logo-link/logo-link
 include ../nav/nav
 
 mixin header(props = {})
-    - let { nav, logo } = props;
-    header.header
-        .header__logo
-            +logo-link(logo)
-        .header__nav
-            +nav(nav)
+  - let { nav, logo } = props;
+  header.header
+    .header__logo
+      +logo-link(logo)
+    .header__nav
+      +nav(nav)

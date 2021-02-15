@@ -1,17 +1,17 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import Picker from "../../components/picker";
-import Footer from "../../components/footer";
-import "../base/base";
-import "../cards/cards";
-import "./landing-page.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import Picker from '../../components/picker';
+import Footer from '../../components/footer';
+import '../base/base';
+import '../cards/cards';
+import './landing-page.scss';
 
 class LandingPage {
-  static CLASS_NAME = "LANDING_PAGE";
+  static CLASS_NAME = 'LANDING_PAGE';
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-landing-page",
+      query: query || '.js-landing-page',
       render: render || LandingPage._renderComponent,
     });
   }
@@ -34,8 +34,8 @@ class LandingPage {
     Picker.renderComponents({ parents: this._$element });
     Footer.renderComponents();
     localStorage.clear();
-    this._$form = $("form", this._$element);
-    this._$form.on("submit", this._handleSubmitButtonClick.bind(this));
+    this._$form = $('form', this._$element);
+    this._$form.on('submit', this._handleSubmitButtonClick.bind(this));
   }
 
   _parseFormItem(data, index, element) {
@@ -47,17 +47,17 @@ class LandingPage {
 
   _handleSubmitButtonClick() {
     const data = {
-      startDate: "",
-      endDate: "",
-      adults: "",
-      children: "",
-      babies: "",
+      startDate: '',
+      endDate: '',
+      adults: '',
+      children: '',
+      babies: '',
     };
-    $("input[name]", this._$form).each(this._parseFormItem.bind(this, data));
-    localStorage.setItem("landingPage", JSON.stringify(data));
+    $('input[name]', this._$form).each(this._parseFormItem.bind(this, data));
+    localStorage.setItem('landingPage', JSON.stringify(data));
   }
 }
 
-window.addEventListener("load", LandingPage.renderComponents);
+window.addEventListener('load', LandingPage.renderComponents);
 
 export default LandingPage;

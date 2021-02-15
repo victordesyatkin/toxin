@@ -1,59 +1,47 @@
 mixin rate-button(props = {})
-    -
-        let
-            {
-                count,
-                grade,
-                name,
-                isOn,
-                srcImgRate,
-                altImgRate,
-                srcImgNoRate,
-                altImgNoRate,
-            } = props; 
-            n = 1;
-        if (grade > count) {
-            grade = count
-        } else if (grade < 0 || typeof grade === undefined) {
-            grade = 0;
-        }
-    .rate-button__button.js-rate-button__button(
-        data-count=count
-        data-on=isOn ? 1 : 0
-    )
-        input.rate-button__input(
-            type="hidden"
-            name=name
-            value=grade
-        )
-        while n <= count
-            -
-                let 
-                    rate = n <= grade ? 1 : 0; 
-                    className = `rate-button__rate`;  
-                    classNames = `${className} js-${className}`;
-                classNames += rate ? ` ${className}_checked` : '';
-            div(
-                class=classNames,
-                data-index=n,
-                data-rate=rate
-            )
-                if (srcImgRate)
-                    img(
-                        src=srcImgRate,
-                        alt=altImgRate,
-                        class="rate-button__img rate-button__img_checked"
-                    )
-                if (srcImgNoRate)
-                    img(
-                        src=srcImgNoRate,
-                        alt=altImgNoRate,
-                        class="rate-button__img rate-button__img_not_checked"
-                    )
-            -
-                ++n;
-                    
-                
-                    
+  -
+    let
+        {
+            count,
+            grade,
+            name,
+            isOn,
+            srcImgRate,
+            altImgRate,
+            srcImgNoRate,
+            altImgNoRate,
+        } = props; 
+        n = 1;
+    if (grade > count) {
+        grade = count
+    } else if (grade < 0 || typeof grade === undefined) {
+        grade = 0;
+    }
+  .rate-button__button.js-rate-button__button(
+    data-count=count,
+    data-on=isOn ? 1 : 0
+  )
+    input.rate-button__input(type="hidden", name=name, value=grade)
+    while n <= count
+      -
+        let 
+            rate = n <= grade ? 1 : 0; 
+            className = `rate-button__rate`;  
+            classNames = `${className} js-${className}`;
+        classNames += rate ? ` ${className}_checked` : '';
+      div(class=classNames, data-index=n, data-rate=rate)
+        if (srcImgRate)
+          img.rate-button__img.rate-button__img_checked(
+            src=srcImgRate,
+            alt=altImgRate
+          )
+        if (srcImgNoRate)
+          img.rate-button__img.rate-button__img_not_checked(
+            src=srcImgNoRate,
+            alt=altImgNoRate
+          )
+      -
+        ++n;
+    
 
-
+    

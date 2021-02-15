@@ -1,2 +1,2 @@
-import "../landing-page/landing-page";
-import "./index.scss";
+import '../landing-page/landing-page';
+import './index.scss';

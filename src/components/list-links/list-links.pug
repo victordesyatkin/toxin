@@ -1,10 +1,10 @@
 include ../link/link
 
 mixin list-links(props = {})
-    - let { items = [], header } = props;
-    .list-links
-        .list-links__header=header
-        ul.list-links__items
-            each item in items
-                li.list-links__item
-                    +link(item)
+  - let { items = [], header } = props;
+  .list-links
+    .list-links__header= header
+    ul.list-links__items
+      each item in items
+        li.list-links__item
+          +link(item)

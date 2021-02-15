@@ -1,14 +1,14 @@
-import { renderComponents, renderComponent } from "../../assets/helpers/utils";
-import "./like-button.scss";
+import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import './like-button.scss';
 
 class LikeButton {
-  static CLASS_NAME = "LIKE_BUTTON";
+  static CLASS_NAME = 'LIKE_BUTTON';
 
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-like-button__button",
+      query: query || '.js-like-button__button',
       render: render || LikeButton._renderComponent,
     });
   }
@@ -23,15 +23,15 @@ class LikeButton {
 
   constructor(element) {
     this._element = element;
-    this.input = this._element.querySelector(".js-like-button__input");
-    this.count = this._element.querySelector(".js-like-button__count");
+    this.input = this._element.querySelector('.js-like-button__input');
+    this.count = this._element.querySelector('.js-like-button__count');
     this._attachEventHandlers();
   }
 
   _attachEventHandlers() {
     this.input &&
       this.input.addEventListener &&
-      this.input.addEventListener("click", this._handleInputClick);
+      this.input.addEventListener('click', this._handleInputClick);
   }
 
   _handleInputClick = () => {

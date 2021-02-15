@@ -1,3 +1,3 @@
-import "../toggle-button";
+import '../toggle-button';
 
-import "./toggle-button.scss";
+import './toggle-button.scss';

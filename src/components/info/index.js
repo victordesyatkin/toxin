@@ -1,2 +1,2 @@
-import "../info-item";
-import "./info.scss";
+import '../info-item';
+import './info.scss';

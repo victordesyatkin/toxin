@@ -1,19 +1,19 @@
-import datepicker from "air-datepicker";
-import get from "lodash/get";
+import datepicker from 'air-datepicker';
+import get from 'lodash/get';
 
-import { renderComponents } from "../../assets/helpers/utils";
+import { renderComponents } from '../../assets/helpers/utils';
 
-import "./calendar.scss";
+import './calendar.scss';
 
 class Calendar {
   static OPTIONS = {
     inline: true,
-    language: "ru",
+    language: 'ru',
     range: true,
     navTitles: {
-      days: "MM yyyy",
-      months: "yyyy",
-      years: "yyyy1 - yyyy2",
+      days: 'MM yyyy',
+      months: 'yyyy',
+      years: 'yyyy1 - yyyy2',
     },
     multipleDates: true,
     nextHtml: '<span class="icon-arrow_forward"></span>',
@@ -24,7 +24,7 @@ class Calendar {
     const { parents, query, render } = props;
     renderComponents({
       parents,
-      query: query || ".js-calendar",
+      query: query || '.js-calendar',
       render: render || Calendar._renderComponent,
     });
   }
@@ -36,45 +36,45 @@ class Calendar {
   constructor(element) {
     this._element = element;
     this._$element = $(element);
-    this._$input = $("input", this._$element);
-    this._rangeFromDate = "";
+    this._$input = $('input', this._$element);
+    this._rangeFromDate = '';
     this._init();
   }
 
   _init() {
     this._options = {
       ...Calendar.OPTIONS,
-      ...get(this._$element.data(), ["options"]),
+      ...get(this._$element.data(), ['options']),
       onSelect: this._handlerSelect.bind(this),
       onRenderCell: this._onRenderCell.bind(this),
     };
     this._options = this._prepareOptions(this._options);
     this._$input.datepicker(this._options);
-    this._datepicker = this._$input.datepicker().data("datepicker");
-    this._$main = $(".js-calendar__main", this._$element);
-    this._$buttonClean = $(".js-calendar__button_clean", this._$element).on(
-      "click",
+    this._datepicker = this._$input.datepicker().data('datepicker');
+    this._$main = $('.js-calendar__main', this._$element);
+    this._$buttonClean = $('.js-calendar__button_clean', this._$element).on(
+      'click',
       this._handleCleanButtonClick.bind(this)
     );
-    this._$buttonApply = $(".js-calendar__button_apply", this._$element).on(
-      "click",
+    this._$buttonApply = $('.js-calendar__button_apply', this._$element).on(
+      'click',
       this._handleApplyButtonClick.bind(this)
     );
-    this._$element.on("click", this._handleBlockClick.bind(this));
+    this._$element.on('click', this._handleBlockClick.bind(this));
     this._toggleVisibleButtonClean();
     this._selectDate();
   }
 
   _handlerSelect(formattedDate, date = {}, inst) {
     if (this._options.range) {
-      if (Object.prototype.toString.call(date) !== "[object Array]") {
+      if (Object.prototype.toString.call(date) !== '[object Array]') {
         return false;
       }
       const length = date.length;
       if (length === 1) {
         this._rangeFromDate = new Date(date[0]).getTime();
       } else if (this._rangeFromDate) {
-        this._rangeFromDate = "";
+        this._rangeFromDate = '';
       }
     }
     this._toggleVisibleButtonClean();
@@ -84,11 +84,11 @@ class Calendar {
   _onRenderCell(date, cellType) {
     if (
       this._rangeFromDate &&
-      cellType === "day" &&
+      cellType === 'day' &&
       this._rangeFromDate === new Date(date).getTime()
     ) {
       return {
-        classes: "-hide-in-range-",
+        classes: '-hide-in-range-',
       };
     }
   }
@@ -100,18 +100,18 @@ class Calendar {
   _handleApplyButtonClick() {}
 
   _toggleVisibleButtonClean() {
-    const selectedDatesLength = get(this._datepicker, ["selectedDates"], [])
+    const selectedDatesLength = get(this._datepicker, ['selectedDates'], [])
       .length;
     if (
-      !this._$buttonClean.hasClass("calendar__button_hide") &&
+      !this._$buttonClean.hasClass('calendar__button_hide') &&
       !selectedDatesLength
     ) {
-      this._$buttonClean.addClass("calendar__button_hide");
+      this._$buttonClean.addClass('calendar__button_hide');
     } else if (
-      this._$buttonClean.hasClass("calendar__button_hide") &&
+      this._$buttonClean.hasClass('calendar__button_hide') &&
       selectedDatesLength
     ) {
-      this._$buttonClean.removeClass("calendar__button_hide");
+      this._$buttonClean.removeClass('calendar__button_hide');
     }
   }
 
@@ -121,9 +121,9 @@ class Calendar {
 
   _prepareOptions(options) {
     options = { ...options };
-    const minDateType = get(this._$element.data(), ["options", "minDateType"]);
+    const minDateType = get(this._$element.data(), ['options', 'minDateType']);
     switch (minDateType) {
-      case "current": {
+      case 'current': {
         options = { ...options, minDate: new Date() };
         break;
       }
@@ -135,9 +135,9 @@ class Calendar {
 
   _selectDate() {
     let start = this._value2Date(
-      get(this._$element.data(), ["options", "start"])
+      get(this._$element.data(), ['options', 'start'])
     );
-    let end = this._value2Date(get(this._$element.data(), ["options", "end"]));
+    let end = this._value2Date(get(this._$element.data(), ['options', 'end']));
     if (end && !start) {
       start = new Date();
       start = start.setDate(end.getDate() - 1);
@@ -151,19 +151,19 @@ class Calendar {
     }
   }
 
-  _value2Date(value = "") {
-    const parts = value.split(".");
+  _value2Date(value = '') {
+    const parts = value.split('.');
     const partDay = parts[0];
     const partMonth = parts[1];
     const partYear = parts[2];
-    let date = "";
+    let date = '';
     if (partDay && partMonth && partYear) {
       date = `${partMonth}.${partDay}.${partYear}`;
     }
     if (date) {
       date = new Date(date);
       if (!(date instanceof Date)) {
-        date = "";
+        date = '';
       }
     }
     return date;

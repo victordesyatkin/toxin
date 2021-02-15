@@ -1,15 +1,15 @@
 include ../button/button
 
 mixin buttons(props = {})
-    -
-        let { label, buttons } = props;
-    .buttons
-        if (label)
-            .buttons__section-head=label
-        .buttons__section-body
-            for button, index in buttons
-                .buttons__items
-                    .buttons__item
-                        +button(button)
-                    .buttons__item
-                        +button({...button, isHover: true})
+  -
+    let { label, buttons } = props;
+  .buttons
+    if (label)
+      .buttons__section-head= label
+    .buttons__section-body
+      each button, index in buttons
+        .buttons__items
+          .buttons__item
+            +button(button)
+          .buttons__item
+            +button({...button, isHover: true})

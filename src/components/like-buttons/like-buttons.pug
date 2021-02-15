@@ -1,17 +1,12 @@
 include ../like-button/like-button
 
 mixin like-buttons(props = {})
-    -
-        let { label, buttons = [], images } = props;
-    .like-buttons.js-like-buttons
-        if (label)
-            .like-buttons__label=label
-        .like-buttons__items
-            for button in buttons
-                .like-buttons__item
-                    +like-button({...button, ...images})
-                    
-                
-                    
-
-
+  -
+    let { label, buttons = [], images } = props;
+  .like-buttons.js-like-buttons
+    if (label)
+      .like-buttons__label= label
+    .like-buttons__items
+      each button in buttons
+        .like-buttons__item
+          +like-button({...button, ...images})

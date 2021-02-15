@@ -1,11 +1,9 @@
 mixin color-sample(props = {})
-    - 
-        let { background, label, description } = props;
-        let style = background ? `background: ${background};`: '';
-    .color-sample
-        .color-sample__section-rectangle(
-            style=style
-        )
-        .color-sample__section-info
-            .color-sample__label=label
-            .color-sample__description=description
+  -
+    let { background, label, description } = props;
+    let style = background ? `background: ${background};`: '';
+  .color-sample
+    .color-sample__section-rectangle(style=style)
+    .color-sample__section-info
+      .color-sample__label= label
+      .color-sample__description= description

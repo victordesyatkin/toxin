@@ -1,17 +1,17 @@
 mixin toggle-button(props = {})
-    -
-        let { name, tabindex, isRequired, isDisabled, isChecked, label } = props;
-        let id = name ? `toggle-buttons__button-${name}`: '';
-    label.toggle-button(for=id)
-        input.toggle-button__input(
-            type="checkbox"
-            name=name
-            tabindex=tabindex
-            required=isRequired
-            disabled=isDisabled
-            checked=isChecked
-            id=id
-        )
-        span.toggle-button__check-mark-area
-            span.toggle-button__mark
-        span.toggle-button__label=label
+  -
+    let { name, tabindex, isRequired, isDisabled, isChecked, label } = props;
+    let id = name ? `toggle-buttons__button-${name}`: '';
+  label.toggle-button(for=id)
+    input.toggle-button__input(
+      type="checkbox",
+      name=name,
+      tabindex=tabindex,
+      required=isRequired,
+      disabled=isDisabled,
+      checked=isChecked,
+      id=id
+    )
+    span.toggle-button__check-mark-area
+      span.toggle-button__mark
+    span.toggle-button__label= label

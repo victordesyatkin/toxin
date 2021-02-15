@@ -1,1 +1,1 @@
-import "./bullet.scss";
+import './bullet.scss';
