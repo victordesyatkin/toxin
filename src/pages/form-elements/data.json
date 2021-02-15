@@ -333,49 +333,49 @@
       {
         "label": "Завтрак",
         "isChecked": false,
-        "name": "breakfast1",
+        "name": "breakfast221",
         "alt": "Завтрак"
       },
       {
         "label": "Письменный стол",
         "isChecked": true,
-        "name": "table1",
+        "name": "table221",
         "alt": "Письменный стол"
       },
       {
         "label": "Стул для кормления",
         "isChecked": true,
-        "name": "chair1",
+        "name": "chair221",
         "alt": "Стул для кормления"
       },
       {
         "label": "Кроватка",
         "isChecked": true,
-        "name": "cot1",
+        "name": "cot221",
         "alt": "Кроватка"
       },
       {
         "label": "Телевизор",
         "isChecked": false,
-        "name": "tv11",
+        "name": "tv2211",
         "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
         "isChecked": false,
-        "name": "shampoo11",
+        "name": "shampoo2211",
         "alt": "Шампунь"
       },
       {
         "label": "Телевизор",
         "isChecked": false,
-        "name": "tv21",
+        "name": "tv2221",
         "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
         "isChecked": false,
-        "name": "shampoo21",
+        "name": "shampoo2221",
         "alt": "Шампунь"
       }
     ]

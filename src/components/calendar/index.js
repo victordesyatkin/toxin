@@ -1,5 +1,6 @@
 import datepicker from 'air-datepicker';
 import get from 'lodash/get';
+import bind from 'bind-decorator';
 
 import { renderComponents } from '../../assets/helpers/utils';
 
@@ -45,8 +46,8 @@ class Calendar {
     this._options = {
       ...Calendar.OPTIONS,
       ...get(this._$element.data(), ['options']),
-      onSelect: this._handlerSelect.bind(this),
-      onRenderCell: this._onRenderCell.bind(this),
+      onSelect: this._handlerSelect,
+      onRenderCell: this._onRenderCell(this),
     };
     this._options = this._prepareOptions(this._options);
     this._$input.datepicker(this._options);
@@ -54,17 +55,18 @@ class Calendar {
     this._$main = $('.js-calendar__main', this._$element);
     this._$buttonClean = $('.js-calendar__button_clean', this._$element).on(
       'click',
-      this._handleCleanButtonClick.bind(this)
+      this._handleCleanButtonClick
     );
     this._$buttonApply = $('.js-calendar__button_apply', this._$element).on(
       'click',
-      this._handleApplyButtonClick.bind(this)
+      this._handleApplyButtonClick
     );
-    this._$element.on('click', this._handleBlockClick.bind(this));
+    this._$element.on('click', this._handleBlockClick);
     this._toggleVisibleButtonClean();
     this._selectDate();
   }
 
+  @bind
   _handlerSelect(formattedDate, date = {}, inst) {
     if (this._options.range) {
       if (Object.prototype.toString.call(date) !== '[object Array]') {
@@ -81,6 +83,7 @@ class Calendar {
     return false;
   }
 
+  @bind
   _onRenderCell(date, cellType) {
     if (
       this._rangeFromDate &&
@@ -93,10 +96,12 @@ class Calendar {
     }
   }
 
+  @bind
   _handleCleanButtonClick() {
     this._datepicker.clear();
   }
 
+  @bind
   _handleApplyButtonClick() {}
 
   _toggleVisibleButtonClean() {
@@ -115,6 +120,7 @@ class Calendar {
     }
   }
 
+  @bind
   _handleBlockClick() {
     this._toggleVisibleButtonClean();
   }

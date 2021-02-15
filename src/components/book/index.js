@@ -1,13 +1,14 @@
 import datepicker from 'air-datepicker';
 import get from 'lodash/get';
+import bind from 'bind-decorator';
 
-import Dropdown from '../dropdown';
-import DateDropdown from '../date-dropdown';
 import {
   wordForm,
   renderComponents,
   renderComponent,
 } from '../../assets/helpers/utils';
+import Dropdown from '../dropdown';
+import DateDropdown from '../date-dropdown';
 import '../button';
 
 import './book.scss';
@@ -69,18 +70,39 @@ class Book {
     this._words = get(this._props, ['words'], []);
     this._numberFormat = get(this._props, ['numberFormat']);
     this._options = get(this._props, ['options']);
-    setTimeout(() => {
-      this._datepicker = this._$input.datepicker().data('datepicker');
-      this._prepareDirty();
-      this._setCalc();
-      this._$calendar.on('click', this._setCalc.bind(this));
-    }, 500);
+    this._dirty = 0;
+    this._datepicker = this._$input.datepicker().data('datepicker');
+    this._prepareDirty();
+    this._setCalc();
+    this._$calendar.on('click', this._setCalc);
   }
 
   _prepareNumber(n = '') {
     return n.split(' ').join('') || 0;
   }
 
+  _setTotal(total = 0) {
+    total += this._dirty - this._discount;
+    if (total < 0) {
+      total = 0;
+    }
+    total = new Intl.NumberFormat(this._numberFormat, this._options).format(
+      total
+    );
+    this._$totalTotal.html(`${total}<span>${this._unit}</span>`);
+  }
+
+  _prepareDirty() {
+    const $dates = $('.js-book__section:not([data-type])');
+    $('.js-book__section-total', $dates).each(this._prepareDirtyItem);
+  }
+
+  @bind
+  _prepareDirtyItem(index, element) {
+    this._dirty += parseFloat(this._prepareNumber($(element).html()));
+  }
+
+  @bind
   _setCalc() {
     let price = this._price;
     const selectedDates = this._datepicker.selectedDates || [];
@@ -102,28 +124,6 @@ class Book {
     );
     this._$calcTotal.html(`${total}${this._unit}`);
   }
-
-  _setTotal(total = 0) {
-    total += this._dirty - this._discount;
-    if (total < 0) {
-      total = 0;
-    }
-    total = new Intl.NumberFormat(this._numberFormat, this._options).format(
-      total
-    );
-    this._$totalTotal.html(`${total}<span>${this._unit}</span>`);
-  }
-
-  _prepareDirty() {
-    const $dates = $('.js-book__section:not([data-type])');
-    let dirty = 0;
-    Array.prototype.forEach.call(
-      $('.js-book__section-total', $dates),
-      function (element) {
-        dirty += parseFloat(this._prepareNumber($(element).html()));
-      }.bind(this)
-    );
-    this._dirty = dirty;
-  }
 }
+
 export default Book;

@@ -1,5 +1,6 @@
 import get from 'lodash/get';
 import orderBy from 'lodash/orderBy';
+import bind from 'bind-decorator';
 
 import {
   renderComponents,
@@ -40,9 +41,10 @@ class Rate {
     this._initCanvas();
     this._initCircleParams();
     this._draw();
-    window.addEventListener('resize', this._resizeCanvas.bind(this), false);
+    window.addEventListener('resize', this._resizeCanvas);
   }
 
+  @bind
   _resizeCanvas() {
     this._initCircle();
     this._initCanvas();

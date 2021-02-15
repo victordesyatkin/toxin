@@ -333,7 +333,7 @@
   },
   "checkboxButtons": {
     "label": "правила дома",
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Можно курить",
@@ -356,21 +356,23 @@
   },
   "richCheckboxButtons": {
     "label": "доступность",
-    "src": "./assets/images/checkbox-buttons.svg",
+    "src": "assets/images/checkbox-buttons.svg",
     "buttons": [
       {
         "label": "Широкий коридор",
         "checked": false,
         "name": "widecorridor",
         "info": "Ширина коридоров в номере не менее 91 см.",
-        "alt": "Широкий коридор"
+        "alt": "Широкий коридор",
+        "theme": "bold"
       },
       {
         "label": "Помощник для инвалидов",
         "checked": false,
         "name": "helper",
         "info": "На 1 этаже вас встретит специалист  и проводит до номера.",
-        "alt": "Помощник для инвалидов"
+        "alt": "Помощник для инвалидов",
+        "theme": "bold"
       }
     ]
   },

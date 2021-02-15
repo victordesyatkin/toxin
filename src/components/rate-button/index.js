@@ -1,3 +1,5 @@
+import bind from 'bind-decorator';
+
 import { renderComponents, renderComponent } from '../../assets/helpers/utils';
 import './rate-button.scss';
 class RateButton {
@@ -30,14 +32,12 @@ class RateButton {
 
   _attachEventHandlers() {
     if (this._element) {
-      this._element.addEventListener(
-        'click',
-        this._handleInputClick.bind(this)
-      );
+      this._element.addEventListener('click', this._handleInputClick);
     }
   }
 
-  _handleInputClick = (event) => {
+  @bind
+  _handleInputClick(event) {
     let el = (event || {}).target;
     if (!el || !this.input) {
       return null;
@@ -79,7 +79,7 @@ class RateButton {
         }
       }
     }
-  };
+  }
 }
 
 export default RateButton;
