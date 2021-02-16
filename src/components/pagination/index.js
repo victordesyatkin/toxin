@@ -1,4 +1,4 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import './pagination.scss';
 
 class Pagination {
@@ -85,10 +85,10 @@ class Pagination {
       current &&
       end
     ) {
-      let startText =
+      const startText =
         (current - 1) * count > 0 ? (current - 1) * count : current;
-      let endText = current * count > 0 ? current * count : current;
-      let total = end * count > 100 ? '100+' : end * count;
+      const endText = current * count > 0 ? current * count : current;
+      const total = end * count > 100 ? '100+' : end * count;
       text = `${startText} - ${endText} из ${total} ${text}`;
       const element = document.querySelector('.pagination__section-footer');
       if (element) {

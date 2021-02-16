@@ -1,7 +1,8 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import './rate-button.scss';
+
 class RateButton {
   static CLASS_NAME = 'RATE_BUTTON';
 
@@ -53,7 +54,7 @@ class RateButton {
       for (let i = 1; i <= index; i++) {
         const prev = this._element.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 1;
-        const classList = prev.classList;
+        const { classList } = prev;
         if (
           Array.prototype.indexOf.call(
             classList,
@@ -70,7 +71,7 @@ class RateButton {
       for (let i = this.count; i >= index; i--) {
         const prev = this._element.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 0;
-        const classList = prev.classList;
+        const { classList } = prev;
         if (
           Array.prototype.indexOf.call(classList, 'rate-button__rate_checked') >
           -1

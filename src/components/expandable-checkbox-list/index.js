@@ -1,6 +1,7 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import Expandable from '../expandable';
 import './expandable-checkbox-list.scss';
+
 class ExpandableCheckboxList {
   static CLASS_NAME = 'EXPANDABLE_CHECKBOX_LIST';
 

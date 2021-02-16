@@ -1,4 +1,4 @@
-import datepicker from 'air-datepicker';
+import datepicker from 'air-datepicker'; /* eslint-disable-line */
 import get from 'lodash/get';
 import bind from 'bind-decorator';
 
@@ -90,7 +90,7 @@ class Calendar {
       ...Calendar.OPTIONS,
       ...get(this._$element.data(), ['options']),
       onSelect: this._handlerSelect,
-      onRenderCell: Calendar._onRenderCell(this),
+      onRenderCell: Calendar._onRenderCell,
     };
     this._options = this._prepareOptions(this._options);
     this._$input.datepicker(this._options);

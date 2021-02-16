@@ -5,11 +5,18 @@
     "es2021": true
   },
   "parser": "babel-eslint",
-  "extends": ["airbnb-base", "eslint:recommended", "plugin:fsd/all"],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:fsd/all",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 6,
+    "sourceType": "module"
   },
-  "plugins": ["fsd", "babel", "prettier"],
+  "plugins": ["babel", "fsd", "json", "i18n-json", "prettier", "pug"],
   "globals": {
     "$": true
   },

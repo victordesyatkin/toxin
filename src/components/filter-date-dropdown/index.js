@@ -1,16 +1,22 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import Calendar from '../calendar';
 import './filter-date-dropdown.scss';
 
 class FilterDateDropdown {
   static CLASS_NAME = 'FILTER_DATE_DROPDOWN';
+
   static TYPE_FAKE = 0;
+
   static TYPE_MAIN = 3;
+
   static TYPE_INPUT = 1;
+
   static TYPE_CLEAN = 0;
+
   static TYPE_APPLY = 1;
+
   static IS_CALENDAR = 1;
 
   static renderComponents(props = {}) {

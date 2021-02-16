@@ -1,52 +1,63 @@
 import { renderComponent, renderComponents } from '../../helpers/utils';
-import Picker from '../../components/picker';
-import SignUp from '../../components/sign-up';
-import SignIn from '../../components/sign-in';
-import Calendar from '../../components/calendar';
-import CardSlider from '../../components/card-slider';
+// import Picker from '../../components/picker';
+// import SignUp from '../../components/sign-up';
+// import SignIn from '../../components/sign-in';
+// import Calendar from '../../components/calendar';
+// import CardSlider from '../../components/card-slider';
 import Book from '../../components/book';
 import '../../components/card';
 import '../../index';
 import '../demo-base/demo-base';
 import './cards.scss';
+import data from './data.json';
 
 class Cards {
   static CLASS_NAME = 'CARDS';
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
+  static renderComponents(options = {}) {
+    const { query, parents } = options;
     renderComponents({
       parents,
-      query: query || '.js-cards',
-      render: render || Cards._renderComponent,
+      query,
+      props: options,
+      render: Cards._renderComponent,
     });
   }
 
-  static _renderComponent(index, element) {
+  static _renderComponent(options = {}) {
+    const { element, props } = options;
     renderComponent({
       element,
-      className: Cards.CLASS_NAME,
-      someClass: Cards,
+      props,
+      SomeClass: Cards,
     });
   }
 
-  constructor(element) {
+  constructor({ element, props = {} }) {
     this._element = element;
     this._$element = $(element);
+    this._props = props;
     this._init();
   }
 
   _init() {
-    const parents = this._$element;
-    Picker.renderComponents({ parents });
-    Book.renderComponents({ parents });
-    SignUp.renderComponents({ parents });
-    SignIn.renderComponents({ parents });
-    Calendar.renderComponents({ parents });
-    CardSlider.renderComponents({ parents });
+    const { book, query } = this._props;
+    // Picker.renderComponents({ parents });
+    Book.renderComponents({
+      parents: $(`${query}__book`, this._$element),
+      props: book,
+    });
+    // SignUp.renderComponents({ parents });
+    // SignIn.renderComponents({ parents });
+    // Calendar.renderComponents({ parents });
+    // CardSlider.renderComponents({ parents });
   }
 }
 
-window.addEventListener('load', Cards.renderComponents);
+function render() {
+  Cards.renderComponents(data);
+}
+
+window.addEventListener('load', render);
 
 export default Cards;

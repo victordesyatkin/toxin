@@ -1,4 +1,4 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
 import Input from '../input';
 import '../button';

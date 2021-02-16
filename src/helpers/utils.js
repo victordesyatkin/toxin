@@ -12,9 +12,9 @@ function wordForm(num, word) {
   ];
 }
 
-function renderComponents(props = {}) {
-  const { query, render } = props;
-  let { parents } = props;
+function renderComponents(options = {}) {
+  const { query, render, props } = options;
+  let { parents } = options;
   if (!query) {
     return undefined;
   }
@@ -30,25 +30,30 @@ function renderComponents(props = {}) {
     parents = [undefined];
   }
   return parents.reduce(
-    (accumulator, parent) => accumulator.push($(query, parent).each(render)),
+    (accumulator, parent) =>
+      accumulator.push(
+        $(query, parent).each((index, element) => {
+          render({ props, element });
+        })
+      ),
     []
   );
 }
 
-function isRenderComponent({ element, className, SomeClass }) {
-  return !element || !className || !SomeClass;
+function isRenderComponent({ element, SomeClass }) {
+  return element && SomeClass.CLASS_NAME && SomeClass;
 }
 
 function renderComponent(options = {}) {
-  const { element, className, SomeClass } = options;
+  const { element, SomeClass, props } = options;
   if (!isRenderComponent(options)) {
     return undefined;
   }
   const $element = $(element);
-  if ($element.data(className)) {
+  if ($element.data(SomeClass.CLASS_NAME)) {
     return undefined;
   }
-  return $element.data(className, new SomeClass(element));
+  return $element.data(SomeClass.CLASS_NAME, new SomeClass({ element, props }));
 }
 
 export { wordForm, renderComponents, renderComponent };

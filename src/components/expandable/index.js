@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import './expandable.scss';
 
 class Expandable {
@@ -55,6 +55,7 @@ class Expandable {
     } else {
       this._$element.css({ 'z-index': '' });
     }
+    return false;
   }
 }
 

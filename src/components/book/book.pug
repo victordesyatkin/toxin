@@ -14,7 +14,7 @@ mixin book(props={})
     let className = 'book';
     let classNames = `${className} js-${className}`;
     classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-  div(class=classNames, data-options=props)
+  div(class=classNames)
     .book__section.js-book__section.book__section-title(data-type="3")
       .book__number-info= numberInfoText
         span.book__number= number

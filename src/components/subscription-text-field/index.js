@@ -2,6 +2,7 @@ import { renderComponents, renderComponent } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
 
 import './subscription-text-field.scss';
+
 class SubscriptionTextField {
   static CLASS_NAME = 'SUBSCRIPTION_TEXT_FIELD';
 

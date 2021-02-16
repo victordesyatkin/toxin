@@ -1,10 +1,12 @@
 import get from 'lodash/get';
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import './range-slider.scss';
+
 class RangeSlider {
   static CLASS_NAME = 'RANGE_SLIDER';
+
   static TYPES = ['start', 'end'];
 
   static renderComponents(props = {}) {
@@ -203,12 +205,15 @@ class RangeSlider {
   _calculateK() {
     this._k = this._max / this._maxTrackLength;
   }
+
   @bind
   _handleBlockMouseEnter() {}
+
   @bind
   _handleBlockMouseLeave() {
     this._type = '';
   }
+
   @bind
   _handleBlockMouseUp(e) {
     this._type = '';
@@ -219,6 +224,7 @@ class RangeSlider {
     e.preventDefault();
     this._type = this._getTypePoint(e);
   }
+
   @bind
   _handleBlockMouseMove(e) {
     if (!this._type) {
@@ -260,6 +266,7 @@ class RangeSlider {
     }
     return type;
   }
+
   @bind
   _handleWindowResize() {
     this._maxTrackLength = parseFloat(this._fullTrack.offsetWidth);

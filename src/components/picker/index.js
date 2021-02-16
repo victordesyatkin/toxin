@@ -1,10 +1,12 @@
-import { renderComponents, renderComponent } from '../../assets/helpers/utils';
+import { renderComponents, renderComponent } from '../../helpers/utils';
 import DateDropdown from '../date-dropdown';
 import Dropdown from '../dropdown';
 import '../button';
 import './picker.scss';
+
 class Picker {
   static CLASS_NAME = 'PICKER';
+
   static renderComponents(props = {}) {
     const { parents, query, render } = props;
     renderComponents({
