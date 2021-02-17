@@ -1,47 +1,44 @@
 import get from 'lodash/get';
+import bind from 'bind-decorator';
 
-import {
-  wordForm,
-  renderComponents,
-  renderComponent,
-} from '../../helpers/utils';
-import '../comment';
+import { wordForm, Component } from '../../helpers/utils';
+import Comment from '../comment';
 import './comments.scss';
 
-class Comments {
-  static CLASS_NAME = 'COMMENTS';
+class Comments extends Component {
+  static QUERY = 'comments';
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-comments',
-      render: render || Comments._renderComponent,
+  constructor(options = {}) {
+    const { query, ...props } = options;
+    super({
+      query: query || Comments.QUERY,
+      props,
     });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: Comments.CLASS_NAME,
-      someClass: Comments,
-    });
-  }
-
-  constructor(el) {
-    this._el = el;
-    this._$el = $(el);
-    this._init();
+    this.init();
   }
 
   _init() {
-    const data = this._$el.data();
-    const units = get(data, ['units']) || [];
-    const count = get(data, ['count']) || [];
-    const $units = $('.js-comments__count-units', this._$el);
+    const units = get(this._props, ['units']) || [];
+    const count = get(this._props, ['count']) || [];
+    const $units = $(`${Comments.QUERY}__count-units`, this._$element);
     if (units.length) {
       $units.html(wordForm(count, units));
     }
+    this._comments = get(this._props, ['comments']) || [];
+    $(`${Comments.QUERY}__item`).each(this._renderItem);
+  }
+
+  @bind
+  _renderItem(index, element) {
+    const comment = this._comments[index];
+    let item;
+    if (comment) {
+      item = new Comment({
+        parent: element,
+        props: comment,
+      });
+    }
+    return item;
   }
 }
 

@@ -3,7 +3,7 @@ mixin comments(props = {})
   -
     let
         { label, count, comments = [], units = [] } = props;
-  .comments.js-comments(data-count=count, data-units=units)
+  .comments.js-comments
     if (label || count)
       .comments__header
         .comments__label= label

@@ -1,9 +1,9 @@
-/* eslint comma-dangle: ["error", {"functions": "never"}] */
 import isString from 'lodash/isString';
 import isArray from 'lodash/isArray';
 import trim from 'lodash/trim';
 import isFunction from 'lodash/isFunction';
 import isEmpty from 'lodash/isEmpty';
+import bind from 'bind-decorator';
 
 function wordForm(num, word) {
   const cases = [2, 0, 1, 1, 1, 2];
@@ -53,7 +53,58 @@ function renderComponent(options = {}) {
   if ($element.data(SomeClass.CLASS_NAME)) {
     return undefined;
   }
-  return $element.data(SomeClass.CLASS_NAME, new SomeClass({ element, props }));
+  return $element.data(SomeClass.name, new SomeClass({ element, props }));
 }
 
-export { wordForm, renderComponents, renderComponent };
+class Component {
+  constructor(options = {}) {
+    const { props } = options;
+    this._props = props;
+    this._parents = this._renderComponents(options);
+    if (this._init) {
+      this._init();
+    }
+  }
+
+  _renderComponents(options = {}) {
+    const { query, props } = options;
+    this._query = query || this._query;
+    let { parents } = options;
+    if (!this._query) {
+      return undefined;
+    }
+    if (isString(this._query) && !trim(this._query)) {
+      return undefined;
+    }
+    if (!parents || !isArray(parents)) {
+      parents = [parents];
+    } else if (isEmpty(parents)) {
+      parents = [undefined];
+    }
+    return parents.reduce(
+      (accumulator, parent) =>
+        accumulator.push(
+          $(this._query, parent).each((index, element) => {
+            this._renderComponent({ props, element });
+          })
+        ),
+      []
+    );
+  }
+
+  @bind
+  _renderComponent(options = {}) {
+    const { element } = options;
+    if (!element) {
+      return undefined;
+    }
+    this.element = element;
+    this.$element = $(element);
+    if (this.$element.data(this.name)) {
+      return undefined;
+    }
+    return this.$element.data(this.name, this);
+  }
+}
+
+export { wordForm, renderComponents, renderComponent, Component };

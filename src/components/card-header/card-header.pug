@@ -8,13 +8,31 @@ mixin card-header(props = {})
         className = "card-header";
         classNames = `${className} js-${className}`;
     classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-  div(class=classNames, data-numberFormat=numberFormat, data-options=options)
-    .card-header__section-info
-      .card-header__number-info
-        span.card_header__info-text= headerNumberText
-        span.card-header__number= number
-        span.card-header__suite= suite
-      .card-header__price
-        span.card-header__price-content.js-card-header__price-content #{price}
-        span !{unit}
-        span.card-header__duration= duration
+  div(class=classNames)
+    div(
+      class=`${className}__section-info`
+    )
+      div(
+        class=`${className}__number-info`
+      )
+        span= headerNumberText(
+          class=`${className}__info-text`
+        )
+        span(
+          class=`${className}__number`
+        )= number
+        span(
+          class=`${className}__suite`
+        )= suite
+      div(
+        class=`${className}__price`
+      )
+        span(
+          class=`${className}__price-content js-${className}__price-content`
+        ) #{price}
+        span(
+          class=`${className}__price-unit js-${className}__price-unit`
+        ) !{unit}
+        span(
+          class=`${className}__duration`
+        )= duration

@@ -1,34 +1,37 @@
-import { renderComponents } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import Slider from '../slider';
 import CardHeader from '../card-header';
 import RateButton from '../rate-button';
 
 import './card-slider.scss';
 
-export default class CardSlider {
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-card-slider',
-      render: render || CardSlider._renderComponent,
+class CardSlider extends Component {
+  static QUERY = '.js-card-slider';
+
+  constructor(options = {}) {
+    const { query, ...props } = options;
+    super({
+      query: query || CardSlider.QUERY,
+      props,
     });
-  }
-
-  static _renderComponent() {
-    new CardSlider(arguments[1]);
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
+    this.init();
   }
 
   _init() {
-    const parents = this._$element;
-    Slider.renderComponents({ parents });
-    CardHeader.renderComponents({ parents });
-    RateButton.renderComponents({ parents });
+    const { slider, cardHeader, rateButton } = this._props;
+    this._slider = Slider({
+      parents: $(`${CardSlider.QUERY}__slider`, this._$element),
+      props: slider,
+    });
+    this._cardHeader = CardHeader({
+      parents: $(`${CardSlider.QUERY}__card-header`, this._$element),
+      props: cardHeader,
+    });
+    this._rateButton = RateButton({
+      parents: $(`${CardSlider.QUERY}__rate-button`, this._$element),
+      props: rateButton,
+    });
   }
 }
+
+export default CardSlider;

@@ -2,11 +2,11 @@ import datepicker from 'air-datepicker'; /* eslint-disable-line */
 import get from 'lodash/get';
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 
 import './calendar.scss';
 
-class Calendar {
+class Calendar extends Component {
   static OPTIONS = {
     inline: true,
     language: 'ru',
@@ -20,23 +20,6 @@ class Calendar {
     nextHtml: '<span class="icon-arrow_forward"></span>',
     prevHtml: '<span class="icon-arrow_prev"></span>',
   };
-
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-calendar',
-      render: render || Calendar._renderComponent,
-    });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: Calendar.CLASS_NAME,
-      SomeClass: Calendar,
-    });
-  }
 
   static _isValidDate({ partDay, partMonth, partYear }) {
     return partDay && partMonth && partYear;
@@ -77,26 +60,22 @@ class Calendar {
     return date;
   }
 
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._$input = $('input', this._$element);
-    this._rangeFromDate = '';
-    this._init();
-  }
+  _query = '.js-calendar';
 
   _init() {
     this._options = {
       ...Calendar.OPTIONS,
-      ...get(this._$element.data(), ['options']),
+      ...get(this._props, ['options']),
       onSelect: this._handlerSelect,
       onRenderCell: Calendar._onRenderCell,
     };
+    this._$input = $('input', this._$element);
+    this._rangeFromDate = '';
     this._options = this._prepareOptions(this._options);
     this._$input.datepicker(this._options);
     this._datepicker = this._$input.datepicker().data('datepicker');
-    this._$main = $('.js-calendar__main', this._$element);
-    this._$buttonClean = $('.js-calendar__button_clean', this._$element).on(
+    this._$main = $(`${this._query}__main`, this._$element);
+    this._$buttonClean = $(`${this._query}__button_clean`, this._$element).on(
       'click',
       this._handleCleanButtonClick
     );
@@ -150,7 +129,7 @@ class Calendar {
 
   _prepareOptions(tempOptions) {
     let options = { ...tempOptions };
-    const minDateType = get(this._$element.data(), ['options', 'minDateType']);
+    const minDateType = get(this._props, ['options', 'minDateType']);
     switch (minDateType) {
       case 'current': {
         options = { ...options, minDate: new Date() };
@@ -164,12 +143,8 @@ class Calendar {
   }
 
   _selectDate() {
-    let start = Calendar._value2Date(
-      get(this._$element.data(), ['options', 'start'])
-    );
-    let end = Calendar._value2Date(
-      get(this._$element.data(), ['options', 'end'])
-    );
+    let start = Calendar._value2Date(get(this._props, ['options', 'start']));
+    let end = Calendar._value2Date(get(this._props, ['options', 'end']));
     if (end && !start) {
       start = new Date();
       start = start.setDate(end.getDate() - 1);

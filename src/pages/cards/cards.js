@@ -1,4 +1,4 @@
-import { renderComponent, renderComponents } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 // import Picker from '../../components/picker';
 // import SignUp from '../../components/sign-up';
 // import SignIn from '../../components/sign-in';
@@ -11,42 +11,25 @@ import '../demo-base/demo-base';
 import './cards.scss';
 import data from './data.json';
 
-class Cards {
-  static CLASS_NAME = 'CARDS';
+class Cards extends Component {
+  static QUERY = '.js-cards';
 
-  static renderComponents(options = {}) {
-    const { query, parents } = options;
-    renderComponents({
-      parents,
-      query,
-      props: options,
-      render: Cards._renderComponent,
-    });
-  }
-
-  static _renderComponent(options = {}) {
-    const { element, props } = options;
-    renderComponent({
-      element,
-      props,
-      SomeClass: Cards,
-    });
-  }
-
-  constructor({ element, props = {} }) {
-    this._element = element;
-    this._$element = $(element);
-    this._props = props;
+  constructor(options = {}) {
+    super(options);
     this._init();
   }
 
   _init() {
-    const { book, query } = this._props;
-    // Picker.renderComponents({ parents });
-    Book.renderComponents({
-      parents: $(`${query}__book`, this._$element),
+    const { book } = this._props;
+    this._book = new Book({
+      parents: $(`${Cards.QUERY}__book`, this._$element),
       props: book,
     });
+    // Picker.renderComponents({ parents });
+    // Book.renderComponents({
+    //   parents: $(`${query}__book`, this._$element),
+    //   props: book,
+    // });
     // SignUp.renderComponents({ parents });
     // SignIn.renderComponents({ parents });
     // Calendar.renderComponents({ parents });
@@ -54,10 +37,12 @@ class Cards {
   }
 }
 
-function render() {
-  Cards.renderComponents(data);
+function handleComponentLoad() {
+  const { query, ...props } = data;
+  const cards = new Cards({ query, props });
+  return cards;
 }
 
-window.addEventListener('load', render);
+window.addEventListener('load', handleComponentLoad);
 
 export default Cards;

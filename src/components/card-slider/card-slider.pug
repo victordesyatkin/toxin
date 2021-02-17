@@ -7,17 +7,19 @@ mixin card-slider(props)
   -
     let { slider, info, rating, commentsContent } = props || {};
     let { button, comments } = rating || {};
+    let className = 'card-slider';
+    let classNames = `${className}.js-${className}`;
   +card
-    .card-slider.js-card-slider
-      .card-slider__slider
+    div(class=classNames)
+      div(class=`${className}__slider`)
         +slider(slider)
-      .card-slider__info
+      div(class=`${className}__card-header`)
         +card-header(info)
-      .card-slider__separator-wrap
-        .card-slider__separator
-      .card-slider__score
-        .card-slider__rating
+      div(class=`${className}__separator-wrap`)
+        div(class=`${className}__separator`)
+      div(class=`${className}__score`)
+        div(class=`${className}__rating-button`)
           +rate-button(button)
-        .card-slider__comments
-          span.card-slider__comments-numbers= comments
-          span.card-slider__comments-content= commentsContent
+        div(class=`${className}__comments`)
+          span(class=`${className}__comments-numbers`)= comments
+          span(class=`${className}__comments-content`)= commentsContent

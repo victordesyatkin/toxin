@@ -1,42 +1,28 @@
 import get from 'lodash/get';
+import bind from 'bind-decorator';
 
-import { renderComponents } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import './card-header.scss';
 
-export default class CardHeader {
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-card-header',
-      render: render || CardHeader._renderComponent,
-    });
-  }
-
-  static _renderComponent() {
-    new CardHeader(arguments[1]);
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this.init();
-  }
+class CardHeader extends Component {
+  _query = '.js-card-header';
 
   init() {
-    const data = this._$element.data();
-    const numberFormat = get(data, ['numberformat']);
-    const options = get(data, ['options']);
-    $('.js-card-header__price-content', this._$element).each(
-      this.parserPriceContent.bind(this, numberFormat, options)
+    this._numberFormat = get(this._props, ['numberFormat']);
+    this._options = get(this._props, ['options']);
+    $(`${this._query}__price-content`, this._$element).each(
+      this.parserPriceContent
     );
   }
 
-  parserPriceContent(numberFormat, options, index, element) {
-    $(element).html(
-      new Intl.NumberFormat(numberFormat, options).format(
-        parseFloat($(element).html().replace(' ', ''))
-      )
-    );
+  @bind
+  parserPriceContent(index, element) {
+    const html = new Intl.NumberFormat(
+      this._numberFormat,
+      this._options
+    ).format(parseFloat($(element).html().replace(' ', '')));
+    $(element).html(html);
   }
 }
+
+export default CardHeader;

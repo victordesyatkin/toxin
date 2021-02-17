@@ -1,44 +1,85 @@
 import upperFirst from 'lodash/upperFirst';
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
 import Calendar from '../calendar';
 import './date-dropdown.scss';
 
-class DateDropdown {
-  static CLASS_NAME = 'DATE_DROPDOWN';
+class DateDropdown extends Component {
   static TYPE_CLEAN = 0;
+
   static TYPE_APPLY = 1;
+
   static IS_CALENDAR = 1;
+
   static TYPES = ['start', 'end'];
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-date-dropdown',
-      render: render || DateDropdown._renderComponent,
-    });
+  static _prepareDate(passDate) {
+    let date = new Date(passDate);
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    if (day < 10) {
+      day = `0${day}`;
+    }
+    if (month < 10) {
+      month = `0${month}`;
+    }
+    date = `${day}.${month}.${date.getFullYear()}`;
+    return date;
   }
 
-  static _renderComponent() {
-    renderComponent({
-      element: arguments[1],
-      className: DateDropdown.CLASS_NAME,
-      someClass: DateDropdown,
-    });
+  static _isValidDate({ partDay, partMonth, partYear }) {
+    return partDay && partMonth && partYear;
   }
 
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
+  static _value2Date(value) {
+    const parts = value.split('.');
+    const partDay = parseFloat(parts[0]);
+    const partMonth = parseFloat(parts[1]);
+    const partYear = parseFloat(parts[2]);
+    let date = '';
+    if (DateDropdown._isValidDate({ partDay, partMonth, partYear })) {
+      date = `${partMonth}.${partDay}.${partYear}`;
+    }
+    if (date) {
+      date = new Date(date);
+      if (!(date instanceof Date)) {
+        date = '';
+      }
+    }
+    return date;
   }
+
+  static isClosest({ event, $element, targetClass }) {
+    return (
+      $(event.target).closest($element).length &&
+      $(event.target, $element).hasClass('datepicker--cell') &&
+      $(targetClass, $element).length
+    );
+  }
+
+  static _checkType(type = '') {
+    return DateDropdown.TYPES.indexOf(type) > -1;
+  }
+
+  _query = '.js-date-dropdown';
 
   _init() {
-    MaskedTextField.renderComponents({ parents: this._$element });
-    Calendar.renderComponents({ parents: this._$element });
+    const { fieldStart, fieldEnd, calendar } = this._props;
+    this._maskedTextFieldStart = new MaskedTextField({
+      parents: $(`js-${this._query}__masked-text-field-start`, this._$element),
+      props: fieldStart,
+    });
+    this._maskedTextFieldEnd = new MaskedTextField({
+      parents: $(`js-${this._query}__masked-text-field-end`, this._$element),
+      props: fieldEnd,
+    });
+    this._calendar = new Calendar({
+      parents: $(`js-${this._query}__calendar`, this._$element),
+      props: calendar,
+    });
+
     this._$sections = $('.js-input__section', this._$element);
     this._inputStart = $('.js-input__input', this._$sections.get(0));
     this._inputStart.attr('disabled', true);
@@ -101,54 +142,24 @@ class DateDropdown {
     } else {
       this._setValue('end', '');
     }
-    isToggle && this._handleInputClick();
-  }
-
-  _prepareDate(date) {
-    date = new Date(date);
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    if (day < 10) {
-      day = `0${day}`;
+    if (isToggle) {
+      this._handleInputClick();
     }
-    if (month < 10) {
-      month = `0${month}`;
-    }
-    date = `${day}.${month}.${date.getFullYear()}`;
-    return date;
-  }
-
-  _value2Date(value) {
-    const parts = value.split('.');
-    const partDay = parseFloat(parts[0]);
-    const partMonth = parseFloat(parts[1]);
-    const partYear = parseFloat(parts[2]);
-    let date = '';
-    if (partDay && partMonth && partYear) {
-      date = `${partMonth}.${partDay}.${partYear}`;
-    }
-    if (date) {
-      date = new Date(date);
-      if (!(date instanceof Date)) {
-        date = '';
-      }
-    }
-    return date;
   }
 
   @bind
   _handleDocumentClick(event) {
     const targetClass = `.${$(event.target, this._$element).attr('class')}`;
     if (
-      !$(event.target).closest(this._$element).length &&
-      !$(event.target, this._$element).hasClass('datepicker--cell') &&
-      !$(targetClass, this._$element).length
+      !DateDropdown.isClosest({ targetClass, $element: this._$element, event })
     ) {
       this._datepicker.hide();
     }
   }
 
-  _setDates({ start, end } = {}) {
+  _setDates({ passStart, passEnd } = {}) {
+    let start = passStart;
+    let end = passEnd;
     if (!start && end) {
       start = new Date(end);
       start.setDate(start.getDate() - 1);
@@ -161,21 +172,17 @@ class DateDropdown {
   }
 
   _getValue(type = '') {
-    if (this._checkType(type)) {
+    if (DateDropdown._checkType(type)) {
       return this[`_input${upperFirst(type)}`].val();
     }
     return '';
   }
 
   _setValue(type = '', value = '') {
-    if (this._checkType(type)) {
+    if (DateDropdown._checkType(type)) {
       return this[`_input${upperFirst(type)}`].val(value);
     }
     return '';
-  }
-
-  _checkType(type = '') {
-    return DateDropdown.TYPES.indexOf(type) > -1;
   }
 }
 

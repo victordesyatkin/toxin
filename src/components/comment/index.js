@@ -1,35 +1,25 @@
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import LikeButton from '../like-button';
 import './comment.scss';
 
-class Comment {
-  static CLASS_NAME = 'COMMENT';
+class Comment extends Component {
+  static QUERY = '.js-comment';
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-comment',
-      render: render || Comment._renderComponent,
+  constructor(options = {}) {
+    const { query, ...props } = options;
+    super({
+      query: query || Comment.QUERY,
+      props,
     });
-  }
-
-  static _renderComponent() {
-    renderComponent({
-      element: arguments[1],
-      className: Comment.CLASS_NAME,
-      someClass: Comment,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
+    this.init();
   }
 
   _init() {
-    LikeButton.renderComponents({ parents: this._$element });
+    const { likeButton } = this._props;
+    this._likeButton = new LikeButton({
+      parents: $(`${Comment.QUERY}__like-button`, this._$element),
+      props: likeButton,
+    });
   }
 }
 
