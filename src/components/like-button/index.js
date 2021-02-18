@@ -1,50 +1,36 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import './like-button.scss';
 
-class LikeButton {
-  static CLASS_NAME = 'LIKE_BUTTON';
+class LikeButton extends Component {
+  _query = '.js-like-button';
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-like-button__button',
-      render: render || LikeButton._renderComponent,
-    });
-  }
-
-  static _renderComponent() {
-    renderComponent({
-      element: arguments[1],
-      className: LikeButton.CLASS_NAME,
-      someClass: LikeButton,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
-    this.input = this._element.querySelector('.js-like-button__input');
-    this.count = this._element.querySelector('.js-like-button__count');
+  _init() {
+    this._input = this._element.querySelector(`${this._query}__input`);
+    this._count = this._element.querySelector(`${this._query}__count`);
     this._attachEventHandlers();
   }
 
   _attachEventHandlers() {
-    this.input &&
-      this.input.addEventListener &&
+    if (this.input && this.input.addEventListener) {
       this.input.addEventListener('click', this._handleInputClick);
+    }
   }
 
-  @bind
-  _handleInputClick() {
-    if (
+  _isValidInput() {
+    return (
       this.input &&
       this.input.checked !== undefined &&
       this.count &&
       this.count.innerHTML &&
-      !isNaN(parseFloat(this.count.innerHTML))
-    ) {
+      !Number.isNaN(parseFloat(this.count.innerHTML))
+    );
+  }
+
+  @bind
+  _handleInputClick() {
+    if (this._isValidInput()) {
       if (this.input.checked) {
         this.count.innerHTML = parseFloat(this.count.innerHTML) + 1;
       } else {

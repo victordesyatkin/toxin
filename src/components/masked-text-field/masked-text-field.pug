@@ -4,5 +4,7 @@ mixin masked-text-field(props = {})
   -
     let
         { mask, input } = props;
-  .masked-text-field.js-masked-text-field(data-options=mask)
+        className = 'masked-text-field';
+        classNames = `${className} js-${className}`;
+  div(class=classNames)
     +input(input)

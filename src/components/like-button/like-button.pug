@@ -13,23 +13,27 @@ mixin like-button(props = {})
             isDisabled,
             isChecked
         } = props;
-        id = name ? `like-button__button-${name}`: '';
-    count = count !== undefined ? count : 0;            
-  label.like-button__button.js-like-button__button(for=id)
-    input.like-button__input.js-like-button__input(
+        id = name ? `like-button-${name}`: '';
+        passCount = count !== undefined ? count : 0;
+        let className = 'like-button';
+        let classNames = `${className} js-${className}`;
+
+  label(for=id, class=classNames)
+    input(
       type="checkbox",
       name=name,
       tabindex=tabindex,
       required=isRequired,
       disabled=isDisabled,
       checked=isChecked,
-      id=id
+      id=id,
+      class=`${className}__input.js-${className}__input`
     )
-    .like-button__check-mark
+    div(class=`${className}__check-mark`)
       if (srcLike)
-        .like-button__check-mark-like
+        div(class=`${className}__check-mark-like`)
           img(src=srcLike, alt=altLike)
       if (srcNoLike)
-        .like-button__check-mark-no-like
+        div(class=`${className}__check-mark-no-like`)
           img(src=srcNoLike, alt=altNoLike)
-      .like-button__count.js-like-button__count #{count}
+      div(class=`${className}__count js-${className}__count`) #{passCount}

@@ -1,0 +1,49 @@
+@import '~theme/variables.scss';
+
+$parent: 'dropdown-item';
+
+#{$parent} {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.42rem 0.5rem 0 1rem;
+
+  &__control,
+  &__value {
+    display: flex;
+  }
+
+  &__button,
+  &__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.14rem;
+    height: 2.14rem;
+  }
+
+  &__button {
+    border-radius: 100%;
+    border: 0.071rem solid $dropdown-button-border-color;
+    color: $dropdown-text-color-button-active;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: normal;
+    cursor: pointer;
+  }
+
+  &__button:hover,
+  &__button:focus,
+  &__button:active {
+    outline: none;
+  }
+
+  &__button_fade {
+    opacity: 0.5;
+  }
+
+  &__value {
+    width: 2.28rem;
+  }
+}

@@ -6,23 +6,17 @@ import { Component } from '../../helpers/utils';
 // import CardSlider from '../../components/card-slider';
 import Book from '../../components/book';
 import '../../components/card';
-import '../../index';
 import '../demo-base/demo-base';
 import './cards.scss';
 import data from './data.json';
 
 class Cards extends Component {
-  static QUERY = '.js-cards';
-
-  constructor(options = {}) {
-    super(options);
-    this._init();
-  }
+  _query = '.js-cards';
 
   _init() {
     const { book } = this._props;
     this._book = new Book({
-      parents: $(`${Cards.QUERY}__book`, this._$element),
+      parents: $(`${this._query}__book`, this._$element),
       props: book,
     });
     // Picker.renderComponents({ parents });
@@ -43,6 +37,6 @@ function handleComponentLoad() {
   return cards;
 }
 
-window.addEventListener('load', handleComponentLoad);
+// window.addEventListener('load', handleComponentLoad);
 
 export default Cards;

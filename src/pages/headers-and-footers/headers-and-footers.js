@@ -34,6 +34,6 @@ class HeadersAndFooters {
   }
 }
 
-window.addEventListener('load', HeadersAndFooters.renderComponents);
+// window.addEventListener('load', HeadersAndFooters.renderComponents);
 
 export default HeadersAndFooters;

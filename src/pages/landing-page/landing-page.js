@@ -64,6 +64,6 @@ class LandingPage {
   }
 }
 
-window.addEventListener('load', LandingPage.renderComponents);
+// window.addEventListener('load', LandingPage.renderComponents);
 
 export default LandingPage;

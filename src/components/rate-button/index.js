@@ -1,34 +1,18 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import './rate-button.scss';
 
-class RateButton {
-  static CLASS_NAME = 'RATE_BUTTON';
+class RateButton extends Component {
+  _query = '.js-rate-button';
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-rate-button__button',
-      render: render || RateButton._renderComponent,
-    });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: RateButton.CLASS_NAME,
-      someClass: RateButton,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
+  _init() {
     this.count = this._element.dataset.count;
     this.input = this._element.querySelector('input');
     this._on = parseFloat($(this._element).data('on'));
-    this._on && this._attachEventHandlers();
+    if (this._on) {
+      this._attachEventHandlers();
+    }
   }
 
   _attachEventHandlers() {
@@ -41,7 +25,7 @@ class RateButton {
   _handleInputClick(event) {
     let el = (event || {}).target;
     if (!el || !this.input) {
-      return null;
+      return undefined;
     }
     if (el.tagName === 'IMG') {
       el = el.closest('div.js-rate-button__rate');
@@ -51,7 +35,7 @@ class RateButton {
     index = parseFloat(index);
     if (!rate) {
       this.input.value = index;
-      for (let i = 1; i <= index; i++) {
+      for (let i = 1; i <= index; i += 1) {
         const prev = this._element.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 1;
         const { classList } = prev;
@@ -68,7 +52,7 @@ class RateButton {
       this.input.value = index - 1;
       el.dataset.rate = 0;
       el.classList.remove('rate-button__rate_checked');
-      for (let i = this.count; i >= index; i--) {
+      for (let i = this.count; i >= index; i -= 1) {
         const prev = this._element.querySelector(`[data-index="${i}"]`);
         prev.dataset.rate = 0;
         const { classList } = prev;
@@ -80,6 +64,7 @@ class RateButton {
         }
       }
     }
+    return undefined;
   }
 }
 

@@ -1,13 +1,11 @@
 import get from 'lodash/get';
 import IMask from 'imask';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
-import './masked-text-field.scss';
+import { Component } from '../../helpers/utils';
 import Input from '../input';
+import './masked-text-field.scss';
 
-class MaskedTextField {
-  static CLASS_NAME = 'MASKED_TEXT_FIELD';
-
+class MaskedTextField extends Component {
   static defaultProps = {
     mask: Date,
     lazy: false,
@@ -38,33 +36,12 @@ class MaskedTextField {
     },
   };
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-masked-text-field',
-      render: render || MaskedTextField._renderComponent,
-    });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: MaskedTextField.CLASS_NAME,
-      someClass: MaskedTextField,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
-  }
+  _query = '.js-masked-text-field';
 
   _init() {
     Input.renderComponents({ parents: this._$element });
     const selector = $('input', this._$element);
-    const options = this._$element.data('options');
+    const options = get(this._props, ['mask']);
     let maskOptions = {};
     const mask = get(options, ['mask']);
     const regexp = get(options, ['regexp']);
@@ -75,7 +52,7 @@ class MaskedTextField {
     } else {
       maskOptions = MaskedTextField.defaultProps;
     }
-    IMask(selector.get(0), maskOptions);
+    this._mask = IMask(selector.get(0), maskOptions);
   }
 }
 

@@ -1,33 +1,10 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import './expandable.scss';
 
-class Expandable {
-  static CLASS_NAME = 'EXPANDABLE';
-
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-expandable',
-      render: render || Expandable._renderComponent,
-    });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: Expandable.CLASS_NAME,
-      someClass: Expandable,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
-  }
+class Expandable extends Component {
+  _query = '.js-expandable';
 
   _init() {
     this._$header = $('.js-expandable__header', this._$element);

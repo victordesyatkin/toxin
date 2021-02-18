@@ -7,7 +7,7 @@ mixin slider(props = {})
         className = 'slider';
         classNames = `${className} js-${className}`;
     classNames += isCover ? ` ${className}_cover` : ''; 
-  div(class=classNames, data-props=props)
+  div(class=classNames)
     .slider__section-images.slider__section_not_selected.js-slider__section-images
       .slider__image-wrapper
         img.slider__image

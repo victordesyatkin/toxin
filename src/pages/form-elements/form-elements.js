@@ -1,16 +1,16 @@
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import Input from '../../components/input';
 import Dropdown from '../../components/dropdown';
-import MaskTextField from '../../components/masked-text-field';
-import DateDropdown from '../../components/date-dropdown';
-import FilterDateDropdown from '../../components/filter-date-dropdown';
-import SubscriptionTextField from '../../components/subscription-text-field';
-import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
-import LikeButtons from '../../components/like-buttons';
-import RateButtons from '../../components/rate-buttons';
-import RangeSlider from '../../components/range-slider';
-import Pagination from '../../components/pagination';
-import Comment from '../../components/comment';
+// import MaskTextField from '../../components/masked-text-field';
+// import DateDropdown from '../../components/date-dropdown';
+// import FilterDateDropdown from '../../components/filter-date-dropdown';
+// import SubscriptionTextField from '../../components/subscription-text-field';
+// import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
+// import LikeButtons from '../../components/like-buttons';
+// import RateButtons from '../../components/rate-buttons';
+// import RangeSlider from '../../components/range-slider';
+// import Pagination from '../../components/pagination';
+// import Comment from '../../components/comment';
 import '../../components/checkbox-buttons';
 import '../../components/toggle-buttons';
 import '../../components/radio-buttons';
@@ -20,66 +20,66 @@ import '../../components/info';
 import '../../components/buttons';
 import '../demo-base/demo-base';
 import './form-elements.scss';
+import data from './data.json';
 
-class FormElements {
-  static CLASS_NAME = 'FORM_ELEMENTS';
+class FormElements extends Component {
+  _query = '.js-form-elements';
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-form-elements',
-      render: render || FormElements._renderComponent,
-    });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: FormElements.CLASS_NAME,
-      someClass: FormElements,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
   _init() {
-    const parents = this._$element;
-    Input.renderComponents({ parents });
-    Dropdown.renderComponents({ parents });
-    MaskTextField.renderComponents({
-      parents,
+    const { input1, input2, dropdown1 } = this._props;
+    console.log('props : ', this._props);
+    this._input1 = new Input({
+      parent: $(`${this._query}__text-field-default`, this._$element),
+      props: input1,
     });
-    DateDropdown.renderComponents({
-      parents,
+    this._input2 = new Input({
+      parent: $(`${this._query}__text-field-hover-focus`, this._$element),
+      props: input2,
     });
-    FilterDateDropdown.renderComponents({
-      parents,
+    this._dropdown1 = new Dropdown({
+      parent: $(`${this._query}__dropdown-first`, this._$element),
+      props: dropdown1,
     });
-    SubscriptionTextField.renderComponents({
-      parents,
-    });
-    ExpandableCheckboxList.renderComponents({
-      parents,
-    });
-    LikeButtons.renderComponents({
-      parents,
-    });
-    RateButtons.renderComponents({
-      parents,
-    });
-    Pagination.renderComponents({ parents });
-    RangeSlider.renderComponents({
-      parents,
-    });
-    Comment.renderComponents({ parents });
+    // Dropdown.renderComponents({ parents });
+    // MaskTextField.renderComponents({
+    //   parents,
+    // });
+    // DateDropdown.renderComponents({
+    //   parents,
+    // });
+    // FilterDateDropdown.renderComponents({
+    //   parents,
+    // });
+    // SubscriptionTextField.renderComponents({
+    //   parents,
+    // });
+    // ExpandableCheckboxList.renderComponents({
+    //   parents,
+    // });
+    // LikeButtons.renderComponents({
+    //   parents,
+    // });
+    // RateButtons.renderComponents({
+    //   parents,
+    // });
+    // Pagination.renderComponents({ parents });
+    // RangeSlider.renderComponents({
+    //   parents,
+    // });
+    // Comment.renderComponents({ parents });
   }
 }
 
-window.addEventListener('load', FormElements.renderComponents);
+function handleComponentLoad() {
+  const cards = new FormElements({ props: data });
+  return cards;
+}
+
+window.addEventListener('load', handleComponentLoad);
 
 export default FormElements;

@@ -1,31 +1,18 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import './input.scss';
 
-class Input {
-  static CLASS_NAME = 'INPUT';
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    return renderComponents({
-      parents,
-      query: query || '.js-input',
-      render: render || Input._renderComponent,
-    });
+class Input extends Component {
+  _query = '.js-input';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
-  static _renderComponent() {
-    return renderComponent({
-      element: arguments[1],
-      className: Input.CLASS_NAME,
-      someClass: Input,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
+  get input() {
+    return this._input;
   }
 
   toggleStraight() {
@@ -44,6 +31,30 @@ class Input {
     }
   }
 
+  expand() {
+    if (!this._$element.hasClass('input_expanded')) {
+      this._$element.addClass('input_expanded');
+    }
+  }
+
+  minimize() {
+    if (this._$element.hasClass('input_expanded')) {
+      this._$element.removeClass('input_expanded');
+    }
+  }
+
+  enable() {
+    if (this._$element.attr('disabled')) {
+      this._$element.attr({ disabled: false });
+    }
+  }
+
+  disable() {
+    if (!this._$element.attr('disabled')) {
+      this._$element.attr({ disabled: true });
+    }
+  }
+
   addTheme(theme) {
     const themeClass = `input_theme_${theme}`;
     if (!this._$element.hasClass(themeClass)) {
@@ -58,26 +69,41 @@ class Input {
     }
   }
 
-  get input() {
-    return this._input;
-  }
-
   _init() {
     this._$element.on('focusin', this._handleInputFocusIn);
     this._$element.on('focusout', this._handleInputFocusOut);
-    this._input = $('input', this._$element);
+    this._input = $(`${this._query}__input`, this._$element);
+    this._$button = $(`${this._query}__button`, this._$element);
+    this._$button.on('click', this._handleButtonClick);
+    console.log('this._$button : ', $(`${this._query}__input`, this._$element));
   }
 
   @bind
-  _handleInputFocusIn() {
+  _handleInputFocusIn(event) {
     $('.js-input__section', this._$element).addClass('input__section_focused');
+    const { handleInputFocusIn } = this._props;
+    if (handleInputFocusIn) {
+      handleInputFocusIn(event);
+    }
   }
 
   @bind
-  _handleInputFocusOut() {
+  _handleInputFocusOut(event) {
     $('.js-input__section', this._$element).removeClass(
       'input__section_focused'
     );
+    const { handleInputFocusOut } = this._props;
+    if (handleInputFocusOut) {
+      handleInputFocusOut(event);
+    }
+  }
+
+  @bind
+  _handleButtonClick(event) {
+    this.toggleExpanded();
+    const { handleButtonClick } = this._props;
+    console.log('handleButtonClick : ', handleButtonClick);
+    handleButtonClick(event);
   }
 }
 

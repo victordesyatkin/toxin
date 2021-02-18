@@ -1,4 +1,5 @@
 include ../input/input
+include ../dropdown-item/dropdown-item
 
 mixin dropdown(props = {})
   -
@@ -12,24 +13,19 @@ mixin dropdown(props = {})
     classNames += isExpanded ? ` ${className}_expanded` : '';
     classNames += isForcedExpanded ? ` ${className}_forced-expanded` : ''; 
     classNames += isStraight ? ` ${className}_straight` : '';
-  div(class=classNames, data-type=`${type}`)
+  div(class=classNames)
     div(class=`${className}__input js-${className}__input`)
       +input({...input, theme: 'dropdown', isStraight: isStraight || type === 0, isExpanded: isForcedExpanded || isExpanded})
     .dropdown__main.js-dropdown__main
       -
         let { items = [] } = props;
-      each item in items
-        -
-          let { title, value, name } = item || {};
-          let buttonMinusClass = 'dropdown__button js-dropdown__button'
-          buttonMinusClass += value === 0 ? ' dropdown__button_fade js-dropdown__button_fade' : '';
-        .dropdown__item.js-dropdown__item
-          input(name=name, type="hidden", value=value, data-title=title)
-          .dropdown__item-title= title
-          .dropdown__item-control
-            button(type="button", data-type="0", class=buttonMinusClass)= buttonDecreaseText
-            .dropdown__item-value.js-dropdown__item-value= value
-            button.dropdown__button(type="button", data-type="1")= buttonIncreaseText
+        let length = items.length;
+      if length
+        ul(class=`${className}__items`)
+          each item in items
+            li(class=`${className}__li-item`)
+              +dropdown-item(item)
+
       if (isControlVisible)
         .dropdown__main-control
           button.dropdown__control-button.dropdown__control-button_clean(

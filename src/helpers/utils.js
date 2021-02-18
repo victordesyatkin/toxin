@@ -58,52 +58,54 @@ function renderComponent(options = {}) {
 
 class Component {
   constructor(options = {}) {
-    const { props } = options;
+    // console.log('Component constructor : ', options);
+    // console.log('Component constructor this._query : ', this._query);
+    // console.log('Component constructor this.this : ', this);
+    this._options = options;
+    const { props, parent } = this._options;
+    this._parent = parent;
     this._props = props;
-    this._parents = this._renderComponents(options);
-    if (this._init) {
-      this._init();
-    }
   }
 
-  _renderComponents(options = {}) {
-    const { query, props } = options;
-    this._query = query || this._query;
-    let { parents } = options;
-    if (!this._query) {
-      return undefined;
-    }
-    if (isString(this._query) && !trim(this._query)) {
-      return undefined;
-    }
-    if (!parents || !isArray(parents)) {
-      parents = [parents];
-    } else if (isEmpty(parents)) {
-      parents = [undefined];
-    }
-    return parents.reduce(
-      (accumulator, parent) =>
-        accumulator.push(
-          $(this._query, parent).each((index, element) => {
-            this._renderComponent({ props, element });
-          })
-        ),
-      []
-    );
+  _isValidQuery() {
+    return this._query && isString(this._query) && trim(this._query);
   }
 
   @bind
-  _renderComponent(options = {}) {
-    const { element } = options;
+  _renderComponent() {
+    const { query } = this._options;
+    this._query = query || this._query;
+    // console.log('Component _renderComponent this._query : ', this._query);
+    if (!this._isValidQuery()) {
+      return undefined;
+    }
+    const $element = $(this._query, this._parent);
+    if (!$element.length) {
+      return undefined;
+    }
+    const element = $element.get(0);
     if (!element) {
       return undefined;
     }
-    this.element = element;
-    this.$element = $(element);
-    if (this.$element.data(this.name)) {
+    this._element = element;
+    this._$element = $(element);
+    // console.log(
+    //   'Component _renderComponent $element : ',
+    //   this.$element.data(this.constructor.name)
+    // );
+    // console.log(
+    //   'Component _renderComponent this.name : ',
+    //   this.constructor.name
+    // );
+    if (this._$element.data(this.constructor.name)) {
       return undefined;
     }
-    return this.$element.data(this.name, this);
+    this._$element.data(this.constructor.name, this);
+    // console.log('Component  _renderComponent this._init : ', this._init);
+    if (this._init) {
+      this._init();
+    }
+    return undefined;
   }
 }
 

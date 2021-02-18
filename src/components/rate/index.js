@@ -2,37 +2,11 @@ import get from 'lodash/get';
 import orderBy from 'lodash/orderBy';
 import bind from 'bind-decorator';
 
-import {
-  renderComponents,
-  renderComponent,
-  wordForm,
-} from '../../helpers/utils';
+import { Component, wordForm } from '../../helpers/utils';
 import './rate.scss';
 
-class Rate {
-  static CLASS_NAME = 'RATE';
-
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-rate',
-      render: render || Rate._renderComponent,
-    });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: Rate.CLASS_NAME,
-      someClass: Rate,
-    });
-  }
-
-  constructor(element) {
-    this._$element = $(element);
-    this._init();
-  }
+class Rate extends Component {
+  _query = '.js-rate';
 
   _init() {
     this._data = this._$element.data();
@@ -57,9 +31,10 @@ class Rate {
     return k * 2 * Math.PI;
   }
 
-  _drawSeparator(startAngle) {
+  _drawSeparator(passStartAngle) {
     this._ctx.beginPath();
-    startAngle = startAngle - this._calcAngle(this._separatorCount) / 2;
+    const startAngle =
+      passStartAngle - this._calcAngle(this._separatorCount) / 2;
     const endAngle = startAngle + this._calcAngle(this._separatorCount);
     this._ctx.strokeStyle = this._separatorColor;
     this._ctx.arc(this._x, this._y, this._radius - 0, startAngle, endAngle);
@@ -91,7 +66,10 @@ class Rate {
       this._ctx.beginPath();
       if (linearGradient) {
         const { colors, direction } = linearGradient;
-        let x1, y1, x2, y2;
+        let x1;
+        let y1;
+        let x2;
+        let y2;
         switch (direction) {
           case 'top to bottom':
           case '180deg': {
@@ -111,8 +89,8 @@ class Rate {
         const grd = this._ctx.createLinearGradient(x1, y1, x2, y2);
         if (colors) {
           colors.forEach((item) => {
-            const { stop, color } = item || {};
-            grd.addColorStop(stop, color);
+            const { stop, color: passColor } = item || {};
+            grd.addColorStop(stop, passColor);
           });
         }
         this._ctx.strokeStyle = grd;

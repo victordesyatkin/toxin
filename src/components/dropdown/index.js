@@ -1,73 +1,79 @@
 import bind from 'bind-decorator';
+import get from 'lodash/get';
 
-import {
-  wordForm,
-  renderComponents,
-  renderComponent,
-} from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import Input from '../input';
+import PlaceholderRooms from './PlaceholderRooms';
+import PlaceholderGuests from './PlaceholderGuests';
+import Placeholder from './Placeholder';
 import './dropdown.scss';
+import DropdownItem from '../dropdown-item';
 
-class Dropdown {
-  static CLASS_NAME = 'DROPDOWN';
+class Dropdown extends Component {
+  static typeFirst = 0;
 
-  static TYPE_FIRST = 0;
+  static typeSecond = 1;
 
-  static TYPE_SECOND = 1;
-
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-dropdown',
-      render: render || Dropdown._renderComponent,
-    });
+  static cleanInputValue(index, element) {
+    $('input', element).val(0);
+    $('.js-dropdown__item-value', element).text(0);
   }
 
-  static _renderComponent() {
-    renderComponent({
-      element: arguments[1],
-      className: Dropdown.CLASS_NAME,
-      someClass: Dropdown,
-    });
-  }
+  _query = '.js-dropdown';
 
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
   _init() {
-    this._$mainInputs = Input.renderComponents({ parents: this._$element });
-    this._inputs = {};
-    this._type = parseInt(this._$element.attr('data-type'));
-    this._input = this._$mainInputs[0].data('INPUT');
-    this._$mainInput = this._input.input;
-    this._$mainInput.attr('disabled', true);
-    this._$inputSection = $('.js-dropdown__input', this._$element);
-    this._$inputSection.on('click', this._handleExpandButtonClick);
-    this._mainPlaceholder = this._$mainInput.attr('placeholder');
-    this._$dropdownMain = $('.js-dropdown__main', this._$element);
-    this._$buttonExpand = $('.js-input__button', this._$element);
-    this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
-    this._$buttonClean.on('click', this._handleCleanButtonClick);
-    this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
-    this._$buttonApply.on('click', this._handleApplyButtonClick);
-    this._$main = $('.js-dropdown__main', this._$element);
-    $('body').on('click', this._handleDocumentClick);
-    this._isForcedExpand = this._$element.hasClass('dropdown_forced-expanded');
-    this._prepareItems();
-    this._createPlaceholder();
-    this._updatePlaceholder();
-    this._toggleCleanButton();
+    const { input, dropdown = {} } = this._props;
+    const { type = 0 } = dropdown;
+    this._input = new Input({
+      parent: $(`${this._query}__input`, this._$element),
+      props: {
+        ...input,
+        handleButtonClick: this._handleExpandButtonClick,
+      },
+    });
+    console.log('this._input', this._input);
+    this._type = parseInt(type, 10);
+    this._items = [];
+    this._$items = $(`${this._query}__item`, this._$element);
+    this._$items.each(this._renderItem);
+    // this._inputs = {};
+    // this._input = this._$mainInputs[0].data('INPUT');
+    // this._$mainInput = this._input.input;
+    // this._$mainInput.attr('disabled', true);
+    // this._$inputSection = $('.js-dropdown__input', this._$element);
+    // this._$inputSection.on('click', this._handleExpandButtonClick);
+    // this._mainPlaceholder = this._$mainInput.attr('placeholder');
+    // this._$dropdownMain = $('.js-dropdown__main', this._$element);
+    // this._$buttonExpand = $('.js-input__button', this._$element);
+    // this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
+    // this._$buttonClean.on('click', this._handleCleanButtonClick);
+    // this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
+    // this._$buttonApply.on('click', this._handleApplyButtonClick);
+    // this._$main = $('.js-dropdown__main', this._$element);
+    // this._isForcedExpand = this._$element.hasClass('dropdown_forced-expanded');
+    // this._prepareItems();
+    // this._createPlaceholder();
+    // this._updatePlaceholder();
+    // this._toggleCleanButton();
+    // $('document').on('click', this._handleDocumentClick);
+  }
+
+  _renderItem(index, element) {
+    const props = get(this._props, ['dropdown', 'items', index]);
+    const item = new DropdownItem({ parent: element, props });
+    this._Items.push(item);
   }
 
   _toggleCleanButton() {
     let flag = false;
     const inputs = Object.values(this._inputs);
-    for (let i = 0, { length } = inputs; i < length; i++) {
-      if (parseInt(inputs[i])) {
+    for (let i = 0, { length } = inputs; i < length; i += 1) {
+      if (parseInt(inputs[i], 10)) {
         flag = true;
         break;
       }
@@ -96,12 +102,7 @@ class Dropdown {
       });
     }
     this._input.toggleExpanded();
-  }
-
-  @bind
-  _cleanInputValue(index, element) {
-    $('input', element).val(0);
-    $('.js-dropdown__item-value', element).text(0);
+    return undefined;
   }
 
   @bind
@@ -109,18 +110,18 @@ class Dropdown {
     Object.keys(this._inputs).forEach((key) => {
       this._inputs[key] = 0;
     });
-    $('.js-dropdown__item', this._$dropdownMain).each(this._cleanInputValue);
+    $('.js-dropdown__item', this._$dropdownMain).each(Dropdown.cleanInputValue);
     this._updatePlaceholder();
     this._toggleCleanButton();
   }
 
   _createPlaceholder() {
     switch (this._type) {
-      case Dropdown.TYPE_FIRST: {
+      case Dropdown.typeFirst: {
         this._placeholder = new PlaceholderRooms(this._inputs);
         break;
       }
-      case Dropdown.TYPE_SECOND: {
+      case Dropdown.typeSecond: {
         this._placeholder = new PlaceholderGuests(this._inputs);
         break;
       }
@@ -163,8 +164,6 @@ class Dropdown {
     this._handleExpandButtonClick();
   }
 
-  _rollOtherDropdown() {}
-
   @bind
   _handleDocumentClick(event) {
     if (
@@ -190,9 +189,10 @@ class Dropdown {
         if (names.indexOf(name) === -1) {
           return false;
         }
-        if (!isNaN(parseFloat(landingPage[name]))) {
+        if (!Number.isNaN(parseFloat(landingPage[name]))) {
           data[name] = parseFloat(landingPage[name]);
         }
+        return false;
       });
     }
 
@@ -205,97 +205,9 @@ class Dropdown {
         const value = data[name];
         $input.val(value);
       }
-      this._inputs[title] = parseInt($input.val()) || 0;
+      this._inputs[title] = parseInt($input.val(), 10) || 0;
       return new Element(item, this._inputs[title]);
     });
-  }
-}
-class Placeholder {
-  constructor(inputs) {
-    this._inputs = inputs;
-  }
-
-  _inputs = {};
-
-  _toString() {
-    return '';
-  }
-}
-
-class PlaceholderRooms extends Placeholder {
-  constructor(props) {
-    super(props);
-    this._init();
-  }
-
-  _init() {
-    this._words = {
-      спальни: ['спальня', 'спальни', 'спален'],
-      кровати: ['кровать', 'кровати', 'кроватей'],
-      'ванные комнаты': ['ванная комната', 'ванные комнаты', 'ванных комнат'],
-    };
-  }
-
-  _toString() {
-    let placeholder = '';
-    let separator = '';
-    Object.keys(this._inputs).forEach((key) => {
-      const value = parseInt(this._inputs[key]);
-      if (value > -1) {
-        placeholder += `${separator}${value} ${wordForm(
-          value,
-          this._words[key] || []
-        )}`;
-        if (!separator) {
-          separator = ', ';
-        }
-      }
-    });
-    return placeholder;
-  }
-}
-
-class PlaceholderGuests extends Placeholder {
-  constructor(props) {
-    super(props);
-    this._init();
-  }
-
-  _init() {
-    this._words = {
-      гость: ['гость', 'гостя', 'гостей'],
-      младенцы: ['младенец', 'младенца', 'младенцев'],
-    };
-  }
-
-  _toString() {
-    let placeholder = '';
-    let countGuests = 0;
-    let countBaby = 0;
-    let separator = '';
-    Object.keys(this._inputs).forEach((key) => {
-      if (['взрослые', 'дети'].indexOf(key) > -1) {
-        countGuests += parseInt(this._inputs[key]);
-      } else if (['младенцы'].indexOf(key) > -1) {
-        countBaby += parseInt(this._inputs[key]);
-      }
-    });
-    if (countGuests > 0) {
-      placeholder = `${separator}${countGuests} ${wordForm(
-        countGuests,
-        this._words['гость'] || []
-      )}`;
-      if (!separator) {
-        separator = ', ';
-      }
-    }
-    if (countBaby > 0) {
-      placeholder += `${separator}${countBaby} ${wordForm(
-        countBaby,
-        this._words['младенцы'] || []
-      )}`;
-    }
-    return placeholder;
   }
 }
 

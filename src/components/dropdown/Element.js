@@ -26,6 +26,7 @@ class Element {
       this._handleDecreaseOrIncreaseButtonClick
     );
     this._$fakeInput = $('.js-dropdown__item-value', this._$element);
+    const value = parseInt(this._$hiddenInput.val(), 10);
     if (typeof value !== 'undefined') {
       this._$fakeInput.html(value);
     }
@@ -37,10 +38,10 @@ class Element {
     let value = parseInt(this._$hiddenInput.val(), 10);
     let flag = 0;
     if (type === Element.TYPE_MINUS && value > 0) {
-      value--;
+      value -= 1;
       flag = 1;
     } else if (type === Element.TYPE_PLUS) {
-      value++;
+      value += 1;
       flag = 1;
     }
     if (flag) {
@@ -51,8 +52,8 @@ class Element {
       }
       this._$fakeInput.text(value);
       this._$hiddenInput.val(value);
-      const event = new Event('input');
-      this._$hiddenInput[0].dispatchEvent(event);
+      const passEvent = new Event('input');
+      this._$hiddenInput[0].dispatchEvent(passEvent);
     }
   }
 }

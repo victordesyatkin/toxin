@@ -1,40 +1,46 @@
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import bind from 'bind-decorator';
+
+import { Component } from '../../helpers/utils';
 import './pagination.scss';
 
-class Pagination {
-  static CLASS_NAME = 'PAGINATION';
+class Pagination extends Component {
+  _query = '.js-pagination';
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-pagination',
-      render: render || Pagination._renderComponent,
-    });
+  static isCurrentStartOrEnd({ direction, start, current, end }) {
+    return (
+      (direction === 'prev' && start === current) ||
+      (direction === 'next' && end === current)
+    );
   }
 
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: Pagination.CLASS_NAME,
-      someClass: Pagination,
-    });
+  static isRenderText({ text, count, current, end }) {
+    return (
+      text &&
+      typeof text === 'string' &&
+      text.trim().length &&
+      count &&
+      current &&
+      end
+    );
   }
 
-  constructor(element) {
-    this._element = element;
+  _init() {
     this._attachEventHandler();
   }
 
   _attachEventHandler() {
-    this._element &&
-      this._element.addEventListener &&
-      this._element.addEventListener('click', this._click);
+    if (this._element && this._element.addEventListener) {
+      this._element.addEventListener('click', this._handlePaginationClick);
+    }
   }
 
-  _click = (event) => {
-    let target = (event || {}).target || {} || {};
-    const { tagName } = target;
+  _isCurrent(item) {
+    return this._element.dataset.current && item && parseFloat(item);
+  }
+
+  @bind
+  _handlePaginationClick(event) {
+    let target = (event || {}).target || {};
     if (target.closest('div[data-direction]')) {
       target = target.closest('div[data-direction]');
     } else if (target.closest('div[data-item]')) {
@@ -44,7 +50,7 @@ class Pagination {
     if (parseFloat(current)) {
       return null;
     }
-    if (this._element.dataset.current && item && parseFloat(item)) {
+    if (this._isCurrent(item)) {
       this._element.dataset.current = parseFloat(item);
     } else if (direction === 'next') {
       this._element.dataset.current =
@@ -55,36 +61,29 @@ class Pagination {
     }
     this._renderCommon();
     this._renderText();
-  };
+    return undefined;
+  }
 
   _setAttributeDirection = (direction) => {
     const { start, end, current } = this._element.dataset;
     let hidden = false;
-    if (
-      (direction === 'prev' && start === current) ||
-      (direction === 'next' && end === current)
-    ) {
+    if (Pagination.isCurrentStartOrEnd({ direction, current, end, start })) {
       hidden = true;
     }
     const element = this._element.querySelector(
       `[data-direction="${direction}"]`
     );
-    element && element.classList.toggle('pagination_hidden', hidden);
+    if (element) {
+      element.classList.toggle('pagination_hidden', hidden);
+    }
   };
 
   _renderText = () => {
-    let { end, current, text, count } = this._element.dataset;
+    let { end, current, text, count } = this._props;
     end = parseFloat(end);
     current = parseFloat(current);
     count = parseFloat(count);
-    if (
-      text &&
-      typeof text === 'string' &&
-      text.trim().length &&
-      count &&
-      current &&
-      end
-    ) {
+    if (Pagination.isRenderText({ text, count, current, end })) {
       const startText =
         (current - 1) * count > 0 ? (current - 1) * count : current;
       const endText = current * count > 0 ? current * count : current;
@@ -98,7 +97,7 @@ class Pagination {
   };
 
   _renderCommon = () => {
-    let { start, end, current, limit } = this._element.dataset;
+    let { start, end, current, limit } = this._props;
     start = parseFloat(start);
     end = parseFloat(end);
     current = parseFloat(current);
@@ -113,14 +112,10 @@ class Pagination {
     if (current - start > limit + 1) {
       pages.push(emptyString);
     }
-    for (let i = current - limit; i <= current + limit; i++) {
-      if (i < start) {
-        continue;
+    for (let i = current - limit; i <= current + limit; i += 1) {
+      if (!(i < start && i > end)) {
+        pages.push(i);
       }
-      if (i > end) {
-        continue;
-      }
-      pages.push(i);
     }
     if (end - current > limit + 1) {
       pages.push(emptyString);

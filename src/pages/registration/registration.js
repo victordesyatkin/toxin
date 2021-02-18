@@ -36,6 +36,6 @@ class Registration {
   }
 }
 
-window.addEventListener('load', Registration.renderComponents);
+// window.addEventListener('load', Registration.renderComponents);
 
 export default Registration;

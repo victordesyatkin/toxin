@@ -49,4 +49,5 @@ class RoomDetails {
   }
 }
 
-window.addEventListener('load', RoomDetails.renderComponents);
+// window.addEventListener('load', RoomDetails.renderComponents);
+export default RoomDetails;

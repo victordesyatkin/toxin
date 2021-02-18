@@ -1,35 +1,22 @@
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import bind from 'bind-decorator';
+
+import { Component } from '../../helpers/utils';
 import RateButton from '../rate-button';
 import './rate-buttons.scss';
 
-class RateButtons {
-  static CLASS_NAME = 'RATE_BUTTONS';
-
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-rate-buttons',
-      render: render || RateButtons._renderComponent,
-    });
-  }
-
-  static _renderComponent(index, element) {
-    renderComponent({
-      element,
-      className: RateButtons.CLASS_NAME,
-      someClass: RateButtons,
-    });
-  }
-
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
-  }
+class RateButtons extends Component {
+  _query = '.js-rate-buttons';
 
   _init() {
-    RateButton.renderComponents({ parents: this._$element });
+    const { buttons } = this._props;
+    this._rateButtons = buttons;
+    $(`${this._query}__item`, this._$element).each(this._renderRateButton);
+  }
+
+  @bind
+  _renderRateButton(index, element) {
+    const props = this._rateButton[index];
+    return new RateButton({ parents: $(element, this._$element), props });
   }
 }
 

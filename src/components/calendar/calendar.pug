@@ -10,9 +10,7 @@ mixin calendar(props = {})
           mainClassNames = `${className}__main js-${className}__main`;
     div(class=mainClassNames)
       input(type="hidden", date-isCalendar="1")
-      div {
-        class=`${className}__control`;
-      }
+      div(class=`${className}__control`)
         button(
           type="button",
           data-type=0,

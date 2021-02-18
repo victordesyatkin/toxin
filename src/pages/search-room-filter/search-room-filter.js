@@ -49,6 +49,6 @@ class SearchRoomFilter {
   }
 }
 
-window.addEventListener('load', SearchRoomFilter.renderComponents);
+// window.addEventListener('load', SearchRoomFilter.renderComponents);
 
 export default SearchRoomFilter;

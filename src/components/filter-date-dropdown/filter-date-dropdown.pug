@@ -8,7 +8,7 @@ mixin filter-date-dropdown(props= {})
     let classNames = `${className} js-${className}`;
     classNames += isExpanded ? ` ${className}_expanded` : '';
     classNames += isForcedExpanded ? ` ${className}_forced-expanded` : '';
-  div(data-options={ dummy, separator }, class=classNames)
+  div(class=classNames)
     input(type="hidden", name=name, value=value, data-type="1")
     if (label)
       .filter-date-dropdown__label= label

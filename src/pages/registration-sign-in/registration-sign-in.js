@@ -37,6 +37,6 @@ class RegistrationSignIn {
   }
 }
 
-window.addEventListener('load', RegistrationSignIn.renderComponents);
+// window.addEventListener('load', RegistrationSignIn.renderComponents);
 
 export default RegistrationSignIn;

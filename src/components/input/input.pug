@@ -2,7 +2,7 @@ mixin input(props = {})
   -
     let {
       label, stateText, type, name, placeholder, button = {}, value, required, pattern, tabindex,
-      isStraight, isExpanded, notFocused, isFocused, isAutoFocused, forDrop, theme
+      isStraight, isExpanded, notFocused, isFocused, isAutoFocused, forDrop, theme, isDisabled
     } = props;
     let { isVisible: isVisibleButton } = button;
     let themes = {
@@ -27,7 +27,7 @@ mixin input(props = {})
           div(class=`${className}__label`)
             label(class=`${className}__label-text`, for=name)= label
         if stateText
-          .input__state-text= stateText
+          span.input__state-text= stateText
     div(class=classesInputSection)
       input(
         id=name,
@@ -39,32 +39,28 @@ mixin input(props = {})
         required=required,
         autofocus=isAutoFocus,
         value=value,
-        class=inputClasses
+        class=inputClasses,
+        disabled=isDisabled
       )
       if (isVisibleButton)
         -
-          let { type: buttonType, iconClass: buttonIconClass, name: buttonName, value: buttonValue } = button;
-          let buttonClass = `${className}__button`;
-          let buttonClasses = `${buttonClass} js-${buttonClass}`;
+          let { type: buttonType, iconClass: buttonIconClassName, name: buttonName, value: buttonValue } = button;
+          let buttonClassName = `${className}__button`;
+          let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
 
-          switch (buttonIconClass) {
+          switch (buttonIconClassName) {
             case 'arrow-down': {
-              buttonClasses += ` ${buttonClass}_default`;
-              buttonClasses += ' icon-expand_more';
+              buttonClassNames += ` ${buttonClassName}_default`;
+              buttonClassNames += ' icon-expand_more';
               break;
             }
             case 'arrow-forward': {
-              buttonClasses += ` ${buttonClass}_forwarded`;
-              buttonClasses += ' icon-arrow_forward';
+              buttonClassNames += ` ${buttonClassName}_forwarded`;
+              buttonClassNames += ' icon-arrow_forward';
               break;
             }
             default: {
-              buttonClasses += buttonIconClass ? ` ${buttonIconClass}` : '';
+              buttonClassNames += buttonIconClassName ? ` ${buttonIconClassName}` : '';
             }
           }
-        button(
-          type=buttonType,
-          name=buttonName,
-          class=buttonClasses,
-          data-class=buttonClasses
-        )
+        button(type=buttonType, name=buttonName, class=buttonClassNames)

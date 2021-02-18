@@ -92,7 +92,8 @@
       "label": "dropdown",
       "placeholder": "Сколько гостей",
       "button": { "iconClass": "arrow-down", "isVisible": true },
-      "theme": "dropdown"
+      "theme": "dropdown",
+      "isDisabled": true
     },
     "items": [
       { "title": "взрослые", "value": 0 },

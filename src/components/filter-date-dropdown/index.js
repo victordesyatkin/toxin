@@ -1,10 +1,10 @@
 import bind from 'bind-decorator';
 
-import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import Calendar from '../calendar';
 import './filter-date-dropdown.scss';
 
-class FilterDateDropdown {
+class FilterDateDropdown extends Component {
   static CLASS_NAME = 'FILTER_DATE_DROPDOWN';
 
   static TYPE_FAKE = 0;
@@ -19,34 +19,47 @@ class FilterDateDropdown {
 
   static IS_CALENDAR = 1;
 
-  static renderComponents(props = {}) {
-    const { parents, query, render } = props;
-    renderComponents({
-      parents,
-      query: query || '.js-filter-date-dropdown',
-      render: render || FilterDateDropdown._renderComponent,
-    });
+  static isValidDate({ partDay, partMonth, partYear }) {
+    return partDay && partMonth && partYear;
   }
 
-  static _renderComponent() {
-    renderComponent({
-      element: arguments[1],
-      className: FilterDateDropdown.CLASS_NAME,
-      someClass: FilterDateDropdown,
-    });
+  static value2Date(value) {
+    const parts = value.split('.');
+    const partDay = parts[0];
+    const partMonth = parts[1];
+    const partYear = parts[2];
+    let date = '';
+    if (FilterDateDropdown.isValidDate({ partDay, partMonth, partYear })) {
+      date = `${partMonth}.${partDay}.${partYear}`;
+    }
+    if (date) {
+      date = new Date(date);
+      if (!(date instanceof Date)) {
+        date = '';
+      }
+    }
+    return date;
   }
 
-  constructor(element) {
-    this._element = element;
-    this._$element = $(element);
-    this._init();
+  _query = '.js-filter-date-dropdown';
+
+  static isClosest({ event, classTarget, $element }) {
+    return (
+      $(event.target).closest(this._$element).length &&
+      $(event.target, $element).hasClass('datepicker--cell') &&
+      $(classTarget, $element).length &&
+      $element.hasClass('filter-date-dropdown_expanded')
+    );
   }
 
   _init() {
-    Calendar.renderComponents({ parents: this._$element });
-    this._options = this._$element.data('options');
-    this._dummy = this._options.dummy || 'ДД МЕС';
-    this._separator = this._options.separator || '-';
+    const { dummy, separator, calendar } = this._props;
+    this._calendar = Calendar({
+      parents: $(`${this._query}__section-down`, this._$element),
+      props: calendar,
+    });
+    this._dummy = dummy || 'ДД МЕС';
+    this._separator = separator || '-';
     this._$fake = $(
       `input[data-type="${FilterDateDropdown.TYPE_FAKE}"]`,
       this._$element
@@ -88,7 +101,8 @@ class FilterDateDropdown {
     this._changeFake();
   }
 
-  _prepareDate(date) {
+  _prepareDate(passDate) {
+    let date = passDate;
     if (!date) {
       return this._dummy;
     }
@@ -131,6 +145,7 @@ class FilterDateDropdown {
     }
     this._$mainBlock.fadeToggle('fast');
     this._$element.toggleClass('filter-date-dropdown_expanded');
+    return undefined;
   }
 
   @bind
@@ -140,14 +155,16 @@ class FilterDateDropdown {
     }
     const classTarget = `.${$(event.target, this._$element).attr('class')}`;
     if (
-      !$(event.target).closest(this._$element).length &&
-      !$(event.target, this._$element).hasClass('datepicker--cell') &&
-      !$(classTarget, this._$element).length &&
-      this._$element.hasClass('filter-date-dropdown_expanded')
+      !FilterDateDropdown.isClosest({
+        event,
+        classTarget,
+        $element: this._$element,
+      })
     ) {
       this._$mainBlock.slideUp();
       this._$element.removeClass('filter-date-dropdown_expanded');
     }
+    return undefined;
   }
 
   _setDates([start, end] = []) {
@@ -155,28 +172,11 @@ class FilterDateDropdown {
       return false;
     }
     this._datepicker.selectDate([new Date(start), new Date(end)]);
+    return undefined;
   }
 
   _setValue(value = []) {
     this._$input.val(JSON.stringify(value));
-  }
-
-  _value2Date(value) {
-    const parts = value.split('.');
-    const partDay = parts[0];
-    const partMonth = parts[1];
-    const partYear = parts[2];
-    let date = '';
-    if (partDay && partMonth && partYear) {
-      date = `${partMonth}.${partDay}.${partYear}`;
-    }
-    if (date) {
-      date = new Date(date);
-      if (!(date instanceof Date)) {
-        date = '';
-      }
-    }
-    return date;
   }
 
   _getValue() {
@@ -184,9 +184,12 @@ class FilterDateDropdown {
       let landingPage = localStorage.getItem('landingPage') || '{}';
       landingPage = JSON.parse(landingPage);
       let { startDate, endDate } = landingPage;
-      if (!isNaN(parseFloat(startDate)) && !isNaN(parseFloat(endDate))) {
-        startDate = this._value2Date(startDate);
-        endDate = this._value2Date(endDate);
+      if (
+        !Number.isNaN(parseFloat(startDate)) &&
+        !Number.isNaN(parseFloat(endDate))
+      ) {
+        startDate = FilterDateDropdown.value2Date(startDate);
+        endDate = FilterDateDropdown.value2Date(endDate);
         this._setValue([startDate, endDate]);
         if (startDate && endDate) {
           return [startDate, endDate];

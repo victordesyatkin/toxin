@@ -1,6 +1,8 @@
 @import '~theme/variables.scss';
 
-.like-button {
+$parent: 'like-button';
+
+.#{$parent} {
   &__button {
     display: flex;
     flex-shrink: 1;
@@ -50,7 +52,7 @@
       }
     }
 
-    .like-button__check-mark-like {
+    .#{$parent}__check-mark-like {
       display: none;
     }
   }
@@ -63,15 +65,15 @@
   input:checked ~ &__check-mark {
     border: 0.0714rem solid $like-border-color-checked;
 
-    .like-button__check-mark-like {
+    .#{$parent}__check-mark-like {
       display: flex;
     }
 
-    .like-button__check-mark-no-like {
+    .#{$parent}__check-mark-no-like {
       display: none;
     }
 
-    .like-button__count {
+    .#{$parent}__count {
       color: $like-border-color-checked;
     }
   }

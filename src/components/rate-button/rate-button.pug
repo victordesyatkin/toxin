@@ -10,17 +10,14 @@ mixin rate-button(props = {})
             altImgRate,
             srcImgNoRate,
             altImgNoRate,
-        } = props; 
+        } = props;
         n = 1;
     if (grade > count) {
         grade = count
     } else if (grade < 0 || typeof grade === undefined) {
         grade = 0;
     }
-  .rate-button__button.js-rate-button__button(
-    data-count=count,
-    data-on=isOn ? 1 : 0
-  )
+  .rate-button.js-rate-button(data-count=count, data-on=isOn ? 1 : 0)
     input.rate-button__input(type="hidden", name=name, value=grade)
     while n <= count
       -
