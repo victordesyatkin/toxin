@@ -1,17 +1,17 @@
-extends ../base/base
-include ../../components/card/card
-include ../../components/sign-up/sign-up
+//- extends ../base/base
+//- include ../../components/card/card
+//- include ../../components/sign-up/sign-up
 
-block main
-  -
-    let data = htmlWebpackPlugin.options.getData() || {};
-    let { backgroundImage } = data;        
-    let style = backgroundImage ? `background-image: url("${backgroundImage}"); ` : '';
-    let className = 'registration';
-    let classNames = `${className} js-${className}`;
-  article(class=classNames, style=style)
-    block sign
-      - let { signUp, action } = data;
-      form(class=`${className}__sign-up`, action=action)
-        +card
-          +sign-up(signUp)
+//- block main
+//-   -
+//-     let data = htmlWebpackPlugin.options.getData() || {};
+//-     let { backgroundImage } = data;        
+//-     let style = backgroundImage ? `background-image: url("${backgroundImage}"); ` : '';
+//-     let className = 'registration';
+//-     let classNames = `${className} js-${className}`;
+//-   article(class=classNames, style=style)
+//-     block sign
+//-       - let { signUp, action } = data;
+//-       form(class=`${className}__sign-up`, action=action)
+//-         +card
+//-           +sign-up(signUp)

@@ -1,32 +1,32 @@
 extends ../demo-base/demo-base
 
-include ../../components/input/input
-include ../../components/dropdown/dropdown
-include ../../components/masked-text-field/masked-text-field
-include ../../components/date-dropdown/date-dropdown
-include ../../components/filter-date-dropdown/filter-date-dropdown
-include ../../components/subscription-text-field/subscription-text-field
-include ../../components/expandable-checkbox-list/expandable-checkbox-list
-include ../../components/checkbox-buttons/checkbox-buttons
-include ../../components/radio-buttons/radio-buttons
-include ../../components/toggle-buttons/toggle-buttons
-include ../../components/like-buttons/like-buttons
-include ../../components/rate-buttons/rate-buttons
-include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
-include ../../components/range-slider/range-slider
-include ../../components/buttons/buttons
-include ../../components/button/button
-include ../../components/pagination/pagination
-include ../../components/bullet-list/bullet-list
-include ../../components/info/info
-include ../../components/comment/comment
+include ../../components/text-field/text-field
+//- include ../../components/dropdown/dropdown
+//- //- include ../../components/masked-text-field/masked-text-field
+//- //- include ../../components/date-dropdown/date-dropdown
+//- //- include ../../components/filter-date-dropdown/filter-date-dropdown
+//- //- include ../../components/subscription-text-field/subscription-text-field
+//- //- include ../../components/expandable-checkbox-list/expandable-checkbox-list
+//- //- include ../../components/checkbox-buttons/checkbox-buttons
+//- //- include ../../components/radio-buttons/radio-buttons
+//- //- include ../../components/toggle-buttons/toggle-buttons
+//- //- include ../../components/like-buttons/like-buttons
+//- //- include ../../components/rate-buttons/rate-buttons
+//- //- include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
+//- //- include ../../components/range-slider/range-slider
+//- //- include ../../components/buttons/buttons
+//- //- include ../../components/button/button
+//- //- include ../../components/pagination/pagination
+//- //- include ../../components/bullet-list/bullet-list
+//- //- include ../../components/info/info
+//- //- include ../../components/comment/comment
 
 block main
   -
     let data = htmlWebpackPlugin.options.getData();
     let {
-            input1,
-            input2,
+            textField1,
+            textField2,
             dropdown1,
             dropdown2,
             dropdown3,
@@ -56,67 +56,67 @@ block main
     article.form-elements__article
       section.form-elements__section
         .form-elements__text-field-default.js-form-elements__text-field-default
-          +input(input1)
+          +text-field(textField1)
         .form-elements__text-field-hover-focus.js-form-elements__text-field-hover-focus
-          +input(input2)
+          +text-field(textField2)
         .form-elements__dropdown-first.js-form-elements__dropdown-first
-          +dropdown(dropdown1)
-        .form-elements__masked-text-field
-          +masked-text-field(maskedTextField) 
-        .form-elements__date-dropdown
-          +date-dropdown(dateDropdown)
-        .form-elements__filter-date-dropdown
-          +filter-date-dropdown(filterDateDropdown)
-        .form-elements__subscription-text-field
-          +subscription-text-field(subscriptionTextField)
-      section.form-elements__section
-        .form-elements__checkbox-buttons
-          +checkbox-buttons(checkboxButtons)
-        .form-elements__radio-buttons
-          +radio-buttons(radioButtons)
-        .form-elements__toggle-buttons
-          +toggle-buttons(toggleButtons)
-        .form-elements__like-buttons
-          +like-buttons(likeButtons)
-        .form-elements__rate-buttons
-          +rate-buttons(rateButtons)
-      section.form-elements__section
-        .form-elements__range-slider
-          +range-slider(rangeSlider)
-        .form-elements__buttons
-          +buttons(buttons)
-        .form-elements__button
-          +button(button)
-        .form-elements__pagination
-          +pagination(pagination)
-    article.form-elements__article
-      section.form-elements__section
-        .form-elements__dropdown-second
-          +dropdown(dropdown2)
-        .form-elements__dropdown-third
-          +dropdown(dropdown3)
-      section.form-elements__section
-        .form-elements__dropdown-fourth
-          +dropdown(dropdown4)
-      section.form-elements__section
-        .form-elements__dropdown-fifth
-          +dropdown(dropdown5) 
-    article.form-elements__article
-      section.form-elements__section
-        .form-elements__expandable-checkbox-list-first
-          +expandable-checkbox-list(expandableCheckboxList1)
-        .form-elements__expandable-checkbox-list-first
-          +expandable-checkbox-list(expandableCheckboxList2)
-      section.form-elements__section
-        .form-elements__rich-checkbox-buttons
-          +rich-checkbox-buttons(richCheckboxButtons)
-      section.form-elements__section
-        .form-elements__bullet-list
-          +bullet-list(bulletList)
-    article.form-elements__article
-      section.form-elements__section
-        .form-elements__info
-          +info(info)
-      section.form-elements__section
-        .form-elements__comment
-          +comment(comment)
+          //+dropdown(dropdown1)
+    //-     .form-elements__masked-text-field
+    //-       +masked-text-field(maskedTextField) 
+    //-     .form-elements__date-dropdown
+    //-       +date-dropdown(dateDropdown)
+    //-     .form-elements__filter-date-dropdown
+    //-       +filter-date-dropdown(filterDateDropdown)
+    //-     .form-elements__subscription-text-field
+    //-       +subscription-text-field(subscriptionTextField)
+    //-   section.form-elements__section
+    //-     .form-elements__checkbox-buttons
+    //-       +checkbox-buttons(checkboxButtons)
+    //-     .form-elements__radio-buttons
+    //-       +radio-buttons(radioButtons)
+    //-     .form-elements__toggle-buttons
+    //-       +toggle-buttons(toggleButtons)
+    //-     .form-elements__like-buttons
+    //-       +like-buttons(likeButtons)
+    //-     .form-elements__rate-buttons
+    //-       +rate-buttons(rateButtons)
+    //-   section.form-elements__section
+    //-     .form-elements__range-slider
+    //-       +range-slider(rangeSlider)
+    //-     .form-elements__buttons
+    //-       +buttons(buttons)
+    //-     .form-elements__button
+    //-       +button(button)
+    //-     .form-elements__pagination
+    //-       +pagination(pagination)
+    //- article.form-elements__article
+    //-   section.form-elements__section
+    //-     .form-elements__dropdown-second
+    //-       +dropdown(dropdown2)
+    //-     .form-elements__dropdown-third
+    //-       +dropdown(dropdown3)
+    //-   section.form-elements__section
+    //-     .form-elements__dropdown-fourth
+    //-       +dropdown(dropdown4)
+    //-   section.form-elements__section
+    //-     .form-elements__dropdown-fifth
+    //-       +dropdown(dropdown5) 
+    //- article.form-elements__article
+    //-   section.form-elements__section
+    //-     .form-elements__expandable-checkbox-list-first
+    //-       +expandable-checkbox-list(expandableCheckboxList1)
+    //-     .form-elements__expandable-checkbox-list-first
+    //-       +expandable-checkbox-list(expandableCheckboxList2)
+    //-   section.form-elements__section
+    //-     .form-elements__rich-checkbox-buttons
+    //-       +rich-checkbox-buttons(richCheckboxButtons)
+    //-   section.form-elements__section
+    //-     .form-elements__bullet-list
+    //-       +bullet-list(bulletList)
+    //- article.form-elements__article
+    //-   section.form-elements__section
+    //-     .form-elements__info
+    //-       +info(info)
+    //-   section.form-elements__section
+    //-     .form-elements__comment
+    //-       +comment(comment)

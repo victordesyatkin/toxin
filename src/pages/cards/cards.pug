@@ -1,43 +1,43 @@
-extends ../demo-base/demo-base
+//- extends ../demo-base/demo-base
 
-include ../../components/header-ui-kit/header-ui-kit
-include ../../components/card/card
-include ../../components/picker/picker
-include ../../components/sign-up/sign-up
-include ../../components/calendar/calendar
-include ../../components/card-slider/card-slider
-include ../../components/book/book
-include ../../components/sign-in/sign-in
+//- include ../../components/header-ui-kit/header-ui-kit
+//- include ../../components/card/card
+//- include ../../components/picker/picker
+//- include ../../components/sign-up/sign-up
+//- include ../../components/calendar/calendar
+//- include ../../components/card-slider/card-slider
+//- include ../../components/book/book
+//- include ../../components/sign-in/sign-in
 
-block header
-  .cards__header
-    - let { logo } = htmlWebpackPlugin.options.getData();
-    +header-ui-kit(logo)
-block main
-  -
-    let data = htmlWebpackPlugin.options.getData() || {};
-    let { picker, book, calendar, signUp, signIn, slider1, slider2 } = data;
+//- block header
+//-   .cards__header
+//-     - let { logo } = htmlWebpackPlugin.options.getData();
+//-     +header-ui-kit(logo)
+//- block main
+//-   -
+//-     let data = htmlWebpackPlugin.options.getData() || {};
+//-     let { picker, book, calendar, signUp, signIn, slider1, slider2 } = data;
 
-  article.cards.js-cards
-    section.cards__section
-      .cards__picker
-        +card
-          +picker(picker)
-      .cards__sign-up
-        +card
-          +sign-up(signUp) 
-    section.cards__section
-      .cards__book.js-cards__book
-        +card
-          +book(book)
-      .cards__sign-in
-        +card
-          +sign-in(signIn)
-    section.cards__section
-      .cards__calendar
-        +calendar(calendar)
-      .cards__sliders
-        .cards__slider
-          +card-slider(slider1)
-        .cards__slider
-          +card-slider(slider2)
+//-   article.cards.js-cards
+//-     section.cards__section
+//-       .cards__picker
+//-         +card
+//-           +picker(picker)
+//-       .cards__sign-up
+//-         +card
+//-           +sign-up(signUp) 
+//-     section.cards__section
+//-       .cards__book.js-cards__book
+//-         +card
+//-           +book(book)
+//-       .cards__sign-in
+//-         +card
+//-           +sign-in(signIn)
+//-     section.cards__section
+//-       .cards__calendar
+//-         +calendar(calendar)
+//-       .cards__sliders
+//-         .cards__slider
+//-           +card-slider(slider1)
+//-         .cards__slider
+//-           +card-slider(slider2)

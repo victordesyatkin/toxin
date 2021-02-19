@@ -59,22 +59,27 @@
     "itemType": "http://schema.org/Brand",
     "isItemScope": true
   },
-  "input1": {
+  "textField1": {
     "name": "email",
-    "id": "email",
     "type": "email",
-    "label": "text field",
     "placeholder": "Email",
-    "stateText": "default"
+    "title": {
+      "content": "text field",
+      "state": "default",
+      "isLabel": true
+    }
   },
-  "input2": {
+  "textField2": {
     "name": "lastName",
-    "id": "lastName",
     "type": "text",
-    "label": "text field",
+    "value": "This is pretty awesome",
     "placeholder": "This is pretty awesome",
-    "stateText": "hover / focus",
-    "isAutoFocused": true
+    "isAutoFocused": true,
+    "title": {
+      "content": "text field",
+      "state": "hover / focus",
+      "isLabel": true
+    }
   },
   "dropdown1": {
     "dropdown": {
@@ -84,16 +89,19 @@
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
       "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
+      "buttonApplyText": "Применить",
+      "title": {
+        "title": "dropdown"
+      }
     },
     "input": {
       "name": "guests",
       "type": "text",
-      "label": "dropdown",
       "placeholder": "Сколько гостей",
       "button": { "iconClass": "arrow-down", "isVisible": true },
       "theme": "dropdown",
-      "isDisabled": true
+      "isDisabled": true,
+      "isReadOnly": true
     },
     "items": [
       { "title": "взрослые", "value": 0 },

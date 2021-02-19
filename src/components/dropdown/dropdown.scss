@@ -1,6 +1,8 @@
 @import '~theme/variables.scss';
 
-.dropdown {
+$parent: 'dropdown';
+
+.#{$parent} {
   position: relative;
 
   &__item-title {
@@ -9,21 +11,25 @@
 
   &_forced-expanded,
   &_expanded {
-    .dropdown__main {
-      display: block;
+    .#{$parent}__main {
+      max-height: 500px;
+      transition: max-height 1s;
+      overflow: hidden;
     }
   }
 
   &__main {
-    display: none;
+    max-height: 0;
+    transition: max-height 1s;
     border: 0.0714rem solid $dropdown-border-color-expanded;
-    border-top: none;
-    box-sizing: border-box;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    overflow: hidden;
     position: absolute;
     width: 100%;
     background-color: $dropdown-background-color;
+
+    box-sizing: border-box;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
     z-index: 10;
   }
 

@@ -1,0 +1,16 @@
+mixin title-label(props)
+  if props
+    -
+      let { content, state, isLabel, htmlFor, accesskey } = props;
+      let 
+        className = 'title-label';
+        classNames = `${className} js-${className}`;
+    if (title || state)
+      div(class=classNames)
+        if title
+          if isLabel
+            label(class=`${className}__label`, accesskey=accesskey, for=htmlFor)= content
+          else
+            h3(class=`${className}__content`)= content
+        if state
+          span(class=`${className}__state`)= state

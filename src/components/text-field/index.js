@@ -1,10 +1,13 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import './input.scss';
+import '../title-label';
+import './text-field.scss';
 
-class Input extends Component {
-  _query = '.js-input';
+class TextField extends Component {
+  _query = '.js-text-field';
+
+  _className = '.text-field';
 
   constructor(options) {
     super(options);
@@ -28,6 +31,18 @@ class Input extends Component {
       this._$element.removeClass('input_expanded');
     } else {
       this._$element.addClass('input_expanded');
+    }
+  }
+
+  straight() {
+    if (!this._$element.hasClass('input_straight')) {
+      this._$element.addClass('input_straight');
+    }
+  }
+
+  common() {
+    if (this._$element.hasClass('input_straight')) {
+      this._$element.removeClass('input_straight');
     }
   }
 
@@ -72,10 +87,9 @@ class Input extends Component {
   _init() {
     this._$element.on('focusin', this._handleInputFocusIn);
     this._$element.on('focusout', this._handleInputFocusOut);
+    this._$element.on('click', this._handleInputClick);
     this._input = $(`${this._query}__input`, this._$element);
     this._$button = $(`${this._query}__button`, this._$element);
-    this._$button.on('click', this._handleButtonClick);
-    console.log('this._$button : ', $(`${this._query}__input`, this._$element));
   }
 
   @bind
@@ -102,9 +116,23 @@ class Input extends Component {
   _handleButtonClick(event) {
     this.toggleExpanded();
     const { handleButtonClick } = this._props;
-    console.log('handleButtonClick : ', handleButtonClick);
-    handleButtonClick(event);
+    if (handleButtonClick) {
+      handleButtonClick(event);
+    }
+  }
+
+  @bind
+  _handleInputClick(event) {
+    const { isDropdown } = this._props;
+    console.log('_handleInputClick : ', isDropdown);
+    if (isDropdown) {
+      this.toggleExpanded();
+      const { handleInputClick } = this._props;
+      if (handleInputClick) {
+        handleInputClick(event);
+      }
+    }
   }
 }
 
-export default Input;
+export default TextField;

@@ -1,18 +1,18 @@
-extends ../base/base
+//- extends ../base/base
 
-include ../../components/card/card
-include ../../components/picker/picker
+//- include ../../components/card/card
+//- include ../../components/picker/picker
 
-block main
-  -
-    let data = htmlWebpackPlugin.options.getData() || {};
-    let { action, picker, footer, backgroundImage, slogan } = data;
-    let className = "landing-page";
-    let classNames = `${className} js-${className}`;
-    let style = backgroundImage ? `background-image: url(${backgroundImage});` : '';
-  article(class=classNames, style=style)
-    form(action=action, class=`${className}__picker js-landing-page__picker`)
-      +card
-        +picker(picker) 
-    .landing-page__info
-      .landing-page__slogan= slogan
+//- block main
+//-   -
+//-     let data = htmlWebpackPlugin.options.getData() || {};
+//-     let { action, picker, footer, backgroundImage, slogan } = data;
+//-     let className = "landing-page";
+//-     let classNames = `${className} js-${className}`;
+//-     let style = backgroundImage ? `background-image: url(${backgroundImage});` : '';
+//-   article(class=classNames, style=style)
+//-     form(action=action, class=`${className}__picker js-landing-page__picker`)
+//-       +card
+//-         +picker(picker) 
+//-     .landing-page__info
+//-       .landing-page__slogan= slogan

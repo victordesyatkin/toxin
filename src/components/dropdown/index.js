@@ -2,7 +2,7 @@ import bind from 'bind-decorator';
 import get from 'lodash/get';
 
 import { Component } from '../../helpers/utils';
-import Input from '../input';
+import TextField from '../text-field';
 import PlaceholderRooms from './PlaceholderRooms';
 import PlaceholderGuests from './PlaceholderGuests';
 import Placeholder from './Placeholder';
@@ -28,19 +28,24 @@ class Dropdown extends Component {
 
   _init() {
     const { input, dropdown = {} } = this._props;
-    const { type = 0 } = dropdown;
-    this._input = new Input({
-      parent: $(`${this._query}__input`, this._$element),
+    const { type = 0, isForcedExpanded = false, isExpanded = false } = dropdown;
+    this._isForcedExpanded = isForcedExpanded;
+    this._isExpanded = isExpanded;
+    this._input = new TextField({
+      parent: $(`${this._query}__text-field`, this._$element),
       props: {
         ...input,
-        handleButtonClick: this._handleExpandButtonClick,
+        handleInputClick: this._handleExpandButtonClick,
       },
     });
-    console.log('this._input', this._input);
     this._type = parseInt(type, 10);
     this._items = [];
     this._$items = $(`${this._query}__item`, this._$element);
     this._$items.each(this._renderItem);
+    this._$main = $(`${this._query}__main`, this._$element);
+    if (this._isExpanded || this._isForcedExpanded) {
+      this._expand();
+    }
     // this._inputs = {};
     // this._input = this._$mainInputs[0].data('INPUT');
     // this._$mainInput = this._input.input;
@@ -60,13 +65,13 @@ class Dropdown extends Component {
     // this._createPlaceholder();
     // this._updatePlaceholder();
     // this._toggleCleanButton();
-    // $('document').on('click', this._handleDocumentClick);
+    $('body').on('click', this._handleBodyClick);
   }
 
   _renderItem(index, element) {
     const props = get(this._props, ['dropdown', 'items', index]);
     const item = new DropdownItem({ parent: element, props });
-    this._Items.push(item);
+    this._items.push(item);
   }
 
   _toggleCleanButton() {
@@ -87,21 +92,10 @@ class Dropdown extends Component {
 
   @bind
   _handleExpandButtonClick() {
-    if (this._isForcedExpand) {
-      return false;
+    if (this._isForcedExpanded) {
+      return undefined;
     }
-    if (this._$element.hasClass('dropdown_expanded')) {
-      this._$dropdownMain.slideUp('slow', () => {
-        this._toggleClassExpanded();
-        this._toggleZIndex(10);
-      });
-    } else {
-      this._$dropdownMain.slideDown('slow', () => {
-        this._toggleClassExpanded();
-        this._toggleZIndex(100);
-      });
-    }
-    this._input.toggleExpanded();
+    this._toggleExpanded();
     return undefined;
   }
 
@@ -165,17 +159,39 @@ class Dropdown extends Component {
   }
 
   @bind
-  _handleDocumentClick(event) {
+  _handleBodyClick(event) {
     if (
       this._$element.hasClass('dropdown_expanded') &&
       !$(event.target).closest(this._$element).length
     ) {
-      this._handleExpandButtonClick();
+      this._minimize();
     }
   }
 
-  _toggleClassExpanded() {
+  @bind
+  _expand() {
+    if (!this._$element.hasClass('dropdown_expanded')) {
+      this._$element.addClass('dropdown_expanded');
+      this._input.straight();
+      this._input.expand();
+    }
+  }
+
+  @bind
+  _minimize() {
+    if (
+      !this._isForcedExpanded &&
+      this._$element.hasClass('dropdown_expanded')
+    ) {
+      this._$element.removeClass('dropdown_expanded');
+      this._input.common();
+      this._input.minimize();
+    }
+  }
+
+  _toggleExpanded() {
     this._$element.toggleClass('dropdown_expanded');
+    this._input.toggleStraight();
   }
 
   _prepareItems() {

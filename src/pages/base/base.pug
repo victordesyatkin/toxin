@@ -1,7 +1,7 @@
 block variables
 include ../../components/layout/layout
 include ../../components/header/header
-include ../../components/footer/footer
+//- include ../../components/footer/footer
 
 doctype html
 html(lang="en")
@@ -36,4 +36,4 @@ html(lang="en")
         +layout__container({basis: 1440, align: 'center'})
           block footer
             - let { footer } = htmlWebpackPlugin.options.getData() || {};
-            +footer(footer)
+            //- +footer(footer)

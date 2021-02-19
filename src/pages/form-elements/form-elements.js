@@ -1,5 +1,5 @@
 import { Component } from '../../helpers/utils';
-import Input from '../../components/input';
+import TextField from '../../components/text-field';
 import Dropdown from '../../components/dropdown';
 // import MaskTextField from '../../components/masked-text-field';
 // import DateDropdown from '../../components/date-dropdown';
@@ -31,15 +31,15 @@ class FormElements extends Component {
   }
 
   _init() {
-    const { input1, input2, dropdown1 } = this._props;
+    const { textField1, textField2, dropdown1 } = this._props;
     console.log('props : ', this._props);
-    this._input1 = new Input({
+    this._input1 = new TextField({
       parent: $(`${this._query}__text-field-default`, this._$element),
-      props: input1,
+      props: textField1,
     });
-    this._input2 = new Input({
+    this._input2 = new TextField({
       parent: $(`${this._query}__text-field-hover-focus`, this._$element),
-      props: input2,
+      props: textField2,
     });
     this._dropdown1 = new Dropdown({
       parent: $(`${this._query}__dropdown-first`, this._$element),

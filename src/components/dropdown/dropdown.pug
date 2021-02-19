@@ -1,38 +1,38 @@
-include ../input/input
-include ../dropdown-item/dropdown-item
+//- include ../text-field/text-field
+//- include ../dropdown-item/dropdown-item
 
-mixin dropdown(props = {})
-  -
-    let { dropdown = {}, input } = props;
-    let {
-        isExpanded, isForcedExpanded, isControlVisible, isStraight,
-        buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText, type,
-    } = dropdown;
-    let className = 'dropdown';
-    let classNames = `${className} js-${className}`;
-    classNames += isExpanded ? ` ${className}_expanded` : '';
-    classNames += isForcedExpanded ? ` ${className}_forced-expanded` : ''; 
-    classNames += isStraight ? ` ${className}_straight` : '';
-  div(class=classNames)
-    div(class=`${className}__input js-${className}__input`)
-      +input({...input, theme: 'dropdown', isStraight: isStraight || type === 0, isExpanded: isForcedExpanded || isExpanded})
-    .dropdown__main.js-dropdown__main
-      -
-        let { items = [] } = props;
-        let length = items.length;
-      if length
-        ul(class=`${className}__items`)
-          each item in items
-            li(class=`${className}__li-item`)
-              +dropdown-item(item)
+//- mixin dropdown(props = {})
+//-   -
+//-     let { dropdown = {}, input } = props;
+//-     let {
+//-         isExpanded, isForcedExpanded, isControlVisible, isStraight,
+//-         buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText, type,
+//-     } = dropdown;
+//-     let className = 'dropdown';
+//-     let classNames = `${className} js-${className}`;
+//-     classNames += isExpanded ? ` ${className}_expanded` : '';
+//-     classNames += isForcedExpanded ? ` ${className}_forced-expanded` : ''; 
+//-     classNames += isStraight ? ` ${className}_straight` : '';
+//-   div(class=classNames)
+//-     div(class=`${className}__input js-${className}__input`)
+//-       +text-field({...input, theme: 'dropdown', isStraight: isStraight || type === 0, isExpanded: isForcedExpanded || isExpanded})
+//-       .dropdown__main.js-dropdown__main
+//-         -
+//-           let { items = [] } = props;
+//-           let length = items.length;
+//-         if length
+//-           ul(class=`${className}__items`)
+//-             each item in items
+//-               li(class=`${className}__li-item`)
+//-                 +dropdown-item(item)
 
-      if (isControlVisible)
-        .dropdown__main-control
-          button.dropdown__control-button.dropdown__control-button_clean(
-            type="button",
-            name="clean"
-          )= buttonCleanText
-          button.dropdown__control-button.dropdown__control-button_apply(
-            type="button",
-            name="apply"
-          )= buttonApplyText
+//-         if (isControlVisible)
+//-           .dropdown__main-control
+//-             button.dropdown__control-button.dropdown__control-button_clean(
+//-               type="button",
+//-               name="clean"
+//-             )= buttonCleanText
+//-             button.dropdown__control-button.dropdown__control-button_apply(
+//-               type="button",
+//-               name="apply"
+//-             )= buttonApplyText

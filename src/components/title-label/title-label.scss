@@ -1,0 +1,26 @@
+@import '~theme/variables.scss';
+
+$parent: 'title-label';
+
+.#{$parent} {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &__label,
+  &__content {
+    @include h3;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__state {
+    @include h3;
+    font-weight: normal;
+    color: $title-label-text-color-status;
+    text-transform: uppercase;
+    text-align: right;
+  }
+}
