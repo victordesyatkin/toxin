@@ -1,0 +1,17 @@
+@import '~theme/variables.scss';
+
+$parent: 'dropdown-title-control';
+
+.#{$parent} {
+  position: relative;
+  cursor: pointer;
+
+  &__title {
+    margin-bottom: 0.35rem;
+  }
+
+  &__body {
+    border: 1px solid $dropdown-border-color-default;
+    border-radius: 4px;
+  }
+}

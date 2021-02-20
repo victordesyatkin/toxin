@@ -4,13 +4,22 @@ mixin text-field(props)
   if props
     -
       let
-        { title, type = 'text', name, placeholder, button, value, isRequired, pattern, tabindex, isDisabled, ariaLabel, isReadonly, isAutoFocused } = props;
+        {
+          title, type = 'text', name, placeholder, button, value, isRequired,
+          pattern, tabindex, isDisabled, ariaLabel, isReadonly, isAutoFocused, theme
+        } = props || {};
+        themes = {
+          comfort: 'comfort',
+        };
         className = 'text-field';
         classNames = `${className} js-${className}`;
-        id = Math.random().toString(16).substr(2);
+        classNames += button ? ` ${className}_withButton` : ''; 
+        classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+        id = `${name}-${Math.random().toString(16).substr(2)}`;
     div(class=classNames)
-      div(class=`${className}__label`)
-        +title-label({ ...title, htmlFor: id })
+      if title
+        div(class=`${className}__label`)
+          +title-label({ ...title, htmlFor: id })
       input(
         type=type,
         name=name,
@@ -23,28 +32,26 @@ mixin text-field(props)
         aria-label=ariaLabel,
         disabled=isDisabled,
         readonly=isReadonly,
-        class=`${className}__input`,
+        class=`${className}__input js-${className}__input`,
         id=id
       )
       if button
         -
-          let { type: buttonType, iconClass: buttonIconClassName, name: buttonName, value: buttonValue } = button;
+          let { type: buttonType = "button", iconClass: buttonIconClassName, name: buttonName, value: buttonValue } = button;
           let buttonClassName = `${className}__button`;
           let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
 
           switch (buttonIconClassName) {
-            case 'arrow-down': {
-              buttonClassNames += ` ${buttonClassName}_default`;
-              buttonClassNames += ' icon-expand_more';
-              break;
-            }
             case 'arrow-forward': {
               buttonClassNames += ` ${buttonClassName}_forwarded`;
               buttonClassNames += ' icon-arrow_forward';
               break;
             }
+            case 'arrow-down':
             default: {
-              buttonClassNames += buttonIconClassName ? ` ${buttonIconClassName}` : '';
+              buttonClassNames += ` ${buttonClassName}_default`;
+              buttonClassNames += ' icon-expand_more';
+              break;
             }
           }
         button(

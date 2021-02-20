@@ -2,12 +2,12 @@ import bind from 'bind-decorator';
 import get from 'lodash/get';
 
 import { Component } from '../../helpers/utils';
-import TextField from '../text-field';
+import DropdownTitleControl from '../dropdown-title-control';
 import PlaceholderRooms from './PlaceholderRooms';
 import PlaceholderGuests from './PlaceholderGuests';
 import Placeholder from './Placeholder';
-import './dropdown.scss';
 import DropdownItem from '../dropdown-item';
+import './dropdown.scss';
 
 class Dropdown extends Component {
   static typeFirst = 0;
@@ -27,25 +27,33 @@ class Dropdown extends Component {
   }
 
   _init() {
-    const { input, dropdown = {} } = this._props;
-    const { type = 0, isForcedExpanded = false, isExpanded = false } = dropdown;
-    this._isForcedExpanded = isForcedExpanded;
-    this._isExpanded = isExpanded;
-    this._input = new TextField({
-      parent: $(`${this._query}__text-field`, this._$element),
+    this._dropDownTitleControl = new DropdownTitleControl({
+      parent: this._$element,
       props: {
-        ...input,
-        handleInputClick: this._handleExpandButtonClick,
+        ...this._props,
+        handleTitleClick: this._handleDropdownTitleControlClick,
+        handleTextFieldClick: this._handleDropdownTitleControlClick,
       },
     });
-    this._type = parseInt(type, 10);
-    this._items = [];
-    this._$items = $(`${this._query}__item`, this._$element);
-    this._$items.each(this._renderItem);
-    this._$main = $(`${this._query}__main`, this._$element);
-    if (this._isExpanded || this._isForcedExpanded) {
-      this._expand();
-    }
+
+    // const { type = 0, isForcedExpanded = false, isExpanded = false } = dropdown;
+    // this._isForcedExpanded = isForcedExpanded;
+    // this._isExpanded = isExpanded;
+    // this._input = new TextField({
+    //   parent: $(`${this._query}__text-field`, this._$element),
+    //   props: {
+    //     ...input,
+    //     handleInputClick: this._handleExpandButtonClick,
+    //   },
+    // });
+    // this._type = parseInt(type, 10);
+    // this._items = [];
+    // this._$items = $(`${this._query}__item`, this._$element);
+    // this._$items.each(this._renderItem);
+    // this._$main = $(`${this._query}__main`, this._$element);
+    // if (this._isExpanded || this._isForcedExpanded) {
+    //   this._expand();
+    // }
     // this._inputs = {};
     // this._input = this._$mainInputs[0].data('INPUT');
     // this._$mainInput = this._input.input;
@@ -66,6 +74,11 @@ class Dropdown extends Component {
     // this._updatePlaceholder();
     // this._toggleCleanButton();
     $('body').on('click', this._handleBodyClick);
+  }
+
+  @bind
+  _handleDropdownTitleControlClick() {
+    console.log('_handleDropdownTitleControlClick : ');
   }
 
   _renderItem(index, element) {

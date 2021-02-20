@@ -1,7 +1,7 @@
 mixin title-label(props)
   if props
     -
-      let { content, state, isLabel, htmlFor, accesskey } = props;
+      let { content, state, isLabel, htmlFor, accesskey } = props || {};
       let 
         className = 'title-label';
         classNames = `${className} js-${className}`;

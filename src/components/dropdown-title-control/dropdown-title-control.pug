@@ -1,0 +1,26 @@
+include ../title-label/title-label
+include ../text-field/text-field
+
+mixin dropdown-title-control(props)
+  if props
+    -
+      let { dropdown = {}, textField } = props;
+      let { isOpened, type, items = [], theme, title } = dropdown;
+      let themes = {
+          comfort: 'comfort'
+      }
+      let className = 'dropdown-title-control';
+      let classNames = `${className} js-${className}`;
+      classNames += isOpened ? ` ${className}_opened` : '';
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    div(class=classNames)
+      if title
+        div(class=`${className}__title js-${className}__title`)
+          +title-label(title)
+      if (textField || block)
+        div(class=`${className}__body`)
+          if textField
+            div(class=`${className}__text-field js-${className}__text-field`)
+              +text-field({ ...textField, theme, isOpened })
+          if block
+            block

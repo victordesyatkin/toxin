@@ -1,22 +1,24 @@
-//- include ../text-field/text-field
-//- include ../dropdown-item/dropdown-item
+include ../title-label/title-label
+include ../dropdown-title-control/dropdown-title-control
+include ../dropdown-item/dropdown-item
 
-//- mixin dropdown(props = {})
-//-   -
-//-     let { dropdown = {}, input } = props;
-//-     let {
-//-         isExpanded, isForcedExpanded, isControlVisible, isStraight,
-//-         buttonDecreaseText, buttonIncreaseText, buttonCleanText, buttonApplyText, type,
-//-     } = dropdown;
-//-     let className = 'dropdown';
-//-     let classNames = `${className} js-${className}`;
-//-     classNames += isExpanded ? ` ${className}_expanded` : '';
-//-     classNames += isForcedExpanded ? ` ${className}_forced-expanded` : ''; 
-//-     classNames += isStraight ? ` ${className}_straight` : '';
-//-   div(class=classNames)
-//-     div(class=`${className}__input js-${className}__input`)
-//-       +text-field({...input, theme: 'dropdown', isStraight: isStraight || type === 0, isExpanded: isForcedExpanded || isExpanded})
-//-       .dropdown__main.js-dropdown__main
+mixin dropdown(props)
+  if props
+    -
+      let { dropdown = {}, textField } = props;
+      let { isOpened, items = [], theme, title } = dropdown;
+      let themes = {
+          comfort: 'comfort'
+      }
+      let className = 'dropdown';
+      let classNames = `${className} js-${className}`;
+      let themeTextField = 'dropdown';
+      classNames += isOpened ? ` ${className}_opened` : '';
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    div(class=classNames)
+      div(class=`dropdown__title-control js-dropdown__title-control`)
+        +dropdown-title-control(props)
+          div(class=`${className}__main js-${className}__main`) dddddd
 //-         -
 //-           let { items = [] } = props;
 //-           let length = items.length;

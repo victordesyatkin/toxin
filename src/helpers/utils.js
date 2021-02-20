@@ -73,8 +73,9 @@ class Component {
 
   @bind
   _renderComponent() {
-    const { query } = this._options;
+    const { query, className } = this._options;
     this._query = query || this._query;
+    this._className = className || this._className;
     // console.log('Component _renderComponent this._query : ', this._query);
     if (!this._isValidQuery()) {
       return undefined;

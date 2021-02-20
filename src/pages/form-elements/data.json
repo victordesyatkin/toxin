@@ -67,7 +67,8 @@
       "content": "text field",
       "state": "default",
       "isLabel": true
-    }
+    },
+    "button": { "iconClass": "arrow-down" }
   },
   "textField2": {
     "name": "lastName",
@@ -83,7 +84,7 @@
   },
   "dropdown1": {
     "dropdown": {
-      "type": 1,
+      "theme": "comfort",
       "isControlVisible": true,
       "isStraight": false,
       "buttonDecreaseText": "-",
@@ -91,22 +92,23 @@
       "buttonCleanText": "Очистить",
       "buttonApplyText": "Применить",
       "title": {
-        "title": "dropdown"
+        "content": "dropdown"
       }
     },
-    "input": {
-      "name": "guests",
+    "textField": {
+      "name": "guests-text-field-control",
       "type": "text",
-      "placeholder": "Сколько гостей",
-      "button": { "iconClass": "arrow-down", "isVisible": true },
+      "value": "Сколько гостей",
+      "placeholder": "",
+      "button": { "iconClass": "arrow-down" },
       "theme": "dropdown",
       "isDisabled": true,
       "isReadOnly": true
     },
     "items": [
-      { "title": "взрослые", "value": 0 },
-      { "title": "дети", "value": 0 },
-      { "title": "младенцы", "value": 0 }
+      { "title": "взрослые", "value": 0, "name": "guests[adupt]" },
+      { "title": "дети", "value": 0, "name": "guests[children]" },
+      { "title": "младенцы", "value": 0, "name": "guests[babies]" }
     ]
   },
   "maskedTextField": {

@@ -1,7 +1,7 @@
 extends ../demo-base/demo-base
 
 include ../../components/text-field/text-field
-//- include ../../components/dropdown/dropdown
+include ../../components/dropdown/dropdown
 //- //- include ../../components/masked-text-field/masked-text-field
 //- //- include ../../components/date-dropdown/date-dropdown
 //- //- include ../../components/filter-date-dropdown/filter-date-dropdown
@@ -60,7 +60,7 @@ block main
         .form-elements__text-field-hover-focus.js-form-elements__text-field-hover-focus
           +text-field(textField2)
         .form-elements__dropdown-first.js-form-elements__dropdown-first
-          //+dropdown(dropdown1)
+          +dropdown(dropdown1)
     //-     .form-elements__masked-text-field
     //-       +masked-text-field(maskedTextField) 
     //-     .form-elements__date-dropdown

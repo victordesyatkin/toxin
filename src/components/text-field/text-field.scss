@@ -7,6 +7,19 @@ $parent: 'text-field';
   position: relative;
   cursor: pointer;
 
+  &_theme_comfort {
+    .#{$parent}__input {
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &_withButton {
+    .#{$parent}__input {
+      padding-right: 4.13rem;
+    }
+  }
+
   &__label {
     margin-bottom: 0.35rem;
   }
@@ -14,7 +27,7 @@ $parent: 'text-field';
   &__input {
     width: 100%;
     padding: 0.99rem 0 0.9rem 1.07rem;
-    color: $input-text-color-default;
+    color: $input-text-color-hover;
     border: 1px solid $input-border-color-default;
     border-radius: 4px;
 
@@ -25,6 +38,10 @@ $parent: 'text-field';
       border-color: $input-border-color-hover;
       outline: none;
     }
+
+    &:disabled {
+      background-color: transparent;
+    }
   }
 
   &__button {
@@ -32,14 +49,30 @@ $parent: 'text-field';
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
     right: 0;
+    bottom: 0;
     width: 3.14rem;
-    height: 100%;
+    height: 3.14rem;
     z-index: 2;
     border: none;
     outline: none;
     cursor: pointer;
+    background-color: transparent;
+  }
+
+  &__button_default {
+    color: $input-text-color-button-default;
+    background-color: transparent;
+    font-size: 0.57rem;
+    cursor: pointer;
+  }
+
+  &__button_forwarded {
+    background: $input-button-background;
+    font-size: 1.28rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   // &__section {
@@ -92,36 +125,6 @@ $parent: 'text-field';
   //   .#{$parent}__input::placeholder {
   //     color: $input-text-color-hover;
   //   }
-  // }
-
-  // &__button {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   width: 3.14rem;
-  //   height: 100%;
-  //   z-index: 2;
-  //   border: none;
-  //   outline: none;
-  //   cursor: pointer;
-  // }
-
-  // &__button_default {
-  //   color: $input-text-color-button-default;
-  //   background-color: transparent;
-  //   font-size: 0.57rem;
-  //   cursor: pointer;
-  // }
-
-  // &__button_forwarded {
-  //   background: $input-button-background;
-  //   font-size: 1.28rem;
-  //   -webkit-background-clip: text;
-  //   -webkit-text-fill-color: transparent;
-  //   color: transparent;
   // }
 
   // &__input {
