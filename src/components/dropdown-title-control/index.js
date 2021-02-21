@@ -11,8 +11,26 @@ class DropdownTitleControl extends Component {
 
   constructor(options) {
     super(options);
-    console.log('constructor : ', options);
+    // console.log('constructor : ', options);
     this._renderComponent();
+  }
+
+  toggleOpen() {
+    if (this._$element.hasClass(`${this._className}_opened`)) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
+  open() {
+    this._$element.addClass(`${this._className}_opened`);
+    this._textField.open();
+  }
+
+  close() {
+    this._$element.removeClass(`${this._className}_opened`);
+    this._textField.close();
   }
 
   _init() {
@@ -23,16 +41,16 @@ class DropdownTitleControl extends Component {
     });
     this._$title = $(`${this._query}__title`, this._$element);
     this._$title.on('click', this._handleTitleClick);
-    console.log('this._$title : ', this._$title);
+    // console.log('this._$title : ', this._$title);
 
     this._$textField = $(`${this._query}__text-field`, this._$element);
     this._$textField.on('click', this._handleTextFieldClick);
-    console.log(' this._$textField  : ', this._$textField);
+    // console.log(' this._$textField  : ', this._$textField);
   }
 
   @bind
   _handleTextFieldClick(event) {
-    console.log('_handleTextFieldClick : ');
+    // console.log('_handleTextFieldClick : ');
     const { handleTextFieldClick } = this._props;
     if (handleTextFieldClick) {
       handleTextFieldClick(event);
@@ -41,7 +59,7 @@ class DropdownTitleControl extends Component {
 
   @bind
   _handleTitleClick(event) {
-    console.log('_handleTitleClick : ');
+    // console.log('_handleTitleClick : ');
     const { handleTitleClick } = this._props;
     if (handleTitleClick) {
       handleTitleClick(event);

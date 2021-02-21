@@ -14,6 +14,10 @@ class TextField extends Component {
     this._renderComponent();
   }
 
+  getInput() {
+    return this._$input.get(0);
+  }
+
   // toggleStraight() {
   //   if (this._$element.hasClass('input_straight')) {
   //     this._$element.removeClass('input_straight');
@@ -22,7 +26,7 @@ class TextField extends Component {
   //   }
   // }
 
-  toggleOpened() {
+  toggleOpen() {
     if (this._$element.hasClass(`${this._className}_opened`)) {
       this.close();
     } else {
@@ -31,7 +35,7 @@ class TextField extends Component {
   }
 
   open() {
-    this._$element.removeClass(`${this._className}_opened`);
+    this._$element.addClass(`${this._className}_opened`);
   }
 
   close() {
@@ -70,7 +74,7 @@ class TextField extends Component {
 
   _init() {
     this._$input = $(`${this._query}__input`, this._$element);
-    console.log('_init this._$input : ', this._$input);
+    // console.log('_init this._$input : ', this._$input);
     this._$input.on('focusin', this._handleInputFocusIn);
     this._$input.on('focusout', this._handleInputFocusOut);
 
@@ -82,7 +86,7 @@ class TextField extends Component {
 
   @bind
   _handleInputFocusIn(event) {
-    console.log('_handleInputFocusIn : ');
+    // console.log('_handleInputFocusIn : ');
     const { handleInputFocusIn } = this._props;
     if (handleInputFocusIn) {
       handleInputFocusIn(event);
@@ -91,7 +95,7 @@ class TextField extends Component {
 
   @bind
   _handleInputFocusOut(event) {
-    console.log('_handleInputFocusOut : ');
+    // console.log('_handleInputFocusOut : ');
     const { handleInputFocusOut } = this._props;
     if (handleInputFocusOut) {
       handleInputFocusOut(event);
@@ -100,7 +104,7 @@ class TextField extends Component {
 
   @bind
   _handleButtonClick(event) {
-    console.log('_handleButtonClick : ');
+    // console.log('_handleButtonClick : ');
     const { handleButtonClick } = this._props;
     if (handleButtonClick) {
       handleButtonClick(event);
@@ -109,7 +113,7 @@ class TextField extends Component {
 
   @bind
   _handleInputClick(event) {
-    console.log('_handleInputClick : ');
+    // console.log('_handleInputClick : ');
     const { handleInputClick } = this._props;
     if (handleInputClick) {
       handleInputClick(event);

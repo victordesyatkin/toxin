@@ -5,11 +5,23 @@ import isFunction from 'lodash/isFunction';
 import isEmpty from 'lodash/isEmpty';
 import bind from 'bind-decorator';
 
-function wordForm(num, word) {
+function wordForm(number = 0, words = []) {
   const cases = [2, 0, 1, 1, 1, 2];
-  return word[
-    num % 100 > 4 && num % 100 < 20 ? 2 : cases[num % 10 < 5 ? num % 10 : 5]
+  return words[
+    number % 100 > 4 && number % 100 < 20
+      ? 2
+      : cases[number % 10 < 5 ? number % 10 : 5]
   ];
+}
+
+function toggleHeight($element) {
+  const clientHeight = parseFloat($element.prop('clientHeight'), 10);
+  const scrollHeight = parseFloat($element.prop('scrollHeight'), 10);
+  if (clientHeight > 0) {
+    $element.css('height', 0);
+  } else {
+    $element.css('height', scrollHeight);
+  }
 }
 
 function renderComponents(options = {}) {
@@ -72,6 +84,11 @@ class Component {
   }
 
   @bind
+  getElement() {
+    return this._element;
+  }
+
+  @bind
   _renderComponent() {
     const { query, className } = this._options;
     this._query = query || this._query;
@@ -110,4 +127,4 @@ class Component {
   }
 }
 
-export { wordForm, renderComponents, renderComponent, Component };
+export { wordForm, renderComponents, renderComponent, Component, toggleHeight };

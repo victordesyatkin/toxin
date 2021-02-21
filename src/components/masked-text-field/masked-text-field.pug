@@ -1,10 +1,11 @@
-include ../input/input
+include ../text-field/text-field
 
-mixin masked-text-field(props = {})
-  -
-    let
-        { mask, input } = props;
-        className = 'masked-text-field';
-        classNames = `${className} js-${className}`;
-  div(class=classNames)
-    +input(input)
+mixin masked-text-field(props)
+  if props
+    -
+      let
+          { textField } = props;
+          className = 'masked-text-field';
+          classNames = `${className} js-${className}`;
+    div(class=classNames)
+      +text-field(textField)

@@ -2,12 +2,18 @@
 
 $parent: 'dropdown-item';
 
-#{$parent} {
+.#{$parent} {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.42rem 0.5rem 0 1rem;
+  padding: 0.2rem 0.5rem 0.3rem 1rem;
 
+  &__title,
+  &__value {
+    @include h3;
+  }
+
+  &__button,
   &__control,
   &__value {
     display: flex;
@@ -15,7 +21,6 @@ $parent: 'dropdown-item';
 
   &__button,
   &__value {
-    display: flex;
     justify-content: center;
     align-items: center;
     width: 2.14rem;
@@ -39,8 +44,10 @@ $parent: 'dropdown-item';
     outline: none;
   }
 
-  &__button_fade {
-    opacity: 0.5;
+  &_fade {
+    .#{$parent}__button:first-of-type {
+      opacity: 0.5;
+    }
   }
 
   &__value {

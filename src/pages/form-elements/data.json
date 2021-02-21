@@ -93,7 +93,8 @@
       "buttonApplyText": "Применить",
       "title": {
         "content": "dropdown"
-      }
+      },
+      "isOpened": true
     },
     "textField": {
       "name": "guests-text-field-control",
@@ -112,12 +113,17 @@
     ]
   },
   "maskedTextField": {
-    "input": {
+    "textField": {
       "name": "birthday",
-      "id": "birthday",
       "type": "text",
-      "label": "masked text field",
-      "placeholder": "ДД.ММ.ГГГГ"
+      "placeholder": "ДД.ММ.ГГГГ",
+      "title": {
+        "content": "masked text field",
+        "isLabel": true
+      }
+    },
+    "options": {
+      "type": "default"
     }
   },
   "dateDropdown": {

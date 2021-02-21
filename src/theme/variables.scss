@@ -162,9 +162,8 @@ $comment-filter: drop-shadow(0rem 0.71rem 1.42rem rgba(31, 32, 65, 0.1));
 
 /***** Border *****/
 $card-border-color: rgba(0, 0, 0, 0.12);
-$dropdown-border-color-default: #ffffff;
 $dropdown-border-color-default: rgba(31, 32, 65, 0.25);
-$dropdown-border-color-expanded: rgba(31, 32, 65, 0.5);
+$dropdown-border-color-opened: rgba(31, 32, 65, 0.5);
 $dropdown-button-border-color: rgba(31, 32, 65, 0.5);
 $input-border-color-default: rgba(31, 32, 65, 0.25);
 $input-border-color-hover: rgba(31, 32, 65, 0.5);

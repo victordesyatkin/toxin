@@ -6,7 +6,7 @@ mixin text-field(props)
       let
         {
           title, type = 'text', name, placeholder, button, value, isRequired,
-          pattern, tabindex, isDisabled, ariaLabel, isReadonly, isAutoFocused, theme
+          pattern, tabindex, isDisabled, ariaLabel, isReadonly, isAutoFocused, theme, isOpened
         } = props || {};
         themes = {
           comfort: 'comfort',
@@ -15,6 +15,7 @@ mixin text-field(props)
         classNames = `${className} js-${className}`;
         classNames += button ? ` ${className}_withButton` : ''; 
         classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+        classNames += isOpened ? ` ${className}_opened` : '';
         id = `${name}-${Math.random().toString(16).substr(2)}`;
     div(class=classNames)
       if title

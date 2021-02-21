@@ -1,15 +1,18 @@
 import bind from 'bind-decorator';
 import isUndefined from 'lodash/isUndefined';
+import get from 'lodash/get';
 
 import { Component } from '../../helpers/utils';
 import './dropdown-item.scss';
 
 class DropdownItem extends Component {
-  static TYPE_MINUS = 0;
+  static TYPE_DECREASE = 'decrease';
 
-  static TYPE_PLUS = 1;
+  static TYPE_INCREASE = 'increase';
 
   _query = '.js-dropdown-item';
+
+  _className = 'dropdown-item';
 
   constructor(options = {}) {
     super(options);
@@ -20,6 +23,14 @@ class DropdownItem extends Component {
     const value = parseInt(passValue, 10);
     this._$input.val(value);
     this._$title.text(value);
+    const { handleInputChange, name } = this._props;
+    console.log('setValue : ');
+    if (handleInputChange) {
+      handleInputChange({
+        name,
+        value,
+      });
+    }
   }
 
   getValue() {
@@ -28,19 +39,14 @@ class DropdownItem extends Component {
 
   cleanValue() {
     this.getValue(0);
-    this._toggleButtonMinus();
+    this._toggleFade();
   }
 
   _init() {
+    console.log('_init : ', this._props);
     this._$input = $(`${this._query}__input`, this._$element);
-    this._$buttonPlus = $(
-      `button[data-type="${DropdownItem.TYPE_PLUS}"]`,
-      this._$element
-    ).on('click', this._handleDecreaseButtonClick);
-    this._$buttonMinus = $(
-      `button[data-type="${DropdownItem.TYPE_MINUS}"]`,
-      this._$element
-    ).on('click', this._handleIncreaseButtonClick);
+    console.log('this._$element : ', this._$element);
+    this._$element.on('click', this._handleElementClick);
     this._$title = $(`${this._query}__value`, this._$element);
     const value = this.getValue();
     if (value !== 'undefined') {
@@ -48,31 +54,58 @@ class DropdownItem extends Component {
     }
   }
 
-  _toggleButtonMinus() {
+  _toggleFade() {
     if (this.getValue()) {
-      this._$buttonMinus.removeClass('dropdown__button_fade');
+      this._$element.removeClass(`${this._className}_fade`);
     } else {
-      this._$buttonMinus.addClass('dropdown__button_fade');
+      this._$element.addClass(`${this._className}_fade`);
     }
   }
 
   @bind
-  _handleDecreaseButtonClick() {
-    let value = this.getValue();
-    const { min = 0 } = this._props;
-    if (value <= min) {
-      return undefined;
+  _handleElementClick(event) {
+    const target = get(event, ['target']);
+    const type = $(target).data('type');
+    if (
+      [DropdownItem.TYPE_INCREASE, DropdownItem.TYPE_DECREASE].includes(type)
+    ) {
+      const { min = 0, max = 1e10, handleButtonClick } = this._props;
+      let value = this.getValue();
+      let isChange = false;
+      if (type === DropdownItem.TYPE_INCREASE) {
+        if (value < max) {
+          value += 1;
+          isChange = true;
+        }
+      } else if (type === DropdownItem.TYPE_DECREASE) {
+        if (value > min) {
+          value -= 1;
+          isChange = true;
+        }
+      }
+      console.log('_handleElementClick');
+      if (isChange) {
+        this.setValue(value);
+        this._toggleFade();
+        if (handleButtonClick) {
+          handleButtonClick({ event, type });
+        }
+      }
     }
-    value -= 1;
-    this._toggleButtonMinus();
-    this.setValue(value);
-    const passEvent = new Event('input');
-    this._$input[0].dispatchEvent(passEvent);
-    const { handleDecreaseButtonClick } = this._props;
-    if (handleDecreaseButtonClick) {
-      handleDecreaseButtonClick();
-    }
-    return undefined;
+    // const { min = 0 } = this._props;
+    // if (value <= min) {
+    //   return undefined;
+    // }
+    // value -= 1;
+    // this._toggleButtonMinus();
+    // this.setValue(value);
+    // const passEvent = new Event('input');
+    // this._$input[0].dispatchEvent(passEvent);
+    // const { handleDecreaseButtonClick } = this._props;
+    // if (handleDecreaseButtonClick) {
+    //   handleDecreaseButtonClick();
+    // }
+    // return undefined;
   }
 
   @bind

@@ -6,6 +6,18 @@ $parent: 'dropdown-title-control';
   position: relative;
   cursor: pointer;
 
+  &_opened {
+    .#{$parent}__body {
+      border-color: $dropdown-border-color-opened;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .#{$parent}__text-field {
+      //border-bottom: 1px solid $dropdown-border-color-opened;
+    }
+  }
+
   &__title {
     margin-bottom: 0.35rem;
   }
@@ -13,5 +25,9 @@ $parent: 'dropdown-title-control';
   &__body {
     border: 1px solid $dropdown-border-color-default;
     border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: $dropdown-background-color;
   }
 }

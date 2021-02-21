@@ -1,7 +1,7 @@
 import { Component } from '../../helpers/utils';
 import TextField from '../../components/text-field';
 import Dropdown from '../../components/dropdown';
-// import MaskTextField from '../../components/masked-text-field';
+import MaskedTextField from '../../components/masked-text-field';
 // import DateDropdown from '../../components/date-dropdown';
 // import FilterDateDropdown from '../../components/filter-date-dropdown';
 // import SubscriptionTextField from '../../components/subscription-text-field';
@@ -31,7 +31,7 @@ class FormElements extends Component {
   }
 
   _init() {
-    const { textField1, textField2, dropdown1 } = this._props;
+    const { textField1, textField2, dropdown1, maskedTextField } = this._props;
     console.log('props : ', this._props);
     this._input1 = new TextField({
       parent: $(`${this._query}__text-field-default`, this._$element),
@@ -44,6 +44,14 @@ class FormElements extends Component {
     this._dropdown1 = new Dropdown({
       parent: $(`${this._query}__dropdown-first`, this._$element),
       props: dropdown1,
+    });
+    // //console.log(
+    //   '$(`${this._query}__masked-text-field`, this._$element : ',
+    //   $(`${this._query}__masked-text-field`, this._$element)
+    // );
+    this._maskedTextField = new MaskedTextField({
+      parent: $(`${this._query}__masked-text-field`, this._$element),
+      props: maskedTextField,
     });
     // Dropdown.renderComponents({ parents });
     // MaskTextField.renderComponents({

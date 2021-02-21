@@ -3,6 +3,7 @@ import get from 'lodash/get';
 
 import { Component } from '../../helpers/utils';
 import DropdownTitleControl from '../dropdown-title-control';
+import DropDownInfo from '../dropdown-info';
 import PlaceholderRooms from './PlaceholderRooms';
 import PlaceholderGuests from './PlaceholderGuests';
 import Placeholder from './Placeholder';
@@ -10,10 +11,6 @@ import DropdownItem from '../dropdown-item';
 import './dropdown.scss';
 
 class Dropdown extends Component {
-  static typeFirst = 0;
-
-  static typeSecond = 1;
-
   static cleanInputValue(index, element) {
     $('input', element).val(0);
     $('.js-dropdown__item-value', element).text(0);
@@ -21,9 +18,29 @@ class Dropdown extends Component {
 
   _query = '.js-dropdown';
 
+  _className = 'dropdown';
+
   constructor(options) {
     super(options);
     this._renderComponent();
+  }
+
+  toggleOpen() {
+    if (this._$element.hasClass(`${this._className}_opened`)) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
+  open() {
+    this._$element.addClass(`${this._className}_opened`);
+    this._dropDownTitleControl.open();
+  }
+
+  close() {
+    this._$element.removeClass(`${this._className}_opened`);
+    this._dropDownTitleControl.close();
   }
 
   _init() {
@@ -35,56 +52,33 @@ class Dropdown extends Component {
         handleTextFieldClick: this._handleDropdownTitleControlClick,
       },
     });
+    this._dropDownInfo = new DropDownInfo();
+    this._items = [];
+    this._$items = $(`${this._query}__li-item`, this._$element);
+    this._$items.each(this._renderItem);
 
-    // const { type = 0, isForcedExpanded = false, isExpanded = false } = dropdown;
-    // this._isForcedExpanded = isForcedExpanded;
-    // this._isExpanded = isExpanded;
-    // this._input = new TextField({
-    //   parent: $(`${this._query}__text-field`, this._$element),
-    //   props: {
-    //     ...input,
-    //     handleInputClick: this._handleExpandButtonClick,
-    //   },
-    // });
-    // this._type = parseInt(type, 10);
-    // this._items = [];
-    // this._$items = $(`${this._query}__item`, this._$element);
-    // this._$items.each(this._renderItem);
-    // this._$main = $(`${this._query}__main`, this._$element);
-    // if (this._isExpanded || this._isForcedExpanded) {
-    //   this._expand();
-    // }
-    // this._inputs = {};
-    // this._input = this._$mainInputs[0].data('INPUT');
-    // this._$mainInput = this._input.input;
-    // this._$mainInput.attr('disabled', true);
-    // this._$inputSection = $('.js-dropdown__input', this._$element);
-    // this._$inputSection.on('click', this._handleExpandButtonClick);
-    // this._mainPlaceholder = this._$mainInput.attr('placeholder');
-    // this._$dropdownMain = $('.js-dropdown__main', this._$element);
-    // this._$buttonExpand = $('.js-input__button', this._$element);
-    // this._$buttonClean = $('button[name="clean"]', this._$dropdownMain);
-    // this._$buttonClean.on('click', this._handleCleanButtonClick);
-    // this._$buttonApply = $('button[name="apply"]', this._$dropdownMain);
-    // this._$buttonApply.on('click', this._handleApplyButtonClick);
-    // this._$main = $('.js-dropdown__main', this._$element);
-    // this._isForcedExpand = this._$element.hasClass('dropdown_forced-expanded');
-    // this._prepareItems();
-    // this._createPlaceholder();
-    // this._updatePlaceholder();
-    // this._toggleCleanButton();
-    $('body').on('click', this._handleBodyClick);
+    // $('body').on('click', this._handleBodyClick);
   }
 
   @bind
   _handleDropdownTitleControlClick() {
-    console.log('_handleDropdownTitleControlClick : ');
+    this.toggleOpen();
   }
 
+  @bind
   _renderItem(index, element) {
-    const props = get(this._props, ['dropdown', 'items', index]);
-    const item = new DropdownItem({ parent: element, props });
+    console.log('_renderItem : ');
+    const props = get(this._props, ['items', index]);
+    const item = new DropdownItem({
+      parent: element,
+      props: { ...props, handleInputChange: this._handleInputChange },
+    });
     this._items.push(item);
+  }
+
+  @bind
+  _handleInputChange(data = {}) {
+    console.log('_handleInputChange : ', data);
   }
 
   _toggleCleanButton() {

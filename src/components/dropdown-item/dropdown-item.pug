@@ -1,12 +1,9 @@
 mixin dropdown-item(props = {})
   -
-    let { title, value, name } = props || {};
-    let className = 'dropdown-input';
+    let { title, value, name, buttonDecreaseText, buttonIncreaseText } = props || {};
+    let className = 'dropdown-item';
     let classNames = `${className} js-${className}`;
-    let buttonClassName = `${className}__button`;
-    let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
-    let buttonMinusClassNames = `${buttonClassNames}`;
-    buttonMinusClasses += value === 0 ? ` ${buttonClass}_fade` : '';
+    classNames += value === 0 ? ` ${className}_fade` : '';
   div(class=classNames)
     input(
       name=name,
@@ -16,6 +13,6 @@ mixin dropdown-item(props = {})
     )
     div(class=`${className}__title`)= title
     div(class=`${className}__control`)
-      button(type="button", data-type="0", class=buttonMinusClassNames)= buttonDecreaseText
+      button(type="button", data-type="decrease", class=`${className}__button`)= buttonDecreaseText
       span(class=`${className}__value js-${className}__value`)= value
-      button(type="button", data-type="1", class=`${buttonClassNames}`)= buttonIncreaseText
+      button(type="button", data-type="increase", class=`${className}__button`)= buttonIncreaseText
