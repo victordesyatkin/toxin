@@ -1,22 +1,37 @@
 include ../masked-text-field/masked-text-field
+include ../dropdown-title-text-field/dropdown-title-text-field
 include ../calendar/calendar
 
-mixin date-dropdown(props = {})
-  .date-dropdown.js-date-dropdown
-    .date-dropdown__section-dropdown.js-date-dropdown__section-dropdown
-      - let { fieldStart, fieldEnd, calendar, isExpanded } = props;
-      .date-dropdown__section-dropdown-input(
-        class=`js-${className}__masked-text-field-start`
-      )
-        +masked-text-field(fieldStart)
-      .date-dropdown__section-dropdown-input(
-        class=`js-${className}__masked-text-field-end`
-      )
-        +masked-text-field(fieldEnd)
-      -
-        let
-            sectionCalendarClassName = 'date-dropdown__section-calendar';
-            sectionCalendarClassNames = `${sectionCalendarClassName} js-${sectionCalendarClassName}`;
-        sectionCalendarClassNames += isExpanded ? ` ${sectionCalendarClassName}_expanded` : '';
-    div(class=sectionCalendarClassNames)
-      +calendar(calendar)
+mixin date-dropdown(props)
+  if props
+    -
+      let { items = [], calendar, isOpened } = props;
+      let length = items.length;
+      let className = 'date-dropdown';
+      let classNames = `${className} js-${className}`;
+      classnames += isOpened ? ` ${className}_opened` : '';
+    if length
+      div(class=classNames)
+        ul(class=`${className}__items`) 
+          each item in items
+            li(class=`${className}__item`)
+              +dropdown-title-text-field(item)
+        //- div(class=`${className}__calendar`)
+        //-   +calendar(calendar)
+    //- .date-dropdown__section-dropdown.js-date-dropdown__section-dropdown
+
+    //-   .date-dropdown__section-dropdown-input(
+    //-     class=`js-${className}__masked-text-field-start`
+    //-   )
+    //-     +masked-text-field(fieldStart)
+    //-   .date-dropdown__section-dropdown-input(
+    //-     class=`js-${className}__masked-text-field-end`
+    //-   )
+    //-     +masked-text-field(fieldEnd)
+    //-   -
+    //-     let
+    //-         sectionCalendarClassName = 'date-dropdown__section-calendar';
+    //-         sectionCalendarClassNames = `${sectionCalendarClassName} js-${sectionCalendarClassName}`;
+    //-     sectionCalendarClassNames += isExpanded ? ` ${sectionCalendarClassName}_expanded` : '';
+    //- div(class=sectionCalendarClassNames)
+    //-   +calendar(calendar)

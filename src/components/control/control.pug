@@ -1,0 +1,24 @@
+include ../button/button
+
+mixin control(props)
+  if props
+    -
+      let { items = [], isHidden, } = props;
+      let themes = {
+          comfort: 'comfort',
+          guests: 'guests',
+      }
+      let length = items.length;
+      let className = 'control';
+      let classNames = `${className} js-${className}`;
+      classNames += isHidden ? ` ${className}_hidden` : '';
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    if length
+      ul(class=classNames)
+        each item in items
+          -
+            let { dataType } = item || {};
+            let buttonClassName = `${className}__button`;
+            let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
+          li(class=buttonClassNames, data-type=dataType)
+            +button(item)

@@ -58,6 +58,13 @@ class TextField extends Component {
     this._$input.val(value);
   }
 
+  updateValue(value) {
+    const previousValue = this.getValue();
+    if (value !== previousValue) {
+      this.setValue(value);
+    }
+  }
+
   // addTheme(theme) {
   //   const themeClass = `input_theme_${theme}`;
   //   if (!this._$element.hasClass(themeClass)) {

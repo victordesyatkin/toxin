@@ -1,20 +1,22 @@
 @import '~theme/variables.scss';
 
-$parent: 'dropdown-title-control';
+$parent: 'dropdown-title-text-field';
 
 .#{$parent} {
   position: relative;
   cursor: pointer;
+
+  &_theme_date {
+    .#{$parent}__body {
+      border: none;
+    }
+  }
 
   &_opened {
     .#{$parent}__body {
       border-color: $dropdown-border-color-opened;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-    }
-
-    .#{$parent}__text-field {
-      //border-bottom: 1px solid $dropdown-border-color-opened;
     }
   }
 

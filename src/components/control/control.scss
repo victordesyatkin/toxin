@@ -1,0 +1,19 @@
+@import '~theme/variables.scss';
+
+$parent: 'control';
+
+.#{$parent} {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+
+  &_hidden {
+    .#{$parent}__button:first-child {
+      display: none;
+    }
+  }
+
+  &__button:last-child {
+    margin-left: auto;
+  }
+}

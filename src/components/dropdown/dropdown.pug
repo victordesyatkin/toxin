@@ -1,11 +1,12 @@
 include ../title-label/title-label
-include ../dropdown-title-control/dropdown-title-control
+include ../dropdown-title-text-field/dropdown-title-text-field
+include ../control/control
 include ../dropdown-item/dropdown-item
 
 mixin dropdown(props)
   if props
     -
-      let { dropdown = {}, textField, items = [] } = props;
+      let { dropdown = {}, textField, items = [], control } = props;
       let { isOpened, theme, title, buttonDecreaseText, buttonIncreaseText } = dropdown;
       let themes = {
           comfort: 'comfort'
@@ -15,15 +16,18 @@ mixin dropdown(props)
       classNames += isOpened ? ` ${className}_opened` : '';
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     div(class=classNames)
-      div(class=`dropdown__title-control js-dropdown__title-control`)
-        +dropdown-title-control(props)
+      div(class=`${className}__title-text-field js-${className}__title-text-field`)
+        +dropdown-title-text-field(props)
         - let length = items.length;
         if length
-          ul(class=`${className}__items js-${className}__items`)
-            each item in items
-              li(class=`${className}__li-item js-${className}__li-item`)
-                +dropdown-item({...item, buttonDecreaseText: item.buttonDecreaseText || buttonDecreaseText, buttonIncreaseText: item.buttonIncreaseText || buttonIncreaseText})
-
+          div(class=`${className}__body`)
+            ul(class=`${className}__items js-${className}__items`)
+              each item in items
+                li(class=`${className}__li-item js-${className}__li-item`)
+                  +dropdown-item({...item, buttonDecreaseText: item.buttonDecreaseText || buttonDecreaseText, buttonIncreaseText: item.buttonIncreaseText || buttonIncreaseText})
+            if control
+              div(class=`${className}__control js-${className}__control`)
+                +control(control)
 //-         if (isControlVisible)
 //-           .dropdown__main-control
 //-             button.dropdown__control-button.dropdown__control-button_clean(

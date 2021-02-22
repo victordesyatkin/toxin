@@ -24,7 +24,7 @@ class DropdownItem extends Component {
     this._$input.val(value);
     this._$title.text(value);
     const { handleInputChange, name } = this._props;
-    console.log('setValue : ');
+    // console.log('setValue : ');
     if (handleInputChange) {
       handleInputChange({
         name,
@@ -38,14 +38,14 @@ class DropdownItem extends Component {
   }
 
   cleanValue() {
-    this.getValue(0);
+    this.setValue(0);
     this._toggleFade();
   }
 
   _init() {
-    console.log('_init : ', this._props);
+    // console.log('_init : ', this._props);
     this._$input = $(`${this._query}__input`, this._$element);
-    console.log('this._$element : ', this._$element);
+    // console.log('this._$element : ', this._$element);
     this._$element.on('click', this._handleElementClick);
     this._$title = $(`${this._query}__value`, this._$element);
     const value = this.getValue();
@@ -83,7 +83,7 @@ class DropdownItem extends Component {
           isChange = true;
         }
       }
-      console.log('_handleElementClick');
+      // console.log('_handleElementClick');
       if (isChange) {
         this.setValue(value);
         this._toggleFade();
@@ -92,20 +92,6 @@ class DropdownItem extends Component {
         }
       }
     }
-    // const { min = 0 } = this._props;
-    // if (value <= min) {
-    //   return undefined;
-    // }
-    // value -= 1;
-    // this._toggleButtonMinus();
-    // this.setValue(value);
-    // const passEvent = new Event('input');
-    // this._$input[0].dispatchEvent(passEvent);
-    // const { handleDecreaseButtonClick } = this._props;
-    // if (handleDecreaseButtonClick) {
-    //   handleDecreaseButtonClick();
-    // }
-    // return undefined;
   }
 
   @bind

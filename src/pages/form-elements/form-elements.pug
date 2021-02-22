@@ -3,7 +3,7 @@ extends ../demo-base/demo-base
 include ../../components/text-field/text-field
 include ../../components/dropdown/dropdown
 include ../../components/masked-text-field/masked-text-field
-//- //- include ../../components/date-dropdown/date-dropdown
+include ../../components/date-dropdown/date-dropdown
 //- //- include ../../components/filter-date-dropdown/filter-date-dropdown
 //- //- include ../../components/subscription-text-field/subscription-text-field
 //- //- include ../../components/expandable-checkbox-list/expandable-checkbox-list
@@ -63,8 +63,8 @@ block main
           +dropdown(dropdown1)
         .form-elements__masked-text-field.js-form-elements__masked-text-field
           +masked-text-field(maskedTextField) 
-    //-     .form-elements__date-dropdown
-    //-       +date-dropdown(dateDropdown)
+        .form-elements__date-dropdown.js-form-elements__date-dropdown
+          +date-dropdown(dateDropdown)
     //-     .form-elements__filter-date-dropdown
     //-       +filter-date-dropdown(filterDateDropdown)
     //-     .form-elements__subscription-text-field

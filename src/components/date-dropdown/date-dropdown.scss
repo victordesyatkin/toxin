@@ -5,23 +5,24 @@ $parent: 'date-dropdown';
 .#{$parent} {
   position: relative;
 
-  &__section-dropdown {
+  &__items {
     display: flex;
     justify-content: space-between;
+    list-style-type: none;
   }
 
-  &__section-dropdown-input:nth-child(2) {
+  &__item:nth-child(2) {
     margin-left: 1.42rem;
   }
 
-  &__section-calendar {
+  &__calendar {
     margin-top: 0.35rem;
     position: absolute;
     width: 100%;
     display: none;
   }
 
-  &__section-calendar_expanded {
+  &__calendar_opened {
     display: block;
     z-index: 99;
   }
@@ -29,11 +30,11 @@ $parent: 'date-dropdown';
 
 @include media-breakpoint-down($xs) {
   .#{$parent} {
-    &__section-dropdown {
+    &__items {
       flex-direction: column;
     }
 
-    &__section-dropdown-input:nth-child(2) {
+    &__item:nth-child(2) {
       margin-left: 0;
       margin-top: 1rem;
     }

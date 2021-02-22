@@ -33,11 +33,11 @@ class FormElements extends Component {
   _init() {
     const { textField1, textField2, dropdown1, maskedTextField } = this._props;
     console.log('props : ', this._props);
-    this._input1 = new TextField({
+    this._textField1 = new TextField({
       parent: $(`${this._query}__text-field-default`, this._$element),
       props: textField1,
     });
-    this._input2 = new TextField({
+    this._textField2 = new TextField({
       parent: $(`${this._query}__text-field-hover-focus`, this._$element),
       props: textField2,
     });
@@ -53,10 +53,10 @@ class FormElements extends Component {
       parent: $(`${this._query}__masked-text-field`, this._$element),
       props: maskedTextField,
     });
-    // Dropdown.renderComponents({ parents });
-    // MaskTextField.renderComponents({
-    //   parents,
-    // });
+    this._maskedTextField = new MaskedTextField({
+      parent: $(`${this._query}__masked-text-field`, this._$element),
+      props: maskedTextField,
+    });
     // DateDropdown.renderComponents({
     //   parents,
     // });

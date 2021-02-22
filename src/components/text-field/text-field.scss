@@ -7,7 +7,9 @@ $parent: 'text-field';
   position: relative;
   cursor: pointer;
 
-  &_theme_comfort {
+  &_theme_date,
+  &_theme_comfort,
+  &_theme_guests {
     .#{$parent}__input {
       border: none;
       cursor: pointer;

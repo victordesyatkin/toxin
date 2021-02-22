@@ -84,17 +84,14 @@
   },
   "dropdown1": {
     "dropdown": {
-      "theme": "comfort",
-      "isControlVisible": true,
-      "isStraight": false,
+      "theme": "guests",
+      "type": "guests",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить",
+      "isOpened": false,
       "title": {
         "content": "dropdown"
-      },
-      "isOpened": true
+      }
     },
     "textField": {
       "name": "guests-text-field-control",
@@ -107,10 +104,29 @@
       "isReadOnly": true
     },
     "items": [
-      { "title": "взрослые", "value": 0, "name": "guests[adupt]" },
-      { "title": "дети", "value": 0, "name": "guests[children]" },
-      { "title": "младенцы", "value": 0, "name": "guests[babies]" }
-    ]
+      { "title": "взрослые", "value": 0, "name": "guests[adult]" },
+      { "title": "дети", "value": 0, "name": "guests[child]" },
+      { "title": "младенцы", "value": 0, "name": "guests[baby]" }
+    ],
+    "control": {
+      "isHidden": true,
+      "items": [
+        {
+          "content": "очистить",
+          "type": "button",
+          "value": "",
+          "view": 2,
+          "dataType": "clean"
+        },
+        {
+          "content": "применить",
+          "type": "button",
+          "value": "",
+          "view": 2,
+          "dataType": "apply"
+        }
+      ]
+    }
   },
   "maskedTextField": {
     "textField": {
@@ -127,6 +143,46 @@
     }
   },
   "dateDropdown": {
+    "items": [
+      {
+        "dropdown": {
+          "theme": "date"
+        },
+        "textField": {
+          "name": "date-dropdown-text-field-start",
+          "type": "text",
+          "value": "ДД.ММ.ГГГГ",
+          "placeholder": "",
+          "button": { "iconClass": "arrow-down" },
+          "theme": "dropdown",
+          "isDisabled": false,
+          "isReadOnly": true,
+          "title": {
+            "content": "date Dropdown",
+            "isLabel": true
+          }
+        }
+      },
+      {
+        "dropdown": {
+          "theme": "date"
+        },
+        "textField": {
+          "name": "date-dropdown-text-field-end",
+          "type": "text",
+          "value": "ДД.ММ.ГГГГ",
+          "placeholder": "",
+          "button": { "iconClass": "arrow-down" },
+          "theme": "dropdown",
+          "isDisabled": false,
+          "isReadOnly": true,
+          "title": {
+            "content": "date Dropdown",
+            "isLabel": true
+          }
+        }
+      }
+    ],
     "fieldStart": {
       "input": {
         "name": "startDate",
