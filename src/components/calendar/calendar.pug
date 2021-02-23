@@ -1,25 +1,21 @@
-mixin calendar(props = {})
-  -
-    let
-        { buttonCleanText, buttonApplyText } = props;
-        className = 'calendar'; 
-        classNames = `${className} js-${className}`;
-  div(class=classNames)
+include ../control/control
+
+mixin calendar(props)
+  if props
     -
       let
-          mainClassNames = `${className}__main js-${className}__main`;
-    div(class=mainClassNames)
-      input(type="hidden", date-isCalendar="1")
-      div(class=`${className}__control`)
-        button(
-          type="button",
-          data-type=0,
-          class=`${className}__button ${className}__button_clean js-${className}__button_clean`
+          { name, isDisabled = true, isReadOnly = true, type="hidden", control } = props;
+          className = 'calendar'; 
+          classNames = `${className} js-${className}`;
+    div(class=classNames)
+      div(class=`${className}__body js-${className}__body`)
+        input(
+          name=name,
+          type=type,
+          class=`${className}__text-field js-${className}__text-field`,
+          disabled=isDisabled,
+          readonly=isReadOnly
         )
-          | #{buttonCleanText}
-        button(
-          type="button",
-          data-type=1,
-          class=`${className}__button ${className}__button_apply js-${className}__button_apply`
-        )
-          | #{buttonApplyText}
+        if control
+          div(class=`${className}__control js-${className}__control`)
+            +control(control)

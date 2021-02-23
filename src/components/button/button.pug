@@ -1,10 +1,10 @@
 mixin button(props = {})
   -
     let
-        { content, type, view, value, name, src, alt, isHovered, isDisabled, size } = props;
+        { content, type, value, name, src, alt, isHovered, isDisabled, size, theme } = props;
         className = 'button';
         classNames = `${className}`;
-        views = {
+        themes = {
             1: 1,
             2: 2,
             3: 3,
@@ -15,7 +15,7 @@ mixin button(props = {})
             3: 3,
         };
     classNames += isHovered ? ` ${className}_hovered` : '';
-    classNames += views[view] ? ` ${className}_view_${views[view]}` : '';
+    classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     classNames += sizes[size] ? ` ${className}_sizes_${sizes[size]}` : '';
     if (sizes[size] && sizes[size] === 3 && src) {
         classNames += ` ${className}_with_image`;

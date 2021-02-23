@@ -1,10 +1,10 @@
 include ../title-label/title-label
-include ../text-field/text-field
+include ../masked-text-field/masked-text-field
 
 mixin dropdown-title-text-field(props)
   if props
     -
-      let { dropdown = {}, textField } = props;
+      let { dropdown = {}, maskedTextField } = props;
       let { isOpened, type, theme, title } = dropdown;
       let themes = {
           comfort: 'comfort',
@@ -19,10 +19,12 @@ mixin dropdown-title-text-field(props)
       if title
         div(class=`${className}__title js-${className}__title`)
           +title-label(title)
-      if (textField || block)
+      if (maskedTextField || block)
         div(class=`${className}__body`)
-          if textField
-            div(class=`${className}__text-field js-${className}__text-field`)
-              +text-field({ ...textField, theme, isOpened })
+          if maskedTextField
+            div(
+              class=`${className}__masked-text-field js-${className}__masked-text-field`
+            )
+              +masked-text-field({ ...maskedTextField, theme, isOpened })
           if block
             block

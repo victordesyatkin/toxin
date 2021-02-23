@@ -4,13 +4,17 @@
 $parent: '.calendar';
 
 #{$parent} {
-  &__main {
+  &__body {
     width: 100%;
     border: 0.0714rem solid $calendar-border-color;
     box-sizing: border-box;
     box-shadow: $calendar-box-shadow;
     border-radius: 4px;
     background-color: $calendar-background-color;
+  }
+
+  &__control {
+    margin: 1.071rem 1.429rem;
   }
 
   .datepicker {
@@ -182,35 +186,5 @@ $parent: '.calendar';
 
   .datepicker--cell-day.-range-to-::before {
     left: 0;
-  }
-
-  &__control {
-    width: 100%;
-    padding: 1.4rem 1.42rem 1.42rem 1.42rem;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__button {
-    @include reset-button;
-    @include h3;
-    cursor: pointer;
-    &:hover {
-      color: $button-text-color-hover-second;
-    }
-  }
-
-  &__button_clean {
-    color: $button-text-color-default-second;
-  }
-
-  &__button_apply {
-    color: $button-text-color-default-second;
-  }
-
-  &__button_hide {
-    opacity: 0;
-    visibility: none;
-    pointer-events: none;
   }
 }

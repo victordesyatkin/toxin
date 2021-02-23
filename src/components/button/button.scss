@@ -16,7 +16,7 @@ $parent: 'button';
   background: none;
   border-radius: 22px;
 
-  &_view_1 {
+  &_theme_1 {
     color: $button-text-color-default-first;
     background: $button-background-color-first-default;
     border: solid 0.1428rem transparent;
@@ -29,19 +29,19 @@ $parent: 'button';
     }
   }
 
-  &_view_2 {
+  &_theme_2 {
     padding: 0;
     color: $button-text-color-default-second;
     background: none;
 
-    &.#{$parent}_view_2:hover,
-    &.#{$parent}_view_hover {
+    &.#{$parent}_theme_2:hover,
+    &.#{$parent}_theme_hover {
       color: $button-text-color-hover-second;
       background: none;
     }
   }
 
-  &_view_3 {
+  &_theme_3 {
     width: 100%;
     padding: 1rem 1.3571rem 1.0714rem 1.5rem;
     position: relative;
@@ -59,8 +59,8 @@ $parent: 'button';
     }
   }
 
-  &_view_1,
-  &_view_3 {
+  &_theme_1,
+  &_theme_3 {
     .#{$parent}_hovered,
     &:hover {
       @include background-button-hover;
@@ -74,7 +74,7 @@ $parent: 'button';
   }
 
   &_sizes_1 {
-    &.#{$parent}_view_1 {
+    &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 0.8571rem 1.6428rem 0.9285rem 1.7857rem;
       }
@@ -82,7 +82,7 @@ $parent: 'button';
   }
 
   &_sizes_2 {
-    &.#{$parent}_view_1 {
+    &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 0.7142rem 1rem 0.6428rem 1.0714rem;
       }
@@ -90,20 +90,20 @@ $parent: 'button';
   }
 
   &_sizes_3 {
-    &.#{$parent}_view_1 {
+    &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 0.5rem 1.4285rem 0.5714rem 1.4285rem;
       }
     }
 
-    &.#{$parent}_view_3 {
+    &.#{$parent}_theme_3 {
       width: auto;
       padding: 0.6428rem 1.4285rem 0.7142rem 1.5rem;
     }
   }
 
   &_sizes_4 {
-    &.#{$parent}_view_1 {
+    &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 1rem 1.2857rem 1.0714rem 1.4285rem;
       }

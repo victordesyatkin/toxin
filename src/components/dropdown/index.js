@@ -9,11 +9,6 @@ import './dropdown.scss';
 import Control from '../control';
 
 class Dropdown extends Component {
-  static cleanInputValue(index, element) {
-    $('input', element).val(0);
-    $('.js-dropdown__item-value', element).text(0);
-  }
-
   static CONTROLS = {
     clean: '_handleCleanButtonClick',
     apply: '_handleApplyButtonClick',
@@ -87,8 +82,7 @@ class Dropdown extends Component {
     if (this._isOpen) {
       this.open();
     }
-
-    // $('body').on('click', this._handleBodyClick);
+    $('body').on('click', this._handleBodyClick);
   }
 
   @bind
@@ -148,6 +142,16 @@ class Dropdown extends Component {
     // console.log('handleFillSummary :');
     if (this._control) {
       this._control.show();
+    }
+  }
+
+  @bind
+  _handleBodyClick(event) {
+    if (this._isOpened) {
+      const { target } = event;
+      if (!$(target).closest(this._$element).length) {
+        this.close();
+      }
     }
   }
 }

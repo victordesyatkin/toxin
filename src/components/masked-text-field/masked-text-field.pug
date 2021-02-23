@@ -4,8 +4,8 @@ mixin masked-text-field(props)
   if props
     -
       let
-          { textField } = props;
+          { textField, theme, isOpened } = props;
           className = 'masked-text-field';
           classNames = `${className} js-${className}`;
     div(class=classNames)
-      +text-field(textField)
+      +text-field({...textField, theme, isOpened})

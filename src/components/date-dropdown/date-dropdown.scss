@@ -5,6 +5,13 @@ $parent: 'date-dropdown';
 .#{$parent} {
   position: relative;
 
+  &_opened {
+    .#{$parent}__calendar {
+      display: block;
+      z-index: 999;
+    }
+  }
+
   &__items {
     display: flex;
     justify-content: space-between;
@@ -20,11 +27,6 @@ $parent: 'date-dropdown';
     position: absolute;
     width: 100%;
     display: none;
-  }
-
-  &__calendar_opened {
-    display: block;
-    z-index: 99;
   }
 }
 

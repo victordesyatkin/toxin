@@ -5,8 +5,8 @@ mixin text-field(props)
     -
       let
         {
-          title, type = 'text', name, placeholder, button, value, isRequired,
-          pattern, tabindex, isDisabled, ariaLabel, isReadonly, isAutoFocused, theme, isOpened
+          title, type = 'text', name, placeholder, button, value, theme, ariaLabel, summary='&nbsp;',
+          pattern, tabindex, isDisabled, isReadOnly, isAutoFocused, isOpened, isRequired, isHidden, isSummaryOnly
         } = props || {};
         themes = {
           comfort: 'comfort',
@@ -18,26 +18,49 @@ mixin text-field(props)
         classNames += button ? ` ${className}_withButton` : ''; 
         classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
         classNames += isOpened ? ` ${className}_opened` : '';
+        classNames += isHidden ? ` ${className}_hidden` : '';
         id = `${name}-${Math.random().toString(16).substr(2)}`;
     div(class=classNames)
       if title
-        div(class=`${className}__label`)
+        div(class=`${className}__label`, data-isSummaryOnly=isSummaryOnly)
           +title-label({ ...title, htmlFor: id })
-      input(
-        type=type,
-        name=name,
-        placeholder=placeholder,
-        value=value,
-        autofocus=isAutoFocused,
-        required=isRequired,
-        pattern=pattern,
-        tabindex=tabindex,
-        aria-label=ariaLabel,
-        disabled=isDisabled,
-        readonly=isReadonly,
-        class=`${className}__input js-${className}__input`,
-        id=id
-      )
+      if isSummaryOnly
+        p(class=`${className}__summary js-${className}__summary`) !{ summary }
+      else if isHidden
+        p(class=`${className}__summary js-${className}__summary`) !{ summary }
+        input(
+          type=type,
+          name=name,
+          placeholder=placeholder,
+          value=value,
+          autofocus=isAutoFocused,
+          required=isRequired,
+          pattern=pattern,
+          tabindex=tabindex,
+          aria-label=ariaLabel,
+          disabled=isDisabled,
+          readonly=isReadOnly,
+          class=`${className}__input js-${className}__input`,
+          id=id,
+          hidden=isHidden
+        )
+      else
+        input(
+          type=type,
+          name=name,
+          placeholder=placeholder,
+          value=value,
+          autofocus=isAutoFocused,
+          required=isRequired,
+          pattern=pattern,
+          tabindex=tabindex,
+          aria-label=ariaLabel,
+          disabled=isDisabled,
+          readonly=isReadOnly,
+          class=`${className}__input js-${className}__input`,
+          id=id,
+          hidden=isHidden
+        )
       if button
         -
           let { type: buttonType = "button", iconClass: buttonIconClassName, name: buttonName, value: buttonValue } = button;

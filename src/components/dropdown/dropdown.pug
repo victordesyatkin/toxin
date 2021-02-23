@@ -6,7 +6,7 @@ include ../dropdown-item/dropdown-item
 mixin dropdown(props)
   if props
     -
-      let { dropdown = {}, textField, items = [], control } = props;
+      let { dropdown = {}, maskedTextField, items = [], control } = props;
       let { isOpened, theme, title, buttonDecreaseText, buttonIncreaseText } = dropdown;
       let themes = {
           comfort: 'comfort'

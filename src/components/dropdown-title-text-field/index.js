@@ -1,7 +1,7 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import TextField from '../text-field';
+import MaskedTextField from '../masked-text-field';
 import './dropdown-title-text-field.scss';
 
 class DropdownTitleControl extends Component {
@@ -15,7 +15,11 @@ class DropdownTitleControl extends Component {
     this._renderComponent();
   }
 
-  updateSummary(value) {
+  updateSummary(summary) {
+    this._textField.updateSummary(summary);
+  }
+
+  updateValue(value) {
     this._textField.updateValue(value);
   }
 
@@ -37,19 +41,43 @@ class DropdownTitleControl extends Component {
     this._textField.close();
   }
 
+  cleanSummary() {
+    this.updateSummary('');
+  }
+
+  cleanValue() {
+    this.updateValue('');
+  }
+
+  clean() {
+    this.cleanSummary();
+    this.cleanValue();
+  }
+
   _init() {
-    const { textField } = this._props;
-    this._textField = new TextField({
+    const { maskedTextField } = this._props;
+    this._textField = new MaskedTextField({
       parent: this._$element,
-      props: textField,
+      props: maskedTextField,
     });
+    this._$element.on('click', this._handleDropdownTitleTextFieldClick);
+
     this._$title = $(`${this._query}__title`, this._$element);
     this._$title.on('click', this._handleTitleClick);
     // console.log('this._$title : ', this._$title);
 
-    this._$textField = $(`${this._query}__text-field`, this._$element);
+    this._$textField = $(`${this._query}__masked-text-field`, this._$element);
     this._$textField.on('click', this._handleTextFieldClick);
     // console.log(' this._$textField  : ', this._$textField);
+  }
+
+  @bind
+  _handleDropdownTitleTextFieldClick(event) {
+    console.log('_handleTextFieldClick : ');
+    const { handleDropdownTitleTextFieldClick } = this._props;
+    if (handleDropdownTitleTextFieldClick) {
+      handleDropdownTitleTextFieldClick(event);
+    }
   }
 
   @bind

@@ -78,9 +78,56 @@ class MaskedTextField extends Component {
     this._renderComponent();
   }
 
+  getInput() {
+    return this._textField.get(0);
+  }
+
+  toggleOpen() {
+    this._textField.toggleOpen();
+  }
+
+  open() {
+    this._textField.open();
+  }
+
+  close() {
+    this._textField.close();
+  }
+
+  enable() {
+    this._textField.enable();
+  }
+
+  disable() {
+    this._textField.disable();
+  }
+
+  getValue() {
+    return this._textField.getValue();
+  }
+
+  setValue(value) {
+    this._textField.setValue(value);
+  }
+
+  updateValue(value) {
+    this._textField.updateValue(value);
+  }
+
+  getSummary() {
+    return this._textField.getSummary();
+  }
+
+  setSummary(summary) {
+    this._textField.setSummary(summary);
+  }
+
+  updateSummary(summary) {
+    this._textField.updateSummary(summary);
+  }
+
   _init() {
     const { textField, options = {} } = this._props;
-    // console.log('_init : ', textField);
     this._textField = new TextField({
       parent: this._$element,
       props: textField,

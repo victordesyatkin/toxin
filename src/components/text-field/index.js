@@ -18,14 +18,6 @@ class TextField extends Component {
     return this._$input.get(0);
   }
 
-  // toggleStraight() {
-  //   if (this._$element.hasClass('input_straight')) {
-  //     this._$element.removeClass('input_straight');
-  //   } else {
-  //     this._$element.addClass('input_straight');
-  //   }
-  // }
-
   toggleOpen() {
     if (this._$element.hasClass(`${this._className}_opened`)) {
       this.close();
@@ -51,7 +43,7 @@ class TextField extends Component {
   }
 
   getValue() {
-    this._$input.val();
+    return this._$input.val();
   }
 
   setValue(value) {
@@ -65,22 +57,25 @@ class TextField extends Component {
     }
   }
 
-  // addTheme(theme) {
-  //   const themeClass = `input_theme_${theme}`;
-  //   if (!this._$element.hasClass(themeClass)) {
-  //     this._$element.addClass(themeClass);
-  //   }
-  // }
+  getSummary() {
+    return this._$summary.html();
+  }
 
-  // removeTheme(theme) {
-  //   const themeClass = `input_theme_${theme}`;
-  //   if (this._$element.hasClass(themeClass)) {
-  //     this._$element.removeClass(themeClass);
-  //   }
-  // }
+  setSummary(value) {
+    this._$summary.html(value);
+  }
+
+  updateSummary(summary) {
+    const previousSummary = this.getSummary();
+    if (summary !== previousSummary) {
+      this.setSummary(summary);
+    }
+  }
 
   _init() {
     this._$input = $(`${this._query}__input`, this._$element);
+    this._$summary = $(`${this._query}__summary`, this._$element);
+
     // console.log('_init this._$input : ', this._$input);
     this._$input.on('focusin', this._handleInputFocusIn);
     this._$input.on('focusout', this._handleInputFocusOut);

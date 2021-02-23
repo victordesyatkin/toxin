@@ -1,10 +1,12 @@
-import upperFirst from 'lodash/upperFirst';
 import bind from 'bind-decorator';
+import upperFirst from 'lodash/upperFirst';
+import get from 'lodash/get';
 
 import { Component } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
 import Calendar from '../calendar';
 import './date-dropdown.scss';
+import DropdownTitleControl from '../dropdown-title-text-field';
 
 class DateDropdown extends Component {
   static TYPE_CLEAN = 0;
@@ -63,55 +65,121 @@ class DateDropdown extends Component {
     return DateDropdown.TYPES.indexOf(type) > -1;
   }
 
-  _query = '.js-date-dropdown';
-
-  _init() {
-    const { fieldStart, fieldEnd, calendar } = this._props;
-    this._maskedTextFieldStart = new MaskedTextField({
-      parents: $(`js-${this._query}__masked-text-field-start`, this._$element),
-      props: fieldStart,
-    });
-    this._maskedTextFieldEnd = new MaskedTextField({
-      parents: $(`js-${this._query}__masked-text-field-end`, this._$element),
-      props: fieldEnd,
-    });
-    this._calendar = new Calendar({
-      parents: $(`js-${this._query}__calendar`, this._$element),
-      props: calendar,
-    });
-
-    this._$sections = $('.js-input__section', this._$element);
-    this._inputStart = $('.js-input__input', this._$sections.get(0));
-    this._inputStart.attr('disabled', true);
-    this._inputEnd = $('.js-input__input', this._$sections.get(1));
-    this._inputEnd.attr('disabled', true);
-    this._$sections.on('click', this._handleInputClick);
-    this._$calendar = $('.js-date-dropdown__section-calendar', this._$element);
-    this._datepicker = $(
-      `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
-      this._$calendar
-    )
-      .datepicker()
-      .data('datepicker');
-    this._setDates({
-      start: this._value2Date(this._getValue('start')),
-      end: this._value2Date(this._getValue('end')),
-    });
-    this._buttonClean = $(
-      `button[data-type="${DateDropdown.TYPE_CLEAN}"]`,
-      this._$calendar
-    );
-    this._buttonApply = $(
-      `button[data-type="${DateDropdown.TYPE_APPLY}"]`,
-      this._$calendar
-    );
-    this._buttonClean.on('click', this._handleCleanButtonClick);
-    this._buttonApply.on('click', this._handleApplyButtonClick);
-    $(document).on('click', this._handleDocumentClick);
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
-  _setZIndex(value) {
-    this._$calendar.css({ 'z-index': value });
+  _query = '.js-date-dropdown';
+
+  _className = 'date-dropdown';
+
+  _init() {
+    const { calendar, isOpened } = this._props;
+    this._items = [];
+    this._isOpened = isOpened;
+    this._$items = $(`${this._query}__item`, this._$element);
+    this._$items.each(this._renderItem);
+    this._calendar = new Calendar({
+      parent: $(`${this._query}__calendar`),
+      props: {
+        ...calendar,
+        handleCleanButtonClick: this._handleCleanButtonClick,
+        handleApplyButtonClick: this._handleApplyButtonClick,
+        handleCalendarClick: this._handleCalendarClick,
+      },
+    });
+
+    // console.log('this._$items : ', this._$items);
+    // const { fieldStart, fieldEnd, calendar } = this._props;
+    // this._maskedTextFieldStart = new MaskedTextField({
+    //   parents: $(`js-${this._query}__masked-text-field-start`, this._$element),
+    //   props: fieldStart,
+    // });
+    // this._maskedTextFieldEnd = new MaskedTextField({
+    //   parents: $(`js-${this._query}__masked-text-field-end`, this._$element),
+    //   props: fieldEnd,
+    // });
+    // this._calendar = new Calendar({
+    //   parents: $(`js-${this._query}__calendar`, this._$element),
+    //   props: calendar,
+    // });
+    // this._$sections = $('.js-input__section', this._$element);
+    // this._inputStart = $('.js-input__input', this._$sections.get(0));
+    // this._inputStart.attr('disabled', true);
+    // this._inputEnd = $('.js-input__input', this._$sections.get(1));
+    // this._inputEnd.attr('disabled', true);
+    // this._$sections.on('click', this._handleInputClick);
+    // this._$calendar = $('.js-date-dropdown__section-calendar', this._$element);
+    // this._datepicker = $(
+    //   `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
+    //   this._$calendar
+    // )
+    //   .datepicker()
+    //   .data('datepicker');
+    // this._setDates({
+    //   start: this._value2Date(this._getValue('start')),
+    //   end: this._value2Date(this._getValue('end')),
+    // });
+    // this._buttonClean = $(
+    //   `button[data-type="${DateDropdown.TYPE_CLEAN}"]`,
+    //   this._$calendar
+    // );
+    // this._buttonApply = $(
+    //   `button[data-type="${DateDropdown.TYPE_APPLY}"]`,
+    //   this._$calendar
+    // );
+    // this._buttonClean.on('click', this._handleCleanButtonClick);
+    // this._buttonApply.on('click', this._handleApplyButtonClick);
+    // $(document).on('click', this._handleDocumentClick);
+  }
+
+  open() {
+    this._$element.addClass(`${this._className}_opened`);
+    this._items.forEach((item) => item.open());
+  }
+
+  close() {
+    this._$element.removeClass(`${this._className}_opened`);
+    this._items.forEach((item) => item.close());
+  }
+
+  clean() {
+    this._items.forEach((item) => item.cleanValue());
+  }
+
+  @bind
+  _renderItem(index, element) {
+    const props = get(this._props, ['items', [index]]);
+    this._items.push(
+      new DropdownTitleControl({
+        parent: element,
+        props: {
+          ...props,
+          // eslint-disable-next-line prettier/prettier
+          handleDropdownTitleTextFieldClick: this._toggleOpen,
+        },
+      })
+    );
+  }
+
+  // @bind
+  // _handleDropdownTitleTextFieldClick() {
+
+  // }
+
+  @bind
+  _handleCleanButtonClick() {
+    return this.clean();
+  }
+
+  @bind
+  _toggleOpen() {
+    if (this._$element.hasClass(`${this._className}_opened`)) {
+      this.close();
+    } else {
+      this.open();
+    }
   }
 
   @bind
@@ -122,11 +190,6 @@ class DateDropdown extends Component {
       this._setZIndex(99);
       this._$calendar.slideDown('fast');
     }
-  }
-
-  _handleCleanButtonClick() {
-    this._setValue('start', '');
-    this._setValue('end', '');
   }
 
   @bind

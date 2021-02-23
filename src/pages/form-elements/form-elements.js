@@ -2,7 +2,7 @@ import { Component } from '../../helpers/utils';
 import TextField from '../../components/text-field';
 import Dropdown from '../../components/dropdown';
 import MaskedTextField from '../../components/masked-text-field';
-// import DateDropdown from '../../components/date-dropdown';
+import DateDropdown from '../../components/date-dropdown';
 // import FilterDateDropdown from '../../components/filter-date-dropdown';
 // import SubscriptionTextField from '../../components/subscription-text-field';
 // import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
@@ -31,7 +31,13 @@ class FormElements extends Component {
   }
 
   _init() {
-    const { textField1, textField2, dropdown1, maskedTextField } = this._props;
+    const {
+      textField1,
+      textField2,
+      dropdown1,
+      maskedTextField,
+      dateDropdown,
+    } = this._props;
     console.log('props : ', this._props);
     this._textField1 = new TextField({
       parent: $(`${this._query}__text-field-default`, this._$element),
@@ -53,13 +59,10 @@ class FormElements extends Component {
       parent: $(`${this._query}__masked-text-field`, this._$element),
       props: maskedTextField,
     });
-    this._maskedTextField = new MaskedTextField({
-      parent: $(`${this._query}__masked-text-field`, this._$element),
-      props: maskedTextField,
+    this._dateDropdown = new DateDropdown({
+      parent: $(`${this._query}__date-dropdown`, this._$element),
+      props: dateDropdown,
     });
-    // DateDropdown.renderComponents({
-    //   parents,
-    // });
     // FilterDateDropdown.renderComponents({
     //   parents,
     // });

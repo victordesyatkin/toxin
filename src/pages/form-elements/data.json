@@ -93,15 +93,13 @@
         "content": "dropdown"
       }
     },
-    "textField": {
-      "name": "guests-text-field-control",
-      "type": "text",
-      "value": "Сколько гостей",
-      "placeholder": "",
-      "button": { "iconClass": "arrow-down" },
-      "theme": "dropdown",
-      "isDisabled": true,
-      "isReadOnly": true
+    "maskedTextField": {
+      "textField": {
+        "button": { "iconClass": "arrow-down" },
+        "theme": "dropdown",
+        "isSummaryOnly": true,
+        "summary": "Сколько гостей"
+      }
     },
     "items": [
       { "title": "взрослые", "value": 0, "name": "guests[adult]" },
@@ -115,14 +113,14 @@
           "content": "очистить",
           "type": "button",
           "value": "",
-          "view": 2,
+          "theme": 2,
           "dataType": "clean"
         },
         {
           "content": "применить",
           "type": "button",
           "value": "",
-          "view": 2,
+          "theme": 2,
           "dataType": "apply"
         }
       ]
@@ -143,23 +141,25 @@
     }
   },
   "dateDropdown": {
+    "isOpened": true,
     "items": [
       {
         "dropdown": {
           "theme": "date"
         },
-        "textField": {
-          "name": "date-dropdown-text-field-start",
-          "type": "text",
-          "value": "ДД.ММ.ГГГГ",
-          "placeholder": "",
-          "button": { "iconClass": "arrow-down" },
-          "theme": "dropdown",
-          "isDisabled": false,
-          "isReadOnly": true,
-          "title": {
-            "content": "date Dropdown",
-            "isLabel": true
+        "maskedTextField": {
+          "textField": {
+            "name": "start",
+            "type": "text",
+            "value": "",
+            "placeholder": "ДД.ММ.ГГГГ",
+            "button": { "iconClass": "arrow-down" },
+            "theme": "dropdown",
+            "title": {
+              "content": "date Dropdown"
+            },
+            "isHidden": true,
+            "summary": "ДД.ММ.ГГГГ"
           }
         }
       },
@@ -167,18 +167,19 @@
         "dropdown": {
           "theme": "date"
         },
-        "textField": {
-          "name": "date-dropdown-text-field-end",
-          "type": "text",
-          "value": "ДД.ММ.ГГГГ",
-          "placeholder": "",
-          "button": { "iconClass": "arrow-down" },
-          "theme": "dropdown",
-          "isDisabled": false,
-          "isReadOnly": true,
-          "title": {
-            "content": "date Dropdown",
-            "isLabel": true
+        "maskedTextField": {
+          "textField": {
+            "name": "date-dropdown-text-field-end",
+            "type": "text",
+            "value": "Mon Aug 19 2019 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+            "placeholder": "ДД.ММ.ГГГГ",
+            "button": { "iconClass": "arrow-down" },
+            "theme": "dropdown",
+            "title": {
+              "content": "date Dropdown"
+            },
+            "isHidden": true,
+            "summary": "ДД.ММ.ГГГГ"
           }
         }
       }
@@ -207,8 +208,25 @@
       }
     },
     "calendar": {
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
+      "control": {
+        "isHidden": true,
+        "items": [
+          {
+            "content": "очистить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "clean"
+          },
+          {
+            "content": "применить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "apply"
+          }
+        ]
+      }
     }
   },
   "filterDateDropdown": {

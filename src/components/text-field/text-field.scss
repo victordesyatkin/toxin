@@ -7,18 +7,45 @@ $parent: 'text-field';
   position: relative;
   cursor: pointer;
 
-  &_theme_date,
+  .#{$parent}__summary {
+    display: inline-block;
+  }
+
   &_theme_comfort,
   &_theme_guests {
+    .#{$parent}__summary,
     .#{$parent}__input {
       border: none;
       cursor: pointer;
     }
   }
 
-  &_withButton {
+  &_theme_date,
+  &_theme_comfort,
+  &_theme_guests {
+    .#{$parent}__summary,
     .#{$parent}__input {
-      padding-right: 4.13rem;
+      cursor: pointer;
+    }
+  }
+
+  &_theme_date {
+    .#{$parent}__summary,
+    .#{$parent}__input {
+      &:hover,
+      &:focus,
+      &:active {
+        color: $input-text-color-hover;
+        border: 1px solid $input-border-color-default;
+        outline: none;
+      }
+    }
+  }
+
+  &_withButton {
+    .#{$parent}__summary,
+    .#{$parent}__input {
+      padding-right: 3.2rem;
     }
   }
 
@@ -26,9 +53,22 @@ $parent: 'text-field';
     margin-bottom: 0.35rem;
   }
 
+  &__summary {
+    display: none;
+    font-size: 1rem;
+    line-height: 1.15rem;
+  }
+
+  &__summary:after {
+    content: '';
+    display: inline-block;
+    width: 0px;
+  }
+
+  &__summary,
   &__input {
     width: 100%;
-    padding: 0.99rem 1.07rem;
+    padding: 0.9rem 1rem 1rem;
     color: $input-text-color-hover;
     border: 1px solid $input-border-color-default;
     border-radius: 4px;
