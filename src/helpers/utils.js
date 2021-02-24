@@ -1,9 +1,9 @@
+import bind from 'bind-decorator';
 import isString from 'lodash/isString';
 import isArray from 'lodash/isArray';
 import trim from 'lodash/trim';
 import isFunction from 'lodash/isFunction';
 import isEmpty from 'lodash/isEmpty';
-import bind from 'bind-decorator';
 
 function wordForm(number = 0, words = []) {
   const cases = [2, 0, 1, 1, 1, 2];
@@ -68,6 +68,14 @@ function renderComponent(options = {}) {
   return $element.data(SomeClass.name, new SomeClass({ element, props }));
 }
 
+function isValidDate(date) {
+  return date instanceof Date && !Number.isNaN(date.getTime());
+}
+
+function uuid() {
+  return Math.random().toString(16).slice(2);
+}
+
 class Component {
   constructor(options = {}) {
     // console.log('Component constructor : ', options);
@@ -127,4 +135,12 @@ class Component {
   }
 }
 
-export { wordForm, renderComponents, renderComponent, Component, toggleHeight };
+export {
+  Component,
+  wordForm,
+  renderComponents,
+  renderComponent,
+  toggleHeight,
+  isValidDate,
+  uuid,
+};

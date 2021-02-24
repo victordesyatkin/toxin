@@ -67,8 +67,7 @@
       "content": "text field",
       "state": "default",
       "isLabel": true
-    },
-    "button": { "iconClass": "arrow-down" }
+    }
   },
   "textField2": {
     "name": "lastName",
@@ -141,7 +140,7 @@
     }
   },
   "dateDropdown": {
-    "isOpened": true,
+    "isOpened": false,
     "items": [
       {
         "dropdown": {
@@ -184,29 +183,6 @@
         }
       }
     ],
-    "fieldStart": {
-      "input": {
-        "name": "startDate",
-        "id": "startDate",
-        "type": "text",
-        "label": "date dropdown",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "button": { "isVisible": true, "iconClass": "arrow-down" },
-        "notFocused": true
-      }
-    },
-    "fieldEnd": {
-      "input": {
-        "name": "endDate",
-        "id": "endDate",
-        "type": "text",
-        "label": "date dropdown",
-        "placeholder": "ДД.ММ.ГГГГ",
-        "value": "19.08.2019",
-        "button": { "isVisible": true, "iconClass": "arrow-down" },
-        "notFocused": true
-      }
-    },
     "calendar": {
       "control": {
         "isHidden": true,
@@ -230,18 +206,56 @@
     }
   },
   "filterDateDropdown": {
-    "label": "filter date dropdown",
-    "input": {
-      "name": "form-elements-filter-date-dropdown",
-      "dummy": "ДД МЕС",
-      "placeholder": "ДД МЕС - ДД МЕС",
-      "separator": "-",
-      "value": "[\"Wed Aug 19 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)\",\"Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)\"]",
-      "notFocused": true
+    "isOpened": true,
+    "dropdownTitleTextField": {
+      "dropdown": {
+        "theme": "date"
+      },
+      "maskedTextField": {
+        "textField": {
+          "button": { "iconClass": "arrow-down" },
+          "title": {
+            "content": "filter date dropdown"
+          },
+          "isSummaryOnly": true,
+          "summary": "ДД МЕС - ДД МЕС"
+        }
+      }
     },
+    "separator": " - ",
+    "items": [
+      {
+        "name": "form-elements-filter-date-dropdown-start",
+        "value": "Wed Aug 19 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+        "placeholder": "ДД МЕС"
+      },
+      {
+        "name": "form-elements-filter-date-dropdown-end",
+        "value": "Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+        "placeholder": "ДД МЕС"
+      }
+    ],
     "calendar": {
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
+      "today": "Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+      "control": {
+        "isHidden": true,
+        "items": [
+          {
+            "content": "очистить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "clean"
+          },
+          {
+            "content": "применить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "apply"
+          }
+        ]
+      }
     }
   },
   "dropdown2": {

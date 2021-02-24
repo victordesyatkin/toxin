@@ -40,6 +40,7 @@ class Dropdown extends Component {
     this._isOpened = true;
     this._$element.addClass(`${this._className}_opened`);
     this._dropDownTitleTextField.open();
+    this._$element.trigger('dropdown-open');
   }
 
   close() {
@@ -83,6 +84,16 @@ class Dropdown extends Component {
       this.open();
     }
     $('body').on('click', this._handleBodyClick);
+    this._$element.on('dropdown-open', this._handleDropdownOpen);
+  }
+
+  @bind
+  _handleDropdownOpen(event) {
+    const { currentTarget } = event;
+    if (this._isOpened && currentTarget !== this._$element.get(0)) {
+      this.close();
+    }
+    console.log('_handleDropdownOpen : ', event);
   }
 
   @bind

@@ -1,4 +1,3 @@
-include ../masked-text-field/masked-text-field
 include ../dropdown-title-text-field/dropdown-title-text-field
 include ../calendar/calendar
 
@@ -19,20 +18,3 @@ mixin date-dropdown(props)
         if calendar
           div(class=`${className}__calendar js-${className}__calendar`)
             +calendar(calendar)
-    //- .date-dropdown__section-dropdown.js-date-dropdown__section-dropdown
-
-    //-   .date-dropdown__section-dropdown-input(
-    //-     class=`js-${className}__masked-text-field-start`
-    //-   )
-    //-     +masked-text-field(fieldStart)
-    //-   .date-dropdown__section-dropdown-input(
-    //-     class=`js-${className}__masked-text-field-end`
-    //-   )
-    //-     +masked-text-field(fieldEnd)
-    //-   -
-    //-     let
-    //-         sectionCalendarClassName = 'date-dropdown__section-calendar';
-    //-         sectionCalendarClassNames = `${sectionCalendarClassName} js-${sectionCalendarClassName}`;
-    //-     sectionCalendarClassNames += isExpanded ? ` ${sectionCalendarClassName}_expanded` : '';
-    //- div(class=sectionCalendarClassNames)
-    //-   +calendar(calendar)

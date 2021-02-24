@@ -3,6 +3,7 @@
 $parent: 'date-dropdown';
 
 .#{$parent} {
+  width: 100%;
   position: relative;
 
   &_opened {
@@ -13,9 +14,14 @@ $parent: 'date-dropdown';
   }
 
   &__items {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     list-style-type: none;
+  }
+
+  &__item {
+    width: 100%;
   }
 
   &__item:nth-child(2) {

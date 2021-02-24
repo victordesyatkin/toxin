@@ -1,23 +1,15 @@
 import bind from 'bind-decorator';
-import upperFirst from 'lodash/upperFirst';
 import get from 'lodash/get';
 
-import { Component } from '../../helpers/utils';
-import MaskedTextField from '../masked-text-field';
+import { Component, isValidDate } from '../../helpers/utils';
 import Calendar from '../calendar';
 import './date-dropdown.scss';
 import DropdownTitleControl from '../dropdown-title-text-field';
 
 class DateDropdown extends Component {
-  static TYPE_CLEAN = 0;
-
-  static TYPE_APPLY = 1;
-
-  static IS_CALENDAR = 1;
-
   static TYPES = ['start', 'end'];
 
-  static _prepareDate(passDate) {
+  static _maskedDate(passDate) {
     let date = new Date(passDate);
     let day = date.getDate();
     let month = date.getMonth() + 1;
@@ -31,55 +23,48 @@ class DateDropdown extends Component {
     return date;
   }
 
-  static _isValidDate({ partDay, partMonth, partYear }) {
-    return partDay && partMonth && partYear;
-  }
+  _query = '.js-date-dropdown';
 
-  static _value2Date(value) {
-    const parts = value.split('.');
-    const partDay = parseFloat(parts[0]);
-    const partMonth = parseFloat(parts[1]);
-    const partYear = parseFloat(parts[2]);
-    let date = '';
-    if (DateDropdown._isValidDate({ partDay, partMonth, partYear })) {
-      date = `${partMonth}.${partDay}.${partYear}`;
-    }
-    if (date) {
-      date = new Date(date);
-      if (!(date instanceof Date)) {
-        date = '';
-      }
-    }
-    return date;
-  }
-
-  static isClosest({ event, $element, targetClass }) {
-    return (
-      $(event.target).closest($element).length &&
-      $(event.target, $element).hasClass('datepicker--cell') &&
-      $(targetClass, $element).length
-    );
-  }
-
-  static _checkType(type = '') {
-    return DateDropdown.TYPES.indexOf(type) > -1;
-  }
+  _className = 'date-dropdown';
 
   constructor(options) {
     super(options);
     this._renderComponent();
   }
 
-  _query = '.js-date-dropdown';
+  open() {
+    this._$element.addClass(`${this._className}_opened`);
+    this._items.forEach((item) => item.open());
+    this._isOpened = true;
+    this._$element.trigger('dropdown-open');
+  }
 
-  _className = 'date-dropdown';
+  close() {
+    this._$element.removeClass(`${this._className}_opened`);
+    this._items.forEach((item) => item.close());
+    this._isOpened = false;
+  }
+
+  clean() {
+    this._items.forEach((item = {}, index) => {
+      const { placeholder = '' } = get(
+        this._props,
+        ['items', index, 'maskedTextField', 'textField'],
+        ''
+      );
+      item.updateSummary(placeholder);
+      item.cleanValue();
+    });
+  }
 
   _init() {
-    const { calendar, isOpened } = this._props;
+    const { calendar, isOpened, items } = this._props;
     this._items = [];
     this._isOpened = isOpened;
     this._$items = $(`${this._query}__item`, this._$element);
     this._$items.each(this._renderItem);
+    const start = get(items, [0, 'maskedTextField', 'textField', 'value']);
+    const end = get(items, [1, 'maskedTextField', 'textField', 'value']);
     this._calendar = new Calendar({
       parent: $(`${this._query}__calendar`),
       props: {
@@ -87,65 +72,31 @@ class DateDropdown extends Component {
         handleCleanButtonClick: this._handleCleanButtonClick,
         handleApplyButtonClick: this._handleApplyButtonClick,
         handleCalendarClick: this._handleCalendarClick,
+        start,
+        end,
       },
     });
-
-    // console.log('this._$items : ', this._$items);
-    // const { fieldStart, fieldEnd, calendar } = this._props;
-    // this._maskedTextFieldStart = new MaskedTextField({
-    //   parents: $(`js-${this._query}__masked-text-field-start`, this._$element),
-    //   props: fieldStart,
-    // });
-    // this._maskedTextFieldEnd = new MaskedTextField({
-    //   parents: $(`js-${this._query}__masked-text-field-end`, this._$element),
-    //   props: fieldEnd,
-    // });
-    // this._calendar = new Calendar({
-    //   parents: $(`js-${this._query}__calendar`, this._$element),
-    //   props: calendar,
-    // });
-    // this._$sections = $('.js-input__section', this._$element);
-    // this._inputStart = $('.js-input__input', this._$sections.get(0));
-    // this._inputStart.attr('disabled', true);
-    // this._inputEnd = $('.js-input__input', this._$sections.get(1));
-    // this._inputEnd.attr('disabled', true);
-    // this._$sections.on('click', this._handleInputClick);
-    // this._$calendar = $('.js-date-dropdown__section-calendar', this._$element);
-    // this._datepicker = $(
-    //   `input[type="hidden"][date-isCalendar="${DateDropdown.IS_CALENDAR}"]`,
-    //   this._$calendar
-    // )
-    //   .datepicker()
-    //   .data('datepicker');
-    // this._setDates({
-    //   start: this._value2Date(this._getValue('start')),
-    //   end: this._value2Date(this._getValue('end')),
-    // });
-    // this._buttonClean = $(
-    //   `button[data-type="${DateDropdown.TYPE_CLEAN}"]`,
-    //   this._$calendar
-    // );
-    // this._buttonApply = $(
-    //   `button[data-type="${DateDropdown.TYPE_APPLY}"]`,
-    //   this._$calendar
-    // );
-    // this._buttonClean.on('click', this._handleCleanButtonClick);
-    // this._buttonApply.on('click', this._handleApplyButtonClick);
-    // $(document).on('click', this._handleDocumentClick);
+    $('body').on('click', this._handleBodyClick);
+    this._$element.on('dropdown-open', this._handleDropdownOpen);
   }
 
-  open() {
-    this._$element.addClass(`${this._className}_opened`);
-    this._items.forEach((item) => item.open());
+  @bind
+  _handleDropdownOpen(event) {
+    const { currentTarget } = event;
+    if (this._isOpened && currentTarget !== this._$element.get(0)) {
+      this.close();
+    }
+    console.log('_handleDropdownOpen : ', event);
   }
 
-  close() {
-    this._$element.removeClass(`${this._className}_opened`);
-    this._items.forEach((item) => item.close());
-  }
-
-  clean() {
-    this._items.forEach((item) => item.cleanValue());
+  @bind
+  _handleBodyClick(event) {
+    if (this._isOpened) {
+      const { target } = event;
+      if (!$(target).closest(this._$element).length) {
+        this.close();
+      }
+    }
   }
 
   @bind
@@ -163,10 +114,30 @@ class DateDropdown extends Component {
     );
   }
 
-  // @bind
-  // _handleDropdownTitleTextFieldClick() {
+  _prepareValues(dates = []) {
+    dates.forEach((date, index) => {
+      this._items[index].updateValue(isValidDate(date) ? date : '');
+    });
+  }
 
-  // }
+  _prepareSummary(dates = []) {
+    dates.forEach((date, index) => {
+      const { placeholder = '' } = get(
+        this._props,
+        ['items', index, 'maskedTextField', 'textField'],
+        ''
+      );
+      this._items[index].updateSummary(
+        isValidDate(date) ? DateDropdown._maskedDate(date) : placeholder
+      );
+    });
+  }
+
+  @bind
+  _handleCalendarClick(dates = []) {
+    this._prepareValues(dates);
+    this._prepareSummary(dates);
+  }
 
   @bind
   _handleCleanButtonClick() {
@@ -183,69 +154,8 @@ class DateDropdown extends Component {
   }
 
   @bind
-  _handleInputClick() {
-    if (this._$calendar.is(':visible')) {
-      this._$calendar.slideUp('fast', this._setZIndex.bind(this, ''));
-    } else {
-      this._setZIndex(99);
-      this._$calendar.slideDown('fast');
-    }
-  }
-
-  @bind
-  _handleApplyButtonClick(isToggle = true) {
-    const [start, end] = this._datepicker.selectedDates;
-    if (start) {
-      this._setValue('start', this._prepareDate(start));
-    } else {
-      this._setValue('start', '');
-    }
-    if (end) {
-      this._setValue('end', this._prepareDate(end));
-    } else {
-      this._setValue('end', '');
-    }
-    if (isToggle) {
-      this._handleInputClick();
-    }
-  }
-
-  @bind
-  _handleDocumentClick(event) {
-    const targetClass = `.${$(event.target, this._$element).attr('class')}`;
-    if (
-      !DateDropdown.isClosest({ targetClass, $element: this._$element, event })
-    ) {
-      this._datepicker.hide();
-    }
-  }
-
-  _setDates({ passStart, passEnd } = {}) {
-    let start = passStart;
-    let end = passEnd;
-    if (!start && end) {
-      start = new Date(end);
-      start.setDate(start.getDate() - 1);
-    }
-    if (start && !end) {
-      end = new Date(start);
-      end.setDate(end.getDate() + 1);
-    }
-    this._datepicker.selectDate([start, end]);
-  }
-
-  _getValue(type = '') {
-    if (DateDropdown._checkType(type)) {
-      return this[`_input${upperFirst(type)}`].val();
-    }
-    return '';
-  }
-
-  _setValue(type = '', value = '') {
-    if (DateDropdown._checkType(type)) {
-      return this[`_input${upperFirst(type)}`].val(value);
-    }
-    return '';
+  _handleApplyButtonClick() {
+    this.close();
   }
 }
 

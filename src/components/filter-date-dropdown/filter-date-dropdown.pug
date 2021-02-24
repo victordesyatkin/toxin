@@ -1,25 +1,32 @@
+include ../dropdown-title-text-field/dropdown-title-text-field
 include ../calendar/calendar
 
-mixin filter-date-dropdown(props= {})
-  -
-    let { label, input = {}, isExpanded, isForcedExpanded, placeholder, separator, calendar } = props;
-    let { name, value, dummy } = input;
-    let className = 'filter-date-dropdown';
-    let classNames = `${className} js-${className}`;
-    classNames += isExpanded ? ` ${className}_expanded` : '';
-    classNames += isForcedExpanded ? ` ${className}_forced-expanded` : '';
-  div(class=classNames)
-    input(type="hidden", name=name, value=value, data-type="1")
-    if (label)
-      .filter-date-dropdown__label= label
-    .filter-date-dropdown__section-up.js-filter-date-dropdown__section-up
-      input.filter-date-dropdown__input(
-        data-type="0",
-        placeholder=placeholder,
-        disabled
-      )
-      button.filter-date-dropdown__button.icon-expand_more(type="button")
-    .filter-date-dropdown__section-down.js-filter-date-dropdown__section-down(
-      data-type="3"
-    )
-      +calendar(calendar)
+mixin filter-date-dropdown(props)
+  if props
+    -
+      let { dropdownTitleTextField, items = [], calendar, isOpened } = props;
+      let className = 'filter-date-dropdown';
+      let classNames = `${className} js-${className}`;
+      let length = items;
+      classNames += isOpened ? ` ${className}_opened` : '';
+    div(class=classNames)
+      if dropdownTitleTextField
+        div(
+          class=`${className}__dropdown-title-text-field js-${className}__dropdown-title-text-field`
+        )
+          +dropdown-title-text-field(dropdownTitleTextField)
+      if length
+        ul(class=`${className}__items js-${className}__items`)
+          each item in items
+            li(class=`${className}_li-item js-${className}_li-item`)
+              - let { name, value, type = 'hidden', ariaLabel } = item || {};
+              input(
+                name=name,
+                type=type,
+                vale=value,
+                aria-label=ariaLabel,
+                class=`${className}__item js-${className}__item`
+              )
+      if calendar
+        div(class=`${className}__calendar js-${className}__calendar`) 
+          +calendar(calendar)

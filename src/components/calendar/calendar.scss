@@ -1,20 +1,19 @@
 @import '~theme/variables.scss';
 @import '~air-datepicker/dist/css/datepicker.min.css';
 
-$parent: '.calendar';
+$parent: 'calendar';
 
-#{$parent} {
-  &__body {
-    width: 100%;
-    border: 0.0714rem solid $calendar-border-color;
-    box-sizing: border-box;
-    box-shadow: $calendar-box-shadow;
-    border-radius: 4px;
-    background-color: $calendar-background-color;
-  }
+.#{$parent} {
+  width: 100%;
+  border: 0.0714rem solid $calendar-border-color;
+  box-sizing: border-box;
+  box-shadow: $calendar-box-shadow;
+  border-radius: 4px;
+  background-color: $calendar-background-color;
 
   &__control {
-    margin: 1.071rem 1.429rem;
+    width: 100%;
+    padding: 1.071rem 1.429rem;
   }
 
   .datepicker {
@@ -176,6 +175,7 @@ $parent: '.calendar';
     z-index: -2;
   }
 
+  .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before,
   .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-range-::before {
     display: none;
   }
@@ -186,5 +186,15 @@ $parent: '.calendar';
 
   .datepicker--cell-day.-range-to-::before {
     left: 0;
+  }
+
+  .datepicker--cells-days:hover {
+    .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before {
+      display: inherit;
+    }
+    .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-broken-range-::before,
+    .datepicker--cell-day.-range-from-.-focus-.-hide-in-broken-range-::before {
+      display: none;
+    }
   }
 }

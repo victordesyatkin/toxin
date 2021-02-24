@@ -1,202 +1,154 @@
 import bind from 'bind-decorator';
+import get from 'lodash/get';
 
-import { Component } from '../../helpers/utils';
+import { Component, isValidDate } from '../../helpers/utils';
 import Calendar from '../calendar';
+import DropdownTitleTextField from '../dropdown-title-text-field';
 import './filter-date-dropdown.scss';
 
 class FilterDateDropdown extends Component {
-  static CLASS_NAME = 'FILTER_DATE_DROPDOWN';
-
-  static TYPE_FAKE = 0;
-
-  static TYPE_MAIN = 3;
-
-  static TYPE_INPUT = 1;
-
-  static TYPE_CLEAN = 0;
-
-  static TYPE_APPLY = 1;
-
-  static IS_CALENDAR = 1;
-
-  static isValidDate({ partDay, partMonth, partYear }) {
-    return partDay && partMonth && partYear;
-  }
-
-  static value2Date(value) {
-    const parts = value.split('.');
-    const partDay = parts[0];
-    const partMonth = parts[1];
-    const partYear = parts[2];
-    let date = '';
-    if (FilterDateDropdown.isValidDate({ partDay, partMonth, partYear })) {
-      date = `${partMonth}.${partDay}.${partYear}`;
-    }
-    if (date) {
-      date = new Date(date);
-      if (!(date instanceof Date)) {
-        date = '';
-      }
-    }
-    return date;
-  }
-
-  _query = '.js-filter-date-dropdown';
-
-  static isClosest({ event, classTarget, $element }) {
-    return (
-      $(event.target).closest(this._$element).length &&
-      $(event.target, $element).hasClass('datepicker--cell') &&
-      $(classTarget, $element).length &&
-      $element.hasClass('filter-date-dropdown_expanded')
-    );
-  }
-
-  _init() {
-    const { dummy, separator, calendar } = this._props;
-    this._calendar = Calendar({
-      parents: $(`${this._query}__section-down`, this._$element),
-      props: calendar,
-    });
-    this._dummy = dummy || 'ДД МЕС';
-    this._separator = separator || '-';
-    this._$fake = $(
-      `input[data-type="${FilterDateDropdown.TYPE_FAKE}"]`,
-      this._$element
-    );
-    this._$sectionUp = $(
-      '.js-filter-date-dropdown__section-up',
-      this._$element
-    );
-    this._$sectionUp.on('click', this._handleMainBlockClick);
-    this._$mainBlock = $(
-      `div[data-type="${FilterDateDropdown.TYPE_MAIN}"]`,
-      this._$element
-    );
-    this._$input = $(
-      `input[type="hidden"][data-type=${FilterDateDropdown.TYPE_INPUT}]`,
-      this._$element
-    );
-    this._datepicker = $(
-      `input[type="hidden"][date-isCalendar="${FilterDateDropdown.IS_CALENDAR}"]`,
-      this._$element
-    )
-      .datepicker()
-      .data('datepicker');
-    this._buttonClean = $(
-      `button[data-type="${FilterDateDropdown.TYPE_CLEAN}"]`,
-      this._$element
-    );
-    this._buttonApply = $(
-      `button[data-type="${FilterDateDropdown.TYPE_APPLY}"]`,
-      this._$element
-    );
-    this._buttonClean.on('click', this._handleCleanButtonClick);
-    this._buttonApply.on('click', this._handleApplyButtonClick);
-    $(document).on('click', this._handleDocumentClick);
-    this._isForcedVisible = this._$element.hasClass(
-      'filter-date-dropdown_forced-expanded'
-    );
-    this._setDates(this._getValue());
-    this._changeFake();
-  }
-
-  _prepareDate(passDate) {
-    let date = passDate;
-    if (!date) {
-      return this._dummy;
-    }
-    date = new Date(date);
-    date = date
+  static _maskedDate(date) {
+    return date
       .toLocaleString('ru', {
         day: '2-digit',
         month: 'short',
       })
       .replace('.', '');
-    return date;
   }
 
-  _changeFake() {
-    const selectedDates = this._$input.val();
-    const [start, end] = (selectedDates && JSON.parse(selectedDates)) || [];
-    this._$fake.val(
-      `${this._prepareDate(start)} ${this._separator} ${this._prepareDate(end)}`
-    );
+  _query = '.js-filter-date-dropdown';
+
+  _className = 'filter-date-dropdown';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
+
+  open() {
+    this._isOpened = true;
+    this._$element.addClass(`${this._className}_opened`);
+    this._dropdownTitleTextField.open();
+    this._$element.trigger('dropdown-open');
+  }
+
+  close() {
+    this._isOpened = false;
+    this._$element.removeClass(`${this._className}_opened`);
+    this._dropdownTitleTextField.close();
+  }
+
+  clean() {
+    let summary = '';
+    const { separator = ' - ' } = this._props;
+    this._$items.each((index, element) => {
+      const { placeholder = '' } = get(this._props, ['items', index], '');
+      summary += summary ? `${separator}${placeholder}` : placeholder;
+      console.log('clean : ', summary);
+      $(element).val('');
+    });
+    this._dropdownTitleTextField.updateSummary(summary);
+  }
+
+  _init() {
+    const {
+      dropdownTitleTextField,
+      calendar,
+      isOpened,
+      items = [],
+    } = this._props;
+    this._isOpened = isOpened;
+    const start = get(items, [0, 'value']);
+    const end = get(items, [1, 'value']);
+    this._$items = $(`${this._query}__item`, this._$element);
+    this._dropdownTitleTextField = new DropdownTitleTextField({
+      parent: $(`${this._query}__dropdown-title-text-field`),
+      props: {
+        ...dropdownTitleTextField,
+        handleDropdownTitleTextFieldClick: this._toggleOpen,
+      },
+    });
+    console.log('start : ', start);
+    this._calendar = new Calendar({
+      parent: $(`${this._query}__calendar`, this._$element),
+      props: {
+        ...calendar,
+        handleCleanButtonClick: this._handleCleanButtonClick,
+        handleApplyButtonClick: this._handleApplyButtonClick,
+        handleCalendarClick: this._handleCalendarClick,
+        start,
+        end,
+      },
+    });
+    console.log('this._$items : ', this._$items);
+    $('body').on('click', this._handleBodyClick);
+    this._$element.on('dropdown-open', this._handleDropdownOpen);
+  }
+
+  @bind
+  _handleDropdownOpen(event) {
+    const { currentTarget } = event;
+    if (this._isOpened && currentTarget !== this._$element.get(0)) {
+      this.close();
+    }
+    console.log('_handleDropdownOpen : ', event);
+  }
+
+  @bind
+  _handleBodyClick(event) {
+    if (this._isOpened) {
+      const { target } = event;
+      if (!$(target).closest(this._$element).length) {
+        this.close();
+      }
+    }
+  }
+
+  @bind
+  _toggleOpen() {
+    if (this._$element.hasClass(`${this._className}_opened`)) {
+      this.close();
+    } else {
+      this.open();
+    }
   }
 
   @bind
   _handleCleanButtonClick() {
-    this._$input.val('');
-    this._changeFake();
+    return this.clean();
   }
 
   @bind
   _handleApplyButtonClick() {
-    const selectedDates = this._datepicker.selectedDates || [];
-    this._$input.val(JSON.stringify(selectedDates));
-    this._changeFake();
-    this._handleMainBlockClick();
+    this.close();
   }
 
-  @bind
-  _handleMainBlockClick() {
-    if (this._isForcedVisible) {
-      return false;
-    }
-    this._$mainBlock.fadeToggle('fast');
-    this._$element.toggleClass('filter-date-dropdown_expanded');
-    return undefined;
-  }
-
-  @bind
-  _handleDocumentClick(event) {
-    if (this._forcedVisible) {
-      return false;
-    }
-    const classTarget = `.${$(event.target, this._$element).attr('class')}`;
-    if (
-      !FilterDateDropdown.isClosest({
-        event,
-        classTarget,
-        $element: this._$element,
-      })
-    ) {
-      this._$mainBlock.slideUp();
-      this._$element.removeClass('filter-date-dropdown_expanded');
-    }
-    return undefined;
-  }
-
-  _setDates([start, end] = []) {
-    if (!start && !end) {
-      return false;
-    }
-    this._datepicker.selectDate([new Date(start), new Date(end)]);
-    return undefined;
-  }
-
-  _setValue(value = []) {
-    this._$input.val(JSON.stringify(value));
-  }
-
-  _getValue() {
-    if (localStorage && localStorage.getItem('landingPage')) {
-      let landingPage = localStorage.getItem('landingPage') || '{}';
-      landingPage = JSON.parse(landingPage);
-      let { startDate, endDate } = landingPage;
-      if (
-        !Number.isNaN(parseFloat(startDate)) &&
-        !Number.isNaN(parseFloat(endDate))
-      ) {
-        startDate = FilterDateDropdown.value2Date(startDate);
-        endDate = FilterDateDropdown.value2Date(endDate);
-        this._setValue([startDate, endDate]);
-        if (startDate && endDate) {
-          return [startDate, endDate];
-        }
+  _prepareValues(dates = []) {
+    console.log('this._$items : ', this._$items);
+    dates.forEach((date, index) => {
+      if (this._$items[index]) {
+        $(this._$items[index]).val(isValidDate(date) ? date : '');
       }
-    }
-    return JSON.parse(this._$input.val() || '[]');
+    });
+  }
+
+  _prepareSummary(dates = []) {
+    const { separator = ' - ' } = this._props;
+    let summary = '';
+    dates.forEach((date, index) => {
+      const { placeholder = '' } = get(this._props, ['items', index], '');
+      const part = isValidDate(date)
+        ? FilterDateDropdown._maskedDate(date)
+        : placeholder;
+      summary += summary ? `${separator}${part}` : part;
+    });
+    this._dropdownTitleTextField.updateSummary(summary);
+  }
+
+  @bind
+  _handleCalendarClick(dates = []) {
+    this._prepareValues(dates);
+    this._prepareSummary(dates);
   }
 }
 

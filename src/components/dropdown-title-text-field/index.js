@@ -23,20 +23,15 @@ class DropdownTitleControl extends Component {
     this._textField.updateValue(value);
   }
 
-  toggleOpen() {
-    if (this._$element.hasClass(`${this._className}_opened`)) {
-      this.close();
-    } else {
-      this.open();
-    }
-  }
-
   open() {
+    this._isOpened = true;
     this._$element.addClass(`${this._className}_opened`);
     this._textField.open();
+    this._$element.trigger('dropdown-open');
   }
 
   close() {
+    this._isOpened = false;
     this._$element.removeClass(`${this._className}_opened`);
     this._textField.close();
   }
@@ -54,6 +49,15 @@ class DropdownTitleControl extends Component {
     this.cleanValue();
   }
 
+  @bind
+  _toggleOpen() {
+    if (this._$element.hasClass(`${this._className}_opened`)) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
   _init() {
     const { maskedTextField } = this._props;
     this._textField = new MaskedTextField({
@@ -68,7 +72,28 @@ class DropdownTitleControl extends Component {
 
     this._$textField = $(`${this._query}__masked-text-field`, this._$element);
     this._$textField.on('click', this._handleTextFieldClick);
+    $('body').on('click', this._handleBodyClick);
     // console.log(' this._$textField  : ', this._$textField);
+    this._$element.on('dropdown-open', this._handleDropdownOpen);
+  }
+
+  @bind
+  _handleDropdownOpen(event) {
+    const { currentTarget } = event;
+    if (this._isOpened && currentTarget !== this._$element.get(0)) {
+      this.close();
+    }
+    console.log('_handleDropdownOpen : ', event);
+  }
+
+  @bind
+  _handleBodyClick(event) {
+    if (this._isOpened) {
+      const { target } = event;
+      if (!$(target).closest(this._$element).length) {
+        this.close();
+      }
+    }
   }
 
   @bind

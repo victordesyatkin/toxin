@@ -4,18 +4,17 @@ mixin calendar(props)
   if props
     -
       let
-          { name, isDisabled = true, isReadOnly = true, type="hidden", control } = props;
+          { name, type="hidden", control, isDisabled = true, isReadOnly = true } = props;
           className = 'calendar'; 
           classNames = `${className} js-${className}`;
     div(class=classNames)
-      div(class=`${className}__body js-${className}__body`)
-        input(
-          name=name,
-          type=type,
-          class=`${className}__text-field js-${className}__text-field`,
-          disabled=isDisabled,
-          readonly=isReadOnly
-        )
-        if control
-          div(class=`${className}__control js-${className}__control`)
-            +control(control)
+      input(
+        name=name,
+        type=type,
+        class=`${className}__text-field js-${className}__text-field`,
+        disabled=isDisabled,
+        readonly=isReadOnly
+      )
+      if control
+        div(class=`${className}__control js-${className}__control`)
+          +control(control)

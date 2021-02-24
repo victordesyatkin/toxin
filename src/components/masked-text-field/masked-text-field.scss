@@ -1,1 +1,7 @@
 @import '~theme/variables.scss';
+
+$parent: 'masked-text-field';
+
+.#{$parent} {
+  width: 100%;
+}
