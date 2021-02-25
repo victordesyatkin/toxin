@@ -3,73 +3,73 @@
 $parent: 'like-button';
 
 .#{$parent} {
-  &__button {
-    display: flex;
-    flex-shrink: 1;
-    flex-direction: row;
-    cursor: pointer;
-    line-height: 1.29rem;
-    @include user-select-none;
+  display: flex;
+  width: 2.85rem;
+  height: 1.42rem;
+  min-width: 2.85rem;
+  line-height: 1.29rem;
+  position: relative;
+  cursor: pointer;
+  @include user-select-none;
 
-    input {
-      position: absolute;
-      opacity: 0;
-      cursor: none;
-      height: 0;
-      width: 0;
+  &:hover,
+  &:focus {
+    .#{$parent}__check-mark {
+      border: 1px solid $like-border-color-checked;
+
+      .#{$parent}__count {
+        color: $like-border-color-checked;
+      }
     }
   }
 
-  &__button:not(:first-child) {
-    margin-left: 0.71rem;
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: none;
+    height: 0;
+    width: 0;
+  }
+
+  &__like,
+  &__not-like,
+  &__count {
+    display: inline-block;
+    align-items: center;
+    height: 100%;
   }
 
   &__check-mark {
-    min-width: 2.85rem;
-    width: 2.85rem;
-    height: 1.42rem;
-    border: 0.0714rem solid $like-border-color-default;
-    box-sizing: border-box;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    display: inline-flex;
     align-items: center;
-    position: relative;
+    border: 1px solid $like-border-color-default;
+    border-radius: 10px;
+    padding-left: 0.286rem;
+  }
 
-    div {
-      position: absolute;
-      top: 0;
-      left: -1px;
-      width: 1.42rem;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  &__image {
+    width: 0.71rem;
+    height: 0.57rem;
+  }
 
-      img {
-        width: 0.71rem;
-        height: 0.57rem;
-      }
-    }
-
-    .#{$parent}__check-mark-like {
-      display: none;
-    }
+  &__like {
+    display: none;
   }
 
   &__count {
-    margin-left: 1.07rem;
+    margin-left: 0.429rem;
     font-size: 0.7142rem;
   }
 
-  input:checked ~ &__check-mark {
-    border: 0.0714rem solid $like-border-color-checked;
+  &__input:checked ~ &__check-mark {
+    border: 1px solid $like-border-color-checked;
 
-    .#{$parent}__check-mark-like {
-      display: flex;
+    .#{$parent}__like {
+      display: inline-flex;
     }
 
-    .#{$parent}__check-mark-no-like {
+    .#{$parent}__not-like {
       display: none;
     }
 

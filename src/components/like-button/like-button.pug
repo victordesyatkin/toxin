@@ -1,39 +1,45 @@
 mixin like-button(props = {})
-  -
-    let
-        {
-            name,
-            count,
-            tabindex,
-            srcLike,
-            altLike,
-            srcNoLike,
-            altNoLike,
-            isRequired,
-            isDisabled,
-            isChecked
-        } = props;
-        id = name ? `like-button-${name}`: '';
-        passCount = count !== undefined ? count : 0;
-        let className = 'like-button';
-        let classNames = `${className} js-${className}`;
-
-  label(for=id, class=classNames)
-    input(
-      type="checkbox",
-      name=name,
-      tabindex=tabindex,
-      required=isRequired,
-      disabled=isDisabled,
-      checked=isChecked,
-      id=id,
-      class=`${className}__input.js-${className}__input`
-    )
-    div(class=`${className}__check-mark`)
-      if (srcLike)
-        div(class=`${className}__check-mark-like`)
-          img(src=srcLike, alt=altLike)
-      if (srcNoLike)
-        div(class=`${className}__check-mark-no-like`)
-          img(src=srcNoLike, alt=altNoLike)
-      div(class=`${className}__count js-${className}__count`) #{passCount}
+  if props
+    -
+      let
+          {
+              name,
+              value,
+              ariaLabel,
+              type = "checkbox",
+              count:passCount = 0,
+              tabindex,
+              srcLike,
+              altLike,
+              srcNotLike,
+              altNotLike,
+              isRequired,
+              isDisabled,
+              isChecked,
+              isHidden,
+          } = props;
+          id = `${name}-${Math.random().toString(16).substr(2)}`;
+          count = passCount || 0;
+          className = 'like-button';
+          classNames = `${className} js-${className}`;
+    label(for=id, class=classNames)
+      input(
+        aria-label=ariaLabel,
+        name=name,
+        value=value,
+        type="checkbox",
+        id=id,
+        tabindex=tabindex,
+        required=isRequired,
+        disabled=isDisabled,
+        checked=isChecked,
+        class=`${className}__input js-${className}__input`
+      )
+      span(class=`${className}__check-mark`)
+        if srcLike
+          span(class=`${className}__like`)
+            img(src=srcLike, alt=altLike, class=`${className}__image`)
+        if srcNotLike
+          span(class=`${className}__not-like`)
+            img(src=srcNotLike, alt=altNotLike, class=`${className}__image`)
+        span(class=`${className}__count js-${className}__count`) #{count}

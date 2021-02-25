@@ -1,19 +1,25 @@
-mixin radio-button(props = {})
-  -
-    let
-        { name, value, tabindex, isDisabled, isChecked, label } = props;
-        id = name ? `radio-button__button-${label}`: '';
-  label.radio-button__button(for=id)
-    input.radio-button__input(
-      type="radio",
-      name=name,
-      tabindex=tabindex,
-      required=required,
-      disabled=isDisabled,
-      checked=isChecked,
-      value=value,
-      id=id
-    )
-    span.radio-button__check-mark
-      span
-    span.radio-button__button-label= label
+mixin radio-button(props)
+  if props
+    -
+      let
+          { name, value, label, type = "radio", tabindex, isDisabled, isChecked, isHidden } = props;
+          id = `${name}-${Math.random().toString(16).substr(2)}`;
+          className = 'radio-button';
+          classNames = `${className} js-${className}`;
+    label(class=classNames, for=id)
+      input(
+        id=id,
+        name=name,
+        value=value,
+        type=type,
+        tabindex=tabindex,
+        required=required,
+        disabled=isDisabled,
+        checked=isChecked,
+        hidden=isHidden,
+        class=`${className}__input`
+      )
+      span(class=`${className}__check-mark`)
+        span(class=`${className}__check-dummy`)
+      if label
+        span(class=`${className}__label`)= label

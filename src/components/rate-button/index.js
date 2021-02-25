@@ -6,65 +6,49 @@ import './rate-button.scss';
 class RateButton extends Component {
   _query = '.js-rate-button';
 
-  _init() {
-    this.count = this._element.dataset.count;
-    this.input = this._element.querySelector('input');
-    this._on = parseFloat($(this._element).data('on'));
-    if (this._on) {
-      this._attachEventHandlers();
-    }
+  _className = 'rate-button';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
-  _attachEventHandlers() {
-    if (this._element) {
-      this._element.addEventListener('click', this._handleInputClick);
+  _init() {
+    const { isDisabled, value = 0 } = this._props;
+    if (!isDisabled) {
+      this._rate = value;
+      this._$rates = $(`${this._query}__rate`, this._$element);
+      this._$input = $(`${this._query}__input`, this._$element);
+      this._$rates.on('click', this._handleLiClick);
     }
   }
 
   @bind
-  _handleInputClick(event) {
-    let el = (event || {}).target;
-    if (!el || !this.input) {
-      return undefined;
+  _handleLiClick(event) {
+    const { currentTarget } = event;
+    const $element = $(currentTarget, this._$element);
+    const isChecked = parseFloat($element.data('ischecked'), 10);
+    let corrector = 0;
+    if (isChecked) {
+      corrector = 1;
     }
-    if (el.tagName === 'IMG') {
-      el = el.closest('div.js-rate-button__rate');
+    this._rate = parseFloat($element.data('rate'), 10) - corrector;
+    this._$input.val(this._rate);
+    this._$rates.each(this._prepareRate);
+  }
+
+  @bind
+  _prepareRate(index, element) {
+    console.log('_prepareRate : ', index, element);
+    if (index + 1 <= this._rate) {
+      $(element, this._$element)
+        .addClass(`${this._className}__rate_checked`)
+        .data({ ischecked: 1 });
+    } else {
+      $(element, this._$element)
+        .removeClass(`${this._className}__rate_checked`)
+        .data({ ischecked: 0 });
     }
-    let { rate, index } = el.dataset || {};
-    rate = parseFloat(rate);
-    index = parseFloat(index);
-    if (!rate) {
-      this.input.value = index;
-      for (let i = 1; i <= index; i += 1) {
-        const prev = this._element.querySelector(`[data-index="${i}"]`);
-        prev.dataset.rate = 1;
-        const { classList } = prev;
-        if (
-          Array.prototype.indexOf.call(
-            classList,
-            'js-rate-button__rate_checked'
-          ) === -1
-        ) {
-          prev.classList.add('rate-button__rate_checked');
-        }
-      }
-    } else if (rate && index) {
-      this.input.value = index - 1;
-      el.dataset.rate = 0;
-      el.classList.remove('rate-button__rate_checked');
-      for (let i = this.count; i >= index; i -= 1) {
-        const prev = this._element.querySelector(`[data-index="${i}"]`);
-        prev.dataset.rate = 0;
-        const { classList } = prev;
-        if (
-          Array.prototype.indexOf.call(classList, 'rate-button__rate_checked') >
-          -1
-        ) {
-          prev.classList.remove('rate-button__rate_checked');
-        }
-      }
-    }
-    return undefined;
   }
 }
 

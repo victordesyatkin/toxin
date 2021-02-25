@@ -4,10 +4,10 @@ import Dropdown from '../../components/dropdown';
 import MaskedTextField from '../../components/masked-text-field';
 import DateDropdown from '../../components/date-dropdown';
 import FilterDateDropdown from '../../components/filter-date-dropdown';
-// import SubscriptionTextField from '../../components/subscription-text-field';
+import SubscriptionTextField from '../../components/subscription-text-field';
 // import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
-// import LikeButtons from '../../components/like-buttons';
-// import RateButtons from '../../components/rate-buttons';
+import LikeButtons from '../../components/like-buttons';
+import RateButtons from '../../components/rate-buttons';
 // import RangeSlider from '../../components/range-slider';
 // import Pagination from '../../components/pagination';
 // import Comment from '../../components/comment';
@@ -40,6 +40,9 @@ class FormElements extends Component {
       maskedTextField,
       dateDropdown,
       filterDateDropdown,
+      subscriptionTextField,
+      likeButtons,
+      rateButtons,
     } = this._props;
     console.log('props : ', this._props);
     this._textField1 = new TextField({
@@ -70,19 +73,19 @@ class FormElements extends Component {
       parent: $(`${this._query}__filter-date-dropdown`, this._$element),
       props: filterDateDropdown,
     });
-    // FilterDateDropdown.renderComponents({
-    //   parents,
-    // });
-    // SubscriptionTextField.renderComponents({
-    //   parents,
-    // });
+    this._subscriptionTextField = new SubscriptionTextField({
+      parent: $(`${this._query}__subscription-text-field`, this._$element),
+      props: subscriptionTextField,
+    });
+    this._likeButtons = new LikeButtons({
+      parent: $(`${this._query}__like-buttons`, this._$element),
+      props: likeButtons,
+    });
+    this._rateButtons = new RateButtons({
+      parent: $(`${this._query}__rate-buttons`, this._$element),
+      props: rateButtons,
+    });
     // ExpandableCheckboxList.renderComponents({
-    //   parents,
-    // });
-    // LikeButtons.renderComponents({
-    //   parents,
-    // });
-    // RateButtons.renderComponents({
     //   parents,
     // });
     // Pagination.renderComponents({ parents });

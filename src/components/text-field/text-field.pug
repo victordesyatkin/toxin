@@ -24,6 +24,31 @@ mixin text-field(props)
       if title
         div(class=`${className}__label`, data-isSummaryOnly=isSummaryOnly)
           +title-label({ ...title, htmlFor: id })
+      if button
+        -
+          let { type: buttonType = "button", iconClass: buttonIconClassName, name: buttonName, value: buttonValue } = button;
+          let buttonClassName = `${className}__button`;
+          let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
+
+          switch (buttonIconClassName) {
+            case 'arrow-forward': {
+              buttonClassNames += ` ${buttonClassName}_forwarded`;
+              buttonClassNames += ' icon-arrow_forward';
+              break;
+            }
+            case 'arrow-down':
+            default: {
+              buttonClassNames += ` ${buttonClassName}_default`;
+              buttonClassNames += ' icon-expand_more';
+              break;
+            }
+          }
+        button(
+          type=buttonType,
+          name=buttonName,
+          class=buttonClassNames,
+          value=buttonValue
+        )
       if isSummaryOnly
         p(class=`${className}__summary js-${className}__summary`) !{ summary }
       else if isHidden
@@ -60,31 +85,6 @@ mixin text-field(props)
           class=`${className}__input js-${className}__input`,
           id=id,
           hidden=isHidden
-        )
-      if button
-        -
-          let { type: buttonType = "button", iconClass: buttonIconClassName, name: buttonName, value: buttonValue } = button;
-          let buttonClassName = `${className}__button`;
-          let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
-
-          switch (buttonIconClassName) {
-            case 'arrow-forward': {
-              buttonClassNames += ` ${buttonClassName}_forwarded`;
-              buttonClassNames += ' icon-arrow_forward';
-              break;
-            }
-            case 'arrow-down':
-            default: {
-              buttonClassNames += ` ${buttonClassName}_default`;
-              buttonClassNames += ' icon-expand_more';
-              break;
-            }
-          }
-        button(
-          type=buttonType,
-          name=buttonName,
-          class=buttonClassNames,
-          value=buttonValue
         )
   //- div
   //- -

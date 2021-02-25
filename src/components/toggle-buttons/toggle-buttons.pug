@@ -1,12 +1,18 @@
 include ../toggle-button/toggle-button
 
-mixin toggle-buttons(props = {})
-  -
-    let { label, buttons = [] } = props;
-  .toggle-buttons
-    if (label)
-      .toggle-buttons__label= label
-    .toggle-buttons_items
-      each button in buttons
-        .toggle-buttons__item
-          +toggle-button(button)
+mixin toggle-buttons(props)
+  if props
+    -
+      let { title, buttons = [] } = props;
+      let className = 'toggle-buttons';
+      let classNames = `${className} js-${className}`;
+      let { length } = buttons;
+    div(class=classNames)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__items`)
+          each button in buttons
+            li(class=`${className}__item`)
+              +toggle-button(button)

@@ -6,11 +6,18 @@ import './subscription-text-field.scss';
 class SubscriptionTextField extends Component {
   _query = '.js-subscription-text-field';
 
+  _className = 'subscription-text-field';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
+
   _init() {
-    const { props } = this._props;
+    console.log('PROPS : ', this._props);
     this._maskedTextField = new MaskedTextField({
-      parents: this._$element,
-      props,
+      parent: this._$element,
+      props: this._props,
     });
   }
 }

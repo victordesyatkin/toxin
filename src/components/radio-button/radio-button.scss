@@ -1,30 +1,41 @@
 @import '~theme/variables.scss';
 
-.radio-button {
-  &__button {
-    display: flex;
-    flex-shrink: 1;
-    flex-grow: 1;
-    flex-direction: row;
-    cursor: pointer;
-    line-height: 1.29rem;
-    color: $radio-button-text-color-default;
-    @include user-select-none;
+$parent: 'radio-button';
 
-    input {
-      position: absolute;
-      opacity: 0;
-      cursor: none;
-      height: 0;
-      width: 0;
+.#{$parent} {
+  display: flex;
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-direction: row;
+  cursor: pointer;
+  line-height: 1.29rem;
+  color: $radio-button-text-color-default;
+  @include user-select-none;
+
+  &:hover,
+  &:focus {
+    .#{$parent}__check-mark {
+      border: 0.0714rem solid $radio-button-border-color-checked;
     }
+
+    .#{$parent}__label {
+      color: $radio-button-text-color-checked;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: none;
+    height: 0;
+    width: 0;
   }
 
   &__check-mark {
     min-width: 20px;
     width: 20px;
     height: 20px;
-    border: 0.0714rem solid $radio-button-border-color-default;
+    border: 1px solid $radio-button-border-color-default;
     box-sizing: border-box;
     border-radius: 50%;
     display: flex;
@@ -33,10 +44,10 @@
     margin-right: 0.7142rem;
   }
 
-  input:checked ~ &__check-mark {
+  &__input:checked ~ &__check-mark {
     border: 0.0714rem solid $radio-button-border-color-checked;
 
-    span {
+    .#{$parent}__check-dummy {
       width: 12px; // width rem oval shape
       height: 12px; // width rem oval shape
       opacity: 1;
@@ -45,7 +56,7 @@
     }
   }
 
-  input:checked ~ &__button-label {
+  &__input:checked ~ &__label {
     color: $radio-button-text-color-checked;
   }
 }

@@ -1,25 +1,29 @@
-mixin checkbox-button(props = {})
-  -
-    let
-        { name, src, alt, tabindex, isRequired, isDisabled, isChecked, label, theme } = props;
-        className = 'checkbox-button';
-        classNames = className;
-        id = name ? `checkbox-button-${name}`: '';
-        themes = {
-            bold: 'bold',
-        }
-    classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-  label(for=id, class=classNames)
-    input.checkbox-button__input(
-      type="checkbox",
-      name=name,
-      tabindex=tabindex,
-      required=isRequired,
-      disabled=isDisabled,
-      checked=isChecked,
-      id=id
-    )
-    span.checkbox-button__check-mark
-      if (src)
-        img.checkbox-button__mark(src=src, alt=alt)
-    span.checkbox-button__label= label
+mixin checkbox-button(props)
+  if props
+    -
+      let
+          { name, type="checkbox", src, alt, tabindex, label, value, theme, isHidden, isRequired, isDisabled, isChecked } = props;
+          className = 'checkbox-button';
+          classNames = `${className} js-${className}`;
+          id = `${name}-${Math.random().toString(16).substr(2)}`;
+          themes = {
+              bold: 'bold',
+          }
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    label(for=id, class=classNames)
+      input(
+        id=id,
+        name=name,
+        value=value,
+        type=type,
+        tabindex=tabindex,
+        required=isRequired,
+        disabled=isDisabled,
+        checked=isChecked,
+        hidden=isHidden,
+        class=`${className}__input`
+      )
+      span(class=`${className}__check-mark`)
+        if (src)
+          img(src=src, alt=alt, class=`${className}__mark`)
+      span(class=`${className}__label`)= label

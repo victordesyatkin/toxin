@@ -1,12 +1,19 @@
+include ../title-label/title-label
 include ../radio-button/radio-button
 
-mixin radio-buttons(props = {})
-  -
-    let { label, buttons = [] } = props;
-  .radio-buttons
-    if (label)
-      .radio-buttons__label= label
-    .radio-buttons__items
-      each button in buttons
-        .radio-buttons__item
-          +radio-button(button)
+mixin radio-buttons(props)
+  if props
+    -
+      let { title, buttons = [] } = props;
+      let { length } = buttons;
+      let className = 'radio-buttons'
+      let classNames = `${className} js-${className}`
+    div(class=className)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__items`)
+          each button in buttons
+            li(class=`${className}__item`)
+              +radio-button(button)

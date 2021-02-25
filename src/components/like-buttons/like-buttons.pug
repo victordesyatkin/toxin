@@ -1,12 +1,20 @@
+include ../title-label/title-label
 include ../like-button/like-button
 
-mixin like-buttons(props = {})
+mixin like-buttons(props)
+  if props
   -
-    let { label, buttons = [], images } = props;
-  .like-buttons.js-like-buttons
-    if (label)
-      .like-buttons__label= label
-    .like-buttons__items
-      each button in buttons
-        .like-buttons__item
-          +like-button({...button, ...images})
+    let { title, buttons = [], images = {} } = props;
+    let { length } = buttons;
+    let className = 'like-buttons';
+    let classNames = `${className} js-${className}`;  
+  div(class=`${classNames}`)
+    if title
+      div(class=`${className}__title`)
+        +title-label(title)
+    if length
+      ul(class=`${className}__items`)
+        - let { srcLike, altLike, srcNotLike, altNotLike } = images;
+        each button in buttons
+          li(class=`${className}__item js-${className}__item`)
+            +like-button({ ...button, srcLike: button.srcLike || srcLike, altLike: button.altLike || altLike, srcNotLike: button.srcNotLike || srcNotLike, altNotLike: button.altNotLike || altNotLike, })

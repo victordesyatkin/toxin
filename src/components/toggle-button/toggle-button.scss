@@ -11,6 +11,17 @@ $parent: 'toggle-button';
   cursor: pointer;
   line-height: 1.3rem;
 
+  &:hover,
+  &:focus {
+    .#{$parent}__check-mark {
+      border: 1px solid $toggle-button-border-color-checked;
+    }
+
+    .#{$parent}__label {
+      color: $toggle-button-text-color-checked;
+    }
+  }
+
   &__input {
     position: absolute;
     opacity: 0;
@@ -19,11 +30,11 @@ $parent: 'toggle-button';
     width: 0;
   }
 
-  &__check-mark-area {
+  &__check-mark {
     min-width: 2.857rem;
     width: 2.857rem;
     height: 1.429rem;
-    border: 0.071rem solid $toggle-button-border-color-default;
+    border: 1px solid $toggle-button-border-color-default;
     box-sizing: border-box;
     border-radius: 10px;
     display: flex;
@@ -48,8 +59,8 @@ $parent: 'toggle-button';
     color: $toggle-button-text-color-default;
   }
 
-  &__input:checked ~ &__check-mark-area {
-    border: 0.0714rem solid $toggle-button-background-color-checked;
+  &__input:checked ~ &__check-mark {
+    border: 1px solid $toggle-button-border-color-checked;
     justify-content: flex-end;
 
     .#{$parent}__mark {

@@ -4,18 +4,17 @@
   display: flex;
   flex-direction: column;
 
-  &__label {
+  &__title {
     margin-bottom: 1.1rem;
     @include h3;
   }
 
   &__items {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    list-style-type: none;
   }
 
   &__item:not(:first-child) {
-    margin-left: 0.7rem;
+    margin-left: 0.71rem;
   }
 }

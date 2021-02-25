@@ -1,12 +1,18 @@
+include ../title-label/title-label
 include ../checkbox-button/checkbox-button
 
-mixin checkbox-buttons(props = {})
-  -
-    let { label, buttons = [], src } = props;
-  .checkbox-buttons
-    if (props.label)
-      .checkbox-buttons__label= label
-    .checkbox-buttons__items
-      each button in buttons
-        .checkbox-buttons__item
-          +checkbox-button({...button, src: button.src || src})
+mixin checkbox-buttons(props)
+  if props
+    -
+      let { title, buttons = [], src } = props;
+      let { length } = buttons;
+      let className = 'checkbox-buttons';
+    div(class=className)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__items`)
+          each button in buttons
+            li(class=`${className}__item`)
+              +checkbox-button({...button, src: button.src || src})

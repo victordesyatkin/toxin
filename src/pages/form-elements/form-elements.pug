@@ -5,13 +5,13 @@ include ../../components/dropdown/dropdown
 include ../../components/masked-text-field/masked-text-field
 include ../../components/date-dropdown/date-dropdown
 include ../../components/filter-date-dropdown/filter-date-dropdown
-//- //- include ../../components/subscription-text-field/subscription-text-field
-//- //- include ../../components/expandable-checkbox-list/expandable-checkbox-list
-//- //- include ../../components/checkbox-buttons/checkbox-buttons
-//- //- include ../../components/radio-buttons/radio-buttons
-//- //- include ../../components/toggle-buttons/toggle-buttons
-//- //- include ../../components/like-buttons/like-buttons
-//- //- include ../../components/rate-buttons/rate-buttons
+include ../../components/subscription-text-field/subscription-text-field
+include ../../components/expandable-checkbox-list/expandable-checkbox-list
+include ../../components/checkbox-buttons/checkbox-buttons
+include ../../components/radio-buttons/radio-buttons
+include ../../components/toggle-buttons/toggle-buttons
+include ../../components/like-buttons/like-buttons
+include ../../components/rate-buttons/rate-buttons
 //- //- include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
 //- //- include ../../components/range-slider/range-slider
 //- //- include ../../components/buttons/buttons
@@ -54,33 +54,41 @@ block main
         } = data || {};
   - let className = 'form-elements';
   div(class=`${className} js-${className}`)
-    article.form-elements__article
-      section.form-elements__section
-        .form-elements__text-field-default.js-form-elements__text-field-default
+    section(class=`${className}__section`)
+      ul(class=`${className}__list`)
+        li(
+          class=`${className}__text-field-default js-${className}__text-field-default`
+        )
           +text-field(textField1)
-        .form-elements__text-field-hover-focus.js-form-elements__text-field-hover-focus
+        li(
+          class=`${className}__text-field-hover-focus js-${className}__text-field-hover-focus`
+        )
           +text-field(textField2)
-        .form-elements__dropdown-first.js-form-elements__dropdown-first
+        li(class=`${className}__dropdown-first js-${className}__dropdown-first`)
           +dropdown(dropdown1)
-        .form-elements__masked-text-field.js-form-elements__masked-text-field
-          +masked-text-field(maskedTextField) 
-        .form-elements__date-dropdown.js-form-elements__date-dropdown
+        li(class=`${className}__masked-text-field js-${className}__masked-text-field`)
+          +masked-text-field(maskedTextField)
+        li(class=`${className}__date-dropdown js-${className}__date-dropdown`)
           +date-dropdown(dateDropdown)
-        .form-elements__filter-date-dropdown.js-form-elements__filter-date-dropdown
+        li(
+          class=`${className}__filter-date-dropdown js-${className}__filter-date-dropdown`
+        )
           +filter-date-dropdown(filterDateDropdown)
-    //-     .form-elements__subscription-text-field
-    //-       +subscription-text-field(subscriptionTextField)
-    //-   section.form-elements__section
-    //-     .form-elements__checkbox-buttons
-    //-       +checkbox-buttons(checkboxButtons)
-    //-     .form-elements__radio-buttons
-    //-       +radio-buttons(radioButtons)
-    //-     .form-elements__toggle-buttons
-    //-       +toggle-buttons(toggleButtons)
-    //-     .form-elements__like-buttons
-    //-       +like-buttons(likeButtons)
-    //-     .form-elements__rate-buttons
-    //-       +rate-buttons(rateButtons)
+        li(
+          class=`${className}__subscription-text-field js-${className}__subscription-text-field`
+        )
+          +subscription-text-field(subscriptionTextField)
+      ul(class=`${className}__list`)
+        li(class=`${className}__checkbox-buttons js-${className}__checkbox-buttons`)
+          +checkbox-buttons(checkboxButtons)
+        li(class=`${className}__radio-buttons`)
+          +radio-buttons(radioButtons)
+        li(class=`${className}__toggle-buttons`)
+          +toggle-buttons(toggleButtons)
+        li(class=`${className}__like-buttons js-${className}__like-buttons`)
+          +like-buttons(likeButtons)
+        li(class=`${className}__rate-buttons js-${className}__rate-buttons`)
+          +rate-buttons(rateButtons)
     //-   section.form-elements__section
     //-     .form-elements__range-slider
     //-       +range-slider(rangeSlider)
@@ -90,7 +98,7 @@ block main
     //-       +button(button)
     //-     .form-elements__pagination
     //-       +pagination(pagination)
-    //- article.form-elements__article
+    //- article.form-elements__section
     //-   section.form-elements__section
     //-     .form-elements__dropdown-second
     //-       +dropdown(dropdown2)
@@ -102,7 +110,7 @@ block main
     //-   section.form-elements__section
     //-     .form-elements__dropdown-fifth
     //-       +dropdown(dropdown5) 
-    //- article.form-elements__article
+    //- article.form-elements__section
     //-   section.form-elements__section
     //-     .form-elements__expandable-checkbox-list-first
     //-       +expandable-checkbox-list(expandableCheckboxList1)
@@ -114,7 +122,7 @@ block main
     //-   section.form-elements__section
     //-     .form-elements__bullet-list
     //-       +bullet-list(bulletList)
-    //- article.form-elements__article
+    //- article.form-elements__section
     //-   section.form-elements__section
     //-     .form-elements__info
     //-       +info(info)

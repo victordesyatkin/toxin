@@ -1,13 +1,20 @@
+include ../title-label/title-label
 include ../rate-button/rate-button
 
 mixin rate-buttons(props = {})
-  -
-    let
-        { label, buttons = [], images } = props;
-  .rate-buttons.js-rate-buttons
-    if (label)
-      .rate-buttons__label= label
-    .rate-buttons__items
-      each button in buttons
-        .rate-buttons__item
-          +rate-button({...button, ...images})
+  if props
+    -
+      let { title, buttons = [], images = {} } = props;
+      let { length } = buttons;
+      let className = 'rate-buttons';
+      let classNames = `${className} js-${className}`;
+    div(class=classNames)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__items`)
+          - let { srcImgRate, altImgRate, srcImgNoRate, altImgNoRate } = images;
+          each button in buttons
+            li(class=`${className}__item js-${className}__item`)
+              +rate-button({ ...button, srcImgRate: button.srcImgRate || srcImgRate, altImgRate: button.altImgRate || altImgRate, srcImgNoRate: button.srcImgNoRate || srcImgNoRate, altImgNoRate: button.altImgNoRate || altImgNoRate })

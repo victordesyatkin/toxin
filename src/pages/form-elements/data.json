@@ -206,7 +206,7 @@
     }
   },
   "filterDateDropdown": {
-    "isOpened": true,
+    "isOpened": false,
     "dropdownTitleTextField": {
       "dropdown": {
         "theme": "date"
@@ -283,21 +283,19 @@
     ]
   },
   "subscriptionTextField": {
-    "input": {
+    "textField": {
       "name": "subscription_email",
-      "id": "subscription_email",
-      "type": "text",
-      "label": "Subscription text field",
+      "type": "email",
       "placeholder": "Email",
-      "button": {
-        "isVisible": true,
-        "type": "button",
-        "iconClass": "arrow-forward"
+      "button": { "iconClass": "arrow-forward" },
+      "title": {
+        "content": "subscription text field",
+        "isLabel": true
       }
     },
-    "mask": {
+    "options": {
       "mask": "^\\S*@?\\S*$",
-      "regexp": true
+      "isRegexp": true
     }
   },
   "dropdown3": {
@@ -486,114 +484,115 @@
     ]
   },
   "checkboxButtons": {
-    "label": "Checkbox Buttons",
+    "title": {
+      "content": "Checkbox Buttons"
+    },
     "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
     "buttons": [
       {
         "label": "Можно курить",
         "isChecked": false,
-        "name": "smoke"
+        "name": "smoke",
+        "value": "smoke"
       },
       {
         "label": "Можно с питомцами",
         "isChecked": true,
-        "name": "pet"
+        "name": "pet",
+        "value": "pet"
       },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
         "isChecked": true,
-        "name": "guest"
+        "name": "guest",
+        "value": "guest"
       }
     ]
   },
   "radioButtons": {
-    "label": "Radio Buttons",
+    "title": {
+      "content": "Radio Buttons"
+    },
     "buttons": [
       {
         "label": "Мужчина",
         "isChecked": true,
         "name": "gender",
-        "value": "male",
-        "src": "assets/images/checkbox-buttons.svg",
-        "alt": "Checked"
+        "value": "male"
       },
       {
         "label": "Женщина",
         "isChecked": false,
         "name": "gender",
-        "value": "female",
-        "src": "assets/images/checkbox-buttons.svg",
-        "alt": "Checked"
+        "value": "female"
       }
     ]
   },
   "toggleButtons": {
-    "label": "Toggle",
+    "title": {
+      "content": "Toggle"
+    },
     "buttons": [
       {
         "label": "Получать спецпредложения",
         "isChecked": true,
         "name": "male",
-        "src": "assets/images/checkbox-buttons.svg",
-        "alt": "Checked"
+        "value": "male"
       },
       {
         "label": "Получать спецпредложения",
         "isChecked": false,
         "name": "female",
-        "src": "assets/images/checkbox-buttons.svg",
-        "alt": "Checked"
+        "value": "female"
       }
     ]
   },
   "likeButtons": {
-    "label": "Like button",
+    "title": {
+      "content": "Like button"
+    },
+    "images": {
+      "srcLike": "assets/images/favorite.svg",
+      "altLike": "Like",
+      "srcNotLike": "assets/images/favorite-border.svg",
+      "altNotLike": "Not like"
+    },
     "buttons": [
       {
         "isChecked": false,
         "name": "male",
-        "count": 2,
-        "srcLike": "assets/images/favorite.svg",
-        "altLike": "Like",
-        "srcNoLike": "assets/images/favorite-border.svg",
-        "altNoLike": "No like"
+        "value": "male",
+        "count": 2
       },
       {
         "isChecked": true,
         "name": "Like",
-        "count": 12,
-        "srcLike": "assets/images/favorite.svg",
-        "altLike": "Like",
-        "srcNoLike": "assets/images/favorite-border.svg",
-        "altNoLike": "No like"
+        "value": "male",
+        "count": 12
       }
     ]
   },
   "rateButtons": {
-    "label": "Rate button",
+    "title": {
+      "content": "Rate button"
+    },
+    "images": {
+      "srcImgRate": "assets/images/star.svg",
+      "altImgRate": "Rate",
+      "srcImgNoRate": "assets/images/star-border.svg",
+      "altImgNoRate": "No rate"
+    },
     "buttons": [
       {
-        "grade": 4,
         "name": "male2",
-        "count": 5,
-        "off": 0,
-        "srcImgRate": "assets/images/star.svg",
-        "altImgRate": "Rate",
-        "srcImgNoRate": "assets/images/star-border.svg",
-        "altImgNoRate": "No rate",
-        "isOn": true
+        "value": 4,
+        "total": 5
       },
       {
-        "grade": 5,
         "name": "female2",
-        "count": 5,
-        "off": 0,
-        "srcImgRate": "assets/images/star.svg",
-        "altImgRate": "Rate",
-        "srcImgNoRate": "assets/images/star-border.svg",
-        "altImgNoRate": "No rate",
-        "isOn": true
+        "value": 5,
+        "total": 5
       }
     ]
   },

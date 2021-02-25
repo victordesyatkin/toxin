@@ -1,5 +1,6 @@
 include ../masked-text-field/masked-text-field
 
-mixin subscription-text-field(props = {})
-  .subscription-text-field.js-subscription-text-field
-    +masked-text-field(props)
+mixin subscription-text-field(props)
+  if props
+    .subscription-text-field.js-subscription-text-field
+      +masked-text-field(props)

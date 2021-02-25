@@ -11,6 +11,17 @@ $parent: 'checkbox-button';
   cursor: pointer;
   @include user-select-none;
 
+  &:hover,
+  &:focus {
+    .#{$parent}__check-mark {
+      border: 1px solid $checkbox-border-color-checked;
+    }
+
+    .#{$parent}__label {
+      color: $checkbox-button-text-color-checked;
+    }
+  }
+
   &__label {
     line-height: 1.29rem;
     color: $checkbox-button-text-color-default;
@@ -26,7 +37,7 @@ $parent: 'checkbox-button';
     }
   }
 
-  input {
+  &__input {
     position: absolute;
     opacity: 0;
     cursor: none;
@@ -38,7 +49,7 @@ $parent: 'checkbox-button';
     min-width: 1.42rem;
     width: 1.42rem;
     height: 1.42rem;
-    border: 0.0714rem solid $checkbox-border-color;
+    border: 1px solid $checkbox-border-color;
     box-sizing: border-box;
     border-radius: 4px;
     display: flex;

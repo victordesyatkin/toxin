@@ -65,6 +65,19 @@ $parent: 'text-field';
     width: 0px;
   }
 
+  &__button:hover ~ &__summary,
+  &__button:focus ~ &__summary,
+  &__button:hover ~ &__input,
+  &__button:focus ~ &__input,
+  &__summary:hover,
+  &__summary:focus,
+  &__input:hover,
+  &__input:focus {
+    color: $input-text-color-hover;
+    border-color: $input-border-color-hover;
+    outline: none;
+  }
+
   &__summary,
   &__input {
     width: 100%;
@@ -73,13 +86,13 @@ $parent: 'text-field';
     border: 1px solid $input-border-color-default;
     border-radius: 4px;
 
-    &:hover,
-    &:focus,
-    &:active {
-      color: $input-text-color-hover;
-      border-color: $input-border-color-hover;
-      outline: none;
-    }
+    // &:hover,
+    // &:focus,
+    // &:active {
+    //   color: $input-text-color-hover;
+    //   border-color: $input-border-color-hover;
+    //   outline: none;
+    // }
 
     &:disabled {
       background-color: transparent;

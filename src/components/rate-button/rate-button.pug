@@ -1,41 +1,55 @@
 mixin rate-button(props = {})
-  -
-    let
-        {
-            count,
-            grade,
-            name,
-            isOn,
-            srcImgRate,
-            altImgRate,
-            srcImgNoRate,
-            altImgNoRate,
-        } = props;
-        n = 1;
-    if (grade > count) {
-        grade = count
-    } else if (grade < 0 || typeof grade === undefined) {
-        grade = 0;
-    }
-  .rate-button.js-rate-button(data-count=count, data-on=isOn ? 1 : 0)
-    input.rate-button__input(type="hidden", name=name, value=grade)
-    while n <= count
-      -
-        let 
-            rate = n <= grade ? 1 : 0; 
-            className = `rate-button__rate`;  
-            classNames = `${className} js-${className}`;
-        classNames += rate ? ` ${className}_checked` : '';
-      div(class=classNames, data-index=n, data-rate=rate)
-        if (srcImgRate)
-          img.rate-button__img.rate-button__img_checked(
-            src=srcImgRate,
-            alt=altImgRate
-          )
-        if (srcImgNoRate)
-          img.rate-button__img.rate-button__img_not_checked(
-            src=srcImgNoRate,
-            alt=altImgNoRate
-          )
-      -
-        ++n;
+  if props
+    -
+      let
+          {
+              total = 0,
+              value = 0,
+              type="hidden",
+              name,
+              isDisabled,
+              ariaLabel,
+              srcImgRate,
+              altImgRate,
+              srcImgNoRate,
+              altImgNoRate,
+          } = props;
+          n = 1;
+      if (value > total) {
+          value = total
+      } else if (total < 0) {
+          total = 0;
+      }
+      let className = 'rate-button';
+      let classNames = `${className} js-${className}`;
+    ul(class=classNames)
+      input(
+        name=name,
+        value=grade,
+        type=type,
+        disabled=isDisabled,
+        aria-label=ariaLabel,
+        class=`${className}__input js-${className}__input`
+      )
+      while n <= total
+        -
+          let 
+              isChecked = n <= value ? 1 : 0; 
+              rateClassName = `${className}__rate`;  
+              rateClassNames = `${rateClassName} js-${rateClassName}`;
+          rateClassNames += isChecked ? ` ${rateClassName}_checked` : '';
+        li(class=rateClassNames, data-rate=n, data-ischecked=isChecked)
+          if srcImgRate
+            img(
+              src=srcImgRate,
+              alt=altImgRate,
+              class=`${className}__img ${className}__img_checked`
+            )
+          if srcImgNoRate
+            img(
+              src=srcImgNoRate,
+              alt=altImgNoRate,
+              class=`${className}__img ${className}__img_not_checked`
+            )
+        -
+          ++n;
