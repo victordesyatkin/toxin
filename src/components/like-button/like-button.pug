@@ -3,20 +3,10 @@ mixin like-button(props = {})
     -
       let
           {
-              name,
-              value,
-              ariaLabel,
-              type = "checkbox",
-              count:passCount = 0,
-              tabindex,
-              srcLike,
-              altLike,
-              srcNotLike,
-              altNotLike,
-              isRequired,
-              isDisabled,
-              isChecked,
-              isHidden,
+            name, value, ariaLabel, type = "checkbox",
+            count:passCount = 0, tabindex,
+            srcLike, altLike, srcNotLike, altNotLike,
+            isRequired, isDisabled, isChecked, isHidden
           } = props;
           id = `${name}-${Math.random().toString(16).substr(2)}`;
           count = passCount || 0;

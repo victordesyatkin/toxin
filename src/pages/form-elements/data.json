@@ -689,7 +689,28 @@
     "src": "assets/images/arrow-forward.svg",
     "alt": "Перейти к оплате"
   },
-
+  "pagination": {
+    "title": {
+      "content": "pagination"
+    },
+    "start": 1,
+    "end": 15,
+    "current": 1,
+    "limit": 2,
+    "count": 12,
+    "srcControl": "assets/images/arrow-forward.svg",
+    "altBack": "Back",
+    "altNext": "Next",
+    "separatorItem": "...",
+    "description": "вариантов аренды",
+    "separatorDescription": "-",
+    "separatorTotal": "из",
+    "to": {
+      "pathname": "/mock-address/change-me",
+      "search": "page",
+      "title": "page"
+    }
+  },
   "bulletList": {
     "label": "bullet list",
     "items": [
@@ -697,19 +718,6 @@
       { "label": "Без вечеринок и мероприятий" },
       { "label": "Время прибытия — после 13:00, а выезд до 12:00" }
     ]
-  },
-  "pagination": {
-    "start": 1,
-    "end": 15,
-    "current": 1,
-    "text": "вариантов аренды",
-    "label": "pagination",
-    "limit": 2,
-    "count": 12,
-    "emptyString": "...",
-    "src": "assets/images/arrow-forward.svg",
-    "altPrevious": "Previous",
-    "altNext": "Next"
   },
   "title": "Form Elements"
 }

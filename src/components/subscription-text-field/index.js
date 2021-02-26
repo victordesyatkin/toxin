@@ -14,7 +14,6 @@ class SubscriptionTextField extends Component {
   }
 
   _init() {
-    console.log('PROPS : ', this._props);
     this._maskedTextField = new MaskedTextField({
       parent: this._$element,
       props: this._props,
