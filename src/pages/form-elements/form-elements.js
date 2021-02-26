@@ -8,8 +8,8 @@ import SubscriptionTextField from '../../components/subscription-text-field';
 // import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
 import LikeButtons from '../../components/like-buttons';
 import RateButtons from '../../components/rate-buttons';
-// import RangeSlider from '../../components/range-slider';
-// import Pagination from '../../components/pagination';
+import RangeSlider from '../../components/range-slider';
+import Pagination from '../../components/pagination';
 // import Comment from '../../components/comment';
 import '../../components/checkbox-buttons';
 import '../../components/toggle-buttons';
@@ -43,6 +43,8 @@ class FormElements extends Component {
       subscriptionTextField,
       likeButtons,
       rateButtons,
+      rangeSlider,
+      pagination,
     } = this._props;
     console.log('props : ', this._props);
     this._textField1 = new TextField({
@@ -57,10 +59,6 @@ class FormElements extends Component {
       parent: $(`${this._query}__dropdown-first`, this._$element),
       props: dropdown1,
     });
-    // //console.log(
-    //   '$(`${this._query}__masked-text-field`, this._$element : ',
-    //   $(`${this._query}__masked-text-field`, this._$element)
-    // );
     this._maskedTextField = new MaskedTextField({
       parent: $(`${this._query}__masked-text-field`, this._$element),
       props: maskedTextField,
@@ -85,10 +83,17 @@ class FormElements extends Component {
       parent: $(`${this._query}__rate-buttons`, this._$element),
       props: rateButtons,
     });
+    this._rangeSlider = new RangeSlider({
+      parent: $(`${this._query}__range-slider`, this._$element),
+      props: rangeSlider,
+    });
+    this._pagination = new Pagination({
+      parent: $(`${this._query}__pagination`, this._$element),
+      props: pagination,
+    });
     // ExpandableCheckboxList.renderComponents({
     //   parents,
     // });
-    // Pagination.renderComponents({ parents });
     // RangeSlider.renderComponents({
     //   parents,
     // });

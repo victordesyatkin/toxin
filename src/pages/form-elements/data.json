@@ -648,7 +648,7 @@
     "content": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
   },
   "rangeSlider": {
-    "label": "Range Slider",
+    "title": "Range Slider",
     "unit": "&#8381;",
     "start": 5000,
     "end": 10000,
@@ -657,33 +657,35 @@
     "separator": 1000
   },
   "buttons": {
-    "label": "Buttons",
+    "title": {
+      "content": "Buttons"
+    },
     "buttons": [
       {
-        "text": "Click me",
+        "content": "Click me",
         "type": "button",
         "value": "",
-        "view": 3
+        "theme": 3
       },
       {
-        "text": "Click me",
+        "content": "Click me",
         "type": "button",
         "value": "",
-        "view": 1
+        "theme": 1
       },
       {
-        "text": "Click me",
+        "content": "Click me",
         "type": "button",
         "value": "",
-        "view": 2
+        "theme": 2
       }
     ]
   },
   "button": {
-    "text": "Перейти к оплате",
+    "content": "Перейти к оплате",
     "type": "button",
     "value": "",
-    "view": 3,
+    "theme": 3,
     "src": "assets/images/arrow-forward.svg",
     "alt": "Перейти к оплате"
   },

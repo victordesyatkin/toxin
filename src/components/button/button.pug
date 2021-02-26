@@ -21,7 +21,7 @@ mixin button(props = {})
         classNames += ` ${className}_with_image`;
     }
   button(class=classNames, name=name, type=type, value=value, disabled=isDisabled)
-    span.button__content= content
+    span(class=`${className}__content`)= content
     if (view === 3 && src)
-      span.button__image
-        img(src=src, alt=alt)
+      span(class=`${className}__image-wrapper`)
+        img(src=src, alt=alt, class=`${className}__image`)

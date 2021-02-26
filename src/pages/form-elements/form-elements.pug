@@ -12,11 +12,11 @@ include ../../components/radio-buttons/radio-buttons
 include ../../components/toggle-buttons/toggle-buttons
 include ../../components/like-buttons/like-buttons
 include ../../components/rate-buttons/rate-buttons
+include ../../components/range-slider/range-slider
+include ../../components/buttons/buttons
+include ../../components/button/button
+include ../../components/pagination/pagination
 //- //- include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
-//- //- include ../../components/range-slider/range-slider
-//- //- include ../../components/buttons/buttons
-//- //- include ../../components/button/button
-//- //- include ../../components/pagination/pagination
 //- //- include ../../components/bullet-list/bullet-list
 //- //- include ../../components/info/info
 //- //- include ../../components/comment/comment
@@ -89,15 +89,15 @@ block main
           +like-buttons(likeButtons)
         li(class=`${className}__rate-buttons js-${className}__rate-buttons`)
           +rate-buttons(rateButtons)
-    //-   section.form-elements__section
-    //-     .form-elements__range-slider
-    //-       +range-slider(rangeSlider)
-    //-     .form-elements__buttons
-    //-       +buttons(buttons)
-    //-     .form-elements__button
-    //-       +button(button)
-    //-     .form-elements__pagination
-    //-       +pagination(pagination)
+      ul(class=`${className}__list`)
+        li(class=`${className}__range-slider js-${className}__range-slider`)
+          +range-slider(rangeSlider)
+        li(class=`${className}__buttons js-${className}__buttons`)
+          +buttons(buttons)
+        li(class=`${className}__button js-${className}__button`)
+          +button(button)
+        li(class=`${className}__pagination js-${className}__pagination`)
+          +pagination(pagination)
     //- article.form-elements__section
     //-   section.form-elements__section
     //-     .form-elements__dropdown-second

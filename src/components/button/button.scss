@@ -35,7 +35,7 @@ $parent: 'button';
     background: none;
 
     &.#{$parent}_theme_2:hover,
-    &.#{$parent}_theme_hover {
+    &.#{$parent}_hovered {
       color: $button-text-color-hover-second;
       background: none;
     }
@@ -48,7 +48,7 @@ $parent: 'button';
     color: $button-text-color-default-third;
     background: $button-background-color-third-default;
 
-    .#{$parent}__image {
+    .#{$parent}__image-wrapper {
       position: absolute;
       right: 0;
       width: 3.1428rem;
@@ -61,14 +61,14 @@ $parent: 'button';
 
   &_theme_1,
   &_theme_3 {
-    .#{$parent}_hovered,
+    &.#{$parent}_hovered,
     &:hover {
       @include background-button-hover;
     }
   }
 
   &_with_image {
-    &_3 {
+    &_theme_3 {
       padding-right: 3.1428rem;
     }
   }

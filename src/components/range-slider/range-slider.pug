@@ -1,30 +1,33 @@
-mixin range-slider(props = {})
-  -
-    let
-        { label, start, end, nameStart, nameEnd, separator, min, max, description } = props;
-  .range-slider.js-range-slider(data-options=props)
-    input.range-slider__input(
-      name=nameStart,
-      value=start,
-      data-type="start",
-      type="hidden"
-    )
-    input.range-slider__input(
-      name=nameEnd,
-      value=end,
-      data-type="end",
-      type="hidden"
-    )
-    .range-slider__section-head
-      if (label)
-        .range-slider__label= label
-      .range-slider__info.js-range-slider__info
-    .range-slider__section-body.js-range-slider__section-body
-      .range-slider__point.js-range-slider__point.range-slider__point_start(
-        data-type="start"
+mixin range-slider(props)
+  if props
+    -
+      let
+          { title, start, end, nameStart, nameEnd, separator, min, max, description } = props;
+          className = 'range-slider';
+          classNames = `${className} js-${className}`;
+    div(class=classNames, data-options=props) 
+      input.range-slider__input(
+        name=nameStart,
+        value=start,
+        data-type="start",
+        type="hidden"
       )
-      .range-slider__track.js-range-slider__track
-      .range-slider__point.js-range-slider__point.range-slider__point_end(
-        data-type="end"
+      input.range-slider__input(
+        name=nameEnd,
+        value=end,
+        data-type="end",
+        type="hidden"
       )
-    .range-slider__description= description
+      .range-slider__section-head
+        if title
+          .range-slider__title= title
+        .range-slider__info.js-range-slider__info
+      .range-slider__section-body.js-range-slider__section-body
+        .range-slider__point.js-range-slider__point.range-slider__point_start(
+          data-type="start"
+        )
+        .range-slider__track.js-range-slider__track
+        .range-slider__point.js-range-slider__point.range-slider__point_end(
+          data-type="end"
+        )
+      .range-slider__description= description

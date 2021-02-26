@@ -1,15 +1,23 @@
+include ../title-label/title-label
 include ../button/button
 
-mixin buttons(props = {})
-  -
-    let { label, buttons } = props;
-  .buttons
-    if (label)
-      .buttons__section-head= label
-    .buttons__section-body
-      each button, index in buttons
-        .buttons__items
-          .buttons__item
-            +button(button)
-          .buttons__item
-            +button({...button, isHover: true})
+mixin buttons(props)
+  if props
+    -
+      let { title, buttons = [] } = props;
+      let { length } = buttons;
+      let className = 'buttons';
+      let classNames = `${className} js-${className}`;
+    div(class=classNames)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__body-items`)
+          each button in buttons
+            li(class=`${className}__body-item`)
+              ul(class=`${className}__items`)
+                li(class=`${className}__item`)
+                  +button(button)
+                li(class=`${className}__item`)
+                  +button({...button, isHovered: true})

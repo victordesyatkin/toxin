@@ -1,12 +1,14 @@
 @import '~theme/variables.scss';
 
-.checkbox-buttons {
+$parent: 'checkbox-buttons';
+
+.#{$parent} {
   display: flex;
   flex-direction: column;
 
   &__title {
     @include h3;
-    margin-bottom: 1.3571rem;
+    margin-bottom: 1.1571rem;
   }
 
   &__items {
