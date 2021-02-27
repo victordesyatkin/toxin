@@ -277,6 +277,6 @@ $parent: '.form-elements';
 
 @include media-breakpoint-down($xs) {
   #{$parent} {
-    padding: 5rem 1rem;
+    padding: 5rem 0.9rem;
   }
 }

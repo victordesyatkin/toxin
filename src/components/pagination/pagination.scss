@@ -15,6 +15,7 @@ $parent: 'pagination';
     width: 100%;
     display: flex;
     list-style-type: none;
+    overflow: hidden;
   }
 
   &__item {
@@ -32,7 +33,7 @@ $parent: 'pagination';
     display: block;
     margin-top: 100%;
   }
-
+  &__item:not(.#{$parent}__item_separator):not(.#{$parent}__item_control):hover,
   &__item_current {
     background: $pagination-background-color-current;
 
@@ -73,103 +74,14 @@ $parent: 'pagination';
     text-transform: none;
   }
 
-  &__dummy {
-    display: inline-block;
-    margin-top: 100%;
-  }
-
   &__item_separator {
     .#{$parent}__link {
       cursor: default;
     }
   }
 
-  &__section-body,
-  &__common {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-shrink: 1;
-    flex-grow: 1;
-  }
-
-  &__section-body {
-    flex-basis: 100%;
-    width: 100%;
-    justify-content: stretch;
-  }
-
-  &__common {
-    flex-basis: auto;
-    justify-content: flex-start;
-  }
-
-  &__arrow,
-  &__item {
-    position: relative;
-    display: flex;
-    flex-basis: auto;
-    flex-shrink: 1;
-    flex-grow: 1;
-  }
-
-  &__arrow {
-    max-width: 2.8571rem;
-  }
-
-  &__item {
-    max-width: 2.8571rem;
-  }
-
-  &__content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $pagination-text-color-default;
-    line-height: normal;
-    cursor: pointer;
-    font-size: 0.8571rem;
-  }
-
-  &__item_empty {
-    .#{pagination}__content {
-      cursor: default;
-    }
-  }
-
-  &__arrow {
-    background: $pagination-button-background-color-next;
-    border-radius: 22px;
-    opacity: 1;
-    transition: 0.3s opacity;
-  }
-  &__arrow_previous {
-    transform: rotate(180deg);
-    background: $pagination-button-background-color-previous;
-  }
-
-  &__item_current {
-    .#{$parent}__content {
-      background: $pagination-background-color-current;
-      border-radius: 22px;
-      color: $pagination-text-color-button;
-      @include font-family-first-regular;
-    }
-  }
-
-  &__section-footer {
+  &__summary {
     margin-top: 0.6428rem;
     padding-left: 0.5rem;
-  }
-
-  &_hidden {
-    display: none;
-    opacity: 0;
-    transition: 0.3s opacity;
   }
 }

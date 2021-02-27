@@ -6,71 +6,10 @@ mixin pagination(props)
       let { title, description } = props;
       let className = 'pagination';
       let classNames = `${className} js-${className}`;
-          //- classesButtonPrevious = `${className}__arrow ${className}__arrow_previous`;
-          //- classesButtonNext = `${className}__arrow ${className}__arrow_next`;
-          //- tmpText = '';
-      //- classesButtonPrevious += start === current ? ` ${className}_hidden` : '';
-      //- classesButtonNext += end === current ? ` ${className}_hidden` : '';
-      //- if (text && typeof text === 'string' && text.trim().length) {
-      //-     startText = (current - 1) * count > 0  ? current * count - count : current;
-      //-     endText = current * count > 0  ? current * count : current;
-      //-     total = end * count > 100 ? '100+' : end * count; 
-      //-     tmpText = `${startText} - ${endText} из ${total} ${text}`;
-      //- }    
-      //- let classesSectionFooter = `${className}__section-footer`;
-      //- classesSectionFooter += typeof tmpText !== 'string' || !tmpText.trim().length ? ` ${className}_hidden` : '';
-      //- if (current - start > limit) {
-      //-     pages.push(start);
-      //- }
-      //- if (current - start > limit + 1) {
-      //-     pages.push(emptyString);
-      //- }
-      //- for(let i = current - limit; i <= current + limit; i++) {
-      //-     if (i < start) {
-      //-         continue;
-      //-     }
-      //-     if (i > end) {
-      //-         continue;
-      //-     }
-      //-     pages.push(i);
-      //- }
-      //- if (end - current > limit + 1) {
-      //-     pages.push(emptyString);
-      //- }
-      //- if (end - current > limit) {
-      //-     pages.push(end);
-      //- }
     div(class=classNames)
       if title
         div(class=`${className}__title`)
           +title-label(title)
         ul(class=`${className}__items js-${className}__items`)
         if description
-          div(class=`${className}__description js-${className}__description`)
-      //- if (start > 0 & end > 0)
-      //-   div(class=`${className}__section-body js-${className}__section-body`)
-      //-     div(class=classesButtonPrevious, data-direction="prev")
-      //-       div(class=`${className}__dummy`)
-      //-       div(class=`${className}__content`)
-      //-         if src
-      //-           img(src=src, alt=altPrevious, class=`${className}__image`)
-      //-     each page in pages
-      //-       -
-      //-         let
-      //-             classes = `${className}__item`;
-      //-             dataCurrent = 0;
-      //-             if (page === emptyString) {
-      //-                 classes += ` ${className}__item_empty`;
-      //-             } else if (page === current) {
-      //-                 classes += ` ${className}__item_current`;    
-      //-                 dataCurrent = 1;
-      //-             }
-      //-       div(class=classes, data-current=dataCurrent, data-item=page)
-      //-         div(class=`${className}__dummy`)
-      //-         div(class=`${className}__content`)= page
-      //-     div(class=classesButtonNext, data-direction="next")
-      //-       div(class=`${className}__dummy`)
-      //-       div(class=`${className}__content`)
-      //-         if src
-      //-           img(src=src, alt=altNext, class=`${className}__image`)
-      //-   div(class=classesSectionFooter)= tmpText
+          div(class=`${className}__summary js-${className}__summary`)
