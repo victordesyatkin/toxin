@@ -8,7 +8,15 @@ $parent: 'text-field';
   cursor: pointer;
 
   .#{$parent}__summary {
-    display: inline-block;
+    display: block;
+  }
+
+  &_theme_comfort {
+    &.#{$parent}_withButton {
+      .#{$parent}__summary {
+        padding-right: 5.7rem;
+      }
+    }
   }
 
   &_theme_comfort,
@@ -57,6 +65,9 @@ $parent: 'text-field';
     display: none;
     font-size: 1rem;
     line-height: 1.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__summary:after {

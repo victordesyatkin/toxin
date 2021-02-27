@@ -45,6 +45,7 @@ class FormElements extends Component {
       rateButtons,
       rangeSlider,
       pagination,
+      dropdown2,
     } = this._props;
     console.log('props : ', this._props);
     this._textField1 = new TextField({
@@ -90,6 +91,10 @@ class FormElements extends Component {
     this._pagination = new Pagination({
       parent: $(`${this._query}__pagination`, this._$element),
       props: pagination,
+    });
+    this._dropdown2 = new Dropdown({
+      parent: $(`${this._query}__dropdown-second`, this._$element),
+      props: dropdown2,
     });
     // ExpandableCheckboxList.renderComponents({
     //   parents,

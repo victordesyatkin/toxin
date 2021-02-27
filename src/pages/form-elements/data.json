@@ -260,26 +260,27 @@
   },
   "dropdown2": {
     "dropdown": {
-      "isExpanded": false,
-      "type": 0,
-      "isStraight": true,
+      "theme": "comfort",
+      "type": "comfort",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
+      "isOpened": true,
+      "title": {
+        "content": "dropdown"
+      }
     },
-    "input": {
-      "name": "rooms",
-      "stateText": "Default",
-      "type": "text",
-      "label": "dropdown",
-      "placeholder": "Виды удобств",
-      "button": { "iconClass": "arrow-down", "isVisible": true }
+    "maskedTextField": {
+      "textField": {
+        "button": { "iconClass": "arrow-down" },
+        "theme": "dropdown",
+        "isSummaryOnly": true,
+        "summary": "Удобства"
+      }
     },
     "items": [
-      { "title": "спальни", "value": 2 },
-      { "title": "кровати", "value": 2 },
-      { "title": "ванные комнаты", "value": 0 }
+      { "title": "спальни", "value": 2, "name": "comfort[bedroom]" },
+      { "title": "кровати", "value": 2, "name": "comfort[bed]" },
+      { "title": "ванные комнаты", "value": 0, "name": "comfort[bathroom]" }
     ]
   },
   "subscriptionTextField": {

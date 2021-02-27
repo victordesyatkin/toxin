@@ -51,8 +51,8 @@ class Pagination extends Component {
   }
 
   _updateListItems() {
+    this._$dummy = $(document.createDocumentFragment());
     this._correctLimit();
-    this._$items.empty();
     this._createListItemControlBack();
     this._createListItemFirst();
     this._createListItemFirstSeparator();
@@ -61,6 +61,8 @@ class Pagination extends Component {
     this._createListItemLast();
     this._createListItemControlNext();
     this._updateSummary();
+    this._$items.empty().append(this._$dummy);
+    this._$dummy = undefined;
   }
 
   _correctLimit() {
@@ -198,7 +200,8 @@ class Pagination extends Component {
       append: this._createLink(link),
     });
     $item.data(data);
-    $item.appendTo(this._$items);
+    $item.appendTo(this._$dummy);
+    this._$dummy.add($item);
   }
 
   _createLink(link) {

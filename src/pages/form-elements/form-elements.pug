@@ -53,7 +53,7 @@ block main
             comment,
         } = data || {};
   - let className = 'form-elements';
-  div(class=`${className} js-${className}`)
+  section(class=`${className} js-${className}`)
     section(class=`${className}__section`)
       ul(class=`${className}__list`)
         li(
@@ -98,10 +98,10 @@ block main
           +button(button)
         li(class=`${className}__pagination js-${className}__pagination`)
           +pagination(pagination)
-    //- article.form-elements__section
-    //-   section.form-elements__section
-    //-     .form-elements__dropdown-second
-    //-       +dropdown(dropdown2)
+    section(class=`${className}__section`)
+      ul(class=`${className}__list`)
+        li(class=`${className}__dropdown-second js-${className}__dropdown-second`)
+          +dropdown(dropdown2)
     //-     .form-elements__dropdown-third
     //-       +dropdown(dropdown3)
     //-   section.form-elements__section
