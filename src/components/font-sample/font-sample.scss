@@ -20,6 +20,11 @@ $parent: '.font-sample';
     @include h3;
   }
 
+  &__content,
+  &__description {
+    display: inline-flex;
+  }
+
   &__content {
     min-width: 2.64rem;
     color: $additional-text-color;

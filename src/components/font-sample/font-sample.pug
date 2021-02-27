@@ -2,8 +2,9 @@ mixin font-sample(props = {})
   -
     let { content, description, size } = props;
     let sizes = { lg: "lg", md: "md", sm: "sm" };
-    let classNames = 'font-sample';
+    let className = 'font-sample';
+    let classNames = `${className} js-${className}`;
     classNames += sizes[size] ? ` font-sample_size_${sizes[size]}`: ''; 
   div(class=classNames)
-    .font-sample__content= content
-    .font-sample__description= description
+    span(class=`${className}__content`)= content
+    span(class=`${className}__description`)= description

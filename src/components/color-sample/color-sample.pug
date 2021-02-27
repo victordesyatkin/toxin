@@ -2,8 +2,10 @@ mixin color-sample(props = {})
   -
     let { background, label, description } = props;
     let style = background ? `background: ${background};`: '';
-  .color-sample
-    .color-sample__section-rectangle(style=style)
-    .color-sample__section-info
-      .color-sample__label= label
-      .color-sample__description= description
+    let className = 'color-sample';
+    let classNames = `${className} js-${className}`; 
+  div(class=classNames)
+    span(class=`${className}__section-rectangle`, style=style)
+    span(class=`${className}__section-info`)
+      span(class=`${className}__label`)= label
+      span(class=`${className}__description`)= description
