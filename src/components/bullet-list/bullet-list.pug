@@ -1,18 +1,23 @@
+include ../title-label/title-label
 include ../bullet/bullet
 
-mixin bullet-list(props = {})
-  -
-    let { label, items = [], size } = props;
-    let className = 'bullet-list';
-    let classNames = `${className}`;
-    let sizes = {
-        large: 'large',
-    }
-    classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
-  div(class=classNames)
-    if (label)
-      .bullet-list__label= label
-    .bullet-list__list
-      each item in items
-        .bullet-list__item
-          +bullet(item)
+mixin bullet-list(props)
+  if props
+    -
+      let { title, items = [], size } = props;
+      let { length } = items;
+      let className = 'bullet-list';
+      let classNames = `${className} js-${className}`;
+      let sizes = {
+          large: 'large',
+      }
+      classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
+    div(class=classNames)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__list`)
+          each item in items
+            li(class=`${className}__item`)
+              +bullet(item)

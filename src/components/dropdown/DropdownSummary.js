@@ -87,7 +87,8 @@ class DropDownSummary {
     this._together = together || DropDownSummary.TOGETHER[this._type] || {};
     this._placeholder = placeholder || DropDownSummary.PLACEHOLDERS[this._type];
     // console.log('this._placeholder : ', this._placeholder);
-    // console.log('this._map : ', this._map);
+    console.log('this._map : ', this._map);
+    console.log('this._together  : ', this._together);
     // console.log(
     //   'DropDownSummary.MAPS[type] ',
     //   DropDownSummary.MAPS[this._type]
@@ -110,8 +111,9 @@ class DropDownSummary {
       }
     } else {
       const { handleFillSummary } = this._props;
-      // console.log('handleFillSummary : ', handleFillSummary);
+      console.log('handleFillSummary 1 : ');
       if (handleFillSummary) {
+        console.log('handleFillSummary 2 : ');
         handleFillSummary();
       }
     }

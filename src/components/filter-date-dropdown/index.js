@@ -29,7 +29,6 @@ class FilterDateDropdown extends Component {
     this._isOpened = true;
     this._$element.addClass(`${this._className}_opened`);
     this._dropdownTitleTextField.open();
-    this._$element.trigger('dropdown-open');
   }
 
   close() {
@@ -44,7 +43,6 @@ class FilterDateDropdown extends Component {
     this._$items.each((index, element) => {
       const { placeholder = '' } = get(this._props, ['items', index], '');
       summary += summary ? `${separator}${placeholder}` : placeholder;
-      console.log('clean : ', summary);
       $(element).val('');
     });
     this._dropdownTitleTextField.updateSummary(summary);
@@ -80,18 +78,7 @@ class FilterDateDropdown extends Component {
         end,
       },
     });
-    console.log('this._$items : ', this._$items);
     $('body').on('click', this._handleBodyClick);
-    this._$element.on('dropdown-open', this._handleDropdownOpen);
-  }
-
-  @bind
-  _handleDropdownOpen(event) {
-    const { currentTarget } = event;
-    if (this._isOpened && currentTarget !== this._$element.get(0)) {
-      this.close();
-    }
-    console.log('_handleDropdownOpen : ', event);
   }
 
   @bind

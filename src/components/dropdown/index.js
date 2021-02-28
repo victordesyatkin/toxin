@@ -40,7 +40,6 @@ class Dropdown extends Component {
     this._isOpened = true;
     this._$element.addClass(`${this._className}_opened`);
     this._dropDownTitleTextField.open();
-    this._$element.trigger('dropdown-open');
   }
 
   close() {
@@ -51,7 +50,7 @@ class Dropdown extends Component {
 
   _init() {
     const { dropdown = {}, items, control } = this._props;
-    const { isOpened, type, map } = dropdown;
+    const { isOpened, type, map, together, placeholder } = dropdown;
     this._isOpened = isOpened;
     this._dropDownTitleTextField = new DropdownTitleTextField({
       parent: this._$element,
@@ -61,22 +60,25 @@ class Dropdown extends Component {
         handleTextFieldClick: this._handleDropdownTitleTextFieldClick,
       },
     });
+    if (control) {
+      this._control = new Control({
+        parent: $(`${this._query}__control`, this._$element),
+        props: {
+          ...control,
+          handleButtonClick: this._handleControlClick,
+        },
+      });
+    }
     this._dropDownSummary = new DropDownSummary({
       items,
       type,
       map,
+      together,
+      placeholder,
       updateSummary: this.updateSummary,
       handleEmptySummary: this._hideCleanButton,
       handleFillSummary: this._showCleanButton,
     });
-    this._control = new Control({
-      parent: $(`${this._query}__control`, this._$element),
-      props: {
-        ...control,
-        handleButtonClick: this._handleControlClick,
-      },
-    });
-    // console.log('this._control : ', this._control);
     this._items = [];
     this._$items = $(`${this._query}__li-item`, this._$element);
     this._$items.each(this._renderItem);
@@ -85,15 +87,6 @@ class Dropdown extends Component {
     }
     $('body').on('click', this._handleBodyClick);
     this._$element.on('dropdown-open', this._handleDropdownOpen);
-  }
-
-  @bind
-  _handleDropdownOpen(event) {
-    const { currentTarget } = event;
-    if (this._isOpened && currentTarget !== this._$element.get(0)) {
-      this.close();
-    }
-    console.log('_handleDropdownOpen : ', event);
   }
 
   @bind
@@ -150,7 +143,7 @@ class Dropdown extends Component {
 
   @bind
   _showCleanButton() {
-    // console.log('handleFillSummary :');
+    console.log('_showCleanButton : ', this._control);
     if (this._control) {
       this._control.show();
     }

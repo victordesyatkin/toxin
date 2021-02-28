@@ -1,5 +1,7 @@
 @import '~theme/variables.scss';
 
-.expandable-checkbox-list {
+$parent: 'expandable-checkbox-list';
+
+.#{$parent} {
   background-color: $expandable-background-color;
 }

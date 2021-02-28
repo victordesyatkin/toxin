@@ -73,17 +73,6 @@ class DropdownTitleControl extends Component {
     this._$textField = $(`${this._query}__masked-text-field`, this._$element);
     this._$textField.on('click', this._handleTextFieldClick);
     $('body').on('click', this._handleBodyClick);
-    // console.log(' this._$textField  : ', this._$textField);
-    this._$element.on('dropdown-open', this._handleDropdownOpen);
-  }
-
-  @bind
-  _handleDropdownOpen(event) {
-    const { currentTarget } = event;
-    if (this._isOpened && currentTarget !== this._$element.get(0)) {
-      this.close();
-    }
-    console.log('_handleDropdownOpen : ', event);
   }
 
   @bind

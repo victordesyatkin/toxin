@@ -16,10 +16,10 @@ include ../../components/range-slider/range-slider
 include ../../components/buttons/buttons
 include ../../components/button/button
 include ../../components/pagination/pagination
-//- //- include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
-//- //- include ../../components/bullet-list/bullet-list
-//- //- include ../../components/info/info
-//- //- include ../../components/comment/comment
+include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
+include ../../components/bullet-list/bullet-list
+//- include ../../components/info/info
+//- include ../../components/comment/comment
 
 block main
   -
@@ -102,26 +102,30 @@ block main
       ul(class=`${className}__list`)
         li(class=`${className}__dropdown-second js-${className}__dropdown-second`)
           +dropdown(dropdown2)
-    //-     .form-elements__dropdown-third
-    //-       +dropdown(dropdown3)
-    //-   section.form-elements__section
-    //-     .form-elements__dropdown-fourth
-    //-       +dropdown(dropdown4)
-    //-   section.form-elements__section
-    //-     .form-elements__dropdown-fifth
-    //-       +dropdown(dropdown5) 
-    //- article.form-elements__section
-    //-   section.form-elements__section
-    //-     .form-elements__expandable-checkbox-list-first
-    //-       +expandable-checkbox-list(expandableCheckboxList1)
-    //-     .form-elements__expandable-checkbox-list-first
-    //-       +expandable-checkbox-list(expandableCheckboxList2)
-    //-   section.form-elements__section
-    //-     .form-elements__rich-checkbox-buttons
-    //-       +rich-checkbox-buttons(richCheckboxButtons)
-    //-   section.form-elements__section
-    //-     .form-elements__bullet-list
-    //-       +bullet-list(bulletList)
+        li(class=`${className}__dropdown-third js-${className}__dropdown-third`)
+          +dropdown(dropdown3)
+      ul(class=`${className}__list`)
+        li(class=`${className}__dropdown-fourth js-${className}__dropdown-fourth`)
+          +dropdown(dropdown4)
+      ul(class=`${className}__list`)
+        li(class=`${className}__dropdown-fifth js-${className}__dropdown-fifth`)
+          +dropdown(dropdown5) 
+    section(class=`${className}__section`)
+      ul(class=`${className}__list`)
+        li(
+          class=`${className}__expandable-checkbox-list-first js-${className}__expandable-checkbox-list-first`
+        )
+          +expandable-checkbox-list(expandableCheckboxList1)
+        li(
+          class=`${className}__expandable-checkbox-list-second js-${className}__expandable-checkbox-list-second`
+        )
+          +expandable-checkbox-list(expandableCheckboxList2)
+      ul(class=`${className}__list`)
+        li(class=`${className}__rich-checkbox-buttons`)
+          +rich-checkbox-buttons(richCheckboxButtons)
+      ul(class=`${className}__list`)
+        li(class=`${className}__bullet-list`) 
+          +bullet-list(bulletList)
     //- article.form-elements__section
     //-   section.form-elements__section
     //-     .form-elements__info

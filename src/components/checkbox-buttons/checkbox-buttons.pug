@@ -15,4 +15,4 @@ mixin checkbox-buttons(props)
         ul(class=`${className}__items`)
           each button in buttons
             li(class=`${className}__item`)
-              +checkbox-button({...button, src: button.src || src})
+              +checkbox-button({...button, src: button.src || src, alt: button.alt || alt })

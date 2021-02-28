@@ -4,7 +4,7 @@ $parent: 'bullet-list';
 
 .#{$parent} {
   &_size_large {
-    .#{$parent}__label {
+    .#{$parent}__title {
       @include h2;
       text-transform: inherit;
       padding-left: 1.5rem;
@@ -12,7 +12,7 @@ $parent: 'bullet-list';
     }
   }
 
-  &__label {
+  &__title {
     margin-bottom: 15px;
     @include h3;
   }
@@ -20,6 +20,7 @@ $parent: 'bullet-list';
   &__list {
     display: flex;
     flex-direction: column;
+    list-style-type: none;
   }
 
   &__item {

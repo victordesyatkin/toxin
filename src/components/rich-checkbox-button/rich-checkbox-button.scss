@@ -1,8 +1,8 @@
 @import '~theme/variables.scss';
 
-$parent: '.rich-checkbox-buttons';
+$parent: 'rich-checkbox-button';
 
-.rich-checkbox-button {
+.#{$parent} {
   &__info {
     padding-left: 2.07rem;
     margin-top: 0.35rem;

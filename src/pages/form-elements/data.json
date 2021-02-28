@@ -264,9 +264,10 @@
       "type": "comfort",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "isOpened": true,
+      "isOpened": false,
       "title": {
-        "content": "dropdown"
+        "content": "dropdown",
+        "state": "Default"
       }
     },
     "maskedTextField": {
@@ -301,78 +302,143 @@
   },
   "dropdown3": {
     "dropdown": {
-      "isExpanded": true,
-      "type": 0,
+      "theme": "comfort",
+      "type": "comfort",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
+      "isOpened": true,
+      "title": {
+        "content": "dropdown",
+        "state": "expanded"
+      },
+      "map": {
+        "comfort[bedroom]2": "bedroom",
+        "comfort[bed]2": "bed",
+        "comfort[bathroom]2": "bathroom"
+      }
     },
-    "input": {
-      "name": "rooms2",
-      "stateText": "expanded",
-      "type": "text",
-      "label": "dropdown",
-      "placeholder": "",
-      "button": { "iconClass": "arrow-down", "isVisible": true },
-      "theme": "dropdown"
+    "maskedTextField": {
+      "textField": {
+        "button": { "iconClass": "arrow-down" },
+        "theme": "dropdown",
+        "isSummaryOnly": true,
+        "summary": "Удобства"
+      }
     },
     "items": [
-      { "title": "спальни", "value": 2 },
-      { "title": "кровати", "value": 2 },
-      { "title": "ванные комнаты", "value": 0 }
+      { "title": "спальни", "value": 2, "name": "comfort[bedroom]2" },
+      { "title": "кровати", "value": 2, "name": "comfort[bed]2" },
+      { "title": "ванные комнаты", "value": 0, "name": "comfort[bathroom]2" }
     ]
   },
   "dropdown4": {
     "dropdown": {
-      "isExpanded": true,
-      "isControlVisible": true,
-      "type": 1,
+      "theme": "guests",
+      "type": "guests",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
+      "isOpened": true,
+      "title": {
+        "content": "dropdown"
+      },
+      "map": {
+        "guests[adult]2": "guest",
+        "guests[child]2": "guest",
+        "guests[baby]2": "baby"
+      },
+      "together": {
+        "guests[adult]2": "guest",
+        "guests[child]2": "guest"
+      }
     },
-    "input": {
-      "name": "guests1",
-      "stateText": "",
-      "type": "text",
-      "label": "dropdown",
-      "placeholder": "Сколько гостей",
-      "button": { "iconClass": "arrow-down", "isVisible": true }
+    "maskedTextField": {
+      "textField": {
+        "button": { "iconClass": "arrow-down" },
+        "theme": "dropdown",
+        "isSummaryOnly": true,
+        "summary": "Сколько гостей"
+      }
     },
     "items": [
-      { "title": "взрослые", "value": 0 },
-      { "title": "дети", "value": 0 },
-      { "title": "младенцы", "value": 0 }
-    ]
+      { "title": "взрослые", "value": 0, "name": "guests[adult]2" },
+      { "title": "дети", "value": 0, "name": "guests[child]2" },
+      { "title": "младенцы", "value": 0, "name": "guests[baby]2" }
+    ],
+    "control": {
+      "isHidden": true,
+      "items": [
+        {
+          "content": "очистить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "clean"
+        },
+        {
+          "content": "применить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "apply"
+        }
+      ]
+    }
   },
   "dropdown5": {
     "dropdown": {
-      "isExpanded": true,
-      "isControlVisible": true,
-      "type": 1,
+      "theme": "guests",
+      "type": "guests",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
+      "isOpened": true,
+      "title": {
+        "content": "dropdown"
+      },
+      "map": {
+        "guests[adult]3": "guest",
+        "guests[child]3": "guest",
+        "guests[baby]3": "baby"
+      },
+      "together": {
+        "guests[adult]3": "guest",
+        "guests[child]3": "guest"
+      }
     },
-    "input": {
-      "name": "guests2",
-      "stateText": "",
-      "type": "text",
-      "label": "dropdown",
-      "placeholder": "Сколько гостей",
-      "button": { "iconClass": "arrow-down", "isVisible": true }
+    "maskedTextField": {
+      "textField": {
+        "button": { "iconClass": "arrow-down" },
+        "theme": "dropdown",
+        "isSummaryOnly": true,
+        "summary": "Сколько гостей"
+      }
     },
     "items": [
-      { "title": "взрослые", "value": 2 },
-      { "title": "дети", "value": 1 },
-      { "title": "младенцы", "value": 0 }
-    ]
+      { "title": "взрослые", "value": 2, "name": "guests[adult]3" },
+      { "title": "дети", "value": 1, "name": "guests[child]3" },
+      { "title": "младенцы", "value": 0, "name": "guests[baby]3" }
+    ],
+    "control": {
+      "isHidden": true,
+      "items": [
+        {
+          "content": "очистить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "clean"
+        },
+        {
+          "content": "применить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "apply"
+        }
+      ]
+    }
   },
   "expandableCheckboxList1": {
-    "expandable": { "label": "expandable checkbox list" },
+    "expandable": { "title": "expandable checkbox list" },
     "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
     "buttons": [
@@ -428,8 +494,8 @@
   },
   "expandableCheckboxList2": {
     "expandable": {
-      "label": "expandable checkbox list",
-      "isExpanded": true
+      "title": "expandable checkbox list",
+      "isOpened": true
     },
     "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
@@ -598,20 +664,20 @@
     ]
   },
   "richCheckboxButtons": {
-    "label": "rich checkbox buttons",
+    "title": {
+      "content": "rich checkbox buttons"
+    },
     "src": "assets/images/checkbox-buttons.svg",
     "alt": "Checked",
     "theme": "bold",
     "buttons": [
       {
         "label": "Широкий коридор",
-        "checked": false,
         "name": "widecorridor",
         "info": "Ширина коридоров в номере не менее 91 см."
       },
       {
         "label": "Помощник для инвалидов",
-        "checked": false,
         "name": "helper",
         "info": "На 1 этаже вас встретит специалист и проводит до номера."
       }
@@ -713,7 +779,9 @@
     }
   },
   "bulletList": {
-    "label": "bullet list",
+    "title": {
+      "content": "bullet list"
+    },
     "items": [
       { "label": "Нельзя с питомцами" },
       { "label": "Без вечеринок и мероприятий" },

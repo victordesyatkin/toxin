@@ -1,17 +1,15 @@
 @import '~theme/variables.scss';
 
-$parent: '.rich-checkbox-buttons';
+$parent: 'rich-checkbox-buttons';
 
-.rich-checkbox-buttons {
-  &__label {
+.#{$parent} {
+  &__title {
     margin-bottom: 1.214rem;
     @include h3;
   }
 
-  &__button-label {
-    font-weight: bold;
-    color: $rich-checkbox-text-color-default;
-    letter-spacing: 0.02rem;
+  &__buttons {
+    list-style-type: none;
   }
 
   &__button {

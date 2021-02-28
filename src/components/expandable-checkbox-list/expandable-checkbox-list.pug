@@ -1,8 +1,12 @@
 include ../expandable/expandable
 include ../checkbox-buttons/checkbox-buttons
 
-mixin expandable-checkbox-list(props = {})
-  .expandable-checkbox-list.js-expandable-checkbox-list
-    - let { expandable, ...checkBoxButtons } = props;
-    +expandable(expandable)
-      +checkbox-buttons(checkBoxButtons)
+mixin expandable-checkbox-list(props)
+  if props
+    -
+      let className = 'expandable-checkbox-list';
+      let classNames = `${className} js-${className}`;
+      let { expandable, ...checkBoxButtons } = props;
+    div(class=classNames) 
+      +expandable(expandable)
+        +checkbox-buttons(checkBoxButtons)

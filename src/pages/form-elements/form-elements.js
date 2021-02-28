@@ -5,7 +5,7 @@ import MaskedTextField from '../../components/masked-text-field';
 import DateDropdown from '../../components/date-dropdown';
 import FilterDateDropdown from '../../components/filter-date-dropdown';
 import SubscriptionTextField from '../../components/subscription-text-field';
-// import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
+import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
 import LikeButtons from '../../components/like-buttons';
 import RateButtons from '../../components/rate-buttons';
 import RangeSlider from '../../components/range-slider';
@@ -46,6 +46,11 @@ class FormElements extends Component {
       rangeSlider,
       pagination,
       dropdown2,
+      dropdown3,
+      dropdown4,
+      dropdown5,
+      expandableCheckboxList1,
+      expandableCheckboxList2,
     } = this._props;
     console.log('props : ', this._props);
     this._textField1 = new TextField({
@@ -96,9 +101,32 @@ class FormElements extends Component {
       parent: $(`${this._query}__dropdown-second`, this._$element),
       props: dropdown2,
     });
-    // ExpandableCheckboxList.renderComponents({
-    //   parents,
-    // });
+    this._dropdown3 = new Dropdown({
+      parent: $(`${this._query}__dropdown-third`, this._$element),
+      props: dropdown3,
+    });
+    this._dropdown4 = new Dropdown({
+      parent: $(`${this._query}__dropdown-fourth`, this._$element),
+      props: dropdown4,
+    });
+    this._dropdown5 = new Dropdown({
+      parent: $(`${this._query}__dropdown-fifth`, this._$element),
+      props: dropdown5,
+    });
+    this._expandableCheckboxList1 = new ExpandableCheckboxList({
+      parent: $(
+        `${this._query}__expandable-checkbox-list-first`,
+        this._$element
+      ),
+      props: expandableCheckboxList1,
+    });
+    this._expandableCheckboxList1 = new ExpandableCheckboxList({
+      parent: $(
+        `${this._query}__expandable-checkbox-list-second`,
+        this._$element
+      ),
+      props: expandableCheckboxList2,
+    });
     // RangeSlider.renderComponents({
     //   parents,
     // });

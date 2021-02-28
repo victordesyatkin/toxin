@@ -1,13 +1,19 @@
+include ../title-label/title-label
 include ../rich-checkbox-button/rich-checkbox-button
 
-mixin rich-checkbox-buttons(props = {})
-  -
-    let
-        { label, buttons = [], src, theme } = props;
-  .rich-checkbox-buttons.js-rich-checkbox-buttons
-    if (label)
-      .rich-checkbox-buttons__label= label
-    .rich-checkbox-buttons__buttons
-      each button in buttons
-        .rich-checkbox-buttons__button(data-data=button)
-          +rich-checkbox-button({...button, src: button.src || src, theme: button.theme || theme})
+mixin rich-checkbox-buttons(props)
+  if props
+    -
+      let { title, buttons = [], src, alt, theme } = props;
+      let className = 'rich-checkbox-buttons';
+      let classNames = `${className} js-${className}`;
+      let { length } = buttons;
+    div(class=`${classNames}`) 
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__buttons`)
+          each button in buttons
+            li(class=`${className}__button`)
+              +rich-checkbox-button({...button, src: button.src || src, alt: button.alt || alt, theme: button.theme || theme})

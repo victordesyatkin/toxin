@@ -1,9 +1,11 @@
-mixin bullet(props = {})
-  -
-    let
-        { label } = props;
-  .bullet
-    .bullet__section-mark
-      span.bullet__item-mark
-    .bullet__section-content
-      span.bullet__item-label= label
+mixin bullet(props)
+  if props
+    -
+      let { label } = props;
+      let className = 'bullet';
+      let classNames = `${className} js-${className}`;
+    div(class=classNames)
+      span(class=`${className}__section-mark`)
+        span(class=`${className}__item-mark`)
+      span(class=`${className}__section-content`)
+        span(class=`${className}__item-label`)= label

@@ -1,21 +1,8 @@
 @import '~theme/variables.scss';
 
-$parent: '.expandable';
+$parent: 'expandable';
 
-@mixin expand {
-  z-index: 100;
-  #{$parent}__control {
-    transform: rotate(180deg);
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -ms-transition-property: -ms-transform;
-    -o-transition-property: -o-transform;
-    transition-property: transform;
-    transition-duration: 1s;
-  }
-}
-
-#{$parent} {
+.#{$parent} {
   position: relative;
   background-color: $expandable-background-color;
 
@@ -26,19 +13,19 @@ $parent: '.expandable';
     cursor: pointer;
   }
 
-  &__label {
+  &__title {
     @include h3;
   }
 
   &__control {
+    margin-right: 1.1428rem;
+    transition-duration: 1s;
     font-size: 0.5714rem;
     -webkit-transition-property: -webkit-transform;
     -moz-transition-property: -moz-transform;
     -ms-transition-property: -ms-transform;
     -o-transition-property: -o-transform;
     transition-property: transform;
-    transition-duration: 1s;
-    margin-right: 1.1428rem;
   }
 
   &__body {
@@ -51,21 +38,21 @@ $parent: '.expandable';
     background-color: $expandable-background-color;
   }
 
-  &_forced-expanded {
-    #{$parent}__body {
+  &_opened {
+    z-index: 100;
+
+    .#{$parent}__control {
+      transform: rotate(180deg);
+      -webkit-transition-property: -webkit-transform;
+      -moz-transition-property: -moz-transform;
+      -ms-transition-property: -ms-transform;
+      -o-transition-property: -o-transform;
+      transition-property: transform;
+      transition-duration: 1s;
+    }
+
+    .#{$parent}__body {
       display: block;
     }
-    @include expand;
   }
-
-  &_expanded {
-    #{$parent}__body {
-      display: block;
-    }
-    @include expand;
-  }
-}
-
-#{$parent}_expand {
-  @include expand;
 }
