@@ -34,7 +34,7 @@ $parent: 'like-button';
   &__like,
   &__not-like,
   &__count {
-    display: inline-block;
+    display: inline-flex;
     align-items: center;
     height: 100%;
   }

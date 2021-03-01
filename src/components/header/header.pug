@@ -1,10 +1,14 @@
 include ../logo-link/logo-link
 include ../nav/nav
 
-mixin header(props = {})
-  - let { nav, logo } = props;
-  header.header
-    .header__logo
-      +logo-link(logo)
-    .header__nav
-      +nav(nav)
+mixin header(props)
+  if props
+    -
+      let { nav, logo } = props;
+      let className = 'header';
+      let classNames = `${className} js-${className}`;
+    header(class=classNames)
+      div(class=`${className}__logo`)
+        +logo-link(logo)
+      div(class=`${className}__nav`)
+        +nav(nav)

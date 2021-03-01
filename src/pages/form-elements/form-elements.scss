@@ -97,7 +97,7 @@ $parent: '.form-elements';
 
 @include media-breakpoint-up($xl) {
   #{$parent} {
-    padding: 4.64rem 10.07rem 10.07rem 10.07rem;
+    padding: 4.64rem 8.9rem 10.07rem 10.07rem;
 
     &__section:nth-child(1) {
       margin-bottom: 7.2142rem;

@@ -55,64 +55,127 @@
     "alt": "TOXIN"
   },
   "picker": {
-    "label": "Найдём номера под ваши пожелания",
+    "title": {
+      "content": "Найдём номера под ваши пожелания",
+      "theme": "card"
+    },
     "dateDropdown": {
-      "fieldStart": {
-        "input": {
-          "name": "startDate2",
-          "id": "startDate2",
-          "type": "text",
-          "label": "прибытие",
-          "placeholder": "ДД.ММ.ГГГГ",
-          "button": { "isVisible": true, "iconClass": "arrow-down" },
-          "notFocused": true
+      "isOpened": false,
+      "items": [
+        {
+          "dropdown": {
+            "theme": "date"
+          },
+          "maskedTextField": {
+            "textField": {
+              "name": "picker-dropdown-text-field-start",
+              "type": "text",
+              "value": "",
+              "placeholder": "ДД.ММ.ГГГГ",
+              "button": { "iconClassName": "arrow-down" },
+              "theme": "dropdown",
+              "title": {
+                "content": "прибытие"
+              },
+              "isHidden": true,
+              "summary": "ДД.ММ.ГГГГ"
+            }
+          }
+        },
+        {
+          "dropdown": {
+            "theme": "date"
+          },
+          "maskedTextField": {
+            "textField": {
+              "name": "picker-dropdown-text-field-end",
+              "type": "text",
+              "value": "",
+              "placeholder": "ДД.ММ.ГГГГ",
+              "button": { "iconClassName": "arrow-down" },
+              "theme": "dropdown",
+              "title": {
+                "content": "выезд"
+              },
+              "isHidden": true,
+              "summary": "ДД.ММ.ГГГГ"
+            }
+          }
         }
-      },
-      "fieldEnd": {
-        "input": {
-          "name": "endDate2",
-          "id": "endDate2",
-          "type": "text",
-          "label": "выезд",
-          "placeholder": "ДД.ММ.ГГГГ",
-          "button": { "isVisible": true, "iconClass": "arrow-down" },
-          "notFocused": true
-        }
-      },
+      ],
       "calendar": {
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
+        "control": {
+          "isHidden": true,
+          "items": [
+            {
+              "content": "очистить",
+              "type": "button",
+              "value": "",
+              "theme": 2,
+              "dataType": "clean"
+            },
+            {
+              "content": "применить",
+              "type": "button",
+              "value": "",
+              "theme": 2,
+              "dataType": "apply"
+            }
+          ]
+        }
       }
     },
     "dropdown": {
       "dropdown": {
-        "type": 1,
-        "isControlVisible": true,
+        "theme": "guests",
+        "type": "guests",
         "buttonDecreaseText": "-",
         "buttonIncreaseText": "+",
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
+        "isOpened": false,
+        "title": {
+          "content": "гости"
+        }
       },
-      "input": {
-        "name": "guests3",
-        "stateText": "",
-        "type": "text",
-        "label": "гости",
-        "placeholder": "Сколько гостей",
-        "button": { "iconClass": "arrow-down", "isVisible": true }
+      "maskedTextField": {
+        "textField": {
+          "button": { "iconClassName": "arrow-down" },
+          "theme": "dropdown",
+          "isSummaryOnly": true,
+          "summary": "Сколько гостей"
+        }
       },
       "items": [
-        { "title": "взрослые", "value": 0 },
-        { "title": "дети", "value": 0 },
-        { "title": "младенцы", "value": 0 }
-      ]
+        { "title": "взрослые", "value": 0, "name": "guests[adult]" },
+        { "title": "дети", "value": 0, "name": "guests[child]" },
+        { "title": "младенцы", "value": 0, "name": "guests[baby]" }
+      ],
+      "control": {
+        "isHidden": true,
+        "items": [
+          {
+            "content": "очистить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "clean"
+          },
+          {
+            "content": "применить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "apply"
+          }
+        ]
+      }
     },
     "button": {
-      "text": "подобрать номер",
+      "content": "подобрать номер",
       "type": "button",
       "value": "",
-      "view": 3,
-      "src": "assets/images/arrow-forward.svg"
+      "theme": 3,
+      "src": "assets/images/arrow-forward.svg",
+      "alt": "подобрать номер"
     }
   },
   "book": {
@@ -206,13 +269,16 @@
     "buttonApplyText": "Применить"
   },
   "signUp": {
-    "title": "Регистрация аккаунта",
+    "title": {
+      "content": "Регистрация аккаунта",
+      "theme": "card"
+    },
     "firstName": {
       "name": "firstName1",
-      "id": "firstName1",
+      "value": "",
       "type": "text",
-      "label": "",
-      "placeholder": "Имя"
+      "placeholder": "Имя",
+      "ariaLabel": "Имя"
     },
     "lastName": {
       "name": "lastName1",
@@ -222,18 +288,20 @@
       "placeholder": "Фамилия",
       "stateText": ""
     },
-    "genderMale": {
-      "label": "Мужчина",
-      "isChecked": true,
-      "name": "gender1",
-      "value": "male",
-      "src": "assets/images/checkbox-buttons.svg"
-    },
-    "genderFemale": {
-      "label": "Женщина",
-      "name": "gender1",
-      "value": "female",
-      "src": "assets/images/checkbox-buttons.svg"
+    "gender": {
+      "buttons": [
+        {
+          "label": "Мужчина",
+          "isChecked": true,
+          "name": "gender1",
+          "value": "male"
+        },
+        {
+          "label": "Женщина",
+          "name": "gender1",
+          "value": "female"
+        }
+      ]
     },
     "birthday": {
       "input": {

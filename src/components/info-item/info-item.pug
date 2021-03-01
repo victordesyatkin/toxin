@@ -1,17 +1,18 @@
-mixin info-item(props = {})
-  -
-    let
-        { src, alt, title, content, iconClass } = props;
-        className = 'info-item';
-        classNames = `${className}`;
-  div(class=classNames)
-    .info-item__img
-      if iconClass
-        span(class=iconClass)
-      else if src
-        img(src=src, alt=alt)
-    .info-item__body
-      .info-item__title
-        | #{title}
-      .info-item__content
-        | #{content}
+mixin info-item(props)
+  if props
+    -
+      let { src, alt, title, content, iconClassName } = props;
+      let className = 'info-item';
+      let classNames = `${className} js-${className}`;
+    div(class=classNames)
+      if iconClassName
+        span(class=`${className}__image-wrapper`)
+          if iconClassName
+            span(class=`${className}__icon ${iconClassName}`)
+          else if src
+            img(src=src, alt=alt, class=`${className}__image`)
+      div(class=`${className}__body`)
+        span(class=`${className}__title`)
+          | #{title}
+        span(class=`${className}__content`)
+          | #{content}

@@ -1,8 +1,10 @@
 @import '~theme/variables.scss';
 
-.card {
+$parent: 'card';
+
+.#{$parent} {
   background: $card-background-color;
-  border: 0.071rem solid $card-border-color;
+  border: 1px solid $card-border-color;
   box-sizing: border-box;
   box-shadow: $card-box-shadow;
   border-radius: 4px;

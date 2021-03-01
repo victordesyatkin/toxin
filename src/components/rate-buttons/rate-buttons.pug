@@ -17,4 +17,4 @@ mixin rate-buttons(props = {})
           - let { srcImgRate, altImgRate, srcImgNoRate, altImgNoRate } = images;
           each button in buttons
             li(class=`${className}__item js-${className}__item`)
-              +rate-button({ ...button, srcImgRate: button.srcImgRate || srcImgRate, altImgRate: button.altImgRate || altImgRate, srcImgNoRate: button.srcImgNoRate || srcImgNoRate, altImgNoRate: button.altImgNoRate || altImgNoRate })
+              +rate-button({ ...images, ...button })

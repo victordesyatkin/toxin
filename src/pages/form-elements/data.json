@@ -94,7 +94,7 @@
     },
     "maskedTextField": {
       "textField": {
-        "button": { "iconClass": "arrow-down" },
+        "button": { "iconClassName": "arrow-down" },
         "theme": "dropdown",
         "isSummaryOnly": true,
         "summary": "Сколько гостей"
@@ -148,11 +148,11 @@
         },
         "maskedTextField": {
           "textField": {
-            "name": "start",
+            "name": "date-dropdown-text-field-start",
             "type": "text",
             "value": "",
             "placeholder": "ДД.ММ.ГГГГ",
-            "button": { "iconClass": "arrow-down" },
+            "button": { "iconClassName": "arrow-down" },
             "theme": "dropdown",
             "title": {
               "content": "date Dropdown"
@@ -172,7 +172,7 @@
             "type": "text",
             "value": "Mon Aug 19 2019 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
             "placeholder": "ДД.ММ.ГГГГ",
-            "button": { "iconClass": "arrow-down" },
+            "button": { "iconClassName": "arrow-down" },
             "theme": "dropdown",
             "title": {
               "content": "date Dropdown"
@@ -213,7 +213,7 @@
       },
       "maskedTextField": {
         "textField": {
-          "button": { "iconClass": "arrow-down" },
+          "button": { "iconClassName": "arrow-down" },
           "title": {
             "content": "filter date dropdown"
           },
@@ -272,7 +272,7 @@
     },
     "maskedTextField": {
       "textField": {
-        "button": { "iconClass": "arrow-down" },
+        "button": { "iconClassName": "arrow-down" },
         "theme": "dropdown",
         "isSummaryOnly": true,
         "summary": "Удобства"
@@ -289,7 +289,7 @@
       "name": "subscription_email",
       "type": "email",
       "placeholder": "Email",
-      "button": { "iconClass": "arrow-forward" },
+      "button": { "iconClassName": "arrow-forward" },
       "title": {
         "content": "subscription text field",
         "isLabel": true
@@ -319,7 +319,7 @@
     },
     "maskedTextField": {
       "textField": {
-        "button": { "iconClass": "arrow-down" },
+        "button": { "iconClassName": "arrow-down" },
         "theme": "dropdown",
         "isSummaryOnly": true,
         "summary": "Удобства"
@@ -353,7 +353,7 @@
     },
     "maskedTextField": {
       "textField": {
-        "button": { "iconClass": "arrow-down" },
+        "button": { "iconClassName": "arrow-down" },
         "theme": "dropdown",
         "isSummaryOnly": true,
         "summary": "Сколько гостей"
@@ -406,7 +406,7 @@
     },
     "maskedTextField": {
       "textField": {
-        "button": { "iconClass": "arrow-down" },
+        "button": { "iconClassName": "arrow-down" },
         "theme": "dropdown",
         "isSummaryOnly": true,
         "summary": "Сколько гостей"
@@ -689,12 +689,12 @@
       {
         "title": "Комфорт",
         "content": "Шумопоглощающие стены",
-        "iconClass": "icon-insert_emoticon"
+        "iconClassName": "icon-insert_emoticon"
       },
       {
         "title": "Удобство",
         "content": "Окно в каждой из спален",
-        "iconClass": "icon-location_city"
+        "iconClassName": "icon-location_city"
       }
     ]
   },
@@ -706,8 +706,8 @@
       "count": 12,
       "srcLike": "assets/images/favorite.svg",
       "altLike": "Like",
-      "srcNoLike": "assets/images/favorite-border.svg",
-      "altNoLike": "No like"
+      "srcNotLike": "assets/images/favorite-border.svg",
+      "altNotLike": "No like"
     },
     "fullName": "Мурад Сарафанов",
     "date": "5 дней назад",

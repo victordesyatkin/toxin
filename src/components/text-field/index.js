@@ -32,6 +32,7 @@ class TextField extends Component {
 
   close() {
     this._$element.removeClass(`${this._className}_opened`);
+    console.log('CLOSE : ');
   }
 
   enable() {
@@ -40,6 +41,14 @@ class TextField extends Component {
 
   disable() {
     this._$input.attr({ disabled: true });
+  }
+
+  fill() {
+    this._$element.addClass(`${this._className}_filled`);
+  }
+
+  empty() {
+    this._$element.removeClass(`${this._className}_filled`);
   }
 
   getValue() {

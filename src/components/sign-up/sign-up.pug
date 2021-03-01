@@ -1,36 +1,39 @@
-include ../input/input
-include ../radio-button/radio-button
+include ../title-label/title-label
+include ../text-field/text-field
+include ../radio-buttons/radio-buttons
 include ../masked-text-field/masked-text-field
 include ../toggle-button/toggle-button
 include ../card-footer/card-footer
 include ../button/button
 
-mixin sign-up(props = {})
-  -
-    let {
-        title, firstName, lastName, genderMale, genderFemale, birthday, email, password, contribute, pay, signIn
-    } = props; 
-  .sign-up.js-sign-up
-    if (title)
-      .sign-up__title= title
-    .sign-up__first-name
-      +input(firstName)
-    .sign-up__last-name
-      +input(lastName)
-    .sign-up__genders
-      .sign-up__gender
-        +radio-button(genderMale)
-      .sign-up__gender
-        +radio-button(genderFemale)
-    .sign-up__birthday
-      +masked-text-field(birthday)
-    .sign-up__email
-      +masked-text-field(email)
-    .sign-up__password
-      +input(password)
-    .sign-up__contribute
-      +toggle-button(contribute) 
-    .sign-up__button-pay
-      +button(pay)
-    .sign-up__section-sign-in
-      +card-footer(signIn)
+mixin sign-up(props)
+  if props
+    -
+      let {
+          title, firstName, lastName, gender, birthday, email, password, contribute, pay, signIn, action
+      } = props;
+      let className = 'sign-up';
+      let classNames = `${className} js-${className}`;
+    form(class=classNames, action=action)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      ul(class=`${className}__list`)
+        li(class=`${className}__first-name`)
+          +text-field(firstName)
+        li(class=`${className}__last-name`)
+          +text-field(lastName) 
+        li(class=`${className}__gender`)
+          +radio-buttons(gender)
+        li(class=`${className}__birthday`)
+          +masked-text-field(birthday)
+        li(class=`${className}__email`)
+          +masked-text-field(email)
+        li(class=`${className}__password`) 
+          +text-field(password)
+        li(class=`${className}__contribute`)
+          +toggle-button(contribute) 
+        li(class=`${className}__button-pay`)
+          +button(pay)
+        li(class=`${className}__section-sign-in`)
+          +card-footer(signIn)

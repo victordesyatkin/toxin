@@ -18,8 +18,8 @@ include ../../components/button/button
 include ../../components/pagination/pagination
 include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
 include ../../components/bullet-list/bullet-list
-//- include ../../components/info/info
-//- include ../../components/comment/comment
+include ../../components/info/info
+include ../../components/comment/comment
 
 block main
   -
@@ -126,10 +126,10 @@ block main
       ul(class=`${className}__list`)
         li(class=`${className}__bullet-list`) 
           +bullet-list(bulletList)
-    //- article.form-elements__section
-    //-   section.form-elements__section
-    //-     .form-elements__info
-    //-       +info(info)
-    //-   section.form-elements__section
-    //-     .form-elements__comment
-    //-       +comment(comment)
+    section(class=`${className}__section`)
+      ul(class=`${className}__list`)
+        li(class=`${className}__info`) 
+          +info(info)
+      ul(class=`${className}__list`)
+        li(class=`${className}__comment`)
+          +comment(comment)

@@ -16,4 +16,4 @@ mixin rich-checkbox-buttons(props)
         ul(class=`${className}__buttons`)
           each button in buttons
             li(class=`${className}__button`)
-              +rich-checkbox-button({...button, src: button.src || src, alt: button.alt || alt, theme: button.theme || theme})
+              +rich-checkbox-button({ src, alt, theme, ...button})

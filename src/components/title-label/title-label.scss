@@ -5,11 +5,32 @@ $parent: 'title-label';
 .#{$parent} {
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
 
   &__label,
   &__content {
     @include h3;
+  }
+
+  &_theme_card {
+    .#{$parent}__label,
+    .#{$parent}__content {
+      @include h1;
+      text-transform: none;
+    }
+  }
+
+  &_size_h1 {
+    .#{$parent}__label,
+    .#{$parent}__content {
+      @include h1;
+    }
+  }
+
+  &_size_h2 {
+    .#{$parent}__label,
+    .#{$parent}__content {
+      @include h2;
+    }
   }
 
   &__label {

@@ -17,4 +17,4 @@ mixin like-buttons(props)
         - let { srcLike, altLike, srcNotLike, altNotLike } = images;
         each button in buttons
           li(class=`${className}__item js-${className}__item`)
-            +like-button({ ...button, srcLike: button.srcLike || srcLike, altLike: button.altLike || altLike, srcNotLike: button.srcNotLike || srcNotLike, altNotLike: button.altNotLike || altNotLike, })
+            +like-button({ ...images, ...button })

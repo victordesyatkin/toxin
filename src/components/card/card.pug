@@ -1,4 +1,7 @@
-mixin card(props = {})
-  .card
-    if (block)
+mixin card
+  -
+    let className = 'card';
+    let classNames = `${className} js-${className}`;
+  div(class=className)
+    if block
       block

@@ -30,6 +30,7 @@ class Dropdown extends Component {
 
   toggleOpen() {
     if (this._$element.hasClass(`${this._className}_opened`)) {
+      console.log('CLOSE 3');
       this.close();
     } else {
       this.open();
@@ -43,6 +44,7 @@ class Dropdown extends Component {
   }
 
   close() {
+    console.log('CLOSE 4');
     this._isOpened = false;
     this._$element.removeClass(`${this._className}_opened`);
     this._dropDownTitleTextField.close();
@@ -86,7 +88,6 @@ class Dropdown extends Component {
       this.open();
     }
     $('body').on('click', this._handleBodyClick);
-    this._$element.on('dropdown-open', this._handleDropdownOpen);
   }
 
   @bind
@@ -131,6 +132,7 @@ class Dropdown extends Component {
 
   @bind
   _handleApplyButtonClick() {
+    console.log('CLOSE 2');
     this.close();
   }
 
@@ -139,6 +141,7 @@ class Dropdown extends Component {
     if (this._control) {
       this._control.hide();
     }
+    this._dropDownTitleTextField.empty();
   }
 
   @bind
@@ -147,6 +150,7 @@ class Dropdown extends Component {
     if (this._control) {
       this._control.show();
     }
+    this._dropDownTitleTextField.fill();
   }
 
   @bind
@@ -154,6 +158,7 @@ class Dropdown extends Component {
     if (this._isOpened) {
       const { target } = event;
       if (!$(target).closest(this._$element).length) {
+        console.log('CLOSE 1');
         this.close();
       }
     }

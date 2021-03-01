@@ -1,16 +1,17 @@
 include ../like-button/like-button
 
-mixin comment(props = {})
+mixin comment(props)
   -
-    let
-        { src, fullName, date, content, likeButton } = props;
-        style = src ? `background: url(${src}) 45% 30%` : ''; 
-  .comment.js-comment
-    .comment__left
-      .comment__img(style=style)
-      .comment__like-button
+    let { src, fullName, date, content, likeButton } = props;
+    let style = src ? `background: url(${src}) 45% 30%` : ''; 
+    let className = 'comment';
+    let classNames = `${className} js-${className}`;
+  article(class=classNames)
+    div(class=`${className}__left`)
+      span(class=`${className}__img`, style=style)
+      div(class=`${className}__like-button`)
         +like-button(likeButton)
-    .comment__right
-      .comment__full-name= fullName
-      .comment__date= date
-      .comment__content= content
+    div(class=`${className}__right`)
+      span(class=`${className}__full-name`)= fullName
+      span(class=`${className}__date`)= date
+      p(class=`${className}__content`)= content

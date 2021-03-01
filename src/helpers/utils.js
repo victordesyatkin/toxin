@@ -82,7 +82,7 @@ class Component {
     // console.log('Component constructor this._query : ', this._query);
     // console.log('Component constructor this.this : ', this);
     this._options = options;
-    const { props, parent } = this._options;
+    const { props = {}, parent } = this._options;
     this._parent = parent;
     this._props = props;
   }

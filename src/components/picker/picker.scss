@@ -6,9 +6,12 @@
   height: auto;
   padding: 2.8571rem 2.1428rem 2.0714rem 2rem;
 
-  &__label {
-    @include h1;
+  &__title {
     margin-bottom: 1.5rem;
+  }
+
+  &__list {
+    list-style-type: none;
   }
 
   &__date-dropdown {

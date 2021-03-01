@@ -79,51 +79,60 @@ class MaskedTextField extends Component {
   }
 
   getInput() {
-    return this._textField.get(0);
+    return this._textField?.get(0);
   }
 
   toggleOpen() {
-    this._textField.toggleOpen();
+    this._textField?.toggleOpen();
   }
 
   open() {
-    this._textField.open();
+    this._textField?.open();
   }
 
   close() {
-    this._textField.close();
+    this._textField?.close();
   }
 
   enable() {
-    this._textField.enable();
+    this._textField?.enable();
   }
 
   disable() {
-    this._textField.disable();
+    this._textField?.disable();
   }
 
   getValue() {
-    return this._textField.getValue();
+    return this._textField?.getValue();
   }
 
   setValue(value) {
-    this._textField.setValue(value);
+    this._textField?.setValue(value);
   }
 
   updateValue(value) {
-    this._textField.updateValue(value);
+    this._textField?.updateValue(value);
   }
 
   getSummary() {
-    return this._textField.getSummary();
+    return this._textField?.getSummary();
   }
 
   setSummary(summary) {
-    this._textField.setSummary(summary);
+    this._textField?.setSummary(summary);
   }
 
   updateSummary(summary) {
-    this._textField.updateSummary(summary);
+    this._textField?.updateSummary(summary);
+  }
+
+  fill() {
+    this._textField?.fill();
+  }
+
+  empty() {
+    console.log('empty : ', this._textField);
+    this._textField?.empty();
   }
 
   _init() {
@@ -132,6 +141,7 @@ class MaskedTextField extends Component {
       parent: this._$element,
       props: textField,
     });
+    console.log('empty init : ', this._textField);
     const { mask, type, isRegexp } = options;
     let maskOptions = {};
     if (mask && isRegexp) {

@@ -1,26 +1,26 @@
 @import '~theme/variables.scss';
 
-$parent: '.info-item';
+$parent: 'info-item';
 
-#{$parent} {
+.#{$parent} {
   display: flex;
   justify-content: flex-start;
 
-  &__img {
+  &__image-wrapper {
     width: 3.42rem;
     height: 3.42rem;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    span {
+    .#{$parent}__icon {
       font-size: 2.85rem;
       background: $info-background-color;
       -webkit-background-clip: text;
       color: transparent;
     }
 
-    img {
+    .#{$parent}__image {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -35,5 +35,12 @@ $parent: '.info-item';
   &__title {
     font-weight: bold;
     color: $paragraph-text-color;
+  }
+
+  &__title,
+  &__content {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
   }
 }

@@ -1,16 +1,20 @@
+include ../title-label/title-label
 include ../info-item/info-item
 
-mixin info(props = {})
-  -
-    let
-        { label, sections = [], withLastLine } = props;
-        className = 'info';
-        classNames = `${className}`;
-    classNames += withLastLine ? ` ${className}_with-last-line` : '';
-  div(class=classNames)
-    if label
-      .info__label= label
-    .info__sections
-      each section, index in sections
-        .info__section
-          +info-item(section)
+mixin info(props)
+  if props
+    -
+      let { title, sections = [], withLastLine } = props;
+      let className = 'info';
+      let classNames = `${className}`;
+      let { length } = sections; 
+      classNames += withLastLine ? ` ${className}_with-last-line` : '';
+    div(class=classNames)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if length
+        ul(class=`${className}__sections`)
+          each section in sections
+            li(class=`${className}__section`)
+              +info-item(section)

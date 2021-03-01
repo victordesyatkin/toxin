@@ -19,6 +19,7 @@ mixin text-field(props)
         classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
         classNames += isOpened ? ` ${className}_opened` : '';
         classNames += isHidden ? ` ${className}_hidden` : '';
+        type = isHidden ? 'hidden' : type;
         id = `${name}-${Math.random().toString(16).substr(2)}`;
     div(class=classNames)
       if title
@@ -26,7 +27,7 @@ mixin text-field(props)
           +title-label({ ...title, htmlFor: id })
       if button
         -
-          let { type: buttonType = "button", iconClass: buttonIconClassName, name: buttonName, value: buttonValue } = button;
+          let { type: buttonType = "button", iconClassName: buttonIconClassName, name: buttonName, value: buttonValue } = button;
           let buttonClassName = `${className}__button`;
           let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
 
@@ -66,8 +67,7 @@ mixin text-field(props)
           disabled=isDisabled,
           readonly=isReadOnly,
           class=`${className}__input js-${className}__input`,
-          id=id,
-          hidden=isHidden
+          id=id
         )
       else
         input(

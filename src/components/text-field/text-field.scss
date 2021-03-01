@@ -11,6 +11,16 @@ $parent: 'text-field';
     display: block;
   }
 
+  &_filled,
+  &_opened {
+    &.#{$parent}_theme_guests,
+    &.#{$parent}_theme_comfort {
+      .#{$parent}__button {
+        color: $input-text-color-hover;
+      }
+    }
+  }
+
   &_theme_comfort {
     &.#{$parent}_withButton {
       .#{$parent}__summary {
@@ -47,6 +57,15 @@ $parent: 'text-field';
         border: 1px solid $input-border-color-default;
         outline: none;
       }
+    }
+
+    .#{$parent}__button:hover ~ .#{$parent}__summary,
+    .#{$parent}__button:focus ~ .#{$parent}__summary,
+    .#{$parent}__button:hover ~ .#{$parent}__input,
+    .#{$parent}__button:focus ~ .#{$parent}__input {
+      color: $input-text-color-hover;
+      border: 1px solid $input-border-color-default;
+      outline: none;
     }
   }
 
@@ -96,14 +115,7 @@ $parent: 'text-field';
     color: $input-text-color-hover;
     border: 1px solid $input-border-color-default;
     border-radius: 4px;
-
-    // &:hover,
-    // &:focus,
-    // &:active {
-    //   color: $input-text-color-hover;
-    //   border-color: $input-border-color-hover;
-    //   outline: none;
-    // }
+    cursor: pointer;
 
     &:disabled {
       background-color: transparent;

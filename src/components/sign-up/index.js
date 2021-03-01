@@ -1,6 +1,6 @@
 import { Component } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
-import Input from '../input';
+import TextField from '../text-field';
 import '../radio-buttons';
 import '../toggle-button';
 import '../button';
@@ -9,6 +9,13 @@ import './sign-up.scss';
 
 class SignUp extends Component {
   _query = '.js-sign-up';
+
+  _className = 'sign-up';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
 
   _init() {
     const { birthday, email, password } = this._props;
@@ -20,7 +27,7 @@ class SignUp extends Component {
       parent: $(`${this._query}__email`, this._$element),
       props: email,
     });
-    this._password = new Input({
+    this._password = new TextField({
       parent: $(`${this._query}__password`, this._$element),
       props: password,
     });

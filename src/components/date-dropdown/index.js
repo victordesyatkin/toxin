@@ -82,7 +82,14 @@ class DateDropdown extends Component {
   _handleBodyClick(event) {
     if (this._isOpened) {
       const { target } = event;
-      if (!$(target).closest(this._$element).length) {
+      const path = event?.originalEvent?.path || [];
+      let isClosest = false;
+      path.forEach((item) => {
+        if (!isClosest) {
+          isClosest = $(item).closest(this._$element).length;
+        }
+      });
+      if (!$(target).closest(this._$element).length && !isClosest) {
         this.close();
       }
     }

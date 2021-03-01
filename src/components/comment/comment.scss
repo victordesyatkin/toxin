@@ -1,11 +1,18 @@
 @import '~theme/variables.scss';
 
-$parent: '.comment';
+$parent: 'comment';
 
-#{$parent} {
+.#{$parent} {
   display: flex;
 
+  &__img,
+  &__full-name,
+  &__content {
+    display: inline-flex;
+  }
+
   &__img {
+    display: block;
     width: 3.42rem;
     height: 3.42rem;
     border: 2px solid $comment-border-color;
@@ -19,10 +26,14 @@ $parent: '.comment';
     margin-top: 0.71rem;
   }
 
-  &__left {
+  &__left,
+  &__right {
     display: flex;
     flex-direction: column;
-    margin-right: 0.71rem;
+  }
+
+  &__left {
+    margin-right: 0.77rem;
   }
 
   &__full-name {
@@ -39,6 +50,7 @@ $parent: '.comment';
   }
 
   &__content {
-    line-height: 1.8142rem;
+    line-height: 1.814rem;
+    padding-right: 0.285rem;
   }
 }

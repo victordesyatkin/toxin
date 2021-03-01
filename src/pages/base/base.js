@@ -10,6 +10,11 @@ import './base.scss';
 class Base extends Component {
   _query = 'body';
 
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
+
   _init() {
     // Footer.renderComponents({ parents: this._$element });
   }

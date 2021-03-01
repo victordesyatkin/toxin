@@ -9,14 +9,18 @@ $parent: 'info';
     }
   }
 
-  &__label {
+  &__title {
+    display: block;
     margin-bottom: 1.59rem;
-    @include h2;
+  }
+
+  &__sections {
+    list-style-type: none;
   }
 
   &__section {
     border-bottom: 0.0714rem solid $info-border-color-separator;
-    padding: 1.3571rem 0;
+    padding: 1.471rem 0;
 
     &:first-child {
       padding-top: inherit;

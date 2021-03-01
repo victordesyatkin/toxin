@@ -11,6 +11,10 @@ $parent: 'sign-up';
     margin-bottom: 1.4285rem;
   }
 
+  &__list {
+    list-style-type: none;
+  }
+
   &__first-name {
     margin-bottom: 0.7142rem;
   }
@@ -19,16 +23,16 @@ $parent: 'sign-up';
     margin-bottom: 0.7142rem;
   }
 
-  &__genders {
+  &__gender {
     display: flex;
     width: 100%;
     justify-self: flex-start;
     margin-bottom: 1.7142rem;
   }
 
-  &__gender:first-child {
-    margin-right: 1.4285rem;
-  }
+  // &__gender:first-child {
+  //   margin-right: 1.4285rem;
+  // }
 
   &__birthday {
     margin-bottom: 1.4285rem;
