@@ -58,8 +58,10 @@ class Calendar extends Component {
 
   static _prepareDate(passDate = '') {
     let date = '';
+    // console.log('_prepareDate passDate 1', passDate);
     if (passDate && isString(passDate)) {
       const [partDay, partMonth, partYear] = passDate.split('.');
+      // console.log('_prepareDate passDate 2', passDate);
       if (Calendar._isValidDateByParts({ partDay, partMonth, partYear })) {
         date = new Date(`${partMonth}.${partDay}.${partYear}`);
         if (!isValidDate(date)) {
@@ -72,8 +74,10 @@ class Calendar extends Component {
 
   static _value2Date(value = '') {
     let date = new Date(value);
-    if (!isValidDate(date)) {
-      date = Calendar._prepareDate(date);
+    // console.log('_value2Date value 1', value);
+    if (!isValidDate()) {
+      // console.log('_value2Date date 2', date);
+      date = Calendar._prepareDate(value);
     }
     return date;
   }
@@ -107,6 +111,8 @@ class Calendar extends Component {
       props: { control, handleButtonClick: this._handleControlClick },
     });
     this._$element.on('click', this._handleBlockClick);
+    console.log('init : start : ', start);
+    console.log('init : end : ', end);
     this._selectDate({ start, end });
   }
 
@@ -121,8 +127,8 @@ class Calendar extends Component {
     } else {
       this._selectType = '';
     }
-    // console.log('selectDate : start : ', start);
-    // console.log('selectDate : end : ', end);
+    console.log('selectDate : start : ', start);
+    console.log('selectDate : end : ', end);
     // if (start && end) {
     // }
     this._datepicker.selectDate([start, end]);

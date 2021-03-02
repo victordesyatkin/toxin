@@ -6,7 +6,7 @@ include ../../components/picker/picker
 include ../../components/sign-up/sign-up
 //- include ../../components/calendar/calendar
 //- include ../../components/card-slider/card-slider
-//- include ../../components/book/book
+include ../../components/book/book
 //- include ../../components/sign-in/sign-in
 
 block header
@@ -26,7 +26,11 @@ block main
           +picker(picker)
       li(class=`${className}__sign-up js-${className}__sign-up`)
         +card
-          +sign-up(signUp) 
+          +sign-up(signUp)
+    ul(class=`${className}__list`)
+      li(class=`${className}__book js-${className}__book`)
+        +card
+          +book(book) 
 //-   article.cards.js-cards
 //-     section.cards__section
 //-       .cards__picker

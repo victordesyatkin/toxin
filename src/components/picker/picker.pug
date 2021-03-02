@@ -6,20 +6,19 @@ include ../button/button
 mixin picker(props)
   if props
     -
-      let { title, dateDropdown, dropdown, button } = props;
+      let { title, dateDropdown, dropdown, button, action,  method } = props;
       let className = 'picker';
       let classNames = `${className} js-${className}`;
-    form(class=classNames)
+    form(class=classNames, action=action, method=method)
       if title
         div(class=`${className}__title`)
           +title-label(title)
-      ul(class=`${className}__list`) 
-        if dateDropdown
-          li(class=`${className}__date-dropdown js-${className}__date-dropdown`)
-            +date-dropdown(dateDropdown)
-        if dropdown
-          li(class=`${className}__dropdown js-${className}__dropdown`) 
-            +dropdown(dropdown)
-        if button
-          li(class=`${className}__buttons js-${className}__buttons`) 
-            +button(button)
+      if dateDropdown
+        div(class=`${className}__date-dropdown js-${className}__date-dropdown`)
+          +date-dropdown(dateDropdown)
+      if dropdown
+        div(class=`${className}__dropdown js-${className}__dropdown`) 
+          +dropdown(dropdown)
+      if button
+        div(class=`${className}__buttons js-${className}__buttons`) 
+          +button(button)

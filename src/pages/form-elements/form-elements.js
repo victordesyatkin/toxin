@@ -10,7 +10,7 @@ import LikeButtons from '../../components/like-buttons';
 import RateButtons from '../../components/rate-buttons';
 import RangeSlider from '../../components/range-slider';
 import Pagination from '../../components/pagination';
-import '../../components/comment';
+import Comment from '../../components/comment';
 import '../../components/checkbox-buttons';
 import '../../components/toggle-buttons';
 import '../../components/radio-buttons';
@@ -56,6 +56,7 @@ class FormElements extends Component {
       dropdown5,
       expandableCheckboxList1,
       expandableCheckboxList2,
+      comment,
     } = this._props;
     console.log('props : ', this._props);
     this._textField1 = new TextField({
@@ -131,6 +132,10 @@ class FormElements extends Component {
         this._$element
       ),
       props: expandableCheckboxList2,
+    });
+    this._comment = new Comment({
+      parent: $(`${this._query}__comment`, this._$element),
+      props: comment,
     });
   }
 }

@@ -29,7 +29,7 @@ class DropdownTitleControl extends Component {
 
   empty() {
     this._textField.empty();
-    console.log('EMPTY : ', this._textField);
+    // console.log('EMPTY : ', this._textField);
   }
 
   open() {
@@ -40,7 +40,7 @@ class DropdownTitleControl extends Component {
   }
 
   close() {
-    console.log('CLOSE 31');
+    // console.log('CLOSE 31');
     this._isOpened = false;
     this._$element.removeClass(`${this._className}_opened`);
     this._textField.close();
@@ -59,6 +59,10 @@ class DropdownTitleControl extends Component {
     this.cleanValue();
   }
 
+  getValue() {
+    return this?._textField.getValue();
+  }
+
   @bind
   _toggleOpen() {
     if (this._$element.hasClass(`${this._className}_opened`)) {
@@ -74,7 +78,7 @@ class DropdownTitleControl extends Component {
       parent: this._$element,
       props: maskedTextField,
     });
-    console.log('this._$title : ', this._textField);
+    // console.log('this._$title : ', this._textField);
     this._$element.on('click', this._handleDropdownTitleTextFieldClick);
 
     this._$title = $(`${this._query}__title`, this._$element);
@@ -87,7 +91,7 @@ class DropdownTitleControl extends Component {
 
   @bind
   _handleDropdownTitleTextFieldClick(event) {
-    console.log('_handleTextFieldClick : ');
+    // console.log('_handleTextFieldClick : ');
     const { handleDropdownTitleTextFieldClick } = this._props;
     if (handleDropdownTitleTextFieldClick) {
       handleDropdownTitleTextFieldClick(event);

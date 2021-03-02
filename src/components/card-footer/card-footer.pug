@@ -1,7 +1,11 @@
 include ../button/button
 
 mixin card-footer(props)
-  - let { button, content } = props || {};
-  .card-footer
-    .card-footer__content= content
-    +button(button)
+  if props
+    -
+      let { button, content } = props;
+      let className = `card-footer`;
+      let classNames = `${className} js-${className}`;
+    div(class=`${classNames}`)
+      span(class=`${className}__content`)= content
+      +button(button)

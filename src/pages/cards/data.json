@@ -179,79 +179,135 @@
     }
   },
   "book": {
-    "discount": "2 179",
-    "number": "888",
-    "suite": "люкс",
+    "roomNumberContent": "№",
+    "roomNumber": "888",
+    "roomQuality": "люкс",
     "price": "9 990",
     "duration": "в сутки",
     "unit": "&#8381",
-    "numberInfoText": "№",
-    "discountText": "Сбор за услуги: скидка",
-    "discountTotalPreset": "0",
-    "feeText": "Сбор за дополнительные услуги",
-    "feeTotal": 300,
+    "serviceFeeContent": "Сбор за услуги:",
+    "serviceFeeTotal": "0",
+    "discountContent": "скидка",
+    "discountTotal": "2179",
+    "additionalServiceFeeContent": "Сбор за дополнительные услуги",
+    "additionalServiceFeeTotal": "300",
+    "total": "38 081",
+    "totalContent": "Итого",
     "dateDropdown": {
-      "fieldStart": {
-        "input": {
-          "name": "startDate3",
-          "id": "startDate3",
-          "type": "text",
-          "label": "прибытие",
-          "placeholder": "ДД.ММ.ГГГГ",
-          "value": "19.08.2019",
-          "button": { "isVisible": true, "iconClass": "arrow-down" },
-          "notFocused": true
+      "isOpened": false,
+      "items": [
+        {
+          "dropdown": {
+            "theme": "date"
+          },
+          "maskedTextField": {
+            "textField": {
+              "name": "picker-dropdown-text-field-start",
+              "type": "text",
+              "value": "19.08.2019",
+              "placeholder": "ДД.ММ.ГГГГ",
+              "button": { "iconClassName": "arrow-down" },
+              "theme": "dropdown",
+              "title": {
+                "content": "прибытие"
+              },
+              "isHidden": true,
+              "summary": "ДД.ММ.ГГГГ"
+            }
+          }
+        },
+        {
+          "dropdown": {
+            "theme": "date"
+          },
+          "maskedTextField": {
+            "textField": {
+              "name": "picker-dropdown-text-field-end",
+              "type": "text",
+              "value": "23.08.2019",
+              "placeholder": "ДД.ММ.ГГГГ",
+              "button": { "iconClassName": "arrow-down" },
+              "theme": "dropdown",
+              "title": {
+                "content": "выезд"
+              },
+              "isHidden": true,
+              "summary": "ДД.ММ.ГГГГ"
+            }
+          }
         }
-      },
-      "fieldEnd": {
-        "input": {
-          "name": "endDate3",
-          "id": "endDate3",
-          "type": "text",
-          "label": "выезд",
-          "placeholder": "ДД.ММ.ГГГГ",
-          "value": "23.08.2019",
-          "button": { "isVisible": true, "iconClass": "arrow-down" },
-          "notFocused": true
-        }
-      },
+      ],
       "calendar": {
-        "start": "19.08.2019",
-        "end": "23.08.2019",
-        "isVisible": false,
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
+        "control": {
+          "isHidden": true,
+          "items": [
+            {
+              "content": "очистить",
+              "type": "button",
+              "value": "",
+              "theme": 2,
+              "dataType": "clean"
+            },
+            {
+              "content": "применить",
+              "type": "button",
+              "value": "",
+              "theme": 2,
+              "dataType": "apply"
+            }
+          ]
+        }
       }
     },
     "dropdown": {
       "dropdown": {
-        "type": 1,
-        "isControlVisible": true,
+        "theme": "guests",
+        "type": "guests",
         "buttonDecreaseText": "-",
         "buttonIncreaseText": "+",
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
+        "isOpened": false,
+        "title": {
+          "content": "гости"
+        }
       },
-      "input": {
-        "name": "guests2",
-        "type": "text",
-        "label": "гости",
-        "placeholder": "Сколько гостей",
-        "button": { "iconClass": "arrow-down", "isVisible": true }
+      "maskedTextField": {
+        "textField": {
+          "button": { "iconClassName": "arrow-down" },
+          "theme": "dropdown",
+          "isSummaryOnly": true,
+          "summary": "Сколько гостей"
+        }
       },
       "items": [
-        { "title": "взрослые", "value": 2 },
-        { "title": "дети", "value": 1 },
-        { "title": "младенцы", "value": 0 }
-      ]
+        { "title": "взрослые", "value": 2, "name": "guests[adult]" },
+        { "title": "дети", "value": 1, "name": "guests[child]" },
+        { "title": "младенцы", "value": 0, "name": "guests[baby]" }
+      ],
+      "control": {
+        "isHidden": true,
+        "items": [
+          {
+            "content": "очистить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "clean"
+          },
+          {
+            "content": "применить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "apply"
+          }
+        ]
+      }
     },
-    "total": "38 081",
-    "totalInfo": "Итого",
     "button": {
-      "text": "Забронировать",
-      "type": "button",
+      "content": "Забронировать",
+      "type": "submit",
       "value": "",
-      "view": 3,
+      "theme": 3,
       "src": "assets/images/arrow-forward.svg"
     },
     "numberFormat": "ru-RU",
@@ -278,13 +334,13 @@
       "value": "",
       "type": "text",
       "placeholder": "Имя",
-      "ariaLabel": "Имя"
+      "ariaLabel": "first name"
     },
     "lastName": {
       "name": "lastName1",
       "id": "lastName1",
       "type": "text",
-      "label": "",
+      "ariaLabel": "last name",
       "placeholder": "Фамилия",
       "stateText": ""
     },
@@ -304,55 +360,70 @@
       ]
     },
     "birthday": {
-      "input": {
+      "textField": {
+        "title": {
+          "content": "дата рождения",
+          "isLabel": true
+        },
         "name": "birthday1",
         "id": "birthday1",
         "type": "text",
         "label": "дата рождения",
         "placeholder": "ДД.ММ.ГГГГ"
+      },
+      "options": {
+        "type": "date"
       }
     },
     "email": {
-      "input": {
+      "textField": {
+        "title": {
+          "content": "данные для входа в сервис",
+          "isLabel": true
+        },
         "name": "email1",
         "id": "email1",
         "type": "text",
-        "label": "данные для входа в сервис",
+        "ariaLabel": "email",
         "placeholder": "Email"
       },
-      "mask": {
+      "options": {
         "mask": "^\\S*@?\\S*$",
-        "regexp": true
+        "isRegexp": true
       }
     },
     "password": {
       "name": "password1",
       "id": "password1",
       "type": "password",
+      "ariaLabel": "password",
       "placeholder": "Пароль"
     },
     "contribute": {
       "label": "Получать спецпредложения",
       "name": "contribute",
-      "src": "assets/images/checkbox-buttons.svg"
+      "value": "",
+      "ariaLabel": "contribute"
     },
     "pay": {
-      "text": "Перейти к оплате",
-      "type": "button",
+      "content": "Перейти к оплате",
+      "type": "submit",
       "value": "",
-      "view": 3,
+      "theme": 3,
       "name": "pay1",
-      "src": "assets/images/arrow-forward.svg"
+      "src": "assets/images/arrow-forward.svg",
+      "ariaLabel": "pay"
     },
     "signIn": {
       "content": "Уже есть аккаунт на Toxin",
       "button": {
-        "text": "войти",
+        "content": "войти",
         "type": "button",
         "value": "",
-        "view": 1,
+        "theme": 1,
         "name": "signIn",
-        "size": 1
+        "size": 1,
+        "ariaLabel": "signIn"
       }
     }
   },

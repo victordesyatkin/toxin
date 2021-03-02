@@ -6,39 +6,35 @@ import Comment from '../comment';
 import './comments.scss';
 
 class Comments extends Component {
-  static QUERY = 'comments';
+  _query = 'js-comments';
 
-  constructor(options = {}) {
-    const { query, ...props } = options;
-    super({
-      query: query || Comments.QUERY,
-      props,
-    });
-    this.init();
+  _className = 'comments';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
   _init() {
-    const units = get(this._props, ['units']) || [];
-    const count = get(this._props, ['count']) || [];
-    const $units = $(`${Comments.QUERY}__count-units`, this._$element);
+    const units = get(this._props, ['units']);
+    const count = get(this._props, ['count']);
+    const $units = $(`${this._query}__count-units`, this._$element);
     if (units.length) {
       $units.html(wordForm(count, units));
     }
-    this._comments = get(this._props, ['comments']) || [];
-    $(`${Comments.QUERY}__item`).each(this._renderItem);
+    this._comments = [];
+    $(`${this._query}__item`).each(this._renderItem);
   }
 
   @bind
   _renderItem(index, element) {
-    const comment = this._comments[index];
-    let item;
-    if (comment) {
-      item = new Comment({
+    const props = this._props?.comments?.[index];
+    this._comments.push(
+      new Comment({
         parent: element,
-        props: comment,
-      });
-    }
-    return item;
+        props,
+      })
+    );
   }
 }
 

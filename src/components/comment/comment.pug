@@ -9,7 +9,7 @@ mixin comment(props)
   article(class=classNames)
     div(class=`${className}__left`)
       span(class=`${className}__img`, style=style)
-      div(class=`${className}__like-button`)
+      div(class=`${className}__like-button js-${className}__like-button`)
         +like-button(likeButton)
     div(class=`${className}__right`)
       span(class=`${className}__full-name`)= fullName

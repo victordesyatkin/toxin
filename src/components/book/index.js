@@ -1,5 +1,3 @@
-import datepicker from 'air-datepicker'; /* eslint-disable-line */
-import get from 'lodash/get';
 import bind from 'bind-decorator';
 
 import { wordForm, Component } from '../../helpers/utils';
@@ -21,84 +19,100 @@ class Book extends Component {
     return number.split(' ').join('') || 0;
   }
 
-  query = '.js-book';
+  _query = '.js-book';
 
-  _init() {
-    Dropdown.renderComponents({ parents: this._$element });
-    DateDropdown.renderComponents({ parents: this._$element });
-    this._$calendar = $('.js-calendar', this._$element);
-    this._$calc = $(
-      `${this._query}__section[data-type="${Book.TYPE_COUNT}"]`,
-      this._$element
-    );
-    this._$calcInfo = $(`${this._query}__section-info`, this._$calc);
-    this._$calcTotal = $(`${this._query}__section-total`, this._$calc);
-    this._$total = $(
-      `${this._query}__section[data-type="${Book.TYPE_FEE}"]`,
-      this._$element
-    );
-    this._$totalTotal = $(`${this._query}__section-total`, this._$total);
-    const { price, unit, discount } = this._props;
-    this._price = parseFloat(Book._prepareNumber(price));
-    this._discount = parseFloat(Book._prepareNumber(discount));
-    this._unit = unit;
-    this._$input = $(
-      `${this._query}__date-dropdown input[type="hidden"][date-isCalendar="${Book.IS_CALENDAR}"]`,
-      this._$element
-    );
-    this._words = get(this._props, ['words'], []);
-    this._numberFormat = get(this._props, ['numberFormat']);
-    this._options = get(this._props, ['options']);
-    this._dirty = 0;
-    this._datepicker = this._$input.datepicker().data('datepicker');
-    this._prepareDirty();
-    this._setCalc();
-    this._$calendar.on('click', this._setCalc);
+  _className = 'book';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
-  _setTotal(tempTotal = 0) {
-    let total = tempTotal;
-    total += this._dirty - this._discount;
+  _init() {
+    const { dateDropdown, dropdown } = this._props;
+    this._$basisContent = $(`${this._query}__basis-content`, this._$element);
+    this._$basisTotal = $(`${this._query}__basis-total`, this._$element);
+    this._$discountContent = $(
+      `${this._query}__discount-content`,
+      this._$element
+    );
+    this._$total = $(`${this._query}__total`, this._$element);
+    this._basisTotal = 0;
+    console.log('this._$discountContent : ', this._$discountContent);
+    this._$discountTotal = $(`${this._query}__discount-total`, this._$element);
+    this._dateDropdown = new DateDropdown({
+      parent: $(`${this._query}__date-dropdown`),
+      props: {
+        ...dateDropdown,
+        handleCalendarClick: this._handleCalendarClick,
+        handleApplyButtonClick: this._handleCalendarClick,
+      },
+    });
+    this._dropdown = new Dropdown({
+      parent: $(`${this._query}__dropdown`),
+      props: dropdown,
+    });
+  }
+
+  _updateTotal() {
+    const { unit, additionalServiceFeeTotal } = this._props;
+    const parseAdditionalServiceFeeTotal =
+      parseFloat(additionalServiceFeeTotal, 10) || 0;
+    let total =
+      this._basisTotal - this._discountTotal + parseAdditionalServiceFeeTotal;
     if (total < 0) {
       total = 0;
     }
-    total = new Intl.NumberFormat(this._numberFormat, this._options).format(
-      total
-    );
-    this._$totalTotal.html(`${total}<span>${this._unit}</span>`);
+    this._$total.html(`${this._prepareFormat(total)}${unit}`);
   }
 
-  _prepareDirty() {
-    const $dates = $(`${this._query}__section:not([data-type])`);
-    $(`${this._query}__section-total`, $dates).each(this._prepareDirtyItem);
-  }
-
-  @bind
-  _prepareDirtyItem(index, element) {
-    this._dirty += parseFloat(Book._prepareNumber($(element).html()));
-  }
-
-  @bind
-  _setCalc() {
-    let price = this._price;
-    const selectedDates = this._datepicker.selectedDates || [];
-    const [start, end] = selectedDates;
-    let count = (end - start) / (1000 * 60 * 60 * 24);
-    if (!count) {
-      count = 0;
+  _updateDiscount() {
+    const { discountContent = '', discountTotal = '', unit } = this._props;
+    let parseDiscountTotal =
+      parseFloat(Book._prepareNumber(discountTotal), 10) || 0;
+    this._discountTotal = parseDiscountTotal;
+    if (parseDiscountTotal) {
+      parseDiscountTotal = `${this._prepareFormat(parseDiscountTotal)}${unit}`;
+      this._$discountContent.html(discountContent);
+      this._$discountTotal.html(parseDiscountTotal);
+    } else {
+      this._$discountContent.html('');
+      this._$discountTotal.html('');
     }
-    let total = price * count;
-    this._setTotal(total);
-    price = new Intl.NumberFormat(this._numberFormat, this._options).format(
-      price
+  }
+
+  _prepareFormat(number = 0) {
+    const { options, numberFormat } = this._props;
+    return new Intl.NumberFormat(numberFormat, options).format(number);
+  }
+
+  _prepareBasis(duration = 0) {
+    const { price, unit, words } = this._props;
+    let parsePrice = parseFloat(Book._prepareNumber(price), 10) || 0;
+    let total = Math.round(parsePrice * duration);
+    this._basisTotal = total;
+    total = this._prepareFormat(total);
+    total = `${total}${unit}`;
+    parsePrice = `${this._prepareFormat(parsePrice)}${unit}`;
+    this._$basisContent.html(
+      `${parsePrice} x ${duration} ${wordForm(duration, words)}`
     );
-    total = new Intl.NumberFormat(this._numberFormat, this._options).format(
-      total
-    );
-    this._$calcInfo.html(
-      `${price}${this._unit} x ${count} ${wordForm(count, this._words)}`
-    );
-    this._$calcTotal.html(`${total}${this._unit}`);
+    this._$basisTotal.html(total);
+  }
+
+  @bind
+  _handleCalendarClick(dates = []) {
+    const [start, end] = dates;
+    let duration = 0;
+    if (start && end) {
+      duration = Math.round(
+        (new Date(end) - new Date(start)) / (1000 * 60 * 60 * 24)
+      );
+    }
+    console.log('duration : ', duration);
+    this._prepareBasis(duration);
+    this._updateDiscount();
+    this._updateTotal();
   }
 }
 

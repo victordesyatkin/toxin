@@ -4,7 +4,7 @@ import SignUp from '../../components/sign-up';
 // // import SignIn from '../../components/sign-in';
 // // import Calendar from '../../components/calendar';
 // // import CardSlider from '../../components/card-slider';
-// import Book from '../../components/book';
+import Book from '../../components/book';
 import '../../components/card';
 import '../demo-base/demo-base';
 import './cards.scss';
@@ -37,6 +37,10 @@ class Cards extends Component {
     this._signUp = new SignUp({
       parent: `${this._query}__sign-up`,
       props: signUp,
+    });
+    this._book = new Book({
+      parent: `${this._query}__book`,
+      props: book,
     });
     // Book.renderComponents({
     //   parents: $(`${query}__book`, this._$element),

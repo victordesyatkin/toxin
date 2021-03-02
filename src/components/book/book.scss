@@ -4,7 +4,41 @@ $parent: 'book';
 
 .#{$parent} {
   width: 100%;
-  padding: 2.8571rem 2.1428rem 2.1428rem 1.9285rem;
+  padding: 2.8571rem 2.103rem 2.1428rem 2.1rem;
+
+  &__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.429rem;
+  }
+
+  &__room-number-wrapper,
+  &__price-wrapper {
+    display: flex;
+    white-space: nowrap;
+    align-items: flex-end;
+  }
+
+  &__room-number-wrapper {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__room-number {
+    @include h1;
+    margin-left: 4px;
+  }
+
+  &__room-quality {
+    color: $book-text-color-quality;
+    font-size: 0.9285rem;
+    letter-spacing: -0.0435rem;
+  }
+
+  &__duration {
+    margin-left: 0.071rem;
+  }
 
   &_theme_room-details {
     .#{$parent}__number {
@@ -12,83 +46,60 @@ $parent: 'book';
     }
   }
 
-  &__section-info {
+  &__calculate {
+    list-style-type: none;
+    margin-bottom: 1.7rem;
+  }
+
+  &__item {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: $paragraph-text-color;
   }
 
-  &__number-info {
-    @include base-h;
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
+  &__item-service {
+    width: 15.8rem;
   }
 
-  &__number {
-    @include h1;
-    margin: 0 0 0 0.3057rem;
+  &__item-total {
+    margin-left: auto;
   }
 
-  &__suite {
-    color: $book-text-color-suite;
-    font-size: 0.9285rem;
-    letter-spacing: -0.0435rem;
+  &__item:not(:first-child) {
+    margin-top: 0.714rem;
   }
 
-  &__price {
-    display: flex;
-    align-items: flex-end;
-    @include base-h;
-    font-size: 1.0714rem;
-    font-weight: bold;
-    color: $book-text-color-price;
+  &__date-dropdown {
+    margin-bottom: 1.55rem;
   }
 
-  &__duration {
-    font-weight: normal;
-    font-size: 0.8571rem;
-    @include font-family-first-regular;
+  &__dropdown {
+    margin-bottom: 1.2857rem;
   }
 
-  &__section {
-    display: flex;
-    justify-content: space-between;
+  &__discount-content {
+    margin: 0 0.357rem;
   }
 
-  &__section-title {
-    margin-bottom: 1.4285rem;
-  }
-
-  &__section-content {
-    width: 15.2857rem;
-    line-height: 1.4285rem;
-  }
-
-  &__section-total {
-    color: $paragraph-text-color;
-  }
-
-  &__info {
-    margin-left: 0.3571rem;
+  &__icon-info {
+    display: inline-flex;
     font-size: 1.4285rem;
     color: $book-text-color-info;
+    cursor: pointer;
   }
 
-  &__total {
+  &__icon-info:hover {
+    color: inherit;
+  }
+
+  &__total-wrapper {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+  }
+
+  &__total,
+  &__total-content {
     @include h2;
     align-items: flex-end;
-
-    .#{$parent}__section-info {
-      letter-spacing: 0.0249rem;
-      color: $header-text-color;
-    }
-
-    .#{$parent}__section-total {
-      letter-spacing: -0.0278rem;
-      color: $header-text-color;
-    }
   }
 
   &__separator {
@@ -105,43 +116,14 @@ $parent: 'book';
     height: 100%;
     border-bottom: 0.0714rem dashed $book-border-color-separator;
   }
-
-  &__date-dropdown {
-    margin-bottom: 1.4285rem;
-  }
-
-  &__dropdown {
-    margin-bottom: 1.2857rem;
-  }
-
-  &__sections {
-    padding-left: 0.1428rem;
-    margin-bottom: 1.5714rem;
-
-    .#{$parent}__section:nth-child(1) {
-      margin-bottom: 0.8571rem;
-    }
-
-    .#{$parent}__section:nth-child(2) {
-      margin-bottom: 0.7142rem;
-    }
-
-    .#{$parent}__section:nth-child(3) {
-      margin-bottom: 2rem;
-    }
-  }
 }
 
 @include media-breakpoint-down($xs) {
   .#{$parent} {
     padding: 2rem 0.7rem;
 
-    &__section-content {
-      width: auto;
-    }
-
-    &__info {
-      margin-right: 0.5rem;
+    &__item-service {
+      width: 15rem;
     }
   }
 }
@@ -150,12 +132,12 @@ $parent: 'book';
   .#{$parent} {
     padding: 2rem 0.5rem;
 
-    &__section-content {
+    &__item-service {
       width: auto;
     }
 
-    &__info {
-      margin-right: 0.5rem;
+    &__icon-info {
+      margin: 0 0.5rem;
     }
   }
 }

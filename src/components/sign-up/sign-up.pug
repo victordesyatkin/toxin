@@ -10,30 +10,29 @@ mixin sign-up(props)
   if props
     -
       let {
-          title, firstName, lastName, gender, birthday, email, password, contribute, pay, signIn, action
+          title, firstName, lastName, gender, birthday, email, password, contribute, pay, signIn, action, method
       } = props;
       let className = 'sign-up';
       let classNames = `${className} js-${className}`;
-    form(class=classNames, action=action)
+    form(class=classNames, action=action, method=method)
       if title
         div(class=`${className}__title`)
           +title-label(title)
-      ul(class=`${className}__list`)
-        li(class=`${className}__first-name`)
+        div(class=`${className}__first-name`)
           +text-field(firstName)
-        li(class=`${className}__last-name`)
+        div(class=`${className}__last-name`)
           +text-field(lastName) 
-        li(class=`${className}__gender`)
+        div(class=`${className}__gender`)
           +radio-buttons(gender)
-        li(class=`${className}__birthday`)
+        div(class=`${className}__birthday js-${className}__birthday`)
           +masked-text-field(birthday)
-        li(class=`${className}__email`)
+        div(class=`${className}__email js-${className}__email`)
           +masked-text-field(email)
-        li(class=`${className}__password`) 
+        div(class=`${className}__password`) 
           +text-field(password)
-        li(class=`${className}__contribute`)
+        div(class=`${className}__contribute`)
           +toggle-button(contribute) 
-        li(class=`${className}__button-pay`)
+        div(class=`${className}__button-pay`)
           +button(pay)
-        li(class=`${className}__section-sign-in`)
+        div(class=`${className}__section-sign-in`)
           +card-footer(signIn)

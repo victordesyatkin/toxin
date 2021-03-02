@@ -3,21 +3,20 @@ import LikeButton from '../like-button';
 import './comment.scss';
 
 class Comment extends Component {
-  static QUERY = '.js-comment';
+  _query = '.js-comment';
 
-  constructor(options = {}) {
-    const { query, ...props } = options;
-    super({
-      query: query || Comment.QUERY,
-      props,
-    });
-    this.init();
+  _className = 'comment';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
   }
 
   _init() {
     const { likeButton } = this._props;
+    console.log('COMMENT : ', likeButton);
     this._likeButton = new LikeButton({
-      parents: $(`${Comment.QUERY}__like-button`, this._$element),
+      parent: $(`${this._query}__like-button`, this._$element),
       props: likeButton,
     });
   }

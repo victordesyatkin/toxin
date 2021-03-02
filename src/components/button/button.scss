@@ -19,7 +19,7 @@ $parent: 'button';
   &_theme_1 {
     color: $button-text-color-default-first;
     background: $button-background-color-first-default;
-    border: solid 0.1428rem transparent;
+    border: solid 2px transparent;
 
     .#{$parent}__content {
       border-radius: 22px;

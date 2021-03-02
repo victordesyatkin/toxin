@@ -65,7 +65,7 @@ class DateDropdown extends Component {
     const start = get(items, [0, 'maskedTextField', 'textField', 'value']);
     const end = get(items, [1, 'maskedTextField', 'textField', 'value']);
     this._calendar = new Calendar({
-      parent: $(`${this._query}__calendar`),
+      parent: $(`${this._query}__calendar`, this._$element),
       props: {
         ...calendar,
         handleCleanButtonClick: this._handleCleanButtonClick,
@@ -133,6 +133,10 @@ class DateDropdown extends Component {
   _handleCalendarClick(dates = []) {
     this._prepareValues(dates);
     this._prepareSummary(dates);
+    const { handleCalendarClick } = this._props;
+    if (handleCalendarClick) {
+      handleCalendarClick(dates);
+    }
   }
 
   @bind
@@ -152,6 +156,18 @@ class DateDropdown extends Component {
   @bind
   _handleApplyButtonClick() {
     this.close();
+    const { handleApplyButtonClick } = this._props;
+    if (handleApplyButtonClick) {
+      const values = [];
+      this._items.forEach((item) => {
+        const value = new Date(item?.getValue());
+        if (isValidDate(value)) {
+          values.push(value);
+        }
+      });
+      console.log('handleApplyButtonClick : ', values);
+      handleApplyButtonClick(values);
+    }
   }
 }
 

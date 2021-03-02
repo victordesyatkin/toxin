@@ -14,6 +14,7 @@ class LikeButton extends Component {
   }
 
   _init() {
+    console.log('LIKEBUTTON : ', this._props);
     const { isDisabled } = this._props;
     if (!isDisabled) {
       this._$input = $(`${this._query}__input`, this._$element);
@@ -28,10 +29,10 @@ class LikeButton extends Component {
     const isChecked = this._$input.prop('checked');
     if (isChecked) {
       count += 1;
-      this._$count.html();
+      this._$count.html(count);
     } else if (count > 0) {
       count -= 1;
-      this._$count.html();
+      this._$count.html(count);
     }
     this._$input.val(count);
   }
