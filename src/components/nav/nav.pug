@@ -1,21 +1,29 @@
 include ../nav-item/nav-item
 include ../button/button
 
-mixin nav(props = {})
-  -
-    let { items = [], user = {}, isAuthorized, buttons = [] } = props;
-    let { firstName, lastName } = user;
-  .nav
-    nav.nav__nav-section
-      each item in items
-        .nav__nav-section-item
-          +nav-item(item)
-    if isAuthorized
-      .nav__separator
-      .nav__user-section
-        | #{firstName} #{lastName}
-    else
-      .nav__control-section
-        each button in buttons
-          .nav__control-item 
-            +button(button)
+mixin nav(props)
+  if props
+    -
+      let { items = [], user = {}, isAuthorized, buttons = [] } = props;
+      let { firstName, lastName } = user;
+      let className = 'nav';
+      let classNames = `${className} js-${className}`;
+      let { length: lengthItems } = items;
+      let { length: lengthButtons } = items;
+    nav(class=classNames)
+      if lengthItems
+        ul(class=`${className}__nav-section`)
+          each item in items
+            li(
+              class=`${className}__nav-section-item js-${className}__nav-section-item`
+            )
+              +nav-item(item)
+      if isAuthorized
+        div(class=`${className}__separator`)
+        div(class=`${className}__user-section`)
+          | #{firstName} #{lastName}
+      else if lengthButtons
+        ul(class=`${className}__control-section`)
+          each button in buttons
+            li(class=`${className}__control-item`) 
+              +button(button)

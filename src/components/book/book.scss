@@ -108,12 +108,7 @@ $parent: 'book';
     display: flex;
     flex-grow: 1;
     flex-basis: 100%;
-    padding: 0.2857rem;
-  }
-
-  &__separator-dummy {
-    width: 100%;
-    height: 100%;
+    margin-bottom: 0.27rem;
     border-bottom: 0.0714rem dashed $book-border-color-separator;
   }
 }

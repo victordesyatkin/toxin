@@ -321,8 +321,26 @@
   "calendar": {
     "start": "19.08.2019",
     "end": "23.08.2019",
-    "buttonCleanText": "Очистить",
-    "buttonApplyText": "Применить"
+    "today": "08.08.2019",
+    "control": {
+      "isHidden": true,
+      "items": [
+        {
+          "content": "очистить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "clean"
+        },
+        {
+          "content": "применить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "apply"
+        }
+      ]
+    }
   },
   "signUp": {
     "title": {
@@ -338,7 +356,6 @@
     },
     "lastName": {
       "name": "lastName1",
-      "id": "lastName1",
       "type": "text",
       "ariaLabel": "last name",
       "placeholder": "Фамилия",
@@ -366,7 +383,6 @@
           "isLabel": true
         },
         "name": "birthday1",
-        "id": "birthday1",
         "type": "text",
         "label": "дата рождения",
         "placeholder": "ДД.ММ.ГГГГ"
@@ -382,8 +398,7 @@
           "isLabel": true
         },
         "name": "email1",
-        "id": "email1",
-        "type": "text",
+        "type": "email",
         "ariaLabel": "email",
         "placeholder": "Email"
       },
@@ -394,7 +409,6 @@
     },
     "password": {
       "name": "password1",
-      "id": "password1",
       "type": "password",
       "ariaLabel": "password",
       "placeholder": "Пароль"
@@ -428,49 +442,52 @@
     }
   },
   "signIn": {
-    "title": "Войти",
+    "title": {
+      "content": "Войти",
+      "theme": "card"
+    },
     "email": {
-      "input": {
+      "textField": {
         "name": "email2",
-        "id": "email2",
-        "type": "text",
-        "label": "",
-        "placeholder": "Email"
+        "type": "email",
+        "value": "",
+        "placeholder": "Email",
+        "ariaLabel": "email"
       },
-      "mask": {
+      "options": {
         "mask": "^\\S*@?\\S*$",
-        "regexp": true
+        "isRegexp": true
       }
     },
     "password": {
       "name": "password2",
-      "id": "password2",
       "type": "password",
-      "label": "",
+      "value": "",
+      "ariaLabel": "password",
       "placeholder": "Пароль",
       "stateText": ""
     },
     "signIn": {
-      "text": "Войти",
-      "type": "button",
+      "content": "Войти",
+      "type": "submit",
       "value": "",
-      "view": 3,
+      "theme": 3,
       "name": "signIn1",
       "src": "assets/images/arrow-forward.svg"
     },
     "signUp": {
       "content": "Нет аккаунта на Toxin?",
       "button": {
-        "text": "создать",
+        "content": "создать",
         "type": "button",
         "value": "",
-        "view": 1,
+        "theme": 1,
         "name": "signUp2",
         "size": 4
       }
     }
   },
-  "slider1": {
+  "cardSlider1": {
     "slider": {
       "images": [
         {
@@ -490,35 +507,35 @@
           "alt": "view-4"
         }
       ],
-      "isControl": true
+      "withControl": true
     },
     "info": {
-      "number": 888,
-      "suite": "люкс",
+      "roomNumber": 888,
+      "roomQuality": "люкс",
       "price": "9 990",
       "duration": "в сутки",
       "unit": "&#8381",
-      "headerNumberText": "№",
+      "roomNumberContent": "№",
       "numberFormat": "ru-RU",
       "options": { "style": "decimal", "currency": "RUB" },
       "theme": "slider"
     },
     "rating": {
       "button": {
-        "grade": 5,
         "name": "rating1",
-        "count": 5,
-        "isOff": true,
+        "value": 5,
+        "total": 5,
+        "isDisabled": true,
         "srcImgRate": "assets/images/star.svg",
         "altImgRate": "Rate",
         "srcImgNoRate": "assets/images/star-border.svg",
         "altImgNoRate": "No rate"
-      },
-      "comments": 145
+      }
     },
+    "commentsNumber": 145,
     "commentsContent": "Отзывов"
   },
-  "slider2": {
+  "cardSlider2": {
     "slider": {
       "images": [
         {
@@ -537,26 +554,24 @@
           "src": "assets/images/slider-4.jpg",
           "alt": "view-4"
         }
-      ],
-      "isControl": false
+      ]
     },
     "info": {
-      "number": "840",
-      "suite": "",
+      "roomNumber": "840",
+      "roomQuality": "",
       "price": "9 900",
       "duration": "в сутки",
       "unit": "&#8381",
-      "headerNumberText": "№",
+      "roomNumberContent": "№",
       "numberFormat": "ru-RU",
       "options": { "style": "decimal", "currency": "RUB" },
       "theme": "slider"
     },
     "rating": {
       "button": {
-        "grade": 4,
         "name": "rating2",
-        "count": 5,
-        "isOff": true,
+        "value": 4,
+        "total": 5,
         "srcImgRate": "assets/images/star.svg",
         "altImgRate": "Rate",
         "srcImgNoRate": "assets/images/star-border.svg",
@@ -564,6 +579,7 @@
       },
       "comments": 65
     },
+    "commentsNumber": 65,
     "commentsContent": "Отзывов"
   },
   "title": "Cards"

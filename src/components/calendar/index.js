@@ -240,9 +240,9 @@ class Calendar extends Component {
       .length;
     console.log('_toggleVisibleButtonClean', selectedDatesLength);
     if (selectedDatesLength) {
-      this._control.show();
+      this._control?.show();
     } else {
-      this._control.hide();
+      this._control?.hide();
     }
   }
 

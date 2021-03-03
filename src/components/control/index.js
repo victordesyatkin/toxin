@@ -16,11 +16,11 @@ class Control extends Component {
   }
 
   hide() {
-    this._$element.addClass(`${this._className}_hidden`);
+    this._$element?.addClass(`${this._className}_hidden`);
   }
 
   show() {
-    this._$element.removeClass(`${this._className}_hidden`);
+    this._$element?.removeClass(`${this._className}_hidden`);
   }
 
   _init() {

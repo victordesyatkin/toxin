@@ -76,6 +76,7 @@ class MaskedTextField extends Component {
   constructor(options) {
     super(options);
     this._renderComponent();
+    console.log('options : ', options);
   }
 
   getInput() {
@@ -141,7 +142,7 @@ class MaskedTextField extends Component {
       parent: this._$element,
       props: textField,
     });
-    // // console.log('empty init : ', this._textField);
+    console.log('empty init : ', this._textField);
     const { mask, type, isRegexp } = options;
     let maskOptions = {};
     if (mask && isRegexp) {

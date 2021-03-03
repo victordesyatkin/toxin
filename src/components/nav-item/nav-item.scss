@@ -9,6 +9,37 @@ $parent: 'nav-item';
   align-items: center;
   cursor: pointer;
   white-space: nowrap;
+  position: relative;
+
+  &:hover,
+  &__opened {
+    .#{$parent}__children {
+      display: block;
+    }
+  }
+
+  &__children {
+    list-style-type: none;
+    position: absolute;
+    border: solid 1px $link-border-color-default;
+    border-radius: 4px;
+    background-color: $link-children-background-color;
+    top: 100%;
+    right: 0;
+    max-width: 17.857rem;
+    display: none;
+  }
+
+  &__child {
+    padding: 0.5rem 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &__child:not(:first-child) {
+    border-top: solid 1px $link-border-color-default;
+  }
 
   &__control {
     width: 1.5585rem;
@@ -21,6 +52,7 @@ $parent: 'nav-item';
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    padding: 5% 0;
   }
 
   &_current {

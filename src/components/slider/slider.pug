@@ -1,28 +1,34 @@
-mixin slider(props = {})
-  -
-    let { images = [], max, isControl, isCover  } = props;
-    let
-        n = 0;
-        length = images.length;
-        className = 'slider';
-        classNames = `${className} js-${className}`;
-    classNames += isCover ? ` ${className}_cover` : ''; 
-  div(class=classNames)
-    .slider__section-images.slider__section_not_selected.js-slider__section-images
-      .slider__image-wrapper
-        img.slider__image
-    if (length !== 0)
-      if (isControl === true)
-        .slider__control.slider__control_left.icon-expand_more_prev.js-slider__control(
-          data-type=1
-        )
-        .slider__control.slider__control_right.icon-expand_more_prev.js-slider__control(
-          data-type=2
-        )
-      .slider__pagination
-        while n < length
-          if (max && n > max)
-            continue
-          .slider__point.js-slider__point(data-index=n)
-          -
-            ++n
+mixin slider(props)
+  if props
+    -
+      let { images = [], max, isDisabled, isCovered, withControl } = props;
+      let n = 0;
+      let { length } = images;
+      let className = 'slider';
+      let classNames = `${className} js-${className}`;
+      classNames += isCovered ? ` ${className}_covered` : '';
+      classNames += withControl ? ` ${className}_with-control` : '';
+      classNames += isDisabled ? ` ${className}_disabled` : '';
+    div(class=classNames)
+      div(
+        class=`${className}__section-images ${className}__section_not_selected js-${className}__section-images`
+      )
+        div(class=`${className}__image-wrapper`)
+          img(class=`${className}__image`)
+      if length !== 0
+        ul(class=`${className}__controls`)
+          li(
+            class=`${className}__control ${className}__control_left icon-expand_more_prev js-${className}__control`,
+            data-type="left"
+          )
+          li(
+            class=`${className}__control ${className}__control_right icon-expand_more_prev js-${className}__control`,
+            data-type="right"
+          )
+        ul(class=`${className}__points`)
+          while n < length
+            if (max && n > max)
+              continue
+            li(class=`${className}__point js-${className}__point`, data-index=n)
+            -
+              ++n

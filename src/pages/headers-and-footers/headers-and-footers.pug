@@ -1,26 +1,33 @@
-//- extends ../demo-base/demo-base
+extends ../demo-base/demo-base
 
-//- include ../../components/header/header
+include ../../components/header-ui-kit/header-ui-kit
+include ../../components/header/header
 //- include ../../components/footer/footer
 //- include ../../components/copyright/copyright
 
-//- block header
-//-   .headers-and-footers__header
-//-     - let { logo } = htmlWebpackPlugin.options.getData() || {};
-//-     +header-ui-kit(logo)
-//- block main
-//-   article.headers-and-footers
-//-     -
-//-       let data = htmlWebpackPlugin.options.getData();
-//-       let { headerNotAuthorized, headerAuthorized, footer1, footer2, copyright } = data || {};
-//-     section.headers-and-footers__section 
-//-       +header(headerNotAuthorized)
-//-     section.headers-and-footers__section
-//-       +header(headerAuthorized)
-//-     section.headers-and-footers__section
-//-       .headers-and-footers__footer.js-headers-and-footers__footer
-//-         +footer(footer1)
-//-     section.headers-and-footers__section
-//-       .headers-and-footers__copyright.js-headers-and-footers__copyright
-//-         +footer(footer2)
-//- block footer
+block header
+  -
+    let className = 'headers-and-footers';
+    let { logo } = htmlWebpackPlugin.options.getData() || {};
+  div(class=`${className}__header`)
+    +header-ui-kit(logo)
+block main
+  -
+    let className = 'headers-and-footers';
+    let classNames = `${className} js-${className}`;
+    let data = htmlWebpackPlugin.options.getData();
+    let { headerNotAuthorized, headerAuthorized, footer1, footer2, copyright } = data || {};
+  section(class=classNames)
+    section(
+      class=`${className}__header-not-authorized js-${className}__header-not-authorized ${className}__section`
+    )
+      +header(headerNotAuthorized)
+  //- section.headers-and-footers__section
+  //-   +header(headerAuthorized)
+  //- section.headers-and-footers__section
+  //-   .headers-and-footers__footer.js-headers-and-footers__footer
+  //-     +footer(footer1)
+  //- section.headers-and-footers__section
+  //-   .headers-and-footers__copyright.js-headers-and-footers__copyright
+  //-     +footer(footer2)
+block footer

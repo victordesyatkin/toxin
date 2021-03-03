@@ -4,22 +4,23 @@ include ../card-header/card-header
 include ../rate-button/rate-button
 
 mixin card-slider(props)
-  -
-    let { slider, info, rating, commentsContent } = props || {};
-    let { button, comments } = rating || {};
-    let className = 'card-slider';
-    let classNames = `${className}.js-${className}`;
-  +card
-    div(class=classNames)
-      div(class=`${className}__slider`)
-        +slider(slider)
-      div(class=`${className}__card-header`)
-        +card-header(info)
-      div(class=`${className}__separator-wrap`)
-        div(class=`${className}__separator`)
-      div(class=`${className}__score`)
-        div(class=`${className}__rating-button`)
-          +rate-button(button)
-        div(class=`${className}__comments`)
-          span(class=`${className}__comments-numbers`)= comments
-          span(class=`${className}__comments-content`)= commentsContent
+  if props
+    -
+      let { slider, info, rating = {}, commentsNumber, commentsContent } = props || {};
+      let { button } = rating;
+      let className = 'card-slider';
+      let classNames = `${className} js-${className}`;
+    +card
+      div(class=classNames)
+        div(class=`${className}__slider js-${className}__slider`)
+          +slider(slider)
+        div(class=`${className}__card-header js-${className}__card-header`)
+          +card-header(info)
+        div(class=`${className}__separator-wrap`)
+          div(class=`${className}__separator`)
+        div(class=`${className}__score`)
+          div(class=`${className}__rating-button js-${className}__rating-button`)
+            +rate-button(button)
+          div(class=`${className}__comments`)
+            span(class=`${className}__comments-numbers`)= commentsNumber
+            span(class=`${className}__comments-content`)= commentsContent

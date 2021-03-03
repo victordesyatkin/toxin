@@ -1,20 +1,20 @@
-mixin card-header(props = {})
-  -
-    let
-        { number, suite, price, duration, unit, headerNumberText, options, numberFormat, theme } = props;
-        themes = {
-            slider: "slider"
-        };
-        className = "card-header";
-        classNames = `${className} js-${className}`;
-    classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-  div(class=classNames)
-    div(class=`${className}__section-info`)
-      div(class=`${className}__number-info`)
-        span(class=`${className}__info-text`)= headerNumberText
-        span(class=`${className}__number`)= number
-        span(class=`${className}__suite`)= suite
-      div(class=`${className}__price`)
-        span(class=`${className}__price-content js-${className}__price-content`) #{price}
-        span(class=`${className}__price-unit js-${className}__price-unit`) !{unit}
-        span(class=`${className}__duration`)= duration
+mixin card-header(props)
+  if props
+    -
+      let { roomNumber, roomQuality, roomNumberContent, price, duration, unit, options, numberFormat, theme } = props;
+      let themes = {
+              slider: 'slider'
+          };
+      let className = 'card-header';
+      let classNames = `${className} js-${className}`;
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+    div(class=classNames)
+      div(class=`${className}__section-info`)
+        div(class=`${className}__number-info`)
+          span(class=`${className}__info-text`)= roomNumberContent
+          span(class=`${className}__number`)= roomNumber
+          span(class=`${className}__quality`)= roomQuality
+        div(class=`${className}__price`)
+          span(class=`${className}__price-content js-${className}__price-content`) #{price}
+          span(class=`${className}__price-unit js-${className}__price-unit`) !{unit}
+          span(class=`${className}__duration`)= duration

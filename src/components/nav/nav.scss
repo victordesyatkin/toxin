@@ -9,6 +9,11 @@ $parent: 'nav';
   align-items: center;
   height: 100%;
 
+  &__nav-section,
+  &__control-section {
+    list-style-type: none;
+  }
+
   &__nav-section {
     display: flex;
     align-items: center;

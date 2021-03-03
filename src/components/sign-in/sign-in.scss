@@ -20,7 +20,7 @@ $parent: 'sign-in';
     margin-bottom: 1.429rem;
   }
 
-  &__button-sign-in {
+  &__button-sign-in:not(:last-child) {
     margin-bottom: 2.143rem;
   }
 }

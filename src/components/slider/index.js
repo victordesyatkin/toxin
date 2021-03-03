@@ -5,25 +5,42 @@ import { Component } from '../../helpers/utils';
 import './slider.scss';
 
 class Slider extends Component {
-  static typeButtonPrev = 1;
+  static TYPE_BUTTON_LEFT = 'left';
 
-  static typeButtonNext = 2;
+  static TYPE_BUTTON_RIGHT = 'right';
 
-  static typesButtons = [1, 2];
+  static TYPES_BUTTONS = ['left', 'right'];
 
   _query = '.js-slider';
 
+  _className = 'slider';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
+
   _init() {
+    console.log(' this._setImage(this._index); : ', this._props);
     this._images = get(this._props, ['images']) || [];
     this._length = this._images.length;
-    this._$points = $('.js-slider__point', this._$element);
-    this._$prev = $(`[data-type="${Slider.typeButtonPrev}"]`, this._$element);
-    this._$prev.on('click', this._handleControlClick);
-    this._$next = $(`[data-type="${Slider.typeButtonNext}"]`, this._$element);
-    this._$next.on('click', this._handleControlClick);
-    this._$image = $('.js-slider__section-images img', this._$element);
+    this._$points = $(`${this._query}__point`, this._$element);
+    this._isDisabled = this._props?._isDisabled;
+    if (!this._isDisabled) {
+      this._$prev = $(
+        `[data-type="${Slider.TYPE_BUTTON_LEFT}"]`,
+        this._$element
+      );
+      this._$prev.on('click', this._handleControlClick);
+      this._$next = $(
+        `[data-type="${Slider.TYPE_BUTTON_RIGHT}"]`,
+        this._$element
+      );
+      this._$next.on('click', this._handleControlClick);
+      this._$points.on('click', this._handlePointClick);
+    }
+    this._$image = $(`${this._query}__section-images img`, this._$element);
     this._index = 0;
-    this._$points.on('click', this._handlePointClick);
     this._setImage(this._index);
     this._setPoint(this._index);
   }
@@ -40,10 +57,11 @@ class Slider extends Component {
     }
   }
 
+  @bind
   _handleControlClick(event) {
     event.preventDefault();
     const type = get(event, ['currentTarget', 'dataset', 'type']) || 0;
-    if (Slider.typesButtons.indexOf(type) === -1) {
+    if (Slider.TYPES_BUTTONS.indexOf(type) === -1) {
       return undefined;
     }
     const duration = type === 1 ? -1 : 1;
@@ -57,15 +75,17 @@ class Slider extends Component {
   _setImage(index) {
     const src = get(this._images, [index, 'src']) || '';
     const alt = get(this._images, [index, 'alt']) || '';
+    console.log(' this._setImage(this._index); : ', src);
+    console.log(' this._setImage(this._index); : ', alt);
     this._$image.attr({ src, alt });
   }
 
   _setPoint(index) {
-    $(this._$points.get(index)).addClass('slider__point_full');
+    $(this._$points.get(index)).addClass(`${this._className}__point_full`);
   }
 
   _cleanPoint(index) {
-    $(this._$points.get(index)).removeClass('slider__point_full');
+    $(this._$points.get(index)).removeClass(`${this._className}__point_full`);
   }
 
   _changeIndex(duration) {

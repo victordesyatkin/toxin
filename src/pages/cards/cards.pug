@@ -4,21 +4,23 @@ include ../../components/header-ui-kit/header-ui-kit
 include ../../components/card/card
 include ../../components/picker/picker
 include ../../components/sign-up/sign-up
-//- include ../../components/calendar/calendar
-//- include ../../components/card-slider/card-slider
+include ../../components/calendar/calendar
+include ../../components/card-slider/card-slider
 include ../../components/book/book
-//- include ../../components/sign-in/sign-in
+include ../../components/sign-in/sign-in
 
 block header
-  .cards__header
+  -
+    let className = 'cards';
+  div(class=`${className}__header`)
     - let { logo } = htmlWebpackPlugin.options.getData();
     +header-ui-kit(logo)
 block main
   -
-    let data = htmlWebpackPlugin.options.getData() || {};
-    let { picker, book, calendar, signUp, signIn, slider1, slider2 } = data;
     let className = 'cards';
     let classNames = `${className} js-${className}`;
+    let data = htmlWebpackPlugin.options.getData() || {};
+    let { picker, book, calendar, signUp, signIn, cardSlider1, cardSlider2 } = data;
   section(class=classNames)
     ul(class=`${className}__list`)
       li(class=`${className}__picker js-${className}__picker`)
@@ -30,7 +32,24 @@ block main
     ul(class=`${className}__list`)
       li(class=`${className}__book js-${className}__book`)
         +card
-          +book(book) 
+          +book(book)
+      li(class=`${className}__sign-in js-${className}__sign-in`)
+        +card
+          +sign-in(signIn)
+    ul(class=`${className}__list`)
+      li(class=`${className}__calendar js-${className}__calendar`)
+        +card
+          +calendar(calendar)
+      li(class=`${className}__sliders js-${className}__sliders`)
+        ul(class=`${className}__list-sliders`)
+          li(
+            class=`${className}__card-slider-first js-${className}__card-slider-first ${className}__card-slider`
+          )
+            +card-slider(cardSlider1)
+          li(
+            class=`${className}__card-slider-second js-${className}__card-slider-second ${className}__card-slider`
+          )
+            +card-slider(cardSlider2)
 //-   article.cards.js-cards
 //-     section.cards__section
 //-       .cards__picker

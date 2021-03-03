@@ -18,10 +18,11 @@ $parent: 'card-header';
 
   &__number {
     @include h1;
-    margin: 0 0.3571rem;
+    margin: 0 0.586rem 0 0.357rem;
   }
 
-  &__suite {
+  &__quality {
+    font-size: 0.9rem;
     color: $book-text-color-quality;
   }
 
@@ -51,11 +52,7 @@ $parent: 'card-header';
 
     .#{$parent}__number {
       font-size: 1.3571rem;
-      margin: 0 0.5857rem 0 0.2857rem;
-    }
-
-    .#{$parent}__suite {
-      font-size: 0.9rem;
+      margin: 0 0 0 0.2857rem;
     }
 
     .#{$parent}__price {

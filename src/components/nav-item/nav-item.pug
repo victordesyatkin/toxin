@@ -1,16 +1,21 @@
 include ../link/link
 mixin nav-item(props = {})
   -
-    let
-        { children = [], ...link } = props;
-    let
-        { isCurrent } = link || {};
-        className = "nav-item";
-        classNames = `${className}`
-        length = children.length;
-        classNames += isCurrent ? ` ${className}_current`: '';
+    let { children = [], ...link } = props;
+    let { length } = children;
+    let { isCurrent, isOpen } = link || {};
+    let className = "nav-item";
+    let classNames = `${className} js-${className}`
+    classNames += isCurrent ? ` ${className}_current`: '';
+    classNames += isOpen ? ` ${className}_opened`: '';
   div(class=classNames)
-    +link(link)
+    div(class=`${className}__link`)
+      +link(link)
+      if length
+        span(class=`${className}__control js-${className}__control`)
+          i(class=`${className}__more icon-expand_more`)
     if length
-      span.nav-item__control
-        i.icon-expand_more.nav-item__more
+      ul(class=`${className}__children js-${className}__children`)
+        each child in children
+          li(class=`${className}__child`)
+            +link(child)
