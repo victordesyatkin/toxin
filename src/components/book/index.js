@@ -3,6 +3,7 @@ import bind from 'bind-decorator';
 import { wordForm, Component } from '../../helpers/utils';
 import Dropdown from '../dropdown';
 import DateDropdown from '../date-dropdown';
+import '../card';
 import '../button';
 import './book.scss';
 

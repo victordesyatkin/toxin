@@ -31,6 +31,7 @@ $parent: 'footer';
   &__nav-items {
     margin-top: 0.3571rem;
     display: flex;
+    list-style-type: none;
   }
 
   &__subscribe-section {

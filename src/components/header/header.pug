@@ -4,11 +4,22 @@ include ../nav/nav
 mixin header(props)
   if props
     -
-      let { nav, logo } = props;
+      let { nav, logo, toggleNavigation = {}, isOpened } = props;
       let className = 'header';
       let classNames = `${className} js-${className}`;
+      let { ariaLabel, type="button", name, value, title } = toggleNavigation;
+      classNames += isOpened ? ` ${className}_opened` : '';
     header(class=classNames)
       div(class=`${className}__logo`)
         +logo-link(logo)
+      div(class=`${className}__toggle-navigation`)
+        button(
+          name=name,
+          value=value,
+          type=type,
+          class=`${className}__toggle-navigation-button js-${className}__toggle-navigation-button icon-bars`,
+          aria-label=ariaLabel,
+          title=title
+        )
       div(class=`${className}__nav js-${className}__nav`)
         +nav(nav)

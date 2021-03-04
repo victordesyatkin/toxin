@@ -24,22 +24,17 @@ block main
   section(class=classNames)
     ul(class=`${className}__list`)
       li(class=`${className}__picker js-${className}__picker`)
-        +card
-          +picker(picker)
+        +picker(picker)
       li(class=`${className}__sign-up js-${className}__sign-up`)
-        +card
-          +sign-up(signUp)
+        +sign-up(signUp)
     ul(class=`${className}__list`)
       li(class=`${className}__book js-${className}__book`)
-        +card
-          +book(book)
+        +book(book)
       li(class=`${className}__sign-in js-${className}__sign-in`)
-        +card
-          +sign-in(signIn)
+        +sign-in(signIn)
     ul(class=`${className}__list`)
       li(class=`${className}__calendar js-${className}__calendar`)
-        +card
-          +calendar(calendar)
+        +calendar(calendar)
       li(class=`${className}__sliders js-${className}__sliders`)
         ul(class=`${className}__list-sliders`)
           li(
@@ -50,26 +45,3 @@ block main
             class=`${className}__card-slider-second js-${className}__card-slider-second ${className}__card-slider`
           )
             +card-slider(cardSlider2)
-//-   article.cards.js-cards
-//-     section.cards__section
-//-       .cards__picker
-//-         +card
-//-           +picker(picker)
-//-       .cards__sign-up
-//-         +card
-//-           +sign-up(signUp) 
-//-     section.cards__section
-//-       .cards__book.js-cards__book
-//-         +card
-//-           +book(book)
-//-       .cards__sign-in
-//-         +card
-//-           +sign-in(signIn)
-//-     section.cards__section
-//-       .cards__calendar
-//-         +calendar(calendar)
-//-       .cards__sliders
-//-         .cards__slider
-//-           +card-slider(slider1)
-//-         .cards__slider
-//-           +card-slider(slider2)

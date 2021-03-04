@@ -15,12 +15,12 @@ class NavItem extends Component {
   }
 
   open() {
-    this._$element.addClass(`${this._className}__opened`);
+    this._$element.addClass(`${this._className}_opened`);
     this._isOpened = true;
   }
 
   close() {
-    this._$element.removeClass(`${this._className}__opened`);
+    this._$element.removeClass(`${this._className}_opened`);
     this._isOpened = false;
   }
 
@@ -28,15 +28,12 @@ class NavItem extends Component {
     const { isOpened } = this._props;
     this._isOpened = isOpened;
     this._$control = $(`${this._query}__control`, this._$element);
-    console.log('this._$control : ', this._$control);
     this._$control.on('click', this._handleControlClick);
     this._$children = $(`${this._query}__children`, this._$element);
-    this._$children.on('focusout', this._handleChildrenFocusOut);
-    $('body').on('click', this._handleBodyClick);
   }
 
   _toggleOpened() {
-    if (this._$element.hasClass(`${this._className}__opened`)) {
+    if (this._$element.hasClass(`${this._className}_opened`)) {
       this.close();
     } else {
       this.open();
@@ -58,6 +55,7 @@ class NavItem extends Component {
 
   @bind
   _handleChildrenFocusOut() {
+    // console.log('_handleChildrenFocusOut : ', event);
     if (this._isOpened) {
       this.close();
     }

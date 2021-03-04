@@ -1,21 +1,30 @@
 include ../link/link
-mixin nav-item(props = {})
-  -
-    let { children = [], ...link } = props;
-    let { length } = children;
-    let { isCurrent, isOpen } = link || {};
-    let className = "nav-item";
-    let classNames = `${className} js-${className}`
-    classNames += isCurrent ? ` ${className}_current`: '';
-    classNames += isOpen ? ` ${className}_opened`: '';
-  div(class=classNames)
-    div(class=`${className}__link`)
-      +link(link)
+mixin nav-item(props)
+  if props
+    -
+      let { children = [], ...link } = props;
+      let { length } = children;
+      let { isCurrent, isOpen, controlButton = {} } = link || {};
+      let {name, value, type="button", ariaLabel} = controlButton;
+      let className = "nav-item";
+      let classNames = `${className} js-${className}`
+      classNames += isCurrent ? ` ${className}_current`: '';
+      classNames += isOpen ? ` ${className}_opened`: '';
+    div(class=classNames)
+      div(class=`${className}__link-wrapper`)
+        div(class=`${className}__link`)
+          +link(link)
+        if length
+          button(
+            class=`${className}__control js-${className}__control`,
+            type=type,
+            name=name,
+            value=value,
+            aria-label=ariaLabel
+          )
+            i(class=`${className}__more icon-expand_more`)
       if length
-        span(class=`${className}__control js-${className}__control`)
-          i(class=`${className}__more icon-expand_more`)
-    if length
-      ul(class=`${className}__children js-${className}__children`)
-        each child in children
-          li(class=`${className}__child`)
-            +link(child)
+        ul(class=`${className}__children js-${className}__children`)
+          each child in children
+            li(class=`${className}__child`)
+              +link(child)

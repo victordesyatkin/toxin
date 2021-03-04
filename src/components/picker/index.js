@@ -1,6 +1,7 @@
 import { Component } from '../../helpers/utils';
 import DateDropdown from '../date-dropdown';
 import Dropdown from '../dropdown';
+import '../card';
 import '../button';
 import './picker.scss';
 

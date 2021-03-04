@@ -8,16 +8,47 @@ $parent: 'header';
   justify-content: space-between;
   background: $header-background-color;
   box-shadow: $header-box-shadow;
+  position: relative;
 
   &__logo {
     width: 7.5492rem;
     height: 2.8571rem;
   }
+
+  &__toggle-navigation {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__toggle-navigation:hover {
+    .#{$parent}__toggle-navigation-button {
+      color: $toggle-navigation-text-color-hover;
+    }
+  }
+
+  &__toggle-navigation-button {
+    width: 2.714rem;
+    height: 2.714rem;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    color: $toggle-navigation-text-color-default;
+  }
+
+  &__nav {
+    display: flex;
+  }
 }
 
 @include media-breakpoint-up($xl) {
   .#{$parent} {
-    padding: 1.1rem 9.8rem 1.01rem 10rem;
+    padding: 1.1rem 10rem 1.01rem 10rem;
   }
 }
 
@@ -29,11 +60,29 @@ $parent: 'header';
 
 @include media-breakpoint-down($md) {
   .#{$parent} {
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &_opened {
+      .#{$parent}__nav {
+        display: block;
+      }
+    }
 
     &__logo {
       margin: 1rem auto;
+    }
+
+    &__toggle-navigation {
+      display: flex;
+    }
+
+    &__nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      background-color: $nav-background-color-default;
     }
   }
 }

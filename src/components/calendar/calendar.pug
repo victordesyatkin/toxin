@@ -1,4 +1,5 @@
 include ../control/control
+include ../card/card
 
 mixin calendar(props)
   if props
@@ -7,14 +8,15 @@ mixin calendar(props)
           { name, type="hidden", control, isDisabled = true, isReadOnly = true } = props;
           className = 'calendar'; 
           classNames = `${className} js-${className}`;
-    div(class=classNames)
-      input(
-        name=name,
-        type=type,
-        class=`${className}__text-field js-${className}__text-field`,
-        disabled=isDisabled,
-        readonly=isReadOnly
-      )
-      if control
-        div(class=`${className}__control js-${className}__control`)
-          +control(control)
+    +card 
+      div(class=classNames)
+        input(
+          name=name,
+          type=type,
+          class=`${className}__text-field js-${className}__text-field`,
+          disabled=isDisabled,
+          readonly=isReadOnly
+        )
+        if control
+          div(class=`${className}__control js-${className}__control`)
+            +control(control)

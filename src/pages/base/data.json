@@ -58,7 +58,7 @@
           "content": "О нас",
           "title": "О нас",
           "href": "/mock-address/change-me",
-          "isCurrent": true,
+          "isCurrent": false,
           "parent": 0
         },
         {
@@ -71,6 +71,34 @@
               "id": 7,
               "content": "Специальные услуги",
               "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 8,
+              "content": "Дополнительные услуги",
+              "title": "Дополнительные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 9,
+              "content": "Расширенные услуги",
+              "title": "Расширенные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 10,
+              "content": "Базовые услуги",
+              "title": "Базовые услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 11,
+              "content": "Совместные услуги",
+              "title": "Совместные услуги",
               "href": "/mock-address/change-me",
               "parent": 2
             }
@@ -98,8 +126,36 @@
           "children": [
             {
               "id": 6,
-              "content": "Соглашения",
-              "title": "Соглашения",
+              "content": "Специальные cоглашения",
+              "title": "Специальные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 7,
+              "content": "Совместные cоглашения",
+              "title": "Совместные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 8,
+              "content": "Базовые cоглашения",
+              "title": "Базовые cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 9,
+              "content": "Расширенные cоглашения",
+              "title": "Расширенные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 10,
+              "content": "Дополнительные cоглашения",
+              "title": "Дополнительные cоглашения",
               "href": "/mock-address/change-me",
               "parent": 5
             }
@@ -108,17 +164,17 @@
       ],
       "buttons": [
         {
-          "text": "Войти",
+          "content": "Войти",
           "type": "button",
           "value": "",
-          "view": 1,
+          "theme": 1,
           "size": 3
         },
         {
-          "text": "Зарегистрироваться",
+          "content": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "view": 3,
+          "theme": 3,
           "size": 3
         }
       ]
@@ -133,10 +189,25 @@
         "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
-    }
+    },
+    "toggleNavigation": {
+      "ariaLabel": "Toggle navigation",
+      "title": "Toggle navigation"
+    },
+    "isOpened": false
   },
   "footer": {
-    "title": "title title",
+    "logo": {
+      "link": {
+        "href": "/mock-address/change-me",
+        "title": "TOXIN"
+      },
+      "logo": {
+        "src": "assets/images/logo-color.svg",
+        "alt": "TOXIN",
+        "type": "color"
+      }
+    },
     "info": {
       "content": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     },
@@ -145,22 +216,22 @@
         "header": "навигация",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О нас",
             "content": "О нас"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Новости",
             "content": "Новости"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Служба поддержки",
             "content": "Служба поддержки"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Услуги",
             "content": "Услуги"
           }
@@ -170,22 +241,22 @@
         "header": "о нас",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "О сервисе",
             "content": "О сервисе"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Наша команда",
             "content": "Наша команда"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Вакансии",
             "content": "Вакансии"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Инвесторы",
             "content": "Инвесторы "
           }
@@ -195,17 +266,17 @@
         "header": "Служба поддержки",
         "items": [
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Соглашения",
             "content": "Соглашения"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Сообщества",
             "content": "Сообщества"
           },
           {
-            "href": "#",
+            "href": "/mock-address/change-me",
             "title": "Связь с нами",
             "content": "Связь с нами"
           }
@@ -213,46 +284,60 @@
       }
     ],
     "copyright": {
+      "logo": {
+        "link": {
+          "href": "/mock-address/change-me",
+          "title": "TOXIN"
+        },
+        "logo": {
+          "src": "assets/images/logo-color.svg",
+          "alt": "TOXIN",
+          "type": "color"
+        }
+      },
       "content": "Copyright © 2018 Toxin отель. Все права зачищены.",
-      "showLogo": false,
       "items": [
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-t"
+          "href": "/mock-address/change-me",
+          "title": "twitter",
+          "icon": "twitter",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-f"
+          "href": "/mock-address/change-me",
+          "title": "facebook",
+          "icon": "facebook",
+          "isBlock": true
         },
         {
-          "href": "#",
-          "title": "",
-          "content": "icon-i"
+          "href": "/mock-address/change-me",
+          "title": "instagram",
+          "icon": "instagram",
+          "isBlock": true
         }
       ]
     },
     "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
-      "field": {
-        "input": {
-          "name": "footer_subscription_email",
-          "id": "footer_subscription_email",
-          "type": "text",
+      "subscriptionTextField": {
+        "textField": {
+          "name": "footer_subscription_email2",
+          "value": "",
+          "type": "email",
           "placeholder": "Email",
           "button": {
-            "isVisible": true,
-            "iconClass": "arrow-forward",
+            "iconClassName": "arrow-forward",
             "type": "submit"
           }
         },
-        "mask": {
+        "options": {
           "mask": "^\\S*@?\\S*$",
-          "regexp": true
+          "isRegexp": true
         }
       }
-    }
-  }
+    },
+    "action": "/mock-address/change-me"
+  },
+  "title": "Base"
 }

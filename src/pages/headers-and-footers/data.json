@@ -168,17 +168,17 @@
       ],
       "buttons": [
         {
-          "text": "Войти",
+          "content": "Войти",
           "type": "button",
           "value": "",
-          "view": 1,
+          "theme": 1,
           "size": 3
         },
         {
-          "text": "Зарегистрироваться",
+          "content": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "view": 3,
+          "theme": 3,
           "size": 3
         }
       ]
@@ -193,7 +193,12 @@
         "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
-    }
+    },
+    "toggleNavigation": {
+      "ariaLabel": "Toggle navigation",
+      "title": "Toggle navigation"
+    },
+    "isOpened": false
   },
   "headerAuthorized": {
     "nav": {
@@ -201,17 +206,50 @@
         {
           "id": 1,
           "content": "О нас",
+          "title": "О нас",
+          "href": "/mock-address/change-me",
           "isCurrent": true,
           "parent": 0
         },
         {
           "id": 2,
           "content": "Услуги",
+          "title": "Услуги",
           "parent": 0,
           "children": [
             {
               "id": 7,
-              "content": "Служба поддержки",
+              "content": "Специальные услуги",
+              "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 8,
+              "content": "Дополнительные услуги",
+              "title": "Дополнительные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 9,
+              "content": "Расширенные услуги",
+              "title": "Расширенные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 10,
+              "content": "Базовые услуги",
+              "title": "Базовые услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 11,
+              "content": "Совместные услуги",
+              "title": "Совместные услуги",
+              "href": "/mock-address/change-me",
               "parent": 2
             }
           ]
@@ -219,21 +257,56 @@
         {
           "id": 3,
           "content": "Вакансии",
+          "title": "Вакансии",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 4,
           "content": "Новости",
+          "title": "Новости",
+          "href": "/mock-address/change-me",
           "parent": 0
         },
         {
           "id": 5,
           "content": "Соглашения",
+          "title": "Соглашения",
           "parent": 0,
           "children": [
             {
               "id": 6,
-              "content": "Новости",
+              "content": "Специальные cоглашения",
+              "title": "Специальные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 7,
+              "content": "Совместные cоглашения",
+              "title": "Совместные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 8,
+              "content": "Базовые cоглашения",
+              "title": "Базовые cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 9,
+              "content": "Расширенные cоглашения",
+              "title": "Расширенные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 10,
+              "content": "Дополнительные cоглашения",
+              "title": "Дополнительные cоглашения",
+              "href": "/mock-address/change-me",
               "parent": 5
             }
           ]
@@ -242,7 +315,9 @@
       "isAuthorized": true,
       "user": {
         "firstName": "Юлий",
-        "lastName": "Цезарь"
+        "lastName": "Цезарь",
+        "title": "Профиль",
+        "href": "/mock-address/change-me"
       }
     },
     "logo": {
@@ -381,21 +456,20 @@
     "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
-      "field": {
-        "input": {
+      "subscriptionTextField": {
+        "textField": {
           "name": "footer_subscription_email2",
-          "id": "footer_subscription_email2",
-          "type": "text",
+          "value": "",
+          "type": "email",
           "placeholder": "Email",
           "button": {
-            "isVisible": true,
-            "iconClass": "arrow-forward",
+            "iconClassName": "arrow-forward",
             "type": "submit"
           }
         },
-        "mask": {
+        "options": {
           "mask": "^\\S*@?\\S*$",
-          "regexp": true
+          "isRegexp": true
         }
       }
     },
@@ -526,21 +600,19 @@
     "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
-      "field": {
-        "input": {
+      "subscriptionTextField": {
+        "textField": {
           "name": "footer_subscription_email1",
-          "id": "footer_subscription_email1",
-          "type": "text",
+          "type": "email",
           "placeholder": "Email",
           "button": {
-            "isVisible": true,
-            "iconClass": "arrow-forward",
+            "iconClassName": "arrow-forward",
             "type": "submit"
           }
         },
-        "mask": {
+        "options": {
           "mask": "^\\S*@?\\S*$",
-          "regexp": true
+          "isRegexp": true
         }
       }
     },

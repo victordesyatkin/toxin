@@ -1,69 +1,47 @@
-// import bind from 'bind-decorator';
+import bind from 'bind-decorator';
 
-// import { renderComponents, renderComponent } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 // import Picker from '../../components/picker';
 // import Footer from '../../components/footer';
-// import '../base/base';
 // import '../cards/cards';
-// import './landing-page.scss';
+import Base from '../base/base';
+import './landing-page.scss';
+import data from './data.json';
 
-// class LandingPage {
-//   static CLASS_NAME = 'LANDING_PAGE';
+class LandingPage extends Component {
+  static handleComponentLoad() {
+    const headersAndFooters = new LandingPage({ props: data });
+    return headersAndFooters;
+  }
 
-//   static renderComponents(props = {}) {
-//     const { parents, query, render } = props;
-//     renderComponents({
-//       parents,
-//       query: query || '.js-landing-page',
-//       render: render || LandingPage._renderComponent,
-//     });
-//   }
+  _query = 'js-landing-page';
 
-//   static _renderComponent(index, element) {
-//     renderComponent({
-//       element,
-//       className: LandingPage.CLASS_NAME,
-//       someClass: LandingPage,
-//     });
-//   }
+  _className = 'landing-page';
 
-//   data = {
-//     startDate: '',
-//     endDate: '',
-//     adults: '',
-//     children: '',
-//     babies: '',
-//   };
+  _init() {
+    this._base = new Base();
+    // Picker.renderComponents({ parents: this._$element });
+    // Footer.renderComponents();
+    // localStorage.clear();
+    // this._$form = $('form', this._$element);
+    // this._$form.on('submit', this._handleSubmitButtonClick);
+  }
 
-//   constructor(element) {
-//     this._element = element;
-//     this._$element = $(element);
-//     this._init();
-//   }
+  //   @bind
+  //   _parseFormItem(index, element) {
+  //     const { name } = element;
+  //     if (Object.keys(this.data).indexOf(name) !== -1) {
+  //       this.data[name] = $(element).val();
+  //     }
+  //   }
 
-//   _init() {
-//     Picker.renderComponents({ parents: this._$element });
-//     Footer.renderComponents();
-//     localStorage.clear();
-//     this._$form = $('form', this._$element);
-//     this._$form.on('submit', this._handleSubmitButtonClick);
-//   }
+  //   @bind
+  //   _handleSubmitButtonClick() {
+  //     $('input[name]', this._$form).each(this._parseFormItem);
+  //     localStorage.setItem('landingPage', JSON.stringify(this.data));
+  //   }
+}
 
-//   @bind
-//   _parseFormItem(index, element) {
-//     const { name } = element;
-//     if (Object.keys(this.data).indexOf(name) !== -1) {
-//       this.data[name] = $(element).val();
-//     }
-//   }
+window.addEventListener('load', LandingPage.handleComponentLoad);
 
-//   @bind
-//   _handleSubmitButtonClick() {
-//     $('input[name]', this._$form).each(this._parseFormItem);
-//     localStorage.setItem('landingPage', JSON.stringify(this.data));
-//   }
-// }
-
-// // window.addEventListener('load', LandingPage.renderComponents);
-
-// export default LandingPage;
+export default LandingPage;

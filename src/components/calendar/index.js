@@ -5,6 +5,7 @@ import bind from 'bind-decorator';
 
 import { Component, isValidDate } from '../../helpers/utils';
 import Control from '../control';
+import '../card';
 import './calendar.scss';
 
 class Calendar extends Component {

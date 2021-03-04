@@ -63,6 +63,10 @@ $card-footer-text-color: #000000;
 $nav-text-color-user: rgba(31, 32, 65, 0.5);
 $checkbox-button-text-color-default: rgba(31, 32, 65, 0.5);
 $checkbox-button-text-color-checked: rgba(31, 32, 65, 0.75);
+$nav-text-color-default: rgba(31, 32, 65, 0.5);
+$nav-text-color-hover: rgba(31, 32, 65, 0.75);
+$toggle-navigation-text-color-default: rgba(31, 32, 65, 0.5);
+$toggle-navigation-text-color-hover: rgba(31, 32, 65, 0.75);
 
 /***** Background *****/
 $page-background-color: #ffffff;
@@ -150,6 +154,7 @@ $toggle-button-background-color-checked: linear-gradient(
 );
 $cards-header-background-color: #f4f4f6;
 $link-children-background-color: #ffffff;
+$nav-background-color-default: #ffffff;
 
 /***** Shadow *****/
 $calendar-box-shadow: 0 0.7142rem 1.4285rem rgba(31, 32, 65, 0.05);
@@ -188,6 +193,8 @@ $toggle-button-border-color-default: rgba(31, 32, 65, 0.25);
 $toggle-button-border-color-checked: #bc9cff;
 $footer-border-color: rgba(31, 32, 65, 0.1);
 $link-border-color-default: rgba(31, 32, 65, 0.05);
+$nav-border-color-default: rgba(31, 32, 65, 0.25);
+$nav-border-color-hover: rgba(31, 32, 65, 0.25);
 
 /***** Mixin *****/
 

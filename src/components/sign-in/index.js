@@ -2,6 +2,7 @@ import { Component } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
 import TextField from '../text-field';
 import '../button';
+import '../card';
 import '../card-footer';
 import './sign-in.scss';
 

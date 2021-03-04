@@ -5,6 +5,7 @@ include ../masked-text-field/masked-text-field
 include ../toggle-button/toggle-button
 include ../card-footer/card-footer
 include ../button/button
+include ../card/card
 
 mixin sign-up(props)
   if props
@@ -14,25 +15,26 @@ mixin sign-up(props)
       } = props;
       let className = 'sign-up';
       let classNames = `${className} js-${className}`;
-    form(class=classNames, action=action, method=method)
-      if title
-        div(class=`${className}__title`)
-          +title-label(title)
-        div(class=`${className}__first-name`)
-          +text-field(firstName)
-        div(class=`${className}__last-name`)
-          +text-field(lastName) 
-        div(class=`${className}__gender`)
-          +radio-buttons(gender)
-        div(class=`${className}__birthday js-${className}__birthday`)
-          +masked-text-field(birthday)
-        div(class=`${className}__email js-${className}__email`)
-          +masked-text-field(email)
-        div(class=`${className}__password`) 
-          +text-field(password)
-        div(class=`${className}__contribute`)
-          +toggle-button(contribute) 
-        div(class=`${className}__button-pay`)
-          +button(pay)
-        div(class=`${className}__section-sign-in`)
-          +card-footer(signIn)
+    +card 
+      form(class=classNames, action=action, method=method)
+        if title
+          div(class=`${className}__title`)
+            +title-label(title)
+          div(class=`${className}__first-name`)
+            +text-field(firstName)
+          div(class=`${className}__last-name`)
+            +text-field(lastName) 
+          div(class=`${className}__gender`)
+            +radio-buttons(gender)
+          div(class=`${className}__birthday js-${className}__birthday`)
+            +masked-text-field(birthday)
+          div(class=`${className}__email js-${className}__email`)
+            +masked-text-field(email)
+          div(class=`${className}__password`) 
+            +text-field(password)
+          div(class=`${className}__contribute`)
+            +toggle-button(contribute) 
+          div(class=`${className}__button-pay`)
+            +button(pay)
+          div(class=`${className}__section-sign-in`)
+            +card-footer(signIn)

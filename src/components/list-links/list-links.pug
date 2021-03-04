@@ -1,10 +1,14 @@
 include ../link/link
 
-mixin list-links(props = {})
-  - let { items = [], header } = props;
-  .list-links
-    .list-links__header= header
-    ul.list-links__items
-      each item in items
-        li.list-links__item
-          +link(item)
+mixin list-links(props)
+  if props
+    - let { items = [], header } = props;
+    - let className = 'list-links';
+    - let classNames = `${className} js-${className}`;
+    div(class=classNames)
+      if header
+        p(class=`${className}__header`)= header
+      ul(class=`${className}__items`)
+        each item in items
+          li(class=`${className}__item`)
+            +link(item)

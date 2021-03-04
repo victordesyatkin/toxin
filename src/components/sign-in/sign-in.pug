@@ -3,6 +3,7 @@ include ../text-field/text-field
 include ../button/button
 include ../card-footer/card-footer
 include ../masked-text-field/masked-text-field
+include ../card/card
 
 mixin sign-in(props)
   if props
@@ -10,15 +11,16 @@ mixin sign-in(props)
       let { title, email, password, signIn, signUp, action, method } = props;
       let className = 'sign-in';
       let classNames = `${className} js-${className}`;
-    form(class=classNames, action=action, method=method)
-      if title
-        div(class=`${className}__title`)
-          +title-label(title)
-      div(class=`${className}__email js-${className}__email`)
-        +masked-text-field(email)
-      div(class=`${className}__password js-${className}__password`)
-        +text-field(password)
-      div(class=`${className}__button-sign-in js-${className}__button-sign-in`)
-        +button(signIn)
-      div(class=`${className}__button-sign-in js-${className}__button-sign-in`)
-        +card-footer(signUp)
+    +card
+      form(class=classNames, action=action, method=method)
+        if title
+          div(class=`${className}__title`)
+            +title-label(title)
+        div(class=`${className}__email js-${className}__email`)
+          +masked-text-field(email)
+        div(class=`${className}__password js-${className}__password`)
+          +text-field(password)
+        div(class=`${className}__button-sign-in js-${className}__button-sign-in`)
+          +button(signIn)
+        div(class=`${className}__button-sign-in js-${className}__button-sign-in`)
+          +card-footer(signUp)

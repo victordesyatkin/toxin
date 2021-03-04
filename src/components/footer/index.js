@@ -8,11 +8,20 @@ import './footer.scss';
 class Footer extends Component {
   _query = '.js-footer';
 
+  _className = 'footer';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
+
   _init() {
-    const { filed } = this._props;
+    const { subscribe = {} } = this._props;
+    const { subscriptionTextField } = subscribe;
+    console.log('subscriptionTextField : ', subscriptionTextField);
     this._subscriptionTextField = new SubscriptionTextField({
-      parents: this._$element,
-      props: filed,
+      parents: $(`${this._query}__subscription-text-field`, this._$element),
+      props: subscriptionTextField,
     });
   }
 }

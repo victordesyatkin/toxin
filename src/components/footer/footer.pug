@@ -7,28 +7,29 @@ mixin footer(props = {})
   -
     let { info = {}, items = [], subscribe = {}, copyright, logo, action, size } = props;
     let { content } = info;
-    let
-        { header, description, field } = subscribe;
-        sizes = {
+    let { header, description, subscriptionTextField } = subscribe;
+    let sizes = {
             'sm': 'size_sm'
         };
-        className = 'footer';
-        classNames = `${className} js-${className}`;
+    let className = 'footer';
+    let classNames = `${className} js-${className}`;
     classNames += sizes[size] ? ` ${className}_${sizes[size]}` : '';
   div(class=classNames)
-    .footer__main-section
-      .footer__info-section
-        .footer__logo
+    div(class=`${className}__main-section`)
+      div(class=`${className}__info-section`)
+        div(class=`${className}__logo`)
           +logo-link(logo)
-        .footer__info= content
-      nav.footer__nav-items
+        p(class=`${className}__info`)= content
+      ul(class=`${className}__nav-items`)
         each item in items
-          .footer__nav-item
+          li(class=`${className}__nav-item`)
             +list-links(item)
-        form.footer__subscribe-section(action=action)
-          .footer__subscribe-header= header
-          .footer__subscribe-description= description
-          .footer__subscribe-text-field
-            +subscription-text-field(field)
-    .footer__copyright-section
+        form(class=`${className}__subscribe-section`, action=action, method=method)
+          p(class=`${className}__subscribe-header`)= header
+          p(class=`${className}__subscribe-description`)= description
+          div(
+            class=`${className}__subscribe-text-field js-${className}__subscribe-text-field`
+          )
+            +subscription-text-field(subscriptionTextField)
+    div(class=`${className}__copyright-section js-class=${className}__copyright-section`)
       +copyright(copyright)

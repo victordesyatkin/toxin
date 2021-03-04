@@ -8,6 +8,7 @@ $parent: 'nav';
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+  position: relative;
 
   &__nav-section,
   &__control-section {
@@ -25,11 +26,13 @@ $parent: 'nav';
   }
 
   .#{$parent}__nav-section-item:nth-child(2) {
-    margin-right: 1.5214rem;
+    margin-right: 1.59rem;
   }
 
   .#{$parent}__nav-section-item {
-    margin-right: 1.504rem;
+    display: inline-flex;
+    margin-right: 1.49rem;
+    height: 100%;
   }
 
   &__separator {
@@ -50,7 +53,7 @@ $parent: 'nav';
   &__control-item {
     display: flex;
     align-items: center;
-    margin-left: 1.4057rem;
+    margin-left: 1.36rem;
   }
 
   &__control-item:nth-child(1) {
@@ -66,6 +69,8 @@ $parent: 'nav';
       flex-direction: column;
       justify-content: flex-start;
       width: 100%;
+      z-index: 99;
+      background-color: $link-children-background-color;
     }
 
     .#{$parent}__nav-section-item:first-child,

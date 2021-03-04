@@ -2,7 +2,7 @@ extends ../demo-base/demo-base
 
 include ../../components/header-ui-kit/header-ui-kit
 include ../../components/header/header
-//- include ../../components/footer/footer
+include ../../components/footer/footer
 //- include ../../components/copyright/copyright
 
 block header
@@ -22,12 +22,16 @@ block main
       class=`${className}__header-not-authorized js-${className}__header-not-authorized ${className}__section`
     )
       +header(headerNotAuthorized)
-  //- section.headers-and-footers__section
-  //-   +header(headerAuthorized)
-  //- section.headers-and-footers__section
-  //-   .headers-and-footers__footer.js-headers-and-footers__footer
-  //-     +footer(footer1)
-  //- section.headers-and-footers__section
-  //-   .headers-and-footers__copyright.js-headers-and-footers__copyright
-  //-     +footer(footer2)
+    section(
+      class=`${className}__header-authorized js-${className}__header-authorized ${className}__section`
+    )
+      +header(headerAuthorized)
+    section(
+      class=`${className}__footer-first js-${className}__footer-first ${className}__section`
+    )
+      +footer(footer1)
+    section(
+      class=`${className}__footer-second js-${className}__footer-second ${className}__section ${className}__copyright`
+    )
+      +footer(footer2)
 block footer
