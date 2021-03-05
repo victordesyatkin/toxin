@@ -11,7 +11,7 @@ mixin sign-up(props)
   if props
     -
       let {
-          title, firstName, lastName, gender, birthday, email, password, contribute, pay, signIn, action, method
+          title, firstName, lastName, gender, birthday, email, password, contribute, pay, signIn, action, method = 'GET'
       } = props;
       let className = 'sign-up';
       let classNames = `${className} js-${className}`;

@@ -1,7 +1,14 @@
-mixin description(props = {})
-  - let { title, content } = props;
-  .description
-    if title
-      .description__title= title
-    if content
-      .description__content= content
+include ../title-label/title-label
+
+mixin description(props)
+  if props
+    -
+      let { title, content } = props;
+      let className = 'description';
+      let classNames = `${className} js-${className}`;
+    div(class=classNames)
+      if title
+        div(class=`${className}__title`)
+          +title-label(title)
+      if content
+        p(class=`${className}__content`)= content

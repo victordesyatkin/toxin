@@ -5,6 +5,7 @@ $parent: 'like-button';
 .#{$parent} {
   display: flex;
   width: 2.85rem;
+  max-width: 2.85rem;
   height: 1.42rem;
   min-width: 2.85rem;
   line-height: 1.29rem;
@@ -14,11 +15,11 @@ $parent: 'like-button';
 
   &:hover,
   &:focus {
-    .#{$parent}__check-mark {
-      border: 1px solid $like-border-color-checked;
+    .#{$parent}__check-mark-wrapper {
+      background: $like-button-background-color-checked;
 
       .#{$parent}__count {
-        color: $like-border-color-checked;
+        color: $like-button-text-color-checked;
       }
     }
   }
@@ -39,13 +40,21 @@ $parent: 'like-button';
     height: 100%;
   }
 
+  &__check-mark-wrapper {
+    display: flex;
+    width: 100%;
+    background-color: $like-button-border-color-default;
+    border-radius: 10px;
+    padding: 1px;
+  }
+
   &__check-mark {
     width: 100%;
     display: inline-flex;
     align-items: center;
-    border: 1px solid $like-border-color-default;
     border-radius: 10px;
-    padding-left: 0.286rem;
+    padding-left: 0.215rem;
+    background-color: $like-button-background-color-default;
   }
 
   &__image {
@@ -60,10 +69,11 @@ $parent: 'like-button';
   &__count {
     margin-left: 0.429rem;
     font-size: 0.7142rem;
+    color: $like-button-text-color-default;
   }
 
-  &__input:checked ~ &__check-mark {
-    border: 1px solid $like-border-color-checked;
+  &__input:checked ~ &__check-mark-wrapper {
+    background: $like-button-background-color-checked;
 
     .#{$parent}__like {
       display: inline-flex;
@@ -74,7 +84,7 @@ $parent: 'like-button';
     }
 
     .#{$parent}__count {
-      color: $like-border-color-checked;
+      color: $like-button-text-color-checked;
     }
   }
 }

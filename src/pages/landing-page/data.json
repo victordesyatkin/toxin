@@ -52,76 +52,127 @@
   ],
   "title": "Landing page",
   "picker": {
-    "label": "Найдём номера под ваши пожелания",
+    "title": {
+      "content": "Найдём номера под ваши пожелания",
+      "theme": "card"
+    },
     "dateDropdown": {
-      "fieldStart": {
-        "input": {
-          "name": "startDate",
-          "id": "startDate",
-          "type": "text",
-          "label": "прибытие",
-          "placeholder": "ДД.ММ.ГГГГ",
-          "button": {
-            "isVisible": true,
-            "iconClass": "arrow-down",
-            "type": "button"
+      "isOpened": false,
+      "items": [
+        {
+          "dropdown": {
+            "theme": "date"
           },
-          "notFocused": true
-        }
-      },
-      "fieldEnd": {
-        "input": {
-          "name": "endDate",
-          "id": "endDate",
-          "type": "text",
-          "label": "выезд",
-          "placeholder": "ДД.ММ.ГГГГ",
-          "button": {
-            "isVisible": true,
-            "iconClass": "arrow-down",
-            "type": "button"
+          "maskedTextField": {
+            "textField": {
+              "name": "picker-dropdown-text-field-start",
+              "type": "text",
+              "value": "",
+              "placeholder": "ДД.ММ.ГГГГ",
+              "button": { "iconClassName": "arrow-down" },
+              "theme": "dropdown",
+              "title": {
+                "content": "прибытие"
+              },
+              "isHidden": true,
+              "summary": "ДД.ММ.ГГГГ"
+            }
+          }
+        },
+        {
+          "dropdown": {
+            "theme": "date"
           },
-          "notFocused": true
+          "maskedTextField": {
+            "textField": {
+              "name": "picker-dropdown-text-field-end",
+              "type": "text",
+              "value": "",
+              "placeholder": "ДД.ММ.ГГГГ",
+              "button": { "iconClassName": "arrow-down" },
+              "theme": "dropdown",
+              "title": {
+                "content": "выезд"
+              },
+              "isHidden": true,
+              "summary": "ДД.ММ.ГГГГ"
+            }
+          }
         }
-      },
+      ],
       "calendar": {
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
+        "control": {
+          "isHidden": true,
+          "items": [
+            {
+              "content": "очистить",
+              "type": "button",
+              "value": "",
+              "theme": 2,
+              "dataType": "clean"
+            },
+            {
+              "content": "применить",
+              "type": "button",
+              "value": "",
+              "theme": 2,
+              "dataType": "apply"
+            }
+          ]
+        }
       }
     },
     "dropdown": {
       "dropdown": {
-        "type": 1,
-        "isControlVisible": true,
+        "theme": "guests",
+        "type": "guests",
         "buttonDecreaseText": "-",
         "buttonIncreaseText": "+",
-        "buttonCleanText": "Очистить",
-        "buttonApplyText": "Применить"
+        "isOpened": false,
+        "title": {
+          "content": "гости"
+        }
       },
-      "input": {
-        "name": "guests",
-        "stateText": "",
-        "type": "text",
-        "label": "гости",
-        "placeholder": "Сколько гостей",
-        "button": {
-          "iconClass": "arrow-down",
-          "isVisible": true,
-          "type": "button"
+      "maskedTextField": {
+        "textField": {
+          "button": { "iconClassName": "arrow-down" },
+          "theme": "dropdown",
+          "isSummaryOnly": true,
+          "summary": "Сколько гостей"
         }
       },
       "items": [
-        { "title": "взрослые", "value": 0, "name": "adults" },
-        { "title": "дети", "value": 0, "name": "children" },
-        { "title": "младенцы", "value": 0, "name": "babies" }
-      ]
+        { "title": "взрослые", "value": 0, "name": "guests[adult]" },
+        { "title": "дети", "value": 0, "name": "guests[child]" },
+        { "title": "младенцы", "value": 0, "name": "guests[baby]" }
+      ],
+      "control": {
+        "isHidden": true,
+        "items": [
+          {
+            "content": "очистить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "clean"
+          },
+          {
+            "content": "применить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "apply"
+          }
+        ]
+      }
     },
     "button": {
-      "text": "подобрать номер",
+      "content": "подобрать номер",
       "type": "submit",
       "value": "",
-      "view": 3,
-      "src": "assets/images/arrow-forward.svg"
+      "theme": 3,
+      "src": "assets/images/arrow-forward.svg",
+      "alt": "подобрать номер"
     }
   },
   "headerNotAuthorized": {
@@ -132,6 +183,7 @@
           "content": "О нас",
           "title": "О нас",
           "href": "/mock-address/change-me",
+          "isCurrent": false,
           "parent": 0
         },
         {
@@ -144,6 +196,34 @@
               "id": 7,
               "content": "Специальные услуги",
               "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 8,
+              "content": "Дополнительные услуги",
+              "title": "Дополнительные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 9,
+              "content": "Расширенные услуги",
+              "title": "Расширенные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 10,
+              "content": "Базовые услуги",
+              "title": "Базовые услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 11,
+              "content": "Совместные услуги",
+              "title": "Совместные услуги",
               "href": "/mock-address/change-me",
               "parent": 2
             }
@@ -171,8 +251,36 @@
           "children": [
             {
               "id": 6,
-              "content": "Соглашения",
-              "title": "Соглашения",
+              "content": "Специальные cоглашения",
+              "title": "Специальные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 7,
+              "content": "Совместные cоглашения",
+              "title": "Совместные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 8,
+              "content": "Базовые cоглашения",
+              "title": "Базовые cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 9,
+              "content": "Расширенные cоглашения",
+              "title": "Расширенные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 10,
+              "content": "Дополнительные cоглашения",
+              "title": "Дополнительные cоглашения",
               "href": "/mock-address/change-me",
               "parent": 5
             }
@@ -181,17 +289,17 @@
       ],
       "buttons": [
         {
-          "text": "Войти",
+          "content": "Войти",
           "type": "button",
           "value": "",
-          "view": 1,
+          "theme": 1,
           "size": 3
         },
         {
-          "text": "Зарегистрироваться",
+          "content": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "view": 3,
+          "theme": 3,
           "size": 3
         }
       ]
@@ -206,7 +314,12 @@
         "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
-    }
+    },
+    "toggleNavigation": {
+      "ariaLabel": "Toggle navigation",
+      "title": "Toggle navigation"
+    },
+    "isOpened": false
   },
   "footer": {
     "logo": {
@@ -332,21 +445,20 @@
     "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
-      "field": {
-        "input": {
-          "name": "footer_subscription_email",
-          "id": "footer_subscription_email",
-          "type": "text",
+      "subscriptionTextField": {
+        "textField": {
+          "name": "footer_subscription_email2",
+          "value": "",
+          "type": "email",
           "placeholder": "Email",
           "button": {
-            "isVisible": true,
-            "iconClass": "arrow-forward",
+            "iconClassName": "arrow-forward",
             "type": "submit"
           }
         },
-        "mask": {
+        "options": {
           "mask": "^\\S*@?\\S*$",
-          "regexp": true
+          "isRegexp": true
         }
       }
     },

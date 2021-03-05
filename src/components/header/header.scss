@@ -9,6 +9,7 @@ $parent: 'header';
   background: $header-background-color;
   box-shadow: $header-box-shadow;
   position: relative;
+  z-index: 9;
 
   &__logo {
     width: 7.5492rem;

@@ -52,86 +52,101 @@
     }
   ],
   "signUp": {
-    "title": "Регистрация аккаунта",
+    "title": {
+      "content": "Регистрация аккаунта",
+      "theme": "card"
+    },
     "firstName": {
       "name": "firstName1",
-      "id": "firstName1",
+      "value": "",
       "type": "text",
-      "label": "",
-      "placeholder": "Имя"
+      "placeholder": "Имя",
+      "ariaLabel": "first name"
     },
     "lastName": {
       "name": "lastName1",
-      "id": "lastName1",
       "type": "text",
-      "label": "",
+      "ariaLabel": "last name",
       "placeholder": "Фамилия",
       "stateText": ""
     },
-    "genderMale": {
-      "label": "Мужчина",
-      "isChecked": true,
-      "name": "gender1",
-      "value": "male"
-    },
-    "genderFemale": {
-      "label": "Женщина",
-      "isChecked": false,
-      "name": "gender1",
-      "value": "female"
+    "gender": {
+      "buttons": [
+        {
+          "label": "Мужчина",
+          "isChecked": true,
+          "name": "gender1",
+          "value": "male"
+        },
+        {
+          "label": "Женщина",
+          "name": "gender1",
+          "value": "female"
+        }
+      ]
     },
     "birthday": {
-      "input": {
+      "textField": {
+        "title": {
+          "content": "дата рождения",
+          "isLabel": true
+        },
         "name": "birthday1",
-        "id": "birthday1",
         "type": "text",
-        "label": "Дата рождения",
+        "label": "дата рождения",
         "placeholder": "ДД.ММ.ГГГГ"
+      },
+      "options": {
+        "type": "date"
       }
     },
     "email": {
-      "input": {
+      "textField": {
+        "title": {
+          "content": "данные для входа в сервис",
+          "isLabel": true
+        },
         "name": "email1",
-        "id": "email1",
-        "type": "text",
-        "label": "данные для входа в сервис",
+        "type": "email",
+        "ariaLabel": "email",
         "placeholder": "Email"
       },
-      "mask": {
+      "options": {
         "mask": "^\\S*@?\\S*$",
-        "regexp": true
+        "isRegexp": true
       }
     },
     "password": {
       "name": "password1",
-      "id": "password1",
       "type": "password",
+      "ariaLabel": "password",
       "placeholder": "Пароль"
     },
-    "submit": "",
     "contribute": {
       "label": "Получать спецпредложения",
-      "checked": false,
-      "name": "contribute"
+      "name": "contribute",
+      "value": "",
+      "ariaLabel": "contribute"
     },
     "pay": {
-      "text": "Зарегистрироваться",
+      "content": "Перейти к оплате",
       "type": "submit",
-      "disabled": false,
       "value": "",
-      "view": 3,
-      "name": "pay1"
+      "theme": 3,
+      "name": "pay1",
+      "src": "assets/images/arrow-forward.svg",
+      "ariaLabel": "pay"
     },
     "signIn": {
       "content": "Уже есть аккаунт на Toxin",
       "button": {
-        "text": "войти",
+        "content": "войти",
         "type": "button",
-        "disabled": false,
         "value": "",
-        "view": 1,
+        "theme": 1,
         "name": "signIn",
-        "size": 1
+        "size": 1,
+        "ariaLabel": "signIn"
       }
     }
   },
@@ -143,6 +158,7 @@
           "content": "О нас",
           "title": "О нас",
           "href": "/mock-address/change-me",
+          "isCurrent": false,
           "parent": 0
         },
         {
@@ -155,6 +171,34 @@
               "id": 7,
               "content": "Специальные услуги",
               "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 8,
+              "content": "Дополнительные услуги",
+              "title": "Дополнительные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 9,
+              "content": "Расширенные услуги",
+              "title": "Расширенные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 10,
+              "content": "Базовые услуги",
+              "title": "Базовые услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 11,
+              "content": "Совместные услуги",
+              "title": "Совместные услуги",
               "href": "/mock-address/change-me",
               "parent": 2
             }
@@ -182,8 +226,36 @@
           "children": [
             {
               "id": 6,
-              "content": "Соглашения",
-              "title": "Соглашения",
+              "content": "Специальные cоглашения",
+              "title": "Специальные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 7,
+              "content": "Совместные cоглашения",
+              "title": "Совместные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 8,
+              "content": "Базовые cоглашения",
+              "title": "Базовые cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 9,
+              "content": "Расширенные cоглашения",
+              "title": "Расширенные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 10,
+              "content": "Дополнительные cоглашения",
+              "title": "Дополнительные cоглашения",
               "href": "/mock-address/change-me",
               "parent": 5
             }
@@ -192,17 +264,17 @@
       ],
       "buttons": [
         {
-          "text": "Войти",
+          "content": "Войти",
           "type": "button",
           "value": "",
-          "view": 1,
+          "theme": 1,
           "size": 3
         },
         {
-          "text": "Зарегистрироваться",
+          "content": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "view": 3,
+          "theme": 3,
           "size": 3
         }
       ]
@@ -217,7 +289,12 @@
         "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
-    }
+    },
+    "toggleNavigation": {
+      "ariaLabel": "Toggle navigation",
+      "title": "Toggle navigation"
+    },
+    "isOpened": false
   },
   "footer": {
     "logo": {
@@ -343,21 +420,20 @@
     "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
-      "field": {
-        "input": {
-          "name": "footer_subscription_email",
-          "id": "footer_subscription_email",
-          "type": "text",
+      "subscriptionTextField": {
+        "textField": {
+          "name": "footer_subscription_email2",
+          "value": "",
+          "type": "email",
           "placeholder": "Email",
           "button": {
-            "isVisible": true,
-            "iconClass": "arrow-forward",
+            "iconClassName": "arrow-forward",
             "type": "submit"
           }
         },
-        "mask": {
+        "options": {
           "mask": "^\\S*@?\\S*$",
-          "regexp": true
+          "isRegexp": true
         }
       }
     },

@@ -7,7 +7,7 @@ include ../card/card
 mixin picker(props)
   if props
     -
-      let { title, dateDropdown, dropdown, button, action,  method } = props;
+      let { title, dateDropdown, dropdown, button, action, method = 'GET' } = props;
       let className = 'picker';
       let classNames = `${className} js-${className}`;
     +card

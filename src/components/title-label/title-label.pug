@@ -9,14 +9,19 @@ mixin title-label(props)
         h2: 'h2'
       };
       let themes = {
+        rate: 'rate',
         card: 'card',
-        dropdown: 'dropdown'
+        dropdown: 'dropdown',
+        bullet: 'bullet',
+        description: 'description',
+        comments: 'comments',
+        info: 'info'
       };
       classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    if (title || state)
+    if (content || state)
       div(class=classNames)
-        if title
+        if content
           if isLabel
             label(class=`${className}__label`, accesskey=accesskey, for=htmlFor)= content
           else

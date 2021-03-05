@@ -67,6 +67,8 @@ $nav-text-color-default: rgba(31, 32, 65, 0.5);
 $nav-text-color-hover: rgba(31, 32, 65, 0.75);
 $toggle-navigation-text-color-default: rgba(31, 32, 65, 0.5);
 $toggle-navigation-text-color-hover: rgba(31, 32, 65, 0.75);
+$like-button-text-color-default: rgba(31, 32, 65, 0.25);
+$like-button-text-color-checked: #bc9cff;
 
 /***** Background *****/
 $page-background-color: #ffffff;
@@ -82,7 +84,6 @@ $radio-button-background-color-checked: linear-gradient(
   #8ba4f9 100%
 );
 $checkbox-button-background-color: #bc9cff;
-$like-button-background-color: #bc9cff;
 $rate-button-background-color: #bc9cff;
 $button-background-color-first-default: linear-gradient(
   180deg,
@@ -155,6 +156,12 @@ $toggle-button-background-color-checked: linear-gradient(
 $cards-header-background-color: #f4f4f6;
 $link-children-background-color: #ffffff;
 $nav-background-color-default: #ffffff;
+$like-button-background-color-default: white;
+$like-button-background-color-checked: linear-gradient(
+  180deg,
+  #bc9cff 0%,
+  #8ba4f9 100%
+);
 
 /***** Shadow *****/
 $calendar-box-shadow: 0 0.7142rem 1.4285rem rgba(31, 32, 65, 0.05);
@@ -184,8 +191,8 @@ $comment-border-color: #ffffff;
 $copyright-border-color: #ffffff;
 $filter-date-dropdown-border-color: rgba(31, 32, 65, 0.25);
 $info-border-color-separator: rgba(31, 32, 65, 0.1);
-$like-border-color-default: rgba(31, 32, 65, 0.25);
-$like-border-color-checked: #bc9cff;
+$like-button-border-color-default: rgba(31, 32, 65, 0.25);
+$like-button-border-color-checked: #bc9cff;
 $radio-button-border-color-default: rgba(31, 32, 65, 0.25);
 $radio-button-border-color-checked: #bc9cff;
 $slider-border-color-point: #ffffff;

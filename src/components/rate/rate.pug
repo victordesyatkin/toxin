@@ -1,21 +1,26 @@
-mixin rate(props = {})
-  -
-    let { title, votes = [], total, units = [] } = props;
-  .rate.js-rate(data-data=props)
-    if (title)
-      .rate__title= title
-    .rate__vote-section
-      .rate__circle.js-rate__circle
-        canvas.rate__canvas
-        .rate__circle-inner
-          .rate__total= total
-          .rate__unit.js-rate__unit
-        .rate__dummy
-      .rate__clarification
-        each vote in votes
-          -
-            let { color , background, label } = vote || {};
-            let style = (color ? `color: ${color};` : '') + (background ? `background: ${background}`: '');
-          .rate__vote
-            .rate__vote-mark(style=style)
-            .rate__vote-label= label
+include ../title-label/title-label
+
+mixin rate(props)
+  if props
+    -
+      let { title, votes = [], total, units = [] } = props;
+      let className = 'rate';
+      let classNames = `${className} js-${className}`;
+    article(class=classNames)
+      if title
+        div(class=`${className}__title`) 
+          +title-label(title)
+      div(class=`${className}__vote-section`)
+        div(class=`${className}__circle js-${className}__circle`)
+          canvas(class=`${className}__canvas js-${className}__canvas`)
+          p(class=`${className}__circle-inner js-${className}__circle-inner`)
+            span(class=`${className}__total`)= total
+            span(class=`${className}__unit js-${className}__unit`)
+        ul(class=`${className}__clarification`)
+          each vote in votes
+            -
+              let { color , background, label } = vote || {};
+              let style = (color ? `color: ${color};` : '') + (background ? `background: ${background}`: '');
+            li(class=`${className}__vote`)
+              span(class=`${className}__vote-mark`, style=style)
+              span(class=`${className}__vote-label`)= label

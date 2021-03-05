@@ -93,15 +93,16 @@ class DropDownSummary {
     //   'DropDownSummary.MAPS[type] ',
     //   DropDownSummary.MAPS[this._type]
     // );
-    this._items = items.reduce((accumulator, item) => {
-      accumulator[item.name] = item;
-      return accumulator;
-    }, {});
+    this._items =
+      items?.reduce((accumulator, item) => {
+        accumulator[item.name] = item;
+        return accumulator;
+      }, {}) || {};
     this.updateSummary();
   }
 
   _prepareSummary() {
-    const total = Object.values(this._items).reduce((sum, item) => {
+    const total = Object.values(this._items)?.reduce((sum, item) => {
       return sum + item.value;
     }, 0);
     if (!total) {
@@ -129,7 +130,7 @@ class DropDownSummary {
 
   @bind
   _parseComfortItems() {
-    return Object.values(this._items).reduce((summary, item = {}) => {
+    return Object.values(this._items)?.reduce((summary, item = {}) => {
       // console.log('_parseComfortItems item : ', item);
       const separator = summary ? this._separator : '';
       const { name, value } = item;

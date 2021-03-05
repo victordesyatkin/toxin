@@ -20,6 +20,25 @@ $parent: 'book';
     align-items: flex-end;
   }
 
+  &__price {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__price {
+    @include base-h;
+    font-size: 1rem;
+    font-weight: bold;
+    color: $book-text-color-price;
+  }
+
+  &__duration {
+    font-weight: normal;
+    font-size: 0.8571rem;
+    margin-left: 0.28rem;
+    @include font-family-first-regular;
+  }
+
   &__room-number-wrapper {
     font-weight: bold;
     text-transform: uppercase;
@@ -36,12 +55,8 @@ $parent: 'book';
     letter-spacing: -0.0435rem;
   }
 
-  &__duration {
-    margin-left: 0.071rem;
-  }
-
   &_theme_room-details {
-    .#{$parent}__number {
+    .#{$parent}__room-number {
       margin-right: 0.6899rem;
     }
   }
@@ -76,7 +91,7 @@ $parent: 'book';
   }
 
   &__discount-content {
-    margin: 0 0.357rem;
+    margin: 0 0.28rem;
   }
 
   &__icon-info {

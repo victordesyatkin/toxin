@@ -1,42 +1,40 @@
-// import { renderComponents, renderComponent } from '../../helpers/utils';
-// import SignIn from '../../components/sign-in';
-// import Footer from '../../components/footer';
-// import '../../components/card';
-// import '../registration';
-// import './registration-sign-in.scss';
+import { Component } from '../../helpers/utils';
+import SignIn from '../../components/sign-in';
+import Base from '../base/base';
+import '../registration/index';
+import data from './data.json';
+import './registration-sign-in.scss';
 
-// class RegistrationSignIn {
-//   static CLASS_NAME = 'REGISTRATION_SIGN_IN';
+class RegistrationSignIn extends Component {
+  static handleComponentLoad() {
+    console.log('handleComponentLoad');
+    const registration = new RegistrationSignIn({ props: data });
+    return registration;
+  }
 
-//   static renderComponents(props = {}) {
-//     const { parents, query, render } = props;
-//     renderComponents({
-//       parents,
-//       query: query || '.js-registration__sign-in',
-//       render: render || RegistrationSignIn._renderComponent,
-//     });
-//   }
+  _query = '.js-registration';
 
-//   static _renderComponent(index, element) {
-//     renderComponent({
-//       element,
-//       className: RegistrationSignIn.CLASS_NAME,
-//       someClass: RegistrationSignIn,
-//     });
-//   }
+  _className = 'registration';
 
-//   constructor(element) {
-//     this._element = element;
-//     this._$element = $(element);
-//     this._init();
-//   }
+  constructor(options) {
+    console.log('RegistrationSignIn constructor this._props : ', options);
+    super(options);
+    this._renderComponent();
+  }
 
-//   _init() {
-//     SignIn.renderComponents({ parents: this._$element });
-//     Footer.renderComponents();
-//   }
-// }
+  _init() {
+    console.log('RegistrationSignIn _init this._props : ', this._props);
+    const { signIn } = this._props;
+    this._base = new Base({
+      props: this._props,
+    });
+    this._signIn = new SignIn({
+      parent: $(`${this._query}__sign-in`, this._$element),
+      props: signIn,
+    });
+  }
+}
 
-// // window.addEventListener('load', RegistrationSignIn.renderComponents);
+window.addEventListener('load', RegistrationSignIn.handleComponentLoad);
 
-// export default RegistrationSignIn;
+export default RegistrationSignIn;

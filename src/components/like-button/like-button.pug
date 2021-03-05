@@ -4,7 +4,7 @@ mixin like-button(props = {})
       let
           {
             name, value, ariaLabel, type = "checkbox",
-            count:passCount = 0, tabindex,
+            count:passCount = 0, tabIndex,
             srcLike, altLike, srcNotLike, altNotLike,
             isRequired, isDisabled, isChecked, isHidden
           } = props;
@@ -19,17 +19,18 @@ mixin like-button(props = {})
         value=value,
         type="checkbox",
         id=id,
-        tabindex=tabindex,
+        tabindex=tabIndex,
         required=isRequired,
         disabled=isDisabled,
         checked=isChecked,
         class=`${className}__input js-${className}__input`
       )
-      span(class=`${className}__check-mark`)
-        if srcLike
-          span(class=`${className}__like`)
-            img(src=srcLike, alt=altLike, class=`${className}__image`)
-        if srcNotLike
-          span(class=`${className}__not-like`)
-            img(src=srcNotLike, alt=altNotLike, class=`${className}__image`)
-        span(class=`${className}__count js-${className}__count`) #{count}
+      span(class=`${className}__check-mark-wrapper`)
+        span(class=`${className}__check-mark`)
+          if srcLike
+            span(class=`${className}__like`)
+              img(src=srcLike, alt=altLike, class=`${className}__image`)
+          if srcNotLike
+            span(class=`${className}__not-like`)
+              img(src=srcNotLike, alt=altNotLike, class=`${className}__image`)
+          span(class=`${className}__count js-${className}__count`) #{count}

@@ -9,7 +9,7 @@ mixin header(props)
       let classNames = `${className} js-${className}`;
       let { ariaLabel, type="button", name, value, title } = toggleNavigation;
       classNames += isOpened ? ` ${className}_opened` : '';
-    header(class=classNames)
+    div(class=classNames)
       div(class=`${className}__logo`)
         +logo-link(logo)
       div(class=`${className}__toggle-navigation`)

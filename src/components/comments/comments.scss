@@ -8,10 +8,6 @@
     margin-bottom: 1.54rem;
   }
 
-  &__label {
-    @include h2;
-  }
-
   &__count {
     color: $comment-text-color-count;
   }
@@ -23,6 +19,10 @@
   &__section {
     display: flex;
     margin-top: 1.5714rem;
+  }
+
+  &__items {
+    list-style-type: none;
   }
 
   &__item {

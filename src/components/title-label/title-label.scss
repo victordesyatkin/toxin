@@ -15,7 +15,18 @@ $parent: 'title-label';
     .#{$parent}__label,
     .#{$parent}__content {
       @include h1;
-      text-transform: none;
+    }
+  }
+
+  &_theme_rate,
+  &_theme_info,
+  &_theme_comments,
+  &_theme_card,
+  &_theme_description,
+  &_theme_bullet {
+    .#{$parent}__content,
+    .#{$parent}__label {
+      text-transform: inherit;
     }
   }
 

@@ -6,20 +6,22 @@ $parent: 'rate';
   width: 100%;
 
   &__title {
-    @include h2;
-    font-size: 1.357rem;
-    line-height: 1.696rem;
     margin-bottom: 1.7rem;
   }
 
   &__circle {
     width: 8.571rem;
-    height: 8.571rem;
+    min-width: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     margin-right: 2.143rem;
+  }
+
+  &__circle::after {
+    content: '';
+    margin-top: 100%;
   }
 
   &__dummy {
@@ -66,8 +68,11 @@ $parent: 'rate';
   }
 
   &__vote-mark {
+    display: inline-flex;
     width: 0.7142rem;
     height: 0.7142rem;
+    min-width: 0.7142rem;
+    min-height: 0.7142rem;
     border-radius: 50%;
     margin-right: 0.35714rem;
   }

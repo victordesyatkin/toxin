@@ -1,37 +1,23 @@
 include ../comment/comment
+include ../title-label/title-label
+
 mixin comments(props)
   if props
     -
-      let { title, count, comments = [] } = props;
+      let { title, count, comments = [], images = {} } = props;
       let className = 'comments';
       let classNames = `${className} js-${className}`;
       let { length } = comments;
-    div(
-      class=classNames
-
-    )
+    div(class=classNames)
       if (label || count)
-        div(
-          class=`${className}__header`
-        )
-          div(
-            class=${`className`_title}
-          )
-            span(
-              class=`${className}__count`
-            )
-              span(
-                class=`${className}__count-value`
-              )= count
-              span(
-                class=`${className}__count-units js-${className}__count-units`
-              )
+        div(class=`${className}__header`)
+          div(class=`${className}_title`)
+            +title-label(title)
+          div(class=`${className}__count`)
+            span(class=`${className}__count-value`)= count
+            span(class=`${className}__count-units js-${className}__count-units`)
       if length
-        ul(
-          class=`${className}__items`
-        )
+        ul(class=`${className}__items`)
           each comment in comments
-            li(
-              class=`${className}__comments__item`
-            )
-              +comment(comment)
+            li(class=`${className}__item`)
+              +comment({...images, ...comment})

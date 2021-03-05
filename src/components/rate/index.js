@@ -1,6 +1,5 @@
-import get from 'lodash/get';
-import orderBy from 'lodash/orderBy';
 import bind from 'bind-decorator';
+import orderBy from 'lodash/orderBy';
 
 import { Component, wordForm } from '../../helpers/utils';
 import './rate.scss';
@@ -8,8 +7,14 @@ import './rate.scss';
 class Rate extends Component {
   _query = '.js-rate';
 
+  _className = 'rate';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
+
   _init() {
-    this._data = this._$element.data();
     this._setUnits();
     this._initCircle();
     this._initCanvas();
@@ -27,8 +32,8 @@ class Rate extends Component {
   }
 
   _calcAngle(count = 0) {
-    const k = count / this._total;
-    return k * 2 * Math.PI;
+    const ratio = count / this._total;
+    return ratio * 2 * Math.PI;
   }
 
   _drawSeparator(passStartAngle) {
@@ -44,16 +49,16 @@ class Rate extends Component {
   }
 
   _draw() {
-    this._votes = get(this._data, ['data', 'votes']) || [];
+    this._votes = this._props?.votes || [];
     this._votes = orderBy(
-      this._votes.filter((v) => {
-        return v.count;
+      this._votes.filter((vote) => {
+        return vote.count;
       }),
       ['order'],
       ['asc']
     );
 
-    this._separator = get(this._data, ['data', 'separator']) || {};
+    this._separator = this._props?.separator || {};
     this._separatorColor = this._separator.color;
     this._separatorCount = this._separator.count;
 
@@ -111,7 +116,7 @@ class Rate extends Component {
   }
 
   _initCircle() {
-    this._$circle = $('.js-rate__circle', this._$element);
+    this._$circle = $(`${this._query}__circle`, this._$element);
     if (this._$circle.length) {
       this._widthCircle = this._$circle.width();
       this._heightCircle = this._$circle.height();
@@ -119,8 +124,8 @@ class Rate extends Component {
   }
 
   _initCanvas() {
-    this._$canvas = $('.rate__canvas', this._$element);
-    this._lineWidth = get(this._data, ['data', 'lineWidth']) || 2;
+    this._$canvas = $(`${this._query}__canvas`, this._$element);
+    this._lineWidth = this._props?.lineWidth || 2;
     if (this._$canvas.length) {
       this._canvas = this._$canvas.get(0);
       this._canvas.width = this._widthCircle;
@@ -139,8 +144,8 @@ class Rate extends Component {
   }
 
   _setUnits() {
-    this._total = get(this._data, ['data', 'total']);
-    this._units = get(this._data, ['data', 'units']) || [];
+    this._total = this._props?.total || 0;
+    this._units = this._props?.units || [];
     this._$unit = $('.js-rate__unit', this._$element);
     if (this._units.length) {
       this._$unit.html(wordForm(this._total, this._units));

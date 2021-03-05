@@ -3,18 +3,19 @@
 $parent: 'bullet-list';
 
 .#{$parent} {
-  &_size_large {
-    .#{$parent}__title {
-      @include h2;
-      text-transform: inherit;
-      padding-left: 1.5rem;
-      margin-bottom: 1.42rem;
-    }
-  }
+  // &_size_large {
+  //   .#{$parent}__title {
+  //     @include h2;
+  //     text-transform: inherit;
+  //     padding-left: 1.5rem;
+  //     margin-bottom: 1.42rem;
+  //   }
+  // }
 
   &__title {
-    margin-bottom: 15px;
-    @include h3;
+    margin-bottom: 1.42rem;
+    padding-left: 1.5rem;
+    //text-transform: inherit;
   }
 
   &__list {

@@ -9,7 +9,7 @@ mixin info(props)
       let classNames = `${className}`;
       let { length } = sections; 
       classNames += withLastLine ? ` ${className}_with-last-line` : '';
-    div(class=classNames)
+    article(class=classNames)
       if title
         div(class=`${className}__title`)
           +title-label(title)

@@ -9,7 +9,7 @@ mixin slider(props)
       classNames += isCovered ? ` ${className}_covered` : '';
       classNames += withControl ? ` ${className}_with-control` : '';
       classNames += isDisabled ? ` ${className}_disabled` : '';
-    div(class=classNames)
+    article(class=classNames)
       div(
         class=`${className}__section-images ${className}__section_not_selected js-${className}__section-images`
       )

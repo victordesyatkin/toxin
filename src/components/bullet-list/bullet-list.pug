@@ -12,7 +12,7 @@ mixin bullet-list(props)
           large: 'large',
       }
       classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
-    div(class=classNames)
+    article(class=classNames)
       if title
         div(class=`${className}__title`)
           +title-label(title)

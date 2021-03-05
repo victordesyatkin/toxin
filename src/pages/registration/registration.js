@@ -1,41 +1,39 @@
-// import { renderComponents, renderComponent } from '../../helpers/utils';
-// import SignUp from '../../components/sign-up';
-// import Footer from '../../components/footer';
-// import '../../components/card';
-// import './index';
+import { Component } from '../../helpers/utils';
+import SignUp from '../../components/sign-up';
+import Base from '../base/base';
+import data from './data.json';
+import './index';
 
-// class Registration {
-//   static CLASS_NAME = 'REGISTRATION';
+class Registration extends Component {
+  static handleComponentLoad() {
+    console.log('handleComponentLoad');
+    const registration = new Registration({ props: data });
+    return registration;
+  }
 
-//   static renderComponents(props = {}) {
-//     const { parents, query, render } = props;
-//     renderComponents({
-//       parents,
-//       query: query || '.js-registration',
-//       render: render || Registration._renderComponent,
-//     });
-//   }
+  _query = '.js-registration';
 
-//   static _renderComponent(index, element) {
-//     renderComponent({
-//       element,
-//       className: Registration.CLASS_NAME,
-//       someClass: Registration,
-//     });
-//   }
+  _className = 'registration';
 
-//   constructor(element) {
-//     this._element = element;
-//     this._$element = $(element);
-//     this._init();
-//   }
+  constructor(options) {
+    console.log('Registration constructor this._props : ', options);
+    super(options);
+    this._renderComponent();
+  }
 
-//   _init() {
-//     SignUp.renderComponents({ parents: this._$element });
-//     Footer.renderComponents();
-//   }
-// }
+  _init() {
+    const { signUp } = this._props;
+    console.log('Registration this._props : ', this._props);
+    this._base = new Base({
+      props: this._props,
+    });
+    this._signUp = new SignUp({
+      parent: $(`${this._query}__sign-up`, this._$element),
+      props: signUp,
+    });
+  }
+}
 
-// // window.addEventListener('load', Registration.renderComponents);
+window.addEventListener('load', Registration.handleComponentLoad);
 
-// export default Registration;
+export default Registration;

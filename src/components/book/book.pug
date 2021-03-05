@@ -7,7 +7,7 @@ mixin book(props)
   if props
     -
       let {
-          theme, action, method, price, duration, unit,
+          theme, action, method = 'GET', price, duration, unit,
           roomNumberContent, roomNumber, roomQuality,
           dropdown, dateDropdown, 
           discountTotal, discountContent, 

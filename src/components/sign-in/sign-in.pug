@@ -8,7 +8,7 @@ include ../card/card
 mixin sign-in(props)
   if props
     -
-      let { title, email, password, signIn, signUp, action, method } = props;
+      let { title, email, password, signIn, signUp, action, method = 'GET' } = props;
       let className = 'sign-in';
       let classNames = `${className} js-${className}`;
     +card

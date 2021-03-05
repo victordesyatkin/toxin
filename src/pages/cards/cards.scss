@@ -39,7 +39,10 @@ $parent: '.cards';
     }
 
     &__sign-up,
-    &__sign-in,
+    &__sign-in {
+      margin-top: 2.89rem;
+    }
+
     &__card-slider:nth-child(1) {
       margin-top: 2.7rem;
     }

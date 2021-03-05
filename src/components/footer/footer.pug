@@ -5,7 +5,7 @@ include ../copyright/copyright
 
 mixin footer(props = {})
   -
-    let { info = {}, items = [], subscribe = {}, copyright, logo, action, size } = props;
+    let { info = {}, items = [], subscribe = {}, copyright, logo, action, method = 'GET', size } = props;
     let { content } = info;
     let { header, description, subscriptionTextField } = subscribe;
     let sizes = {
