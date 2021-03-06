@@ -1,54 +1,89 @@
-// import { renderComponents, renderComponent } from '../../helpers/utils';
-// import FilterDateDropdown from '../../components/filter-date-dropdown';
-// import Dropdown from '../../components/dropdown';
-// import RangeSlider from '../../components/range-slider';
-// import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
-// import CardSlider from '../../components/card-slider';
-// import Pagination from '../../components/pagination';
-// import Footer from '../../components/footer';
-// import '../../components/checkbox-buttons';
-// import '../../components/rich-checkbox-buttons';
-// import '../base/base';
-// import './search-room-filter.scss';
+import bind from 'bind-decorator';
 
-// class SearchRoomFilter {
-//   static CLASS_NAME = 'SEARCH_ROOM_FILTER';
+import { Component } from '../../helpers/utils';
+import FilterDateDropdown from '../../components/filter-date-dropdown';
+import Dropdown from '../../components/dropdown';
+import CardSlider from '../../components/card-slider';
+import RangeSlider from '../../components/range-slider';
+import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
+import Pagination from '../../components/pagination';
+import '../../components/checkbox-buttons';
+import '../../components/rich-checkbox-buttons';
+import Base from '../base/base';
+import data from './data.json';
+import './search-room-filter.scss';
 
-//   static renderComponents(props = {}) {
-//     const { parents, query, render } = props;
-//     renderComponents({
-//       parents,
-//       query: query || '.js-search-room-filter',
-//       render: render || SearchRoomFilter._renderComponent,
-//     });
-//   }
+class SearchRoomFilter extends Component {
+  static handleComponentLoad() {
+    console.log('SearchRoomFilter handleComponentLoad options : ', data);
+    const searchRoomFilter = new SearchRoomFilter({ props: data });
+    return searchRoomFilter;
+  }
 
-//   static _renderComponent(inde, element) {
-//     renderComponent({
-//       element,
-//       className: SearchRoomFilter.CLASS_NAME,
-//       someClass: SearchRoomFilter,
-//     });
-//   }
+  _query = '.js-search-room-filter';
 
-//   constructor(element) {
-//     this._element = element;
-//     this._$element = $(element);
-//     this._init();
-//   }
+  _className = 'search-room-filter';
 
-//   _init() {
-//     const parents = this._$element;
-//     FilterDateDropdown.renderComponents({ parents });
-//     Dropdown.renderComponents({ parents });
-//     RangeSlider.renderComponents({ parents });
-//     ExpandableCheckboxList.renderComponents({ parents });
-//     CardSlider.renderComponents({ parents });
-//     Pagination.renderComponents({ parents });
-//     Footer.renderComponents();
-//   }
-// }
+  constructor(options) {
+    console.log('SearchRoomFilter constructor options : ', options);
+    super(options);
+    this._renderComponent();
+  }
 
-// // window.addEventListener('load', SearchRoomFilter.renderComponents);
+  _init() {
+    const {
+      filterDateDropdown,
+      dropdown1,
+      rangeSlider,
+      dropdown2,
+      expandableCheckboxList,
+      pagination,
+    } = this._props;
+    console.log('SearchRoomFilter _init this._props: ', this._props);
+    this._base = new Base({
+      props: this._props,
+    });
+    this._filterDateDropdown = new FilterDateDropdown({
+      parent: $(`${this._query}__filter-date-dropdown`, this._$element),
+      props: filterDateDropdown,
+    });
+    this._dropdown1 = new Dropdown({
+      parent: $(`${this._query}__dropdown-first`, this._$element),
+      props: dropdown1,
+    });
+    this._rangeSlider = new RangeSlider({
+      parent: $(`${this._query}__range-slider`, this._$element),
+      props: rangeSlider,
+    });
+    this._dropdown2 = new Dropdown({
+      parent: $(`${this._query}__dropdown-second`, this._$element),
+      props: dropdown2,
+    });
+    this._expandableCheckboxList = new ExpandableCheckboxList({
+      parent: $(`${this._query}__expandable-checkbox-list`, this._$element),
+      props: expandableCheckboxList,
+    });
+    this._cardSliders = [];
+    this._$cardSliders = $(`${this._query}__card-slider`, this._$element);
+    this._$cardSliders.each(this._renderCardSlider);
+    this._pagination = new Pagination({
+      parent: $(`${this._query}__pagination`, this._$element),
+      props: pagination,
+    });
+  }
 
-// export default SearchRoomFilter;
+  @bind
+  _renderCardSlider(index, element) {
+    const props = this._props?.cardSliders?.[index];
+    this._cardSliders.push(
+      new CardSlider({
+        parent: $(element, this._$element),
+        props,
+      })
+    );
+  }
+}
+
+window.addEventListener('load', SearchRoomFilter.handleComponentLoad);
+
+export default SearchRoomFilter;

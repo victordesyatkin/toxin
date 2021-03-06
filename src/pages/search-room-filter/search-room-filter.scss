@@ -57,19 +57,20 @@ $parent: 'search-room-filter';
     margin-bottom: 2.1428rem;
   }
 
-  &__sliders {
+  &__card-sliders {
     display: grid;
-    grid-gap: 1.29rem 0.8571rem;
+    grid-gap: 1.15rem 0.8571rem;
     grid-template-columns: repeat(3, 19.2857rem);
+    list-style-type: none;
   }
 
-  &__slider {
+  &__card-slider {
     width: 19.2857rem;
   }
 
   &__pagination {
     width: 17.2142rem;
-    margin: 2.6485rem auto 5.1842rem;
+    margin: 2.67rem 0 5.1842rem 20.642rem;
   }
 }
 
@@ -87,10 +88,15 @@ $parent: 'search-room-filter';
     display: flex;
     justify-content: center;
 
-    &__sliders {
+    &__card-sliders {
       display: grid;
       grid-gap: 1.29rem 0.8571rem;
       grid-template-columns: repeat(2, 19.2857rem);
+    }
+
+    &__pagination {
+      width: 30.2142rem;
+      margin: 2.67rem auto 5.1842rem;
     }
   }
 }
@@ -101,7 +107,7 @@ $parent: 'search-room-filter';
     display: flex;
     justify-content: center;
 
-    &__sliders {
+    &__card-sliders {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -121,7 +127,7 @@ $parent: 'search-room-filter';
     flex-direction: column;
     justify-content: center;
 
-    &__sliders {
+    &__card-sliders {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;

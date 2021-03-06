@@ -18,6 +18,7 @@ class Pagination extends Component {
   }
 
   _init() {
+    console.log('pagination : ', this._props);
     const {
       start = 0,
       end = 0,

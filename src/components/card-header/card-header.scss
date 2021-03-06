@@ -13,35 +13,41 @@ $parent: 'card-header';
   &__number-info {
     @include h3;
     text-transform: uppercase;
+    font-size: 1rem;
     padding-top: 0.0714rem;
+    line-height: inherit;
+    // display: flex;
+    // align-items: center;
   }
 
   &__number {
-    @include h1;
-    margin: 0 0.586rem 0 0.357rem;
+    @include base-h;
+    font-size: 1.286rem;
+    font-weight: bold;
+    margin: 0 0.5714rem 0 0.285rem;
   }
 
   &__quality {
-    font-size: 0.9rem;
+    font-size: 0.929rem;
     color: $book-text-color-quality;
   }
 
   &__price {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  &__price {
     @include base-h;
-    font-size: 1rem;
     font-weight: bold;
     color: $book-text-color-price;
+    line-height: inherit;
+  }
+
+  &__info-text {
+    font-size: 1rem;
   }
 
   &__duration {
     font-weight: normal;
     font-size: 0.8571rem;
     margin-left: 0.3571rem;
+    color: $book-text-color-price;
     @include font-family-first-regular;
   }
 
@@ -53,6 +59,10 @@ $parent: 'card-header';
     .#{$parent}__number {
       font-size: 1.3571rem;
       margin: 0 0 0 0.2857rem;
+    }
+
+    .#{$parent}__quality {
+      font-size: 1rem;
     }
 
     .#{$parent}__price {

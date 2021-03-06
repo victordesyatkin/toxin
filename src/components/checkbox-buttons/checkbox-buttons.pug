@@ -7,7 +7,7 @@ mixin checkbox-buttons(props)
       let { title, buttons = [], src } = props;
       let { length } = buttons;
       let className = 'checkbox-buttons';
-    div(class=className)
+    article(class=className)
       if title
         div(class=`${className}__title`)
           +title-label(title)

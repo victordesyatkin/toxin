@@ -76,7 +76,7 @@ class Calendar extends Component {
   static _value2Date(value = '') {
     let date = new Date(value);
     // console.log('_value2Date value 1', value);
-    if (!isValidDate()) {
+    if (!isValidDate(date)) {
       // console.log('_value2Date date 2', date);
       date = Calendar._prepareDate(value);
     }
@@ -112,14 +112,16 @@ class Calendar extends Component {
       props: { control, handleButtonClick: this._handleControlClick },
     });
     this._$element.on('click', this._handleBlockClick);
-    console.log('init : start : ', start);
-    console.log('init : end : ', end);
+    // console.log('init : start : ', start);
+    // console.log('init : end : ', end);
     this._selectDate({ start, end });
   }
 
   _selectDate({ start: passStart, end: passEnd }) {
     const start = Calendar._value2Date(passStart);
     const end = Calendar._value2Date(passEnd);
+    // console.log('_selectDate : start : ', start);
+    // console.log('_selectDate : end : ', end);
     if (start && !end) {
       this._selectType = Calendar.SELECTED_TYPE_START;
       this._rangeFromDateClasses = '-hide-in-broken-range-';
@@ -128,8 +130,8 @@ class Calendar extends Component {
     } else {
       this._selectType = '';
     }
-    console.log('selectDate : start : ', start);
-    console.log('selectDate : end : ', end);
+    // console.log('selectDate : start : ', start);
+    // console.log('selectDate : end : ', end);
     // if (start && end) {
     // }
     this._datepicker.selectDate([start, end]);
@@ -204,7 +206,7 @@ class Calendar extends Component {
         this._rangeFromDateClasses = this._selectType
           ? '-hide-in-broken-range-'
           : '-hide-in-range-';
-        console.log('this._selectType : ', this._selectType);
+        // console.log('this._selectType : ', this._selectType);
         switch (this._selectType) {
           case Calendar.SELECTED_TYPE_START: {
             dates[1] = '';
@@ -239,7 +241,7 @@ class Calendar extends Component {
   _toggleVisibleButtonClean() {
     const selectedDatesLength = get(this._datepicker, ['selectedDates'], [])
       .length;
-    console.log('_toggleVisibleButtonClean', selectedDatesLength);
+    // console.log('_toggleVisibleButtonClean', selectedDatesLength);
     if (selectedDatesLength) {
       this._control?.show();
     } else {

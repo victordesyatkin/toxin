@@ -11,10 +11,6 @@ import data from './data.json';
 import './room-details.scss';
 
 class RoomDetails extends Component {
-  _query = '.js-room-details';
-
-  _className = 'room-details';
-
   static handleComponentLoad() {
     const roomDetails = new RoomDetails({ props: data });
     return roomDetails;

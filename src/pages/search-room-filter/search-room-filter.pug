@@ -1,50 +1,59 @@
-//- extends ../base/base
+extends ../base/base
 
-//- include ../../components/filter-date-dropdown/filter-date-dropdown
-//- include ../../components/dropdown/dropdown
-//- include ../../components/range-slider/range-slider
-//- include ../../components/checkbox-buttons/checkbox-buttons
-//- include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
-//- include ../../components/expandable-checkbox-list/expandable-checkbox-list
-//- include ../../components/card-slider/card-slider
-//- include ../../components/pagination/pagination
+include ../../components/filter-date-dropdown/filter-date-dropdown
+include ../../components/dropdown/dropdown
+include ../../components/range-slider/range-slider
+include ../../components/checkbox-buttons/checkbox-buttons
+include ../../components/rich-checkbox-buttons/rich-checkbox-buttons
+include ../../components/expandable-checkbox-list/expandable-checkbox-list
+include ../../components/card-slider/card-slider
+include ../../components/pagination/pagination
 
-//- block main
-//-   -
-//-     let {
-//-             filterDateDropdown,
-//-             rangeSlider,
-//-             dropdown1,
-//-             dropdown2,
-//-             checkboxButtons,
-//-             richCheckboxButtons,
-//-             expandableCheckboxList,
-//-             filterTitle,
-//-             sliders = [],
-//-             pagination
-//-     } = data;
-//-   article.search-room-filter.js-search-room-filter
-//-     aside.search-room-filter__aside
-//-       form.search-room-filter__form(action=action)
-//-         .search-room-filter__filter-date-dropdown
-//-           +filter-date-dropdown(filterDateDropdown)
-//-         .search-room-filter__dropdown-first
-//-           +dropdown(dropdown1)
-//-         .search-room-filter__range-slider
-//-           +range-slider(rangeSlider)
-//-         .search-room-filter__checkbox-buttons
-//-           +checkbox-buttons(checkboxButtons)
-//-         .search-room-filter__rich-checkbox-buttons
-//-           +rich-checkbox-buttons(richCheckboxButtons)
-//-         .search-room-filter__dropdown-second
-//-           +dropdown(dropdown2)
-//-         .search-room-filter__expandable-checkbox-list
-//-           +expandable-checkbox-list(expandableCheckboxList)
-//-     section.search-room-filter__section
-//-       .search-room-filter__title= filterTitle
-//-       .search-room-filter__sliders
-//-         each slider in sliders
-//-           .search-room-filter__slider
-//-             +card-slider(slider)
-//-       .search-room-filter__pagination
-//-         +pagination(pagination)
+block main
+  -
+    let {
+            action,
+            method='GET',
+            filterDateDropdown,
+            rangeSlider,
+            dropdown1,
+            dropdown2,
+            checkboxButtons,
+            richCheckboxButtons,
+            expandableCheckboxList,
+            filterTitle,
+            cardSliders = [],
+            pagination
+    } = data;
+    let className = 'search-room-filter';
+    let classNames = `${className} js-${className}`;
+    let { length } = cardSliders;
+  div(class=classNames)
+    aside(class=`${className}__aside`)
+      form(class=`${className}__form`, action=action, method=method)
+        div(
+          class=`${className}__filter-date-dropdown js-${className}__filter-date-dropdown`
+        )
+          +filter-date-dropdown(filterDateDropdown)
+        div(class=`${className}__dropdown-first js-${className}__dropdown-first`)
+          +dropdown(dropdown1)
+        div(class=`${className}__range-slider js-${className}__range-slider`)
+          +range-slider(rangeSlider)
+        div(class=`${className}__checkbox-buttons`)
+          +checkbox-buttons(checkboxButtons)
+        div(class=`${className}__rich-checkbox-buttons`) 
+          +rich-checkbox-buttons(richCheckboxButtons)
+        div(class=`${className}__dropdown-second js-${className}__dropdown-second`)
+          +dropdown(dropdown2)
+        div(
+          class=`${className}__expandable-checkbox-list js-${className}__expandable-checkbox-list`
+        ) 
+          +expandable-checkbox-list(expandableCheckboxList)
+    section(class=`${className}__section`)
+      p(class=`${className}__title`)= filterTitle
+      ul(class=`${className}__card-sliders`)
+        each cardSlider in cardSliders
+          li(class=`${className}__card-slider js-${className}__card-slider`)
+            +card-slider(cardSlider)
+    //-   div(class=`${className}__pagination js-${className}__pagination`)
+    //-     +pagination(pagination)

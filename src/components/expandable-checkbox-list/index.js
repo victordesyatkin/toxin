@@ -19,7 +19,7 @@ class ExpandableCheckboxList extends Component {
       parent: this._$element,
       props: expandable,
     });
-    console.log('this._expandable : ', this._expandable);
+    // console.log('this._expandable : ', this._expandable);
   }
 }
 

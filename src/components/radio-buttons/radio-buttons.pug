@@ -8,7 +8,7 @@ mixin radio-buttons(props)
       let { length } = buttons;
       let className = 'radio-buttons'
       let classNames = `${className} js-${className}`
-    div(class=className)
+    article(class=className)
       if title
         div(class=`${className}__title`)
           +title-label(title)

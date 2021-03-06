@@ -8,7 +8,7 @@ mixin card-header(props)
       let className = 'card-header';
       let classNames = `${className} js-${className}`;
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    div(class=classNames)
+    article(class=classNames)
       div(class=`${className}__section-info`)
         div(class=`${className}__number-info`)
           span(class=`${className}__info-text`)= roomNumberContent

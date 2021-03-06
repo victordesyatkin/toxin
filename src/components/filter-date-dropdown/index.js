@@ -118,7 +118,7 @@ class FilterDateDropdown extends Component {
   }
 
   _prepareValues(dates = []) {
-    console.log('this._$items : ', this._$items);
+    // console.log('this._$items : ', this._$items);
     dates.forEach((date, index) => {
       if (this._$items[index]) {
         $(this._$items[index]).val(isValidDate(date) ? date : '');

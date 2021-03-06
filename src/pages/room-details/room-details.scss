@@ -268,7 +268,14 @@ $parent: 'room-details';
     &__book {
       max-width: 27.1428rem;
       width: 100%;
-      margin: 0 auto;
+      margin: 0 auto 1rem;
+    }
+
+    &__info-section {
+      width: 100%;
+      display: flex;
+      margin-bottom: 0.7rem;
+      justify-content: space-around;
     }
   }
 }
@@ -317,7 +324,12 @@ $parent: 'room-details';
     &__book {
       max-width: 27.1428rem;
       width: 100%;
-      margin: 0 auto;
+      margin: 0 auto 1rem;
+    }
+
+    &__info-section {
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
 }

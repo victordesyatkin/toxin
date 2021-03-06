@@ -58,6 +58,7 @@
           "content": "О нас",
           "title": "О нас",
           "href": "/mock-address/change-me",
+          "isCurrent": false,
           "parent": 0
         },
         {
@@ -70,6 +71,34 @@
               "id": 7,
               "content": "Специальные услуги",
               "title": "Специальные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 8,
+              "content": "Дополнительные услуги",
+              "title": "Дополнительные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 9,
+              "content": "Расширенные услуги",
+              "title": "Расширенные услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 10,
+              "content": "Базовые услуги",
+              "title": "Базовые услуги",
+              "href": "/mock-address/change-me",
+              "parent": 2
+            },
+            {
+              "id": 11,
+              "content": "Совместные услуги",
+              "title": "Совместные услуги",
               "href": "/mock-address/change-me",
               "parent": 2
             }
@@ -97,8 +126,36 @@
           "children": [
             {
               "id": 6,
-              "content": "Соглашения",
-              "title": "Соглашения",
+              "content": "Специальные cоглашения",
+              "title": "Специальные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 7,
+              "content": "Совместные cоглашения",
+              "title": "Совместные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 8,
+              "content": "Базовые cоглашения",
+              "title": "Базовые cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 9,
+              "content": "Расширенные cоглашения",
+              "title": "Расширенные cоглашения",
+              "href": "/mock-address/change-me",
+              "parent": 5
+            },
+            {
+              "id": 10,
+              "content": "Дополнительные cоглашения",
+              "title": "Дополнительные cоглашения",
               "href": "/mock-address/change-me",
               "parent": 5
             }
@@ -107,17 +164,17 @@
       ],
       "buttons": [
         {
-          "text": "Войти",
+          "content": "Войти",
           "type": "button",
           "value": "",
-          "view": 1,
+          "theme": 1,
           "size": 3
         },
         {
-          "text": "Зарегистрироваться",
+          "content": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "view": 3,
+          "theme": 3,
           "size": 3
         }
       ]
@@ -132,7 +189,12 @@
         "src": "assets/images/logo-color.svg",
         "alt": "TOXIN"
       }
-    }
+    },
+    "toggleNavigation": {
+      "ariaLabel": "Toggle navigation",
+      "title": "Toggle navigation"
+    },
+    "isOpened": false
   },
   "footer": {
     "logo": {
@@ -258,765 +320,857 @@
     "subscribe": {
       "header": "Подписка",
       "description": "Получайте специальные предложения и новости сервиса",
-      "field": {
-        "input": {
-          "name": "footer_subscription_email",
-          "id": "footer_subscription_email",
-          "type": "text",
+      "subscriptionTextField": {
+        "textField": {
+          "name": "footer_subscription_email2",
+          "value": "",
+          "type": "email",
           "placeholder": "Email",
           "button": {
-            "isVisible": true,
-            "iconClass": "arrow-forward",
+            "iconClassName": "arrow-forward",
             "type": "submit"
           }
         },
-        "mask": {
+        "options": {
           "mask": "^\\S*@?\\S*$",
-          "regexp": true
+          "isRegexp": true
         }
       }
     },
     "action": "/mock-address/change-me"
   },
   "filterDateDropdown": {
-    "label": "даты пребывания в отеле",
-    "input": {
-      "name": "search-room-filter-filter-date-dropdown",
-      "dummy": "ДД МЕС",
-      "placeholder": "ДД МЕС - ДД МЕС",
-      "separator": "-",
-      "value": "[\"Wed Aug 19 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)\",\"Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)\"]"
+    "isOpened": false,
+    "dropdownTitleTextField": {
+      "dropdown": {
+        "theme": "date"
+      },
+      "maskedTextField": {
+        "textField": {
+          "button": { "iconClassName": "arrow-down" },
+          "title": {
+            "content": "даты пребывания в отеле"
+          },
+          "isSummaryOnly": true,
+          "summary": "ДД МЕС - ДД МЕС"
+        }
+      }
     },
+    "separator": " - ",
+    "items": [
+      {
+        "name": "form-elements-filter-date-dropdown-start",
+        "value": "Wed Aug 19 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+        "placeholder": "ДД МЕС"
+      },
+      {
+        "name": "form-elements-filter-date-dropdown-end",
+        "value": "Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+        "placeholder": "ДД МЕС"
+      }
+    ],
     "calendar": {
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить",
-      "isOpen": true
+      "today": "Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+      "control": {
+        "isHidden": true,
+        "items": [
+          {
+            "content": "очистить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "clean"
+          },
+          {
+            "content": "применить",
+            "type": "button",
+            "value": "",
+            "theme": 2,
+            "dataType": "apply"
+          }
+        ]
+      }
     }
   },
   "dropdown1": {
     "dropdown": {
-      "type": 1,
-      "isControlVisible": true,
+      "theme": "guests",
+      "type": "guests",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
-    },
-    "input": {
-      "name": "guests",
-      "stateText": "",
-      "type": "text",
-      "label": "гости",
-      "placeholder": "Сколько гостей",
-      "button": {
-        "iconClass": "arrow-down",
-        "isVisible": true,
-        "type": "button"
+      "isOpened": false,
+      "title": {
+        "content": "гости"
       },
-      "theme": "dropdown"
+      "map": {
+        "guests[adult]2": "guest",
+        "guests[child]2": "guest",
+        "guests[baby]2": "baby"
+      },
+      "together": {
+        "guests[adult]2": "guest",
+        "guests[child]2": "guest"
+      }
+    },
+    "maskedTextField": {
+      "textField": {
+        "button": { "iconClassName": "arrow-down" },
+        "theme": "dropdown",
+        "isSummaryOnly": true,
+        "summary": "Сколько гостей"
+      }
     },
     "items": [
-      { "title": "взрослые", "value": 2, "name": "adults", "type": "button" },
-      { "title": "дети", "value": 1, "name": "children", "type": "button" },
-      { "title": "младенцы", "value": 1, "name": "babies", "type": "button" }
-    ]
+      { "title": "взрослые", "value": 2, "name": "guests[adult]2" },
+      { "title": "дети", "value": 1, "name": "guests[child]2" },
+      { "title": "младенцы", "value": 1, "name": "guests[baby]2" }
+    ],
+    "control": {
+      "isHidden": true,
+      "items": [
+        {
+          "content": "очистить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "clean"
+        },
+        {
+          "content": "применить",
+          "type": "button",
+          "value": "",
+          "theme": 2,
+          "dataType": "apply"
+        }
+      ]
+    }
   },
   "rangeSlider": {
-    "label": "диапазон цены",
+    "title": "диапазон цены",
     "unit": "&#8381;",
     "start": 5000,
     "end": 10000,
     "min": 0,
-    "max": 17600,
+    "max": 17000,
     "separator": 1000,
     "description": "Стоимость за сутки пребывания в номере"
   },
   "checkboxButtons": {
-    "label": "правила дома",
+    "title": {
+      "content": "правила дома"
+    },
     "src": "assets/images/checkbox-buttons.svg",
+    "alt": "Checked",
     "buttons": [
       {
         "label": "Можно курить",
+        "isChecked": false,
         "name": "smoke",
-        "alt": "Можно курить"
+        "value": "smoke"
       },
       {
         "label": "Можно с питомцами",
         "isChecked": true,
         "name": "pet",
-        "alt": "Можно с питомцами"
+        "value": "pet"
       },
       {
         "label": "Можно пригласить гостей (до 10 человек)",
         "isChecked": true,
         "name": "guest",
-        "alt": "Можно пригласить гостей (до 10 человек)"
+        "value": "guest"
       }
     ]
   },
   "richCheckboxButtons": {
-    "label": "доступность",
+    "title": {
+      "content": "доступность"
+    },
     "src": "assets/images/checkbox-buttons.svg",
+    "alt": "Checked",
+    "theme": "bold",
     "buttons": [
       {
         "label": "Широкий коридор",
-        "checked": false,
         "name": "widecorridor",
-        "info": "Ширина коридоров в номере не менее 91 см.",
-        "alt": "Широкий коридор",
-        "theme": "bold"
+        "info": "Ширина коридоров в номере не менее 91 см."
       },
       {
         "label": "Помощник для инвалидов",
-        "checked": false,
         "name": "helper",
-        "info": "На 1 этаже вас встретит специалист  и проводит до номера.",
-        "alt": "Помощник для инвалидов",
-        "theme": "bold"
+        "info": "На 1 этаже вас встретит специалист и проводит до номера."
       }
     ]
   },
   "dropdown2": {
     "dropdown": {
-      "type": 0,
+      "theme": "comfort",
+      "type": "comfort",
       "buttonDecreaseText": "-",
       "buttonIncreaseText": "+",
-      "buttonCleanText": "Очистить",
-      "buttonApplyText": "Применить"
-    },
-    "input": {
-      "name": "rooms2",
-      "type": "text",
-      "label": "удобства номера",
-      "placeholder": "",
-      "button": {
-        "iconClass": "arrow-down",
-        "isVisible": true,
-        "type": "button"
+      "isOpened": false,
+      "title": {
+        "content": "удобства номера"
       },
-      "theme": "dropdown"
+      "map": {
+        "comfort[bedroom]2": "bedroom",
+        "comfort[bed]2": "bed",
+        "comfort[bathroom]2": "bathroom"
+      }
+    },
+    "maskedTextField": {
+      "textField": {
+        "button": { "iconClassName": "arrow-down" },
+        "theme": "dropdown",
+        "isSummaryOnly": true,
+        "summary": "Удобства"
+      }
     },
     "items": [
-      { "title": "спальни", "value": 2 },
-      { "title": "кровати", "value": 2 },
-      { "title": "ванные комнаты", "value": 0 }
+      { "title": "спальни", "value": 2, "name": "comfort[bedroom]2" },
+      { "title": "кровати", "value": 2, "name": "comfort[bed]2" },
+      { "title": "ванные комнаты", "value": 0, "name": "comfort[bathroom]2" }
     ]
   },
   "expandableCheckboxList": {
-    "expandable": { "label": "дополнительные удобства" },
+    "expandable": { "title": "дополнительные удобства" },
     "src": "assets/images/checkbox-buttons.svg",
+    "alt": "Checked",
     "buttons": [
       {
         "label": "Завтрак",
-        "name": "breakfast",
+        "isChecked": false,
+        "name": "breakfast1",
         "alt": "Завтрак"
       },
       {
         "label": "Письменный стол",
         "isChecked": true,
-        "name": "table",
-        "alt": "Письменный"
+        "name": "table1",
+        "alt": "Письменный стол"
       },
       {
         "label": "Стул для кормления",
         "isChecked": true,
-        "name": "chair",
+        "name": "chair1",
         "alt": "Стул для кормления"
       },
       {
         "label": "Кроватка",
         "isChecked": true,
-        "name": "cot",
+        "name": "cot1",
         "alt": "Кроватка"
       },
       {
         "label": "Телевизор",
-        "name": "tv1",
+        "isChecked": false,
+        "name": "tv11",
         "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "name": "shampoo1",
+        "isChecked": false,
+        "name": "shampoo11",
         "alt": "Шампунь"
       },
       {
         "label": "Телевизор",
-        "name": "tv2",
+        "isChecked": false,
+        "name": "tv21",
         "alt": "Телевизор"
       },
       {
         "label": "Шампунь",
-        "name": "shampoo2",
+        "isChecked": false,
+        "name": "shampoo21",
         "alt": "Шампунь"
       }
     ]
   },
-  "sliders": {
-    "slider1": {
+  "cardSliders": [
+    {
       "slider": {
-        "isControl": true,
         "images": [
           {
             "src": "assets/images/slider-1.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
             "src": "assets/images/slider-2.jpg",
-            "alt": "slider-2"
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": true
       },
       "info": {
-        "number": 888,
-        "suite": "люкс",
+        "roomNumber": 888,
+        "roomQuality": "люкс",
         "price": "9 990",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 5,
           "name": "rating1",
-          "count": 5,
+          "value": 5,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 145
+        }
       },
+      "commentsNumber": 145,
       "commentsContent": "Отзывов"
     },
-    "slider2": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-2.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
             "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "840",
-        "suite": "",
+        "roomNumber": 840,
+        "roomQuality": "",
         "price": "9 990",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 4,
           "name": "rating2",
-          "count": 5,
+          "value": 4,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 65
+        }
       },
+      "commentsNumber": 65,
       "commentsContent": "Отзывов"
     },
-    "slider3": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "980",
-        "suite": "люкс",
-        "price": "6 650",
+        "roomNumber": 980,
+        "roomQuality": "люкс",
+        "price": "8500",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 3,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating3",
+          "value": 3,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 35
+        }
       },
+      "commentsNumber": 35,
       "commentsContent": "Отзывов"
     },
-    "slider4": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "856",
-        "suite": "",
+        "roomNumber": 856,
+        "roomQuality": "",
         "price": "7 300",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 5,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating4",
+          "value": 5,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 19
+        }
       },
+      "commentsNumber": 19,
       "commentsContent": "Отзывов"
     },
-    "slider5": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-5.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "740",
-        "suite": "",
+        "roomNumber": 740,
+        "roomQuality": "люкс",
         "price": "6 000",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 4,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating5",
+          "value": 4,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 44
+        }
       },
+      "commentsNumber": 44,
       "commentsContent": "Отзывов"
     },
-    "slider6": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-6.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "982",
-        "suite": "",
+        "roomNumber": 982,
+        "roomQuality": "",
         "price": "5 800",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 3,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating6",
+          "value": 3,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 56
+        }
       },
+      "commentsNumber": 56,
       "commentsContent": "Отзывов"
     },
-    "slider7": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-7.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "678",
-        "suite": "",
+        "roomNumber": 678,
+        "roomQuality": "",
         "price": "5 500",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 5,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating7",
+          "value": 5,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 45
+        }
       },
+      "commentsNumber": 45,
       "commentsContent": "Отзывов"
     },
-    "slider8": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-8.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "450",
-        "suite": "",
+        "roomNumber": 450,
+        "roomQuality": "",
         "price": "5 300",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 4,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating8",
+          "value": 4,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 39
+        }
       },
+      "commentsNumber": 39,
       "commentsContent": "Отзывов"
     },
-    "slider9": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-9.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "350",
-        "suite": "",
+        "roomNumber": 350,
+        "roomQuality": "",
         "price": "5 000",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 3,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating9",
+          "value": 3,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 77
+        }
       },
+      "commentsNumber": 77,
       "commentsContent": "Отзывов"
     },
-    "slider10": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-10.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "666",
-        "suite": "",
+        "roomNumber": 666,
+        "roomQuality": "",
         "price": "5 000",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 5,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating10",
+          "value": 5,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 25
+        }
       },
+      "commentsNumber": 25,
       "commentsContent": "Отзывов"
     },
-    "slider11": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-11.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "444",
-        "suite": "",
+        "roomNumber": 444,
+        "roomQuality": "",
         "price": "5 000",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 3,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating11",
+          "value": 3,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 15
+        }
       },
+      "commentsNumber": 15,
       "commentsContent": "Отзывов"
     },
-    "slider12": {
+    {
       "slider": {
         "images": [
           {
             "src": "assets/images/slider-12.jpg",
-            "alt": "slider-1"
+            "alt": "view-1"
           },
           {
-            "src": "assets/images/slider-1.jpg",
-            "alt": "slider-2"
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
           },
           {
             "src": "assets/images/slider-3.jpg",
-            "alt": "slider-3"
+            "alt": "view-3"
           },
           {
             "src": "assets/images/slider-4.jpg",
-            "alt": "slider-4"
+            "alt": "view-4"
           }
-        ]
+        ],
+        "withControl": false
       },
       "info": {
-        "number": "352",
-        "suite": "",
+        "roomNumber": 352,
+        "roomQuality": "",
         "price": "5 000",
         "duration": "в сутки",
         "unit": "&#8381",
-        "headerNumberText": "№",
+        "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" },
-        "theme": "slider"
+        "options": { "style": "decimal", "currency": "RUB" }
       },
       "rating": {
         "button": {
-          "grade": 3,
-          "name": "rating2",
-          "count": 5,
+          "name": "rating12",
+          "value": 3,
+          "total": 5,
+          "isDisabled": true,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
           "altImgNoRate": "No rate"
-        },
-        "comments": 55
+        }
       },
+      "commentsNumber": 55,
       "commentsContent": "Отзывов"
     }
-  },
+  ],
   "pagination": {
     "start": 1,
     "end": 15,
     "current": 1,
-    "text": "вариантов аренды",
     "limit": 2,
     "count": 12,
-    "emptyString": "...",
-    "src": "assets/images/arrow-forward.svg",
+    "srcControl": "assets/images/arrow-forward.svg",
+    "altBack": "Back",
     "altNext": "Next",
-    "altPrevious": "Previous"
+    "separatorItem": "...",
+    "description": "вариантов аренды",
+    "separatorDescription": "-",
+    "separatorTotal": "из",
+    "to": {
+      "pathname": "/mock-address/change-me",
+      "search": "page",
+      "title": "page"
+    }
   },
   "title": "Search room/Filter",
   "filterTitle": "Номера, которые мы для вас подобрали",

@@ -8,7 +8,7 @@ mixin comments(props)
       let className = 'comments';
       let classNames = `${className} js-${className}`;
       let { length } = comments;
-    div(class=classNames)
+    article(class=classNames)
       if (label || count)
         div(class=`${className}__header`)
           div(class=`${className}_title`)
