@@ -10,6 +10,7 @@ mixin checkbox-button(props)
               bold: 'bold',
           }
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+      classNames += isHidden ? ` ${className}_hidden` : '';
     label(for=id, class=classNames)
       input(
         id=id,
@@ -20,8 +21,8 @@ mixin checkbox-button(props)
         required=isRequired,
         disabled=isDisabled,
         checked=isChecked,
-        hidden=isHidden,
-        class=`${className}__input`
+        class=`${className}__input`,
+        hidden=isHidden
       )
       span(class=`${className}__check-mark`)
         if (src)

@@ -75,7 +75,8 @@
       "value": "",
       "ariaLabel": "password",
       "placeholder": "Пароль",
-      "stateText": ""
+      "stateText": "",
+      "isToggle": true
     },
     "signIn": {
       "content": "Войти",

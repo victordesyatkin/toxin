@@ -30,7 +30,7 @@ class Dropdown extends Component {
 
   toggleOpen() {
     if (this._$element.hasClass(`${this._className}_opened`)) {
-      console.log('CLOSE 3');
+      // //console.log('CLOSE 3');
       this.close();
     } else {
       this.open();
@@ -44,7 +44,7 @@ class Dropdown extends Component {
   }
 
   close() {
-    console.log('CLOSE 4');
+    // //console.log('CLOSE 4');
     this._isOpened = false;
     this._$element.removeClass(`${this._className}_opened`);
     this._dropDownTitleTextField.close();
@@ -92,9 +92,9 @@ class Dropdown extends Component {
 
   @bind
   _handleControlClick(type) {
-    // console.log('_handleControlClick : ', type);
+    // ////console.log('_handleControlClick : ', type);
     if (Dropdown.CONTROLS[type]) {
-      // //console.log('Dropdown.CONTROLS[type] : ', Dropdown.CONTROLS[type]);
+      // //////console.log('Dropdown.CONTROLS[type] : ', Dropdown.CONTROLS[type]);
       this[Dropdown.CONTROLS[type]]();
     }
   }
@@ -106,8 +106,8 @@ class Dropdown extends Component {
 
   @bind
   _renderItem(index, element) {
-    // console.log('_renderItem : ');
     const props = get(this._props, ['items', index]);
+    // console.log('_renderItem : ', props);
     const item = new DropdownItem({
       parent: element,
       props: { ...props, handleInputChange: this._handleInputChange },
@@ -117,7 +117,7 @@ class Dropdown extends Component {
 
   @bind
   _handleInputChange(item) {
-    // console.log('_handleInputChange : ', item);
+    // ////console.log('_handleInputChange : ', item);
     this._dropDownSummary.updateItems({
       [item.name]: item,
     });
@@ -132,7 +132,7 @@ class Dropdown extends Component {
 
   @bind
   _handleApplyButtonClick() {
-    console.log('CLOSE 2');
+    // //console.log('CLOSE 2');
     this.close();
   }
 
@@ -146,7 +146,7 @@ class Dropdown extends Component {
 
   @bind
   _showCleanButton() {
-    console.log('_showCleanButton : ', this._control);
+    // //console.log('_showCleanButton : ', this._control);
     if (this._control) {
       this._control.show();
     }
@@ -158,7 +158,7 @@ class Dropdown extends Component {
     if (this._isOpened) {
       const { target } = event;
       if (!$(target).closest(this._$element).length) {
-        console.log('CLOSE 1');
+        // //console.log('CLOSE 1');
         this.close();
       }
     }

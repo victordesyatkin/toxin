@@ -120,7 +120,8 @@
       "name": "password1",
       "type": "password",
       "ariaLabel": "password",
-      "placeholder": "Пароль"
+      "placeholder": "Пароль",
+      "isToggle": true
     },
     "contribute": {
       "label": "Получать спецпредложения",

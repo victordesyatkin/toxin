@@ -44,14 +44,17 @@ class DropdownItem extends Component {
 
   _init() {
     // console.log('_init : ', this._props);
+    const { value } = this._props;
     this._$input = $(`${this._query}__input`, this._$element);
     // console.log('this._$element : ', this._$element);
     this._$element.on('click', this._handleElementClick);
     this._$title = $(`${this._query}__value`, this._$element);
-    const value = this.getValue();
     if (value !== 'undefined') {
+      // console.log('this._$title : ', this._$title);
+      // console.log('this._$title value : ', value);
       this._$title.text(value);
     }
+    this.setValue(value);
   }
 
   _toggleFade() {

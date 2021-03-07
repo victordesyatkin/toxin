@@ -359,18 +359,17 @@
     "separator": " - ",
     "items": [
       {
-        "name": "form-elements-filter-date-dropdown-start",
-        "value": "Wed Aug 19 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+        "name": "start",
+        "value": "Wed Aug 19 2019 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
         "placeholder": "ДД МЕС"
       },
       {
-        "name": "form-elements-filter-date-dropdown-end",
-        "value": "Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
+        "name": "end",
+        "value": "Sun Aug 23 2019 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
         "placeholder": "ДД МЕС"
       }
     ],
     "calendar": {
-      "today": "Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
       "control": {
         "isHidden": true,
         "items": [
@@ -403,13 +402,13 @@
         "content": "гости"
       },
       "map": {
-        "guests[adult]2": "guest",
-        "guests[child]2": "guest",
-        "guests[baby]2": "baby"
+        "adult": "guest",
+        "child": "guest",
+        "baby": "baby"
       },
       "together": {
-        "guests[adult]2": "guest",
-        "guests[child]2": "guest"
+        "adult": "guest",
+        "child": "guest"
       }
     },
     "maskedTextField": {
@@ -421,9 +420,9 @@
       }
     },
     "items": [
-      { "title": "взрослые", "value": 2, "name": "guests[adult]2" },
-      { "title": "дети", "value": 1, "name": "guests[child]2" },
-      { "title": "младенцы", "value": 1, "name": "guests[baby]2" }
+      { "title": "взрослые", "value": 2, "name": "adult" },
+      { "title": "дети", "value": 1, "name": "child" },
+      { "title": "младенцы", "value": 1, "name": "baby" }
     ],
     "control": {
       "isHidden": true,

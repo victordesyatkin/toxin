@@ -1,17 +1,16 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?daf6hn');
-  src: url('fonts/icomoon.eot?daf6hn#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?daf6hn') format('truetype'),
-    url('fonts/icomoon.woff?daf6hn') format('woff'),
-    url('fonts/icomoon.svg?daf6hn#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?av09ao');
+  src:  url('fonts/icomoon.eot?av09ao#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?av09ao') format('truetype'),
+    url('fonts/icomoon.woff?av09ao') format('woff'),
+    url('fonts/icomoon.svg?av09ao#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^='icon-'],
-[class*=' icon-'] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
@@ -26,66 +25,72 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-eye-slash:before {
+  content: "\e915";
+}
+.icon-eye:before {
+  content: "\e916";
+}
 .icon-bars:before {
-  content: '\e914';
+  content: "\e914";
 }
 .icon-i:before {
-  content: '\e911';
+  content: "\e911";
 }
 .icon-f:before {
-  content: '\e912';
+  content: "\e912";
 }
 .icon-t:before {
-  content: '\e913';
+  content: "\e913";
 }
 .icon-info:before {
-  content: '\e90e';
+  content: "\e90e";
 }
 .icon-expand_more:before {
-  content: '\e909';
+  content: "\e909";
 }
 .icon-expand_more_prev:before {
-  content: '\e90f';
+  content: "\e90f";
 }
 .icon-expand_more_forward:before {
-  content: '\e910';
+  content: "\e910";
 }
 .icon-expand_more_up:before {
-  content: '\e90a';
+  content: "\e90a";
 }
 .icon-whatshot:before {
-  content: '\e900';
+  content: "\e900";
 }
 .icon-location_city:before {
-  content: '\e901';
+  content: "\e901";
 }
 .icon-insert_emoticon:before {
-  content: '\e902';
+  content: "\e902";
 }
 .icon-arrow_forward:before {
-  content: '\e903';
+  content: "\e903";
 }
 .icon-arrow_prev:before {
-  content: '\e90b';
+  content: "\e90b";
 }
 .icon-arrow_up:before {
-  content: '\e90c';
+  content: "\e90c";
 }
 .icon-arrow_down:before {
-  content: '\e90d';
+  content: "\e90d";
 }
 .icon-star:before {
-  content: '\e904';
+  content: "\e904";
 }
 .icon-star_border:before {
-  content: '\e905';
+  content: "\e905";
 }
 .icon-favorite_border:before {
-  content: '\e906';
+  content: "\e906";
 }
 .icon-favorite:before {
-  content: '\e907';
+  content: "\e907";
 }
 .icon-Vector:before {
-  content: '\e908';
+  content: "\e908";
 }

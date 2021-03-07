@@ -18,7 +18,7 @@ class Footer extends Component {
   _init() {
     const { subscribe = {} } = this._props;
     const { subscriptionTextField } = subscribe;
-    console.log('subscriptionTextField : ', subscriptionTextField);
+    // console.log('subscriptionTextField : ', subscriptionTextField);
     this._subscriptionTextField = new SubscriptionTextField({
       parents: $(`${this._query}__subscription-text-field`, this._$element),
       props: subscriptionTextField,

@@ -11,7 +11,7 @@ class DropdownTitleControl extends Component {
 
   constructor(options) {
     super(options);
-    // console.log('constructor : ', options);
+    // //console.log('constructor : ', options);
     this._renderComponent();
   }
 
@@ -29,7 +29,7 @@ class DropdownTitleControl extends Component {
 
   empty() {
     this._textField.empty();
-    // console.log('EMPTY : ', this._textField);
+    // //console.log('EMPTY : ', this._textField);
   }
 
   open() {
@@ -40,7 +40,7 @@ class DropdownTitleControl extends Component {
   }
 
   close() {
-    // console.log('CLOSE 31');
+    // //console.log('CLOSE 31');
     this._isOpened = false;
     this._$element.removeClass(`${this._className}_opened`);
     this._textField.close();
@@ -78,12 +78,12 @@ class DropdownTitleControl extends Component {
       parent: this._$element,
       props: maskedTextField,
     });
-    // console.log('this._$title : ', this._textField);
+    // //console.log('this._$title : ', this._textField);
     this._$element.on('click', this._handleDropdownTitleTextFieldClick);
 
     this._$title = $(`${this._query}__title`, this._$element);
     this._$title.on('click', this._handleTitleClick);
-    // console.log('this._$title : ', this._$title);
+    // //console.log('this._$title : ', this._$title);
 
     this._$textField = $(`${this._query}__masked-text-field`, this._$element);
     this._$textField.on('click', this._handleTextFieldClick);
@@ -91,7 +91,7 @@ class DropdownTitleControl extends Component {
 
   @bind
   _handleDropdownTitleTextFieldClick(event) {
-    // console.log('_handleTextFieldClick : ');
+    // //console.log('_handleTextFieldClick : ');
     const { handleDropdownTitleTextFieldClick } = this._props;
     if (handleDropdownTitleTextFieldClick) {
       handleDropdownTitleTextFieldClick(event);
@@ -100,7 +100,7 @@ class DropdownTitleControl extends Component {
 
   @bind
   _handleTextFieldClick(event) {
-    // console.log('_handleTextFieldClick : ');
+    // //console.log('_handleTextFieldClick : ');
     const { handleTextFieldClick } = this._props;
     if (handleTextFieldClick) {
       handleTextFieldClick(event);
@@ -109,7 +109,7 @@ class DropdownTitleControl extends Component {
 
   @bind
   _handleTitleClick(event) {
-    // console.log('_handleTitleClick : ');
+    // //console.log('_handleTitleClick : ');
     const { handleTitleClick } = this._props;
     if (handleTitleClick) {
       handleTitleClick(event);

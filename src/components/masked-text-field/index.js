@@ -76,7 +76,7 @@ class MaskedTextField extends Component {
   constructor(options) {
     super(options);
     this._renderComponent();
-    console.log('options : ', options);
+    // console.log('options : ', options);
   }
 
   getInput() {
@@ -132,7 +132,7 @@ class MaskedTextField extends Component {
   }
 
   empty() {
-    // // console.log('empty : ', this._textField);
+    // // //console.log('empty : ', this._textField);
     this._textField?.empty();
   }
 
@@ -142,7 +142,7 @@ class MaskedTextField extends Component {
       parent: this._$element,
       props: textField,
     });
-    console.log('empty init : ', this._textField);
+    // console.log('empty init : ', this._textField);
     const { mask, type, isRegexp } = options;
     let maskOptions = {};
     if (mask && isRegexp) {
@@ -155,12 +155,12 @@ class MaskedTextField extends Component {
           ? MaskedTextField.TYPES[type]
           : maskOptions;
     }
-    // // console.log('maskOptions : ', maskOptions);
+    // // //console.log('maskOptions : ', maskOptions);
     if (!isEmpty(maskOptions)) {
       const element = this._textField.getInput();
       this._mask = IMask(element, maskOptions);
-      // // console.log('element : ', element);
-      // // console.log('$(element) : ', $(element).val());
+      // // //console.log('element : ', element);
+      // // //console.log('$(element) : ', $(element).val());
     }
   }
 }

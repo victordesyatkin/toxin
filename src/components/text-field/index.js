@@ -93,6 +93,7 @@ class TextField extends Component {
 
     this._$button = $(`${this._query}__button`, this._$element);
     this._$button.on('click', this._handleButtonClick);
+    console.log('_init this._$input : ', this._$button);
   }
 
   @bind
@@ -115,7 +116,8 @@ class TextField extends Component {
 
   @bind
   _handleButtonClick(event) {
-    // console.log('_handleButtonClick : ');
+    console.log('_handleButtonClick : ');
+    this._changeType();
     const { handleButtonClick } = this._props;
     if (handleButtonClick) {
       handleButtonClick(event);
@@ -128,6 +130,28 @@ class TextField extends Component {
     const { handleInputClick } = this._props;
     if (handleInputClick) {
       handleInputClick(event);
+    }
+  }
+
+  _changeType() {
+    const { isToggle, type } = this._props;
+    console.log('_changeType : ', isToggle);
+    if (type === 'password' && isToggle) {
+      let typeInput = this._$input.attr('type');
+      let removedClassName = '';
+      let addedClassName = '';
+      if (typeInput === 'text') {
+        typeInput = 'password';
+        removedClassName = 'icon-eye-slash';
+        addedClassName = 'icon-eye';
+      } else {
+        typeInput = 'text';
+        removedClassName = 'icon-eye';
+        addedClassName = 'icon-eye-slash';
+      }
+      this._$button.removeClass(removedClassName);
+      this._$button.addClass(addedClassName);
+      this._$input.attr('type', typeInput);
     }
   }
 }

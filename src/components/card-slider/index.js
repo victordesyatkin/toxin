@@ -12,12 +12,12 @@ class CardSlider extends Component {
 
   constructor(options) {
     super(options);
-    console.log('options 2: ', options);
+    // //console.log('options 2: ', options);
     this._renderComponent();
   }
 
   _init() {
-    console.log('options init: ', $(`${this._query}__slider`, this._$element));
+    // //console.log('options init: ', $(`${this._query}__slider`, this._$element));
     const { slider, cardHeader, rateButton } = this._props;
     this._slider = new Slider({
       parent: $(`${this._query}__slider`, this._$element),

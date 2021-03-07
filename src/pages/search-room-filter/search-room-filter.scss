@@ -4,19 +4,13 @@ $parent: 'search-room-filter';
 .#{$parent} {
   width: 100%;
   background-color: $page-background-color;
-  padding: 2.1428rem 10rem 0;
+  padding: 2.1rem 10rem 0;
   display: flex;
-
-  &__article {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
 
   &__aside {
     width: 19rem;
     margin-right: 4.2857rem;
+    padding-top: 0.1428rem;
   }
 
   &__title {
@@ -69,8 +63,7 @@ $parent: 'search-room-filter';
   }
 
   &__pagination {
-    width: 17.2142rem;
-    margin: 2.67rem 0 5.1842rem 20.642rem;
+    margin: 2.8rem 1.1rem 5.1842rem 0;
   }
 }
 
@@ -95,7 +88,6 @@ $parent: 'search-room-filter';
     }
 
     &__pagination {
-      width: 30.2142rem;
       margin: 2.67rem auto 5.1842rem;
     }
   }

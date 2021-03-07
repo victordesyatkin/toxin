@@ -15,7 +15,7 @@ class Base extends Component {
   _className = '';
 
   constructor(options) {
-    console.log('Base constructor this._props : ', options);
+    // console.log('Base constructor this._props : ', options);
     super(options);
     this._renderComponent();
   }

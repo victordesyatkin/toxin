@@ -93,6 +93,10 @@ $parent: '.form-elements';
   &__comment {
     padding-top: 0.7142rem;
   }
+
+  &__pagination {
+    width: 17.214rem;
+  }
 }
 
 @include media-breakpoint-up($xl) {

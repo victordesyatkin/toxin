@@ -4,8 +4,10 @@ include ../masked-text-field/masked-text-field
 mixin dropdown-title-text-field(props)
   if props
     -
-      let { dropdown = {}, maskedTextField } = props;
+      let { dropdown = {}, maskedTextField = {} } = props;
       let { isOpened, theme, title } = dropdown;
+      let { textField = {} } = maskedTextField;
+      let { isDirect } = textField;
       let themes = {
           comfort: 'comfort',
           guests: 'guests',
@@ -13,9 +15,10 @@ mixin dropdown-title-text-field(props)
       }
       let className = 'dropdown-title-text-field';
       let classNames = `${className} js-${className}`;
+      classNames += isDirect ? ` ${className}_direct` : '';
       classNames += isOpened ? ` ${className}_opened` : '';
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    div(class=classNames)
+    div(class=classNames, data-props=props)
       if title
         div(class=`${className}__title js-${className}__title`)
           +title-label(title)

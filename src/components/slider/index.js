@@ -21,7 +21,7 @@ class Slider extends Component {
   }
 
   _init() {
-    console.log(' this._setImage(this._index); : ', this._props);
+    // //console.log(' this._setImage(this._index); : ', this._props);
     this._images = get(this._props, ['images']) || [];
     this._length = this._images.length;
     this._$points = $(`${this._query}__point`, this._$element);
@@ -64,7 +64,8 @@ class Slider extends Component {
     if (Slider.TYPES_BUTTONS.indexOf(type) === -1) {
       return undefined;
     }
-    const duration = type === 1 ? -1 : 1;
+    const duration = type === Slider.TYPE_BUTTON_LEFT ? -1 : 1;
+    /// /console.log('duration : ', duration);
     this._cleanPoint(this._index);
     this._changeIndex(duration);
     this._setImage(this._index);
@@ -75,8 +76,8 @@ class Slider extends Component {
   _setImage(index) {
     const src = get(this._images, [index, 'src']) || '';
     const alt = get(this._images, [index, 'alt']) || '';
-    console.log(' this._setImage(this._index); : ', src);
-    console.log(' this._setImage(this._index); : ', alt);
+    // //console.log(' this._setImage(this._index); : ', src);
+    // //console.log(' this._setImage(this._index); : ', alt);
     this._$image.attr({ src, alt });
   }
 

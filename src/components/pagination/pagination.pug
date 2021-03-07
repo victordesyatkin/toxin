@@ -6,10 +6,10 @@ mixin pagination(props)
       let { title, description } = props;
       let className = 'pagination';
       let classNames = `${className} js-${className}`;
-    div(class=classNames)
+    article(class=classNames)
       if title
         div(class=`${className}__title`)
           +title-label(title)
       ul(class=`${className}__items js-${className}__items`)
       if description
-        div(class=`${className}__summary js-${className}__summary`)
+        p(class=`${className}__summary js-${className}__summary`)

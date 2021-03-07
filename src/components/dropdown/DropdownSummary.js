@@ -1,5 +1,4 @@
 import bind from 'bind-decorator';
-import get from 'lodash/get';
 
 import { wordForm } from '../../helpers/utils';
 
@@ -86,10 +85,10 @@ class DropDownSummary {
     this._words = words || DropDownSummary.WORDS[this._type] || {};
     this._together = together || DropDownSummary.TOGETHER[this._type] || {};
     this._placeholder = placeholder || DropDownSummary.PLACEHOLDERS[this._type];
-    // console.log('this._placeholder : ', this._placeholder);
-    console.log('this._map : ', this._map);
-    console.log('this._together  : ', this._together);
-    // console.log(
+    // ////////console.log('this._placeholder : ', this._placeholder);
+    /// /////console.log('this._map : ', this._map);
+    /// /////console.log('this._together  : ', this._together);
+    // ////////console.log(
     //   'DropDownSummary.MAPS[type] ',
     //   DropDownSummary.MAPS[this._type]
     // );
@@ -112,15 +111,15 @@ class DropDownSummary {
       }
     } else {
       const { handleFillSummary } = this._props;
-      console.log('handleFillSummary 1 : ');
+      /// /////console.log('handleFillSummary 1 : ');
       if (handleFillSummary) {
-        console.log('handleFillSummary 2 : ');
+        /// /////console.log('handleFillSummary 2 : ');
         handleFillSummary();
       }
     }
     let summary = this._placeholder;
-    // console.log('_prepareSummary this._placeholder : ', this._placeholder);
-    // console.log('_prepareSummary total : ', total);
+    // //console.log('_prepareSummary this._placeholder : ', this._placeholder);
+    // ////////console.log('_prepareSummary total : ', total);
     const parseItems = this[DropDownSummary.TOOLS[this._type]];
     if (total || !summary) {
       summary = parseItems ? parseItems() : '';
@@ -131,12 +130,12 @@ class DropDownSummary {
   @bind
   _parseComfortItems() {
     return Object.values(this._items)?.reduce((summary, item = {}) => {
-      // console.log('_parseComfortItems item : ', item);
+      // ////////console.log('_parseComfortItems item : ', item);
       const separator = summary ? this._separator : '';
       const { name, value } = item;
       let word = this._map[name];
       const words = this._words[word];
-      // console.log('_parseComfortItems word: ', word);
+      // ////////console.log('_parseComfortItems word: ', word);
       if (words) {
         word = wordForm(value, words);
         return `${summary}${separator}${value} ${word}`;
@@ -148,23 +147,29 @@ class DropDownSummary {
   @bind
   _parseGuestItems() {
     const forTogether = 'together';
+    // console.log('this._items : ', this._items);
     const data = Object.values(this._items).reduce((accumulator, item = {}) => {
-      let { name, value } = item;
+      let { name, value: passValue } = item;
       const word = this._map[name];
       const words = this._words[word];
+      passValue = parseInt(passValue || 0, 10) || 0;
+      let value = passValue;
       if (words) {
+        // //console.log('name  : ', name);
+        // //console.log('passValue  : ', passValue);
+        // //console.log('passValue  : ', this._together[name]);
         if (this._together[name]) {
           name = forTogether;
-          value += get(accumulator, [forTogether, 'value'], 0);
+          value += parseInt(accumulator?.[name]?.value || 0, 10);
         }
         accumulator[name] = {
-          value,
+          value: parseInt(value, 10),
           words,
         };
       }
       return accumulator;
     }, {});
-
+    // //console.log('data  : ', data);
     return Object.values(data).reduce((summary, item) => {
       const { value, words } = item;
       if (!value) {

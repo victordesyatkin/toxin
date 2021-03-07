@@ -4,15 +4,18 @@ $parent: 'pagination';
 
 .#{$parent} {
   width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   @include user-select-none();
 
   &__title {
-    @include h3;
+    width: 100%;
     margin-bottom: 1.1742rem;
   }
 
   &__items {
-    width: 100%;
+    //width: 100%;
     display: flex;
     list-style-type: none;
     overflow: hidden;
@@ -81,7 +84,9 @@ $parent: 'pagination';
   }
 
   &__summary {
+    width: 100%;
     margin-top: 0.6428rem;
-    padding-left: 0.5rem;
+    //padding-left: 0.5rem;
+    text-align: center;
   }
 }

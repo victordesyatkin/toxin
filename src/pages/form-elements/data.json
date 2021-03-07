@@ -60,13 +60,19 @@
     "isItemScope": true
   },
   "textField1": {
-    "name": "email",
-    "type": "email",
-    "placeholder": "Email",
-    "title": {
-      "content": "text field",
-      "state": "default",
-      "isLabel": true
+    "textField": {
+      "name": "email",
+      "type": "email",
+      "placeholder": "Email",
+      "title": {
+        "content": "text field",
+        "state": "default",
+        "isLabel": true
+      }
+    },
+    "options": {
+      "mask": "^\\S*@?\\S*$",
+      "isRegexp": true
     }
   },
   "textField2": {
@@ -275,7 +281,8 @@
         "button": { "iconClassName": "arrow-down" },
         "theme": "dropdown",
         "isSummaryOnly": true,
-        "summary": "Удобства"
+        "summary": "Удобства",
+        "isDirect": true
       }
     },
     "items": [

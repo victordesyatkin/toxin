@@ -59,7 +59,7 @@ class FormElements extends Component {
       comment,
     } = this._props;
     console.log('props : ', this._props);
-    this._textField1 = new TextField({
+    this._textField1 = new MaskedTextField({
       parent: $(`${this._query}__text-field-default`, this._$element),
       props: textField1,
     });

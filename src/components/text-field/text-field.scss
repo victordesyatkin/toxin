@@ -11,6 +11,14 @@ $parent: 'text-field';
     display: block;
   }
 
+  &_direct {
+    .#{$parent}__summary,
+    .#{$parent}__input {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+
   &_filled,
   &_opened {
     &.#{$parent}_theme_guests,
@@ -138,11 +146,30 @@ $parent: 'text-field';
     background-color: transparent;
   }
 
+  &__button_default_eye_slash,
+  &__button_default_eye,
   &__button_default {
     color: $input-text-color-button-default;
     background-color: transparent;
     font-size: 0.57rem;
     cursor: pointer;
+  }
+
+  &__button_default_eye_slash,
+  &__button_default_eye {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    .#{$parent}__button_default_eye_slash,
+    .#{$parent}__button_default_eye {
+      color: $input-text-color-hover;
+    }
+  }
+
+  &__button_default_eye_slash:hover,
+  &__button_default_eye:hover {
+    color: $input-text-color-hover;
   }
 
   &__button_forwarded {
@@ -152,153 +179,4 @@ $parent: 'text-field';
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
-
-  // &__section {
-  //   position: relative;
-  //   border: 1px solid $input-border-color-default;
-  //   border-radius: 4px;
-  //   color: $input-text-color-default;
-  //   padding: 0 1rem;
-  //   width: 100%;
-  //   padding: 0.71rem 0 0.71rem 1.07rem;
-
-  //   &:hover,
-  //   &:focus,
-  //   &:active {
-  //     color: $input-text-color-hover;
-  //     border: 1px solid $input-border-color-hover;
-  //   }
-
-  //   .#{$parent}__input,
-  //   .#{$parent}__input:hover,
-  //   .#{$parent}__input:focus {
-  //     border: none;
-  //     box-shadow: none;
-  //     background: transparent;
-  //     outline: none;
-  //     cursor: pointer;
-  //   }
-
-  //   .#{$parent}__input:hover,
-  //   .#{$parent}__input:focus {
-  //     color: $input-text-color-hover;
-  //   }
-  // }
-
-  // &__section_offset {
-  //   padding-right: 3.14rem;
-  // }
-
-  // &__section_hovered,
-  // &__section_focused,
-  // &__section:hover,
-  // &__section:focus {
-  //   border: 1px solid $input-border-color-hover;
-
-  //   .#{$parent}__button_default {
-  //     color: $input-text-color-hover;
-  //   }
-
-  //   .#{$parent}__input,
-  //   .#{$parent}__input::placeholder {
-  //     color: $input-text-color-hover;
-  //   }
-  // }
-
-  // &__input {
-  //   width: 100%;
-  //   height: 100%;
-  //   @include font-family-first-regular;
-  //   font-size: 1rem;
-  //   line-height: 1.7rem;
-  //   text-overflow: ellipsis;
-  //   color: $input-text-color-default;
-  //   background: none;
-
-  //   &:hover::placeholder,
-  //   &:focus::placeholder {
-  //     color: $input-text-color-hover;
-  //   }
-  // }
-
-  // &_hovered-focused {
-  //   .#{$parent}__input {
-  //     color: $input-text-color-hover;
-  //     outline: none;
-  //     text-overflow: ellipsis;
-  //   }
-  // }
-
-  // &_not-focused {
-  //   .#{$parent}__section,
-  //   .#{$parent}__section:hover,
-  //   .#{$parent}__section:focus,
-  //   .#{$parent}__section:active {
-  //     color: $input-text-color-hover;
-  //     border: 1px solid $input-border-color-default;
-
-  //     .#{$parent}__button_default {
-  //       color: $input-text-color-button-default;
-  //     }
-
-  //     .#{$parent}__input,
-  //     .#{$parent}__input::placeholder {
-  //       color: $input-text-color-hover;
-  //     }
-  //   }
-  // }
-
-  // &_theme_dropdown_fill,
-  // &_theme_dropdown {
-  //   .#{$parent}__section {
-  //     padding-right: 6.2rem;
-
-  //     .#{$parent}__input {
-  //       color: $input-text-color-hover;
-  //     }
-
-  //     .#{$parent}::placeholder {
-  //       color: $input-text-color-hover;
-  //     }
-
-  //     input.#{$parent}__input:disabled {
-  //       background: none;
-  //     }
-
-  //     .#{$parent}__button_default {
-  //       color: $input-text-color-button-default;
-  //     }
-  //   }
-  // }
-
-  // &_theme_dropdown_fill {
-  //   .#{$parent}__section {
-  //     .#{$parent}__button_default {
-  //       color: $input-text-color-hover;
-  //     }
-  //   }
-  // }
-
-  // &_straight {
-  //   .#{$parent}__section {
-  //     border-bottom-left-radius: 0;
-  //     border-bottom-right-radius: 0;
-  //   }
-  // }
-
-  // &_expanded {
-  //   .#{$parent}__section {
-  //     border-bottom-left-radius: 0;
-  //     border-bottom-right-radius: 0;
-  //     color: $input-text-color-hover;
-  //     border-color: $input-border-color-hover;
-  //     border-bottom: none;
-
-  //     .#{$parent}__input::placeholder,
-  //     .#{$parent}__input::placeholder,
-  //     .#{$parent}__button_default {
-  //       color: $input-text-color-hover;
-  //     }
-  //   }
-  // }
 }
