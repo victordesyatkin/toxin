@@ -64,22 +64,26 @@ module.exports = (env = {}) => {
       new CleanWebpackPlugin(),
       new webpack.ProgressPlugin(),
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
+        $: 'jquery',
+        jQuery: 'jquery',
       }),
       ...htmlPlugins,
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            from: "src/assets/favicons",
-            to: "assets/favicons",
-          },
-          {
-            from: "src/assets/images",
-            to: "assets/images",
-          },
-        ],
-      }),
+      // new CopyWebpackPlugin({
+      //   patterns: [
+      //     // {
+      //     //   from: 'src/assets/fonts',
+      //     //   to: 'assets/fonts',
+      //     // },
+      //     // {
+      //     //   from: 'src/assets/favicons',
+      //     //   to: 'assets/favicons',
+      //     // },
+      //     // {
+      //     //   from: 'src/assets/images',
+      //     //   to: 'assets/images',
+      //     // },
+      //   ],
+      // }),
       new webpack.HotModuleReplacementPlugin(),
     ];
     if (isProduction) {
@@ -98,15 +102,15 @@ module.exports = (env = {}) => {
   };
 
   return {
-    mode: isProduction ? "production" : "development",
-    devtool: isDevelopment ? "eval" : undefined,
+    mode: isProduction ? 'production' : 'development',
+    devtool: isDevelopment ? 'eval' : undefined,
     entry: { ...js },
     output: {
-      filename: isDevelopment ? "[name].js" : "[name].[hash].js",
+      filename: isDevelopment ? '[name].js' : '[name].[hash].js',
       pathinfo: isDevelopment,
     },
     resolve: {
-      modules: ["src", "node_modules"],
+      modules: ['src', 'node_modules'],
     },
     module: {
       rules: [
@@ -114,7 +118,7 @@ module.exports = (env = {}) => {
           test: /\.pug$/,
           use: [
             {
-              loader: "pug-loader",
+              loader: 'pug-loader',
               options: {
                 pretty: true,
               },
@@ -122,25 +126,38 @@ module.exports = (env = {}) => {
           ],
         },
         {
+          test: /\.(ico|png|svg|xml|json|webmanifest)$/,
+          include: /favicon/,
+          use: {
+            loader: 'file-loader',
+            options: {
+              outputPath: './assets/favicon/',
+              name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
+            },
+          },
+        },
+        {
           test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
+          exclude: /(fonts|favicon)/,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {
-                outputPath: "./assets/images/",
-                name: isDevelopment ? "[name].[ext]" : "[name].[hash].[ext]",
+                outputPath: './assets/images/',
+                name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
               },
             },
           ],
         },
         {
-          test: /\.(ttf|otf|eot|woff|woff2)$/,
+          test: /\.(ttf|otf|eot|woff|woff2|svg)$/,
+          include: /fonts/,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {
-                outputPath: "./assets/fonts/",
-                name: isDevelopment ? "[name].[ext]" : "[name].[hash].[ext]",
+                outputPath: './assets/fonts/',
+                name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
               },
             },
           ],
@@ -153,22 +170,22 @@ module.exports = (env = {}) => {
           test: /\.(s[ca]ss)$/,
           use: [
             ...getStyleLoaders(),
-            "resolve-url-loader",
+            'resolve-url-loader',
             {
-              loader: "postcss-loader",
+              loader: 'postcss-loader',
               options: {
                 postcssOptions: {
-                  plugins: ["postcss-preset-env"],
+                  plugins: ['postcss-preset-env'],
                 },
               },
             },
-            "sass-loader",
+            'sass-loader',
           ],
         },
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          loader: "babel-loader",
+          use: 'babel-loader',
         },
       ],
     },

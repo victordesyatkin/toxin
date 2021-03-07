@@ -1,7 +1,7 @@
 import 'normalize.css';
 import isEmpty from 'lodash/isEmpty';
 
-import { Component } from '../../helpers/utils';
+import { Component, requireAll } from '../../helpers/utils';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import '../../components/layout';
@@ -9,6 +9,13 @@ import '../../theme/global.scss';
 import data from './data.json';
 import './base.scss';
 
+requireAll(
+  require.context(
+    '../../assets/favicon/',
+    false,
+    /\.(png|jpg|jpeg|gif|ico|svg|json|webmanifest)$/
+  )
+);
 class Base extends Component {
   _query = 'body';
 

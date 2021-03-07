@@ -76,6 +76,15 @@ function uuid() {
   return Math.random().toString(16).slice(2);
 }
 
+const cache = {};
+
+function requireAll(requireContext) {
+  requireContext.keys().forEach((key) => {
+    cache[key] = requireContext(key);
+    return cache;
+  });
+}
+
 class Component {
   constructor(options = {}) {
     // console.log('Component constructor : ', options);
@@ -143,4 +152,5 @@ export {
   toggleHeight,
   isValidDate,
   uuid,
+  requireAll,
 };
