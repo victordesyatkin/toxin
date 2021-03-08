@@ -26,10 +26,9 @@ html(lang="en")
       let data = htmlWebpackPlugin.options.getData() || {};
     +layout
       +layout__header
-        +layout__container({basis: 1440, align: 'center'})
-          block header
-            - let { headerNotAuthorized } = data;
-              +header(headerNotAuthorized)
+        block header
+          - let { headerNotAuthorized } = data;
+            +header(headerNotAuthorized)
       +layout__main
         +layout__container({basis: 1440, align: 'center'})
           block main
