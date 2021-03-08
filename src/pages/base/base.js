@@ -16,6 +16,7 @@ requireAll(
     /\.(png|jpg|jpeg|gif|ico|svg|json|webmanifest)$/
   )
 );
+
 class Base extends Component {
   _query = 'body';
 

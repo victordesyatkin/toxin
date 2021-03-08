@@ -2,7 +2,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
@@ -68,22 +67,6 @@ module.exports = (env = {}) => {
         jQuery: 'jquery',
       }),
       ...htmlPlugins,
-      // new CopyWebpackPlugin({
-      //   patterns: [
-      //     // {
-      //     //   from: 'src/assets/fonts',
-      //     //   to: 'assets/fonts',
-      //     // },
-      //     // {
-      //     //   from: 'src/assets/favicons',
-      //     //   to: 'assets/favicons',
-      //     // },
-      //     // {
-      //     //   from: 'src/assets/images',
-      //     //   to: 'assets/images',
-      //     // },
-      //   ],
-      // }),
       new webpack.HotModuleReplacementPlugin(),
     ];
     if (isProduction) {

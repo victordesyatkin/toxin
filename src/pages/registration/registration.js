@@ -1,9 +1,10 @@
-import { Component } from '../../helpers/utils';
+import { Component, requireAll } from '../../helpers/utils';
 import SignUp from '../../components/sign-up';
 import Base from '../base/base';
 import data from './data.json';
 import './index';
 
+requireAll(require.context('./images/', false, /\.jpg$/));
 class Registration extends Component {
   static handleComponentLoad() {
     console.log('handleComponentLoad');

@@ -1,11 +1,12 @@
 import isEmpty from 'lodash/isEmpty';
 
-import { Component } from '../../helpers/utils';
+import { Component, requireAll } from '../../helpers/utils';
 import Picker from '../../components/picker';
 import Base from '../base/base';
 import data from './data.json';
 import './index';
 
+requireAll(require.context('./images/', false, /\.jpg$/));
 class LandingPage extends Component {
   static handleComponentLoad() {
     console.log('handleComponentLoad');

@@ -1,8 +1,10 @@
 import get from 'lodash/get';
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component, requireAll } from '../../helpers/utils';
 import './slider.scss';
+
+requireAll(require.context('./images/', false, /\.jpg$/));
 
 class Slider extends Component {
   static TYPE_BUTTON_LEFT = 'left';

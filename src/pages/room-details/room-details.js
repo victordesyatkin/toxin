@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component, requireAll } from '../../helpers/utils';
 import Book from '../../components/book';
 import Comments from '../../components/comments';
 import Rate from '../../components/rate';
@@ -9,6 +9,8 @@ import '../../components/bullet-list';
 import '../../components/description';
 import data from './data.json';
 import './room-details.scss';
+
+requireAll(require.context('./images/', false, /\.(jpg|svg)$/));
 
 class RoomDetails extends Component {
   static handleComponentLoad() {
