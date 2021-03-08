@@ -115,7 +115,7 @@ module.exports = (env = {}) => {
             loader: 'file-loader',
             options: {
               outputPath: './assets/favicon/',
-              name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
+              name: '[name].[ext]',
             },
           },
         },
@@ -127,7 +127,7 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/images/',
-                name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
+                name: '[name].[ext]',
               },
             },
           ],
