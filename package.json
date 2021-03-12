@@ -4,10 +4,11 @@
   "description": "",
   "main": "script.js",
   "dependencies": {
-    "bind-decorator": "^1.0.11",
     "@prettier/plugin-pug": "^1.13.3",
     "air-datepicker": "^2.2.3",
+    "air-range-slider": "^1.0.10",
     "babel-eslint": "^10.1.0",
+    "bind-decorator": "^1.0.11",
     "classnames": "^2.2.6",
     "imask": "^6.0.5",
     "inputmask": "^5.0.6-beta.15",
@@ -68,13 +69,16 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --env.mode=production",
-    "build:dev": "webpack --env.mode=development",
-    "publish": "git checkout master && git merge development && npm run build && git add . && git commit -am 'Deploy' && git push origin && git checkout @{-1}",
+    "build": "webpack --env mode=production",
+    "build:dev": "webpack --env mode=development",
     "deploy": "gh-pages -d dist",
-    "eslint": "eslint ./src/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "eslint": "eslint ./src/"
   },
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 1 edge versions"
+  ],
   "betterScripts": {
     "start-dev": {
       "command": "./node_modules/.bin/webpack-dev-server",

@@ -445,13 +445,15 @@
     }
   },
   "rangeSlider": {
-    "title": "диапазон цены",
+    "title": {
+      "content": "диапазон цены"
+    },
     "unit": "&#8381;",
     "start": 5000,
     "end": 10000,
     "min": 0,
     "max": 17000,
-    "separator": 1000,
+    "step": 1000,
     "description": "Стоимость за сутки пребывания в номере"
   },
   "checkboxButtons": {

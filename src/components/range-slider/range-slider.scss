@@ -11,16 +11,12 @@ $parent: 'range-slider';
     display: none;
   }
 
-  &__title {
-    @include h3;
-  }
-
   &__section-head {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     line-height: initial;
-    margin-bottom: 1.64rem;
+    margin-bottom: 1.15rem;
   }
 
   &__info {
@@ -29,50 +25,13 @@ $parent: 'range-slider';
   }
 
   &__section-body {
-    position: relative;
     width: 100%;
-    height: 0.429rem;
-    background: $range-slider-background-color-body;
-    border: 0.071rem solid $range-slider-border-color-body;
-    box-sizing: border-box;
-    border-radius: 0.214rem;
-    cursor: pointer;
-  }
-
-  &__point {
-    position: absolute;
-    width: 1.143rem;
-    height: 1.143rem;
-    background: $range-slider-background-color;
-    border: 0.143rem solid $range-slider-border-color-point;
-    border-radius: 0.714rem;
-    top: 50%;
-    cursor: pointer;
-  }
-
-  &__point_start {
-    transform: translate(0%, -50%);
-    z-index: 3;
-  }
-
-  &__point_end {
-    transform: translate(0%, -50%);
-    z-index: 3;
-  }
-
-  &__track {
-    position: absolute;
-    height: 0.429rem;
-    top: 50%;
-    transform: translate(0%, -50%);
-    background: $range-slider-background-color;
-    z-index: 2;
   }
 
   &__description {
     font-size: 0.85rem;
     line-height: 1rem;
     color: $range-slider-text-color;
-    margin-top: 0.96rem;
+    margin-top: 0.8rem;
   }
 }

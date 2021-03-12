@@ -1,0 +1,16 @@
+@import '~theme/variables.scss';
+@import '~air-range-slider/dist/style.css';
+
+$parent: 'range-slider';
+
+.#{$parent} {
+  &__handle {
+    width: 1.143rem;
+    height: 1.143rem;
+    margin-top: -5px;
+  }
+
+  &__rail {
+    background-color: $range-slider-background-color-body;
+  }
+}

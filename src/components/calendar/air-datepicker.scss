@@ -1,0 +1,188 @@
+@import '~theme/variables.scss';
+@import '~air-datepicker/dist/css/datepicker.min.css';
+
+$parent: 'calendar';
+
+.#{$parent} {
+  .datepicker {
+    width: 100%;
+    border: none;
+  }
+
+  .datepicker,
+  .-in-range- {
+    @include h3-lite;
+    color: $calendar-text-color-default;
+  }
+
+  .datepicker--nav {
+    padding: 1.57rem 1.14rem 2.57rem 1.07rem;
+    border: none;
+    position: relative;
+  }
+
+  .datepicker--nav-action {
+    span {
+      color: $calendar-text-color-nav;
+      font-size: 1.28rem;
+    }
+  }
+
+  .datepicker--cell.datepicker--cell-year.-other-decade-.-range-from-.-range-to-.-selected- {
+    background: none;
+  }
+
+  .datepicker--nav-action:hover,
+  .datepicker--nav-action:active,
+  .datepicker--nav-action:focus {
+    background: none;
+  }
+
+  .datepicker--nav-title {
+    @include h2;
+    text-transform: capitalize;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 1.28rem;
+  }
+
+  .datepicker--nav-title:hover,
+  .datepicker--nav-title:focus {
+    background: none;
+  }
+
+  .datepicker--days-names {
+    margin: 0;
+    margin-top: -0.07rem;
+  }
+
+  .datepicker--content {
+    padding: 0 1.42rem;
+  }
+
+  .datepicker--day-name,
+  .datepicker--cell {
+    min-height: 2.85rem;
+  }
+
+  .datepicker--day-name {
+    @include h3;
+    color: $calendar-text-color-day-name;
+    text-transform: initial;
+  }
+
+  .datepicker--cell {
+    position: relative;
+  }
+
+  .datepicker--cell.-focus-.-disabled-,
+  .datepicker--cell.-current-.-focus-,
+  .datepicker--cell.-current-.-in-range-,
+  .-current-,
+  .-selected-,
+  .-range-from-,
+  .-range-to-,
+  .-focus-,
+  .-other-month-.-focus-,
+  .-other-month-.-selected- {
+    @include h3;
+    color: $calendar-text-color-hover;
+  }
+
+  .-current-,
+  .-selected-,
+  .-range-from-,
+  .-range-to-,
+  .-focus- {
+    background: inherit;
+  }
+
+  .datepicker--cell.-focus-.-disabled-::after {
+    background: $calendar-background-color-disabled;
+  }
+
+  .-range-from-.-focus-::after,
+  .-range-to-.-focus-::after,
+  .-focus-::after,
+  .-range-from-::after,
+  .-range-to-::after,
+  .-selected-::after,
+  .-current-::after {
+    width: 2.84rem;
+    height: 2.85rem;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $calendar-background-color-current;
+    border-radius: 100%;
+    z-index: -1;
+  }
+
+  .-range-from-.-focus-::after,
+  .-range-to-.-focus-::after,
+  .-focus-::after,
+  .-selected-::after,
+  .-range-from-::after,
+  .-range-to-::after {
+    background: $calendar-background-color-selected;
+  }
+
+  .-range-from-,
+  .-range-to-,
+  .datepicker--cell.-focus-,
+  .datepicker--cell.-selected-.-range-to-
+    .datepicker--cell.-selected-.-range-from-,
+  .-other-month-.datepicker--cell.-selected-.-range-to-,
+  .-other-month-.datepicker--cell.-selected-.-range-from-,
+  .-other-month-.-focus-,
+  .-other-month-.-selected-,
+  .-selected-.-range-to-.-current-,
+  .-selected-.-range-from-.-current-,
+  .-current- {
+    background: none;
+    border: none;
+  }
+
+  .-other-month-.-focus-.-in-range-,
+  .-other-month-.-selected-.-in-range-,
+  .datepicker--cell.-in-range- {
+    @include background-calendar-period;
+  }
+
+  .datepicker--cell-day.-range-to-::before,
+  .datepicker--cell-day.-range-from-::before {
+    width: 50%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    @include background-calendar-period;
+    z-index: -2;
+  }
+
+  .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before,
+  .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-range-::before {
+    display: none;
+  }
+
+  .datepicker--cell-day.-range-from-::before {
+    right: 0;
+  }
+
+  .datepicker--cell-day.-range-to-::before {
+    left: 0;
+  }
+
+  .datepicker--cells-days:hover {
+    .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before {
+      display: inherit;
+    }
+    .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-broken-range-::before,
+    .datepicker--cell-day.-range-from-.-focus-.-hide-in-broken-range-::before {
+      display: none;
+    }
+  }
+}

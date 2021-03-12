@@ -7,6 +7,7 @@ import { Component, isValidDate } from '../../helpers/utils';
 import Control from '../control';
 import '../card';
 import './calendar.scss';
+import './air-datepicker.scss';
 
 class Calendar extends Component {
   static CONTROLS = {

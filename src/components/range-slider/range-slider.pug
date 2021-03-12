@@ -2,32 +2,28 @@ mixin range-slider(props)
   if props
     -
       let
-          { title, start, end, nameStart, nameEnd, separator, min, max, description } = props;
+          { title, nameStart, nameEnd, description } = props;
           className = 'range-slider';
           classNames = `${className} js-${className}`;
-    div(class=classNames, data-options=props) 
-      input.range-slider__input(
+    article(class=classNames) 
+      input(
         name=nameStart,
         value=start,
         data-type="start",
-        type="hidden"
+        type="hidden",
+        class=`${className}__input js-${className}__input`
       )
-      input.range-slider__input(
+      input(
         name=nameEnd,
         value=end,
         data-type="end",
-        type="hidden"
+        type="hidden",
+        class=`${className}__input js-${className}__input`
       )
-      .range-slider__section-head
+      div(class=`${className}__section-head`)
         if title
-          .range-slider__title= title
-        .range-slider__info.js-range-slider__info
-      .range-slider__section-body.js-range-slider__section-body
-        .range-slider__point.js-range-slider__point.range-slider__point_start(
-          data-type="start"
-        )
-        .range-slider__track.js-range-slider__track
-        .range-slider__point.js-range-slider__point.range-slider__point_end(
-          data-type="end"
-        )
-      .range-slider__description= description
+          div(class=`${className}__title`)
+            +title-label(title)
+        span(class=`${className}__info js-${className}__info`)
+      div(class=`${className}__section-body js-${className}__section-body`)
+      p(class=`${className}__description js-${className}__description`)= description

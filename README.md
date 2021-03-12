@@ -43,6 +43,7 @@
 <p><a href="https://github.com/uNmAnNeR/imaskjs" target="_blank" rel="noopener noreferrer">imask</a></p>
 <p><a href="https://github.com/RobinHerbots/Inputmask" target="_blank" rel="noopener noreferrer">inputmask</a></p>
 <p><a href="https://github.com/t1m0n/air-datepicker" target="_blank" rel="noopener noreferrer">air-datepicker</a></p>
+<p><a href="https://github.com/victordesyatkin/air-range-slider" target="_blank" rel="noopener noreferrer">air-range-slider</a></p>
 <h4>Установка</h4>
   <h5>1. Клонированить репозиторий</h5>
       <code>git clone git@github.com:victordesyatkin/toxin.git</code>

@@ -72,11 +72,8 @@ module.exports = (env = {}) => {
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: "[name].[hash].css",
-          chunkFilename: "[id].[hash].css",
-          insertAt: {
-            after: "title",
-          },
+          filename: "[name].[hash:8].css",
+          chunkFilename: "[id].[hash:8].css",
         })
       );
     }
@@ -86,10 +83,10 @@ module.exports = (env = {}) => {
 
   return {
     mode: isProduction ? 'production' : 'development',
-    devtool: isDevelopment ? 'eval' : undefined,
+    devtool: isDevelopment ? undefined : undefined,
     entry: { ...js },
     output: {
-      filename: isDevelopment ? '[name].js' : '[name].[hash].js',
+      filename: isDevelopment ? '[name].js' : '[name].[hash:8].js',
       pathinfo: isDevelopment,
     },
     resolve: {
@@ -140,7 +137,7 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/fonts/',
-                name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
+                name: isDevelopment ? '[name].[ext]' : '[name].[hash:8].[ext]',
               },
             },
           ],
