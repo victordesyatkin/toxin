@@ -15,22 +15,22 @@ $parent: 'landing-page';
     background-position: 0 -5rem;
 
     &__picker {
-      width: 27.1428rem;
-      margin-top: 5rem;
-      margin-left: 10.0714rem;
       margin-bottom: 22.6971rem;
+      margin-left: 10.0714rem;
+      margin-top: 5rem;
+      width: 27.1428rem;
     }
 
     &__info {
       display: flex;
       justify-content: flex-end;
-      padding-right: 9.5371rem;
       margin-bottom: 1.5714rem;
+      padding-right: 9.5371rem;
     }
 
     &__slogan {
-      width: 21.2142rem;
       text-align: right;
+      width: 21.2142rem;
     }
   }
 }
@@ -38,9 +38,9 @@ $parent: 'landing-page';
 @include media-breakpoint-down($xs) {
   .#{$parent} {
     &__picker {
-      width: 100%;
       margin: 5rem auto;
       max-width: 27.1428rem;
+      width: 100%;
     }
 
     &__info {

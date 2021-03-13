@@ -20,20 +20,20 @@ $parent: 'range-slider';
   }
 
   &__info {
-    font-size: 0.85rem;
     color: $range-slider-text-color;
+    font-size: 0.85rem;
   }
 
   &__section-body {
-    width: 100%;
     position: relative;
+    width: 100%;
     z-index: 1;
   }
 
   &__description {
+    color: $range-slider-text-color;
     font-size: 0.85rem;
     line-height: 1rem;
-    color: $range-slider-text-color;
     margin-top: 0.8rem;
   }
 }

@@ -10,13 +10,13 @@ $parent: 'rate';
   }
 
   &__circle {
-    width: 8.571rem;
-    min-width: 6rem;
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
     margin-right: 2.143rem;
+    min-width: 6rem;
+    position: relative;
+    width: 8.571rem;
   }
 
   &__circle::after {
@@ -29,66 +29,68 @@ $parent: 'rate';
   }
 
   &__circle-inner {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
   }
 
   &__canvas {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
     height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
   }
 
   &__total {
     @include h1;
+
     color: $rate-text-color-total;
   }
 
   &__unit {
     @include h3;
+
     color: $rate-text-color-unit;
-    padding: 0;
     margin-bottom: 0.429rem;
+    padding: 0;
   }
 
   &__vote-section {
-    width: 100%;
+    align-items: flex-end;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    width: 100%;
   }
 
   &__vote {
+    align-items: center;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
   }
 
   &__vote-mark {
-    display: inline-flex;
-    width: 0.7142rem;
-    height: 0.7142rem;
-    min-width: 0.7142rem;
-    min-height: 0.7142rem;
     border-radius: 50%;
+    display: inline-flex;
+    height: 0.7142rem;
     margin-right: 0.35714rem;
+    min-height: 0.7142rem;
+    min-width: 0.7142rem;
+    width: 0.7142rem;
   }
 }
 
 @include media-breakpoint-down($xs) {
   .#{$parent} {
     &__vote-section {
+      align-items: center;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
     }
 
     &__circle {
-      margin-right: 0;
       margin-bottom: 1rem;
+      margin-right: 0;
     }
   }
 }

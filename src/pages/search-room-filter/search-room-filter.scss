@@ -2,22 +2,23 @@
 $parent: 'search-room-filter';
 
 .#{$parent} {
-  width: 100%;
   background-color: $page-background-color;
-  padding: 2.1rem 10rem 0;
   display: flex;
+  padding: 2.1rem 10rem 0;
+  width: 100%;
 
   &__aside {
-    width: 19rem;
     margin-right: 4.2857rem;
     padding-top: 0.1428rem;
+    width: 19rem;
   }
 
   &__title {
     @include h1;
-    margin-bottom: 1.55rem;
+
     font-size: 1.7142rem;
     line-height: 2.09rem;
+    margin-bottom: 1.55rem;
   }
 
   &__filter-date-dropdown {
@@ -33,18 +34,18 @@ $parent: 'search-room-filter';
   }
 
   &__checkbox-buttons {
-    width: 15.8571rem;
     margin-bottom: 2.257rem;
+    width: 15.8571rem;
   }
 
   &__rich-checkbox-buttons {
-    width: 19rem;
     margin-bottom: 2.13rem;
+    width: 19rem;
   }
 
   &__rich-checkbox-buttons {
-    width: 19rem;
     margin-bottom: 2.13rem;
+    width: 19rem;
   }
 
   &__dropdown-second {
@@ -69,17 +70,17 @@ $parent: 'search-room-filter';
 
 @include media-breakpoint-down($xl) {
   .#{$parent} {
-    padding: 2.1428rem 0 2rem;
     display: flex;
     justify-content: center;
+    padding: 2.1428rem 0 2rem;
   }
 }
 
 @include media-breakpoint-down($lg) {
   .#{$parent} {
-    padding: 2.1428rem 0 2rem;
     display: flex;
     justify-content: center;
+    padding: 2.1428rem 0 2rem;
 
     &__card-sliders {
       display: grid;
@@ -95,15 +96,15 @@ $parent: 'search-room-filter';
 
 @include media-breakpoint-down($md) {
   .#{$parent} {
-    padding: 2.1428rem 1rem 0;
     display: flex;
     justify-content: center;
+    padding: 2.1428rem 1rem 0;
 
     &__card-sliders {
+      align-items: center;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
     }
 
     &__aside {
@@ -114,21 +115,21 @@ $parent: 'search-room-filter';
 
 @include media-breakpoint-down($xs) {
   .#{$parent} {
-    padding: 2.1428rem 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 2.1428rem 1rem 0;
 
     &__card-sliders {
+      align-items: center;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
     }
 
     &__aside {
-      margin-right: 0;
       margin-bottom: 1rem;
+      margin-right: 0;
       width: 100%;
     }
   }

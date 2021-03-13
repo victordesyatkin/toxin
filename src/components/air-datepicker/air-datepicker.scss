@@ -5,19 +5,20 @@ $parent: 'calendar';
 
 .#{$parent} {
   .datepicker {
+    border: inherit;
     width: 100%;
-    border: none;
   }
 
   .datepicker,
   .-in-range- {
     @include h3-lite;
+
     color: $calendar-text-color-default;
   }
 
   .datepicker--nav {
+    border: inherit;
     padding: 1.57rem 1.14rem 2.57rem 1.07rem;
-    border: none;
     position: relative;
   }
 
@@ -40,12 +41,13 @@ $parent: 'calendar';
 
   .datepicker--nav-title {
     @include h2;
-    text-transform: capitalize;
+
+    left: 50%;
     position: absolute;
     text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
+    text-transform: capitalize;
     top: 1.28rem;
+    transform: translateX(-50%);
   }
 
   .datepicker--nav-title:hover,
@@ -69,6 +71,7 @@ $parent: 'calendar';
 
   .datepicker--day-name {
     @include h3;
+
     color: $calendar-text-color-day-name;
     text-transform: initial;
   }
@@ -88,6 +91,7 @@ $parent: 'calendar';
   .-other-month-.-focus-,
   .-other-month-.-selected- {
     @include h3;
+
     color: $calendar-text-color-hover;
   }
 
@@ -110,15 +114,15 @@ $parent: 'calendar';
   .-range-to-::after,
   .-selected-::after,
   .-current-::after {
-    width: 2.84rem;
-    height: 2.85rem;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: $calendar-background-color-current;
     border-radius: 100%;
+    content: '';
+    height: 2.85rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.84rem;
     z-index: -1;
   }
 
@@ -135,7 +139,7 @@ $parent: 'calendar';
   .-range-to-,
   .datepicker--cell.-focus-,
   .datepicker--cell.-selected-.-range-to-
-    .datepicker--cell.-selected-.-range-from-,
+  .datepicker--cell.-selected-.-range-from-,
   .-other-month-.datepicker--cell.-selected-.-range-to-,
   .-other-month-.datepicker--cell.-selected-.-range-from-,
   .-other-month-.-focus-,
@@ -144,7 +148,7 @@ $parent: 'calendar';
   .-selected-.-range-from-.-current-,
   .-current- {
     background: none;
-    border: none;
+    border: inherit;
   }
 
   .-other-month-.-focus-.-in-range-,
@@ -155,11 +159,12 @@ $parent: 'calendar';
 
   .datepicker--cell-day.-range-to-::before,
   .datepicker--cell-day.-range-from-::before {
-    width: 50%;
-    height: 100%;
-    content: '';
-    position: absolute;
     @include background-calendar-period;
+
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 50%;
     z-index: -2;
   }
 
@@ -180,6 +185,7 @@ $parent: 'calendar';
     .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before {
       display: inherit;
     }
+
     .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-broken-range-::before,
     .datepicker--cell-day.-range-from-.-focus-.-hide-in-broken-range-::before {
       display: none;

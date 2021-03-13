@@ -12,12 +12,12 @@ $parent: 'comment';
   }
 
   &__img {
-    display: block;
-    width: 3.42rem;
-    height: 3.42rem;
     border: 2px solid $comment-border-color;
-    filter: $comment-filter;
     border-radius: 1.71rem;
+    display: block;
+    filter: $comment-filter;
+    height: 3.42rem;
+    width: 3.42rem;
   }
 
   &__like-button {
@@ -37,8 +37,8 @@ $parent: 'comment';
   }
 
   &__full-name {
-    font-weight: bold;
     color: $comment-text-color-full-name;
+    font-weight: bold;
   }
 
   &__date {

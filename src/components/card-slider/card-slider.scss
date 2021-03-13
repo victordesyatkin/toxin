@@ -6,43 +6,44 @@ $parent: 'card-slider';
   width: 100%;
 
   &__slider {
-    width: 100%;
     height: 10.8571rem;
+    width: 100%;
   }
 
   &__card-header {
-    width: 100%;
     padding: 1.45rem 1.1428rem 0.5714rem 1.4285rem;
+    width: 100%;
   }
 
   &__score {
-    width: 100%;
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0.6428rem 1.2857rem 1.5rem 1.4285rem;
+    width: 100%;
   }
 
   &__comments-numbers {
     @include base-h;
+
+    color: $book-text-color-price;
     font-size: 1rem;
     font-weight: bold;
-    color: $book-text-color-price;
   }
 
   &__separator-wrap {
-    width: 100%;
     padding: 0 1.4285rem;
+    width: 100%;
   }
 
   &__separator {
-    width: 100%;
-    height: 0.0714rem;
     background-color: $card-background-color-separator;
+    height: 0.0714rem;
+    width: 100%;
   }
 
   &__comments-content {
-    margin-left: 0.3571rem;
     color: $book-text-color-price;
+    margin-left: 0.3571rem;
   }
 }

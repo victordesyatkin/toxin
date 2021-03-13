@@ -1,6 +1,6 @@
-@import '~assets/fonts/Montserrat/fonts.css';
-@import '~assets/fonts/Quicksand/fonts.css';
-@import '~assets/fonts/Icomoon/style.css';
+@import '~assets/fonts/Montserrat/fonts.scss';
+@import '~assets/fonts/Quicksand/fonts.scss';
+@import '~assets/fonts/Icomoon/fonts.scss';
 
 /***** Variables *****/
 $xxs: 319px;
@@ -12,7 +12,7 @@ $xl: 1439px;
 
 /***** Font *****/
 $font-size-body: 14px;
-$font-family-body: Montserrat, Arial, sans-serif;
+$font-family-body: montserrat, arial, sans-serif;
 
 /***** Text *****/
 $header-text-color: rgba(31, 32, 65, 1);
@@ -31,16 +31,16 @@ $book-text-color-price: rgba(31, 32, 65, 0.5);
 $book-text-color-quality: #bc9cff;
 $button-text-color-default-first: #bc9cff;
 $button-text-color-default-second: #bc9cff;
-$button-text-color-default-third: #ffffff;
+$button-text-color-default-third: #fff;
 $button-text-color-hover-first: #bc9cff;
 $button-text-color-hover-second: rgba(31, 32, 65, 0.5);
-$button-text-color-hover-third: #ffffff;
+$button-text-color-hover-third: #fff;
 $rich-checkbox-text-color-default: rgba(31, 32, 65, 0.75);
 $rich-checkbox-text-color-info: rgba(31, 32, 65, 0.5);
-$pagination-text-color-button: #ffffff;
+$pagination-text-color-button: #fff;
 $pagination-text-color-default: rgba(31, 32, 65, 0.5);
 $pagination-text-color-description: rgba(31, 32, 65, 0.75);
-$calendar-text-color-hover: #ffffff;
+$calendar-text-color-hover: #fff;
 $calendar-text-color-default: rgba(31, 32, 65, 0.5);
 $calendar-text-color-nav: #bc9cff;
 $calendar-text-color-day-name: #bc9cff;
@@ -56,10 +56,10 @@ $rate-text-color-total: #bc9cff;
 $rate-text-color-unit: $rate-text-color-total;
 $filter-date-dropdown-text-color-button: rgba(31, 32, 65, 0.5);
 $filter-date-dropdown-text-color: rgba(31, 32, 65, 0.75);
-$slider-text-color-control: #ffffff;
+$slider-text-color-control: #fff;
 $toggle-button-text-color-default: rgba(31, 32, 65, 0.5);
 $toggle-button-text-color-checked: rgba(31, 32, 65, 0.75);
-$card-footer-text-color: #000000;
+$card-footer-text-color: #000;
 $nav-text-color-user: rgba(31, 32, 65, 0.5);
 $checkbox-button-text-color-default: rgba(31, 32, 65, 0.5);
 $checkbox-button-text-color-checked: rgba(31, 32, 65, 0.75);
@@ -71,107 +71,81 @@ $like-button-text-color-default: rgba(31, 32, 65, 0.25);
 $like-button-text-color-checked: #bc9cff;
 
 /***** Background *****/
-$page-background-color: #ffffff;
+$page-background-color: #fff;
 $body-background-color: #f4f4f6;
-$expandable-background-color: #ffffff;
-$dropdown-background-color: #ffffff;
-$card-background-color: #ffffff;
+$expandable-background-color: #fff;
+$dropdown-background-color: #fff;
+$card-background-color: #fff;
 $info-background-color: #bc9cff;
 $checkbox-button-background-color: #bc9cff;
-$radio-button-background-color-checked: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
+$radio-button-background-color-checked: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
 $checkbox-button-background-color: #bc9cff;
 $rate-button-background-color: #bc9cff;
-$button-background-color-first-default: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
-$button-background-color-first-inner-default: #ffffff;
-$button-background-color-third-default: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
-$pagination-background-color-current: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
-$pagination-button-background-color-previous: linear-gradient(
-  180deg,
-  #6fcf97 0%,
-  #66d2ea 100%
-);
-$pagination-button-background-color-next: linear-gradient(
-  180deg,
-  #6fcf97 0%,
-  #66d2ea 100%
-);
-$range-slider-background-color: linear-gradient(
-  180deg,
-  #6fcf97 0%,
-  #66d2ea 100%
-);
-$range-slider-background-color-body: #ffffff;
-$slider-background-color-control: linear-gradient(
-  90deg,
-  rgba(0, 0, 0, 0.5) 0%,
-  rgba(0, 0, 0, 0) 99.99%,
-  rgba(255, 255, 255, 0) 100%
-);
-$slider-background-color-point: #ffffff;
+$button-background-color-first-default: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
+$button-background-color-first-inner-default: #fff;
+$button-background-color-third-default: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
+$pagination-background-color-current: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
+$pagination-button-background-color-previous: linear-gradient(180deg,
+#6fcf97 0%,
+#66d2ea 100%);
+$pagination-button-background-color-next: linear-gradient(180deg,
+#6fcf97 0%,
+#66d2ea 100%);
+$range-slider-background-color: linear-gradient(180deg,
+#6fcf97 0%,
+#66d2ea 100%);
+$range-slider-background-color-body: #fff;
+$slider-background-color-control: linear-gradient(90deg,
+rgba(0, 0, 0, 0.5) 0%,
+rgba(0, 0, 0, 0) 99.99%,
+rgba(255, 255, 255, 0) 100%);
+$slider-background-color-point: #fff;
 $input-button-background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
 $bullet-button-background: rgba(31, 32, 65, 0.25);
-$calendar-background-color: #ffffff;
+$calendar-background-color: #fff;
 $calendar-background-color-disabled: rgba(31, 32, 65, 0.25);
-$calendar-background-color-selected: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
-$calendar-background-color-current: linear-gradient(
-  180deg,
-  #6fcf97 0%,
-  #66d2ea 100%
-);
+$calendar-background-color-selected: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
+$calendar-background-color-current: linear-gradient(180deg,
+#6fcf97 0%,
+#66d2ea 100%);
 $card-background-color-separator: rgba(31, 32, 65, 0.1);
-$copyright-background-color-icon: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
-$footer-background-color: #ffffff;
-$header-background-color: #ffffff;
+$copyright-background-color-icon: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
+$footer-background-color: #fff;
+$header-background-color: #fff;
 $nav-background-color-separator: rgba(31, 32, 65, 0.1);
 $toggle-button-background-color-default: rgba(31, 32, 65, 0.25);
-$toggle-button-background-color-checked: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
+$toggle-button-background-color-checked: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
 $cards-header-background-color: #f4f4f6;
-$link-children-background-color: #ffffff;
-$nav-background-color-default: #ffffff;
-$like-button-background-color-default: white;
-$like-button-background-color-checked: linear-gradient(
-  180deg,
-  #bc9cff 0%,
-  #8ba4f9 100%
-);
+$link-children-background-color: #fff;
+$nav-background-color-default: #fff;
+$like-button-background-color-default: #fff;
+$like-button-background-color-checked: linear-gradient(180deg,
+#bc9cff 0%,
+#8ba4f9 100%);
 
 /***** Shadow *****/
 $calendar-box-shadow: 0 0.7142rem 1.4285rem rgba(31, 32, 65, 0.05);
 $card-box-shadow: 0 0 1.7857rem rgba(0, 0, 0, 0.2);
 $copyright-box-shadow: 0 0.7142rem 1.4285rem rgba(31, 32, 65, 0.05);
-$footer-box-shadow: 0rem 0.0714rem 0rem rgba(31, 32, 65, 0.1);
-$header-box-shadow: 0rem 0.7142rem 1.4285rem rgba(31, 32, 65, 0.25);
+$footer-box-shadow: 0 0.0714rem 0 rgba(31, 32, 65, 0.1);
+$header-box-shadow: 0 0.7142rem 1.4285rem rgba(31, 32, 65, 0.25);
 
 /***** Filter *****/
-$comment-filter: drop-shadow(0rem 0.71rem 1.42rem rgba(31, 32, 65, 0.1));
+$comment-filter: drop-shadow(0 0.71rem 1.42rem rgba(31, 32, 65, 0.1));
 
 /***** Border *****/
 $card-border-color: rgba(0, 0, 0, 0.12);
@@ -183,19 +157,19 @@ $input-border-color-hover: rgba(31, 32, 65, 0.5);
 $input-border-color-focus: $input-border-color-hover;
 $checkbox-border-color: rgba(31, 32, 65, 0.25);
 $checkbox-border-color-checked: #bc9cff;
-$range-slider-border-color-point: #ffffff;
+$range-slider-border-color-point: #fff;
 $range-slider-border-color-body: rgba(31, 32, 65, 0.25);
 $book-border-color-separator: rgba(31, 32, 65, 0.25);
 $calendar-border-color: rgba(31, 32, 65, 0.25);
-$comment-border-color: #ffffff;
-$copyright-border-color: #ffffff;
+$comment-border-color: #fff;
+$copyright-border-color: #fff;
 $filter-date-dropdown-border-color: rgba(31, 32, 65, 0.25);
 $info-border-color-separator: rgba(31, 32, 65, 0.1);
 $like-button-border-color-default: rgba(31, 32, 65, 0.25);
 $like-button-border-color-checked: #bc9cff;
 $radio-button-border-color-default: rgba(31, 32, 65, 0.25);
 $radio-button-border-color-checked: #bc9cff;
-$slider-border-color-point: #ffffff;
+$slider-border-color-point: #fff;
 $toggle-button-border-color-default: rgba(31, 32, 65, 0.25);
 $toggle-button-border-color-checked: #bc9cff;
 $footer-border-color: rgba(31, 32, 65, 0.1);
@@ -215,81 +189,74 @@ $nav-border-color-hover: rgba(31, 32, 65, 0.25);
 
 @mixin user-select-none {
   -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  user-select: none;
+  user-select: none;
+  user-select: none;
+  user-select: none;
   user-select: none;
 }
 
 @mixin font-family-first-regular {
   font-family: $font-family-body;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
 }
 
 @mixin font-family-first-bold {
   font-family: $font-family-body;
-  font-weight: 700;
   font-style: normal;
+  font-weight: 700;
 }
 
 @mixin reset-button {
   background: none;
-  border: none;
+  border: inherit;
   outline: none;
 }
 
 @mixin linear-gradient($degrees, $top-color, $bottom-color, $opacity) {
-  background: -moz-linear-gradient(
-    $degrees,
-    rgba($top-color, $opacity) 0%,
-    rgba($bottom-color, $opacity) 100%
-  );
-  background: -webkit-linear-gradient(
-    $degrees,
-    rgba($top-color, $opacity) 0%,
-    rgba($bottom-color, $opacity) 100%
-  );
-  background: linear-gradient(
-    $degrees,
-    rgba($top-color, $opacity) 0%,
-    rgba($bottom-color, $opacity) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{rgba($top-color, $opacity)}', endColorstr='#{rgba($bottom-color, $opacity)}',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient($degrees,
+  rgba($top-color, $opacity) 0%,
+  rgba($bottom-color, $opacity) 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{rgba($top-color, $opacity)}', endColorstr='#{rgba($bottom-color, $opacity)}', GradientType=0); /* IE6-9 */
 }
 
 @mixin base-h {
   @include font-family-first-bold;
+
   color: $header-text-color;
 }
 
 @mixin h1 {
   @include base-h;
+
   font-size: 1.71rem;
   line-height: 2.09rem;
 }
 
 @mixin h2 {
   @include base-h;
+
   font-size: 1.36rem;
   line-height: 1.65rem;
 }
 
 @mixin h3 {
   @include base-h;
+
   font-size: 0.85rem;
-  text-transform: uppercase;
   line-height: 1.04rem;
+  text-transform: uppercase;
 }
 
 @mixin h3-lite {
   @include base-h;
+  @include font-family-first-regular;
+
   font-size: 0.85rem;
-  text-transform: uppercase;
   font-weight: normal;
   line-height: normal;
-  @include font-family-first-regular;
+  text-transform: uppercase;
 }
 
 @mixin media-breakpoint-up($width) {
@@ -312,9 +279,9 @@ $nav-border-color-hover: rgba(31, 32, 65, 0.25);
 
 @mixin column($screen-width, $count) {
   flex-shrink: 0;
-  padding-right: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
+  padding-right: 1rem;
 
   @include media-breakpoint-up($screen-width) {
     flex-basis: (100% / 12 * $count);

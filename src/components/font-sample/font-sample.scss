@@ -3,10 +3,11 @@
 $parent: '.font-sample';
 
 #{$parent} {
+  @include font-family-first-regular;
+
+  display: flex;
   flex-basis: 100%;
   flex-grow: 1;
-  display: flex;
-  @include font-family-first-regular;
 
   &_size_lg {
     @include h1;
@@ -26,22 +27,18 @@ $parent: '.font-sample';
   }
 
   &__content {
-    min-width: 2.64rem;
     color: $additional-text-color;
     font-weight: normal;
-    text-align: right;
-    margin-right: 2.21rem;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    min-width: 2.64rem;
+
+    @include media-breakpoint-up($sm) {
+      margin-right: 2.1rem;
+    }
   }
 
   &__description {
-    text-align: left;
-  }
-}
-
-@include media-breakpoint-down($sm) {
-  #{$parent} {
-    &__content {
-      margin-right: 1rem;
-    }
+    justify-content: flex-start;
   }
 }

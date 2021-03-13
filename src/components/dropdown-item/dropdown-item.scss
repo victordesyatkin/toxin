@@ -3,9 +3,9 @@
 $parent: 'dropdown-item';
 
 .#{$parent} {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   &__title,
   &__value {
@@ -20,21 +20,21 @@ $parent: 'dropdown-item';
 
   &__button,
   &__value {
-    justify-content: center;
     align-items: center;
-    width: 2.14rem;
     height: 2.14rem;
+    justify-content: center;
+    width: 2.14rem;
   }
 
   &__button {
-    border-radius: 100%;
-    border: 0.071rem solid $dropdown-button-border-color;
-    color: $dropdown-text-color-button-active;
-    box-sizing: border-box;
     background-color: transparent;
+    border: 0.071rem solid $dropdown-button-border-color;
+    border-radius: 100%;
+    box-sizing: border-box;
+    color: $dropdown-text-color-button-active;
+    cursor: pointer;
     font-size: 1rem;
     line-height: normal;
-    cursor: pointer;
   }
 
   &__button:hover,

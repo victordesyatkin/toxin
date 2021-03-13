@@ -8,15 +8,16 @@
 
 html,
 body {
-  height: 100%;
-  font-size: $font-size-body;
   @include font-family-first-regular;
+
   background-color: $body-background-color;
+  font-size: $font-size-body;
+  height: 100%;
 }
 
 body {
   color: $paragraph-text-color;
-  line-height: 1.71rem;
+  line-height: 1.74rem;
 }
 
 h1 {
@@ -31,22 +32,8 @@ h3 {
   @include h3;
 }
 
-::-webkit-input-placeholder {
-  color: $input-text-color-default;
+::placeholder {
   @include font-family-first-regular;
-}
 
-::-moz-placeholder {
   color: $input-text-color-default;
-  @include font-family-first-regular;
-}
-
-:-ms-input-placeholder {
-  color: $input-text-color-default;
-  @include font-family-first-regular;
-}
-
-:-moz-placeholder {
-  color: $input-text-color-default;
-  @include font-family-first-regular;
 }

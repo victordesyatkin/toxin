@@ -5,9 +5,9 @@ $parent: 'range-slider';
 
 .#{$parent} {
   &__handle {
-    width: 1.143rem;
     height: 1.143rem;
     margin-top: -5px;
+    width: 1.143rem;
   }
 
   &__rail {

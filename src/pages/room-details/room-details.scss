@@ -3,36 +3,36 @@
 $parent: 'room-details';
 
 .#{$parent} {
-  width: 100%;
   background-color: $page-background-color;
+  width: 100%;
 }
 
 @include media-breakpoint-up($xl) {
   .#{$parent} {
     &__views-section {
-      width: 100%;
-      height: 34.7128rem;
       display: flex;
+      height: 34.7128rem;
+      width: 100%;
     }
 
     &__views {
-      width: calc(100% - 70.0414rem);
       height: 100%;
+      width: calc(100% - 70.0414rem);
     }
 
     &__view-first {
-      width: 70.0414rem;
       height: 100%;
+      width: 70.0414rem;
     }
 
     &__view-second {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-third {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-first,
@@ -43,10 +43,10 @@ $parent: 'room-details';
     }
 
     &__main-section {
-      padding: 4.9285rem 8.9285rem 4.6428rem 10.0285rem;
-      width: 100%;
       display: flex;
       margin-bottom: 0.7142rem;
+      padding: 4.9285rem 8.9285rem 4.6428rem 10.0285rem;
+      width: 100%;
     }
 
     &__section:nth-child(1) {
@@ -55,9 +55,9 @@ $parent: 'room-details';
     }
 
     &__section:nth-child(2) {
-      width: 27.0428rem;
       height: 36.5rem;
       margin-top: 0.1428rem;
+      width: 27.0428rem;
     }
 
     &__rate {
@@ -65,9 +65,9 @@ $parent: 'room-details';
     }
 
     &__info-section {
-      width: 100%;
       display: flex;
       margin-bottom: 0.7rem;
+      width: 100%;
     }
 
     &__info {
@@ -88,8 +88,8 @@ $parent: 'room-details';
     }
 
     &__cancel {
-      width: 50%;
       padding-right: 1.7857rem;
+      width: 50%;
     }
   }
 }
@@ -97,46 +97,46 @@ $parent: 'room-details';
 @include media-breakpoint-between($md, $xl) {
   .#{$parent} {
     &__views-section {
-      width: 100%;
-      height: 34.7128rem;
       display: flex;
+      height: 34.7128rem;
+      width: 100%;
     }
 
     &__views {
-      width: 30%;
       height: 100%;
+      width: 30%;
     }
 
     &__view-first {
-      width: 70%;
       height: 100%;
+      width: 70%;
     }
 
     &__view-second {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-third {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-first,
     &__view-second,
     &__view-third {
-      background-repeat: no-repeat;
       background-position: center center;
+      background-repeat: no-repeat;
       background-size: cover;
       overflow: hidden;
     }
 
     &__main-section {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.7142rem;
       padding: 4.9285rem 2rem;
       width: 100%;
-      display: flex;
-      margin-bottom: 0.7142rem;
-      justify-content: space-between;
     }
 
     &__section:nth-child(1) {
@@ -145,10 +145,10 @@ $parent: 'room-details';
     }
 
     &__section:nth-child(2) {
-      width: 27%;
       height: 36.5rem;
       margin-top: 0.1428rem;
       min-width: 27.1428rem;
+      width: 27%;
     }
 
     &__rate {
@@ -156,9 +156,9 @@ $parent: 'room-details';
     }
 
     &__info-section {
-      width: 100%;
       display: flex;
       margin-bottom: 1.2828rem;
+      width: 100%;
     }
 
     &__comments-section {
@@ -175,8 +175,8 @@ $parent: 'room-details';
     }
 
     &__cancel {
-      width: 50%;
       padding-right: 1.7857rem;
+      width: 50%;
     }
 
     &__slider {
@@ -216,44 +216,44 @@ $parent: 'room-details';
     }
 
     &__views-section {
-      width: 100%;
-      height: 24.7128rem;
       display: flex;
+      height: 24.7128rem;
+      width: 100%;
     }
 
     &__views {
-      width: 30%;
       height: 100%;
+      width: 30%;
     }
 
     &__view-first {
-      width: 70%;
       height: 100%;
+      width: 70%;
     }
 
     &__view-second {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-third {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-first,
     &__view-second,
     &__view-third {
-      background-repeat: no-repeat;
       background-position: center center;
+      background-repeat: no-repeat;
       background-size: cover;
       overflow: hidden;
     }
 
     &__main-section {
-      padding: 2rem;
       display: flex;
       flex-direction: column-reverse;
+      padding: 2rem;
     }
 
     &__section,
@@ -266,16 +266,16 @@ $parent: 'room-details';
     }
 
     &__book {
+      margin: 0 auto 1rem;
       max-width: 27.1428rem;
       width: 100%;
-      margin: 0 auto 1rem;
     }
 
     &__info-section {
-      width: 100%;
       display: flex;
-      margin-bottom: 0.7rem;
       justify-content: space-around;
+      margin-bottom: 0.7rem;
+      width: 100%;
     }
   }
 }
@@ -283,9 +283,9 @@ $parent: 'room-details';
 @include media-breakpoint-down($sm) {
   .#{$parent} {
     &__views-section {
-      width: 100%;
-      height: 14.7128rem;
       display: flex;
+      height: 14.7128rem;
+      width: 100%;
     }
 
     &__slider {
@@ -293,43 +293,43 @@ $parent: 'room-details';
     }
 
     &__views {
-      width: 30%;
       height: 100%;
+      width: 30%;
     }
 
     &__view-first {
-      width: 70%;
       height: 100%;
+      width: 70%;
     }
 
     &__view-second {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-third {
-      width: 100%;
       height: 50%;
+      width: 100%;
     }
 
     &__view-first,
     &__view-second,
     &__view-third {
-      background-repeat: no-repeat;
       background-position: center center;
+      background-repeat: no-repeat;
       background-size: cover;
       overflow: hidden;
     }
 
     &__book {
+      margin: 0 auto 1rem;
       max-width: 27.1428rem;
       width: 100%;
-      margin: 0 auto 1rem;
     }
 
     &__info-section {
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }
@@ -350,10 +350,10 @@ $parent: 'room-details';
     }
 
     &__slider {
-      width: 100%;
-      height: 14.7128rem;
       display: block;
+      height: 14.7128rem;
       margin-bottom: 1rem;
+      width: 100%;
     }
   }
 }

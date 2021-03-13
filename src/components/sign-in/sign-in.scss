@@ -3,11 +3,12 @@
 $parent: 'sign-in';
 
 .#{$parent} {
-  width: 100%;
   padding: 2.714rem 2.143rem 2.286rem 2rem;
+  width: 100%;
 
   &__title {
     @include h1;
+
     letter-spacing: 0;
     margin-bottom: 1.429rem;
   }

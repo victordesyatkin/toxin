@@ -1,3 +1,14 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recommended"]
+  "extends": [
+    "stylelint-config-sass-guidelines",
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "max-nesting-depth": null,
+    "scss/at-import-partial-extension-blacklist": null,
+    "scss/at-mixin-pattern": null,
+    "scss/selector-no-redundant-nesting-selector": null,
+    "selector-class-pattern": null,
+    "function-url-quotes": null
+  }
 }

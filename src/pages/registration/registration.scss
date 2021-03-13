@@ -8,25 +8,25 @@ $parent: 'registration';
 
 @include media-breakpoint-up($xs) {
   .#{$parent} {
-    background-position: 0rem -5.0714rem;
+    background-position: 0 -5.0714rem;
     background-repeat: no-repeat;
 
     &__sign-up {
+      margin: 1.4285rem auto;
       width: 27.1428rem;
-      margin: 1.4285rem auto 1.4285rem;
     }
   }
 }
 
 @include media-breakpoint-down($xs) {
   .#{$parent} {
-    background-position: 0rem -5.0714rem;
+    background-position: 0 -5.0714rem;
     background-repeat: no-repeat;
 
     &__sign-up {
-      width: 100%;
+      margin: 1.4285rem auto;
       max-width: 27.1428rem;
-      margin: 1.4285rem auto 1.4285rem;
+      width: 100%;
     }
   }
 }

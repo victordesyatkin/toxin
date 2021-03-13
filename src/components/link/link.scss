@@ -4,17 +4,17 @@ $parent: 'link';
 
 .#{$parent} {
   color: $link-text-color-default;
+  cursor: pointer;
   text-decoration: none;
   text-transform: none;
-  cursor: pointer;
 
   &_block {
     display: inline-block;
   }
 
   &_current {
-    font-weight: bold;
     color: $link-text-color-current;
+    font-weight: bold;
   }
 
   &:hover {

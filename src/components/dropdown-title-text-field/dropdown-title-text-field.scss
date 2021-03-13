@@ -3,13 +3,13 @@
 $parent: 'dropdown-title-text-field';
 
 .#{$parent} {
-  width: 100%;
-  position: relative;
   cursor: pointer;
+  position: relative;
+  width: 100%;
 
   &_theme_date {
     .#{$parent}__body {
-      border: none;
+      border: inherit;
     }
   }
 
@@ -38,11 +38,11 @@ $parent: 'dropdown-title-text-field';
   }
 
   &__body {
-    border: 1px solid $dropdown-border-color-default;
-    border-radius: 4px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
+    background-clip: padding;
+    background-clip: padding-box;
     background-clip: padding-box;
     background-color: $dropdown-background-color;
+    border: 1px solid $dropdown-border-color-default;
+    border-radius: 4px;
   }
 }

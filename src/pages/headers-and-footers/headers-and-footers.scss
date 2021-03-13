@@ -3,8 +3,8 @@
 $parent: 'headers-and-footers';
 
 .#{$parent} {
-  width: 100%;
   margin-top: 4.4042rem;
+  width: 100%;
 
   .#{$parent}__section:nth-child(1) {
     margin-bottom: 2.9271rem;
@@ -15,14 +15,14 @@ $parent: 'headers-and-footers';
   }
 
   .#{$parent}__section:nth-child(4) {
-    padding-top: 2.65rem;
     padding-bottom: 10rem;
+    padding-top: 2.65rem;
   }
 
   .#{$parent}__copyright {
-    width: 100%;
-    max-width: 54.8571rem;
-    margin: 0 auto;
     background-color: $body-background-color;
+    margin: 0 auto;
+    max-width: 54.8571rem;
+    width: 100%;
   }
 }

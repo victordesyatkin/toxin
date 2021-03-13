@@ -3,8 +3,9 @@
 .list-links {
   &__header {
     @include h3;
-    text-transform: uppercase;
+
     margin-bottom: 1.3571rem;
+    text-transform: uppercase;
   }
 
   &__items {

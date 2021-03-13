@@ -3,12 +3,12 @@
 $parent: 'slider';
 
 .#{$parent} {
-  width: 100%;
-  height: 100%;
-  position: relative;
   border-top-left-radius: 0.286rem;
   border-top-right-radius: 0.286rem;
+  height: 100%;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 
   &:hover {
     .#{$parent}__controls {
@@ -35,10 +35,10 @@ $parent: 'slider';
   }
 
   &__section-images {
-    position: absolute;
     display: flex;
     flex-direction: row;
     height: 100%;
+    position: absolute;
     width: 100%;
   }
 
@@ -48,8 +48,8 @@ $parent: 'slider';
 
   &__image-wrapper {
     display: flex;
-    flex-shrink: 0;
     flex-grow: 1;
+    flex-shrink: 0;
     width: 100%;
   }
 
@@ -59,28 +59,28 @@ $parent: 'slider';
   }
 
   &__controls {
+    bottom: 0;
     display: none;
+    left: 0;
     list-style-type: none;
     position: absolute;
-    left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
   }
 
   &__control {
-    width: 3.143rem;
+    align-items: center;
+    background: $slider-background-color-control;
+    color: $slider-text-color-control;
+    cursor: pointer;
+    display: flex;
+    font-size: 0.857rem;
     height: 100%;
+    justify-content: center;
     position: absolute;
     top: 0;
-    color: $slider-text-color-control;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 3.143rem;
     z-index: 2;
-    background: $slider-background-color-control;
-    cursor: pointer;
-    font-size: 0.857rem;
   }
 
   &__control_left {
@@ -93,23 +93,23 @@ $parent: 'slider';
   }
 
   &__points {
+    bottom: 1.143rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    list-style-type: none;
     position: absolute;
     right: 0.929rem;
-    bottom: 1.143rem;
     z-index: 3;
-    list-style-type: none;
   }
 
   &__point {
-    width: 0.571rem;
-    height: 0.571rem;
-    border-radius: 100%;
     border: 0.071rem solid $slider-border-color-point;
-    margin-left: 0.269rem;
+    border-radius: 100%;
     cursor: pointer;
+    height: 0.571rem;
+    margin-left: 0.269rem;
+    width: 0.571rem;
   }
 
   &__point_full {

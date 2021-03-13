@@ -4,10 +4,10 @@ $parent: 'rich-checkbox-button';
 
 .#{$parent} {
   &__info {
-    padding-left: 2.07rem;
-    margin-top: 0.35rem;
+    color: $rich-checkbox-text-color-info;
     font-size: 0.85rem;
     line-height: 1rem;
-    color: $rich-checkbox-text-color-info;
+    margin-top: 0.35rem;
+    padding-left: 2.07rem;
   }
 }

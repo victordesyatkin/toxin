@@ -3,13 +3,14 @@
 $parent: 'checkbox-button';
 
 .#{$parent} {
+  @include user-select-none;
+
+  cursor: pointer;
   display: flex;
   flex-basis: 100%;
-  flex-shrink: 1;
-  flex-grow: 1;
   flex-direction: row;
-  cursor: pointer;
-  @include user-select-none;
+  flex-grow: 1;
+  flex-shrink: 1;
 
   &:hover,
   &:focus {
@@ -23,44 +24,45 @@ $parent: 'checkbox-button';
   }
 
   &__label {
-    line-height: 1.29rem;
     color: $checkbox-button-text-color-default;
+    line-height: 1.29rem;
   }
 
   &_theme_bold {
     .#{$parent}__label {
       @include h3;
-      font-size: 1rem;
-      text-transform: inherit;
-      line-height: 1.29rem;
+
       color: $paragraph-text-color;
+      font-size: 1rem;
+      line-height: 1.29rem;
+      text-transform: inherit;
     }
   }
 
   &__input {
-    position: absolute;
-    opacity: 0;
     cursor: none;
     height: 0;
+    opacity: 0;
+    position: absolute;
     width: 0;
   }
 
   &__check-mark {
+    align-items: center;
+    border: 1px solid $checkbox-border-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    height: 1.42rem;
+    justify-content: center;
+    margin-right: 10px;
     min-width: 1.42rem;
     width: 1.42rem;
-    height: 1.42rem;
-    border: 1px solid $checkbox-border-color;
-    box-sizing: border-box;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
 
     .#{$parent}__mark {
-      width: 0.71rem;
       height: 0.71rem;
       opacity: 0;
+      width: 0.71rem;
     }
   }
 
@@ -68,9 +70,9 @@ $parent: 'checkbox-button';
     border: 1px solid $checkbox-border-color-checked;
 
     .#{$parent}__mark {
-      width: 0.71rem;
       height: 0.71rem;
       opacity: 1;
+      width: 0.71rem;
     }
   }
 

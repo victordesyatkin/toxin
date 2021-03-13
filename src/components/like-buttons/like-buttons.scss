@@ -5,8 +5,9 @@
   flex-direction: column;
 
   &__title {
-    margin-bottom: 1.1rem;
     @include h3;
+
+    margin-bottom: 1.1rem;
   }
 
   &__items {

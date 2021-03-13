@@ -10,13 +10,11 @@ block main
     let className = 'colors-and-type';
     let classNames = `${className} js-${className}`;
   section(class=classNames)
-    section(class=`${className}__section`)
-      ul(class=`${className}__colors`)
-        each color in colors
-          li(class=`${className}__color-item`)
-            +color-sample(color)
-    section(class=`${className}__section`) 
-      ul(class=`${className}__fonts`)
-        each font in fonts
-          li(class=`${className}__font-item`)
-            +font-sample(font)
+    ul(class=`${className}__colors`)
+      each color in colors
+        li(class=`${className}__color-item`)
+          +color-sample(color)
+    ul(class=`${className}__fonts`)
+      each font in fonts
+        li(class=`${className}__font-item`)
+          +font-sample(font)

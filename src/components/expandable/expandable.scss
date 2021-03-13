@@ -3,14 +3,14 @@
 $parent: 'expandable';
 
 .#{$parent} {
-  position: relative;
   background-color: $expandable-background-color;
+  position: relative;
 
   &__header {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__title {
@@ -18,24 +18,24 @@ $parent: 'expandable';
   }
 
   &__control {
+    font-size: 0.5714rem;
     margin-right: 1.1428rem;
     transition-duration: 1s;
-    font-size: 0.5714rem;
-    -webkit-transition-property: -webkit-transform;
-    -moz-transition-property: -moz-transform;
-    -ms-transition-property: -ms-transform;
-    -o-transition-property: -o-transform;
+    transition-property: -webkit-transform;
+    transition-property: -moz-transform;
+    transition-property: -ms-transform;
+    transition-property: -o-transform;
     transition-property: transform;
   }
 
   &__body {
-    display: none;
-    position: absolute;
-    padding: 1.357rem 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
     background-color: $expandable-background-color;
+    display: none;
+    left: 0;
+    padding: 1.357rem 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
   }
 
   &_opened {
@@ -43,12 +43,12 @@ $parent: 'expandable';
 
     .#{$parent}__control {
       transform: rotate(180deg);
-      -webkit-transition-property: -webkit-transform;
-      -moz-transition-property: -moz-transform;
-      -ms-transition-property: -ms-transform;
-      -o-transition-property: -o-transform;
-      transition-property: transform;
       transition-duration: 1s;
+      transition-property: -webkit-transform;
+      transition-property: -moz-transform;
+      transition-property: -ms-transform;
+      transition-property: -o-transform;
+      transition-property: transform;
     }
 
     .#{$parent}__body {

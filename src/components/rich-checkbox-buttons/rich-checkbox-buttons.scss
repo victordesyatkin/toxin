@@ -4,8 +4,9 @@ $parent: 'rich-checkbox-buttons';
 
 .#{$parent} {
   &__title {
-    margin-bottom: 1.214rem;
     @include h3;
+
+    margin-bottom: 1.214rem;
   }
 
   &__buttons {

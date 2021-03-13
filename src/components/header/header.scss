@@ -3,23 +3,23 @@
 $parent: 'header';
 
 .#{$parent} {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   background: $header-background-color;
   box-shadow: $header-box-shadow;
+  display: flex;
+  justify-content: space-between;
   position: relative;
+  width: 100%;
   z-index: 9;
 
   &__logo {
-    width: 7.5492rem;
     height: 2.8571rem;
+    width: 7.5492rem;
   }
 
   &__toggle-navigation {
-    display: none;
     align-items: center;
     cursor: pointer;
+    display: none;
   }
 
   &__toggle-navigation:hover {
@@ -29,17 +29,17 @@ $parent: 'header';
   }
 
   &__toggle-navigation-button {
-    width: 2.714rem;
+    background: none;
+    border: inherit;
+    border-radius: 4px;
+    color: $toggle-navigation-text-color-default;
+    cursor: pointer;
+    font-size: 1.5rem;
     height: 2.714rem;
     margin: 0;
-    padding: 0;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
     outline: none;
-    color: $toggle-navigation-text-color-default;
+    padding: 0;
+    width: 2.714rem;
   }
 
   &__nav {
@@ -79,11 +79,11 @@ $parent: 'header';
     }
 
     &__nav {
+      background-color: $nav-background-color-default;
       display: none;
       position: absolute;
       top: 100%;
       width: 100%;
-      background-color: $nav-background-color-default;
     }
   }
 }

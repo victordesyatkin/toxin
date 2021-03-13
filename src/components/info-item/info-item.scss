@@ -7,24 +7,24 @@ $parent: 'info-item';
   justify-content: flex-start;
 
   &__image-wrapper {
-    width: 3.42rem;
-    height: 3.42rem;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
+    height: 3.42rem;
+    justify-content: center;
+    width: 3.42rem;
 
     .#{$parent}__icon {
-      font-size: 2.85rem;
       background: $info-background-color;
-      -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
+      font-size: 2.85rem;
     }
 
     .#{$parent}__image {
-      width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
+      width: 100%;
     }
   }
 
@@ -33,8 +33,8 @@ $parent: 'info-item';
   }
 
   &__title {
-    font-weight: bold;
     color: $paragraph-text-color;
+    font-weight: bold;
   }
 
   &__title,

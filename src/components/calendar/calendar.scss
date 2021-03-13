@@ -3,15 +3,15 @@
 $parent: 'calendar';
 
 .#{$parent} {
-  width: 100%;
-  border: 0.0714rem solid $calendar-border-color;
-  box-sizing: border-box;
-  box-shadow: $calendar-box-shadow;
-  border-radius: 4px;
   background-color: $calendar-background-color;
+  border: 0.0714rem solid $calendar-border-color;
+  border-radius: 4px;
+  box-shadow: $calendar-box-shadow;
+  box-sizing: border-box;
+  width: 100%;
 
   &__control {
-    width: 100%;
     padding: 1.071rem 1.42rem;
+    width: 100%;
   }
 }

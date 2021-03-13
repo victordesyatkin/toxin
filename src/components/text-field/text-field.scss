@@ -3,9 +3,9 @@
 $parent: 'text-field';
 
 .#{$parent} {
-  width: 100%;
-  position: relative;
   cursor: pointer;
+  position: relative;
+  width: 100%;
 
   .#{$parent}__summary {
     display: block;
@@ -41,7 +41,7 @@ $parent: 'text-field';
   &_theme_guests {
     .#{$parent}__summary,
     .#{$parent}__input {
-      border: none;
+      border: inherit;
       cursor: pointer;
     }
   }
@@ -61,8 +61,8 @@ $parent: 'text-field';
       &:hover,
       &:focus,
       &:active {
-        color: $input-text-color-hover;
         border: 1px solid $input-border-color-default;
+        color: $input-text-color-hover;
         outline: none;
       }
     }
@@ -71,8 +71,8 @@ $parent: 'text-field';
     .#{$parent}__button:focus ~ .#{$parent}__summary,
     .#{$parent}__button:hover ~ .#{$parent}__input,
     .#{$parent}__button:focus ~ .#{$parent}__input {
-      color: $input-text-color-hover;
       border: 1px solid $input-border-color-default;
+      color: $input-text-color-hover;
       outline: none;
     }
   }
@@ -92,15 +92,15 @@ $parent: 'text-field';
     display: none;
     font-size: 1rem;
     line-height: 1.15rem;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
-  &__summary:after {
+  &__summary::after {
     content: '';
     display: inline-block;
-    width: 0px;
+    width: 0;
   }
 
   &__button:hover ~ &__summary,
@@ -111,19 +111,19 @@ $parent: 'text-field';
   &__summary:focus,
   &__input:hover,
   &__input:focus {
-    color: $input-text-color-hover;
     border-color: $input-border-color-hover;
+    color: $input-text-color-hover;
     outline: none;
   }
 
   &__summary,
   &__input {
-    width: 100%;
-    padding: 0.9rem 1rem 1rem;
-    color: $input-text-color-hover;
     border: 1px solid $input-border-color-default;
     border-radius: 4px;
+    color: $input-text-color-hover;
     cursor: pointer;
+    padding: 0.9rem 1rem 1rem;
+    width: 100%;
 
     &:disabled {
       background-color: transparent;
@@ -131,28 +131,28 @@ $parent: 'text-field';
   }
 
   &__button {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: transparent;
+    border: inherit;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    height: 3.14rem;
+    justify-content: center;
+    outline: none;
     position: absolute;
     right: 0;
-    bottom: 0;
     width: 3.14rem;
-    height: 3.14rem;
     z-index: 2;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: transparent;
   }
 
   &__button_default_eye_slash,
   &__button_default_eye,
   &__button_default {
-    color: $input-text-color-button-default;
     background-color: transparent;
-    font-size: 0.57rem;
+    color: $input-text-color-button-default;
     cursor: pointer;
+    font-size: 0.57rem;
   }
 
   &__button_default_eye_slash,
@@ -174,9 +174,9 @@ $parent: 'text-field';
 
   &__button_forwarded {
     background: $input-button-background;
-    font-size: 1.28rem;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
     color: transparent;
+    font-size: 1.28rem;
+    -webkit-text-fill-color: transparent;
   }
 }

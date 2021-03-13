@@ -3,12 +3,12 @@
 $parent: 'nav';
 
 .#{$parent} {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
   align-items: center;
+  display: flex;
   height: 100%;
+  justify-content: flex-start;
   position: relative;
+  width: 100%;
 
   &__nav-section,
   &__control-section {
@@ -16,8 +16,8 @@ $parent: 'nav';
   }
 
   &__nav-section {
-    display: flex;
     align-items: center;
+    display: flex;
     height: 100%;
   }
 
@@ -31,19 +31,19 @@ $parent: 'nav';
 
   .#{$parent}__nav-section-item {
     display: inline-flex;
-    margin-right: 1.49rem;
     height: 100%;
+    margin-right: 1.49rem;
   }
 
   &__separator {
-    width: 0.0714rem;
-    height: 2.1428rem;
     background: $nav-background-color-separator;
+    height: 2.1428rem;
+    width: 0.0714rem;
   }
 
   &__user-section {
-    margin-left: 1.5rem;
     color: $nav-text-color-user;
+    margin-left: 1.5rem;
   }
 
   &__control-section {
@@ -51,8 +51,8 @@ $parent: 'nav';
   }
 
   &__control-item {
-    display: flex;
     align-items: center;
+    display: flex;
     margin-left: 1.36rem;
   }
 
@@ -66,11 +66,11 @@ $parent: 'nav';
     flex-direction: column;
 
     &__nav-section {
+      background-color: $link-children-background-color;
       flex-direction: column;
       justify-content: flex-start;
       width: 100%;
       z-index: 99;
-      background-color: $link-children-background-color;
     }
 
     .#{$parent}__nav-section-item:first-child,
@@ -80,8 +80,8 @@ $parent: 'nav';
     }
 
     .#{$parent}__nav-section-item {
-      width: 100%;
       padding: 0.5rem 1.1rem;
+      width: 100%;
     }
 
     &__control-section {
@@ -91,10 +91,10 @@ $parent: 'nav';
     }
 
     &__control-item {
-      margin: inherit;
-      padding: 0.5rem 1.1rem;
       display: flex;
       justify-content: center;
+      margin: inherit;
+      padding: 0.5rem 1.1rem;
     }
 
     &__separator {

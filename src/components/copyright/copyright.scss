@@ -3,10 +3,10 @@
 $parent: 'copyright';
 
 @mixin sm {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 8.714rem 0;
 
   .#{$parent}__logo {
@@ -20,10 +20,10 @@ $parent: 'copyright';
 }
 
 .#{$parent} {
-  width: 100%;
-  height: 100%;
-  display: flex;
   box-shadow: $copyright-box-shadow;
+  display: flex;
+  height: 100%;
+  width: 100%;
 
   &__logo {
     text-align: center;
@@ -39,9 +39,9 @@ $parent: 'copyright';
   }
 
   &__social-item {
-    width: 1.7142rem;
     height: 1.7142rem;
     margin-right: 1.4285rem;
+    width: 1.7142rem;
 
     &:last-child {
       margin-right: inherit;
@@ -49,11 +49,11 @@ $parent: 'copyright';
   }
 
   &__icon {
-    color: transparent;
-    font-size: 1.5rem;
     background: $copyright-background-color-icon;
     background-clip: text;
-    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 1.5rem;
   }
 }
 

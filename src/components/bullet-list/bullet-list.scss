@@ -5,9 +5,9 @@ $parent: 'bullet-list';
 .#{$parent} {
   &_theme_form-element {
     .#{$parent}__title {
-      padding-left: 0;
       margin-bottom: 1rem;
       margin-bottom: 0.71rem;
+      padding-left: 0;
     }
   }
 

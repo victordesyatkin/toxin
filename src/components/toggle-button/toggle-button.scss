@@ -3,12 +3,12 @@
 $parent: 'toggle-button';
 
 .#{$parent} {
+  cursor: pointer;
   display: flex;
   flex-basis: 100%;
-  flex-shrink: 1;
-  flex-grow: 1;
   flex-direction: row;
-  cursor: pointer;
+  flex-grow: 1;
+  flex-shrink: 1;
   line-height: 1.3rem;
 
   &:hover,
@@ -23,35 +23,35 @@ $parent: 'toggle-button';
   }
 
   &__input {
-    position: absolute;
-    opacity: 0;
     cursor: none;
     height: 0;
+    opacity: 0;
+    position: absolute;
     width: 0;
   }
 
   &__check-mark {
-    min-width: 2.857rem;
-    width: 2.857rem;
-    height: 1.429rem;
-    border: 1px solid $toggle-button-border-color-default;
-    box-sizing: border-box;
-    border-radius: 10px;
-    display: flex;
     align-items: center;
+    border: 1px solid $toggle-button-border-color-default;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    height: 1.429rem;
     margin-right: 0.714rem;
+    min-width: 2.857rem;
     padding: 0 0.286rem;
     position: relative;
+    width: 2.857rem;
 
     .#{$parent}__mark {
-      width: 12px; // with rem oval shape
-      height: 12px; // with rem oval shape
-      opacity: 1;
-      border-radius: 50%;
       background: $toggle-button-background-color-default;
-      transition: left 0.5s;
+      border-radius: 50%;
+      height: 12px; // with rem oval shape
       left: 0.286rem;
+      opacity: 1;
       position: absolute;
+      transition: left 0.5s;
+      width: 12px; // with rem oval shape
     }
   }
 
@@ -65,8 +65,8 @@ $parent: 'toggle-button';
 
     .#{$parent}__mark {
       background: $toggle-button-background-color-checked;
-      transition: left 0.5s;
       left: calc(100% - 1.142rem);
+      transition: left 0.5s;
     }
   }
 

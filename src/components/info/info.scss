@@ -27,7 +27,7 @@ $parent: 'info';
     }
 
     &:last-child {
-      border: none;
+      border: inherit;
     }
   }
 }

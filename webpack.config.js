@@ -2,6 +2,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
@@ -67,6 +68,12 @@ module.exports = (env = {}) => {
         jQuery: 'jquery',
       }),
       ...htmlPlugins,
+      new StylelintPlugin({
+        configFile: path.resolve(__dirname, '.stylelintrc.json'),
+        context: path.resolve(__dirname),
+        files: 'src/**/*.(s(c|a)ss|css)',
+        fix: true
+      }),
       new webpack.HotModuleReplacementPlugin(),
     ];
     if (isProduction) {

@@ -10,10 +10,10 @@ $parent: '.bullet';
   }
 
   &__item-mark {
-    display: inline-block;
-    width: 0.71rem;
-    height: 0.71rem;
     background-color: $bullet-button-background;
     border-radius: 50%;
+    display: inline-block;
+    height: 0.71rem;
+    width: 0.71rem;
   }
 }

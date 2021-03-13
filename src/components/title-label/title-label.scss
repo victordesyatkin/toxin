@@ -50,9 +50,10 @@ $parent: 'title-label';
 
   &__state {
     @include h3;
-    font-weight: normal;
+
     color: $title-label-text-color-status;
-    text-transform: uppercase;
+    font-weight: normal;
     text-align: right;
+    text-transform: uppercase;
   }
 }

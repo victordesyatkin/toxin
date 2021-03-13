@@ -3,59 +3,60 @@
 $parent: 'button';
 
 .#{$parent} {
-  display: inline-flex;
+  @include font-family-first-bold;
+
   align-items: center;
-  justify-content: center;
-  border: none;
+  background: none;
+  border: inherit;
+  border-radius: 22px;
+  cursor: pointer;
+  display: inline-flex;
   font-size: 0.85rem;
+  justify-content: center;
   line-height: 1.1rem;
   text-transform: uppercase;
-  cursor: pointer;
-  @include font-family-first-bold;
   white-space: nowrap;
-  background: none;
-  border-radius: 22px;
 
   &_theme_1 {
-    color: $button-text-color-default-first;
     background: $button-background-color-first-default;
     border: solid 2px transparent;
+    color: $button-text-color-default-first;
 
     .#{$parent}__content {
-      border-radius: 22px;
       background-color: $button-background-color-first-inner-default;
+      border-radius: 22px;
       color: $button-text-color-default-first;
-      padding: 0.8571rem 1.2142rem 0.9285rem 1.2142rem;
+      padding: 0.8571rem 1.2142rem 0.9285rem;
     }
   }
 
   &_theme_2 {
-    padding: 0;
-    color: $button-text-color-default-second;
     background: none;
+    color: $button-text-color-default-second;
+    padding: 0;
 
     &.#{$parent}_theme_2:hover,
     &.#{$parent}_hovered {
-      color: $button-text-color-hover-second;
       background: none;
+      color: $button-text-color-hover-second;
     }
   }
 
   &_theme_3 {
-    width: 100%;
+    background: $button-background-color-third-default;
+    color: $button-text-color-default-third;
     padding: 1rem 1.307rem 1.071rem 1.5rem;
     position: relative;
-    color: $button-text-color-default-third;
-    background: $button-background-color-third-default;
+    width: 100%;
 
     .#{$parent}__image-wrapper {
+      align-items: center;
+      display: flex;
+      height: 3.1428rem;
+      justify-content: center;
       position: absolute;
       right: 0;
       width: 3.1428rem;
-      height: 3.1428rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
   }
 
@@ -92,13 +93,13 @@ $parent: 'button';
   &_size_3 {
     &.#{$parent}_theme_1 {
       .#{$parent}__content {
-        padding: 0.5rem 1.4285rem 0.5714rem 1.4285rem;
+        padding: 0.5rem 1.4285rem 0.5714rem;
       }
     }
 
     &.#{$parent}_theme_3 {
-      width: auto;
       padding: 0.6428rem 1.4285rem 0.7142rem 1.5rem;
+      width: auto;
     }
   }
 

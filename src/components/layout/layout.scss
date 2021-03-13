@@ -21,9 +21,9 @@
   }
 
   &__container {
+    align-content: flex-start;
     display: flex;
     flex: 1 1 100%;
-    align-content: flex-start;
     overflow: hidden;
 
     @for $i from 1 to 80 {
@@ -62,8 +62,8 @@
 
     &_center {
       flex-grow: 0;
-      margin-right: auto;
       margin-left: auto;
+      margin-right: auto;
     }
 
     &_column {

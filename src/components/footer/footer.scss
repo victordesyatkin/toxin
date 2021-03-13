@@ -9,19 +9,19 @@ $parent: 'footer';
 }
 
 .#{$parent} {
-  width: 100%;
   background-color: $footer-background-color;
+  width: 100%;
 
   &__main-section {
-    width: 100%;
-    display: flex;
-    box-shadow: $footer-box-shadow;
     border-top: 0.071rem solid $footer-border-color;
+    box-shadow: $footer-box-shadow;
+    display: flex;
+    width: 100%;
   }
 
   &__info-section {
-    width: 18.5714rem;
     margin-right: 2.8571rem;
+    width: 18.5714rem;
   }
 
   &__logo {
@@ -29,9 +29,9 @@ $parent: 'footer';
   }
 
   &__nav-items {
-    margin-top: 0.3571rem;
     display: flex;
     list-style-type: none;
+    margin-top: 0.3571rem;
   }
 
   &__subscribe-section {
@@ -40,6 +40,7 @@ $parent: 'footer';
 
   &__subscribe-header {
     @include h3;
+
     margin-bottom: 1.429rem;
   }
 
@@ -59,18 +60,18 @@ $parent: 'footer';
     }
 
     &__nav-item:nth-child(1) {
-      width: 10.2142rem;
       margin-right: 4.0714rem;
+      width: 10.2142rem;
     }
 
     &__nav-item:nth-child(2) {
-      width: 7.7142rem;
       margin-right: 6.5714rem;
+      width: 7.7142rem;
     }
 
     &__nav-item:nth-child(3) {
-      width: 10.6428rem;
       margin-right: 3.6428rem;
+      width: 10.6428rem;
     }
   }
 }
@@ -78,8 +79,8 @@ $parent: 'footer';
 @include media-breakpoint-between($lg, $xl) {
   .#{$parent} {
     &__main-section {
-      padding: 2rem;
       justify-content: space-around;
+      padding: 2rem;
     }
 
     &__info-section,
@@ -107,18 +108,18 @@ $parent: 'footer';
 @include media-breakpoint-between($sm, $lg) {
   .#{$parent} {
     &__main-section {
-      padding: 2rem;
-      justify-content: center;
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
     }
 
     &__info-section {
       display: flex;
-      justify-content: center;
       flex-direction: column;
-      margin-right: 0;
+      justify-content: center;
       margin-bottom: 1rem;
+      margin-right: 0;
       width: 100%;
     }
 
@@ -128,8 +129,8 @@ $parent: 'footer';
     }
 
     &__info {
-      width: 100%;
       text-align: center;
+      width: 100%;
     }
 
     &__nav-items {

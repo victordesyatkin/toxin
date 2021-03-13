@@ -3,40 +3,50 @@
 $parent: 'book';
 
 .#{$parent} {
-  width: 100%;
   padding: 2.8571rem 2.103rem 2.1428rem 2.1rem;
+  width: 100%;
+
+  @include media-breakpoint-down($xs) {
+    padding: 2rem 0.7rem;
+  }
+
+  @include media-breakpoint-down($xxs) {
+    padding: 2rem 0.5rem;
+  }
 
   &__title {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.429rem;
+    width: 100%;
   }
 
   &__room-number-wrapper,
   &__price-wrapper {
+    align-items: flex-end;
     display: flex;
     white-space: nowrap;
-    align-items: flex-end;
   }
 
   &__price {
-    display: flex;
     align-items: flex-end;
+    display: flex;
   }
 
   &__price {
     @include base-h;
+
+    color: $book-text-color-price;
     font-size: 1rem;
     font-weight: bold;
-    color: $book-text-color-price;
   }
 
   &__duration {
-    font-weight: normal;
-    font-size: 0.8571rem;
-    margin-left: 0.28rem;
     @include font-family-first-regular;
+
+    font-size: 0.8571rem;
+    font-weight: normal;
+    margin-left: 0.28rem;
   }
 
   &__room-number-wrapper {
@@ -46,6 +56,7 @@ $parent: 'book';
 
   &__room-number {
     @include h1;
+
     margin-left: 4px;
   }
 
@@ -72,6 +83,14 @@ $parent: 'book';
 
   &__item-service {
     width: 15.8rem;
+
+    @include media-breakpoint-down($xs) {
+      width: 15rem;
+    }
+
+    @include media-breakpoint-down($xxs) {
+      width: auto;
+    }
   }
 
   &__item-total {
@@ -95,10 +114,14 @@ $parent: 'book';
   }
 
   &__icon-info {
-    display: inline-flex;
-    font-size: 1.4285rem;
     color: $book-text-color-info;
     cursor: pointer;
+    display: inline-flex;
+    font-size: 1.4285rem;
+
+    @include media-breakpoint-down($xxs) {
+      margin: 0 0.5rem;
+    }
   }
 
   &__icon-info:hover {
@@ -106,48 +129,25 @@ $parent: 'book';
   }
 
   &__total-wrapper {
-    display: flex;
     align-items: flex-end;
+    display: flex;
     margin-bottom: 1.5rem;
   }
 
   &__total,
   &__total-content {
     @include h2;
+
     align-items: flex-end;
   }
 
   &__separator {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-grow: 1;
-    flex-basis: 100%;
-    margin-bottom: 0.27rem;
     border-bottom: 0.0714rem dashed $book-border-color-separator;
-  }
-}
-
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    padding: 2rem 0.7rem;
-
-    &__item-service {
-      width: 15rem;
-    }
-  }
-}
-
-@include media-breakpoint-down($xxs) {
-  .#{$parent} {
-    padding: 2rem 0.5rem;
-
-    &__item-service {
-      width: auto;
-    }
-
-    &__icon-info {
-      margin: 0 0.5rem;
-    }
+    display: flex;
+    flex-basis: 100%;
+    flex-grow: 1;
+    height: 100%;
+    margin-bottom: 0.27rem;
+    width: 100%;
   }
 }
