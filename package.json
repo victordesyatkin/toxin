@@ -1,22 +1,22 @@
 {
-  "name": "webpack",
+  "name": "toxin",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
   "dependencies": {
-    "@prettier/plugin-pug": "^1.13.3",
     "air-datepicker": "^2.2.3",
     "air-range-slider": "^1.0.10",
-    "babel-eslint": "^10.1.0",
     "bind-decorator": "^1.0.11",
     "classnames": "^2.2.6",
     "imask": "^6.0.5",
-    "inputmask": "^5.0.6-beta.15",
     "jquery": "^3.5.1",
-    "lodash": "^4.17.20",
+    "lodash.isempty": "^4.4.0",
+    "lodash.orderby": "^4.6.0",
+    "lodash.trim": "^4.5.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "@babel/core": "^7.10.3",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-proposal-decorators": "^7.12.13",
@@ -79,16 +79,6 @@
     "last 2 firefox versions",
     "last 1 edge versions"
   ],
-  "betterScripts": {
-    "start-dev": {
-      "command": "./node_modules/.bin/webpack-dev-server",
-      "env": {
-        "NODE_PATH": "./src",
-        "NODE_ENV": "development",
-        "PORT": 8080
-      }
-    }
-  },
   "author": "",
   "license": "ISC"
 }

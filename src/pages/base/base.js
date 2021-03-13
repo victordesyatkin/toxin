@@ -1,5 +1,5 @@
 import 'normalize.css';
-import isEmpty from 'lodash/isEmpty';
+import isEmpty from 'lodash.isempty';
 
 import { Component, requireAll } from '../../helpers/utils';
 import Header from '../../components/header';
@@ -23,7 +23,6 @@ class Base extends Component {
   _className = '';
 
   constructor(options) {
-    // console.log('Base constructor this._props : ', options);
     super(options);
     this._renderComponent();
   }

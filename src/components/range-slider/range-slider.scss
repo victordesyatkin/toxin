@@ -16,7 +16,7 @@ $parent: 'range-slider';
     flex-direction: row;
     justify-content: space-between;
     line-height: initial;
-    margin-bottom: 1.15rem;
+    margin-bottom: 1.3rem;
   }
 
   &__info {
@@ -26,6 +26,8 @@ $parent: 'range-slider';
 
   &__section-body {
     width: 100%;
+    position: relative;
+    z-index: 1;
   }
 
   &__description {

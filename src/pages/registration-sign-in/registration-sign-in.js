@@ -7,7 +7,6 @@ import './registration-sign-in.scss';
 
 class RegistrationSignIn extends Component {
   static handleComponentLoad() {
-    console.log('handleComponentLoad');
     const registration = new RegistrationSignIn({ props: data });
     return registration;
   }
@@ -17,13 +16,11 @@ class RegistrationSignIn extends Component {
   _className = 'registration';
 
   constructor(options) {
-    console.log('RegistrationSignIn constructor this._props : ', options);
     super(options);
     this._renderComponent();
   }
 
   _init() {
-    console.log('RegistrationSignIn _init this._props : ', this._props);
     const { signIn } = this._props;
     this._base = new Base({
       props: this._props,

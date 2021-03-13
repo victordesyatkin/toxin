@@ -1,9 +1,24 @@
 import bind from 'bind-decorator';
-import isString from 'lodash/isString';
-import isArray from 'lodash/isArray';
-import trim from 'lodash/trim';
-import isFunction from 'lodash/isFunction';
-import isEmpty from 'lodash/isEmpty';
+import trim from 'lodash.trim';
+import isEmpty from 'lodash.isempty';
+
+function isString(str) {
+  if (str && typeof str.valueOf() === 'string') {
+    return true;
+  }
+  return false;
+}
+
+function isUndefined(value) {
+  return typeof value === 'undefined' && value === undefined;
+}
+
+function isFunction(func) {
+  if (func && typeof func === 'function') {
+    return true;
+  }
+  return false;
+}
 
 function wordForm(number = 0, words = []) {
   const cases = [2, 0, 1, 1, 1, 2];
@@ -36,7 +51,7 @@ function renderComponents(options = {}) {
   if (!render || !isFunction(render)) {
     return undefined;
   }
-  if (!parents || !isArray(parents)) {
+  if (!parents || !Array.isArray(parents)) {
     parents = [parents];
   } else if (isEmpty(parents)) {
     parents = [undefined];
@@ -84,12 +99,8 @@ function requireAll(requireContext) {
     return cache;
   });
 }
-
 class Component {
   constructor(options = {}) {
-    // console.log('Component constructor : ', options);
-    // console.log('Component constructor this._query : ', this._query);
-    // console.log('Component constructor this.this : ', this);
     this._options = options;
     const { props = {}, parent } = this._options;
     this._parent = parent;
@@ -110,7 +121,6 @@ class Component {
     const { query, className } = this._options;
     this._query = query || this._query;
     this._className = className || this._className;
-    // console.log('Component _renderComponent this._query : ', this._query);
     if (!this._isValidQuery()) {
       return undefined;
     }
@@ -124,19 +134,10 @@ class Component {
     }
     this._element = element;
     this._$element = $(element);
-    // console.log(
-    //   'Component _renderComponent $element : ',
-    //   this.$element.data(this.constructor.name)
-    // );
-    // console.log(
-    //   'Component _renderComponent this.name : ',
-    //   this.constructor.name
-    // );
     if (this._$element.data(this.constructor.name)) {
       return undefined;
     }
     this._$element.data(this.constructor.name, this);
-    // console.log('Component  _renderComponent this._init : ', this._init);
     if (this._init) {
       this._init();
     }
@@ -153,4 +154,6 @@ export {
   isValidDate,
   uuid,
   requireAll,
+  isString,
+  isUndefined,
 };

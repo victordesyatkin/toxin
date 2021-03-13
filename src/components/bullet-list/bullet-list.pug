@@ -4,14 +4,18 @@ include ../bullet/bullet
 mixin bullet-list(props)
   if props
     -
-      let { title, items = [], size } = props;
+      let { title, items = [], size, theme } = props;
       let { length } = items;
       let className = 'bullet-list';
       let classNames = `${className} js-${className}`;
+      let themes = {
+        'form-element': 'form-element',
+      };
       let sizes = {
           large: 'large',
       }
       classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     article(class=classNames)
       if title
         div(class=`${className}__title`)

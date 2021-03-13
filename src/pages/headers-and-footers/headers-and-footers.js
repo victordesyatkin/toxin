@@ -16,7 +16,6 @@ class HeadersAndFooters extends Component {
   _className = 'headers-and-footers';
 
   constructor(options) {
-    console.log('HeadersAndFooters constructor options : ', options);
     super(options);
     this._renderComponent();
   }
@@ -44,8 +43,6 @@ class HeadersAndFooters extends Component {
       parent: $(`${this._query}__footer-second`, this._$element),
       props: footer2,
     });
-    console.log('this._init props : ', this._props);
-    // Footer.renderComponents({ parents: this._$element });
   }
 }
 

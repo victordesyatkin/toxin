@@ -73,7 +73,7 @@ $parent: 'button';
     }
   }
 
-  &_sizes_1 {
+  &_size_1 {
     &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 0.8571rem 1.6428rem 0.9285rem 1.7857rem;
@@ -81,7 +81,7 @@ $parent: 'button';
     }
   }
 
-  &_sizes_2 {
+  &_size_2 {
     &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 0.7142rem 1rem 0.6428rem 1.0714rem;
@@ -89,7 +89,7 @@ $parent: 'button';
     }
   }
 
-  &_sizes_3 {
+  &_size_3 {
     &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 0.5rem 1.4285rem 0.5714rem 1.4285rem;
@@ -102,7 +102,7 @@ $parent: 'button';
     }
   }
 
-  &_sizes_4 {
+  &_size_4 {
     &.#{$parent}_theme_1 {
       .#{$parent}__content {
         padding: 1rem 1.2857rem 1.0714rem 1.4285rem;

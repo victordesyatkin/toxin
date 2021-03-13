@@ -1,4 +1,4 @@
-import isEmpty from 'lodash/isEmpty';
+import isEmpty from 'lodash.isempty';
 
 import { Component } from '../../helpers/utils';
 import LandingPage from '../landing-page/LandingPage';
@@ -7,7 +7,6 @@ import './landing-page-dates-dropdown.scss';
 
 class LandingPageDatesDropdown extends Component {
   static handleComponentLoad() {
-    console.log('handleComponentLoad');
     const landingPageDatesDropdown = new LandingPageDatesDropdown();
     return landingPageDatesDropdown;
   }
@@ -22,7 +21,6 @@ class LandingPageDatesDropdown extends Component {
   }
 
   _init() {
-    console.log('LandingPageDatesDropdown this._props : ', this._props);
     this.landingPage = new LandingPage({
       props: isEmpty(this._props) ? data : this._props,
     });

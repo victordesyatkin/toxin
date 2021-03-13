@@ -4,10 +4,6 @@ import './search-room-filter-preferences-dropdown.scss';
 
 class SearchRoomFilterPreferencesDropdown {
   static handleComponentLoad() {
-    // console.log(
-    //   'SearchRoomFilterPreferencesDropdown handleComponentLoad options : ',
-    //   data
-    // );
     const searchRoomFilter = new SearchRoomFilter({ props: data });
     return searchRoomFilter;
   }

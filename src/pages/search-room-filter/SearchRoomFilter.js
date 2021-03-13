@@ -15,7 +15,6 @@ import './search-room-filter.scss';
 
 class SearchRoomFilter extends Component {
   static handleComponentLoad() {
-    // //console.log('SearchRoomFilter handleComponentLoad options : ', data);
     const searchRoomFilter = new SearchRoomFilter({ props: data });
     return searchRoomFilter;
   }
@@ -25,7 +24,6 @@ class SearchRoomFilter extends Component {
   _className = 'search-room-filter';
 
   constructor(options) {
-    // //console.log('SearchRoomFilter constructor options : ', options);
     super(options);
     this._renderComponent();
   }
@@ -84,10 +82,8 @@ class SearchRoomFilter extends Component {
   _prepareSearch() {
     const search = window?.location?.search;
     const searchParams = new URLSearchParams(search);
-    // //console.log('SearchRoomFilter _init this._props: ', searchParams);
     /* eslint-disable */
     for (const [key, value] of searchParams.entries()) {
-      //console.log(`${key} => ${value}`);
       this._search[key] = value;
     }
     /* eslint-enable */

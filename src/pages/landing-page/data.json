@@ -200,6 +200,7 @@
           "id": 2,
           "content": "Услуги",
           "title": "Услуги",
+          "href": "/mock-address/change-me",
           "parent": 0,
           "children": [
             {
@@ -257,6 +258,7 @@
           "id": 5,
           "content": "Соглашения",
           "title": "Соглашения",
+          "href": "/mock-address/change-me",
           "parent": 0,
           "children": [
             {

@@ -91,7 +91,7 @@ $parent: '.form-elements';
   }
 
   &__comment {
-    padding-top: 0.7142rem;
+    padding: 0.7142rem 1rem 0 0;
   }
 
   &__pagination {
@@ -104,7 +104,7 @@ $parent: '.form-elements';
     padding: 4.64rem 8.9rem 10.07rem 10.07rem;
 
     &__section:nth-child(1) {
-      margin-bottom: 7.2142rem;
+      margin-bottom: 7rem;
 
       #{$parent}__list:nth-child(1) {
         margin-right: 9rem;
@@ -148,8 +148,8 @@ $parent: '.form-elements';
       }
 
       #{$parent}__list:nth-child(2) {
-        margin-right: 9rem;
-        width: 19rem;
+        margin-right: 9.37rem;
+        width: 18.6rem;
       }
 
       #{$parent}__list:nth-child(3) {

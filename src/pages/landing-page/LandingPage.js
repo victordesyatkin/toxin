@@ -1,4 +1,4 @@
-import isEmpty from 'lodash/isEmpty';
+import isEmpty from 'lodash.isempty';
 
 import { Component, requireAll } from '../../helpers/utils';
 import Picker from '../../components/picker';
@@ -9,7 +9,6 @@ import './index';
 requireAll(require.context('./images/', false, /\.jpg$/));
 class LandingPage extends Component {
   static handleComponentLoad() {
-    console.log('handleComponentLoad');
     const landingPage = new LandingPage();
     return landingPage;
   }
@@ -24,7 +23,6 @@ class LandingPage extends Component {
   }
 
   _init() {
-    console.log('LandingPage this._props : ', this._props);
     const { picker } = isEmpty(this._props) ? data : this._props;
     this._base = new Base({
       props: this._props,

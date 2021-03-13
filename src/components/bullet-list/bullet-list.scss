@@ -3,19 +3,17 @@
 $parent: 'bullet-list';
 
 .#{$parent} {
-  // &_size_large {
-  //   .#{$parent}__title {
-  //     @include h2;
-  //     text-transform: inherit;
-  //     padding-left: 1.5rem;
-  //     margin-bottom: 1.42rem;
-  //   }
-  // }
+  &_theme_form-element {
+    .#{$parent}__title {
+      padding-left: 0;
+      margin-bottom: 1rem;
+      margin-bottom: 0.71rem;
+    }
+  }
 
   &__title {
-    margin-bottom: 1.42rem;
+    margin-bottom: 1.4rem;
     padding-left: 1.5rem;
-    //text-transform: inherit;
   }
 
   &__list {
@@ -25,7 +23,7 @@ $parent: 'bullet-list';
   }
 
   &__item {
-    margin-bottom: 0.71rem;
+    margin-bottom: 0.78rem;
 
     &:last-child {
       margin-bottom: inherit;
