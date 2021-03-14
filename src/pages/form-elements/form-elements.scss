@@ -1,18 +1,204 @@
 @import '~theme/variables.scss';
 
-$parent: '.form-elements';
+$parent: 'form-elements';
 
-#{$parent} {
+.#{$parent} {
   background-color: $page-background-color;
   height: 100%;
+  padding: 5rem 0.9rem;
   width: 100%;
+
+  @include media-breakpoint-up($md) {
+    padding: 5rem 2rem;
+  }
+
+  @include media-breakpoint-up($lg) {
+    padding: 5rem 3rem;
+  }
+
+  @include media-breakpoint-up($xl) {
+    padding: 4.64rem 8.9rem 10.07rem 10.07rem;
+  }
 
   &__section {
     display: flex;
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-down($md) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+
+  &__text-fields {
+    @include media-breakpoint-up($md) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 6.9rem;
+    }
+    @include media-breakpoint-up($xl) {
+      flex-wrap: initial;
+      justify-content: initial;
+      margin-bottom: 6.9rem;
+    }
+
+    .#{$parent}__list-text-field {
+      max-width: 22.85rem;
+      @include media-breakpoint-up($xs) {
+        margin-right: 1rem;
+        width: initial;
+      }
+
+      @include media-breakpoint-up($xl) {
+        margin-bottom: initial;
+        margin-right: 9rem;
+        width: 22.85rem;
+      }
+    }
+
+    .#{$parent}__list-checkbox-buttons {
+      max-width: 22.85rem;
+
+      @include media-breakpoint-up($xs) {
+        margin-right: 1rem;
+        width: initial;
+      }
+
+      @include media-breakpoint-up($xl) {
+        margin-bottom: initial;
+        margin-right: 5.14rem;
+        width: 22.85rem;
+      }
+    }
+
+    .#{$parent}__list-range-sliders {
+      max-width: 22.85rem;
+      width: initial;
+      @include media-breakpoint-up($md) {
+        margin-bottom: initial;
+        width: 22.85rem;
+      }
+    }
+  }
+
+  &__dropdowns {
+    @include media-breakpoint-up($md) {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 12.4rem;
+    }
+
+    @include media-breakpoint-up($xl) {
+      flex-wrap: initial;
+      justify-content: initial;
+      margin-bottom: 12.4rem;
+    }
+
+    .#{$parent}__list-dropdowns-first {
+      max-width: 19rem;
+
+      @include media-breakpoint-up($sm) {
+        margin-right: 1rem;
+      }
+
+      @include media-breakpoint-up($md) {
+        margin-right: 1rem;
+      }
+
+      @include media-breakpoint-up($xl) {
+        margin-bottom: initial;
+        margin-right: 12.92rem;
+      }
+    }
+
+    .#{$parent}__list-dropdowns-second {
+      max-width: 22.8571rem;
+
+      @include media-breakpoint-up($sm) {
+        margin-right: 1rem;
+      }
+
+      @include media-breakpoint-up($md) {
+        margin-right: 1rem;
+      }
+
+      @include media-breakpoint-up($xl) {
+        margin-bottom: initial;
+        margin-right: 5.14rem;
+      }
+    }
+
+    .#{$parent}__list-dropdowns-third {
+      max-width: 22.85rem;
+      @include media-breakpoint-up($md) {
+        margin-bottom: initial;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__lists {
+    @include media-breakpoint-up($md) {
+      justify-content: space-around;
+    }
+
+    @include media-breakpoint-up($xl) {
+      flex-wrap: initial;
+      justify-content: initial;
+      margin-bottom: 0.85rem;
+    }
+
+    .#{$parent}__list-expandable-checkbox-list {
+      max-width: 19rem;
+      @include media-breakpoint-up($md) {
+        margin-right: 1rem;
+      }
+
+      @include media-breakpoint-up($xl) {
+        margin-bottom: initial;
+        margin-right: 12.92rem;
+      }
+    }
+
+    .#{$parent}__list-rich-checkbox-buttons {
+      max-width: 18.6rem;
+      @include media-breakpoint-up($md) {
+        margin-right: 1rem;
+      }
+      @include media-breakpoint-up($xl) {
+        margin-bottom: initial;
+        margin-right: 9.37rem;
+      }
+    }
+
+    .#{$parent}__list-bullet-list {
+      max-width: 18rem;
+      @include media-breakpoint-up($xl) {
+        margin-bottom: initial;
+      }
+    }
+  }
+
+  &__comments {
+    .#{$parent}__list-info {
+      margin-bottom: initial;
+      max-width: 20rem;
+
+      @include media-breakpoint-up($xs) {
+        margin-right: 2rem;
+      }
+
+      @include media-breakpoint-up($xl) {
+        margin-right: 11.7857rem;
+      }
+    }
   }
 
   &__list {
     list-style-type: none;
+    margin: 0 0 2rem;
+    min-width: 0;
+    width: 100%;
   }
 
   &__text-field-default {
@@ -96,191 +282,5 @@ $parent: '.form-elements';
 
   &__pagination {
     width: 17.214rem;
-  }
-}
-
-@include media-breakpoint-up($xl) {
-  #{$parent} {
-    padding: 4.64rem 8.9rem 10.07rem 10.07rem;
-
-    &__section:nth-child(1) {
-      margin-bottom: 7rem;
-
-      #{$parent}__list:nth-child(1) {
-        margin-right: 9rem;
-        width: 22.85rem;
-      }
-
-      #{$parent}__list:nth-child(2) {
-        margin-right: 5.14rem;
-        width: 22.85rem;
-      }
-
-      #{$parent}__list:nth-child(3) {
-        width: 22.85rem;
-      }
-    }
-
-    &__section:nth-child(2) {
-      margin-bottom: 12.31rem;
-
-      #{$parent}__list:nth-child(1) {
-        margin-right: 12.92rem;
-        width: 19rem;
-      }
-
-      #{$parent}__list:nth-child(2) {
-        margin-right: 5.14rem;
-        width: 22.8571rem;
-      }
-
-      #{$parent}__list:nth-child(3) {
-        width: 22.85rem;
-      }
-    }
-
-    &__section:nth-child(3) {
-      margin-bottom: 15.85rem;
-
-      #{$parent}__list:nth-child(1) {
-        margin-right: 12.92rem;
-        width: 19rem;
-      }
-
-      #{$parent}__list:nth-child(2) {
-        margin-right: 9.37rem;
-        width: 18.6rem;
-      }
-
-      #{$parent}__list:nth-child(3) {
-        width: 18rem;
-      }
-    }
-
-    &__section:nth-child(4) {
-      #{$parent}__list:nth-child(1) {
-        margin-right: 11.7857rem;
-        min-width: 20rem;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down($xl) {
-  #{$parent} {
-    padding: 5rem 4rem;
-
-    &__section:nth-child(1) {
-      margin-bottom: 7.2142rem;
-
-      #{$parent}__list:nth-child(1) {
-        margin-right: 4.8611vw;
-        max-width: 22.85rem;
-        width: 100%;
-      }
-
-      #{$parent}__list:nth-child(2) {
-        margin-right: 4.8611vw;
-        max-width: 22.85rem;
-        width: 100%;
-      }
-
-      #{$parent}__list:nth-child(3) {
-        max-width: 22.85rem;
-        width: 100%;
-      }
-    }
-
-    &__section:nth-child(2) {
-      margin-bottom: 12.31rem;
-
-      #{$parent}__list:nth-child(1) {
-        margin-right: 6.8055vw;
-        max-width: 19rem;
-        width: 100%;
-      }
-
-      #{$parent}__list:nth-child(2) {
-        margin-right: 4.8611vw;
-        max-width: 22.8571rem;
-        width: 100%;
-      }
-
-      #{$parent}__list:nth-child(3) {
-        max-width: 22.85rem;
-        width: 100%;
-      }
-    }
-
-    &__section:nth-child(3) {
-      margin-bottom: 15.85rem;
-
-      #{$parent}__list:nth-child(1) {
-        margin-right: 6.8055vw;
-        max-width: 19rem;
-        width: 100%;
-      }
-
-      #{$parent}__list:nth-child(2) {
-        margin-right: 6.8055vw;
-        max-width: 19rem;
-        width: 100%;
-      }
-
-      #{$parent}__list:nth-child(3) {
-        max-width: 18rem;
-        width: 100%;
-      }
-    }
-
-    &__section:nth-child(4) {
-      #{$parent}__list:nth-child(1) {
-        margin-right: 6.8055vw;
-        min-width: 20rem;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down($lg) {
-  #{$parent} {
-    padding: 5rem 3rem;
-  }
-}
-
-@include media-breakpoint-down($md) {
-  #{$parent} {
-    padding: 5rem 2rem;
-
-    &__section {
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
-
-    &__section:nth-child(1),
-    &__section:nth-child(2),
-    &__section:nth-child(3),
-    &__section:nth-child(4) {
-      margin-bottom: 2rem;
-
-      #{$parent}__list:nth-child(1),
-      #{$parent}__list:nth-child(2),
-      #{$parent}__list:nth-child(3),
-      #{$parent}__list:nth-child(4) {
-        margin-left: 0;
-        margin-right: 0;
-        min-width: 0;
-      }
-    }
-
-    &__list {
-      margin-bottom: 2rem;
-    }
-  }
-}
-
-@include media-breakpoint-down($xs) {
-  #{$parent} {
-    padding: 5rem 0.9rem;
   }
 }

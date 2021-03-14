@@ -38,8 +38,6 @@ $parent: 'dropdown-title-text-field';
   }
 
   &__body {
-    background-clip: padding;
-    background-clip: padding-box;
     background-clip: padding-box;
     background-color: $dropdown-background-color;
     border: 1px solid $dropdown-border-color-default;

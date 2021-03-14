@@ -18,7 +18,7 @@ mixin dropdown-title-text-field(props)
       classNames += isDirect ? ` ${className}_direct` : '';
       classNames += isOpened ? ` ${className}_opened` : '';
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    div(class=classNames, data-props=props)
+    div(class=classNames)
       if title
         div(class=`${className}__title js-${className}__title`)
           +title-label(title)

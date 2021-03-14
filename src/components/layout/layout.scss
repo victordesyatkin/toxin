@@ -24,7 +24,7 @@
     align-content: flex-start;
     display: flex;
     flex: 1 1 100%;
-    overflow: hidden;
+    //overflow: hidden;
 
     @for $i from 1 to 80 {
       $basis: $i * 50;

@@ -1,10 +1,11 @@
 mixin expandable(props)
   if props
     -
-      let { title, isOpened, withButton = true, iconClassName = 'icon-expand_more' } = props;
+      let { title, isOpened, withButton = true, iconClassName = 'icon-expand_more', withShift = true } = props;
       let className = 'expandable'; 
       let classNames = `${className} js-${className}`;
       let iconClassNames = withButton ? ` ${iconClassName}` : '';
+      classNames += withShift ? ` ${className}_with-shift` : '';  
       classNames += isOpened ? ` ${className}_opened` : '';
     div(class=classNames)
       div(class=`${className}__header js-${className}__header`)

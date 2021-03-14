@@ -5,12 +5,14 @@ $parent: 'expandable';
 .#{$parent} {
   background-color: $expandable-background-color;
   position: relative;
+  width: 100%;
 
   &__header {
     align-items: center;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 
   &__title {
@@ -36,6 +38,14 @@ $parent: 'expandable';
     position: absolute;
     width: 100%;
     z-index: 2;
+  }
+
+  &_with-shift {
+    .#{$parent}__body {
+      left: initial;
+      position: initial;
+      z-index: initial;
+    }
   }
 
   &_opened {
