@@ -16,7 +16,6 @@ $parent: 'pagination';
   }
 
   &__items {
-    //width: 100%;
     display: flex;
     list-style-type: none;
     overflow: hidden;
@@ -87,7 +86,6 @@ $parent: 'pagination';
 
   &__summary {
     margin-top: 0.6428rem;
-    //padding-left: 0.5rem;
     text-align: center;
     width: 100%;
   }

@@ -2,31 +2,46 @@
 
 $parent: 'copyright';
 
-@mixin sm {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 8.714rem 0;
-
-  .#{$parent}__logo {
-    display: block;
-    margin-bottom: 1.2285rem;
-  }
-
-  .#{$parent}__social-items {
-    margin-top: 1.4285rem;
-  }
-}
-
 .#{$parent} {
+  align-items: center;
   box-shadow: $copyright-box-shadow;
   display: flex;
+  flex-direction: column;
   height: 100%;
+  padding: 8.714rem 0;
   width: 100%;
 
+  @include media-breakpoint-up($sm) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  &_size_sm {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8.65rem 0;
+
+    .#{$parent}__logo {
+      display: block;
+      margin-bottom: 1.2285rem;
+    }
+
+    .#{$parent}__social-item {
+      margin-top: 1.4285rem;
+    }
+  }
+
   &__logo {
+    display: block;
+    margin-bottom: 1.2285rem;
     text-align: center;
+
+    @include media-breakpoint-up($sm) {
+      display: none;
+    }
   }
 
   &__content {
@@ -41,10 +56,15 @@ $parent: 'copyright';
   &__social-item {
     height: 1.7142rem;
     margin-right: 1.4285rem;
+    margin-top: 1.4285rem;
     width: 1.7142rem;
 
+    @include media-breakpoint-up($sm) {
+      margin-top: 0;
+    }
+
     &:last-child {
-      margin-right: inherit;
+      margin-right: initial;
     }
   }
 
@@ -54,26 +74,5 @@ $parent: 'copyright';
     background-clip: text;
     color: transparent;
     font-size: 1.5rem;
-  }
-}
-
-@include media-breakpoint-up($sm) {
-  .#{$parent} {
-    justify-content: space-between;
-    padding: 1.6942rem 10rem;
-
-    &__logo {
-      display: none;
-    }
-
-    &.#{$parent}_size_sm {
-      @include sm;
-    }
-  }
-}
-
-@include media-breakpoint-down($lg) {
-  .#{$parent} {
-    @include sm;
   }
 }

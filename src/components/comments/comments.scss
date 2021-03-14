@@ -1,6 +1,8 @@
 @import '~theme/variables.scss';
 
-.comments {
+$parent: 'comments';
+
+.#{$parent} {
   &__header {
     align-items: center;
     display: flex;
@@ -29,7 +31,7 @@
     margin-bottom: 1.6rem;
 
     &:last-child {
-      margin-bottom: inherit;
+      margin-bottom: initial;
     }
   }
 }

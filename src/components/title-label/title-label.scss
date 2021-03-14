@@ -26,7 +26,7 @@ $parent: 'title-label';
   &_theme_bullet {
     .#{$parent}__content,
     .#{$parent}__label {
-      text-transform: inherit;
+      text-transform: initial;
     }
   }
 

@@ -5,7 +5,7 @@ $parent: 'calendar';
 
 .#{$parent} {
   .datepicker {
-    border: inherit;
+    border: initial;
     width: 100%;
   }
 
@@ -17,7 +17,7 @@ $parent: 'calendar';
   }
 
   .datepicker--nav {
-    border: inherit;
+    border: initial;
     padding: 1.57rem 1.14rem 2.57rem 1.07rem;
     position: relative;
   }
@@ -100,7 +100,7 @@ $parent: 'calendar';
   .-range-from-,
   .-range-to-,
   .-focus- {
-    background: inherit;
+    background: initial;
   }
 
   .datepicker--cell.-focus-.-disabled-::after {
@@ -148,7 +148,7 @@ $parent: 'calendar';
   .-selected-.-range-from-.-current-,
   .-current- {
     background: none;
-    border: inherit;
+    border: initial;
   }
 
   .-other-month-.-focus-.-in-range-,
@@ -183,7 +183,7 @@ $parent: 'calendar';
 
   .datepicker--cells-days:hover {
     .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before {
-      display: inherit;
+      display: initial;
     }
 
     .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-broken-range-::before,

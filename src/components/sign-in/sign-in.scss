@@ -3,8 +3,13 @@
 $parent: 'sign-in';
 
 .#{$parent} {
-  padding: 2.714rem 2.143rem 2.286rem 2rem;
+  padding: 1rem;
+
   width: 100%;
+
+  @include media-breakpoint-up($xs) {
+    padding: 2.714rem 2.143rem 2.286rem 2rem;
+  }
 
   &__title {
     @include h1;
@@ -23,11 +28,5 @@ $parent: 'sign-in';
 
   &__button-sign-in:not(:last-child) {
     margin-bottom: 2.143rem;
-  }
-}
-
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    padding: 1rem;
   }
 }

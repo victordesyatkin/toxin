@@ -15,9 +15,14 @@ $parent: 'date-dropdown';
 
   &__items {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     list-style-type: none;
     width: 100%;
+
+    @include media-breakpoint-up($xxs) {
+      flex-direction: row;
+    }
   }
 
   &__item {
@@ -25,7 +30,13 @@ $parent: 'date-dropdown';
   }
 
   &__item:nth-child(2) {
-    margin-left: 1.42rem;
+    margin-left: 0;
+    margin-top: 1rem;
+
+    @include media-breakpoint-up($xxs) {
+      margin-left: 1.42rem;
+      margin-top: 0;
+    }
   }
 
   &__calendar {
@@ -33,18 +44,5 @@ $parent: 'date-dropdown';
     margin-top: 0.35rem;
     position: absolute;
     width: 100%;
-  }
-}
-
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    &__items {
-      flex-direction: column;
-    }
-
-    &__item:nth-child(2) {
-      margin-left: 0;
-      margin-top: 1rem;
-    }
   }
 }

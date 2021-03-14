@@ -1,6 +1,8 @@
 @import '~theme/variables.scss';
 
-.like-buttons {
+$parent: 'like-buttons';
+
+.#{$parent} {
   display: flex;
   flex-direction: column;
 

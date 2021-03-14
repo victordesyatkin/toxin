@@ -1,6 +1,8 @@
 @import '~theme/variables.scss';
 
-.picker {
+$parent: 'picker';
+
+.#{$parent} {
   height: auto;
   padding: 2.8571rem 2.1428rem 2.0714rem 2rem;
   width: 100%;

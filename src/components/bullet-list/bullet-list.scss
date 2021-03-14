@@ -26,7 +26,7 @@ $parent: 'bullet-list';
     margin-bottom: 0.78rem;
 
     &:last-child {
-      margin-bottom: inherit;
+      margin-bottom: initial;
     }
   }
 }

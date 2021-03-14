@@ -11,15 +11,38 @@ $parent: 'header';
   width: 100%;
   z-index: 9;
 
+  @include media-breakpoint-up($md) {
+    padding: 1.1rem;
+  }
+
+  @include media-breakpoint-up($xl) {
+    padding: 1.1rem 10rem 1.01rem;
+  }
+
+  &_opened {
+    .#{$parent}__nav {
+      display: block;
+    }
+  }
+
   &__logo {
     height: 2.8571rem;
+    margin: 1rem auto;
     width: 7.5492rem;
+
+    @include media-breakpoint-up($md) {
+      margin: initial;
+    }
   }
 
   &__toggle-navigation {
     align-items: center;
     cursor: pointer;
-    display: none;
+    display: flex;
+
+    @include media-breakpoint-up($md) {
+      display: none;
+    }
   }
 
   &__toggle-navigation:hover {
@@ -30,7 +53,7 @@ $parent: 'header';
 
   &__toggle-navigation-button {
     background: none;
-    border: inherit;
+    border: initial;
     border-radius: 4px;
     color: $toggle-navigation-text-color-default;
     cursor: pointer;
@@ -43,47 +66,17 @@ $parent: 'header';
   }
 
   &__nav {
-    display: flex;
-  }
-}
+    background-color: $nav-background-color-default;
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
 
-@include media-breakpoint-up($xl) {
-  .#{$parent} {
-    padding: 1.1rem 10rem 1.01rem;
-  }
-}
-
-@include media-breakpoint-between($md, $xl) {
-  .#{$parent} {
-    padding: 1.1rem;
-  }
-}
-
-@include media-breakpoint-down($md) {
-  .#{$parent} {
-    flex-direction: row;
-    justify-content: space-between;
-
-    &_opened {
-      .#{$parent}__nav {
-        display: block;
-      }
-    }
-
-    &__logo {
-      margin: 1rem auto;
-    }
-
-    &__toggle-navigation {
+    @include media-breakpoint-up($md) {
       display: flex;
-    }
-
-    &__nav {
-      background-color: $nav-background-color-default;
-      display: none;
-      position: absolute;
-      top: 100%;
-      width: 100%;
+      position: initial;
+      top: initial;
+      width: initial;
     }
   }
 }

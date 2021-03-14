@@ -13,10 +13,16 @@ $parent: 'rate';
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-right: 2.143rem;
+    margin-bottom: 1rem;
+    margin-right: 0;
     min-width: 6rem;
     position: relative;
     width: 8.571rem;
+
+    @include media-breakpoint-up($xs) {
+      margin-bottom: initial;
+      margin-right: 2.143rem;
+    }
   }
 
   &__circle::after {
@@ -57,10 +63,17 @@ $parent: 'rate';
   }
 
   &__vote-section {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
+
+    @include media-breakpoint-up($xs) {
+      align-items: flex-end;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
   }
 
   &__vote {
@@ -77,20 +90,5 @@ $parent: 'rate';
     min-height: 0.7142rem;
     min-width: 0.7142rem;
     width: 0.7142rem;
-  }
-}
-
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    &__vote-section {
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    &__circle {
-      margin-bottom: 1rem;
-      margin-right: 0;
-    }
   }
 }

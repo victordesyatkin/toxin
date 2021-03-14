@@ -1,6 +1,8 @@
 @import '~theme/global.scss';
 
-.toggle-buttons {
+$parent: 'toggle-buttons';
+
+.#{$parent} {
   display: flex;
   flex-direction: column;
 

@@ -3,46 +3,101 @@ $parent: 'nav-item';
 
 .#{$parent} {
   align-items: center;
+
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   position: relative;
   white-space: nowrap;
   width: 100%;
 
+  @include media-breakpoint-up($md) {
+    .#{$parent}__children {
+      display: none;
+    }
+  }
+
+  &:hover {
+    color: $link-text-color-hover;
+
+    @include media-breakpoint-up($md) {
+      .#{$parent}__children {
+        display: block;
+      }
+    }
+
+    .#{$parent}__control {
+      color: $link-text-color-hover;
+    }
+  }
+
+  &_opened {
+    .#{$parent}__children {
+      display: initial;
+    }
+  }
+
+  &_opened {
+    @include media-breakpoint-up($md) {
+      .#{$parent}__children {
+        display: none;
+      }
+    }
+  }
+
+  &_current {
+    color: $link-text-color-current;
+
+    .#{$parent}__control {
+      color: $link-text-color-current;
+    }
+  }
+
   &__children {
     background-color: $link-children-background-color;
-    border: solid 1px $link-border-color-default;
-    border-radius: 4px;
+    border: initial;
     display: none;
     list-style-type: none;
-    max-width: 17.857rem;
-    min-width: 17.857rem;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    z-index: 99;
+    width: 100%;
+
+    @include media-breakpoint-up($md) {
+      border: solid 1px $link-border-color-default;
+      border-radius: 4px;
+      max-width: 17.857rem;
+      min-width: 17.857rem;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      z-index: 99;
+    }
   }
 
   &__child {
+    border: initial;
     overflow: hidden;
     padding: 0.5rem 1rem;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
+    width: 100%;
 
-  &__child {
-    border-top: solid 1px $link-border-color-default;
+    @include media-breakpoint-up($md) {
+      border-top: solid 1px $link-border-color-default;
+    }
   }
 
   &__child:first-child() {
-    border: inherit;
+    border: initial;
+
+    @include media-breakpoint-up($md) {
+      border: initial;
+    }
   }
 
   &__control {
     align-items: center;
     background: none;
-    border: inherit;
+    border: initial;
     color: $link-text-color-default;
     cursor: pointer;
     display: inline-flex;
@@ -60,21 +115,10 @@ $parent: 'nav-item';
   &__link {
     align-items: center;
     display: flex;
-  }
+    flex: 1 auto;
 
-  &_current {
-    color: $link-text-color-current;
-
-    .#{$parent}__control {
-      color: $link-text-color-current;
-    }
-  }
-
-  &:hover {
-    color: $link-text-color-hover;
-
-    .#{$parent}__control {
-      color: $link-text-color-hover;
+    @include media-breakpoint-up($md) {
+      flex: initial;
     }
   }
 
@@ -82,46 +126,5 @@ $parent: 'nav-item';
   &__control:hover,
   &__control:active {
     outline: none;
-  }
-}
-
-@include media-breakpoint-up($md) {
-  .#{$parent} {
-    &:hover {
-      .#{$parent}__children {
-        display: block;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down($md) {
-  .#{$parent} {
-    flex-direction: column;
-    height: auto;
-
-    &__link {
-      flex: 1;
-    }
-
-    &_opened {
-      .#{$parent}__children {
-        display: block;
-        position: static;
-      }
-    }
-
-    &__children {
-      border: inherit;
-      border-radius: inherit;
-      max-width: 100%;
-      position: relative;
-      width: 100%;
-    }
-
-    &__child {
-      border: inherit;
-      width: 100%;
-    }
   }
 }

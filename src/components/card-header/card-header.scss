@@ -14,7 +14,7 @@ $parent: 'card-header';
     @include h3;
 
     font-size: 1rem;
-    line-height: inherit;
+    line-height: initial;
     padding-top: 0.0714rem;
     text-transform: uppercase;
   }
@@ -37,7 +37,7 @@ $parent: 'card-header';
 
     color: $book-text-color-price;
     font-weight: bold;
-    line-height: inherit;
+    line-height: initial;
   }
 
   &__info-text {

@@ -28,7 +28,7 @@ $parent: 'buttons';
         width: auto;
 
         &:first-child {
-          margin-left: inherit;
+          margin-left: initial;
         }
       }
     }
@@ -44,7 +44,7 @@ $parent: 'buttons';
     margin-left: 1.5rem;
 
     &:first-child {
-      margin-left: inherit;
+      margin-left: initial;
     }
   }
 }

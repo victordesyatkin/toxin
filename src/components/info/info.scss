@@ -23,11 +23,11 @@ $parent: 'info';
     padding: 1.471rem 0;
 
     &:first-child {
-      padding-top: inherit;
+      padding-top: initial;
     }
 
     &:last-child {
-      border: inherit;
+      border: initial;
     }
   }
 }

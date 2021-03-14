@@ -9,7 +9,7 @@ $parent: 'dropdown-title-text-field';
 
   &_theme_date {
     .#{$parent}__body {
-      border: inherit;
+      border: initial;
     }
   }
 

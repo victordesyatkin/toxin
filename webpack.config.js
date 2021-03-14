@@ -79,8 +79,8 @@ module.exports = (env = {}) => {
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: "[name].[hash:8].css",
-          chunkFilename: "[id].[hash:8].css",
+          filename: '[name].css?[hash]',
+          chunkFilename: '[id].css?[chunkhash]',
         })
       );
     }
@@ -93,7 +93,7 @@ module.exports = (env = {}) => {
     devtool: isDevelopment ? undefined : undefined,
     entry: { ...js },
     output: {
-      filename: isDevelopment ? '[name].js' : '[name].[hash:8].js',
+      filename: isDevelopment ? '[name].js' : '[name].js?[hash]',
       pathinfo: isDevelopment,
     },
     resolve: {
@@ -119,7 +119,7 @@ module.exports = (env = {}) => {
             loader: 'file-loader',
             options: {
               outputPath: './assets/favicon/',
-              name: '[name].[ext]',
+              name: isDevelopment ? '[name].[ext]' : '[name].[ext]?[hash]',
             },
           },
         },
@@ -131,7 +131,7 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/images/',
-                name: '[name].[ext]',
+                name: isDevelopment ? '[name].[ext]' : '[name].[ext]?[hash]',
               },
             },
           ],
@@ -144,7 +144,7 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/fonts/',
-                name: isDevelopment ? '[name].[ext]' : '[name].[hash:8].[ext]',
+                name: isDevelopment ? '[name].[ext]' : '[name].[ext]?[hash]',
               },
             },
           ],

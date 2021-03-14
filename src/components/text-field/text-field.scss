@@ -14,8 +14,8 @@ $parent: 'text-field';
   &_direct {
     .#{$parent}__summary,
     .#{$parent}__input {
-      border-bottom-left-radius: inherit;
-      border-bottom-right-radius: inherit;
+      border-bottom-left-radius: initial;
+      border-bottom-right-radius: initial;
     }
   }
 
@@ -41,7 +41,7 @@ $parent: 'text-field';
   &_theme_guests {
     .#{$parent}__summary,
     .#{$parent}__input {
-      border: inherit;
+      border: initial;
       cursor: pointer;
     }
   }
@@ -133,7 +133,7 @@ $parent: 'text-field';
   &__button {
     align-items: center;
     background-color: transparent;
-    border: inherit;
+    border: initial;
     bottom: 0;
     cursor: pointer;
     display: flex;

@@ -1,6 +1,8 @@
 @import '~theme/variables.scss';
 
-.radio-buttons {
+$parent: 'radio-buttons';
+
+.#{$parent} {
   display: flex;
   flex-direction: column;
 
