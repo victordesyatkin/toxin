@@ -4,15 +4,16 @@ $parent: 'dropdown';
 
 .#{$parent} {
   position: relative;
-
-  &__item-title {
-    @include h3;
-  }
+  width: 100%;
 
   &_opened {
     .#{$parent}__body {
       display: block;
     }
+  }
+
+  &__title-text-field {
+    width: 100%;
   }
 
   &__body {

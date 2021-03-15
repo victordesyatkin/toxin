@@ -3,50 +3,40 @@
 $parent: 'landing-page';
 
 .#{$parent} {
+  background-position: 0 -5rem;
+  background-repeat: no-repeat;
   width: 100%;
 
   &__info {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
     width: 100%;
-  }
-}
-
-@include media-breakpoint-up($xs) {
-  .#{$parent} {
-    background-position: 0 -5rem;
-
-    &__picker {
-      margin-bottom: 22.6971rem;
-      margin-left: 10.0714rem;
-      margin-top: 5rem;
-      width: 27.1428rem;
-    }
-
-    &__info {
-      display: flex;
+    @include media-breakpoint-up($sm) {
       justify-content: flex-end;
       margin-bottom: 1.5714rem;
-      padding-right: 9.5371rem;
-    }
-
-    &__slogan {
-      text-align: right;
-      width: 21.2142rem;
+      padding: 0 9.5371rem 0 0;
     }
   }
-}
 
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    &__picker {
-      margin: 5rem auto;
-      max-width: 27.1428rem;
-      width: 100%;
+  &__picker {
+    margin: 5rem auto;
+    max-width: 27.1428rem;
+    width: 100%;
+    @include media-breakpoint-up($sm) {
+      margin: 5rem 0 22.6971rem 10.0714rem;
+      margin-bottom: 22.6971rem;
+      margin-left: 10.0714rem;
     }
+  }
 
-    &__info {
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
+  &__slogan {
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+    @include media-breakpoint-up($sm) {
+      max-width: 19.1428rem;
+      text-align: right;
     }
   }
 }

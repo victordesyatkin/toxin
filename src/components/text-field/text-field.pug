@@ -62,7 +62,10 @@ mixin text-field(props)
           value=buttonValue
         )
       if isSummaryOnly
-        p(class=`${className}__summary js-${className}__summary`) !{ summary }
+        p(
+          class=`${className}__summary js-${className}__summary`,
+          style="width: 100%; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap"
+        ) !{ summary }
       else if isHidden
         p(class=`${className}__summary js-${className}__summary`) !{ summary }
         input(

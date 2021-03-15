@@ -2,21 +2,14 @@
 
 $parent: 'registration';
 
-@include media-breakpoint-up($xs) {
-  .#{$parent} {
-    &__sign-in {
-      margin: 11.6528rem auto 11.6428rem;
-      width: 27.1428rem;
-    }
-  }
-}
+.#{$parent} {
+  &__sign-in {
+    margin: 5rem auto;
+    max-width: 27.1428rem;
+    width: 100%;
 
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    &__sign-in {
-      margin: 5rem auto;
-      max-width: 27.1428rem;
-      width: 100%;
+    @include media-breakpoint-up($xs) {
+      margin: 11.6528rem auto 11.6428rem;
     }
   }
 }

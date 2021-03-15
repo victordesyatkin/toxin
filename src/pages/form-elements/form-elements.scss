@@ -23,6 +23,7 @@ $parent: 'form-elements';
   &__section {
     display: flex;
     margin-bottom: 2rem;
+    width: 100%;
 
     @include media-breakpoint-down($md) {
       flex-wrap: wrap;
@@ -46,13 +47,11 @@ $parent: 'form-elements';
       max-width: 22.85rem;
       @include media-breakpoint-up($xs) {
         margin-right: 1rem;
-        width: initial;
       }
 
       @include media-breakpoint-up($xl) {
         margin-bottom: initial;
         margin-right: 9rem;
-        width: 22.85rem;
       }
     }
 
@@ -61,22 +60,18 @@ $parent: 'form-elements';
 
       @include media-breakpoint-up($xs) {
         margin-right: 1rem;
-        width: initial;
       }
 
       @include media-breakpoint-up($xl) {
         margin-bottom: initial;
         margin-right: 5.14rem;
-        width: 22.85rem;
       }
     }
 
     .#{$parent}__list-range-sliders {
       max-width: 22.85rem;
-      width: initial;
       @include media-breakpoint-up($md) {
         margin-bottom: initial;
-        width: 22.85rem;
       }
     }
   }
@@ -201,6 +196,10 @@ $parent: 'form-elements';
     width: 100%;
   }
 
+  &__component {
+    width: 100%;
+  }
+
   &__text-field-default {
     margin-bottom: 1.5314rem;
   }
@@ -223,45 +222,45 @@ $parent: 'form-elements';
 
   &__filter-date-dropdown {
     margin-bottom: 3.0714rem;
-    width: 19rem;
+    max-width: 19rem;
   }
 
   &__subscription-text-field {
-    width: 19.07rem;
+    max-width: 19.07rem;
   }
 
   &__checkbox-buttons {
     margin-bottom: 2.92rem;
-    width: 15.85rem;
+    max-width: 15.85rem;
   }
 
   &__radio-buttons {
     margin-bottom: 3.0714rem;
-    width: 15.76rem;
+    max-width: 15.76rem;
   }
 
   &__toggle-buttons {
     margin-bottom: 3.2142rem;
-    width: 18.57rem;
+    max-width: 18.57rem;
   }
 
   &__like-buttons {
     margin-bottom: 2.92rem;
-    width: 6.4rem;
+    max-width: 6.4rem;
   }
 
   &__rate-buttons {
-    width: 18.57rem;
+    max-width: 18.57rem;
   }
 
   &__range-slider {
     margin-bottom: 1.4285rem;
-    width: 19rem;
+    max-width: 19rem;
   }
 
   &__buttons {
     margin-bottom: 1.8571rem;
-    width: 15.57rem;
+    max-width: 15.57rem;
   }
 
   &__button {
@@ -281,6 +280,6 @@ $parent: 'form-elements';
   }
 
   &__pagination {
-    width: 17.214rem;
+    max-width: 17.214rem;
   }
 }

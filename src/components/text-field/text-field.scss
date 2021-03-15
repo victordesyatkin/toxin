@@ -122,7 +122,10 @@ $parent: 'text-field';
     border-radius: 4px;
     color: $input-text-color-hover;
     cursor: pointer;
+    overflow: hidden;
     padding: 0.9rem 1rem 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
 
     &:disabled {

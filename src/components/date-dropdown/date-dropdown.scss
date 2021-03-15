@@ -19,7 +19,6 @@ $parent: 'date-dropdown';
     justify-content: space-between;
     list-style-type: none;
     width: 100%;
-
     @include media-breakpoint-up($xxs) {
       flex-direction: row;
     }
@@ -32,12 +31,12 @@ $parent: 'date-dropdown';
     width: 100%;
   }
 
-  &__item:nth-child(2) {
+  &__item:last-child {
     margin-left: 0;
     margin-top: 1rem;
 
     @include media-breakpoint-up($xxs) {
-      margin-left: 1.42rem;
+      margin-left: 6.25%;
       margin-top: 0;
     }
   }

@@ -5,355 +5,207 @@ $parent: 'room-details';
 .#{$parent} {
   background-color: $page-background-color;
   width: 100%;
-}
 
-@include media-breakpoint-up($xl) {
-  .#{$parent} {
-    &__views-section {
-      display: flex;
-      height: 34.7128rem;
-      width: 100%;
-    }
+  &__main-section {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 2rem;
 
-    &__views {
-      height: 100%;
-      width: calc(100% - 70.0414rem);
-    }
-
-    &__view-first {
-      height: 100%;
-      width: 70.0414rem;
-    }
-
-    &__view-second {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-third {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-first,
-    &__view-second,
-    &__view-third {
-      background-repeat: no-repeat;
-      overflow: hidden;
-    }
-
-    &__main-section {
-      display: flex;
-      margin-bottom: 0.7142rem;
-      padding: 4.9285rem 8.9285rem 4.6428rem 10.0285rem;
-      width: 100%;
-    }
-
-    &__section:nth-child(1) {
-      margin-right: 5.0014rem;
-      width: 50.6857rem;
-    }
-
-    &__section:nth-child(2) {
-      height: 36.5rem;
-      margin-top: 0.1428rem;
-      width: 27.0428rem;
-    }
-
-    &__rate {
-      max-width: 35.7142rem;
-    }
-
-    &__info-section {
-      display: flex;
-      margin-bottom: 0.7rem;
-      width: 100%;
-    }
-
-    &__info {
-      margin-right: 7.7rem;
-    }
-
-    &__comments-section {
-      margin-bottom: 2.2857rem;
-    }
-
-    &__rules-section {
-      display: flex;
-    }
-
-    &__rules {
-      margin-right: 7.2rem;
-      width: 18.7857rem;
-    }
-
-    &__cancel {
-      padding-right: 1.7857rem;
-      width: 50%;
-    }
-  }
-}
-
-@include media-breakpoint-between($md, $xl) {
-  .#{$parent} {
-    &__views-section {
-      display: flex;
-      height: 34.7128rem;
-      width: 100%;
-    }
-
-    &__views {
-      height: 100%;
-      width: 30%;
-    }
-
-    &__view-first {
-      height: 100%;
-      width: 70%;
-    }
-
-    &__view-second {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-third {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-first,
-    &__view-second,
-    &__view-third {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      overflow: hidden;
-    }
-
-    &__main-section {
-      display: flex;
+    @include media-breakpoint-up($md) {
+      flex-direction: initial;
       justify-content: space-between;
       margin-bottom: 0.7142rem;
       padding: 4.9285rem 2rem;
-      width: 100%;
     }
 
-    &__section:nth-child(1) {
+    @include media-breakpoint-up($xl) {
+      padding: 4.9285rem 9.9285rem 4.6428rem 10.0285rem;
+    }
+  }
+
+  &__section-full-information {
+    padding: 1rem;
+
+    @include media-breakpoint-up($md) {
       margin-right: 1.1rem;
+      padding: initial;
       width: 55%;
     }
 
-    &__section:nth-child(2) {
-      height: 36.5rem;
-      margin-top: 0.1428rem;
-      min-width: 27.1428rem;
-      width: 27%;
+    @include media-breakpoint-up($md) {
+      margin-right: 1.1rem;
+      padding: initial;
+      width: 55%;
     }
 
-    &__rate {
-      max-width: 35.7142rem;
-    }
-
-    &__info-section {
-      display: flex;
-      margin-bottom: 1.2828rem;
-      width: 100%;
-    }
-
-    &__comments-section {
-      margin-bottom: 2.2857rem;
-    }
-
-    &__rules-section {
-      display: flex;
-    }
-
-    &__rules {
-      margin-right: 7.2rem;
-      width: 18.7857rem;
-    }
-
-    &__cancel {
-      padding-right: 1.7857rem;
-      width: 50%;
-    }
-
-    &__slider {
-      display: none;
+    @include media-breakpoint-up($xl) {
+      margin-right: 5.0014rem;
+      width: 50.7857rem;
     }
   }
-}
 
-@include media-breakpoint-between($lg, $xl) {
-  .#{$parent} {
-    &__info {
-      margin-right: 5rem;
+  &__views-section {
+    display: none;
+    width: 100%;
+
+    @include media-breakpoint-up($sm) {
+      display: flex;
+      height: 14.7128rem;
+    }
+
+    @include media-breakpoint-up($md) {
+      height: 24.7128rem;
+    }
+
+    @include media-breakpoint-up($lg) {
+      height: 24.7128rem;
+    }
+
+    @include media-breakpoint-up($lg) {
+      height: 34.7128rem;
     }
   }
 
   &__slider {
-    display: none;
-  }
-}
+    display: block;
+    height: 14.7128rem;
+    margin-bottom: 1rem;
+    width: 100%;
 
-@include media-breakpoint-between($md, $lg) {
-  .#{$parent} {
-    &__info {
+    @include media-breakpoint-up($sm) {
+      display: none;
+    }
+  }
+
+  &__views {
+    height: 100%;
+    width: 30%;
+
+    @include media-breakpoint-up($xl) {
+      height: 100%;
+      width: calc(100% - 70.0414rem);
+    }
+  }
+
+  &__view-first,
+  &__view-second,
+  &__view-third {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @include media-breakpoint-up($xl) {
+      background-position: initial;
+      background-size: initial;
+      overflow: hidden;
+    }
+  }
+
+  &__view-first {
+    height: 100%;
+    width: 70%;
+
+    @include media-breakpoint-up($xl) {
+      height: 100%;
+      width: 70.0414rem;
+    }
+  }
+
+  &__view-second {
+    height: 50%;
+    width: 100%;
+  }
+
+  &__view-third {
+    height: 50%;
+    width: 100%;
+  }
+
+  &__book {
+    margin: 0 auto 1rem;
+    max-width: 27.0428rem;
+    width: 100%;
+
+    @include media-breakpoint-up($md) {
+      margin-top: 0.1428rem;
+    }
+
+    @include media-breakpoint-up($xl) {
+      margin: 0;
+    }
+  }
+
+  &__info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0.7rem;
+    width: 100%;
+
+    @include media-breakpoint-up($xs) {
+      justify-content: space-around;
+    }
+
+    @include media-breakpoint-up($lg) {
+      margin-bottom: 1.2828rem;
+    }
+
+    @include media-breakpoint-up($xl) {
+      flex-wrap: initial;
+      justify-content: initial;
+      margin-bottom: 0.7rem;
+    }
+  }
+
+  &__info {
+    @include media-breakpoint-up($xs) {
       margin-right: 1.1rem;
     }
 
-    &__slider {
-      display: none;
+    @include media-breakpoint-up($lg) {
+      margin-right: 5rem;
+    }
+
+    @include media-breakpoint-up($xl) {
+      margin-right: 7.7rem;
     }
   }
-}
 
-@include media-breakpoint-down($md) {
-  .#{$parent} {
-    &__slider {
-      display: none;
-    }
+  &__rate {
+    max-width: 24.7142rem;
+    width: 100%;
 
-    &__views-section {
-      display: flex;
-      height: 24.7128rem;
-      width: 100%;
-    }
-
-    &__views {
-      height: 100%;
-      width: 30%;
-    }
-
-    &__view-first {
-      height: 100%;
-      width: 70%;
-    }
-
-    &__view-second {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-third {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-first,
-    &__view-second,
-    &__view-third {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      overflow: hidden;
-    }
-
-    &__main-section {
-      display: flex;
-      flex-direction: column-reverse;
-      padding: 2rem;
-    }
-
-    &__section,
-    &__info,
-    &__rules,
-    &__cancel,
-    &__rate,
-    &__comments-section {
-      margin-bottom: 2rem;
-    }
-
-    &__book {
-      margin: 0 auto 1rem;
-      max-width: 27.1428rem;
-      width: 100%;
-    }
-
-    &__info-section {
-      display: flex;
-      justify-content: space-around;
-      margin-bottom: 0.7rem;
-      width: 100%;
+    @include media-breakpoint-up($xl) {
+      margin: 0;
     }
   }
-}
 
-@include media-breakpoint-down($sm) {
-  .#{$parent} {
-    &__views-section {
-      display: flex;
-      height: 14.7128rem;
-      width: 100%;
-    }
+  &__comments-section {
+    margin-bottom: 2.2857rem;
+  }
 
-    &__slider {
-      display: none;
-    }
-
-    &__views {
-      height: 100%;
-      width: 30%;
-    }
-
-    &__view-first {
-      height: 100%;
-      width: 70%;
-    }
-
-    &__view-second {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-third {
-      height: 50%;
-      width: 100%;
-    }
-
-    &__view-first,
-    &__view-second,
-    &__view-third {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      overflow: hidden;
-    }
-
-    &__book {
-      margin: 0 auto 1rem;
-      max-width: 27.1428rem;
-      width: 100%;
-    }
-
-    &__info-section {
-      flex-wrap: wrap;
-      justify-content: center;
+  &__rules-section {
+    display: flex;
+    flex-direction: column;
+    @include media-breakpoint-up($xs) {
+      flex-direction: initial;
     }
   }
-}
 
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    &__main-section {
-      display: flex;
-      padding: 0;
+  &__rules {
+    max-width: 18.7857rem;
+    width: 100%;
+    @include media-breakpoint-up($xs) {
+      margin-right: 7rem;
     }
+  }
 
-    &__section:nth-child(1) {
-      padding: 1rem;
-    }
-
-    &__views-section {
-      display: none;
-    }
-
-    &__slider {
-      display: block;
-      height: 14.7128rem;
-      margin-bottom: 1rem;
-      width: 100%;
+  &__cancel {
+    max-width: 100%;
+    width: 100%;
+    @include media-breakpoint-up($xs) {
+      max-width: 24rem;
     }
   }
 }

@@ -9,12 +9,17 @@ $parent: 'copyright';
   flex-direction: column;
   height: 100%;
   padding: 8.714rem 0;
+  padding: 2rem;
   width: 100%;
 
   @include media-breakpoint-up($sm) {
     flex-direction: row;
     justify-content: space-between;
-    padding: 2rem;
+    padding: 1.8rem 3rem;
+  }
+
+  @include media-breakpoint-up($sm) {
+    padding: 1.8rem 10rem;
   }
 
   &_size_sm {

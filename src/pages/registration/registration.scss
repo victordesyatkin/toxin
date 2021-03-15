@@ -3,30 +3,13 @@
 $parent: 'registration';
 
 .#{$parent} {
+  background-position: 0 -5.0714rem;
+  background-repeat: no-repeat;
   width: 100%;
-}
 
-@include media-breakpoint-up($xs) {
-  .#{$parent} {
-    background-position: 0 -5.0714rem;
-    background-repeat: no-repeat;
-
-    &__sign-up {
-      margin: 1.4285rem auto;
-      width: 27.1428rem;
-    }
-  }
-}
-
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    background-position: 0 -5.0714rem;
-    background-repeat: no-repeat;
-
-    &__sign-up {
-      margin: 1.4285rem auto;
-      max-width: 27.1428rem;
-      width: 100%;
-    }
+  &__sign-up {
+    margin: 1.4285rem auto;
+    max-width: 27.1428rem;
+    width: 100%;
   }
 }

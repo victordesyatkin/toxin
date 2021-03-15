@@ -1,1 +1,8 @@
 @import '~theme/variables.scss';
+
+$parent: 'subscription-text-field';
+
+.#{$parent} {
+  display: flex;
+  flex: 1 1 100%;
+}

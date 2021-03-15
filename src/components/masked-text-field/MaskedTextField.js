@@ -154,7 +154,9 @@ class MaskedTextField extends Component {
     }
     if (!isEmpty(maskOptions)) {
       const element = this._textField.getInput();
-      this._mask = IMask(element, maskOptions);
+      if (element) {
+        this._mask = IMask(element, maskOptions);
+      }
     }
   }
 }

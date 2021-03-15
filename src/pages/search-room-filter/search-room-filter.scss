@@ -4,13 +4,36 @@ $parent: 'search-room-filter';
 .#{$parent} {
   background-color: $page-background-color;
   display: flex;
-  padding: 2.1rem 10rem 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.1428rem 1rem 0;
   width: 100%;
 
+  @include media-breakpoint-up($xs) {
+    flex-direction: initial;
+    padding: 2rem;
+  }
+
+  @include media-breakpoint-up($xl) {
+    justify-content: initial;
+    padding: 2.1rem 10rem 0;
+  }
+
   &__aside {
-    margin-right: 4.2857rem;
-    padding-top: 0.1428rem;
-    width: 19rem;
+    margin-bottom: 1rem;
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+
+    @include media-breakpoint-up($xs) {
+      margin-right: 2rem;
+      max-width: 19rem;
+    }
+
+    @include media-breakpoint-up($xl) {
+      margin-right: 4.2857rem;
+      padding-top: 0.1428rem;
+    }
   }
 
   &__title {
@@ -53,84 +76,34 @@ $parent: 'search-room-filter';
   }
 
   &__card-sliders {
-    display: grid;
-    grid-gap: 1.15rem 0.8571rem;
-    grid-template-columns: repeat(3, 19.2857rem);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     list-style-type: none;
-  }
 
-  &__card-slider {
-    width: 19.2857rem;
-  }
-
-  &__pagination {
-    margin: 2.8rem 1.1rem 5.1842rem 0;
-  }
-}
-
-@include media-breakpoint-down($xl) {
-  .#{$parent} {
-    display: flex;
-    justify-content: center;
-    padding: 2.1428rem 0 2rem;
-  }
-}
-
-@include media-breakpoint-down($lg) {
-  .#{$parent} {
-    display: flex;
-    justify-content: center;
-    padding: 2.1428rem 0 2rem;
-
-    &__card-sliders {
+    @include media-breakpoint-up($md) {
       display: grid;
       grid-gap: 1.29rem 0.8571rem;
       grid-template-columns: repeat(2, 19.2857rem);
     }
 
-    &__pagination {
-      margin: 2.67rem auto 5.1842rem;
+    @include media-breakpoint-up($lg) {
+      grid-gap: 1.15rem 0.8571rem;
+      grid-template-columns: repeat(3, 19.2857rem);
     }
   }
-}
 
-@include media-breakpoint-down($md) {
-  .#{$parent} {
-    display: flex;
-    justify-content: center;
-    padding: 2.1428rem 1rem 0;
-
-    &__card-sliders {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    &__aside {
-      margin-right: 2rem;
-    }
+  &__card-slider {
+    max-width: 19.2857rem;
+    width: 100%;
   }
-}
 
-@include media-breakpoint-down($xs) {
-  .#{$parent} {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2.1428rem 1rem 0;
+  &__pagination {
+    margin: 2.67rem auto 5.1842rem;
 
-    &__card-sliders {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }
-
-    &__aside {
-      margin-bottom: 1rem;
-      margin-right: 0;
-      width: 100%;
+    @include media-breakpoint-up($xl) {
+      margin: 3.1rem 1.1rem 5.14rem 0;
     }
   }
 }

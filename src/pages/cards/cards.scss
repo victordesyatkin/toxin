@@ -3,279 +3,84 @@
 $parent: '.cards';
 
 #{$parent} {
+  align-items: flex-start;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5rem;
   width: 100%;
+
+  @include media-breakpoint-up($xs) {
+    padding: 1rem;
+  }
+
+  @include media-breakpoint-up($sm) {
+    padding: 2rem;
+  }
+
+  @include media-breakpoint-up($md) {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+
+  @include media-breakpoint-up($xl) {
+    flex-wrap: initial;
+    justify-content: initial;
+    padding: 5.14rem 6.07rem 10rem 10rem;
+  }
 
   &__header {
     background-color: $cards-header-background-color;
   }
 
-  &__list,
-  &__list-sliders {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style-type: none;
+    margin-bottom: 2.7rem;
+    width: 100%;
   }
-}
 
-@include media-breakpoint-up($xl) {
-  #{$parent} {
-    padding: 5.14rem 6.07rem 10rem 10rem;
-
-    &__list:nth-child(1) {
-      margin-right: 2.85rem;
-      width: 27.14rem;
-    }
-
-    &__list:nth-child(2) {
-      margin-right: 2.8rem;
-      width: 27.14rem;
-    }
-
-    &__list:nth-child(3) {
-      width: 22.86rem;
-    }
-
-    &__sliders {
-      width: 19.28rem;
-    }
-
-    &__sign-up,
-    &__sign-in {
-      margin-top: 2.89rem;
-    }
-
-    &__card-slider:nth-child(1) {
-      margin-top: 2.7rem;
-    }
-
-    &__card-slider:nth-child(2) {
-      margin-top: 2.6rem;
-    }
+  &__component {
+    margin-bottom: 2.7rem;
+    width: 100%;
   }
-}
 
-@include media-breakpoint-down($xl) {
-  #{$parent} {
-    justify-content: space-around;
-    padding: 2rem;
-
-    &__list:nth-child(1) {
-      width: 27.14rem;
-    }
-
-    &__list:nth-child(2) {
-      width: 27.14rem;
-    }
-
-    &__list:nth-child(3) {
-      width: 22.86rem;
-    }
-
-    &__sliders {
-      width: 19.28rem;
-    }
-
-    &__sign-up,
-    &__sign-in,
-    &__card-slider:nth-child(1) {
-      margin-top: 2.7rem;
-    }
-
-    &__card-slider:nth-child(2) {
-      margin-top: 2.6rem;
-    }
-  }
-}
-
-@include media-breakpoint-down($lg) {
-  #{$parent} {
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 2rem;
-
-    &__list:nth-child(1) {
-      width: 27.14rem;
-    }
-
-    &__list:nth-child(2) {
-      width: 27.14rem;
-    }
-
-    &__list:nth-child(3) {
-      display: flex;
+  &__list-picker {
+    max-width: 27.14rem;
+    @include media-breakpoint-up($sm) {
       justify-content: space-around;
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    &__calendar {
-      max-width: 22.8571rem;
-      width: 100%;
-    }
-
-    &__sliders {
-      max-width: 19.28rem;
-      width: 100%;
-    }
-
-    &__card-slider:nth-child(1) {
-      margin-top: 0;
-    }
-
-    &__sign-up,
-    &__sign-in {
-      margin-top: 2.86rem;
-    }
-
-    &__card-slider:nth-child(2) {
-      margin-top: 2.6rem;
-    }
-  }
-}
-
-@include media-breakpoint-down($md) {
-  #{$parent} {
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 2rem;
-
-    &__list:nth-child(1) {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 0;
-      width: 100%;
-    }
-
-    &__list:nth-child(2) {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    &__list:nth-child(3) {
-      display: flex;
-      justify-content: space-around;
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    &__calendar {
-      max-width: 22.8571rem;
-      width: 100%;
-    }
-
-    &__sliders {
-      max-width: 19.28rem;
-      width: 100%;
-    }
-
-    &__card-slider:nth-child(1) {
-      margin-top: 0;
-    }
-
-    &__sign-up,
-    &__sign-in {
-      margin-top: 0;
-    }
-
-    &__card-slider:nth-child(2) {
-      margin-top: 2.6rem;
-    }
-
-    &__picker,
-    &__book,
-    &__calendar {
       margin-right: 1rem;
     }
-
-    &__picker,
-    &__sign-up,
-    &__sign-in,
-    &__book {
-      max-width: 27.14rem;
-      width: 100%;
+    @include media-breakpoint-up($xl) {
+      margin-right: 2.85rem;
     }
   }
-}
 
-@include media-breakpoint-down($sm) {
-  #{$parent} {
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 2rem;
-
-    &__list:nth-child(1) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 0;
-      width: 100%;
+  &__list-book {
+    max-width: 27.14rem;
+    @include media-breakpoint-up($sm) {
+      justify-content: space-around;
+      margin-right: 1rem;
     }
-
-    &__list:nth-child(2) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    &__list:nth-child(3) {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-      width: 100%;
-    }
-
-    &__calendar {
-      max-width: 22.8571rem;
-      width: 100%;
-    }
-
-    &__sliders {
-      max-width: 19.28rem;
-      width: 100%;
-    }
-
-    &__card-slider:nth-child(1) {
-      margin-top: 0;
-    }
-
-    &__sign-up,
-    &__sign-in {
-      margin-top: 0;
-    }
-
-    &__card-slider:nth-child(2) {
-      margin-top: 2.6rem;
-    }
-
-    &__picker,
-    &__book,
-    &__calendar {
-      margin-bottom: 2rem;
-      margin-right: 0;
-    }
-
-    &__picker,
-    &__sign-up,
-    &__sign-in,
-    &__book {
-      max-width: 27.14rem;
-      width: 100%;
+    @include media-breakpoint-up($xl) {
+      margin-right: 2.85rem;
     }
   }
-}
 
-@include media-breakpoint-down($xs) {
-  #{$parent} {
-    padding: 1rem;
+  &__list-calendar {
+    max-width: 22.86rem;
+    @include media-breakpoint-up($md) {
+      justify-content: space-around;
+    }
+    @include media-breakpoint-up($lg) {
+      justify-content: flex-start;
+    }
   }
-}
 
-@include media-breakpoint-down($xxs) {
-  #{$parent} {
-    padding: 0.5rem;
+  &__sliders {
+    max-width: 19.28rem;
   }
 }

@@ -2,5 +2,8 @@ include ../masked-text-field/masked-text-field
 
 mixin subscription-text-field(props)
   if props
-    .subscription-text-field.js-subscription-text-field
+    -
+      let className = 'subscription-text-field';
+      let classNames = `${className} js-${className}`;
+    div(class=classNames) 
       +masked-text-field(props)

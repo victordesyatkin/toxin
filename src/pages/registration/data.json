@@ -97,7 +97,7 @@
         "placeholder": "ДД.ММ.ГГГГ"
       },
       "options": {
-        "type": "date"
+        "type": "default"
       }
     },
     "email": {

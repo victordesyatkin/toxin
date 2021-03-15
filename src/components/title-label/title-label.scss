@@ -4,7 +4,9 @@ $parent: 'title-label';
 
 .#{$parent} {
   display: flex;
+  flex: 1 1 100%;
   justify-content: space-between;
+  min-width: 0;
 
   &__label,
   &__content {

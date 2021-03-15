@@ -83,6 +83,7 @@ $parent: 'nav';
     @include media-breakpoint-up($md) {
       color: $nav-text-color-user;
       margin-left: 1.5rem;
+      padding: initial;
     }
   }
 
@@ -100,16 +101,14 @@ $parent: 'nav';
 
   &__control-item {
     display: flex;
-
     justify-content: center;
-    margin: initial;
     padding: 0.5rem 1.1rem;
 
     @include media-breakpoint-up($md) {
       align-items: center;
       justify-content: initial;
       margin-left: 1.36rem;
-      width: initial;
+      padding: initial;
     }
   }
 

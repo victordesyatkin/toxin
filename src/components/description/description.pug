@@ -6,7 +6,7 @@ mixin description(props)
       let { title, content } = props;
       let className = 'description';
       let classNames = `${className} js-${className}`;
-    div(class=classNames)
+    article(class=classNames)
       if title
         div(class=`${className}__title`)
           +title-label(title)
