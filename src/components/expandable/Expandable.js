@@ -28,7 +28,7 @@ class Expandable extends Component {
     this._isOpened = isOpened;
     this._$header = $(`${this._query}__header`, this._$element);
     this._$header.on('click', this._toggleClass);
-    // $('body').on('click', this._handleBodyClick);
+    $('body').on('click', this._handleBodyClick);
   }
 
   @bind

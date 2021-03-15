@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const CssnanoPlugin = require('cssnano-webpack-plugin');
 const path = require("path");
 const fs = require("fs");
 const webpack = require("webpack");
@@ -16,8 +17,8 @@ nth.dir = {
 
 const js = {};
 
-module.exports = (env = {}) => {
-  const { mode = "development" } = env;
+module.exports = (env, argv = {}) => {
+  const { mode = 'development' } = argv;
   const pages = [];
   fs.readdirSync(nth.dir.pages).forEach((file) => {
     pages.push(file);
@@ -28,7 +29,7 @@ module.exports = (env = {}) => {
       getData: () => {
         try {
           return JSON.parse(
-            fs.readFileSync(`${nth.dir.pages}/${fileName}/data.json`, "utf8")
+            fs.readFileSync(`${nth.dir.pages}/${fileName}/data.json`, 'utf8')
           );
         } catch (e) {
           console.warn(`data.json was not provided for page ${fileName}`);
@@ -42,20 +43,21 @@ module.exports = (env = {}) => {
       inject: true,
       hash: true,
       meta: {
-        viewport: "initial-scale=1.0, width=device-width",
-        "msapplication-TileColor": "#da532c",
-        "theme-color": "#ffffff",
+        viewport: 'initial-scale=1.0, width=device-width',
+        'msapplication-TileColor': '#da532c',
+        'theme-color': '#ffffff',
       },
     });
   });
 
-  const isProduction = mode === "production";
-  const isDevelopment = mode === "development";
-
+  const isProduction = mode === 'production';
+  const isDevelopment = mode === 'development';
+  console.log('mode : ', mode);
+  console.log('isProduction : ', isProduction);
   const getStyleLoaders = () => {
     return [
-      isProduction ? MiniCssExtractPlugin.loader : "style-loader",
-      "css-loader",
+      isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+      'css-loader',
     ];
   };
 
@@ -72,15 +74,19 @@ module.exports = (env = {}) => {
         configFile: path.resolve(__dirname, '.stylelintrc.json'),
         context: path.resolve(__dirname),
         files: 'src/**/*.(s(c|a)ss|css)',
-        fix: true
+        fix: true,
       }),
+
       new webpack.HotModuleReplacementPlugin(),
     ];
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: '[name].css?[hash]',
-          chunkFilename: '[id].css?[chunkhash]',
+          filename: '[name].[contenthash].css',
+          chunkFilename: '[id].[contenthash].css',
+        }),
+        new CssnanoPlugin({
+          sourceMap: true,
         })
       );
     }
@@ -90,10 +96,10 @@ module.exports = (env = {}) => {
 
   return {
     mode: isProduction ? 'production' : 'development',
-    devtool: isDevelopment ? undefined : undefined,
+    devtool: isDevelopment ? 'eval-source-map' : undefined,
     entry: { ...js },
     output: {
-      filename: isDevelopment ? '[name].js' : '[name].js?[hash]',
+      filename: '[name].js',
       pathinfo: isDevelopment,
     },
     resolve: {
@@ -119,7 +125,7 @@ module.exports = (env = {}) => {
             loader: 'file-loader',
             options: {
               outputPath: './assets/favicon/',
-              name: isDevelopment ? '[name].[ext]' : '[name].[ext]?[hash]',
+              name: '[name].[ext]',
             },
           },
         },
@@ -131,7 +137,7 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/images/',
-                name: isDevelopment ? '[name].[ext]' : '[name].[ext]?[hash]',
+                name: '[name].[ext]',
               },
             },
           ],
@@ -144,7 +150,9 @@ module.exports = (env = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/fonts/',
-                name: isDevelopment ? '[name].[ext]' : '[name].[ext]?[hash]',
+                name: isDevelopment
+                  ? '[name].[ext]'
+                  : '[name].[contenthash].[ext]',
               },
             },
           ],
@@ -162,7 +170,7 @@ module.exports = (env = {}) => {
               loader: 'postcss-loader',
               options: {
                 postcssOptions: {
-                  plugins: ['postcss-preset-env'],
+                  plugins: ['autoprefixer', 'postcss-preset-env'],
                 },
               },
             },

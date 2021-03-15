@@ -36,12 +36,15 @@
   <li>Умение искать, подключать и настраивать JavaScript-библиотеки и jQuery-плагины в частности.</li>
   <li>Навыки работы с макетами в Figma</li>
 </ul>
-<h4>JavaScript-библиотеки и jQuery-плагины</h4>
-<p><a href="https://jquery.com/" target="_blank" rel="noopener noreferrer">jquery</a></p>
-<p><a href="https://lodash.com/" target="_blank" rel="noopener noreferrer">lodash</a></p>
+<h4>JavaScript-библиотеки, jQuery-плагины и npm-пакеты</h4>
+<p><a href="https://jquery.com/" target="_blank" rel="noopener noreferrer">jquery 3.5.1</a></p>
+<p><a href="https://www.npmjs.com/package/bind-decorator" target="_blank" rel="noopener noreferrer">bind-decorator</a></p>
+<p><a href="https://www.npmjs.com/package/lodash.isempty" target="_blank" rel="noopener noreferrer">lodash.isempty</a></p>
+<p><a href="https://www.npmjs.com/package/lodash.orderby" target="_blank" rel="noopener noreferrer">lodash.orderby</a></p>
+<p><a href="https://www.npmjs.com/package/lodash.trim" target="_blank" rel="noopener noreferrer">lodash.trim</a></p>
+<p><a href="https://www.npmjs.com/package/normalize.css" target="_blank" rel="noopener noreferrer">normalize.css</a></p>
 <p><a href="https://github.com/JedWatson/classnames" target="_blank" rel="noopener noreferrer">classnames</a></p>
 <p><a href="https://github.com/uNmAnNeR/imaskjs" target="_blank" rel="noopener noreferrer">imask</a></p>
-<p><a href="https://github.com/RobinHerbots/Inputmask" target="_blank" rel="noopener noreferrer">inputmask</a></p>
 <p><a href="https://github.com/t1m0n/air-datepicker" target="_blank" rel="noopener noreferrer">air-datepicker</a></p>
 <p><a href="https://github.com/victordesyatkin/air-range-slider" target="_blank" rel="noopener noreferrer">air-range-slider</a></p>
 <h4>Установка</h4>
