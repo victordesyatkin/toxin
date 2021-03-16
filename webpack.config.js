@@ -52,8 +52,6 @@ module.exports = (env, argv = {}) => {
 
   const isProduction = mode === 'production';
   const isDevelopment = mode === 'development';
-  console.log('mode : ', mode);
-  console.log('isProduction : ', isProduction);
   const getStyleLoaders = () => {
     return [
       isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
