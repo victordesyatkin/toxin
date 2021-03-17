@@ -23,6 +23,11 @@ $parent: 'header';
     .#{$parent}__nav {
       display: block;
     }
+
+    .#{$parent}__toggle-navigation-button {
+      transform: rotate(90deg);
+      transition: transform 0.5s;
+    }
   }
 
   &__logo {
@@ -37,8 +42,13 @@ $parent: 'header';
 
   &__toggle-navigation {
     align-items: center;
+    bottom: 0;
     cursor: pointer;
     display: flex;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
 
     @include media-breakpoint-up($md) {
       display: none;
@@ -62,6 +72,7 @@ $parent: 'header';
     margin: 0;
     outline: none;
     padding: 0;
+    transition: transform 0.5s;
     width: 2.714rem;
   }
 
