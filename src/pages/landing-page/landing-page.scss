@@ -5,7 +5,16 @@ $parent: 'landing-page';
 .#{$parent} {
   background-position: 0 -5rem;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+
+  @include media-breakpoint-up($xl) {
+    display: initial;
+    flex-direction: initial;
+    justify-content: initial;
+  }
 
   &__info {
     display: flex;
