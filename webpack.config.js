@@ -73,9 +73,7 @@ module.exports = (env, argv = {}) => {
         context: path.resolve(__dirname),
         files: 'src/**/*.(s(c|a)ss|css)',
         fix: true,
-      }),
-
-      new webpack.HotModuleReplacementPlugin(),
+      })
     ];
     if (isProduction) {
       plugins.push(
