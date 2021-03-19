@@ -1,18 +1,18 @@
-"use strict";
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+'use strict';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const CssnanoPlugin = require('cssnano-webpack-plugin');
-const path = require("path");
-const fs = require("fs");
-const webpack = require("webpack");
+const path = require('path');
+const fs = require('fs');
+const webpack = require('webpack');
 
 const nth = {};
 nth.dir = {
-  src: path.resolve(__dirname, "src"),
-  blocks: path.resolve(__dirname, "src", "blocks"),
-  pages: path.resolve(__dirname, "src", "pages"),
+  src: path.resolve(__dirname, 'src'),
+  blocks: path.resolve(__dirname, 'src', 'blocks'),
+  pages: path.resolve(__dirname, 'src', 'pages'),
 };
 
 const js = {};
