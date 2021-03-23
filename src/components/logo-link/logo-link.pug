@@ -1,9 +1,10 @@
 include ../logo-image/logo-image
 include ../link/link
 
-mixin logo-link(props = {})
-  -
-    let
-        { link, logo } = props
-  +link(link)
-    +logo-image(logo)
+mixin logo-link(props)
+  if props
+    -
+      let
+          { link, logo } = props
+    +link(link)
+      +logo-image(logo)
