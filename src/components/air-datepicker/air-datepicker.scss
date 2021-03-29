@@ -14,8 +14,7 @@
 
   .datepicker--nav {
     border: initial;
-    padding: 1.57rem 1.14rem 2.57rem 1.07rem;
-    position: relative;
+    padding: 1.4rem 1.14rem 2.3rem 1.07rem;
   }
 
   /* stylelint-disable selector-max-compound-selectors */
@@ -41,11 +40,8 @@
 
     left: 50%;
     padding: initial;
-    position: absolute;
     text-align: center;
     text-transform: capitalize;
-    top: 1.28rem;
-    transform: translateX(-50%);
   }
 
   .datepicker--nav-title:hover,
@@ -137,7 +133,7 @@
   .-range-to-,
   .datepicker--cell.-focus-,
   .datepicker--cell.-selected-.-range-to-
-  .datepicker--cell.-selected-.-range-from-,
+    .datepicker--cell.-selected-.-range-from-,
   .-other-month-.datepicker--cell.-selected-.-range-to-,
   .-other-month-.datepicker--cell.-selected-.-range-from-,
   .-other-month-.-focus-,
