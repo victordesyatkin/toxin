@@ -5,10 +5,10 @@ mixin calendar(props)
   if props
     -
       let
-          { name, type="hidden", control, isDisabled = true, isReadOnly = true } = props;
+          { name, type="hidden", control, isDisabled = true, isReadOnly = true, card } = props;
           className = 'calendar'; 
           classNames = `${className} js-${className}`;
-    +card 
+    +card(card) 
       div(class=classNames)
         input(
           name=name,

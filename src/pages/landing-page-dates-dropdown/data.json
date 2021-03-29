@@ -101,6 +101,7 @@
         }
       ],
       "calendar": {
+        "card": { "theme": "calendar" },
         "today": "08.08.2019",
         "control": {
           "isHidden": true,

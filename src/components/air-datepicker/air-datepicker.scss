@@ -1,15 +1,11 @@
 @import '~theme/variables.scss';
 @import '~air-datepicker/dist/css/datepicker.min.css';
 
-$parent: 'calendar';
+.datepicker-inline .datepicker {
+  border: initial;
+  width: 100%;
 
-.#{$parent} {
-  .datepicker {
-    border: initial;
-    width: 100%;
-  }
-
-  .datepicker,
+  &,
   .-in-range- {
     @include h3-lite;
 
@@ -22,6 +18,7 @@ $parent: 'calendar';
     position: relative;
   }
 
+  /* stylelint-disable selector-max-compound-selectors */
   .datepicker--nav-action {
     span {
       color: $calendar-text-color-nav;
@@ -43,6 +40,7 @@ $parent: 'calendar';
     @include h2;
 
     left: 50%;
+    padding: initial;
     position: absolute;
     text-align: center;
     text-transform: capitalize;

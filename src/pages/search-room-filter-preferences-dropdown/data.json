@@ -372,6 +372,7 @@
       }
     ],
     "calendar": {
+      "card": { "theme": "calendar" },
       "control": {
         "isHidden": true,
         "items": [

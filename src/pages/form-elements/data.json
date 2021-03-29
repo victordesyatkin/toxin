@@ -190,6 +190,7 @@
       }
     ],
     "calendar": {
+      "card": { "theme": "calendar" },
       "control": {
         "isHidden": true,
         "items": [
@@ -242,6 +243,7 @@
       }
     ],
     "calendar": {
+      "card": { "theme": "calendar" },
       "today": "Sun Aug 23 2020 00:00:00 GMT+0500 (Yekaterinburg Standard Time)",
       "control": {
         "isHidden": true,
