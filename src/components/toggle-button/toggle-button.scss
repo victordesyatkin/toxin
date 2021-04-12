@@ -4,10 +4,8 @@ $parent: 'toggle-button';
 
 .#{$parent} {
   cursor: pointer;
-  display: flex;
-  flex-basis: 100%;
+  display: inline-flex;
   flex-direction: row;
-  flex-grow: 1;
   flex-shrink: 1;
   line-height: 1.3rem;
 

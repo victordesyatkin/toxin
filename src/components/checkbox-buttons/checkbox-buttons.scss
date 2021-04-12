@@ -8,15 +8,20 @@ $parent: 'checkbox-buttons';
 
   &__title {
     @include h3;
-
     margin-bottom: 1.1571rem;
   }
 
   &__items {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
   }
 
+  &__item {
+    display: inline-flex;
+  }
+
   &__item:not(:first-child) {
-    margin-top: 0.804rem;
+    margin-top: 0.8rem;
   }
 }

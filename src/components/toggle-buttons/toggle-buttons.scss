@@ -8,12 +8,17 @@ $parent: 'toggle-buttons';
 
   &__title {
     @include h3;
-
     margin-bottom: 1.07rem;
   }
 
   &__items {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
+  }
+
+  &__item {
+    display: inline-flex;
   }
 
   &__item:not(:first-of-type) {
