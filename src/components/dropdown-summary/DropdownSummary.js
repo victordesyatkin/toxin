@@ -1,8 +1,10 @@
 import bind from 'bind-decorator';
 
-import { wordForm } from '../../helpers/utils';
+import { wordForm, Component } from '../../helpers/utils';
+import DropdownTitleTextField from '../dropdown-title-text-field';
+import './dropdown-summary.scss';
 
-class DropDownSummary {
+class DropDownSummary extends Component {
   static WORDS = {
     comfort: {
       bedroom: ['спальня', 'спальни', 'спален'],
@@ -45,9 +47,33 @@ class DropDownSummary {
     },
   };
 
-  constructor(props = {}) {
-    this._props = props;
-    this._init();
+  _query = '.js-dropdown-summary';
+
+  _className = 'dropdown-summary';
+
+  constructor(options) {
+    super(options);
+    this._renderComponent();
+  }
+
+  @bind
+  empty() {
+    this._dropDownTitleTextField?.empty();
+  }
+
+  @bind
+  fill() {
+    this._dropDownTitleTextField?.fill();
+  }
+
+  @bind
+  open() {
+    this._dropDownTitleTextField?.open();
+  }
+
+  @bind
+  close() {
+    this._dropDownTitleTextField?.close();
   }
 
   updateItems(items) {
@@ -63,10 +89,7 @@ class DropDownSummary {
   }
 
   updateSummary() {
-    const { updateSummary } = this._props;
-    if (updateSummary) {
-      updateSummary(this._prepareSummary());
-    }
+    this._dropDownTitleTextField?.updateSummary(this._prepareSummary());
   }
 
   _init() {
@@ -79,6 +102,13 @@ class DropDownSummary {
       placeholder,
       together,
     } = this._props;
+
+    this._dropDownTitleTextField = new DropdownTitleTextField({
+      parent: this._$element,
+      props: {
+        ...this._props,
+      },
+    });
     this._type = type;
     this._separator = separator;
     this._map = map || DropDownSummary.MAPS[this._type] || {};
@@ -101,11 +131,13 @@ class DropDownSummary {
       const { handleEmptySummary } = this._props;
       if (handleEmptySummary) {
         handleEmptySummary();
+        this._dropDownTitleTextField.empty();
       }
     } else {
       const { handleFillSummary } = this._props;
       if (handleFillSummary) {
         handleFillSummary();
+        this._dropDownTitleTextField.fill();
       }
     }
     let summary = this._placeholder;

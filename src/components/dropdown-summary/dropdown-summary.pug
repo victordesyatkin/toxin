@@ -1,0 +1,9 @@
+include ../dropdown-title-text-field/dropdown-title-text-field
+
+mixin dropdown-summary(props)
+  if props
+    -
+      let className = 'dropdown-summary';
+      let classNames = `${className} js-${className}`;
+    div(class=classNames)
+      +dropdown-title-text-field(props)

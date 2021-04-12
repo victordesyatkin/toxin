@@ -1,7 +1,6 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import DropdownTitleTextField from '../dropdown-title-text-field';
 import DropDownSummary from '../dropdown-summary';
 import DropdownItem from '../dropdown-item';
 import './dropdown.scss';
@@ -22,11 +21,6 @@ class Dropdown extends Component {
     this._renderComponent();
   }
 
-  @bind
-  updateSummary(summary) {
-    this._dropDownTitleTextField.updateSummary(summary);
-  }
-
   toggleOpen() {
     if (this._$element.hasClass(`${this._className}_opened`)) {
       this.close();
@@ -38,27 +32,19 @@ class Dropdown extends Component {
   open() {
     this._isOpened = true;
     this._$element.addClass(`${this._className}_opened`);
-    this._dropDownTitleTextField.open();
+    this._dropDownSummary.open();
   }
 
   close() {
     this._isOpened = false;
     this._$element.removeClass(`${this._className}_opened`);
-    this._dropDownTitleTextField.close();
+    this._dropDownSummary.close();
   }
 
   _init() {
     const { dropdown = {}, items, control } = this._props;
     const { isOpened, type, map, together, placeholder } = dropdown;
     this._isOpened = isOpened;
-    this._dropDownTitleTextField = new DropdownTitleTextField({
-      parent: this._$element,
-      props: {
-        ...this._props,
-        handleTitleClick: this._handleDropdownTitleTextFieldClick,
-        handleTextFieldClick: this._handleDropdownTitleTextFieldClick,
-      },
-    });
     if (control) {
       this._control = new Control({
         parent: $(`${this._query}__control`, this._$element),
@@ -69,14 +55,19 @@ class Dropdown extends Component {
       });
     }
     this._dropDownSummary = new DropDownSummary({
-      items,
-      type,
-      map,
-      together,
-      placeholder,
-      updateSummary: this.updateSummary,
-      handleEmptySummary: this._hideCleanButton,
-      handleFillSummary: this._showCleanButton,
+      parent: $(`${this._query}__dropdown-summary`, this._$element),
+      props: {
+        ...this._props,
+        items,
+        type,
+        map,
+        together,
+        placeholder,
+        handleEmptySummary: this._hideCleanButton,
+        handleFillSummary: this._showCleanButton,
+        handleTitleClick: this._handleDropdownTitleTextFieldClick,
+        handleTextFieldClick: this._handleDropdownTitleTextFieldClick,
+      },
     });
     this._items = [];
     this._$items = $(`${this._query}__li-item`, this._$element);
@@ -130,18 +121,12 @@ class Dropdown extends Component {
 
   @bind
   _hideCleanButton() {
-    if (this._control) {
-      this._control.hide();
-    }
-    this._dropDownTitleTextField.empty();
+    this._control?.hide();
   }
 
   @bind
   _showCleanButton() {
-    if (this._control) {
-      this._control.show();
-    }
-    this._dropDownTitleTextField.fill();
+    this._control?.show();
   }
 
   @bind

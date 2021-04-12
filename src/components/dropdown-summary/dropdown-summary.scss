@@ -1,0 +1,7 @@
+@import '~theme/variables.scss';
+
+$parent: 'dropdown-summary';
+
+.#{$parent} {
+  width: 100%;
+}

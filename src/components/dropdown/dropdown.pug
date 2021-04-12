@@ -1,5 +1,5 @@
 include ../title-label/title-label
-include ../dropdown-title-text-field/dropdown-title-text-field
+include ../dropdown-summary/dropdown-summary
 include ../control/control
 include ../dropdown-item/dropdown-item
 
@@ -16,8 +16,8 @@ mixin dropdown(props)
       classNames += isOpened ? ` ${className}_opened` : '';
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     div(class=classNames)
-      div(class=`${className}__title-text-field js-${className}__title-text-field`)
-        +dropdown-title-text-field(props)
+      div(class=`${className}__dropdown-summary js-${className}__dropdown-summary`)
+        +dropdown-summary(props)
         - let length = items.length;
         if length
           div(class=`${className}__body`)
