@@ -24,7 +24,7 @@ $color-fourth-opacity-0: rgba($color-fourth, 0);
 $color-fifth: #000;
 $color-fifth-opacity-2: rgba($color-fifth, 0.2);
 $color-fifth-opacity-12: rgba($color-fifth, 0.12);
-$color-fifth-opacity-5: rgba($color-fifth, 5);
+$color-fifth-opacity-5: rgba($color-fifth, 0.5);
 $color-fifth-opacity-0: rgba($color-fifth, 0);
 $color-sixth: #f4f4f6;
 $color-seventh: #8ba4f9;
@@ -142,6 +142,7 @@ $link-children-background-color: $color-fourth;
 $nav-background-color-default: $color-fourth;
 $like-button-background-color-default: $color-fourth;
 $like-button-background-color-checked: $gradient-primary;
+$landing-page-background-color: $color-fourth;
 
 /***** Shadow *****/
 $calendar-box-shadow: $box-shadow-primary;

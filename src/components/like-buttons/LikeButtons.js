@@ -17,12 +17,12 @@ class LikeButtons extends Component {
   _init() {
     this._buttons = [];
     this._$items = $(`${this._query}__item`, this._$element).each(
-      this._renderItems
+      this._renderItem
     );
   }
 
   @bind
-  _renderItems(index, element) {
+  _renderItem(index, element) {
     const props = this._props?.buttons?.[index];
     this._buttons.push(new LikeButton({ parent: element, props }));
   }

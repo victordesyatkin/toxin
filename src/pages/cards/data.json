@@ -528,7 +528,7 @@
         "name": "rating1",
         "value": 5,
         "total": 5,
-        "isDisabled": true,
+        "isDisabled": false,
         "srcImgRate": "assets/images/star.svg",
         "altImgRate": "Rate",
         "srcImgNoRate": "assets/images/star-border.svg",

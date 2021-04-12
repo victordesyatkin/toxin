@@ -1,4 +1,4 @@
-mixin like-button(props = {})
+mixin like-button(props)
   if props
     -
       let {
@@ -10,6 +10,7 @@ mixin like-button(props = {})
       let count = passCount || 0;
       let className = 'like-button';
       let classNames = `${className} js-${className}`;
+      classNames += isDisabled ? ` ${className}_disabled`: '';
     label(for=id, class=classNames)
       input(
         aria-label=ariaLabel,

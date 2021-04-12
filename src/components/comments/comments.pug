@@ -19,5 +19,5 @@ mixin comments(props)
       if length
         ul(class=`${className}__items`)
           each comment in comments
-            li(class=`${className}__item`)
+            li(class=`${className}__item js-${className}__item`)
               +comment({...images, ...comment})

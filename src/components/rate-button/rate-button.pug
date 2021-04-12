@@ -22,6 +22,7 @@ mixin rate-button(props = {})
       }
       let className = 'rate-button';
       let classNames = `${className} js-${className}`;
+      classNames += isDisabled ? ` ${className}_disabled` : '';
     ul(class=classNames)
       input(
         name=name,

@@ -8,6 +8,12 @@ $parent: 'rate-button';
   list-style-type: none;
   width: 100%;
 
+  &_disabled {
+    .#{$parent}__rate {
+      cursor: initial;
+    }
+  }
+
   &__rate {
     cursor: pointer;
     height: 1.35rem;

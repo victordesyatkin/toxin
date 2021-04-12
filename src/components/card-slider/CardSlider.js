@@ -16,7 +16,7 @@ class CardSlider extends Component {
   }
 
   _init() {
-    const { slider, cardHeader, rateButton } = this._props;
+    const { slider, cardHeader, rating } = this._props;
     this._slider = new Slider({
       parent: $(`${this._query}__slider`, this._$element),
       props: slider,
@@ -25,9 +25,10 @@ class CardSlider extends Component {
       parent: $(`${this._query}__card-header`, this._$element),
       props: cardHeader,
     });
+    const { button } = rating;
     this._rateButton = new RateButton({
-      parent: $(`${this._query}__rate-button`, this._$element),
-      props: rateButton,
+      parent: $(`${this._query}__rating-button`, this._$element),
+      props: button,
     });
   }
 }
