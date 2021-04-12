@@ -3,21 +3,15 @@
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 700;
-  src: url('~assets/fonts/quicksand/fonts/quicksand-bold.eot');
-  src: local('☺'),
-    url('~assets/fonts/quicksand/fonts/quicksand-bold.woff') format('woff'),
-    url('~assets/fonts/quicksand/fonts/quicksand-bold.ttf') format('truetype'),
-    url('~assets/fonts/quicksand/fonts/quicksand-bold.svg') format('svg');
+  src: url('~assets/fonts/quicksand/fonts/quicksand-bold.woff2') format('woff2'),
+    url('~assets/fonts/quicksand/fonts/quicksand-bold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Quicksand';
   font-style: normal;
   font-weight: 400;
-  src: url('~assets/fonts/quicksand/fonts/quicksand-regular.eot');
-  src: local('☺'),
-    url('~assets/fonts/quicksand/fonts/quicksand-regular.woff') format('woff'),
-    url('~assets/fonts/quicksand/fonts/quicksand-regular.ttf')
-    format('truetype'),
-    url('~assets/fonts/quicksand/fonts/quicksand-regular.svg') format('svg');
+  src: url('~assets/fonts/quicksand/fonts/quicksand-regular.woff2')
+    format('woff2'),
+    url('~assets/fonts/quicksand/fonts/quicksand-regular.woff') format('woff');
 }
