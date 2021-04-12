@@ -1,17 +1,15 @@
 mixin like-button(props = {})
   if props
     -
-      let
-          {
-            name, value, ariaLabel, type = "checkbox",
-            count:passCount = 0, tabIndex,
-            srcLike, altLike, srcNotLike, altNotLike,
-            isRequired, isDisabled, isChecked, isHidden
-          } = props;
-          id = `${name}-${Math.random().toString(16).substr(2)}`;
-          count = passCount || 0;
-          className = 'like-button';
-          classNames = `${className} js-${className}`;
+      let {
+        name, value, ariaLabel, type = "checkbox", count:passCount = 0, tabIndex,
+        srcLike, altLike, srcNotLike, altNotLike,
+        isRequired, isDisabled, isChecked, isHidden
+      } = props;
+      let id = `${name}-${Math.random().toString(16).substr(2)}`;
+      let count = passCount || 0;
+      let className = 'like-button';
+      let classNames = `${className} js-${className}`;
     label(for=id, class=classNames)
       input(
         aria-label=ariaLabel,
