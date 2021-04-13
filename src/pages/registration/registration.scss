@@ -3,8 +3,10 @@
 $parent: 'registration';
 
 .#{$parent} {
-  background-position: 0 -5.0714rem;
+  background-color: $page-background-color;
+  background-position: bottom;
   background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
 
   &__sign-up {

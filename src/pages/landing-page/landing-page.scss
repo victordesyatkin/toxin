@@ -3,7 +3,7 @@
 $parent: 'landing-page';
 
 .#{$parent} {
-  background-color: $color-fourth;
+  background-color: $page-background-color;
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
