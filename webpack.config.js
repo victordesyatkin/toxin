@@ -172,6 +172,7 @@ module.exports = (env, argv = {}) => {
                 prependData: '@import "theme/variables.scss";',
                 sassOptions: {
                   includePaths: [path.join(__dirname, 'src')],
+                  outputStyle: isDevelopment ? 'expanded' : 'compressed',
                 },
               },
             },
