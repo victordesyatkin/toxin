@@ -1,13 +1,10 @@
-@import '~theme/variables.scss';
-
 $parent: '.font-sample';
 
 #{$parent} {
   @include font-family-first-regular;
 
   display: flex;
-  flex-basis: 100%;
-  flex-grow: 1;
+  width: 100%;
 
   &_size_lg {
     @include h1;

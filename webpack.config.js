@@ -77,8 +77,8 @@ module.exports = (env, argv = {}) => {
     if (isProduction) {
       plugins.push(
         new MiniCssExtractPlugin({
-          filename: '[name].[contenthash].css',
-          chunkFilename: '[id].[contenthash].css',
+          filename: '[name].css?version=[contenthash]',
+          chunkFilename: '[id].css?version=[contenthash]',
         }),
         new CssnanoPlugin({
           sourceMap: true,
@@ -87,13 +87,12 @@ module.exports = (env, argv = {}) => {
     }
     return plugins;
   };
-
   return {
     mode: isProduction ? 'production' : 'development',
     devtool: isDevelopment ? 'eval-source-map' : undefined,
     entry: { ...js },
     output: {
-      filename: '[name].js',
+      filename: '[name].js?version=[hash]',
       pathinfo: isDevelopment,
     },
     resolve: {
@@ -119,7 +118,7 @@ module.exports = (env, argv = {}) => {
             loader: 'file-loader',
             options: {
               outputPath: './assets/favicon/',
-              name: '[name].[ext]',
+              name: '[name].[ext]?version=[contenthash]',
             },
           },
         },
@@ -131,7 +130,7 @@ module.exports = (env, argv = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/images/',
-                name: '[name].[ext]',
+                name: '[name].[ext]?version=[contenthash]',
               },
             },
           ],
@@ -144,9 +143,7 @@ module.exports = (env, argv = {}) => {
               loader: 'file-loader',
               options: {
                 outputPath: './assets/fonts/',
-                name: isDevelopment
-                  ? '[name].[ext]'
-                  : '[name].[contenthash].[ext]',
+                name: '[name].[ext]?version=[contenthash]',
               },
             },
           ],
@@ -169,7 +166,14 @@ module.exports = (env, argv = {}) => {
               },
             },
             'sass-loader',
+            {
+              loader: 'sass-resources-loader',
+              options: {
+                resources: path.resolve(__dirname, './src/theme/variables.scss'),
+              },
+            },
           ],
+          include: path.join(__dirname, 'src'),
         },
         {
           test: /\.js$/,

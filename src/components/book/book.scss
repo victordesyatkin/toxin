@@ -1,5 +1,3 @@
-@import '~theme/variables.scss';
-
 $parent: 'book';
 
 .#{$parent} {
@@ -144,10 +142,9 @@ $parent: 'book';
   &__separator {
     border-bottom: 0.0714rem dashed $book-border-color-separator;
     display: flex;
-    flex-basis: 100%;
-    flex-grow: 1;
     height: 100%;
     margin-bottom: 0.27rem;
+    width: 100%;
     width: 100%;
   }
 }

@@ -1,5 +1,3 @@
-@import '~theme/variables.scss';
-
 $parent: 'radio-button';
 
 .#{$parent} {
@@ -9,9 +7,8 @@ $parent: 'radio-button';
   cursor: pointer;
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
-  flex-shrink: 1;
   line-height: 1.29rem;
+  width: 100%;
 
   &:hover,
   &:focus {
