@@ -165,11 +165,14 @@ module.exports = (env, argv = {}) => {
                 },
               },
             },
-            'sass-loader',
             {
-              loader: 'sass-resources-loader',
+              loader: 'sass-loader',
               options: {
-                resources: path.resolve(__dirname, './src/theme/variables.scss'),
+                sourceMap: isDevelopment,
+                prependData: '@import "theme/variables.scss";',
+                sassOptions: {
+                  includePaths: [path.join(__dirname, 'src')],
+                },
               },
             },
           ],
