@@ -1,8 +1,6 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import '../title-label';
-import './text-field.scss';
 
 class TextField extends Component {
   _query = '.js-text-field';

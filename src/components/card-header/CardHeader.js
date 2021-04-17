@@ -1,7 +1,6 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import './card-header.scss';
 
 class CardHeader extends Component {
   _query = '.js-card-header';

@@ -2,7 +2,6 @@ import bind from 'bind-decorator';
 
 import { Component, isValidDate } from '../../helpers/utils';
 import Calendar from '../calendar';
-import './date-dropdown.scss';
 import DropdownTitleControl from '../dropdown-title-text-field';
 
 class DateDropdown extends Component {

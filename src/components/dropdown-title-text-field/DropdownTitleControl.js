@@ -2,7 +2,6 @@ import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
-import './dropdown-title-text-field.scss';
 
 class DropdownTitleControl extends Component {
   _query = '.js-dropdown-title-text-field';

@@ -99,6 +99,30 @@ function requireAll(requireContext) {
     return cache;
   });
 }
+
+function checkSlug({ slug } = {}) {
+  if (slug) {
+    return $('body').data('slug') === slug;
+  }
+  return false;
+}
+
+function makeComponentLoad(Component) {
+  return function handleComponentLoad(event) {
+    let component;
+    if (Component) {
+      const { data: { props = {} } = {} } = event;
+      if (checkSlug(props)) {
+        try {
+          component = new Component({ props });
+        } catch (error) {
+          console.error(`makeComponentLoad : ${error.message}`);
+        }
+      }
+    }
+    return component;
+  };
+}
 class Component {
   constructor(options = {}) {
     this._options = options;
@@ -156,4 +180,6 @@ export {
   requireAll,
   isString,
   isUndefined,
+  checkSlug,
+  makeComponentLoad,
 };

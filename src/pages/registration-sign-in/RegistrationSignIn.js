@@ -1,16 +1,8 @@
 import { Component } from '../../helpers/utils';
 import SignIn from '../../components/sign-in';
-import Base from '../base/base';
-import '../registration/index';
-import data from './data.json';
-import './registration-sign-in.scss';
+import Base from '../../templates/base';
 
 class RegistrationSignIn extends Component {
-  static handleComponentLoad() {
-    const registration = new RegistrationSignIn({ props: data });
-    return registration;
-  }
-
   _query = '.js-registration';
 
   _className = 'registration';
@@ -31,7 +23,5 @@ class RegistrationSignIn extends Component {
     });
   }
 }
-
-window.addEventListener('load', RegistrationSignIn.handleComponentLoad);
 
 export default RegistrationSignIn;

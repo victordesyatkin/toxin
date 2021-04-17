@@ -1,8 +1,6 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import '../link';
-import './nav-item.scss';
 
 class NavItem extends Component {
   _query = '.js-nav-item';

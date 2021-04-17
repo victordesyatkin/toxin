@@ -2,7 +2,6 @@ import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
 import LikeButton from '../like-button';
-import './like-buttons.scss';
 
 class LikeButtons extends Component {
   _query = '.js-like-buttons';

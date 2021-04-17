@@ -1,9 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component, requireAll } from '../../helpers/utils';
-import './rate-button.scss';
-
-requireAll(require.context('./images/', false, /\.svg$/));
+import { Component } from '../../helpers/utils';
 
 class RateButton extends Component {
   _query = '.js-rate-button';

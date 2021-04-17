@@ -1,7 +1,5 @@
 import { Component } from '../../helpers/utils';
 import Expandable from '../expandable';
-import '../checkbox-buttons';
-import './expandable-checkbox-list.scss';
 
 class ExpandableCheckboxList extends Component {
   _query = '.js-expandable-checkbox-list';

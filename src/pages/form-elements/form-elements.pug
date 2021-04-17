@@ -1,4 +1,4 @@
-extends ../demo-base/demo-base
+extends ../../templates/demo-base/demo-base
 
 include ../../components/text-field/text-field
 include ../../components/dropdown/dropdown
@@ -23,36 +23,35 @@ include ../../components/comment/comment
 
 block main
   -
-    let data = htmlWebpackPlugin.options.getData();
     let {
-            textField1,
-            textField2,
-            dropdown1,
-            dropdown2,
-            dropdown3,
-            dropdown4,
-            dropdown5,
-            dateDropdown,
-            filterDateDropdown,
-            maskedTextField,
-            subscriptionTextField,
-            expandableCheckboxList1,
-            expandableCheckboxList2,
-            button,
-            buttons,
-            richCheckboxButtons,
-            checkboxButtons,
-            radioButtons,
-            toggleButtons,
-            likeButtons,
-            rateButtons,
-            rangeSlider,
-            pagination,
-            bulletList,
-            info,
-            comment,
+          textField1,
+          textField2,
+          dropdown1,
+          dropdown2,
+          dropdown3,
+          dropdown4,
+          dropdown5,
+          dateDropdown,
+          filterDateDropdown,
+          maskedTextField,
+          subscriptionTextField,
+          expandableCheckboxList1,
+          expandableCheckboxList2,
+          button,
+          buttons,
+          richCheckboxButtons,
+          checkboxButtons,
+          radioButtons,
+          toggleButtons,
+          likeButtons,
+          rateButtons,
+          rangeSlider,
+          pagination,
+          bulletList,
+          info,
+          comment,
         } = data || {};
-  - let className = 'form-elements';
+    let className = 'form-elements';
   section(class=`${className} js-${className}`)
     div(style="width: 100%")
     section(class=`${className}__text-fields ${className}__section`)

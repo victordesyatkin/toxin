@@ -2,9 +2,7 @@ import bind from 'bind-decorator';
 
 import { Component, isValidDate, isString } from '../../helpers/utils';
 import Control from '../control';
-import '../card';
 import '../air-datepicker';
-import './calendar.scss';
 
 class Calendar extends Component {
   static CONTROLS = {

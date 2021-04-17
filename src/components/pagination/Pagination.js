@@ -1,9 +1,7 @@
 import bind from 'bind-decorator';
 
-import { Component, requireAll } from '../../helpers/utils';
-import './pagination.scss';
+import { Component } from '../../helpers/utils';
 
-requireAll(require.context('./images/', false, /\.svg$/));
 class Pagination extends Component {
   static TYPE_BACK = 'back';
 
