@@ -1,8 +1,5 @@
-import { Component, requireAll } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import LikeButton from '../like-button';
-import './comment.scss';
-
-requireAll(require.context('./images/', false, /\.png$/));
 
 class Comment extends Component {
   _query = '.js-comment';

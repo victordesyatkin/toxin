@@ -3,8 +3,6 @@ import Slider from '../slider';
 import CardHeader from '../card-header';
 import RateButton from '../rate-button';
 
-import './card-slider.scss';
-
 class CardSlider extends Component {
   _query = '.js-card-slider';
 

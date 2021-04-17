@@ -2,7 +2,6 @@ import bind from 'bind-decorator';
 
 import { wordForm, Component } from '../../helpers/utils';
 import Comment from '../comment';
-import './comments.scss';
 
 class Comments extends Component {
   _query = '.js-comments';

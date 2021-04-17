@@ -1,16 +1,8 @@
-import { Component, requireAll } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import SignUp from '../../components/sign-up';
-import Base from '../base/base';
-import data from './data.json';
-import './index';
+import Base from '../../templates/base';
 
-requireAll(require.context('./images/', false, /\.jpg$/));
 class Registration extends Component {
-  static handleComponentLoad() {
-    const registration = new Registration({ props: data });
-    return registration;
-  }
-
   _query = '.js-registration';
 
   _className = 'registration';
@@ -31,7 +23,5 @@ class Registration extends Component {
     });
   }
 }
-
-window.addEventListener('load', Registration.handleComponentLoad);
 
 export default Registration;

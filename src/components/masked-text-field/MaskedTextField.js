@@ -3,7 +3,6 @@ import IMask from 'imask';
 
 import { Component } from '../../helpers/utils';
 import TextField from '../text-field';
-import './masked-text-field.scss';
 
 class MaskedTextField extends Component {
   static TYPES = {

@@ -1,9 +1,5 @@
 import { Component } from '../../helpers/utils';
 import SubscriptionTextField from '../subscription-text-field';
-import '../logo-link';
-import '../list-links';
-import '../copyright';
-import './footer.scss';
 
 class Footer extends Component {
   _query = '.js-footer';

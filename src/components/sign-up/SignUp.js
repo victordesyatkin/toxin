@@ -1,12 +1,6 @@
 import { Component } from '../../helpers/utils';
 import MaskedTextField from '../masked-text-field';
 import TextField from '../text-field';
-import '../radio-buttons';
-import '../toggle-button';
-import '../button';
-import '../card';
-import '../card-footer';
-import './sign-up.scss';
 
 class SignUp extends Component {
   _query = '.js-sign-up';

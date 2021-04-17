@@ -1,9 +1,9 @@
-extends ../base/base
+extends ../../templates/base/base
 
 include ../../components/header-ui-kit/header-ui-kit
 
 block header
-  - let { logo } = data || {};
+  - let { logo } = data;
   .demo-base__header
     +header-ui-kit(logo)
 block footer

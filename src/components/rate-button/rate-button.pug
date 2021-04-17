@@ -1,4 +1,4 @@
-mixin rate-button(props = {})
+mixin rate-button(props)
   if props
     -
       let
@@ -23,7 +23,7 @@ mixin rate-button(props = {})
       let className = 'rate-button';
       let classNames = `${className} js-${className}`;
       classNames += isDisabled ? ` ${className}_disabled` : '';
-    ul(class=classNames)
+    ul(class=classNames, data-data=props)
       input(
         name=name,
         value=grade,

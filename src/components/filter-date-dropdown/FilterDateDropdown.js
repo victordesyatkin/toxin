@@ -3,7 +3,6 @@ import bind from 'bind-decorator';
 import { Component, isValidDate } from '../../helpers/utils';
 import Calendar from '../calendar';
 import DropdownTitleTextField from '../dropdown-title-text-field';
-import './filter-date-dropdown.scss';
 
 class FilterDateDropdown extends Component {
   static _maskedDate(date) {

@@ -11,23 +11,8 @@ import RateButtons from '../../components/rate-buttons';
 import RangeSlider from '../../components/range-slider';
 import Pagination from '../../components/pagination';
 import Comment from '../../components/comment';
-import '../../components/checkbox-buttons';
-import '../../components/toggle-buttons';
-import '../../components/radio-buttons';
-import '../../components/rich-checkbox-buttons';
-import '../../components/bullet-list';
-import '../../components/info';
-import '../../components/buttons';
-import '../demo-base/demo-base';
-import './form-elements.scss';
-import data from './data.json';
 
 class FormElements extends Component {
-  static handleComponentLoad() {
-    const formElements = new FormElements({ props: data });
-    return formElements;
-  }
-
   _query = '.js-form-elements';
 
   _className = 'form-elements';
@@ -138,7 +123,5 @@ class FormElements extends Component {
     });
   }
 }
-
-window.addEventListener('load', FormElements.handleComponentLoad);
 
 export default FormElements;

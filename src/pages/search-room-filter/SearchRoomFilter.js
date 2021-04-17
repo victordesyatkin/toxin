@@ -7,18 +7,9 @@ import CardSlider from '../../components/card-slider';
 import RangeSlider from '../../components/range-slider';
 import ExpandableCheckboxList from '../../components/expandable-checkbox-list';
 import Pagination from '../../components/pagination';
-import '../../components/checkbox-buttons';
-import '../../components/rich-checkbox-buttons';
-import Base from '../base/base';
-import data from './data.json';
-import './search-room-filter.scss';
+import Base from '../../templates/base';
 
 class SearchRoomFilter extends Component {
-  static handleComponentLoad() {
-    const searchRoomFilter = new SearchRoomFilter({ props: data });
-    return searchRoomFilter;
-  }
-
   _query = '.js-search-room-filter';
 
   _className = 'search-room-filter';

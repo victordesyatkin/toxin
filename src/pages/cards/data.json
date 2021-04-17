@@ -1,4 +1,5 @@
 {
+  "slug": "cards",
   "meta": [
     {
       "name": "description",
@@ -525,7 +526,7 @@
     },
     "rating": {
       "button": {
-        "name": "rating1",
+        "name": "rating1test",
         "value": 5,
         "total": 5,
         "isDisabled": false,

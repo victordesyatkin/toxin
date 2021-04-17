@@ -1,9 +1,7 @@
 import bind from 'bind-decorator';
 
-import { Component, requireAll } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 
-requireAll(require.context('./images/', false, /\.svg$/));
-requireAll(require.context('.', false, /\.scss$/));
 class LikeButton extends Component {
   _query = '.js-like-button';
 

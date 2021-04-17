@@ -3,7 +3,6 @@ import bind from 'bind-decorator';
 import { Component } from '../../helpers/utils';
 import DropDownSummary from '../dropdown-summary';
 import DropdownItem from '../dropdown-item';
-import './dropdown.scss';
 import Control from '../control';
 
 class Dropdown extends Component {

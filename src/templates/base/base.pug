@@ -3,32 +3,32 @@ include ../../components/layout/layout
 include ../../components/header/header
 include ../../components/footer/footer
 
+- let data = htmlWebpackPlugin.options.getData() || {};
 doctype html
 html(lang="en")
   head
     meta(charset="utf-8")
     block meta
-      - let { meta = [] } = htmlWebpackPlugin.options.getData() || {};
+      - let { meta = [] } = data;
       each item in meta
         - let { name, content } = item || {};
-          meta(name=name, content=content)
+        meta(name=name, content=content)
     block links
-      - let { links = [] } = htmlWebpackPlugin.options.getData() || {};
+      - let { links = [] } = data;
       each link in links
         - let { rel, href, sizes, type } = link || {};
-          link(rel=rel, href=href, sizes=sizes, type=type) 
+        link(rel=rel, href=href, sizes=sizes, type=type) 
     title
       block title
-        - let { title } = htmlWebpackPlugin.options.getData() || {};
+        - let { title } = data;
         | #{title}
-  body
-    -
-      let data = htmlWebpackPlugin.options.getData() || {};
+  - let { slug = '' } = data;
+  body(data-slug=slug)
     +layout
       +layout__header
         block header
           - let { headerNotAuthorized } = data;
-            +header(headerNotAuthorized)
+          +header(headerNotAuthorized)
       +layout__main
         +layout__container({basis: 1440, align: 'center'})
           block main

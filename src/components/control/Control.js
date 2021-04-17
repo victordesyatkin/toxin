@@ -1,8 +1,6 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import '../button';
-import './control.scss';
 
 class Control extends Component {
   _query = '.js-control';

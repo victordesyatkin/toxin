@@ -2,7 +2,6 @@ import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
 import RateButton from '../rate-button';
-import './rate-buttons.scss';
 
 class RateButtons extends Component {
   _query = '.js-rate-buttons';

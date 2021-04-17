@@ -1,4 +1,5 @@
 {
+  "slug": "search-room-filter",
   "meta": [
     {
       "name": "description",
@@ -626,7 +627,7 @@
       },
       "rating": {
         "button": {
-          "name": "rating1",
+          "name": "rating1a",
           "value": 5,
           "total": 5,
           "isDisabled": false,

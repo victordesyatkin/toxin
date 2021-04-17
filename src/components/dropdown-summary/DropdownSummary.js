@@ -2,7 +2,6 @@ import bind from 'bind-decorator';
 
 import { wordForm, Component } from '../../helpers/utils';
 import DropdownTitleTextField from '../dropdown-title-text-field';
-import './dropdown-summary.scss';
 
 class DropDownSummary extends Component {
   static WORDS = {

@@ -2,7 +2,6 @@ import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
 import '../air-range-slider';
-import './range-slider.scss';
 
 class RangeSlider extends Component {
   static TYPE_START = 'start';

@@ -5,17 +5,8 @@ import SignIn from '../../components/sign-in';
 import Calendar from '../../components/calendar';
 import CardSlider from '../../components/card-slider';
 import Book from '../../components/book';
-import '../../components/card';
-import '../demo-base/demo-base';
-import './cards.scss';
-import data from './data.json';
 
 class Cards extends Component {
-  static handleComponentLoad() {
-    const cards = new Cards({ props: data });
-    return cards;
-  }
-
   _query = '.js-cards';
 
   _className = 'cards';
@@ -65,7 +56,5 @@ class Cards extends Component {
     });
   }
 }
-
-window.addEventListener('load', Cards.handleComponentLoad);
 
 export default Cards;

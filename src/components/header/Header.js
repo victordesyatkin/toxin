@@ -2,8 +2,6 @@ import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
 import Nav from '../nav';
-import '../logo-link';
-import './header.scss';
 
 class Header extends Component {
   _query = '.js-header';

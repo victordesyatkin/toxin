@@ -1,23 +1,11 @@
-import { Component, requireAll } from '../../helpers/utils';
+import { Component } from '../../helpers/utils';
 import Book from '../../components/book';
 import Comments from '../../components/comments';
 import Rate from '../../components/rate';
 import Slider from '../../components/slider';
-import Base from '../base/base';
-import '../../components/info';
-import '../../components/bullet-list';
-import '../../components/description';
-import data from './data.json';
-import './room-details.scss';
-
-requireAll(require.context('./images/', false, /\.(jpg|svg)$/));
+import Base from '../../templates/base';
 
 class RoomDetails extends Component {
-  static handleComponentLoad() {
-    const roomDetails = new RoomDetails({ props: data });
-    return roomDetails;
-  }
-
   _query = '.js-room-details';
 
   _className = 'room-details';
@@ -50,7 +38,5 @@ class RoomDetails extends Component {
     });
   }
 }
-
-window.addEventListener('load', RoomDetails.handleComponentLoad);
 
 export default RoomDetails;

@@ -15,8 +15,6 @@ nth.dir = {
   pages: path.resolve(__dirname, 'src', 'pages'),
 };
 
-const js = {};
-
 module.exports = (env, argv = {}) => {
   const { mode = 'development' } = argv;
   const pages = [];
@@ -24,7 +22,6 @@ module.exports = (env, argv = {}) => {
     pages.push(file);
   });
   const htmlPlugins = pages.map((fileName) => {
-    js[fileName] = `${nth.dir.pages}/${fileName}/${fileName}.js`;
     return new HtmlWebpackPlugin({
       getData: () => {
         try {
@@ -38,7 +35,6 @@ module.exports = (env, argv = {}) => {
       },
       filename: `${fileName}.html`,
       template: `${nth.dir.pages}/${fileName}/${fileName}.pug`,
-      chunks: [fileName],
       alwaysWriteToDisk: true,
       inject: true,
       hash: true,
@@ -90,7 +86,6 @@ module.exports = (env, argv = {}) => {
   return {
     mode: isProduction ? 'production' : 'development',
     devtool: isDevelopment ? 'eval-source-map' : undefined,
-    entry: { ...js },
     output: {
       filename: '[name].js?version=[hash]',
       pathinfo: isDevelopment,
