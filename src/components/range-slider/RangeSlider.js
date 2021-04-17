@@ -1,7 +1,7 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers/utils';
-import '../air-range-slider';
+import AirRangeSlider from '../air-range-slider';
 
 class RangeSlider extends Component {
   static TYPE_START = 'start';
@@ -31,21 +31,24 @@ class RangeSlider extends Component {
     ).val(start);
     this._$sectionBody = $(`${this._query}__section-body`, this._$element);
     this._$info = $(`${this._query}__info`, this._$element);
-    this._slider = this._$sectionBody.slider({
-      values: [start, end],
-      min,
-      max,
-      step,
-      handle: {
-        classNames: [
-          `${this._className}__handle`,
-          `${this._className}__handle`,
-        ],
+    this._slider = new AirRangeSlider({
+      parent: this._$sectionBody,
+      props: {
+        values: [start, end],
+        min,
+        max,
+        step,
+        handle: {
+          classNames: [
+            `${this._className}__handle`,
+            `${this._className}__handle`,
+          ],
+        },
+        rail: {
+          className: `${this._className}__rail`,
+        },
+        onChange: this._onChange,
       },
-      rail: {
-        className: `${this._className}__rail`,
-      },
-      onChange: this._onChange,
     });
     this._getOptionsInfo();
     this._setInfo([start, end]);

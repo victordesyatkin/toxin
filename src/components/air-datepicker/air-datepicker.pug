@@ -1,0 +1,13 @@
+mixin air-datepicker(props)
+  if props
+    -
+      let { name, type = "hidden", isDisabled = true, isReadOnly = true } = props;
+      let className = 'air-datepicker';
+      let classNames = `${className} js-${className}`
+    input(
+      name=name,
+      type=type,
+      class=classNames,
+      disabled=isDisabled,
+      readonly=isReadOnly
+    )

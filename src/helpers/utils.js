@@ -107,21 +107,47 @@ function checkSlug({ slug } = {}) {
   return false;
 }
 
+function isConstructor(Component) {
+  return !!Component.prototype && !!Component.prototype.constructor.name;
+}
+
 function makeComponentLoad(Component) {
   return function handleComponentLoad(event) {
     let component;
-    if (Component) {
+    if (Component && isConstructor(Component)) {
       const { data: { props = {} } = {} } = event;
       if (checkSlug(props)) {
-        try {
-          component = new Component({ props });
-        } catch (error) {
-          console.error(`makeComponentLoad : ${error.message}`);
-        }
+        component = new Component({ props });
       }
     }
     return component;
   };
+}
+
+function isValidDateByParts({ partDay, partMonth, partYear }) {
+  return partDay && partMonth && partYear;
+}
+
+function prepareDate(passDate = '') {
+  let date = '';
+  if (passDate && isString(passDate)) {
+    const [partDay, partMonth, partYear] = passDate.split('.');
+    if (isValidDateByParts({ partDay, partMonth, partYear })) {
+      date = new Date(`${partMonth}.${partDay}.${partYear}`);
+      if (!isValidDate(date)) {
+        date = '';
+      }
+    }
+  }
+  return date;
+}
+
+function value2Date(value = '') {
+  let date = new Date(value);
+  if (!isValidDate(date)) {
+    date = prepareDate(value);
+  }
+  return date;
 }
 class Component {
   constructor(options = {}) {
@@ -182,4 +208,7 @@ export {
   isUndefined,
   checkSlug,
   makeComponentLoad,
+  value2Date,
+  prepareDate,
+  isValidDateByParts,
 };

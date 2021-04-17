@@ -1,5 +1,11 @@
 @import '~air-datepicker/dist/css/datepicker.min.css';
 
+$parent: 'air-datepicker';
+
+.#{$parent} {
+  display: none;
+}
+
 .datepicker-inline .datepicker {
   border: initial;
   width: 100%;
