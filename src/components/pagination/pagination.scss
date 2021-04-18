@@ -36,17 +36,17 @@ $parent: 'pagination';
   }
   &__item:not(.#{$parent}__item_separator):not(.#{$parent}__item_control):hover,
   &__item_current {
-    background: $pagination-background-color-current;
+    background: $gradient-primary;
 
     .#{$parent}__link {
       @include font-family-first-bold;
 
-      color: $pagination-text-color-button;
+      color: $color-white;
     }
   }
 
   &__item_control {
-    background: $pagination-button-background-color-next;
+    background: $gradient-secondary;
   }
 
   &__item_control_back {
@@ -60,7 +60,7 @@ $parent: 'pagination';
 
   &__link {
     align-items: center;
-    color: $pagination-text-color-default;
+    color: $dark-shade-opacity-50;
     cursor: pointer;
     display: inline-flex;
     font-size: 0.8571rem;

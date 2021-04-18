@@ -12,7 +12,7 @@ $parent: 'info-item';
     width: 3.42rem;
 
     .#{$parent}__icon {
-      background: $info-background-color;
+      background: $color-primary;
       background-clip: text;
       color: transparent;
       font-size: 2.85rem;
@@ -31,7 +31,7 @@ $parent: 'info-item';
   }
 
   &__title {
-    color: $paragraph-text-color;
+    color: $dark-shade-opacity-75;
     font-weight: bold;
   }
 

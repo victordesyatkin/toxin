@@ -34,7 +34,7 @@ $parent: 'book';
   &__price {
     @include base-h;
 
-    color: $book-text-color-price;
+    color: $dark-shade-opacity-50;
     font-size: 1rem;
     font-weight: bold;
   }
@@ -59,7 +59,7 @@ $parent: 'book';
   }
 
   &__room-quality {
-    color: $book-text-color-quality;
+    color: $color-primary;
     font-size: 0.9285rem;
     letter-spacing: -0.0435rem;
   }
@@ -112,7 +112,7 @@ $parent: 'book';
   }
 
   &__icon-info {
-    color: $book-text-color-info;
+    color: $dark-shade-opacity-25;
     cursor: pointer;
     display: inline-flex;
     font-size: 1.4285rem;
@@ -140,7 +140,7 @@ $parent: 'book';
   }
 
   &__separator {
-    border-bottom: 0.0714rem dashed $book-border-color-separator;
+    border-bottom: 0.0714rem dashed $dark-shade-opacity-25;
     display: flex;
     height: 100%;
     margin-bottom: 0.27rem;

@@ -2,7 +2,7 @@ $parent: 'card-header';
 
 .#{$parent} {
   &__section-info {
-    color: $paragraph-text-color;
+    color: $dark-shade-opacity-75;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -26,14 +26,14 @@ $parent: 'card-header';
   }
 
   &__quality {
-    color: $book-text-color-quality;
+    color: $color-primary;
     font-size: 0.929rem;
   }
 
   &__price {
     @include base-h;
 
-    color: $book-text-color-price;
+    color: $dark-shade-opacity-50;
     font-weight: bold;
     line-height: initial;
   }
@@ -45,7 +45,7 @@ $parent: 'card-header';
   &__duration {
     @include font-family-first-regular;
 
-    color: $book-text-color-price;
+    color: $dark-shade-opacity-50;
     font-size: 0.8571rem;
     font-weight: normal;
     margin-left: 0.3571rem;

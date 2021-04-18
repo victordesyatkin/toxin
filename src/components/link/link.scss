@@ -1,7 +1,7 @@
 $parent: 'link';
 
 .#{$parent} {
-  color: $link-text-color-default;
+  color: $dark-shade-opacity-50;
   cursor: pointer;
   text-decoration: none;
   text-transform: none;
@@ -11,12 +11,12 @@ $parent: 'link';
   }
 
   &_current {
-    color: $link-text-color-current;
+    color: $dark-shade-opacity-75;
     font-weight: bold;
   }
 
   &:hover {
-    color: $link-text-color-hover;
+    color: lighten($dark-shade-opacity-50, 20%);
     text-decoration: none;
     text-transform: none;
   }

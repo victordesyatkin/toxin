@@ -24,7 +24,7 @@ $parent: 'card-slider';
   &__comments-numbers {
     @include base-h;
 
-    color: $book-text-color-price;
+    color: $dark-shade-opacity-50;
     font-size: 1rem;
     font-weight: bold;
   }
@@ -35,13 +35,13 @@ $parent: 'card-slider';
   }
 
   &__separator {
-    background-color: $card-background-color-separator;
+    background-color: $gradient-secondary;
     height: 0.0714rem;
     width: 100%;
   }
 
   &__comments-content {
-    color: $book-text-color-price;
+    color: $dark-shade-opacity-50;
     margin-left: 0.3571rem;
   }
 }

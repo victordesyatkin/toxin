@@ -10,10 +10,10 @@ $parent: 'comment';
   }
 
   &__img {
-    border: 2px solid $comment-border-color;
+    border: 2px solid $color-white;
     border-radius: 1.71rem;
     display: block;
-    filter: $comment-filter;
+    filter: drop-shadow(0 0.71rem 1.42rem $dark-shade-opacity-1);
     height: 3.42rem;
     width: 3.42rem;
   }
@@ -35,7 +35,7 @@ $parent: 'comment';
   }
 
   &__full-name {
-    color: $comment-text-color-full-name;
+    color: $dark-shade-opacity-75;
     font-weight: bold;
   }
 

@@ -3,7 +3,7 @@ $parent: 'radio-button';
 .#{$parent} {
   @include user-select-none;
 
-  color: $radio-button-text-color-default;
+  color: $dark-shade-opacity-50;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -13,11 +13,11 @@ $parent: 'radio-button';
   &:hover,
   &:focus {
     .#{$parent}__check-mark {
-      border: 0.0714rem solid $radio-button-border-color-checked;
+      border: 0.0714rem solid $color-primary;
     }
 
     .#{$parent}__label {
-      color: $radio-button-text-color-checked;
+      color: $dark-shade-opacity-75;
     }
   }
 
@@ -31,7 +31,7 @@ $parent: 'radio-button';
 
   &__check-mark {
     align-items: center;
-    border: 1px solid $radio-button-border-color-default;
+    border: 1px solid $dark-shade-opacity-25;
     border-radius: 50%;
     box-sizing: border-box;
     display: flex;
@@ -43,10 +43,10 @@ $parent: 'radio-button';
   }
 
   &__input:checked ~ &__check-mark {
-    border: 0.0714rem solid $radio-button-border-color-checked;
+    border: 0.0714rem solid $color-primary;
 
     .#{$parent}__check-dummy {
-      background: $radio-button-background-color-checked;
+      background: $gradient-primary;
       border-radius: 50%;
       height: 12px; // width rem oval shape
       opacity: 1;
@@ -55,6 +55,6 @@ $parent: 'radio-button';
   }
 
   &__input:checked ~ &__label {
-    color: $radio-button-text-color-checked;
+    color: $dark-shade-opacity-75;
   }
 }

@@ -10,11 +10,11 @@ $parent: 'toggle-button';
   &:hover,
   &:focus {
     .#{$parent}__check-mark {
-      border: 1px solid $toggle-button-border-color-checked;
+      border: 1px solid $color-primary;
     }
 
     .#{$parent}__label {
-      color: $toggle-button-text-color-checked;
+      color: $dark-shade-opacity-75;
     }
   }
 
@@ -28,7 +28,7 @@ $parent: 'toggle-button';
 
   &__check-mark {
     align-items: center;
-    border: 1px solid $toggle-button-border-color-default;
+    border: 1px solid $dark-shade-opacity-25;
     border-radius: 10px;
     box-sizing: border-box;
     display: flex;
@@ -40,7 +40,7 @@ $parent: 'toggle-button';
     width: 2.857rem;
 
     .#{$parent}__mark {
-      background: $toggle-button-background-color-default;
+      background: $dark-shade-opacity-25;
       border-radius: 50%;
       height: 12px; // with rem oval shape
       left: 0.286rem;
@@ -52,21 +52,21 @@ $parent: 'toggle-button';
   }
 
   &__label {
-    color: $toggle-button-text-color-default;
+    color: $dark-shade-opacity-50;
   }
 
   &__input:checked ~ &__check-mark {
-    border: 1px solid $toggle-button-border-color-checked;
+    border: 1px solid $color-primary;
     justify-content: flex-end;
 
     .#{$parent}__mark {
-      background: $toggle-button-background-color-checked;
+      background: $gradient-primary;
       left: calc(100% - 1.142rem);
       transition: left 0.5s;
     }
   }
 
   &__input:checked ~ &__label {
-    color: $toggle-button-text-color-checked;
+    color: $dark-shade-opacity-75;
   }
 }

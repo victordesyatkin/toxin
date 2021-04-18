@@ -18,7 +18,7 @@ $parent: 'range-slider';
   }
 
   &__info {
-    color: $range-slider-text-color;
+    color: $dark-shade-opacity-50;
     font-size: 0.85rem;
   }
 
@@ -29,7 +29,7 @@ $parent: 'range-slider';
   }
 
   &__description {
-    color: $range-slider-text-color;
+    color: $dark-shade-opacity-50;
     font-size: 0.85rem;
     line-height: 1rem;
     margin-top: 0.8rem;

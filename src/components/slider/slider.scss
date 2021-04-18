@@ -66,8 +66,11 @@ $parent: 'slider';
 
   &__control {
     align-items: center;
-    background: $slider-background-color-control;
-    color: $slider-text-color-control;
+    background: linear-gradient(90deg,
+    rgba($color-black, 0.5) 0%,
+    rgba($color-black, 0) 99.99%,
+    rgba($color-white, 0) 100%);
+    color: $color-white;
     cursor: pointer;
     display: flex;
     font-size: 0.857rem;
@@ -100,7 +103,7 @@ $parent: 'slider';
   }
 
   &__point {
-    border: 0.071rem solid $slider-border-color-point;
+    border: 0.071rem solid $color-white;
     border-radius: 100%;
     cursor: pointer;
     height: 0.571rem;
@@ -109,7 +112,7 @@ $parent: 'slider';
   }
 
   &__point_full {
-    background-color: $slider-background-color-point;
+    background-color: $color-white;
   }
 
   &__point:first-child {

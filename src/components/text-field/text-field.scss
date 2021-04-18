@@ -22,7 +22,7 @@ $parent: 'text-field';
     &.#{$parent}_theme_guests,
     &.#{$parent}_theme_comfort {
       .#{$parent}__button {
-        color: $input-text-color-hover;
+        color: $dark-shade-opacity-75;
       }
     }
   }
@@ -59,8 +59,8 @@ $parent: 'text-field';
       &:hover,
       &:focus,
       &:active {
-        border: 1px solid $input-border-color-default;
-        color: $input-text-color-hover;
+        border: 1px solid $dark-shade-opacity-25;
+        color: $dark-shade-opacity-75;
         outline: none;
       }
     }
@@ -69,8 +69,8 @@ $parent: 'text-field';
     .#{$parent}__button:focus ~ .#{$parent}__summary,
     .#{$parent}__button:hover ~ .#{$parent}__input,
     .#{$parent}__button:focus ~ .#{$parent}__input {
-      border: 1px solid $input-border-color-default;
-      color: $input-text-color-hover;
+      border: 1px solid $dark-shade-opacity-25;
+      color: $dark-shade-opacity-75;
       outline: none;
     }
   }
@@ -109,16 +109,16 @@ $parent: 'text-field';
   &__summary:focus,
   &__input:hover,
   &__input:focus {
-    border-color: $input-border-color-hover;
-    color: $input-text-color-hover;
+    border-color: $dark-shade-opacity-50;
+    color: $dark-shade-opacity-75;
     outline: none;
   }
 
   &__summary,
   &__input {
-    border: 1px solid $input-border-color-default;
+    border: 1px solid $dark-shade-opacity-25;
     border-radius: 4px;
-    color: $input-text-color-hover;
+    color: $dark-shade-opacity-75;
     cursor: pointer;
     overflow: hidden;
     padding: 0.9rem 1rem 1rem;
@@ -151,7 +151,7 @@ $parent: 'text-field';
   &__button_default_eye,
   &__button_default {
     background-color: transparent;
-    color: $input-text-color-button-default;
+    color: $dark-shade-opacity-50;
     cursor: pointer;
     font-size: 0.57rem;
   }
@@ -164,17 +164,17 @@ $parent: 'text-field';
   &:hover {
     .#{$parent}__button_default_eye_slash,
     .#{$parent}__button_default_eye {
-      color: $input-text-color-hover;
+      color: $dark-shade-opacity-75;
     }
   }
 
   &__button_default_eye_slash:hover,
   &__button_default_eye:hover {
-    color: $input-text-color-hover;
+    color: $dark-shade-opacity-75;
   }
 
   &__button_forwarded {
-    background: $input-button-background;
+    background: $gradient-primary;
     background-clip: text;
     color: transparent;
     font-size: 1.28rem;

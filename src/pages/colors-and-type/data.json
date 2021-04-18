@@ -62,7 +62,7 @@
   },
   "colors": [
     {
-      "background": "#1F2041",
+      "background": "#1f2041",
       "label": "Dark Shade 100%",
       "description": "#1F2041"
     },
@@ -87,12 +87,12 @@
       "description": "#1F2041"
     },
     {
-      "background": "#BC9CFF",
+      "background": "#bc9cff",
       "label": "Purple",
       "description": "#BC9CFF"
     },
     {
-      "background": "#6FCF97",
+      "background": "#6fcf97",
       "label": "Green",
       "description": "#6FCF97"
     }

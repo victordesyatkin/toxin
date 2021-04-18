@@ -1,10 +1,10 @@
 $parent: 'calendar';
 
 .#{$parent} {
-  background-color: $calendar-background-color;
-  border: 0.0714rem solid $calendar-border-color;
+  background-color: $color-white;
+  border: 0.0714rem solid $dark-shade-opacity-25;
   border-radius: 4px;
-  box-shadow: $calendar-box-shadow;
+  box-shadow: 0 0.714rem 1.429rem $dark-shade-opacity-5;
   box-sizing: border-box;
   width: 100%;
 

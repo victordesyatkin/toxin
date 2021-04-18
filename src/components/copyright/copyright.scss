@@ -2,7 +2,7 @@ $parent: 'copyright';
 
 .#{$parent} {
   align-items: center;
-  box-shadow: $copyright-box-shadow;
+  box-shadow: 0 0.714rem 1.429rem $dark-shade-opacity-5;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -72,7 +72,7 @@ $parent: 'copyright';
   }
 
   &__icon {
-    background: $copyright-background-color-icon;
+    background: $gradient-primary;
     background-clip: text;
     background-clip: text;
     color: transparent;

@@ -18,7 +18,7 @@ $parent: 'headers-and-footers';
   }
 
   .#{$parent}__copyright {
-    background-color: $body-background-color;
+    background-color: $color-grey;
     margin: 0 auto;
     max-width: 54.8571rem;
     width: 100%;

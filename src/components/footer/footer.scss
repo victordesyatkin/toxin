@@ -1,7 +1,7 @@
 $parent: 'footer';
 
 .#{$parent} {
-  background-color: $footer-background-color;
+  background-color: $color-white;
   width: 100%;
 
   &_size_sm {
@@ -15,8 +15,8 @@ $parent: 'footer';
 
   &__main-section {
     align-items: center;
-    border-top: 0.071rem solid $footer-border-color;
-    box-shadow: $footer-box-shadow;
+    border-top: 0.071rem solid $dark-shade-opacity-1;
+    box-shadow: 0 0.0714rem 0 $dark-shade-opacity-1;
     display: none;
     flex-direction: column;
     padding: 1rem;

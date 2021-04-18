@@ -8,13 +8,13 @@ html,
 body {
   @include font-family-first-regular;
 
-  background-color: $body-background-color;
+  background-color: $color-grey;
   font-size: $font-size-body;
   height: 100%;
 }
 
 body {
-  color: $paragraph-text-color;
+  color: $dark-shade-opacity-75;
   line-height: 1.74rem;
 }
 
@@ -33,5 +33,5 @@ h3 {
 ::placeholder {
   @include font-family-first-regular;
 
-  color: $input-text-color-default;
+  color: $dark-shade-opacity-25;
 }

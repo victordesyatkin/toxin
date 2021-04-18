@@ -11,16 +11,16 @@ $parent: 'checkbox-button';
   &:hover,
   &:focus {
     .#{$parent}__check-mark {
-      border: 1px solid $checkbox-border-color-checked;
+      border: 1px solid $color-primary;
     }
 
     .#{$parent}__label {
-      color: $checkbox-button-text-color-checked;
+      color: $dark-shade-opacity-75;
     }
   }
 
   &__label {
-    color: $checkbox-button-text-color-default;
+    color: $dark-shade-opacity-50;
     line-height: 1.29rem;
   }
 
@@ -28,7 +28,7 @@ $parent: 'checkbox-button';
     .#{$parent}__label {
       @include h3;
 
-      color: $paragraph-text-color;
+      color: $dark-shade-opacity-75;
       font-size: 1rem;
       line-height: 1.29rem;
       text-transform: initial;
@@ -45,7 +45,7 @@ $parent: 'checkbox-button';
 
   &__check-mark {
     align-items: center;
-    border: 1px solid $checkbox-border-color;
+    border: 1px solid $dark-shade-opacity-25;
     border-radius: 4px;
     box-sizing: border-box;
     display: flex;
@@ -63,7 +63,7 @@ $parent: 'checkbox-button';
   }
 
   .#{$parent}__input:checked ~ &__check-mark {
-    border: 1px solid $checkbox-border-color-checked;
+    border: 1px solid $color-primary;
 
     .#{$parent}__mark {
       height: 0.71rem;
@@ -73,6 +73,6 @@ $parent: 'checkbox-button';
   }
 
   .#{$parent}__input:checked ~ &__label {
-    color: $checkbox-button-text-color-checked;
+    color: $dark-shade-opacity-75;
   }
 }

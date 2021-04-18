@@ -51,7 +51,7 @@ $parent: 'title-label';
   &__state {
     @include h3;
 
-    color: $title-label-text-color-status;
+    color: $dark-shade-opacity-50;
     font-weight: normal;
     text-align: right;
     text-transform: uppercase;

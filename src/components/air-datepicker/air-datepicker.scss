@@ -14,7 +14,7 @@ $parent: 'air-datepicker';
   .-in-range- {
     @include h3-lite;
 
-    color: $calendar-text-color-default;
+    color: $dark-shade-opacity-50;
   }
 
   .datepicker--nav {
@@ -25,7 +25,7 @@ $parent: 'air-datepicker';
   /* stylelint-disable selector-max-compound-selectors */
   .datepicker--nav-action {
     span {
-      color: $calendar-text-color-nav;
+      color: $color-primary;
       font-size: 1.28rem;
     }
   }
@@ -71,7 +71,7 @@ $parent: 'air-datepicker';
   .datepicker--day-name {
     @include h3;
 
-    color: $calendar-text-color-day-name;
+    color: $color-primary;
     text-transform: initial;
   }
 
@@ -91,7 +91,7 @@ $parent: 'air-datepicker';
   .-other-month-.-selected- {
     @include h3;
 
-    color: $calendar-text-color-hover;
+    color: $color-white;
   }
 
   .-current-,
@@ -103,7 +103,7 @@ $parent: 'air-datepicker';
   }
 
   .datepicker--cell.-focus-.-disabled-::after {
-    background: $calendar-background-color-disabled;
+    background: $dark-shade-opacity-25;
   }
 
   .-range-from-.-focus-::after,
@@ -113,7 +113,7 @@ $parent: 'air-datepicker';
   .-range-to-::after,
   .-selected-::after,
   .-current-::after {
-    background: $calendar-background-color-current;
+    background: $gradient-secondary;
     border-radius: 100%;
     content: '';
     height: 2.85rem;
@@ -131,7 +131,7 @@ $parent: 'air-datepicker';
   .-selected-::after,
   .-range-from-::after,
   .-range-to-::after {
-    background: $calendar-background-color-selected;
+    background: $gradient-primary;
   }
 
   .-range-from-,

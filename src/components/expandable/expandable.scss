@@ -1,7 +1,7 @@
 $parent: 'expandable';
 
 .#{$parent} {
-  background-color: $expandable-background-color;
+  background-color: $color-white;
   position: relative;
   width: 100%;
 
@@ -29,7 +29,7 @@ $parent: 'expandable';
   }
 
   &__body {
-    background-color: $expandable-background-color;
+    background-color: $color-white;
     display: none;
     left: 0;
     padding: 1.357rem 0;

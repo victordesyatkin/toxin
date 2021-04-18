@@ -49,13 +49,13 @@ $parent: 'rate';
   &__total {
     @include h1;
 
-    color: $rate-text-color-total;
+    color: $color-primary;
   }
 
   &__unit {
     @include h3;
 
-    color: $rate-text-color-unit;
+    color: $color-primary;
     margin-bottom: 0.429rem;
     padding: 0;
   }

@@ -16,33 +16,33 @@ $parent: 'button';
   white-space: nowrap;
 
   &_theme_1 {
-    background: $button-background-color-first-default;
+    background: $gradient-primary;
     border: solid 2px transparent;
-    color: $button-text-color-default-first;
+    color: $color-primary;
 
     .#{$parent}__content {
-      background-color: $button-background-color-first-inner-default;
+      background-color: $color-white;
       border-radius: 22px;
-      color: $button-text-color-default-first;
+      color: $color-primary;
       padding: 0.8571rem 1.2142rem 0.9285rem;
     }
   }
 
   &_theme_2 {
     background: none;
-    color: $button-text-color-default-second;
+    color: $color-primary;
     padding: 0;
 
     &.#{$parent}_theme_2:hover,
     &.#{$parent}_hovered {
       background: none;
-      color: $button-text-color-hover-second;
+      color: $dark-shade-opacity-50;
     }
   }
 
   &_theme_3 {
-    background: $button-background-color-third-default;
-    color: $button-text-color-default-third;
+    background: $gradient-primary;
+    color: $color-white;
     padding: 1rem 1.307rem 1.071rem 1.5rem;
     position: relative;
     width: 100%;

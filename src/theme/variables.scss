@@ -2,7 +2,9 @@
 @import '~assets/fonts/quicksand/fonts.scss';
 @import '~assets/fonts/icomoon/fonts.scss';
 
-/***** Variables *****/
+/*# Variables #*/
+
+/*## Size ##*/
 $xxs: 319px;
 $xs: 575px;
 $sm: 767px;
@@ -10,187 +12,32 @@ $md: 991px;
 $lg: 1199px;
 $xl: 1439px;
 
-/***** Common *****/
-$color-primary: rgba(31, 32, 65, 1);
-$color-primary-opacity-75: rgba($color-primary, 0.75);
-$color-primary-opacity-50: rgba($color-primary, 0.5);
-$color-primary-opacity-25: rgba($color-primary, 0.25);
-$color-primary-opacity-1: rgba($color-primary, 0.1);
-$color-primary-opacity-5: rgba($color-primary, 0.05);
-$color-secondary: #bc9cff;
-$color-third: #6fcf97;
-$color-fourth: #fff;
-$color-fourth-opacity-0: rgba($color-fourth, 0);
-$color-fifth: #000;
-$color-fifth-opacity-2: rgba($color-fifth, 0.2);
-$color-fifth-opacity-12: rgba($color-fifth, 0.12);
-$color-fifth-opacity-5: rgba($color-fifth, 0.5);
-$color-fifth-opacity-0: rgba($color-fifth, 0);
-$color-sixth: #f4f4f6;
-$color-seventh: #8ba4f9;
-$color-eighth: #66d2ea;
+/*## Color ##*/
+$dark-shade: rgba(31, 32, 65, 1);
+$dark-shade-opacity-75: rgba($dark-shade, 0.75);
+$dark-shade-opacity-50: rgba($dark-shade, 0.5);
+$dark-shade-opacity-25: rgba($dark-shade, 0.25);
+$dark-shade-opacity-1: rgba($dark-shade, 0.1);
+$dark-shade-opacity-5: rgba($dark-shade, 0.05);
+$color-primary: #bc9cff;
+$color-secondary: #6fcf97;
+$color-white: #fff;
+$color-black: #000;
+$color-grey: #f4f4f6;
+$gradient-primary: linear-gradient(180deg, $color-primary 0%, #8ba4f9 100%);
+$gradient-secondary: linear-gradient(180deg, $color-secondary 0%, #66d2ea 100%);
 
-$gradient-primary: linear-gradient(180deg,
-$color-secondary 0%,
-$color-seventh 100%);
-$gradient-secondary: linear-gradient(180deg,
-$color-third 0%,
-$color-eighth 100%);
-$gradient-third: linear-gradient(90deg,
-$color-fifth-opacity-5 0%,
-$color-fifth-opacity-0 99.99%,
-$color-fourth-opacity-0 100%);
-
-$box-shadow-primary: 0 0.714rem 1.429rem $color-primary-opacity-5;
-
-/***** Font *****/
+/*## Font ##*/
 $font-size-body: 14px;
 $font-family-body: montserrat, arial, sans-serif;
 
-/***** Text *****/
-$header-text-color: $color-primary;
-$paragraph-text-color: $color-primary-opacity-75;
-$additional-text-color: $color-primary-opacity-25;
-$input-text-color-default: $color-primary-opacity-25;
-$input-text-color-hover: $color-primary-opacity-75;
-$title-label-text-color-status: $color-primary-opacity-50;
-$input-text-color-button-default: $color-primary-opacity-50;
-$input-text-color-focus: $input-text-color-hover;
-$dropdown-text-color-control: $color-secondary;
-$dropdown-text-color-button-default: $color-primary-opacity-25;
-$dropdown-text-color-button-active: $color-primary-opacity-50;
-$book-text-color-info: $color-primary-opacity-25;
-$book-text-color-price: $color-primary-opacity-50;
-$book-text-color-quality: $color-secondary;
-$button-text-color-default-first: $color-secondary;
-$button-text-color-default-second: $color-secondary;
-$button-text-color-default-third: $color-fourth;
-$button-text-color-hover-first: $color-secondary;
-$button-text-color-hover-second: $color-primary-opacity-50;
-$button-text-color-hover-third: $color-fourth;
-$rich-checkbox-text-color-default: $color-primary-opacity-75;
-$rich-checkbox-text-color-info: $color-primary-opacity-50;
-$pagination-text-color-button: $color-fourth;
-$pagination-text-color-default: $color-primary-opacity-50;
-$pagination-text-color-description: $color-primary-opacity-75;
-$calendar-text-color-hover: $color-fourth;
-$calendar-text-color-default: $color-primary-opacity-50;
-$calendar-text-color-nav: $color-secondary;
-$calendar-text-color-day-name: $color-secondary;
-$comment-text-color-count: $color-primary-opacity-50;
-$comment-text-color-full-name: $color-primary-opacity-75;
-$link-text-color-default: $color-primary-opacity-50;
-$link-text-color-hover: lighten($link-text-color-default, 20%);
-$link-text-color-current: $color-primary-opacity-75;
-$radio-button-text-color-default: $color-primary-opacity-50;
-$radio-button-text-color-checked: $color-primary-opacity-75;
-$range-slider-text-color: $color-primary-opacity-50;
-$rate-text-color-total: $color-secondary;
-$rate-text-color-unit: $rate-text-color-total;
-$filter-date-dropdown-text-color-button: $color-primary-opacity-50;
-$filter-date-dropdown-text-color: $color-primary-opacity-75;
-$slider-text-color-control: $color-fourth;
-$toggle-button-text-color-default: $color-primary-opacity-50;
-$toggle-button-text-color-checked: $color-primary-opacity-75;
-$card-footer-text-color: $color-fifth;
-$nav-text-color-user: $color-primary-opacity-50;
-$checkbox-button-text-color-default: $color-primary-opacity-50;
-$checkbox-button-text-color-checked: $color-primary-opacity-75;
-$nav-text-color-default: $color-primary-opacity-50;
-$nav-text-color-hover: $color-primary-opacity-75;
-$toggle-navigation-text-color-default: $color-primary-opacity-50;
-$toggle-navigation-text-color-hover: $color-primary-opacity-75;
-$like-button-text-color-default: $color-primary-opacity-25;
-$like-button-text-color-checked: $color-secondary;
-
-/***** Background *****/
-$page-background-color: $color-fourth;
-$body-background-color: $color-sixth;
-$expandable-background-color: $color-fourth;
-$dropdown-background-color: $color-fourth;
-$card-background-color: $color-fourth;
-$info-background-color: $color-secondary;
-$checkbox-button-background-color: $color-secondary;
-$radio-button-background-color-checked: $gradient-primary;
-$checkbox-button-background-color: $color-secondary;
-$rate-button-background-color: $color-secondary;
-$button-background-color-first-default: $gradient-primary;
-$button-background-color-first-inner-default: $color-fourth;
-$button-background-color-third-default: $gradient-primary;
-$pagination-background-color-current: $gradient-primary;
-$pagination-button-background-color-previous: $gradient-secondary;
-$pagination-button-background-color-next: $gradient-secondary;
-$range-slider-background-color: $gradient-secondary;
-$range-slider-background-color-body: $color-fourth;
-$slider-background-color-control: $gradient-third;
-$slider-background-color-point: $color-fourth;
-$input-button-background: $gradient-primary;
-$bullet-button-background: $color-primary-opacity-25;
-$calendar-background-color: $color-fourth;
-$calendar-background-color-disabled: $color-primary-opacity-25;
-$calendar-background-color-selected: $gradient-primary;
-$calendar-background-color-current: $gradient-secondary;
-$card-background-color-separator: $color-primary-opacity-1;
-$copyright-background-color-icon: $gradient-primary;
-$footer-background-color: $color-fourth;
-$header-background-color: $color-fourth;
-$nav-background-color-separator: $color-primary-opacity-1;
-$toggle-button-background-color-default: $color-primary-opacity-25;
-$toggle-button-background-color-checked: $gradient-primary;
-$cards-header-background-color: $color-sixth;
-$link-children-background-color: $color-fourth;
-$nav-background-color-default: $color-fourth;
-$like-button-background-color-default: $color-fourth;
-$like-button-background-color-checked: $gradient-primary;
-
-/***** Shadow *****/
-$calendar-box-shadow: $box-shadow-primary;
-$card-box-shadow: 0 0 1.786rem $color-fifth-opacity-2;
-$copyright-box-shadow: $box-shadow-primary;
-$footer-box-shadow: 0 0.0714rem 0 $color-primary-opacity-1;
-$header-box-shadow: 0 0.714rem 1.429rem $color-primary-opacity-25;
-
-/***** Filter *****/
-$comment-filter: drop-shadow(0 0.71rem 1.42rem $color-primary-opacity-1);
-
-/***** Border *****/
-$card-border-color: $color-fifth-opacity-12;
-$dropdown-border-color-default: $color-primary-opacity-25;
-$dropdown-border-color-opened: $color-primary-opacity-50;
-$dropdown-button-border-color: $color-primary-opacity-50;
-$input-border-color-default: $color-primary-opacity-25;
-$input-border-color-hover: $color-primary-opacity-50;
-$input-border-color-focus: $input-border-color-hover;
-$checkbox-border-color: $color-primary-opacity-25;
-$checkbox-border-color-checked: $color-secondary;
-$range-slider-border-color-point: $color-fourth;
-$range-slider-border-color-body: $color-primary-opacity-25;
-$book-border-color-separator: $color-primary-opacity-25;
-$calendar-border-color: $color-primary-opacity-25;
-$comment-border-color: $color-fourth;
-$copyright-border-color: $color-fourth;
-$filter-date-dropdown-border-color: $color-primary-opacity-25;
-$info-border-color-separator: $color-primary-opacity-1;
-$like-button-border-color-default: $color-primary-opacity-25;
-$like-button-border-color-checked: $color-secondary;
-$radio-button-border-color-default: $color-primary-opacity-25;
-$radio-button-border-color-checked: $color-secondary;
-$slider-border-color-point: $color-fourth;
-$toggle-button-border-color-default: $color-primary-opacity-25;
-$toggle-button-border-color-checked: $color-secondary;
-$footer-border-color: $color-primary-opacity-1;
-$link-border-color-default: $color-primary-opacity-5;
-$nav-border-color-default: $color-primary-opacity-25;
-$nav-border-color-hover: $color-primary-opacity-25;
-
-/***** Mixin *****/
-
+/*# Mixin #*/
 @mixin background-button-hover {
-  @include linear-gradient(180deg, $color-secondary, $color-seventh, 0.5);
+  @include linear-gradient(180deg, $color-primary, #8ba4f9, 0.5);
 }
 
 @mixin background-calendar-period {
-  @include linear-gradient(180deg, $color-secondary, $color-seventh, 0.25);
+  @include linear-gradient(180deg, $color-primary, #8ba4f9, 0.25);
 }
 
 @mixin user-select-none {
@@ -225,7 +72,7 @@ $nav-border-color-hover: $color-primary-opacity-25;
 @mixin base-h {
   @include font-family-first-bold;
 
-  color: $header-text-color;
+  color: $dark-shade;
 }
 
 @mixin h1 {

@@ -20,7 +20,7 @@ $parent: 'nav';
 
   &__nav-section {
     align-items: center;
-    background-color: $link-children-background-color;
+    background-color: $color-white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -67,7 +67,7 @@ $parent: 'nav';
   &__separator {
     display: none;
     @include media-breakpoint-up($md) {
-      background: $nav-background-color-separator;
+      background: $dark-shade-opacity-1;
       display: initial;
       height: 2.1428rem;
       width: 0.0714rem;
@@ -79,7 +79,7 @@ $parent: 'nav';
     padding: 0.5rem;
 
     @include media-breakpoint-up($md) {
-      color: $nav-text-color-user;
+      color: $dark-shade-opacity-50;
       margin-left: 1.5rem;
       padding: initial;
     }

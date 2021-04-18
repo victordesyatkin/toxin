@@ -1,8 +1,8 @@
 $parent: 'header';
 
 .#{$parent} {
-  background: $header-background-color;
-  box-shadow: $header-box-shadow;
+  background: $color-white;
+  box-shadow: 0 0.714rem 1.429rem $dark-shade-opacity-25;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -55,7 +55,7 @@ $parent: 'header';
 
   &__toggle-navigation:hover {
     .#{$parent}__toggle-navigation-button {
-      color: $toggle-navigation-text-color-hover;
+      color: $dark-shade-opacity-75;
     }
   }
 
@@ -63,7 +63,7 @@ $parent: 'header';
     background: none;
     border: initial;
     border-radius: 4px;
-    color: $toggle-navigation-text-color-default;
+    color: $dark-shade-opacity-50;
     cursor: pointer;
     font-size: 1.5rem;
     height: 2.714rem;
@@ -75,7 +75,7 @@ $parent: 'header';
   }
 
   &__nav {
-    background-color: $nav-background-color-default;
+    background-color: $color-white;
     display: none;
     position: absolute;
     top: 100%;
