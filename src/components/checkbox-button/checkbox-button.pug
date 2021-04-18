@@ -1,7 +1,7 @@
 mixin checkbox-button(props)
   if props
     -
-      let { name, type="checkbox", src, alt, tabindex, label, value, theme, isHidden, isRequired, isDisabled, isChecked } = props;
+      let { name, type = "checkbox", src, alt, tabindex, label, value, theme, isHidden, isRequired, isDisabled, isChecked } = props;
       let className = 'checkbox-button';
       let classNames = `${className} js-${className}`;
       let id = `${name}-${Math.random().toString(16).substr(2)}`;
