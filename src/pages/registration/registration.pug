@@ -3,7 +3,6 @@ include ../../components/sign-up/sign-up
 
 block main
   -
-    let data = htmlWebpackPlugin.options.getData() || {};
     let { backgroundImage } = data;        
     let style = backgroundImage ? `background-image: url("${backgroundImage}"); ` : '';
     let className = 'registration';
@@ -11,5 +10,6 @@ block main
   section(class=classNames, style=style)
     block sign
       - let { signUp } = data;
-      section(class=`${className}__sign-up js-${className}__sign-up`)
-        +sign-up(signUp)
+      if signUp
+        section(class=`${className}__sign-up js-${className}__sign-up`)
+          +sign-up(signUp)

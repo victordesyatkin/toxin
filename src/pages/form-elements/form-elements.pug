@@ -23,37 +23,15 @@ include ../../components/comment/comment
 
 block main
   -
-    let {
-          textField1,
-          textField2,
-          dropdown1,
-          dropdown2,
-          dropdown3,
-          dropdown4,
-          dropdown5,
-          dateDropdown,
-          filterDateDropdown,
-          maskedTextField,
-          subscriptionTextField,
-          expandableCheckboxList1,
-          expandableCheckboxList2,
-          button,
-          buttons,
-          richCheckboxButtons,
-          checkboxButtons,
-          radioButtons,
-          toggleButtons,
-          likeButtons,
-          rateButtons,
-          rangeSlider,
-          pagination,
-          bulletList,
-          info,
-          comment,
-        } = data || {};
+    let { textField1, textField2, dropdown1, dropdown2, dropdown3, dropdown4,
+      dropdown5, dateDropdown, filterDateDropdown, maskedTextField,
+      subscriptionTextField, expandableCheckboxList1, expandableCheckboxList2,
+      button, buttons, richCheckboxButtons, checkboxButtons, radioButtons,
+      toggleButtons, likeButtons, rateButtons, rangeSlider, pagination, bulletList,
+      info, comment
+    } = data;
     let className = 'form-elements';
   section(class=`${className} js-${className}`)
-    div(style="width: 100%")
     section(class=`${className}__text-fields ${className}__section`)
       ul(class=`${className}__list-text-field ${className}__list`)
         li(

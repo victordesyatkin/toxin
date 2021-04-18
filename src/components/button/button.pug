@@ -1,34 +1,26 @@
-mixin button(props = {})
-  -
-    let
-        { content, type, value, name, src, alt, isHovered, isDisabled, size, theme, ariaLabel } = props;
-        className = 'button';
-        classNames = `${className}`;
-        themes = {
-            1: 1,
-            2: 2,
-            3: 3,
-        };
-        sizes = {
-            1: 1,
-            2: 2,
-            3: 3,
-        };
-    classNames += isHovered ? ` ${className}_hovered` : '';
-    classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
-    if (sizes[size] && sizes[size] === 3 && src) {
+mixin button(props)
+  if props
+    -
+      let { content, type, value, name, src, alt, isHovered, isDisabled, size, theme, ariaLabel } = props;
+      let className = 'button';
+      let classNames = `${className}`;
+      let themes = { 1: 1, 2: 2, 3: 3 };
+      let sizes = { 1: 1, 2: 2, 3: 3 };
+      classNames += isHovered ? ` ${className}_hovered` : '';
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+      classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
+      if (sizes[size] && sizes[size] === 3 && src) {
         classNames += ` ${className}_with_image`;
-    }
-  button(
-    class=classNames,
-    name=name,
-    type=type,
-    value=value,
-    disabled=isDisabled,
-    aria-label=ariaLabel
-  )
-    span(class=`${className}__content`)= content
-    if (view === 3 && src)
-      span(class=`${className}__image-wrapper`)
-        img(src=src, alt=alt, class=`${className}__image`)
+      }
+    button(
+      class=classNames,
+      name=name,
+      type=type,
+      value=value,
+      disabled=isDisabled,
+      aria-label=ariaLabel
+    )
+      span(class=`${className}__content`)= content
+      if (view === 3 && src)
+        span(class=`${className}__image-wrapper`)
+          img(src=src, alt=alt, class=`${className}__image`)

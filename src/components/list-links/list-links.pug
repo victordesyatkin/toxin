@@ -2,9 +2,10 @@ include ../link/link
 
 mixin list-links(props)
   if props
-    - let { items = [], header } = props;
-    - let className = 'list-links';
-    - let classNames = `${className} js-${className}`;
+    -
+      let { items = [], header } = props;
+      let className = 'list-links';
+      let classNames = `${className} js-${className}`;
     article(class=classNames)
       if header
         p(class=`${className}__header`)= header

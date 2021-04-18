@@ -4,10 +4,7 @@ mixin control(props)
   if props
     -
       let { items = [], isHidden, } = props;
-      let themes = {
-          comfort: 'comfort',
-          guests: 'guests',
-      }
+      let themes = { comfort: 'comfort', guests: 'guests' };
       let length = items.length;
       let className = 'control';
       let classNames = `${className} js-${className}`;

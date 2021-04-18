@@ -3,9 +3,7 @@ mixin card(props)
     let { theme } = props || {};
     let className = 'card';
     let classNames = `${className} js-${className}`;
-    let themes = {
-      calendar: 'calendar'
-    };
+    let themes = { calendar: 'calendar' };
     classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
   div(class=classNames)
     if block

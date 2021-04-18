@@ -5,17 +5,15 @@ include ../../components/header/header
 include ../../components/footer/footer
 
 block header
-  -
-    let className = 'headers-and-footers';
-    let { logo } = htmlWebpackPlugin.options.getData() || {};
+  - let className = 'headers-and-footers';
   div(class=`${className}__header`)
+    - let { logo } = data;
     +header-ui-kit(logo)
 block main
   -
     let className = 'headers-and-footers';
     let classNames = `${className} js-${className}`;
-    let data = htmlWebpackPlugin.options.getData();
-    let { headerNotAuthorized, headerAuthorized, footer1, footer2, copyright } = data || {};
+    let { headerNotAuthorized, headerAuthorized, footer1, footer2, copyright } = data;
   section(class=classNames)
     section(
       class=`${className}__header-not-authorized js-${className}__header-not-authorized ${className}__section`

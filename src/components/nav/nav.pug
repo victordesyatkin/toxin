@@ -22,7 +22,6 @@ mixin nav(props)
       if isAuthorized
         div(class=`${className}__separator`)
         div(class=`${className}__user-section`)
-          |
           +link({content: `${firstName} ${lastName}`, ...link})
       else if lengthButtons
         ul(class=`${className}__control-section`)

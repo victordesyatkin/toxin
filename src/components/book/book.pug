@@ -6,19 +6,12 @@ include ../card/card
 mixin book(props)
   if props
     -
-      let {
-          theme, action, method = 'GET', price, duration, unit,
-          roomNumberContent, roomNumber, roomQuality,
-          dropdown, dateDropdown, 
-          discountTotal, discountContent, 
-          serviceFeeTotal, serviceFeeContent,
-          additionalServiceFeeContent, additionalServiceFeeTotal,
-          total, totalContent,
-          button,
+      let { theme, action, method = 'GET', price, duration, unit, roomNumberContent,
+        roomNumber, roomQuality, dropdown, dateDropdown, discountTotal, discountContent,
+        serviceFeeTotal, serviceFeeContent, additionalServiceFeeContent,
+        additionalServiceFeeTotal, total, totalContent, button,
       } = props;
-      let themes = {
-          'room-details': 'room-details'
-      }
+      let themes = { 'room-details': 'room-details' };
       let className = 'book';
       let classNames = `${className} js-${className}`;
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';

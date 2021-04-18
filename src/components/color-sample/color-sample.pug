@@ -1,11 +1,12 @@
-mixin color-sample(props = {})
-  -
-    let { background, label, description } = props;
-    let style = background ? `background: ${background};`: '';
-    let className = 'color-sample';
-    let classNames = `${className} js-${className}`; 
-  div(class=classNames)
-    span(class=`${className}__section-rectangle`, style=style)
-    span(class=`${className}__section-info`)
-      span(class=`${className}__label`)= label
-      span(class=`${className}__description`)= description
+mixin color-sample(props)
+  if props
+    -
+      let { background, label, description } = props;
+      let style = background ? `background: ${background};`: '';
+      let className = 'color-sample';
+      let classNames = `${className} js-${className}`; 
+    div(class=classNames)
+      span(class=`${className}__section-rectangle`, style=style)
+      span(class=`${className}__section-info`)
+        span(class=`${className}__label`)= label
+        span(class=`${className}__description`)= description

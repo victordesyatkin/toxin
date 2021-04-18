@@ -5,10 +5,9 @@ include ../card/card
 mixin calendar(props)
   if props
     -
-      let
-        { name, type, control, isDisabled, isReadOnly, card } = props;
-        className = 'calendar'; 
-        classNames = `${className} js-${className}`;
+      let { name, type, control, isDisabled, isReadOnly, card } = props;
+      let className = 'calendar'; 
+      let classNames = `${className} js-${className}`;
     +card(card) 
       article(class=classNames)
         div(class=`${className}__date-picker js-${className}__date-picker`)

@@ -1,27 +1,17 @@
 mixin rate-button(props)
   if props
     -
-      let
-          {
-              total = 0,
-              value = 0,
-              type="hidden",
-              name,
-              isDisabled,
-              ariaLabel,
-              srcImgRate,
-              altImgRate,
-              srcImgNoRate,
-              altImgNoRate,
-          } = props;
-          n = 1;
-      if (value > total) {
-          value = total
-      } else if (total < 0) {
-          total = 0;
-      }
+      let { total = 0, value = 0, type="hidden", name, isDisabled, ariaLabel,
+        srcImgRate, altImgRate, srcImgNoRate, altImgNoRate,
+      } = props;
+      let n = 1;
       let className = 'rate-button';
       let classNames = `${className} js-${className}`;
+      if (value > total) {
+        value = total
+      } else if (total < 0) {
+        total = 0;
+      }
       classNames += isDisabled ? ` ${className}_disabled` : '';
     ul(class=classNames)
       input(
@@ -34,10 +24,9 @@ mixin rate-button(props)
       )
       while n <= total
         -
-          let 
-              isChecked = n <= value ? 1 : 0; 
-              rateClassName = `${className}__rate`;  
-              rateClassNames = `${rateClassName} js-${rateClassName}`;
+          let isChecked = n <= value ? 1 : 0; 
+          let rateClassName = `${className}__rate`;  
+          let rateClassNames = `${rateClassName} js-${rateClassName}`;
           rateClassNames += isChecked ? ` ${rateClassName}_checked` : '';
         li(class=rateClassNames, data-rate=n, data-ischecked=isChecked)
           if srcImgRate

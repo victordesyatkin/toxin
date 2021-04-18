@@ -10,16 +10,14 @@ include ../../components/book/book
 include ../../components/sign-in/sign-in
 
 block header
-  -
-    let className = 'cards';
+  - let className = 'cards';
   div(class=`${className}__header`)
-    - let { logo } = htmlWebpackPlugin.options.getData();
+    - let { logo } = data;
     +header-ui-kit(logo)
 block main
   -
     let className = 'cards';
     let classNames = `${className} js-${className}`;
-    let data = htmlWebpackPlugin.options.getData() || {};
     let { picker, book, calendar, signUp, signIn, cardSlider1, cardSlider2 } = data;
   section(class=classNames)
     ul(class=`${className}__list ${className}__list-picker`)

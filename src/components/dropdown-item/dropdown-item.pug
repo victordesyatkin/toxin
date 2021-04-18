@@ -1,18 +1,19 @@
-mixin dropdown-item(props = {})
-  -
-    let { title, value, name, buttonDecreaseText, buttonIncreaseText } = props || {};
-    let className = 'dropdown-item';
-    let classNames = `${className} js-${className}`;
-    classNames += value === 0 ? ` ${className}_fade` : '';
-  div(class=classNames)
-    input(
-      name=name,
-      type="hidden",
-      value=value,
-      class=`${className}__input js-${className}__input`
-    )
-    div(class=`${className}__title`)= title
-    div(class=`${className}__control`)
-      button(type="button", data-type="decrease", class=`${className}__button`)= buttonDecreaseText
-      span(class=`${className}__value js-${className}__value`)= value
-      button(type="button", data-type="increase", class=`${className}__button`)= buttonIncreaseText
+mixin dropdown-item(props)
+  if props
+    -
+      let { title, value, name, buttonDecreaseText, buttonIncreaseText } = props || {};
+      let className = 'dropdown-item';
+      let classNames = `${className} js-${className}`;
+      classNames += value === 0 ? ` ${className}_fade` : '';
+    div(class=classNames)
+      input(
+        name=name,
+        type="hidden",
+        value=value,
+        class=`${className}__input js-${className}__input`
+      )
+      div(class=`${className}__title`)= title
+      div(class=`${className}__control`)
+        button(type="button", data-type="decrease", class=`${className}__button`)= buttonDecreaseText
+        span(class=`${className}__value js-${className}__value`)= value
+        button(type="button", data-type="increase", class=`${className}__button`)= buttonIncreaseText

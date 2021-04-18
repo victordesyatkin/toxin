@@ -1,13 +1,10 @@
-mixin logo-image(props = {})
-  -
-    let
-        { src, alt, type } = props
-        className = 'logo-image';
-        classNames = className;
-        types = {
-            monochromatic: 'monochromatic',
-            color: 'color',
-        }
-    classNames += types[type] ? ` ${className}_${types[type]}` : '';
-  if src
-    img(src=src, alt=alt, class=classNames)
+mixin logo-image(props)
+  if props
+    -
+      let { src, alt, type } = props
+      let className = 'logo-image';
+      let classNames = className;
+      let types = { monochromatic: 'monochromatic', color: 'color' };
+      classNames += types[type] ? ` ${className}_${types[type]}` : '';
+    if src
+      img(src=src, alt=alt, class=classNames)

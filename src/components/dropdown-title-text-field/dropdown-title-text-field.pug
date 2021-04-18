@@ -8,11 +8,7 @@ mixin dropdown-title-text-field(props)
       let { isOpened, theme, title } = dropdown;
       let { textField = {} } = maskedTextField;
       let { isDirect } = textField;
-      let themes = {
-          comfort: 'comfort',
-          guests: 'guests',
-          date: 'date'
-      }
+      let themes = { comfort: 'comfort', guests: 'guests', date: 'date' };
       let className = 'dropdown-title-text-field';
       let classNames = `${className} js-${className}`;
       classNames += isDirect ? ` ${className}_direct` : '';

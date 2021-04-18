@@ -11,19 +11,9 @@ include ../../components/pagination/pagination
 
 block main
   -
-    let {
-            action,
-            method='GET',
-            filterDateDropdown,
-            rangeSlider,
-            dropdown1,
-            dropdown2,
-            checkboxButtons,
-            richCheckboxButtons,
-            expandableCheckboxList,
-            filterTitle,
-            cardSliders = [],
-            pagination
+    let { action, method='GET', filterDateDropdown, rangeSlider, dropdown1,
+      dropdown2, checkboxButtons, richCheckboxButtons, expandableCheckboxList,
+      filterTitle, cardSliders = [], pagination
     } = data;
     let className = 'search-room-filter';
     let classNames = `${className} js-${className}`;

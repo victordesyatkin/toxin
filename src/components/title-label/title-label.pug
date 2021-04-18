@@ -1,21 +1,12 @@
 mixin title-label(props)
   if props
     -
-      let { content, state, isLabel, htmlFor, accesskey, size, theme } = props || {};
+      let { content, state, isLabel, htmlFor, accesskey, size, theme } = props;
       let className = 'title-label';
       let classNames = `${className} js-${className}`;
-      let sizes = {
-        h1: 'h1',
-        h2: 'h2'
-      };
-      let themes = {
-        rate: 'rate',
-        card: 'card',
-        dropdown: 'dropdown',
-        bullet: 'bullet',
-        description: 'description',
-        comments: 'comments',
-        info: 'info'
+      let sizes = { h1: 'h1', h2: 'h2' };
+      let themes = { rate: 'rate', card: 'card', dropdown: 'dropdown', bullet: 'bullet',
+        description: 'description', comments: 'comments', info: 'info'
       };
       classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';

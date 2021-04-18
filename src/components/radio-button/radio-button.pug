@@ -1,12 +1,11 @@
 mixin radio-button(props)
   if props
     -
-      let
-          { name, value, label, type = "radio", tabindex, isDisabled, isChecked, isHidden } = props;
-          id = `${name}-${Math.random().toString(16).substr(2)}`;
-          className = 'radio-button';
-          classNames = `${className} js-${className}`;
-          classNames += isHidden ? ` ${className}_hidden` : '';
+      let { name, value, label, type = "radio", tabindex, isDisabled, isChecked, isHidden } = props;
+      let id = `${name}-${Math.random().toString(16).substr(2)}`;
+      let className = 'radio-button';
+      let classNames = `${className} js-${className}`;
+      classNames += isHidden ? ` ${className}_hidden` : '';
     label(class=classNames, for=id)
       input(
         id=id,

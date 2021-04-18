@@ -9,7 +9,6 @@ include ../../components/slider/slider
 
 block main
   -
-    let data = htmlWebpackPlugin.options.getData() || {};
     let { info, rate, comments, bulletList, cancel, book, images = {}, slider } = data;
     let { image1, image2, image3 } = images;
     let { src: backgroundImage1 } = image1;

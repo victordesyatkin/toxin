@@ -8,9 +8,7 @@ mixin dropdown(props)
     -
       let { dropdown = {}, maskedTextField, items = [], control } = props;
       let { isOpened, theme, title, buttonDecreaseText, buttonIncreaseText } = dropdown;
-      let themes = {
-          comfort: 'comfort'
-      }
+      let themes = { comfort: 'comfort' };
       let className = 'dropdown';
       let classNames = `${className} js-${className}`;
       classNames += isOpened ? ` ${className}_opened` : '';

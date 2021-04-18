@@ -5,8 +5,7 @@ include ../../components/font-sample/font-sample
 
 block main
   -
-    let data = htmlWebpackPlugin.options.getData();
-    let { colors = [], fonts = [] } = data || {};
+    let { colors = [], fonts = [] } = data;
     let className = 'colors-and-type';
     let classNames = `${className} js-${className}`;
   section(class=classNames)

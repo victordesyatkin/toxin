@@ -3,40 +3,34 @@ include ../title-label/title-label
 mixin text-field(props)
   if props
     -
-      let
-        {
-          title, type = 'text', name, placeholder, button, value, theme, ariaLabel, summary='&nbsp;',
-          pattern, tabindex, isDisabled, isReadOnly, isAutoFocused, isOpened, isRequired, isHidden, isSummaryOnly, isToggle, isDirect
-        } = props || {};
-        themes = {
-          comfort: 'comfort',
-          guests: 'guests',
-          date: 'date',
-        };
-        if (type === 'password' && isToggle) {
-          button = {
-            type: "button", iconClassName: "eye", ...button,
-          }
-        }
-        className = 'text-field';
-        classNames = `${className} js-${className}`;
-        classNames += button ? ` ${className}_withButton` : ''; 
-        classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-        classNames += isOpened ? ` ${className}_opened` : '';
-        classNames += isHidden ? ` ${className}_hidden` : '';
-        classNames += isDirect ? ` ${className}_direct` : '';
-        type = isHidden ? 'hidden' : type;
-        id = `${name}-${Math.random().toString(16).substr(2)}`;
+      let { title, type = 'text', name, placeholder, button, value, theme, ariaLabel,
+        summary = '&nbsp;', pattern, tabindex, isDisabled, isReadOnly, isAutoFocused,
+        isOpened, isRequired, isHidden, isSummaryOnly, isToggle, isDirect
+      } = props;
+      let themes = { comfort: 'comfort', guests: 'guests', date: 'date' };
+      let className = 'text-field';
+      let classNames = `${className} js-${className}`;
+      let id = `${name}-${Math.random().toString(16).substr(2)}`;
+      if (type === 'password' && isToggle) {
+        button = { type: "button", iconClassName: "eye", ...button };
+      }
+      classNames += button ? ` ${className}_withButton` : ''; 
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
+      classNames += isOpened ? ` ${className}_opened` : '';
+      classNames += isHidden ? ` ${className}_hidden` : '';
+      classNames += isDirect ? ` ${className}_direct` : '';
+      type = isHidden ? 'hidden' : type;
     div(class=classNames)
       if title
         div(class=`${className}__label`)
           +title-label({ ...title, htmlFor: id })
       if button
         -
-          let { type: buttonType = "button", iconClassName: buttonIconClassName, name: buttonName, value: buttonValue } = button;
+          let { type: buttonType = "button", iconClassName: buttonIconClassName,
+            name: buttonName, value: buttonValue
+          } = button;
           let buttonClassName = `${className}__button`;
           let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
-
           switch (buttonIconClassName) {
             case 'arrow-forward': {
               buttonClassNames += ` ${buttonClassName}_forwarded`;
@@ -62,10 +56,7 @@ mixin text-field(props)
           value=buttonValue
         )
       if isSummaryOnly
-        p(
-          class=`${className}__summary js-${className}__summary`,
-          style="width: 100%; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap"
-        ) !{ summary }
+        p(class=`${className}__summary js-${className}__summary`) !{ summary }
       else if isHidden
         p(class=`${className}__summary js-${className}__summary`) !{ summary }
         input(
