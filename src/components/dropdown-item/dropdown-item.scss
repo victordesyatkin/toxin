@@ -41,7 +41,7 @@ $parent: 'dropdown-item';
     outline: none;
   }
 
-  &_fade {
+  &_faded {
     .#{$parent}__button:first-of-type {
       opacity: 0.5;
     }

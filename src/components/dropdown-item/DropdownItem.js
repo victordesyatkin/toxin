@@ -51,9 +51,9 @@ class DropdownItem extends Component {
 
   _toggleFade() {
     if (this.getValue()) {
-      this._$element.removeClass(`${this._className}_fade`);
+      this._$element.removeClass(`${this._className}_faded`);
     } else {
-      this._$element.addClass(`${this._className}_fade`);
+      this._$element.addClass(`${this._className}_faded`);
     }
   }
 
