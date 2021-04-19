@@ -17,6 +17,8 @@ nth.dir = {
 
 module.exports = (env, argv = {}) => {
   const { mode = 'development' } = argv;
+  const isProduction = mode === 'production';
+  const isDevelopment = mode === 'development';
   const pages = [];
   fs.readdirSync(nth.dir.pages).forEach((file) => {
     pages.push(file);
@@ -42,11 +44,23 @@ module.exports = (env, argv = {}) => {
         viewport: 'initial-scale=1.0, width=device-width',
         'msapplication-TileColor': '#da532c',
       },
+      minify: isProduction ? {
+        html5: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+        minifyURLs: false,
+        removeAttributeQuotes: false,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeOptionalTags: true,
+        removeRedundantAttributes: false,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributese: true,
+        useShortDoctype: true,
+      }: false,
     });
   });
-
-  const isProduction = mode === 'production';
-  const isDevelopment = mode === 'development';
   const getStyleLoaders = () => {
     return [
       isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
