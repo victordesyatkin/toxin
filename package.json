@@ -5,7 +5,7 @@
   "main": "script.js",
   "dependencies": {
     "air-datepicker": "^2.2.3",
-    "air-range-slider": "^1.0.11",
+    "air-range-slider": "^1.0.12",
     "bind-decorator": "^1.0.11",
     "classnames": "^2.2.6",
     "imask": "^6.0.5",
