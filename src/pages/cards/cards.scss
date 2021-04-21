@@ -32,16 +32,14 @@ $parent: '.cards';
     background-color: $color-grey;
   }
 
+  &__list-picker,
+  &__list-book,
+  &__list-calendar,
   &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
-    margin-bottom: 2.7rem;
-    width: 100%;
-  }
-
-  &__component {
     margin-bottom: 2.7rem;
     width: 100%;
   }
@@ -80,5 +78,17 @@ $parent: '.cards';
 
   &__sliders {
     max-width: 19.28rem;
+  }
+
+  &__picker,
+  &__sign-up,
+  &__book,
+  &__sign-in,
+  &__calendar,
+  &__sliders,
+  &__card-slider-first,
+  &__card-slider-second {
+    margin-bottom: 2.7rem;
+    width: 100%;
   }
 }

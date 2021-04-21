@@ -18,6 +18,10 @@ $parent: 'form-elements';
     padding: 4.64rem 8.9rem 10.07rem 10.07rem;
   }
 
+  &__text-fields,
+  &__dropdowns,
+  &__lists,
+  &__comments,
   &__section {
     display: flex;
     margin-bottom: 2rem;
@@ -187,6 +191,17 @@ $parent: 'form-elements';
     }
   }
 
+  &__list-text-field,
+  &__list-checkbox-buttons,
+  &__list-range-sliders,
+  &__list-dropdowns-first,
+  &__list-dropdowns-second,
+  &__list-dropdowns-third,
+  &__list-expandable-checkbox-list,
+  &__list-rich-checkbox-buttons,
+  &__list-bullet-list,
+  &__list-info,
+  &__list-comment,
   &__list {
     list-style-type: none;
     margin: 0 0 2rem;
@@ -194,6 +209,32 @@ $parent: 'form-elements';
     width: 100%;
   }
 
+  &__text-field-default,
+  &__text-field-hover-focus,
+  &__dropdown-first,
+  &__masked-text-field,
+  &__date-dropdown,
+  &__filter-date-dropdown,
+  &__subscription-text-field,
+  &__checkbox-buttons,
+  &__radio-buttons,
+  &__toggle-buttons,
+  &__like-buttons,
+  &__rate-buttons,
+  &__range-slider,
+  &__buttons,
+  &__button,
+  &__pagination,
+  &__dropdown-second,
+  &__dropdown-third,
+  &__dropdown-fourth,
+  &__dropdown-fifth,
+  &__expandable-checkbox-list-first,
+  &__expandable-checkbox-list-second,
+  &__rich-checkbox-buttons,
+  &__bullet-list,
+  &__info,
+  &__comment,
   &__component {
     width: 100%;
   }

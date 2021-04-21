@@ -32,112 +32,82 @@ block main
     } = data;
     let className = 'form-elements';
   section(class=`${className} js-${className}`)
-    section(class=`${className}__text-fields ${className}__section`)
-      ul(class=`${className}__list-text-field ${className}__list`)
+    section(class=`${className}__text-fields`)
+      ul(class=`${className}__list-text-field`)
         li(
-          class=`${className}__text-field-default js-${className}__text-field-default ${className}__component`
+          class=`${className}__text-field-default js-${className}__text-field-default`
         )
           +masked-text-field(textField1)
         li(
-          class=`${className}__text-field-hover-focus js-${className}__text-field-hover-focus ${className}__component`
+          class=`${className}__text-field-hover-focus js-${className}__text-field-hover-focus`
         )
           +text-field(textField2)
-        li(
-          class=`${className}__dropdown-first js-${className}__dropdown-first ${className}__component`
-        )
+        li(class=`${className}__dropdown-first js-${className}__dropdown-first`)
           +dropdown(dropdown1)
-        li(
-          class=`${className}__masked-text-field js-${className}__masked-text-field ${className}__component`
-        )
+        li(class=`${className}__masked-text-field js-${className}__masked-text-field`)
           +masked-text-field(maskedTextField)
-        li(
-          class=`${className}__date-dropdown js-${className}__date-dropdown ${className}__component`
-        )
+        li(class=`${className}__date-dropdown js-${className}__date-dropdown`)
           +date-dropdown(dateDropdown)
         li(
-          class=`${className}__filter-date-dropdown js-${className}__filter-date-dropdown ${className}__component`
+          class=`${className}__filter-date-dropdown js-${className}__filter-date-dropdown`
         )
           +filter-date-dropdown(filterDateDropdown)
         li(
-          class=`${className}__subscription-text-field js-${className}__subscription-text-field ${className}__component`
+          class=`${className}__subscription-text-field js-${className}__subscription-text-field`
         )
           +subscription-text-field(subscriptionTextField)
-      ul(class=`${className}__list-checkbox-buttons ${className}__list`)
-        li(
-          class=`${className}__checkbox-buttons js-${className}__checkbox-buttons ${className}__component`
-        )
+      ul(class=`${className}__list-checkbox-buttons`)
+        li(class=`${className}__checkbox-buttons js-${className}__checkbox-buttons`)
           +checkbox-buttons(checkboxButtons)
-        li(class=`${className}__radio-buttons ${className}__component`)
+        li(class=`${className}__radio-buttons`)
           +radio-buttons(radioButtons)
-        li(class=`${className}__toggle-buttons ${className}__component`)
+        li(class=`${className}__toggle-buttons`)
           +toggle-buttons(toggleButtons)
-        li(
-          class=`${className}__like-buttons js-${className}__like-buttons ${className}__component`
-        )
+        li(class=`${className}__like-buttons js-${className}__like-buttons`)
           +like-buttons(likeButtons)
-        li(
-          class=`${className}__rate-buttons js-${className}__rate-buttons ${className}__component`
-        )
+        li(class=`${className}__rate-buttons js-${className}__rate-buttons`)
           +rate-buttons(rateButtons)
-      ul(class=`${className}__list-range-sliders ${className}__list`)
-        li(
-          class=`${className}__range-slider js-${className}__range-slider ${className}__component`
-        )
+      ul(class=`${className}__list-range-sliders`)
+        li(class=`${className}__range-slider js-${className}__range-slider`)
           +range-slider(rangeSlider)
-        li(
-          class=`${className}__buttons js-${className}__buttons ${className}__component`
-        )
+        li(class=`${className}__buttons js-${className}__buttons`)
           +buttons(buttons)
-        li(
-          class=`${className}__button js-${className}__button ${className}__component`
-        )
+        li(class=`${className}__button js-${className}__button`)
           +button(button)
-        li(
-          class=`${className}__pagination js-${className}__pagination ${className}__component`
-        )
+        li(class=`${className}__pagination js-${className}__pagination`)
           +pagination(pagination)
-    section(class=`${className}__dropdowns ${className}__section`)
-      ul(class=`${className}__list-dropdowns-first ${className}__list`)
-        li(
-          class=`${className}__dropdown-second js-${className}__dropdown-second ${className}__component`
-        )
+    section(class=`${className}__dropdowns`)
+      ul(class=`${className}__list-dropdowns-first`)
+        li(class=`${className}__dropdown-second js-${className}__dropdown-second`)
           +dropdown(dropdown2)
-        li(
-          class=`${className}__dropdown-third js-${className}__dropdown-third ${className}__component`
-        )
+        li(class=`${className}__dropdown-third js-${className}__dropdown-third`)
           +dropdown(dropdown3)
-      ul(class=`${className}__list-dropdowns-second ${className}__list`)
-        li(
-          class=`${className}__dropdown-fourth js-${className}__dropdown-fourth ${className}__component`
-        )
+      ul(class=`${className}__list-dropdowns-second`)
+        li(class=`${className}__dropdown-fourth js-${className}__dropdown-fourth`)
           +dropdown(dropdown4)
-      ul(class=`${className}__list-dropdowns-third ${className}__list`)
-        li(
-          class=`${className}__dropdown-fifth js-${className}__dropdown-fifth ${className}__component`
-        )
+      ul(class=`${className}__list-dropdowns-third`)
+        li(class=`${className}__dropdown-fifth js-${className}__dropdown-fifth`)
           +dropdown(dropdown5) 
-    section(class=`${className}__lists ${className}__section`)
-      ul(class=`${className}__list-expandable-checkbox-list ${className}__list`)
+    section(class=`${className}__lists`)
+      ul(class=`${className}__list-expandable-checkbox-list`)
         li(
-          class=`${className}__expandable-checkbox-list-first js-${className}__expandable-checkbox-list-first ${className}__component`
+          class=`${className}__expandable-checkbox-list-first js-${className}__expandable-checkbox-list-first`
         )
           +expandable-checkbox-list(expandableCheckboxList1)
         li(
-          class=`${className}__expandable-checkbox-list-second js-${className}__expandable-checkbox-list-second ${className}__component`
+          class=`${className}__expandable-checkbox-list-second js-${className}__expandable-checkbox-list-second`
         )
           +expandable-checkbox-list(expandableCheckboxList2)
-      ul(class=`${className}__list-rich-checkbox-buttons ${className}__list`)
-        li(class=`${className}__rich-checkbox-buttons ${className}__component`)
+      ul(class=`${className}__list-rich-checkbox-buttons`)
+        li(class=`${className}__rich-checkbox-buttons`)
           +rich-checkbox-buttons(richCheckboxButtons)
-      ul(class=`${className}__list-bullet-list ${className}__list`)
-        li(class=`${className}__bullet-list ${className}__component`) 
+      ul(class=`${className}__list-bullet-list`)
+        li(class=`${className}__bullet-list`) 
           +bullet-list(bulletList)
-    section(class=`${className}__comments ${className}__section`)
-      ul(class=`${className}__list-info ${className}__list`)
-        li(class=`${className}__info ${className}__component`) 
+    section(class=`${className}__comments`)
+      ul(class=`${className}__list-info`)
+        li(class=`${className}__info`) 
           +info(info)
-      ul(class=`${className}__list-comment ${className}__list`)
-        li(
-          class=`${className}__comment js-${className}__comment ${className}__component`
-        )
+      ul(class=`${className}__list-comment`)
+        li(class=`${className}__comment js-${className}__comment`)
           +comment(comment)

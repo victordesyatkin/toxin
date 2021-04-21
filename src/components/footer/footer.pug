@@ -30,7 +30,5 @@ mixin footer(props)
               class=`${className}__subscribe-text-field js-${className}__subscribe-text-field`
             )
               +subscription-text-field(subscriptionTextField)
-      div(
-        class=`${className}__copyright-section js-class=${className}__copyright-section`
-      )
+      div(class=`${className}__copyright-section js-${className}__copyright-section`)
         +copyright(copyright)

@@ -16,19 +16,15 @@ block main
     let { headerNotAuthorized, headerAuthorized, footer1, footer2, copyright } = data;
   section(class=classNames)
     section(
-      class=`${className}__header-not-authorized js-${className}__header-not-authorized ${className}__section`
+      class=`${className}__header-not-authorized js-${className}__header-not-authorized`
     )
       +header(headerNotAuthorized)
     section(
-      class=`${className}__header-authorized js-${className}__header-authorized ${className}__section`
+      class=`${className}__header-authorized js-${className}__header-authorized`
     )
       +header(headerAuthorized)
-    section(
-      class=`${className}__footer-first js-${className}__footer-first ${className}__section`
-    )
+    section(class=`${className}__footer-first js-${className}__footer-first`)
       +footer(footer1)
-    section(
-      class=`${className}__footer-second js-${className}__footer-second ${className}__section ${className}__copyright`
-    )
+    section(class=`${className}__footer-second js-${className}__footer-second`)
       +footer(footer2)
 block footer

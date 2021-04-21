@@ -20,34 +20,26 @@ block main
     let classNames = `${className} js-${className}`;
     let { picker, book, calendar, signUp, signIn, cardSlider1, cardSlider2 } = data;
   section(class=classNames)
-    ul(class=`${className}__list ${className}__list-picker`)
-      li(class=`${className}__picker js-${className}__picker ${className}__component`)
+    ul(class=`${className}__list-picker`)
+      li(class=`${className}__picker js-${className}__picker`)
         +picker(picker)
-      li(
-        class=`${className}__sign-up js-${className}__sign-up ${className}__component`
-      )
+      li(class=`${className}__sign-up js-${className}__sign-up`)
         +sign-up(signUp)
-    ul(class=`${className}__list ${className}__list-book`)
-      li(class=`${className}__book js-${className}__book ${className}__component`)
+    ul(class=`${className}__list-book`)
+      li(class=`${className}__book js-${className}__book`)
         +book(book)
-      li(
-        class=`${className}__sign-in js-${className}__sign-in ${className}__component`
-      )
+      li(class=`${className}__sign-in js-${className}__sign-in`)
         +sign-in(signIn)
-    ul(class=`${className}__list ${className}__list-calendar`)
-      li(
-        class=`${className}__calendar js-${className}__calendar ${className}__component`
-      )
+    ul(class=`${className}__list-calendar`)
+      li(class=`${className}__calendar js-${className}__calendar`)
         +calendar(calendar)
-      li(
-        class=`${className}__sliders js-${className}__sliders ${className}__component`
-      )
+      li(class=`${className}__sliders js-${className}__sliders`)
         ul(class=`${className}__list`)
           li(
-            class=`${className}__card-slider-first js-${className}__card-slider-first ${className}__card-slider ${className}__component`
+            class=`${className}__card-slider-first js-${className}__card-slider-first`
           )
             +card-slider(cardSlider1)
           li(
-            class=`${className}__card-slider-second js-${className}__card-slider-second ${className}__card-slider ${className}__component`
+            class=`${className}__card-slider-second js-${className}__card-slider-second`
           )
             +card-slider(cardSlider2)
