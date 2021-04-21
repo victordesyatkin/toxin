@@ -1,7 +1,7 @@
-import { makeComponentLoad } from '../../helpers/utils';
+import { makeComponentLoadHandler } from '../../helpers';
 import LandingPage from './LandingPage';
 import data from './data.json';
 
-$(window).on('load', { props: data }, makeComponentLoad(LandingPage));
+$(window).on('load', { props: data }, makeComponentLoadHandler(LandingPage));
 
 export default LandingPage;

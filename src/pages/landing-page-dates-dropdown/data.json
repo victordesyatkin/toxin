@@ -1,4 +1,5 @@
 {
+  "container": { "basis": 1440, "align": "center" },
   "slug": "landing-page-dates-dropdown",
   "title": "Landing page/Dates Dropdown",
   "meta": [

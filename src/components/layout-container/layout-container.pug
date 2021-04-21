@@ -1,0 +1,14 @@
+mixin layout-container(props = {})
+  -
+    let { display, basis, grow, shrink, wrap, direction, align } = props || {};
+    let className = 'layout-container';
+    let classNames = `${className}`;
+    classNames += display ? ` ${className}_display` : '';
+    classNames += basis ? ` ${className}_basis-${basis}` : '';
+    classNames += grow ? ` ${className}_grow-${grow}` : '';
+    classNames += shrink ? ` ${className}_shrink-${shrink}` : '';
+    classNames += wrap ? ` ${className}_${wrap}` : '';
+    classNames += direction ? ` ${className}_${direction}` : '';
+    classNames += align ? ` ${className}_${align}` : '';
+  div(class=classNames)
+    block

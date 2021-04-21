@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { wordForm, Component } from '../../helpers/utils';
+import { wordForm, Component } from '../../helpers';
 import DropdownTitleTextField from '../dropdown-title-text-field';
 
 class DropDownSummary extends Component {

@@ -1,5 +1,5 @@
-import { makeComponentLoad } from '../../helpers/utils';
+import { makeComponentLoadHandler } from '../../helpers';
 import RoomDetails from './RoomDetails';
 import data from './data.json';
 
-$(window).on('load', { props: data }, makeComponentLoad(RoomDetails));
+$(window).on('load', { props: data }, makeComponentLoadHandler(RoomDetails));

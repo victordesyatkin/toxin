@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import Book from '../../components/book';
 import Comments from '../../components/comments';
 import Rate from '../../components/rate';

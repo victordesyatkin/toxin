@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import SubscriptionTextField from '../subscription-text-field';
 
 class Footer extends Component {

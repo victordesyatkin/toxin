@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component, isUndefined } from '../../helpers/utils';
+import { Component, isUndefined } from '../../helpers';
 
 class DropdownItem extends Component {
   static TYPE_DECREASE = 'decrease';

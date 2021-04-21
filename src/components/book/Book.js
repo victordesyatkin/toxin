@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { wordForm, Component } from '../../helpers/utils';
+import { wordForm, Component } from '../../helpers';
 import Dropdown from '../dropdown';
 import DateDropdown from '../date-dropdown';
 

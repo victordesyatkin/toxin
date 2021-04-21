@@ -1,6 +1,6 @@
 import 'air-range-slider';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 
 class AirRangeSlider extends Component {
   _query = '.js-air-range-slider';

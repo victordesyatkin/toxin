@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import MaskedTextField from '../masked-text-field';
 import TextField from '../text-field';
 

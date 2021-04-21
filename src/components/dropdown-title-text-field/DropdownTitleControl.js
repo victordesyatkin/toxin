@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import MaskedTextField from '../masked-text-field';
 
 class DropdownTitleControl extends Component {

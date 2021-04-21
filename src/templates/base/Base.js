@@ -1,6 +1,6 @@
 import 'normalize.css';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 

@@ -1,32 +1,3 @@
 mixin layout
   .layout
     block
-
-mixin layout__header
-  header.layout__header
-    block
-
-mixin layout__main
-  main.layout__main
-    block
-
-mixin layout__footer
-  footer.layout__footer
-    block
-
-mixin layout__container(options)
-  if !options
-    - options = {};
-  -
-    let classes = ''
-    classes += options.display ? ' layout__container_' + options.display : '';
-    classes += options.basis ? ' layout__container_basis-' + options.basis : '';
-    classes += options.grow ? ' layout__container_grow-' + options.grow : '';
-    classes += options.shrink ? ' layout__container_shrink-' + options.shrink : '';
-    classes += options.wrap ? ' layout__container_' + options.wrap : '';
-    classes += options.direction ? ' layout__container_' + options.direction : '';
-    classes += options.align ? ' layout__container_' + options.align : '';
-    classes += options.mix ? ' ' + options.mix : '';
-    classes += options.theme ? ' ' + 'layout__container_' + options.theme : '';
-  .layout__container(class=classes)
-    block

@@ -1,7 +1,7 @@
 import bind from 'bind-decorator';
 import orderBy from 'lodash.orderby';
 
-import { Component, wordForm } from '../../helpers/utils';
+import { Component, wordForm } from '../../helpers';
 
 class Rate extends Component {
   _query = '.js-rate';

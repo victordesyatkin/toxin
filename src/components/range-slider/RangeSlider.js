@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import AirRangeSlider from '../air-range-slider';
 
 class RangeSlider extends Component {

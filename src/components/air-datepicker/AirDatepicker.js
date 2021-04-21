@@ -1,7 +1,7 @@
 import 'air-datepicker';
 import bind from 'bind-decorator';
 
-import { Component, value2Date } from '../../helpers/utils';
+import { Component, value2Date } from '../../helpers';
 
 class AirDatepicker extends Component {
   static SELECTED_TYPE_START = 'start';

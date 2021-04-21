@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 
 class CardHeader extends Component {
   _query = '.js-card-header';

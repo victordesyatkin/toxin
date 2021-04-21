@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import SignIn from '../../components/sign-in';
 import Base from '../../templates/base';
 

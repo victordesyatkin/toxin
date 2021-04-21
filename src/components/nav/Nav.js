@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import NavItem from '../nav-item';
 
 class Nav extends Component {

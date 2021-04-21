@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component, isValidDate } from '../../helpers/utils';
+import { Component, isValidDate } from '../../helpers';
 import Calendar from '../calendar';
 import DropdownTitleControl from '../dropdown-title-text-field';
 

@@ -1,5 +1,5 @@
-import { makeComponentLoad } from '../../helpers/utils';
+import { makeComponentLoadHandler } from '../../helpers';
 import Registration from './Registration';
 import data from './data.json';
 
-$(window).on('load', { props: data }, makeComponentLoad(Registration));
+$(window).on('load', { props: data }, makeComponentLoadHandler(Registration));

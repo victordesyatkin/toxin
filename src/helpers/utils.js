@@ -111,7 +111,7 @@ function isConstructor(Component) {
   return !!Component.prototype && !!Component.prototype.constructor.name;
 }
 
-function makeComponentLoad(Component) {
+function makeComponentLoadHandler(Component) {
   return function handleComponentLoad(event) {
     let component;
     if (Component && isConstructor(Component)) {
@@ -207,7 +207,7 @@ export {
   isString,
   isUndefined,
   checkSlug,
-  makeComponentLoad,
+  makeComponentLoadHandler,
   value2Date,
   prepareDate,
   isValidDateByParts,

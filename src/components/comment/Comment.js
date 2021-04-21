@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import LikeButton from '../like-button';
 
 class Comment extends Component {

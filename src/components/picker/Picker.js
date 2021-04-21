@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import DateDropdown from '../date-dropdown';
 import Dropdown from '../dropdown';
 

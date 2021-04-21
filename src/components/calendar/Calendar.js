@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import Control from '../control';
 import AirDatepicker from '../air-datepicker';
 

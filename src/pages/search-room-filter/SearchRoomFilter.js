@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import FilterDateDropdown from '../../components/filter-date-dropdown';
 import Dropdown from '../../components/dropdown';
 import CardSlider from '../../components/card-slider';

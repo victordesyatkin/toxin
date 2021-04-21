@@ -1,4 +1,5 @@
 {
+  "container": { "basis": 1440, "align": "center" },
   "slug": "cards",
   "meta": [
     {
@@ -392,7 +393,7 @@
         "placeholder": "ДД.ММ.ГГГГ"
       },
       "options": {
-        "type": "date"
+        "type": "default"
       }
     },
     "email": {

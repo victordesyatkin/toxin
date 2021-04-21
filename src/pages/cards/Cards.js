@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import Picker from '../../components/picker';
 import SignUp from '../../components/sign-up';
 import SignIn from '../../components/sign-in';

@@ -1,0 +1,80 @@
+$parent: 'layout-container';
+
+.#{$parent} {
+  align-content: flex-start;
+  display: flex;
+  flex: 1 1 100%;
+  min-width: 0;
+
+  @for $i from 1 to 80 {
+    $basis: $i * 80;
+
+    &_basis-#{$basis}.#{$parent} {
+      flex-basis: #{$basis}px;
+    }
+  }
+
+  @for $grow from 0 to 10 {
+    &_grow-#{$grow} {
+      flex-grow: $grow;
+    }
+  }
+
+  @for $shrink from 0 to 10 {
+    &_shrink-#{$shrink} {
+      flex-shrink: $shrink;
+    }
+  }
+
+  &_block {
+    display: block;
+  }
+
+  &_left {
+    flex-grow: 0;
+    margin-right: auto;
+  }
+
+  &_right {
+    flex-grow: 0;
+    margin-left: auto;
+  }
+
+  &_center {
+    flex-grow: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &_column {
+    flex-direction: column;
+
+    & > .#{$parent} {
+      flex-basis: auto;
+    }
+  }
+
+  &_column-reverse {
+    flex-direction: column-reverse;
+
+    & > .#{$parent} {
+      flex-basis: auto;
+    }
+  }
+
+  &_row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &_wrap {
+    flex-wrap: wrap;
+  }
+
+  &_wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  &_basis-auto.#{$parent} {
+    flex-basis: auto;
+  }
+}

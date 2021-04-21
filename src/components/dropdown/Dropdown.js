@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import DropDownSummary from '../dropdown-summary';
 import DropdownItem from '../dropdown-item';
 import Control from '../control';

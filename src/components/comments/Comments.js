@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { wordForm, Component } from '../../helpers/utils';
+import { wordForm, Component } from '../../helpers';
 import Comment from '../comment';
 
 class Comments extends Component {

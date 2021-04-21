@@ -1,7 +1,7 @@
 import isEmpty from 'lodash.isempty';
 import IMask from 'imask';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import TextField from '../text-field';
 
 class MaskedTextField extends Component {

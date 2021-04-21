@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 
 class Slider extends Component {
   static TYPE_BUTTON_LEFT = 'left';

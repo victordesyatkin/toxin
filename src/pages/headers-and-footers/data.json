@@ -1,4 +1,5 @@
 {
+  "container": { "basis": 1440, "align": "center" },
   "slug": "headers-and-footers",
   "meta": [
     {

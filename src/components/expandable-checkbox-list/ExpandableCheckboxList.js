@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import Expandable from '../expandable';
 
 class ExpandableCheckboxList extends Component {

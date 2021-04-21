@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import TextField from '../../components/text-field';
 import Dropdown from '../../components/dropdown';
 import MaskedTextField from '../../components/masked-text-field';

@@ -1,4 +1,4 @@
-import { Component } from '../../helpers/utils';
+import { Component } from '../../helpers';
 import Slider from '../slider';
 import CardHeader from '../card-header';
 import RateButton from '../rate-button';

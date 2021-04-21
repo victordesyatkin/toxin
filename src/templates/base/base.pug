@@ -1,5 +1,9 @@
 block variables
 include ../../components/layout/layout
+include ../../components/layout-header/layout-header
+include ../../components/layout-main/layout-main
+include ../../components/layout-footer/layout-footer
+include ../../components/layout-container/layout-container
 include ../../components/header/header
 include ../../components/footer/footer
 
@@ -22,18 +26,19 @@ html(lang="en")
       block title
         - let { title } = data;
         | #{title}
-  - let { slug = '' } = data;
+  - let { slug = '', container } = data;
   body(data-slug=slug)
     +layout
-      +layout__header
-        block header
-          - let { headerNotAuthorized } = data;
-          +header(headerNotAuthorized)
-      +layout__main
-        +layout__container({basis: 1440, align: 'center'})
+      +layout-header
+        +layout-container(container)
+          block header
+            - let { headerNotAuthorized } = data;
+            +header(headerNotAuthorized)
+      +layout-main
+        +layout-container(container)
           block main
-      +layout__footer
-        +layout__container({basis: 1440, align: 'center'})
+      +layout-footer
+        +layout-container(container)
           block footer
             - let { footer } = data;
             +footer(footer)
