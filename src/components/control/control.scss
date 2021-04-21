@@ -6,12 +6,16 @@ $parent: 'control';
   list-style-type: none;
 
   &_hidden {
-    .#{$parent}__button:first-child {
-      display: none;
+    .#{$parent}__button {
+      &:first-child {
+        display: none;
+      }
     }
   }
 
-  &__button:last-child {
-    margin-left: auto;
+  &__button {
+    &:last-child {
+      margin-left: auto;
+    }
   }
 }

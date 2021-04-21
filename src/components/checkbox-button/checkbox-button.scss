@@ -19,11 +19,6 @@ $parent: 'checkbox-button';
     }
   }
 
-  &__label {
-    color: $dark-shade-opacity-50;
-    line-height: 1.29rem;
-  }
-
   &_theme_bold {
     .#{$parent}__label {
       @include h3;
@@ -35,12 +30,33 @@ $parent: 'checkbox-button';
     }
   }
 
+  &__label {
+    color: $dark-shade-opacity-50;
+    line-height: 1.29rem;
+  }
+
   &__input {
     cursor: none;
     height: 0;
     opacity: 0;
     position: absolute;
     width: 0;
+
+    &:checked {
+      & ~ .#{$parent}__check-mark {
+        border: 1px solid $color-primary;
+
+        .#{$parent}__mark {
+          height: 0.71rem;
+          opacity: 1;
+          width: 0.71rem;
+        }
+      }
+
+      & ~ .#{$parent}__label {
+        color: $dark-shade-opacity-75;
+      }
+    }
   }
 
   &__check-mark {
@@ -60,19 +76,5 @@ $parent: 'checkbox-button';
       opacity: 0;
       width: 0.71rem;
     }
-  }
-
-  .#{$parent}__input:checked ~ &__check-mark {
-    border: 1px solid $color-primary;
-
-    .#{$parent}__mark {
-      height: 0.71rem;
-      opacity: 1;
-      width: 0.71rem;
-    }
-  }
-
-  .#{$parent}__input:checked ~ &__label {
-    color: $dark-shade-opacity-75;
   }
 }

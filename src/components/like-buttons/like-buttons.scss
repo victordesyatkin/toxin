@@ -15,7 +15,9 @@ $parent: 'like-buttons';
     list-style-type: none;
   }
 
-  &__item:not(:first-child) {
-    margin-left: 0.71rem;
+  &__item {
+    &:not(:first-child) {
+      margin-left: 0.71rem;
+    }
   }
 }

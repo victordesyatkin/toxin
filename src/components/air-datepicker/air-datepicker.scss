@@ -1,193 +1,217 @@
 @import '~air-datepicker/dist/css/datepicker.min.css';
 
 $parent: 'air-datepicker';
+$prefixcls: 'datepicker';
 
 .#{$parent} {
   display: none;
 }
 
-.datepicker-inline .datepicker {
-  border: initial;
-  width: 100%;
-
-  &,
-  .-in-range- {
-    @include h3-lite;
-
-    color: $dark-shade-opacity-50;
-  }
-
-  .datepicker--nav {
+.#{$prefixcls}-inline {
+  .#{$prefixcls} {
     border: initial;
-    padding: 1.4rem 1.14rem 2.3rem 1.07rem;
-  }
+    width: 100%;
 
-  /* stylelint-disable selector-max-compound-selectors */
-  .datepicker--nav-action {
-    span {
+    &,
+    .-in-range- {
+      @include h3-lite;
+
+      color: $dark-shade-opacity-50;
+    }
+
+    &--nav {
+      border: initial;
+      padding: 1.4rem 1.14rem 2.3rem 1.07rem;
+    }
+
+    /* stylelint-disable selector-max-compound-selectors */
+    &--nav-action {
+      span {
+        color: $color-primary;
+        font-size: 1.28rem;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: none;
+      }
+    }
+
+    &--cell {
+      min-height: 2.85rem;
+      position: relative;
+
+      &.#{$prefixcls}--cell-year {
+        &.-other-decade- {
+          &.-range-from- {
+            &.-range-to- {
+              &.-selected- {
+                background: none;
+              }
+            }
+          }
+        }
+      }
+
+      &.-focus- {
+        &.-disabled- {
+          @include h3;
+
+          color: $color-white;
+
+          &::after {
+            background: $dark-shade-opacity-25;
+          }
+        }
+      }
+
+      &.-current- {
+        &.-focus-,
+        &.-in-range- {
+          @include h3;
+
+          color: $color-white;
+        }
+      }
+    }
+
+    &--nav-title {
+      @include h2;
+
+      left: 50%;
+      padding: initial;
+      text-align: center;
+      text-transform: capitalize;
+
+      &:hover,
+      &:focus {
+        background: none;
+      }
+    }
+
+    &--days-names {
+      margin: 0;
+      margin-top: -0.07rem;
+    }
+
+    &--content {
+      padding: 0 1.42rem;
+    }
+
+    &--day-name {
+      @include h3;
+
       color: $color-primary;
-      font-size: 1.28rem;
-    }
-  }
-
-  .datepicker--cell.datepicker--cell-year.-other-decade-.-range-from-.-range-to-.-selected- {
-    background: none;
-  }
-
-  .datepicker--nav-action:hover,
-  .datepicker--nav-action:active,
-  .datepicker--nav-action:focus {
-    background: none;
-  }
-
-  .datepicker--nav-title {
-    @include h2;
-
-    left: 50%;
-    padding: initial;
-    text-align: center;
-    text-transform: capitalize;
-  }
-
-  .datepicker--nav-title:hover,
-  .datepicker--nav-title:focus {
-    background: none;
-  }
-
-  .datepicker--days-names {
-    margin: 0;
-    margin-top: -0.07rem;
-  }
-
-  .datepicker--content {
-    padding: 0 1.42rem;
-  }
-
-  .datepicker--day-name,
-  .datepicker--cell {
-    min-height: 2.85rem;
-  }
-
-  .datepicker--day-name {
-    @include h3;
-
-    color: $color-primary;
-    text-transform: initial;
-  }
-
-  .datepicker--cell {
-    position: relative;
-  }
-
-  .datepicker--cell.-focus-.-disabled-,
-  .datepicker--cell.-current-.-focus-,
-  .datepicker--cell.-current-.-in-range-,
-  .-current-,
-  .-selected-,
-  .-range-from-,
-  .-range-to-,
-  .-focus-,
-  .-other-month-.-focus-,
-  .-other-month-.-selected- {
-    @include h3;
-
-    color: $color-white;
-  }
-
-  .-current-,
-  .-selected-,
-  .-range-from-,
-  .-range-to-,
-  .-focus- {
-    background: initial;
-  }
-
-  .datepicker--cell.-focus-.-disabled-::after {
-    background: $dark-shade-opacity-25;
-  }
-
-  .-range-from-.-focus-::after,
-  .-range-to-.-focus-::after,
-  .-focus-::after,
-  .-range-from-::after,
-  .-range-to-::after,
-  .-selected-::after,
-  .-current-::after {
-    background: $gradient-secondary;
-    border-radius: 100%;
-    content: '';
-    height: 2.85rem;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 2.84rem;
-    z-index: -1;
-  }
-
-  .-range-from-.-focus-::after,
-  .-range-to-.-focus-::after,
-  .-focus-::after,
-  .-selected-::after,
-  .-range-from-::after,
-  .-range-to-::after {
-    background: $gradient-primary;
-  }
-
-  .-range-from-,
-  .-range-to-,
-  .datepicker--cell.-focus-,
-  .datepicker--cell.-selected-.-range-to-
-  .datepicker--cell.-selected-.-range-from-,
-  .-other-month-.datepicker--cell.-selected-.-range-to-,
-  .-other-month-.datepicker--cell.-selected-.-range-from-,
-  .-other-month-.-focus-,
-  .-other-month-.-selected-,
-  .-selected-.-range-to-.-current-,
-  .-selected-.-range-from-.-current-,
-  .-current- {
-    background: none;
-    border: initial;
-  }
-
-  .-other-month-.-focus-.-in-range-,
-  .-other-month-.-selected-.-in-range-,
-  .datepicker--cell.-in-range- {
-    @include background-calendar-period;
-  }
-
-  .datepicker--cell-day.-range-to-::before,
-  .datepicker--cell-day.-range-from-::before {
-    @include background-calendar-period;
-
-    content: '';
-    height: 100%;
-    position: absolute;
-    width: 50%;
-    z-index: -2;
-  }
-
-  .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before,
-  .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-range-::before {
-    display: none;
-  }
-
-  .datepicker--cell-day.-range-from-::before {
-    right: 0;
-  }
-
-  .datepicker--cell-day.-range-to-::before {
-    left: 0;
-  }
-
-  .datepicker--cells-days:hover {
-    .datepicker--cell-day.-range-from-.-hide-in-broken-range-::before {
-      display: initial;
+      min-height: 2.85rem;
+      text-transform: initial;
     }
 
-    .datepicker--cell-day.-range-from-.-selected-.-focus-.-hide-in-broken-range-::before,
-    .datepicker--cell-day.-range-from-.-focus-.-hide-in-broken-range-::before {
+    .-other-month- {
+      &.-focus-,
+      &.-selected- {
+        @include h3;
+
+        color: $color-white;
+      }
+    }
+
+    .-current-,
+    .-selected-,
+    .-range-from-,
+    .-range-to-,
+    .-focus- {
+      @include h3;
+      background: initial;
+
+      color: $color-white;
+    }
+
+    .-current-::after {
+      background: $gradient-secondary;
+    }
+
+    .-range-from-.-focus-::after,
+    .-range-to-.-focus-::after,
+    .-focus-::after,
+    .-range-from-::after,
+    .-range-to-::after,
+    .-selected-::after,
+    .-current-::after {
+      border-radius: 100%;
+      content: '';
+      height: 2.85rem;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 2.84rem;
+      z-index: -1;
+    }
+
+    .-range-from-.-focus-::after,
+    .-range-to-.-focus-::after,
+    .-focus-::after,
+    .-selected-::after,
+    .-range-from-::after,
+    .-range-to-::after {
+      background: $gradient-primary;
+    }
+
+    .-range-from-,
+    .-range-to-,
+    &--cell.-focus-,
+    &--cell.-selected-.-range-to- &--cell.-selected-.-range-from-,
+    .-other-month-.datepicker--cell.-selected-.-range-to-,
+    .-other-month-.datepicker--cell.-selected-.-range-from-,
+    .-other-month-.-focus-,
+    .-other-month-.-selected-,
+    .-selected-.-range-to-.-current-,
+    .-selected-.-range-from-.-current-,
+    .-current- {
+      background: none;
+      border: initial;
+    }
+
+    .-other-month-.-focus-.-in-range-,
+    .-other-month-.-selected-.-in-range-,
+    &--cell.-in-range- {
+      @include background-calendar-period;
+    }
+
+    &--cell-day.-range-to-::before,
+    &--cell-day.-range-from-::before {
+      @include background-calendar-period;
+
+      content: '';
+      height: 100%;
+      position: absolute;
+      width: 50%;
+      z-index: -2;
+    }
+
+    &--cell-day.-range-from-.-hide-in-broken-range-::before,
+    &--cell-day.-range-from-.-selected-.-focus-.-hide-in-range-::before {
       display: none;
+    }
+
+    &--cell-day.-range-from-::before {
+      right: 0;
+    }
+
+    &--cell-day.-range-to-::before {
+      left: 0;
+    }
+
+    &--cells-days:hover {
+      .#{$prefixcls}--cell-day.-range-from-.-hide-in-broken-range-::before {
+        display: initial;
+      }
+
+      .#{$prefixcls}--cell-day.-range-from-.-selected-.-focus-.-hide-in-broken-range-::before,
+      .#{$prefixcls}--cell-day.-range-from-.-focus-.-hide-in-broken-range-::before {
+        display: none;
+      }
     }
   }
 }

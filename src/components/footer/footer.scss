@@ -91,23 +91,23 @@ $parent: 'footer';
     @include media-breakpoint-up($lg) {
       margin-right: 2rem;
     }
-  }
 
-  &__nav-item:nth-child(1) {
-    @include media-breakpoint-up($xl) {
-      margin-right: 4.1rem;
+    &:nth-child(1) {
+      @include media-breakpoint-up($xl) {
+        margin-right: 4.1rem;
+      }
     }
-  }
 
-  &__nav-item:nth-child(2) {
-    @include media-breakpoint-up($xl) {
-      margin-right: 6.65rem;
+    &:nth-child(2) {
+      @include media-breakpoint-up($xl) {
+        margin-right: 6.65rem;
+      }
     }
-  }
 
-  &__nav-item:nth-child(3) {
-    @include media-breakpoint-up($xl) {
-      margin-right: 3.8rem;
+    &:nth-child(3) {
+      @include media-breakpoint-up($xl) {
+        margin-right: 3.8rem;
+      }
     }
   }
 

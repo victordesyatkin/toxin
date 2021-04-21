@@ -33,7 +33,7 @@ $parent: 'button';
     color: $color-primary;
     padding: 0;
 
-    &.#{$parent}_theme_2:hover,
+    &:hover,
     &.#{$parent}_hovered {
       background: none;
       color: $dark-shade-opacity-50;

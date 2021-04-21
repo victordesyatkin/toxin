@@ -40,6 +40,7 @@ $parent: '.color-sample';
 
   &__description {
     @include font-family-first-regular;
+
     line-height: 1.98rem;
   }
 }

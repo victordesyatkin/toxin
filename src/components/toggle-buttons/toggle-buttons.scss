@@ -17,9 +17,9 @@ $parent: 'toggle-buttons';
 
   &__item {
     display: inline-flex;
-  }
 
-  &__item:not(:first-of-type) {
-    margin-top: 1.07rem;
+    &:not(:first-of-type) {
+      margin-top: 1.07rem;
+    }
   }
 }

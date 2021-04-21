@@ -8,6 +8,25 @@ $parent: 'card-header';
     justify-content: space-between;
   }
 
+  &_theme_slider {
+    .#{$parent}__number-info {
+      font-size: 1rem;
+    }
+
+    .#{$parent}__number {
+      font-size: 1.3571rem;
+      margin: 0 0 0 0.2857rem;
+    }
+
+    .#{$parent}__quality {
+      font-size: 1rem;
+    }
+
+    .#{$parent}__price {
+      font-size: 1rem;
+    }
+  }
+
   &__number-info {
     @include h3;
 
@@ -49,24 +68,5 @@ $parent: 'card-header';
     font-size: 0.8571rem;
     font-weight: normal;
     margin-left: 0.3571rem;
-  }
-
-  &_theme_slider {
-    .#{$parent}__number-info {
-      font-size: 1rem;
-    }
-
-    .#{$parent}__number {
-      font-size: 1.3571rem;
-      margin: 0 0 0 0.2857rem;
-    }
-
-    .#{$parent}__quality {
-      font-size: 1rem;
-    }
-
-    .#{$parent}__price {
-      font-size: 1rem;
-    }
   }
 }

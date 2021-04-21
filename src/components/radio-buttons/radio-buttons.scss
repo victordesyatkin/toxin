@@ -16,7 +16,9 @@ $parent: 'radio-buttons';
     list-style-type: none;
   }
 
-  &__item:not(:first-child) {
-    margin-left: 1.4rem;
+  &__item {
+    &:not(:first-child) {
+      margin-left: 1.4rem;
+    }
   }
 }

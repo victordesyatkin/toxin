@@ -51,11 +51,11 @@ $parent: 'header';
     @include media-breakpoint-up($md) {
       display: none;
     }
-  }
 
-  &__toggle-navigation:hover {
-    .#{$parent}__toggle-navigation-button {
-      color: $dark-shade-opacity-75;
+    &:hover {
+      .#{$parent}__toggle-navigation-button {
+        color: $dark-shade-opacity-75;
+      }
     }
   }
 

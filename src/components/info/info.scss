@@ -2,8 +2,10 @@ $parent: 'info';
 
 .#{$parent} {
   &_with-last-line {
-    .#{$parent}__section:last-child {
-      border-bottom: 0.0714rem solid $dark-shade-opacity-1;
+    .#{$parent}__section {
+      &:last-child {
+        border-bottom: 0.0714rem solid $dark-shade-opacity-1;
+      }
     }
   }
 

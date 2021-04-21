@@ -1,15 +1,16 @@
 @import '~air-range-slider/dist/style.css';
 
 $parent: 'air-range-slider';
+$prefix: 'fsd-slider';
 
 .#{$parent} {
-  .fsd-slider__handle {
+  .#{$prefix}__handle {
     height: 1.143rem;
     margin-top: -5px;
     width: 1.143rem;
   }
 
-  .fsd-slider__rail {
+  .#{$prefix}__rail {
     background-color: $color-white;
   }
 }

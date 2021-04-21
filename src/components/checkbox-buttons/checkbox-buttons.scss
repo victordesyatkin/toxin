@@ -17,9 +17,9 @@ $parent: 'checkbox-buttons';
 
   &__item {
     display: inline-flex;
-  }
 
-  &__item:not(:first-child) {
-    margin-top: 0.8rem;
+    &:not(:first-child) {
+      margin-top: 0.8rem;
+    }
   }
 }

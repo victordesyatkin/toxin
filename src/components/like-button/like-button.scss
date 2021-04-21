@@ -12,10 +12,6 @@ $parent: 'like-button';
   position: relative;
   width: 2.85rem;
 
-  &_disabled {
-    cursor: initial;
-  }
-
   &:hover,
   &:focus {
     .#{$parent}__check-mark-wrapper {
@@ -27,12 +23,32 @@ $parent: 'like-button';
     }
   }
 
+  &_disabled {
+    cursor: initial;
+  }
+
   &__input {
     cursor: none;
     height: 0;
     opacity: 0;
     position: absolute;
     width: 0;
+
+    &:checked ~ .#{$parent}__check-mark-wrapper {
+      background: $gradient-primary;
+
+      .#{$parent}__like {
+        display: inline-flex;
+      }
+
+      .#{$parent}__not-like {
+        display: none;
+      }
+
+      .#{$parent}__count {
+        color: $color-primary;
+      }
+    }
   }
 
   &__like,
@@ -73,21 +89,5 @@ $parent: 'like-button';
     color: $dark-shade-opacity-25;
     font-size: 0.7142rem;
     margin-left: 0.429rem;
-  }
-
-  &__input:checked ~ &__check-mark-wrapper {
-    background: $gradient-primary;
-
-    .#{$parent}__like {
-      display: inline-flex;
-    }
-
-    .#{$parent}__not-like {
-      display: none;
-    }
-
-    .#{$parent}__count {
-      color: $color-primary;
-    }
   }
 }

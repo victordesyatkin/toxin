@@ -3,13 +3,13 @@ $parent: 'comment';
 .#{$parent} {
   display: flex;
 
-  &__img,
+  &__image,
   &__full-name,
   &__content {
     display: inline-flex;
   }
 
-  &__img {
+  &__image {
     border: 2px solid $color-white;
     border-radius: 1.71rem;
     display: block;

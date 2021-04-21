@@ -83,13 +83,13 @@ $parent: 'nav-item';
     @include media-breakpoint-up($md) {
       border-top: solid 1px $dark-shade-opacity-5;
     }
-  }
 
-  &__child:first-child() {
-    border: initial;
-
-    @include media-breakpoint-up($md) {
+    &:first-child() {
       border: initial;
+
+      @include media-breakpoint-up($md) {
+        border: initial;
+      }
     }
   }
 
@@ -121,9 +121,12 @@ $parent: 'nav-item';
     }
   }
 
-  &__control,
-  &__control:hover,
-  &__control:active {
+  &__control {
     outline: none;
+
+    &:hover,
+    &:active {
+      outline: none;
+    }
   }
 }

@@ -186,6 +186,7 @@ $parent: 'room-details';
   &__rules-section {
     display: flex;
     flex-direction: column;
+
     @include media-breakpoint-up($xs) {
       flex-direction: initial;
     }
@@ -194,6 +195,7 @@ $parent: 'room-details';
   &__rules {
     max-width: 18.7857rem;
     width: 100%;
+
     @include media-breakpoint-up($xs) {
       margin-right: 7rem;
     }
@@ -202,6 +204,7 @@ $parent: 'room-details';
   &__cancel {
     max-width: 100%;
     width: 100%;
+
     @include media-breakpoint-up($xs) {
       max-width: 24rem;
     }

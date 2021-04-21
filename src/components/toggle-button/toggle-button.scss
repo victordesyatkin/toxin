@@ -24,6 +24,21 @@ $parent: 'toggle-button';
     opacity: 0;
     position: absolute;
     width: 0;
+
+    &:checked ~ .#{$parent}__check-mark {
+      border: 1px solid $color-primary;
+      justify-content: flex-end;
+
+      .#{$parent}__mark {
+        background: $gradient-primary;
+        left: calc(100% - 1.142rem);
+        transition: left 0.5s;
+      }
+    }
+
+    &:checked ~ .#{$parent}__label {
+      color: $dark-shade-opacity-75;
+    }
   }
 
   &__check-mark {
@@ -53,20 +68,5 @@ $parent: 'toggle-button';
 
   &__label {
     color: $dark-shade-opacity-50;
-  }
-
-  &__input:checked ~ &__check-mark {
-    border: 1px solid $color-primary;
-    justify-content: flex-end;
-
-    .#{$parent}__mark {
-      background: $gradient-primary;
-      left: calc(100% - 1.142rem);
-      transition: left 0.5s;
-    }
-  }
-
-  &__input:checked ~ &__label {
-    color: $dark-shade-opacity-75;
   }
 }

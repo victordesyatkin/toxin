@@ -6,6 +6,12 @@ $parent: 'link';
   text-decoration: none;
   text-transform: none;
 
+  &:hover {
+    color: lighten($dark-shade-opacity-50, 20%);
+    text-decoration: none;
+    text-transform: none;
+  }
+
   &_block {
     display: inline-block;
   }
@@ -13,11 +19,5 @@ $parent: 'link';
   &_current {
     color: $dark-shade-opacity-75;
     font-weight: bold;
-  }
-
-  &:hover {
-    color: lighten($dark-shade-opacity-50, 20%);
-    text-decoration: none;
-    text-transform: none;
   }
 }

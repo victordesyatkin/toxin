@@ -21,11 +21,11 @@ $parent: 'rate';
       margin-bottom: initial;
       margin-right: 2.143rem;
     }
-  }
 
-  &__circle::after {
-    content: '';
-    margin-top: 100%;
+    &::after {
+      content: '';
+      margin-top: 100%;
+    }
   }
 
   &__dummy {

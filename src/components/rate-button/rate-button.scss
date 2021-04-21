@@ -27,18 +27,21 @@ $parent: 'rate-button';
   &__img {
     height: 100%;
     width: 100%;
-  }
 
-  &__img_checked {
-    display: none;
+    &_checked {
+      display: none;
+    }
   }
 
   &__rate_checked {
-    .#{$parent}__img_checked {
-      display: initial;
-    }
-    .#{$parent}__img_not_checked {
-      display: none;
+    .#{$parent}__img {
+      &_checked {
+        display: initial;
+      }
+
+      &_not_checked {
+        display: none;
+      }
     }
   }
 }

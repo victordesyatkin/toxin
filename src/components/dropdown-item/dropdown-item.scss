@@ -33,17 +33,19 @@ $parent: 'dropdown-item';
     cursor: pointer;
     font-size: 1rem;
     line-height: normal;
-  }
 
-  &__button:hover,
-  &__button:focus,
-  &__button:active {
-    outline: none;
+    &:hover,
+    &:focus,
+    &:active {
+      outline: none;
+    }
   }
 
   &_faded {
-    .#{$parent}__button:first-of-type {
-      opacity: 0.5;
+    .#{$parent}__button {
+      &:first-of-type {
+        opacity: 0.5;
+      }
     }
   }
 

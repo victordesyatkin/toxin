@@ -15,6 +15,7 @@ $parent: 'landing-page';
     justify-content: center;
     padding: 1rem;
     width: 100%;
+
     @include media-breakpoint-up($sm) {
       justify-content: flex-end;
       margin-bottom: 1.5714rem;
@@ -26,6 +27,7 @@ $parent: 'landing-page';
     margin: 5rem auto;
     max-width: 27.1428rem;
     width: 100%;
+
     @include media-breakpoint-up($sm) {
       margin: 5rem 0 22.6971rem 10.0714rem;
       margin-bottom: 22.6971rem;
@@ -37,6 +39,7 @@ $parent: 'landing-page';
     max-width: 100%;
     text-align: center;
     width: 100%;
+
     @include media-breakpoint-up($sm) {
       max-width: 19.1428rem;
       text-align: right;

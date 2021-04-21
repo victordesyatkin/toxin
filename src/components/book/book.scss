@@ -12,6 +12,12 @@ $parent: 'book';
     padding: 2rem 0.5rem;
   }
 
+  &_theme_room-details {
+    .#{$parent}__room-number {
+      margin-right: 0.6899rem;
+    }
+  }
+
   &__title {
     display: flex;
     justify-content: space-between;
@@ -27,14 +33,11 @@ $parent: 'book';
   }
 
   &__price {
-    align-items: flex-end;
-    display: flex;
-  }
-
-  &__price {
     @include base-h;
+    align-items: flex-end;
 
     color: $dark-shade-opacity-50;
+    display: flex;
     font-size: 1rem;
     font-weight: bold;
   }
@@ -64,12 +67,6 @@ $parent: 'book';
     letter-spacing: -0.0435rem;
   }
 
-  &_theme_room-details {
-    .#{$parent}__room-number {
-      margin-right: 0.6899rem;
-    }
-  }
-
   &__calculate {
     list-style-type: none;
     margin-bottom: 1.7rem;
@@ -77,6 +74,10 @@ $parent: 'book';
 
   &__item {
     display: flex;
+
+    &:not(:first-child) {
+      margin-top: 0.714rem;
+    }
   }
 
   &__item-service {
@@ -93,10 +94,6 @@ $parent: 'book';
 
   &__item-total {
     margin-left: auto;
-  }
-
-  &__item:not(:first-child) {
-    margin-top: 0.714rem;
   }
 
   &__date-dropdown {
@@ -120,10 +117,10 @@ $parent: 'book';
     @include media-breakpoint-down($xxs) {
       margin: 0 0.5rem;
     }
-  }
 
-  &__icon-info:hover {
-    color: initial;
+    &:hover {
+      color: initial;
+    }
   }
 
   &__total-wrapper {

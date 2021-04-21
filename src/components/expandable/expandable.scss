@@ -5,6 +5,28 @@ $parent: 'expandable';
   position: relative;
   width: 100%;
 
+  &_with-shift {
+    .#{$parent}__body {
+      left: initial;
+      position: initial;
+      z-index: initial;
+    }
+  }
+
+  &_opened {
+    z-index: 100;
+
+    .#{$parent}__control {
+      transform: rotate(180deg);
+      transition-duration: 1s;
+      transition-property: transform;
+    }
+
+    .#{$parent}__body {
+      display: block;
+    }
+  }
+
   &__header {
     align-items: center;
     cursor: pointer;
@@ -21,10 +43,6 @@ $parent: 'expandable';
     font-size: 0.5714rem;
     margin-right: 1.1428rem;
     transition-duration: 1s;
-    transition-property: -webkit-transform;
-    transition-property: -moz-transform;
-    transition-property: -ms-transform;
-    transition-property: -o-transform;
     transition-property: transform;
   }
 
@@ -36,31 +54,5 @@ $parent: 'expandable';
     position: absolute;
     width: 100%;
     z-index: 2;
-  }
-
-  &_with-shift {
-    .#{$parent}__body {
-      left: initial;
-      position: initial;
-      z-index: initial;
-    }
-  }
-
-  &_opened {
-    z-index: 100;
-
-    .#{$parent}__control {
-      transform: rotate(180deg);
-      transition-duration: 1s;
-      transition-property: -webkit-transform;
-      transition-property: -moz-transform;
-      transition-property: -ms-transform;
-      transition-property: -o-transform;
-      transition-property: transform;
-    }
-
-    .#{$parent}__body {
-      display: block;
-    }
   }
 }

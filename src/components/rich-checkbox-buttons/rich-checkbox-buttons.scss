@@ -13,15 +13,13 @@ $parent: 'rich-checkbox-buttons';
 
   &__button {
     margin-top: 0.64rem;
-  }
 
-  &__button:first-child {
-    margin-top: 0;
-  }
+    &:first-child {
+      margin-top: 0;
 
-  &__button:first-child {
-    #{$parent}__info {
-      padding-right: 2.42rem;
+      #{$parent}__info {
+        padding-right: 2.42rem;
+      }
     }
   }
 }

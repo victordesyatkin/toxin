@@ -5,8 +5,11 @@ $parent: 'text-field';
   position: relative;
   width: 100%;
 
-  .#{$parent}__summary {
-    display: block;
+  &:hover {
+    .#{$parent}__button_default_eye_slash,
+    .#{$parent}__button_default_eye {
+      color: $dark-shade-opacity-75;
+    }
   }
 
   &_direct {
@@ -82,6 +85,10 @@ $parent: 'text-field';
     }
   }
 
+  .#{$parent}__summary {
+    display: block;
+  }
+
   &__label {
     margin-bottom: 0.4rem;
   }
@@ -93,12 +100,12 @@ $parent: 'text-field';
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
 
-  &__summary::after {
-    content: '';
-    display: inline-block;
-    width: 0;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+    }
   }
 
   &__button:hover ~ &__summary,
@@ -159,13 +166,6 @@ $parent: 'text-field';
   &__button_default_eye_slash,
   &__button_default_eye {
     font-size: 1rem;
-  }
-
-  &:hover {
-    .#{$parent}__button_default_eye_slash,
-    .#{$parent}__button_default_eye {
-      color: $dark-shade-opacity-75;
-    }
   }
 
   &__button_default_eye_slash:hover,
