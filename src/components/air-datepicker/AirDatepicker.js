@@ -52,8 +52,7 @@ class AirDatepicker extends Component {
     this._renderComponent();
   }
 
-  @bind
-  selectedDates() {
+  get selectedDates() {
     return this._datepicker?.selectedDates || [];
   }
 
@@ -63,7 +62,7 @@ class AirDatepicker extends Component {
   }
 
   _init() {
-    const { options, start, end } = this._props;
+    const { options } = this._props;
     this._rangeFromDate = '';
     this._rangeFromDateClasses = '';
     this._selectType = '';
@@ -76,10 +75,9 @@ class AirDatepicker extends Component {
     this._readyOptions = this._prepareOptions(this._readyOptions);
     this._$element.datepicker(this._readyOptions);
     this._datepicker = this._$element.data('datepicker');
-    this._selectDate({ start, end });
   }
 
-  _selectDate({ start: passStart, end: passEnd }) {
+  selectDate({ start: passStart, end: passEnd }) {
     const start = value2Date(passStart);
     const end = value2Date(passEnd);
     if (start && !end) {

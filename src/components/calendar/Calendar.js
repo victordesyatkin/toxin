@@ -20,13 +20,15 @@ class Calendar extends Component {
   }
 
   _init() {
-    const { options, control, start, end } = this._props;
+    this._random = Math.random().toString(32);
+    const { options, control, start, end, today } = this._props;
     this._airDatepicker = new AirDatepicker({
       parent: $(`${this._query}__date-picker`, this._$element),
       props: {
         options,
         start,
         end,
+        today,
         handleCalendarClick: this._handleCalendarClick,
       },
     });
@@ -35,6 +37,7 @@ class Calendar extends Component {
       props: { control, handleButtonClick: this._handleControlClick },
     });
     this._$element.on('click', this._handleBlockClick);
+    this._airDatepicker?.selectDate({ start, end });
   }
 
   @bind
