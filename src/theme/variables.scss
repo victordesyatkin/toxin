@@ -59,7 +59,12 @@ $font-family-body: montserrat, arial, sans-serif;
 @mixin reset-button {
   background: none;
   border: inherit;
-  outline: none;
+
+  &,
+  &:focus,
+  &:hover {
+    outline: none;
+  }
 }
 
 @mixin linear-gradient($degrees, $top-color, $bottom-color, $opacity) {

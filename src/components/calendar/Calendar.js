@@ -20,8 +20,11 @@ class Calendar extends Component {
   }
 
   _init() {
-    this._random = Math.random().toString(32);
     const { options, control, start, end, today } = this._props;
+    this._control = new Control({
+      parent: $(`${this._query}__control`, this._$element),
+      props: { control, handleButtonClick: this._handleControlClick },
+    });
     this._airDatepicker = new AirDatepicker({
       parent: $(`${this._query}__date-picker`, this._$element),
       props: {
@@ -32,12 +35,6 @@ class Calendar extends Component {
         handleCalendarClick: this._handleCalendarClick,
       },
     });
-    this._control = new Control({
-      parent: $(`${this._query}__control`, this._$element),
-      props: { control, handleButtonClick: this._handleControlClick },
-    });
-    this._$element.on('click', this._handleBlockClick);
-    this._airDatepicker?.selectDate({ start, end });
   }
 
   @bind
@@ -66,7 +63,7 @@ class Calendar extends Component {
 
   @bind
   _handleCalendarClick(dates) {
-    this._toggleVisibleButtonClean();
+    this._toggleVisibleButtonClean(dates);
     const { handleCalendarClick } = this._props;
     if (handleCalendarClick) {
       handleCalendarClick(dates);
@@ -74,19 +71,13 @@ class Calendar extends Component {
     return false;
   }
 
-  _toggleVisibleButtonClean() {
-    const selectedDates = this._airDatepicker?.selectedDates || [];
-    const selectedDatesLength = selectedDates.length;
-    if (selectedDatesLength) {
+  _toggleVisibleButtonClean(dates = []) {
+    const [start, end] = dates || [];
+    if (start || end) {
       this._control?.show();
     } else {
       this._control?.hide();
     }
-  }
-
-  @bind
-  _handleBlockClick() {
-    this._toggleVisibleButtonClean();
   }
 }
 
