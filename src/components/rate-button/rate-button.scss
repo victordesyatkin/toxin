@@ -24,7 +24,7 @@ $parent: 'rate-button';
     }
   }
 
-  &__img {
+  &__image {
     height: 100%;
     width: 100%;
 
@@ -34,7 +34,7 @@ $parent: 'rate-button';
   }
 
   &__rate_checked {
-    .#{$parent}__img {
+    .#{$parent}__image {
       &_checked {
         display: initial;
       }

@@ -111,14 +111,14 @@
               "content": "очистить",
               "type": "button",
               "value": "",
-              "theme": 2,
+              "theme": "bare",
               "dataType": "clean"
             },
             {
               "content": "применить",
               "type": "button",
               "value": "",
-              "theme": 2,
+              "theme": "bare",
               "dataType": "apply"
             }
           ]
@@ -165,14 +165,14 @@
             "content": "очистить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "clean"
           },
           {
             "content": "применить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "apply"
           }
         ]
@@ -181,8 +181,7 @@
     "button": {
       "content": "подобрать номер",
       "type": "submit",
-      "value": "",
-      "theme": 3,
+      "theme": "filled",
       "src": "assets/images/arrow-forward.svg",
       "alt": "подобрать номер"
     },
@@ -196,7 +195,7 @@
           "content": "О нас",
           "title": "О нас",
           "href": "/mock-address/change-me",
-          "isCurrent": false,
+          "isSelected": false,
           "parent": 0
         },
         {
@@ -307,15 +306,15 @@
           "content": "Войти",
           "type": "button",
           "value": "",
-          "theme": 1,
-          "size": 3
+          "theme": "blank",
+          "size": "large"
         },
         {
           "content": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "theme": 3,
-          "size": 3
+          "theme": "filled",
+          "size": "large"
         }
       ]
     },
@@ -323,7 +322,7 @@
       "link": {
         "href": "/mock-address/change-me",
         "title": "TOXIN",
-        "isBlock": true
+        "display": "inline-block"
       },
       "logo": {
         "src": "assets/images/logo-color.svg",
@@ -441,19 +440,19 @@
           "href": "/mock-address/change-me",
           "title": "twitter",
           "icon": "twitter",
-          "isBlock": true
+          "display": "inline-block"
         },
         {
           "href": "/mock-address/change-me",
           "title": "facebook",
           "icon": "facebook",
-          "isBlock": true
+          "display": "inline-block"
         },
         {
           "href": "/mock-address/change-me",
           "title": "instagram",
           "icon": "instagram",
-          "isBlock": true
+          "display": "inline-block"
         }
       ]
     },

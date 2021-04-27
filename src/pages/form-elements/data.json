@@ -120,14 +120,14 @@
           "content": "очистить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "clean"
         },
         {
           "content": "применить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "apply"
         }
       ]
@@ -200,14 +200,14 @@
             "content": "очистить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "clean"
           },
           {
             "content": "применить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "apply"
           }
         ]
@@ -254,14 +254,14 @@
             "content": "очистить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "clean"
           },
           {
             "content": "применить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "apply"
           }
         ]
@@ -382,14 +382,14 @@
           "content": "очистить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "clean"
         },
         {
           "content": "применить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "apply"
         }
       ]
@@ -435,14 +435,14 @@
           "content": "очистить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "clean"
         },
         {
           "content": "применить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "apply"
         }
       ]
@@ -745,19 +745,19 @@
         "content": "Click me",
         "type": "button",
         "value": "",
-        "theme": 3
+        "theme": "filled"
       },
       {
         "content": "Click me",
         "type": "button",
         "value": "",
-        "theme": 1
+        "theme": "blank"
       },
       {
         "content": "Click me",
         "type": "button",
         "value": "",
-        "theme": 2
+        "theme": "bare"
       }
     ]
   },
@@ -765,7 +765,7 @@
     "content": "Перейти к оплате",
     "type": "button",
     "value": "",
-    "theme": 3,
+    "theme": "filled",
     "src": "assets/images/arrow-forward.svg",
     "alt": "Перейти к оплате"
   },

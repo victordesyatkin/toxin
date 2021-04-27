@@ -4,12 +4,12 @@ mixin nav-item(props)
     -
       let { children = [], ...link } = props;
       let { length } = children;
-      let { isCurrent, isOpen, controlButton = {} } = link || {};
+      let { isSelected, isOpened, controlButton = {} } = link || {};
       let { name, value, type = "button", ariaLabel } = controlButton;
       let className = "nav-item";
       let classNames = `${className} js-${className}`
-      classNames += isCurrent ? ` ${className}_current`: '';
-      classNames += isOpen ? ` ${className}_opened`: '';
+      classNames += isSelected ? ` ${className}_selected`: '';
+      classNames += isOpened ? ` ${className}_opened`: '';
     div(class=classNames)
       div(class=`${className}__link-wrapper`)
         div(class=`${className}__link`)

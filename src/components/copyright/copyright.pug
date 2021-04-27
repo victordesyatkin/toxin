@@ -6,7 +6,7 @@ mixin copyright(props)
     -
       let { items = [], content, logo, size } = props;
       let icons = { instagram: 'icon-i', facebook: 'icon-f', twitter: 'icon-t' };
-      let sizes = { sm: 'size_sm' };
+      let sizes = { small: 'size_small' };
       let mainClassName = 'copyright';
       let mainClassNames = `${mainClassName}`;
       mainClassNames += sizes[size] ? ` ${mainClassName}_${sizes[size]}` : '';

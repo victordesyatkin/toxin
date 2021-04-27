@@ -69,7 +69,7 @@ class Dropdown extends Component {
       },
     });
     this._items = [];
-    this._$items = $(`${this._query}__li-item`, this._$element);
+    this._$items = $(`${this._query}__item`, this._$element);
     this._$items.each(this._renderItem);
     if (this._isOpen) {
       this.open();

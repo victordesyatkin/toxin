@@ -36,7 +36,7 @@ class Slider extends Component {
       this._$next.on('click', this._handleControlClick);
       this._$points.on('click', this._handlePointClick);
     }
-    this._$image = $(`${this._query}__section-images img`, this._$element);
+    this._$image = $(`${this._query}__image`, this._$element);
     this._index = 0;
     this._setImage(this._index);
     this._setPoint(this._index);

@@ -114,14 +114,14 @@
               "content": "очистить",
               "type": "button",
               "value": "",
-              "theme": 2,
+              "theme": "bare",
               "dataType": "clean"
             },
             {
               "content": "применить",
               "type": "button",
               "value": "",
-              "theme": 2,
+              "theme": "bare",
               "dataType": "apply"
             }
           ]
@@ -159,14 +159,14 @@
             "content": "очистить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "clean"
           },
           {
             "content": "применить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "apply"
           }
         ]
@@ -176,7 +176,7 @@
       "content": "подобрать номер",
       "type": "button",
       "value": "",
-      "theme": 3,
+      "theme": "filled",
       "src": "assets/images/arrow-forward.svg",
       "alt": "подобрать номер"
     }
@@ -249,14 +249,14 @@
               "content": "очистить",
               "type": "button",
               "value": "",
-              "theme": 2,
+              "theme": "bare",
               "dataType": "clean"
             },
             {
               "content": "применить",
               "type": "button",
               "value": "",
-              "theme": 2,
+              "theme": "bare",
               "dataType": "apply"
             }
           ]
@@ -294,14 +294,14 @@
             "content": "очистить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "clean"
           },
           {
             "content": "применить",
             "type": "button",
             "value": "",
-            "theme": 2,
+            "theme": "bare",
             "dataType": "apply"
           }
         ]
@@ -311,7 +311,7 @@
       "content": "Забронировать",
       "type": "submit",
       "value": "",
-      "theme": 3,
+      "theme": "filled",
       "src": "assets/images/arrow-forward.svg"
     },
     "numberFormat": "ru-RU",
@@ -334,14 +334,14 @@
           "content": "очистить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "clean"
         },
         {
           "content": "применить",
           "type": "button",
           "value": "",
-          "theme": 2,
+          "theme": "bare",
           "dataType": "apply"
         }
       ]
@@ -428,7 +428,7 @@
       "content": "Перейти к оплате",
       "type": "submit",
       "value": "",
-      "theme": 3,
+      "theme": "filled",
       "name": "pay1",
       "src": "assets/images/arrow-forward.svg",
       "ariaLabel": "pay"
@@ -439,9 +439,9 @@
         "content": "войти",
         "type": "button",
         "value": "",
-        "theme": 1,
+        "theme": "blank",
         "name": "signIn",
-        "size": 1,
+        "size": "small",
         "ariaLabel": "signIn"
       }
     }
@@ -476,7 +476,7 @@
       "content": "Войти",
       "type": "submit",
       "value": "",
-      "theme": 3,
+      "theme": "filled",
       "name": "signIn1",
       "src": "assets/images/arrow-forward.svg"
     },
@@ -486,9 +486,9 @@
         "content": "создать",
         "type": "button",
         "value": "",
-        "theme": 1,
+        "theme": "blank",
         "name": "signUp2",
-        "size": 4
+        "size": "x-large"
       }
     }
   },

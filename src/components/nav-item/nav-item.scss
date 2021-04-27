@@ -45,7 +45,7 @@ $parent: 'nav-item';
     }
   }
 
-  &_current {
+  &_selcted {
     color: $dark-shade-opacity-75;
 
     .#{$parent}__control {

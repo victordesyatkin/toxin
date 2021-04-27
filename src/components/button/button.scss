@@ -16,7 +16,7 @@ $parent: 'button';
   text-transform: uppercase;
   white-space: nowrap;
 
-  &_theme_1 {
+  &_theme_blank {
     background: $gradient-primary;
     border: solid 2px transparent;
     color: $color-primary;
@@ -29,7 +29,7 @@ $parent: 'button';
     }
   }
 
-  &_theme_2 {
+  &_theme_bare {
     background: none;
     color: $color-primary;
     padding: 0;
@@ -41,7 +41,7 @@ $parent: 'button';
     }
   }
 
-  &_theme_3 {
+  &_theme_filled {
     background: $gradient-primary;
     color: $color-white;
     padding: 1rem 1.307rem 1.071rem 1.5rem;
@@ -59,8 +59,8 @@ $parent: 'button';
     }
   }
 
-  &_theme_1,
-  &_theme_3 {
+  &_theme_blank,
+  &_theme_filled {
     &.#{$parent}_hovered,
     &:hover {
       @include background-button-hover;
@@ -68,42 +68,42 @@ $parent: 'button';
   }
 
   &_with_image {
-    &_theme_3 {
+    &_theme_filled {
       padding-right: 3.1428rem;
     }
   }
 
-  &_size_1 {
-    &.#{$parent}_theme_1 {
+  &_size_small {
+    &.#{$parent}_theme_blank {
       .#{$parent}__content {
         padding: 0.8571rem 1.6428rem 0.9285rem 1.7857rem;
       }
     }
   }
 
-  &_size_2 {
-    &.#{$parent}_theme_1 {
+  &_size_medium {
+    &.#{$parent}_theme_blank {
       .#{$parent}__content {
         padding: 0.7142rem 1rem 0.6428rem 1.0714rem;
       }
     }
   }
 
-  &_size_3 {
-    &.#{$parent}_theme_1 {
+  &_size_large {
+    &.#{$parent}_theme_blank {
       .#{$parent}__content {
         padding: 0.5rem 1.4285rem 0.5714rem;
       }
     }
 
-    &.#{$parent}_theme_3 {
+    &.#{$parent}_theme_filled {
       padding: 0.6428rem 1.4285rem 0.7142rem 1.5rem;
       width: auto;
     }
   }
 
-  &_size_4 {
-    &.#{$parent}_theme_1 {
+  &_size_x_large {
+    &.#{$parent}_theme_blank {
       .#{$parent}__content {
         padding: 1rem 1.2857rem 1.0714rem 1.4285rem;
       }

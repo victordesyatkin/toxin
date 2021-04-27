@@ -9,7 +9,7 @@ mixin footer(props)
       let { info = {}, items = [], subscribe = {}, copyright, logo, action, method = 'GET', size } = props;
       let { content } = info;
       let { header, description, subscriptionTextField } = subscribe;
-      let sizes = { 'sm': 'size_sm' };
+      let sizes = { 'small': 'size_small' };
       let className = 'footer';
       let classNames = `${className} js-${className}`;
       classNames += sizes[size] ? ` ${className}_${sizes[size]}` : '';

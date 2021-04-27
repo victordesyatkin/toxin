@@ -84,7 +84,7 @@
       "content": "Войти",
       "type": "submit",
       "value": "",
-      "theme": 3,
+      "theme": "filled",
       "name": "signIn1",
       "src": "assets/images/arrow-forward.svg"
     },
@@ -94,9 +94,9 @@
         "content": "создать",
         "type": "button",
         "value": "",
-        "theme": 1,
+        "theme": "blank",
         "name": "signUp2",
-        "size": 4
+        "size": "x-large"
       }
     }
   },
@@ -108,7 +108,7 @@
           "content": "О нас",
           "title": "О нас",
           "href": "/mock-address/change-me",
-          "isCurrent": false,
+          "isSelected": false,
           "parent": 0
         },
         {
@@ -219,15 +219,15 @@
           "content": "Войти",
           "type": "button",
           "value": "",
-          "theme": 1,
-          "size": 3
+          "theme": "blank",
+          "size": "large"
         },
         {
           "content": "Зарегистрироваться",
           "type": "button",
           "value": "",
-          "theme": 3,
-          "size": 3
+          "theme": "filled",
+          "size": "large"
         }
       ]
     },
@@ -235,7 +235,7 @@
       "link": {
         "href": "/mock-address/change-me",
         "title": "TOXIN",
-        "isBlock": true
+        "display": "inline-block"
       },
       "logo": {
         "src": "assets/images/logo-color.svg",
@@ -353,19 +353,19 @@
           "href": "/mock-address/change-me",
           "title": "twitter",
           "icon": "twitter",
-          "isBlock": true
+          "display": "inline-block"
         },
         {
           "href": "/mock-address/change-me",
           "title": "facebook",
           "icon": "facebook",
-          "isBlock": true
+          "display": "inline-block"
         },
         {
           "href": "/mock-address/change-me",
           "title": "instagram",
           "icon": "instagram",
-          "isBlock": true
+          "display": "inline-block"
         }
       ]
     },

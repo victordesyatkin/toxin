@@ -1,14 +1,17 @@
 mixin link(props)
   if props
     -
-      let { href, title, target, rel, content, isBlock, isCurrent }  = props;
+      let { href, title, target, rel, content, display, isSelected }  = props;
       if (target === "_blank") {
         rel="noopener noreferrer";
       }
       let className = "link";
       let classNames = className;
-      classNames += isBlock ? ` ${className}_block` : '';
-      classNames += isCurrent ? ` ${className}_current` : '';
+      let displays = {
+        'inline-block': 'inline_block'
+      };
+      classNames += displays[display] ? ` ${className}_display_${displays[display]}` : '';
+      classNames += isSelected ? ` ${className}_selected` : '';
     a(href=href, title=title, target=target, rel=rel, class=classNames)
       if block
         block

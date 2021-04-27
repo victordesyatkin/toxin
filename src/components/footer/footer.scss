@@ -4,7 +4,7 @@ $parent: 'footer';
   background-color: $color-white;
   width: 100%;
 
-  &_size_sm {
+  &_size_small {
     .#{$parent}__main-section {
       align-items: center;
       display: none;

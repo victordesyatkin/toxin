@@ -11,7 +11,7 @@ mixin comments(props)
     article(class=classNames)
       if (label || count)
         div(class=`${className}__header`)
-          div(class=`${className}_title`)
+          div(class=`${className}__title`)
             +title-label(title)
           div(class=`${className}__count`)
             span(class=`${className}__count-value`)= count

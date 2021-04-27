@@ -12,11 +12,11 @@ $parent: 'link';
     text-transform: none;
   }
 
-  &_block {
+  &_display_inline_block {
     display: inline-block;
   }
 
-  &_current {
+  &_selected {
     color: $dark-shade-opacity-75;
     font-weight: bold;
   }

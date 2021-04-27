@@ -18,7 +18,7 @@ mixin filter-date-dropdown(props)
       if length
         ul(class=`${className}__items js-${className}__items`)
           each item in items
-            li(class=`${className}_li-item js-${className}_li-item`)
+            li(class=`${className}__item-wrapper js-${className}__item-wrapper`)
               - let { name, value, type = 'hidden', ariaLabel } = item || {};
               input(
                 name=name,

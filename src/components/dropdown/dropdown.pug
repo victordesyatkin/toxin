@@ -21,7 +21,7 @@ mixin dropdown(props)
           div(class=`${className}__body`)
             ul(class=`${className}__items js-${className}__items`)
               each item in items
-                li(class=`${className}__li-item js-${className}__li-item`)
+                li(class=`${className}__item js-${className}__item`)
                   +dropdown-item({...item, buttonDecreaseText: item.buttonDecreaseText || buttonDecreaseText, buttonIncreaseText: item.buttonIncreaseText || buttonIncreaseText})
             if control
               div(class=`${className}__control js-${className}__control`)
