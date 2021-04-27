@@ -7,9 +7,15 @@ include ../card/card
 mixin picker(props)
   if props
     -
-      let { title, dateDropdown, dropdown, button, action, method = 'GET' } = props;
+      let { title, dateDropdown, dropdown, button, action, method = 'GET', view } = props;
       let className = 'picker';
       let classNames = `${className} js-${className}`;
+      let views = {
+        'landing-page': 'landing_page',
+        'landing-page-dates-dropdown': 'landing_page_dates_dropdown',
+        'landing-page-guests-dropdown': 'landing-page-guests-dropdown',
+      };
+      classNames += views[view] ? ` ${className}_view_${views[view]}` : ''; 
     +card
       form(class=classNames, action=action, method=method)
         if title

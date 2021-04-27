@@ -38,7 +38,8 @@ $parent: 'search-room-filter';
   &__title {
     @include h1;
 
-    font-size: 1.7142rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.029rem;
     line-height: 2.09rem;
     margin-bottom: 1.55rem;
   }
@@ -84,7 +85,7 @@ $parent: 'search-room-filter';
     }
 
     @include media-breakpoint-up($lg) {
-      grid-gap: 1.15rem 0.8571rem;
+      grid-gap: 1.5rem 0.8571rem;
       grid-template-columns: repeat(3, 19.2857rem);
     }
   }

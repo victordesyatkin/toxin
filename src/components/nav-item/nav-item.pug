@@ -24,8 +24,7 @@ mixin nav-item(props)
             value=value,
             aria-label=ariaLabel
           )
-            span(class=`${className}__more`)
-              +icon(icon-expand_more)
+            +icon('icon-expand_more')
       if length
         ul(class=`${className}__children js-${className}__children`)
           each child in children

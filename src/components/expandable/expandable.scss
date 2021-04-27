@@ -40,8 +40,10 @@ $parent: 'expandable';
   }
 
   &__control {
+    display: flex;
     font-size: 0.5714rem;
     margin-right: 1.1428rem;
+    padding-top: 0.1rem;
     transition-duration: 1s;
     transition-property: transform;
   }

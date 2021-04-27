@@ -27,10 +27,5 @@ mixin icon(className = '')
         'icon-Vector':'icon-Vector',
       };
       let readyClassName = classNames[className];
-    span(
-      data-className=className,
-      data-classNames=classNames,
-      data-readyClassName=readyClassName
-    )
     if readyClassName
       span(class=readyClassName)

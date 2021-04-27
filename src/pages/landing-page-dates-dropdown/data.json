@@ -188,7 +188,8 @@
       "src": "assets/images/arrow-forward.svg",
       "alt": "подобрать номер"
     },
-    "action": "search-room-filter.html"
+    "action": "search-room-filter.html",
+    "view": "landing-page-dates-dropdown"
   },
   "headerNotAuthorized": {
     "nav": {

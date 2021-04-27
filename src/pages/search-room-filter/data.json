@@ -624,7 +624,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -671,7 +672,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -718,7 +720,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -765,7 +768,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -812,7 +816,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -859,7 +864,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -906,7 +912,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -953,7 +960,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -1000,7 +1008,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -1047,7 +1056,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
@@ -1141,7 +1151,8 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {

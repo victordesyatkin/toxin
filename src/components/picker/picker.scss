@@ -5,6 +5,28 @@ $parent: 'picker';
   padding: 2.8571rem 2.1428rem 2.0714rem 2rem;
   width: 100%;
 
+  &_view_landing_page {
+    .#{$parent}__title {
+      margin-bottom: 1.7rem;
+    }
+  }
+
+  &_view_landing_page_dates_dropdown {
+    .#{$parent}__title {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &_view_landing-page-guests-dropdown {
+    .#{$parent}__title {
+      margin-bottom: 1.75rem;
+    }
+
+    .#{$parent}__date-dropdown {
+      margin-bottom: 1.4rem;
+    }
+  }
+
   &__title {
     margin-bottom: 1.5rem;
   }

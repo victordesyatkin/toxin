@@ -2,7 +2,10 @@ mixin card-header(props)
   if props
     -
       let { roomNumber, roomQuality, roomNumberContent, price, duration, unit, options, numberFormat, theme } = props;
-      let themes = { slider: 'slider' };
+      let themes = {
+        slider: 'slider',
+        search: 'search',
+      };
       let className = 'card-header';
       let classNames = `${className} js-${className}`;
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';

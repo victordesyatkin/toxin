@@ -627,14 +627,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
-          "name": "rating1b",
+          "name": "rating1a",
           "value": 5,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -674,14 +675,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating2",
           "value": 4,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -721,14 +723,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating3",
           "value": 3,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -768,14 +771,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating4",
           "value": 5,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -815,14 +819,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating5",
           "value": 4,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -862,14 +867,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating6",
           "value": 3,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -909,14 +915,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating7",
           "value": 5,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -956,14 +963,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating8",
           "value": 4,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -1003,14 +1011,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating9",
           "value": 3,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -1050,14 +1059,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating10",
           "value": 5,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -1104,7 +1114,7 @@
           "name": "rating11",
           "value": 3,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",
@@ -1144,14 +1154,15 @@
         "unit": "&#8381",
         "roomNumberContent": "№",
         "numberFormat": "ru-RU",
-        "options": { "style": "decimal", "currency": "RUB" }
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "search"
       },
       "rating": {
         "button": {
           "name": "rating12",
           "value": 3,
           "total": 5,
-          "isDisabled": true,
+          "isDisabled": false,
           "srcImgRate": "assets/images/star.svg",
           "altImgRate": "Rate",
           "srcImgNoRate": "assets/images/star-border.svg",

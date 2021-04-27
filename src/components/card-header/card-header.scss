@@ -25,6 +25,13 @@ $parent: 'card-header';
     }
   }
 
+  &_theme_search {
+    .#{$parent}__number {
+      font-size: 1.12rem;
+      margin: 0 0.4rem 0 0.23rem;
+    }
+  }
+
   &__number-info {
     @include h3;
 
