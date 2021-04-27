@@ -1,0 +1,36 @@
+mixin icon(className = '')
+  if className
+    -
+      let classNames = {
+        'icon-eye-slash': 'icon-eye-slash',
+        'icon-eye':'icon-eye',
+        'icon-bars':'icon-bars',
+        'icon-i':'icon-i',
+        'icon-f':'icon-f',
+        'icon-t':'icon-t',
+        'icon-info':'icon-info',
+        'icon-expand_more':'icon-expand_more',
+        'icon-expand_more_prev':'icon-expand_more_prev',
+        'icon-expand_more_forward':'icon-expand_more_forward',
+        'icon-expand_more_up':'icon-expand_more_up',
+        'icon-whatshot':'icon-whatshot',
+        'icon-location_city':'icon-location_city',
+        'icon-insert_emoticon':'icon-insert_emoticon',
+        'icon-arrow_forward':'icon-arrow_forward',
+        'icon-arrow_prev':'icon-arrow_prev',
+        'icon-arrow_up':'icon-arrow_up',
+        'icon-arrow_down':'icon-arrow_down',
+        'icon-star':'icon-star',
+        'icon-star_border':'icon-star_border',
+        'icon-favorite_border':'icon-favorite_border',
+        'icon-favorite':'icon-favorite',
+        'icon-Vector':'icon-Vector',
+      };
+      let readyClassName = classNames[className];
+    span(
+      data-className=className,
+      data-classNames=classNames,
+      data-readyClassName=readyClassName
+    )
+    if readyClassName
+      span(class=readyClassName)

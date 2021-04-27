@@ -2,6 +2,7 @@ include ../date-dropdown/date-dropdown
 include ../dropdown/dropdown
 include ../button/button
 include ../card/card
+include ../icon/icon
 
 mixin book(props)
   if props
@@ -44,13 +45,15 @@ mixin book(props)
                 span(
                   class=`${className}__discount-total js-${className}__discount-total`
                 )= discountTotal
-              span(class=`${className}__icon-info icon-info`)
+              span(class=`${className}__icon-info`)
+                +icon('icon-info')
               span(class=`${className}__additional-service-fee-total`)
                 | #{serviceFeeTotal}!{unit}
             li(class=`${className}__additional-service-fee`)
               span(class=`${className}__item-service`)
                 span(class=`${className}__additional-service-fee-content`)= additionalServiceFeeContent
-              span(class=`${className}__icon-info icon-info`)
+              span(class=`${className}__icon-info`)
+                +icon('icon-info')
               span(class=`${className}__additional-service-fee-total`)
                 | #{additionalServiceFeeTotal}!{unit}
         div(class=`${className}__total-wrapper`)

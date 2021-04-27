@@ -1,5 +1,6 @@
 include ../logo-link/logo-link
 include ../nav/nav
+include ../icon/icon
 
 mixin header(props)
   if props
@@ -17,9 +18,10 @@ mixin header(props)
           name=name,
           value=value,
           type=type,
-          class=`${className}__toggle-navigation-button js-${className}__toggle-navigation-button icon-bars`,
+          class=`${className}__toggle-navigation-button js-${className}__toggle-navigation-button`,
           aria-label=ariaLabel,
           title=title
         )
+          +icon('icon-bars')
       div(class=`${className}__nav js-${className}__nav`)
         +nav(nav)

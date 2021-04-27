@@ -1,3 +1,5 @@
+include ../icon/icon
+
 mixin slider(props)
   if props
     -
@@ -18,13 +20,15 @@ mixin slider(props)
       if length !== 0
         ul(class=`${className}__controls`)
           li(
-            class=`${className}__control ${className}__control_left icon-expand_more_prev js-${className}__control`,
+            class=`${className}__control ${className}__control_left js-${className}__control`,
             data-type="left"
           )
+            +icon('icon-expand_more_prev')
           li(
-            class=`${className}__control ${className}__control_right icon-expand_more_prev js-${className}__control`,
+            class=`${className}__control ${className}__control_right js-${className}__control`,
             data-type="right"
           )
+            +icon('icon-expand_more_prev')
         ul(class=`${className}__points`)
           while n < length
             if (max && n > max)

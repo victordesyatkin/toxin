@@ -1,4 +1,5 @@
 include ../title-label/title-label
+include ../icon/icon
 
 mixin text-field(props)
   if props
@@ -31,21 +32,22 @@ mixin text-field(props)
           } = button;
           let buttonClassName = `${className}__button`;
           let buttonClassNames = `${buttonClassName} js-${buttonClassName}`;
+          let buttonContentClassName = '';
           switch (buttonIconClassName) {
             case 'arrow-forward': {
               buttonClassNames += ` ${buttonClassName}_forwarded`;
-              buttonClassNames += ' icon-arrow_forward';
+              buttonContentClassName = 'icon-arrow_forward';
               break;
             }
             case 'arrow-down':
             default: {
               buttonClassNames += ` ${buttonClassName}_default`;
-              buttonClassNames += ' icon-expand_more';
+              buttonContentClassName = 'icon-expand_more';
               break;
             }
             case 'eye': {
               buttonClassNames += ` ${buttonClassName}_default_eye`;
-              buttonClassNames += ' icon-eye';
+              buttonContentClassName = 'icon-eye';
               break;
             }
           }
@@ -55,6 +57,7 @@ mixin text-field(props)
           class=buttonClassNames,
           value=buttonValue
         )
+          +icon(buttonContentClassName)
       if isSummaryOnly
         p(class=`${className}__summary js-${className}__summary`) !{ summary }
       else if isHidden

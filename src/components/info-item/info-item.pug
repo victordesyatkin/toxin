@@ -1,3 +1,5 @@
+include ../icon/icon
+
 mixin info-item(props)
   if props
     -
@@ -8,7 +10,8 @@ mixin info-item(props)
       if iconClassName
         span(class=`${className}__image-wrapper`)
           if iconClassName
-            span(class=`${className}__icon ${iconClassName}`)
+            span(class=`${className}__icon`)
+              +icon(iconClassName)
           else if src
             img(src=src, alt=alt, class=`${className}__image`)
       div(class=`${className}__body`)

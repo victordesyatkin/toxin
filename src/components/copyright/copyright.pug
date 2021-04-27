@@ -1,5 +1,6 @@
 include ../logo-image/logo-image
 include ../link/link
+include ../icon/icon
 
 mixin copyright(props)
   if props
@@ -21,7 +22,9 @@ mixin copyright(props)
             let { icon, ...link } = item || {};
             let className = "copyright__icon";
             let classNames = `${className}`;
-            classNames += icons[icon] ? ` ${icons[icon]}` : '';
+            let readyIcon = icons[icon];
           li(class=`${mainClassName}__social-item`)
             +link(link)
-              i(class=classNames)
+              if readyIcon
+                span(class=classNames)
+                  +icon(readyIcon)
