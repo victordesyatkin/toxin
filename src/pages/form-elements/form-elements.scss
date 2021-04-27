@@ -24,12 +24,14 @@ $parent: 'form-elements';
   &__comments,
   &__section {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin-bottom: 2rem;
     width: 100%;
 
-    @include media-breakpoint-down($md) {
-      flex-wrap: wrap;
-      justify-content: space-around;
+    @include media-breakpoint-up($md) {
+      flex-wrap: initial;
+      justify-content: initial;
     }
   }
 

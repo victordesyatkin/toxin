@@ -15,12 +15,12 @@ $parent: '.color-sample';
   &__section-rectangle {
     border-radius: 0.42rem;
     height: 5rem;
-    margin-right: 2.85rem;
+    margin-right: 1rem;
     min-width: 5rem;
     width: 5rem;
 
-    @include media-breakpoint-down($sm) {
-      margin-right: 1rem;
+    @include media-breakpoint-up($sm) {
+      margin-right: 2.85rem;
     }
   }
 

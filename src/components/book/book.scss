@@ -1,15 +1,15 @@
 $parent: 'book';
 
 .#{$parent} {
-  padding: 2.8571rem 0 2.1428rem;
+  padding: 2rem 0.7rem;
   width: 100%;
 
-  @include media-breakpoint-down($xs) {
-    padding: 2rem 0.7rem;
+  @include media-breakpoint-up($lg) {
+    padding: 2rem 0.5rem;
   }
 
-  @include media-breakpoint-down($xxs) {
-    padding: 2rem 0.5rem;
+  @include media-breakpoint-up($xs) {
+    padding: 2.8571rem 0 2.1428rem;
   }
 
   &__wrapper-section {
@@ -89,14 +89,10 @@ $parent: 'book';
 
   &__item-service {
     line-height: 1.48rem;
-    width: 15.69rem;
+    width: 15rem;
 
-    @include media-breakpoint-down($xs) {
-      width: 15rem;
-    }
-
-    @include media-breakpoint-down($xxs) {
-      width: auto;
+    @include media-breakpoint-up($xs) {
+      width: 15.69rem;
     }
   }
 
@@ -123,9 +119,10 @@ $parent: 'book';
     cursor: pointer;
     display: inline-flex;
     font-size: 1.4285rem;
+    margin: 0 0.5rem;
 
-    @include media-breakpoint-down($xxs) {
-      margin: 0 0.5rem;
+    @include media-breakpoint-up($xs) {
+      margin: initial;
     }
 
     &:hover {
