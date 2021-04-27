@@ -14,15 +14,13 @@ $parent: 'card-header';
     }
 
     .#{$parent}__number {
-      font-size: 1.3571rem;
+      font-size: 1.36rem;
       margin: 0 0 0 0.2857rem;
     }
 
-    .#{$parent}__quality {
-      font-size: 1rem;
-    }
-
     .#{$parent}__price {
+      align-items: center;
+      display: flex;
       font-size: 1rem;
     }
   }

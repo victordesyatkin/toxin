@@ -5,7 +5,7 @@ $parent: 'sign-up';
   width: 100%;
 
   @include media-breakpoint-up($xs) {
-    padding: 2.7142rem 2.1428rem 2.1428rem 2rem;
+    padding: 2.8rem 2.1428rem 2.1428rem 2rem;
   }
 
   &__title {
@@ -25,7 +25,7 @@ $parent: 'sign-up';
   &__gender {
     display: flex;
     justify-self: flex-start;
-    margin-bottom: 1.7142rem;
+    margin-bottom: 1.8rem;
     width: 100%;
   }
 
@@ -38,11 +38,11 @@ $parent: 'sign-up';
   }
 
   &__password {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   &__contribute {
-    margin-bottom: 1.7142rem;
+    margin-bottom: 1.2rem;
   }
 
   &__button-pay {

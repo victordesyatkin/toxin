@@ -487,8 +487,7 @@
         "type": "button",
         "value": "",
         "theme": "blank",
-        "name": "signUp2",
-        "size": "x-large"
+        "name": "signUp2"
       }
     }
   },

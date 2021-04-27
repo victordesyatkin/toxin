@@ -17,45 +17,48 @@ mixin book(props)
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     +card
       form(class=classNames, action=action, method=method)
-        p(class=`${className}__title`)
-          span(class=`${className}__room-number-wrapper`)
-            span(class=`${className}__room-number-content`)= roomNumberContent
-            span(class=`${className}__room-number`)= roomNumber
-            span(class=`${className}__room-quality`)= roomQuality
-          span(class=`${className}__price-wrapper`)
-            span(class=`${className}__price`)
-              | #{price}!{unit}
-            span(class=`${className}__duration`)= duration
-        div(class=`${className}__date-dropdown js-${className}__date-dropdown`)
-          +date-dropdown(dateDropdown)
-        div(class=`${className}__dropdown js-${className}__dropdown`) 
-          +dropdown(dropdown)
-        ul(class=`${className}__calculate`)
-          li(class=`${className}__basis`)
-            span(class=`${className}__basis-content js-${className}__basis-content`)
-            span(class=`${className}__basis-total js-${className}__basis-total`)
-          li(class=`${className}__service-fee`)
-            span(class=`${className}__item-service`)
-              span(class=`${className}__service-fee-content`)= serviceFeeContent
-              span(
-                class=`${className}__discount-content js-${className}__discount-content`
-              )= discountContent
-              span(
-                class=`${className}__discount-total js-${className}__discount-total`
-              )= discountTotal
-            span(class=`${className}__icon-info icon-info`)
-            span(class=`${className}__additional-service-fee-total`)
-              | #{serviceFeeTotal}!{unit}
-          li(class=`${className}__additional-service-fee`)
-            span(class=`${className}__item-service`)
-              span(class=`${className}__additional-service-fee-content`)= additionalServiceFeeContent
-            span(class=`${className}__icon-info icon-info`)
-            span(class=`${className}__additional-service-fee-total`)
-              | #{additionalServiceFeeTotal}!{unit}
+        div(class=`${className}__wrapper-section`)
+          p(class=`${className}__title`)
+            span(class=`${className}__room-number-wrapper`)
+              span(class=`${className}__room-number-content`)= roomNumberContent
+              span(class=`${className}__room-number`)= roomNumber
+              span(class=`${className}__room-quality`)= roomQuality
+            span(class=`${className}__price-wrapper`)
+              span(class=`${className}__price`)
+                | #{price}!{unit}
+              span(class=`${className}__duration`)= duration
+          div(class=`${className}__date-dropdown js-${className}__date-dropdown`)
+            +date-dropdown(dateDropdown)
+          div(class=`${className}__dropdown js-${className}__dropdown`) 
+            +dropdown(dropdown)
+          ul(class=`${className}__calculate`)
+            li(class=`${className}__basis`)
+              span(class=`${className}__basis-content js-${className}__basis-content`)
+              span(class=`${className}__basis-total js-${className}__basis-total`)
+            li(class=`${className}__service-fee`)
+              span(class=`${className}__item-service`)
+                span(class=`${className}__service-fee-content`)= serviceFeeContent
+                span(
+                  class=`${className}__discount-content js-${className}__discount-content`
+                )= discountContent
+                span(
+                  class=`${className}__discount-total js-${className}__discount-total`
+                )= discountTotal
+              span(class=`${className}__icon-info icon-info`)
+              span(class=`${className}__additional-service-fee-total`)
+                | #{serviceFeeTotal}!{unit}
+            li(class=`${className}__additional-service-fee`)
+              span(class=`${className}__item-service`)
+                span(class=`${className}__additional-service-fee-content`)= additionalServiceFeeContent
+              span(class=`${className}__icon-info icon-info`)
+              span(class=`${className}__additional-service-fee-total`)
+                | #{additionalServiceFeeTotal}!{unit}
         div(class=`${className}__total-wrapper`)
           span(class=`${className}__total-content`)= totalContent
-          span(class=`${className}__separator`)
+          span(class=`${className}__separator-wrapper`)
+            span(class=`${className}__separator`)
           span(class=`${className}__total js-${className}__total`)
             | #{total}!{unit}
-        div(class=`${className}__buttons`) 
-          +button(button)
+        div(class=`${className}__wrapper-section`)
+          div(class=`${className}__buttons`) 
+            +button(button)
