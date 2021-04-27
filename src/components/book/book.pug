@@ -31,12 +31,10 @@ mixin book(props)
         div(class=`${className}__dropdown js-${className}__dropdown`) 
           +dropdown(dropdown)
         ul(class=`${className}__calculate`)
-          li(class=`${className}__basis ${className}__item`)
+          li(class=`${className}__basis`)
             span(class=`${className}__basis-content js-${className}__basis-content`)
-            span(
-              class=`${className}__basis-total js-${className}__basis-total ${className}__item-total`
-            )
-          li(class=`${className}__service-fee ${className}__item`)
+            span(class=`${className}__basis-total js-${className}__basis-total`)
+          li(class=`${className}__service-fee`)
             span(class=`${className}__item-service`)
               span(class=`${className}__service-fee-content`)= serviceFeeContent
               span(
@@ -46,17 +44,13 @@ mixin book(props)
                 class=`${className}__discount-total js-${className}__discount-total`
               )= discountTotal
             span(class=`${className}__icon-info icon-info`)
-            span(
-              class=`${className}__additional-service-fee-total ${className}__item-total`
-            )
+            span(class=`${className}__additional-service-fee-total`)
               | #{serviceFeeTotal}!{unit}
-          li(class=`${className}__additional-service-fee ${className}__item`)
+          li(class=`${className}__additional-service-fee`)
             span(class=`${className}__item-service`)
               span(class=`${className}__additional-service-fee-content`)= additionalServiceFeeContent
             span(class=`${className}__icon-info icon-info`)
-            span(
-              class=`${className}__additional-service-fee-total ${className}__item-total`
-            )
+            span(class=`${className}__additional-service-fee-total`)
               | #{additionalServiceFeeTotal}!{unit}
         div(class=`${className}__total-wrapper`)
           span(class=`${className}__total-content`)= totalContent

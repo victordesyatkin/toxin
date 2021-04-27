@@ -72,6 +72,9 @@ $parent: 'book';
     margin-bottom: 1.7rem;
   }
 
+  &__additional-service-fee,
+  &__basis,
+  &__service-fee,
   &__item {
     display: flex;
 
@@ -92,6 +95,8 @@ $parent: 'book';
     }
   }
 
+  &__additional-service-fee-total,
+  &__basis-total,
   &__item-total {
     margin-left: auto;
   }

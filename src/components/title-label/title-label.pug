@@ -1,7 +1,7 @@
 mixin title-label(props)
   if props
     -
-      let { content, state, isLabel, htmlFor, accesskey, size, theme } = props;
+      let { content, state, isLabel, htmlFor, accessKey, size, theme } = props;
       let className = 'title-label';
       let classNames = `${className} js-${className}`;
       let sizes = { h1: 'h1', h2: 'h2' };
@@ -14,7 +14,7 @@ mixin title-label(props)
       div(class=classNames)
         if content
           if isLabel
-            label(class=`${className}__label`, accesskey=accesskey, for=htmlFor)= content
+            label(class=`${className}__label`, accesskey=accessKey, for=htmlFor)= content
           else
             h3(class=`${className}__content`)= content
         if state
