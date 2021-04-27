@@ -9,6 +9,7 @@
     "scss/at-mixin-pattern": null,
     "scss/selector-no-redundant-nesting-selector": null,
     "selector-class-pattern": null,
-    "function-url-quotes": null
+    "function-url-quotes": null,
+    "selector-max-compound-selectors": null
   }
 }

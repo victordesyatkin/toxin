@@ -34,9 +34,9 @@ $parent: 'radio-button';
       .#{$parent}__check-dummy {
         background: $gradient-primary;
         border-radius: 50%;
-        height: 12px; // width rem oval shape
+        height: 12px;
         opacity: 1;
-        width: 12px; // width rem oval shape
+        width: 12px;
       }
     }
 

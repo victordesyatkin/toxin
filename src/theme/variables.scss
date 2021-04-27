@@ -2,9 +2,6 @@
 @import '~assets/fonts/quicksand/fonts.scss';
 @import '~assets/fonts/icomoon/fonts.scss';
 
-/*# Variables #*/
-
-/*## Size ##*/
 $xxs: 319px;
 $xs: 575px;
 $sm: 767px;
@@ -12,7 +9,6 @@ $md: 991px;
 $lg: 1199px;
 $xl: 1439px;
 
-/*## Color ##*/
 $dark-shade: rgba(31, 32, 65, 1);
 $dark-shade-opacity-75: rgba($dark-shade, 0.75);
 $dark-shade-opacity-50: rgba($dark-shade, 0.5);
@@ -27,11 +23,9 @@ $color-grey: #f4f4f6;
 $gradient-primary: linear-gradient(180deg, $color-primary 0%, #8ba4f9 100%);
 $gradient-secondary: linear-gradient(180deg, $color-secondary 0%, #66d2ea 100%);
 
-/*## Font ##*/
 $font-size-body: 14px;
 $font-family-body: montserrat, arial, sans-serif;
 
-/*# Mixin #*/
 @mixin background-button-hover {
   @include linear-gradient(180deg, $color-primary, #8ba4f9, 0.5);
 }
@@ -71,7 +65,7 @@ $font-family-body: montserrat, arial, sans-serif;
   background: linear-gradient($degrees,
   rgba($top-color, $opacity) 0%,
   rgba($bottom-color, $opacity) 100%);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{rgba($top-color, $opacity)}', endColorstr='#{rgba($bottom-color, $opacity)}', GradientType=0); /* IE6-9 */
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#{rgba($top-color, $opacity)}', endColorstr='#{rgba($bottom-color, $opacity)}', GradientType=0);
 }
 
 @mixin base-h {

@@ -73,11 +73,9 @@ class SearchRoomFilter extends Component {
   _prepareSearch() {
     const search = window?.location?.search;
     const searchParams = new URLSearchParams(search);
-    /* eslint-disable */
     for (const [key, value] of searchParams.entries()) {
       this._search[key] = value;
     }
-    /* eslint-enable */
   }
 
   @bind

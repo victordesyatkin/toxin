@@ -57,12 +57,12 @@ $parent: 'toggle-button';
     .#{$parent}__mark {
       background: $dark-shade-opacity-25;
       border-radius: 50%;
-      height: 12px; // with rem oval shape
+      height: 12px;
       left: 0.286rem;
       opacity: 1;
       position: absolute;
       transition: left 0.5s;
-      width: 12px; // with rem oval shape
+      width: 12px;
     }
   }
 
