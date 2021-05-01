@@ -7,7 +7,7 @@ $parent: 'room-details';
   &__main-section {
     display: flex;
     flex-direction: column-reverse;
-    padding: 2rem;
+    padding: 0 0 1rem;
 
     @include media-breakpoint-up($md) {
       flex-direction: initial;

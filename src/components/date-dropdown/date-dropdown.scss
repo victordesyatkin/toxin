@@ -18,7 +18,7 @@ $parent: 'date-dropdown';
     list-style-type: none;
     width: 100%;
 
-    @include media-breakpoint-up($xxs) {
+    @include media-breakpoint-up($xs) {
       flex-direction: row;
     }
   }
@@ -33,7 +33,7 @@ $parent: 'date-dropdown';
       margin-left: 0;
       margin-top: 1rem;
 
-      @include media-breakpoint-up($xxs) {
+      @include media-breakpoint-up($xs) {
         margin-left: 1.42rem;
         margin-top: 0;
       }

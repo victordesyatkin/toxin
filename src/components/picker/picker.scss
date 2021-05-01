@@ -2,8 +2,12 @@ $parent: 'picker';
 
 .#{$parent} {
   height: auto;
-  padding: 2.8571rem 2.1428rem 2.0714rem 2rem;
+  padding: 2rem 1rem;
   width: 100%;
+
+  @include media-breakpoint-up($xs) {
+    padding: 2.8571rem 2.1428rem 2.0714rem 2rem;
+  }
 
   &_view_landing_page {
     .#{$parent}__title {
