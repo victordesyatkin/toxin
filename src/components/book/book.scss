@@ -47,7 +47,7 @@ $parent: 'book';
   }
 
   &__duration {
-    @include font-family-first-regular;
+    @include font-family-primary-regular;
 
     font-size: 0.8571rem;
     font-weight: normal;

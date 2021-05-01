@@ -52,7 +52,7 @@ class FormElements extends Component {
       props: textField2,
     });
     this._dropdown1 = new Dropdown({
-      parent: $(`${this._query}__dropdown-first`, this._$element),
+      parent: $(`${this._query}__dropdown-guest-empty`, this._$element),
       props: dropdown1,
     });
     this._maskedTextField = new MaskedTextField({
@@ -88,31 +88,31 @@ class FormElements extends Component {
       props: pagination,
     });
     this._dropdown2 = new Dropdown({
-      parent: $(`${this._query}__dropdown-second`, this._$element),
+      parent: $(`${this._query}__dropdown-comfort-default`, this._$element),
       props: dropdown2,
     });
     this._dropdown3 = new Dropdown({
-      parent: $(`${this._query}__dropdown-third`, this._$element),
+      parent: $(`${this._query}__dropdown-comfort-expanded`, this._$element),
       props: dropdown3,
     });
     this._dropdown4 = new Dropdown({
-      parent: $(`${this._query}__dropdown-fourth`, this._$element),
+      parent: $(
+        `${this._query}__dropdown-guests-empty-expended`,
+        this._$element
+      ),
       props: dropdown4,
     });
     this._dropdown5 = new Dropdown({
-      parent: $(`${this._query}__dropdown-fifth`, this._$element),
+      parent: $(`${this._query}__dropdown-guests-expended`, this._$element),
       props: dropdown5,
     });
     this._expandableCheckboxList1 = new ExpandableCheckboxList({
-      parent: $(
-        `${this._query}__expandable-checkbox-list-first`,
-        this._$element
-      ),
+      parent: $(`${this._query}__expandable-checkbox-list`, this._$element),
       props: expandableCheckboxList1,
     });
     this._expandableCheckboxList1 = new ExpandableCheckboxList({
       parent: $(
-        `${this._query}__expandable-checkbox-list-second`,
+        `${this._query}__expandable-checkbox-list-expended`,
         this._$element
       ),
       props: expandableCheckboxList2,

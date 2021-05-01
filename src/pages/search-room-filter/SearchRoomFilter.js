@@ -46,7 +46,7 @@ class SearchRoomFilter extends Component {
     dropdown1.items[1].value = child || dropdown1.items[1].value;
     dropdown1.items[2].value = baby || dropdown1.items[2].value;
     this._dropdown1 = new Dropdown({
-      parent: $(`${this._query}__dropdown-first`, this._$element),
+      parent: $(`${this._query}__dropdown-guests`, this._$element),
       props: dropdown1,
     });
     this._rangeSlider = new RangeSlider({
@@ -54,7 +54,7 @@ class SearchRoomFilter extends Component {
       props: rangeSlider,
     });
     this._dropdown2 = new Dropdown({
-      parent: $(`${this._query}__dropdown-second`, this._$element),
+      parent: $(`${this._query}__dropdown-comfort`, this._$element),
       props: dropdown2,
     });
     this._expandableCheckboxList = new ExpandableCheckboxList({

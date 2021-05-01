@@ -1,3 +1,5 @@
+import bind from 'bind-decorator';
+
 import { Component } from '../../helpers';
 import Picker from '../../components/picker';
 import SignUp from '../../components/sign-up';
@@ -17,15 +19,7 @@ class Cards extends Component {
   }
 
   _init() {
-    const {
-      book,
-      picker,
-      signUp,
-      signIn,
-      calendar,
-      cardSlider1,
-      cardSlider2,
-    } = this._props;
+    const { book, picker, signUp, signIn, calendar, cardSliders } = this._props;
     this._picker = new Picker({
       parent: `${this._query}__picker`,
       props: picker,
@@ -46,14 +40,26 @@ class Cards extends Component {
       parent: `${this._query}__calendar`,
       props: calendar,
     });
-    this._cardSlider1 = new CardSlider({
-      parent: `${this._query}__card-slider-first`,
-      props: cardSlider1,
-    });
-    this._cardSlider2 = new CardSlider({
-      parent: `${this._query}__card-slider-second`,
-      props: cardSlider2,
-    });
+    this._cardSliders = [];
+    if (cardSliders?.length) {
+      $(`${this._query}__card-slider`, this._$element).each(
+        this._createCardSlider
+      );
+    }
+  }
+
+  @bind
+  _createCardSlider(index, element) {
+    const { cardSliders } = this._props;
+    const cardSlider = cardSliders[index];
+    if (cardSlider) {
+      this._cardSliders.push(
+        new CardSlider({
+          parent: $(element),
+          props: cardSlider,
+        })
+      );
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 $parent: 'button';
 
 .#{$parent} {
-  @include font-family-first-bold;
+  @include font-family-primary-bold;
   @include reset-button;
 
   align-items: center;

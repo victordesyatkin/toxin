@@ -18,7 +18,8 @@ block main
   -
     let className = 'cards';
     let classNames = `${className} js-${className}`;
-    let { picker, book, calendar, signUp, signIn, cardSlider1, cardSlider2 } = data;
+    let { picker, book, calendar, signUp, signIn, cardSliders = [] } = data;
+    let cardSlidersLength = cardSliders.length;
   section(class=classNames)
     ul(class=`${className}__list-picker`)
       li(class=`${className}__picker js-${className}__picker`)
@@ -34,12 +35,13 @@ block main
       li(class=`${className}__calendar js-${className}__calendar`)
         +calendar(calendar)
       li(class=`${className}__sliders js-${className}__sliders`)
-        ul(class=`${className}__list`)
-          li(
-            class=`${className}__card-slider-first js-${className}__card-slider-first`
-          )
-            +card-slider(cardSlider1)
-          li(
-            class=`${className}__card-slider-second js-${className}__card-slider-second`
-          )
-            +card-slider(cardSlider2)
+        if cardSlidersLength
+          ul(class=`${className}__list`)
+            each cardSlider in cardSliders
+              -
+                let { withControl } = cardSlider || {};
+                let cardSliderClassName = `${className}__card-slider`;
+                let cardSliderClassNames = `${cardSliderClassName} js-${className}__card-slider`;
+                cardSliderClassNames += withControl ? ` ${cardSliderClassName}_with_control` : '';
+              li(class=cardSliderClassNames)
+                +card-slider(cardSlider)

@@ -27,8 +27,12 @@ $parent: 'card-header';
 
   &_theme_search {
     .#{$parent}__number {
-      font-size: 1.12rem;
-      margin: 0 0.4rem 0 0.23rem;
+      font-size: 1.3rem;
+      margin: 0 0.65rem 0 0.23rem;
+    }
+
+    .#{$parent}__price {
+      padding-top: 0.214rem;
     }
   }
 
@@ -67,7 +71,7 @@ $parent: 'card-header';
   }
 
   &__duration {
-    @include font-family-first-regular;
+    @include font-family-primary-regular;
 
     color: $dark-shade-opacity-50;
     font-size: 0.8571rem;

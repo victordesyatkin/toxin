@@ -491,100 +491,102 @@
       }
     }
   },
-  "cardSlider1": {
-    "slider": {
-      "images": [
-        {
-          "src": "assets/images/slider-1.jpg",
-          "alt": "view-1"
-        },
-        {
-          "src": "assets/images/slider-2.jpg",
-          "alt": "view-2"
-        },
-        {
-          "src": "assets/images/slider-3.jpg",
-          "alt": "view-3"
-        },
-        {
-          "src": "assets/images/slider-4.jpg",
-          "alt": "view-4"
-        }
-      ],
-      "withControl": true
-    },
-    "info": {
-      "roomNumber": 888,
-      "roomQuality": "люкс",
-      "price": "9 990",
-      "duration": "в сутки",
-      "unit": "&#8381",
-      "roomNumberContent": "№",
-      "numberFormat": "ru-RU",
-      "options": { "style": "decimal", "currency": "RUB" },
-      "theme": "slider"
-    },
-    "rating": {
-      "button": {
-        "name": "rating1test",
-        "value": 5,
-        "total": 5,
-        "isDisabled": false,
-        "srcImgRate": "assets/images/star.svg",
-        "altImgRate": "Rate",
-        "srcImgNoRate": "assets/images/star-border.svg",
-        "altImgNoRate": "No rate"
-      }
-    },
-    "commentsNumber": 145,
-    "commentsContent": "Отзывов"
-  },
-  "cardSlider2": {
-    "slider": {
-      "images": [
-        {
-          "src": "assets/images/slider-2.jpg",
-          "alt": "view-2"
-        },
-        {
-          "src": "assets/images/slider-1.jpg",
-          "alt": "view-1"
-        },
-        {
-          "src": "assets/images/slider-3.jpg",
-          "alt": "view-3"
-        },
-        {
-          "src": "assets/images/slider-4.jpg",
-          "alt": "view-4"
-        }
-      ]
-    },
-    "info": {
-      "roomNumber": "840",
-      "roomQuality": "",
-      "price": "9 900",
-      "duration": "в сутки",
-      "unit": "&#8381",
-      "roomNumberContent": "№",
-      "numberFormat": "ru-RU",
-      "options": { "style": "decimal", "currency": "RUB" },
-      "theme": "slider"
-    },
-    "rating": {
-      "button": {
-        "name": "rating2",
-        "value": 4,
-        "total": 5,
-        "srcImgRate": "assets/images/star.svg",
-        "altImgRate": "Rate",
-        "srcImgNoRate": "assets/images/star-border.svg",
-        "altImgNoRate": "No rate"
+  "cardSliders": [
+    {
+      "slider": {
+        "images": [
+          {
+            "src": "assets/images/slider-1.jpg",
+            "alt": "view-1"
+          },
+          {
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
+          },
+          {
+            "src": "assets/images/slider-3.jpg",
+            "alt": "view-3"
+          },
+          {
+            "src": "assets/images/slider-4.jpg",
+            "alt": "view-4"
+          }
+        ],
+        "withControl": true
       },
-      "comments": 65
+      "info": {
+        "roomNumber": 888,
+        "roomQuality": "люкс",
+        "price": "9 990",
+        "duration": "в сутки",
+        "unit": "&#8381",
+        "roomNumberContent": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
+      },
+      "rating": {
+        "button": {
+          "name": "rating1test",
+          "value": 5,
+          "total": 5,
+          "isDisabled": false,
+          "srcImgRate": "assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
+        }
+      },
+      "commentsNumber": 145,
+      "commentsContent": "Отзывов"
     },
-    "commentsNumber": 65,
-    "commentsContent": "Отзывов"
-  },
+    {
+      "slider": {
+        "images": [
+          {
+            "src": "assets/images/slider-2.jpg",
+            "alt": "view-2"
+          },
+          {
+            "src": "assets/images/slider-1.jpg",
+            "alt": "view-1"
+          },
+          {
+            "src": "assets/images/slider-3.jpg",
+            "alt": "view-3"
+          },
+          {
+            "src": "assets/images/slider-4.jpg",
+            "alt": "view-4"
+          }
+        ]
+      },
+      "info": {
+        "roomNumber": "840",
+        "roomQuality": "",
+        "price": "9 900",
+        "duration": "в сутки",
+        "unit": "&#8381",
+        "roomNumberContent": "№",
+        "numberFormat": "ru-RU",
+        "options": { "style": "decimal", "currency": "RUB" },
+        "theme": "slider"
+      },
+      "rating": {
+        "button": {
+          "name": "rating2",
+          "value": 4,
+          "total": 5,
+          "srcImgRate": "assets/images/star.svg",
+          "altImgRate": "Rate",
+          "srcImgNoRate": "assets/images/star-border.svg",
+          "altImgNoRate": "No rate"
+        },
+        "comments": 65
+      },
+      "commentsNumber": 65,
+      "commentsContent": "Отзывов"
+    }
+  ],
   "title": "Cards"
 }

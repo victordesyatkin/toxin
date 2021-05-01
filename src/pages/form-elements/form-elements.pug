@@ -42,7 +42,9 @@ block main
           class=`${className}__text-field-hover-focus js-${className}__text-field-hover-focus`
         )
           +text-field(textField2)
-        li(class=`${className}__dropdown-first js-${className}__dropdown-first`)
+        li(
+          class=`${className}__dropdown-guest-empty js-${className}__dropdown-guest-empty`
+        )
           +dropdown(dropdown1)
         li(class=`${className}__masked-text-field js-${className}__masked-text-field`)
           +masked-text-field(maskedTextField)
@@ -77,25 +79,33 @@ block main
         li(class=`${className}__pagination js-${className}__pagination`)
           +pagination(pagination)
     section(class=`${className}__dropdowns`)
-      ul(class=`${className}__list-dropdowns-first`)
-        li(class=`${className}__dropdown-second js-${className}__dropdown-second`)
+      ul(class=`${className}__list-dropdowns-comfort`)
+        li(
+          class=`${className}__dropdown-comfort-default js-${className}__dropdown-comfort-default`
+        )
           +dropdown(dropdown2)
-        li(class=`${className}__dropdown-third js-${className}__dropdown-third`)
+        li(
+          class=`${className}__dropdown-comfort-expanded js-${className}__dropdown-comfort-expanded`
+        )
           +dropdown(dropdown3)
-      ul(class=`${className}__list-dropdowns-second`)
-        li(class=`${className}__dropdown-fourth js-${className}__dropdown-fourth`)
+      ul(class=`${className}__list-dropdowns-guests-empty-expended`)
+        li(
+          class=`${className}__dropdown-guests-empty-expended js-${className}__dropdown-guests-empty-expended`
+        )
           +dropdown(dropdown4)
-      ul(class=`${className}__list-dropdowns-third`)
-        li(class=`${className}__dropdown-fifth js-${className}__dropdown-fifth`)
+      ul(class=`${className}__list-dropdowns-guests-expended`)
+        li(
+          class=`${className}__dropdown-guests-expended js-${className}__dropdown-guests-expended`
+        )
           +dropdown(dropdown5) 
     section(class=`${className}__lists`)
       ul(class=`${className}__list-expandable-checkbox-list`)
         li(
-          class=`${className}__expandable-checkbox-list-first js-${className}__expandable-checkbox-list-first`
+          class=`${className}__expandable-checkbox-list js-${className}__expandable-checkbox-list`
         )
           +expandable-checkbox-list(expandableCheckboxList1)
         li(
-          class=`${className}__expandable-checkbox-list-second js-${className}__expandable-checkbox-list-second`
+          class=`${className}__expandable-checkbox-list-expended js-${className}__expandable-checkbox-list-expended`
         )
           +expandable-checkbox-list(expandableCheckboxList2)
       ul(class=`${className}__list-rich-checkbox-buttons`)

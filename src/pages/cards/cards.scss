@@ -86,8 +86,7 @@ $parent: '.cards';
   &__sign-in,
   &__calendar,
   &__sliders,
-  &__card-slider-first,
-  &__card-slider-second {
+  &__card-slider {
     margin-bottom: 2.7rem;
     width: 100%;
   }
@@ -98,7 +97,7 @@ $parent: '.cards';
     }
   }
 
-  &__card-slider-first {
+  &__with_control {
     @include media-breakpoint-up($xl) {
       margin-bottom: 2.6rem;
     }

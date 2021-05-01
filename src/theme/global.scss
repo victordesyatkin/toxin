@@ -6,7 +6,7 @@
 
 html,
 body {
-  @include font-family-first-regular;
+  @include font-family-primary-regular;
 
   background-color: $color-grey;
   font-size: $font-size-body;
@@ -19,7 +19,7 @@ body {
 }
 
 ::placeholder {
-  @include font-family-first-regular;
+  @include font-family-primary-regular;
 
   color: $dark-shade-opacity-25;
 }

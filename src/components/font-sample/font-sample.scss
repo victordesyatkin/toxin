@@ -1,7 +1,7 @@
 $parent: '.font-sample';
 
 #{$parent} {
-  @include font-family-first-regular;
+  @include font-family-primary-regular;
 
   display: flex;
   width: 100%;

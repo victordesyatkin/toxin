@@ -38,13 +38,13 @@ $font-family-body: montserrat, arial, sans-serif;
   user-select: none;
 }
 
-@mixin font-family-first-regular {
+@mixin font-family-primary-regular {
   font-family: $font-family-body;
   font-style: normal;
   font-weight: 400;
 }
 
-@mixin font-family-first-bold {
+@mixin font-family-primary-bold {
   font-family: $font-family-body;
   font-style: normal;
   font-weight: 700;
@@ -69,7 +69,7 @@ $font-family-body: montserrat, arial, sans-serif;
 }
 
 @mixin base-h {
-  @include font-family-first-bold;
+  @include font-family-primary-bold;
 
   color: $dark-shade;
 }
@@ -98,7 +98,7 @@ $font-family-body: montserrat, arial, sans-serif;
 
 @mixin h3-lite {
   @include base-h;
-  @include font-family-first-regular;
+  @include font-family-primary-regular;
 
   font-size: 0.85rem;
   font-weight: normal;

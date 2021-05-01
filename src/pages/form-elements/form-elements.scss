@@ -93,7 +93,7 @@ $parent: 'form-elements';
       margin-bottom: 12.4rem;
     }
 
-    .#{$parent}__list-dropdowns-first {
+    .#{$parent}__list-dropdowns-comfort {
       max-width: 19rem;
 
       @include media-breakpoint-up($sm) {
@@ -110,7 +110,7 @@ $parent: 'form-elements';
       }
     }
 
-    .#{$parent}__list-dropdowns-second {
+    .#{$parent}__list-dropdowns-guests-empty-expended {
       max-width: 22.8571rem;
 
       @include media-breakpoint-up($sm) {
@@ -127,7 +127,7 @@ $parent: 'form-elements';
       }
     }
 
-    .#{$parent}__list-dropdowns-third {
+    .#{$parent}__list-dropdowns-guests-expended {
       max-width: 22.85rem;
       @include media-breakpoint-up($md) {
         margin-bottom: initial;
@@ -196,9 +196,9 @@ $parent: 'form-elements';
   &__list-text-field,
   &__list-checkbox-buttons,
   &__list-range-sliders,
-  &__list-dropdowns-first,
-  &__list-dropdowns-second,
-  &__list-dropdowns-third,
+  &__list-dropdowns-comfort,
+  &__list-dropdowns-guests-empty-expended,
+  &__list-dropdowns-guests-expended,
   &__list-expandable-checkbox-list,
   &__list-rich-checkbox-buttons,
   &__list-bullet-list,
@@ -213,7 +213,7 @@ $parent: 'form-elements';
 
   &__text-field-default,
   &__text-field-hover-focus,
-  &__dropdown-first,
+  &__dropdown-guest-empty,
   &__masked-text-field,
   &__date-dropdown,
   &__filter-date-dropdown,
@@ -227,12 +227,12 @@ $parent: 'form-elements';
   &__buttons,
   &__button,
   &__pagination,
-  &__dropdown-second,
-  &__dropdown-third,
-  &__dropdown-fourth,
-  &__dropdown-fifth,
-  &__expandable-checkbox-list-first,
-  &__expandable-checkbox-list-second,
+  &__dropdown-comfort-default,
+  &__dropdown-comfort-expanded,
+  &__dropdown-guests-empty-expended,
+  &__dropdown-guests-expended,
+  &__expandable-checkbox-list,
+  &__expandable-checkbox-list-expended,
   &__rich-checkbox-buttons,
   &__bullet-list,
   &__info,
@@ -249,7 +249,7 @@ $parent: 'form-elements';
     margin-bottom: 1.42rem;
   }
 
-  &__dropdown-first {
+  &__dropdown-guest-empty {
     margin-bottom: 1.6742rem;
   }
 
@@ -308,11 +308,11 @@ $parent: 'form-elements';
     margin-bottom: 2.9285rem;
   }
 
-  &__dropdown-second {
+  &__dropdown-comfort-default {
     margin-bottom: 1.42rem;
   }
 
-  &__expandable-checkbox-list-first {
+  &__expandable-checkbox-list {
     margin-bottom: 3.5rem;
   }
 

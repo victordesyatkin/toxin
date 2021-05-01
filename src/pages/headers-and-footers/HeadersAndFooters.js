@@ -28,11 +28,11 @@ class HeadersAndFooters extends Component {
       props: headerAuthorized,
     });
     this._footer1 = new Footer({
-      parent: $(`${this._query}__footer-first`, this._$element),
+      parent: $(`${this._query}__footer`, this._$element),
       props: footer1,
     });
     this._footer2 = new Footer({
-      parent: $(`${this._query}__footer-second`, this._$element),
+      parent: $(`${this._query}__footer-small`, this._$element),
       props: footer2,
     });
   }
