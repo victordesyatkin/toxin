@@ -10,7 +10,12 @@ mixin expandable(props)
       classNames += withShift ? ` ${className}_with-shift` : '';  
       classNames += isOpened ? ` ${className}_opened` : '';
     div(class=classNames)
-      div(class=`${className}__header js-${className}__header`)
+      div(
+        role="button",
+        tabindex="0",
+        aria-pressed="false",
+        class=`${className}__header js-${className}__header`
+      )
         span(class=`${className}__title`)= title
         span(class=`${className}__control`)
           +icon(iconClassNames)
