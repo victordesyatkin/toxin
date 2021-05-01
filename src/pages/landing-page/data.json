@@ -480,6 +480,5 @@
     "action": "/mock-address/change-me"
   },
   "slogan": "Лучшие номера для вашей работы, отдыха и просто вдохновения",
-  "action": "search-room-filter.html",
-  "backgroundImage": "assets/images/landing-page.jpg"
+  "action": "search-room-filter.html"
 }

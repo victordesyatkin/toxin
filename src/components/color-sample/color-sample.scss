@@ -1,8 +1,50 @@
-$parent: '.color-sample';
+$parent: 'color-sample';
 
-#{$parent} {
+.#{$parent} {
   align-items: center;
   display: flex;
+
+  &_color_dark-shade {
+    .#{$parent}__section-rectangle {
+      background-color: $dark-shade;
+    }
+  }
+
+  &_color_dark-shade-opacity-75 {
+    .#{$parent}__section-rectangle {
+      background-color: $dark-shade-opacity-75;
+    }
+  }
+
+  &_color_dark-shade-opacity-50 {
+    .#{$parent}__section-rectangle {
+      background-color: $dark-shade-opacity-50;
+    }
+  }
+
+  &_color_dark-shade-opacity-25 {
+    .#{$parent}__section-rectangle {
+      background-color: $dark-shade-opacity-25;
+    }
+  }
+
+  &_color_dark-shade-opacity-5 {
+    .#{$parent}__section-rectangle {
+      background-color: $dark-shade-opacity-5;
+    }
+  }
+
+  &_color_color-primary {
+    .#{$parent}__section-rectangle {
+      background-color: $color-primary;
+    }
+  }
+
+  &_color_color-secondary {
+    .#{$parent}__section-rectangle {
+      background-color: $color-secondary;
+    }
+  }
 
   &__section-rectangle,
   &__section-info,

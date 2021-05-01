@@ -13,7 +13,7 @@ class RegistrationSignIn extends Component {
   }
 
   _init() {
-    const { signIn, backgroundImage } = this._props;
+    const { signIn } = this._props;
     this._base = new Base({
       props: this._props,
     });
@@ -21,11 +21,6 @@ class RegistrationSignIn extends Component {
       parent: $(`${this._query}__sign-in`, this._$element),
       props: signIn,
     });
-    if (backgroundImage) {
-      this._$element.css({
-        'background-image': `url("${backgroundImage}")`,
-      });
-    }
   }
 }
 

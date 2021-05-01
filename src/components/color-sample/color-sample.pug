@@ -1,12 +1,21 @@
 mixin color-sample(props)
   if props
     -
-      let { background, label, description } = props;
-      let style = background ? `background: ${background};`: '';
+      let { color, label, description } = props;
       let className = 'color-sample';
-      let classNames = `${className} js-${className}`; 
+      let classNames = `${className} js-${className}`;
+      let  colors = {
+        'dark-shade': 'dark-shade', 
+        'dark-shade-opacity-75': 'dark-shade-opacity-75',
+        'dark-shade-opacity-50': 'dark-shade-opacity-50',
+        'dark-shade-opacity-25': 'dark-shade-opacity-25',
+        'dark-shade-opacity-5': 'dark-shade-opacity-5',
+        'color-primary': 'color-primary',
+        'color-secondary': 'color-secondary',
+      };
+      classNames += colors[color] ? ` ${className}_color_${colors[color]}` : ''; 
     div(class=classNames)
-      span(class=`${className}__section-rectangle`, style=style)
+      span(class=`${className}__section-rectangle`)
       span(class=`${className}__section-info`)
         span(class=`${className}__label`)= label
         span(class=`${className}__description`)= description

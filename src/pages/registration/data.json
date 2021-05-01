@@ -1,7 +1,6 @@
 {
   "container": { "basis": 1440, "align": "center" },
   "slug": "registration",
-  "backgroundImage": "assets/images/registration.jpg",
   "meta": [
     {
       "name": "description",
