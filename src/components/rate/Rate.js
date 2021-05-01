@@ -19,7 +19,23 @@ class Rate extends Component {
     this._initCanvas();
     this._initCircleParams();
     this._draw();
+    this._fillMarks();
     window.addEventListener('resize', this._resizeCanvas);
+  }
+
+  @bind
+  _fillMark(index, element) {
+    const $element = $(element);
+    const { votes = [] } = this._props;
+    const vote = votes?.[index];
+    if (vote) {
+      const { color, background } = vote || {};
+      $element.css({ color, background });
+    }
+  }
+
+  _fillMarks() {
+    $(`${this._query}__vote-mark`, this._$element).each(this._fillMark);
   }
 
   @bind
@@ -56,7 +72,6 @@ class Rate extends Component {
       ['order'],
       ['asc']
     );
-
     this._separator = this._props?.separator || {};
     this._separatorColor = this._separator.color;
     this._separatorCount = this._separator.count;

@@ -2,13 +2,14 @@ include ../like-button/like-button
 
 mixin comment(props)
   -
-    let { src, fullName, date, content, likeButton } = props;
-    let style = src ? `background: url(${src}) 45% 30%` : ''; 
+    let { src, fullName, alt = fullName, date, content, likeButton } = props; 
     let className = 'comment';
     let classNames = `${className} js-${className}`;
   article(class=classNames)
     div(class=`${className}__left`)
-      span(class=`${className}__image`, style=style)
+      if src
+        span(class=`${className}__image-wrapper`)
+          img(src=src, alt=alt, class=`${className}__image`)
       div(class=`${className}__like-button js-${className}__like-button`)
         +like-button(likeButton)
     div(class=`${className}__right`)

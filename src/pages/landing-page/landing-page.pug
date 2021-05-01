@@ -4,10 +4,9 @@ include ../../components/picker/picker
 
 block main
   -
-    let { picker, footer, backgroundImage, slogan } = data;
+    let { picker, footer, slogan } = data;
     let className = "landing-page";
     let classNames = `${className} js-${className}`;
-    let style = backgroundImage ? `background-image: url(${backgroundImage});` : '';
   section(class=classNames, style=style)
     div(class=`${className}__picker js-${className}__picker`)
       +picker(picker) 

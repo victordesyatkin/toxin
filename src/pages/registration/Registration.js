@@ -13,7 +13,7 @@ class Registration extends Component {
   }
 
   _init() {
-    const { signUp } = this._props;
+    const { signUp, backgroundImage } = this._props;
     this._base = new Base({
       props: this._props,
     });
@@ -21,6 +21,9 @@ class Registration extends Component {
       parent: $(`${this._query}__sign-up`, this._$element),
       props: signUp,
     });
+    if (backgroundImage) {
+      this._$element.css({ 'background-image': `url("${backgroundImage}")` });
+    }
   }
 }
 

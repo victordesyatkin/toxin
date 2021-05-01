@@ -3,11 +3,9 @@ include ../../components/sign-up/sign-up
 
 block main
   -
-    let { backgroundImage } = data;        
-    let style = backgroundImage ? `background-image: url("${backgroundImage}"); ` : '';
     let className = 'registration';
     let classNames = `${className} js-${className}`;
-  section(class=classNames, style=style)
+  section(class=classNames)
     block sign
       - let { signUp } = data;
       if signUp

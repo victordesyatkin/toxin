@@ -19,8 +19,7 @@ mixin rate(props)
         ul(class=`${className}__clarification`)
           each vote in votes
             -
-              let { color , background, label } = vote || {};
-              let style = (color ? `color: ${color};` : '') + (background ? `background: ${background}`: '');
+              let { label } = vote || {};
             li(class=`${className}__vote`)
-              span(class=`${className}__vote-mark`, style=style)
+              span(class=`${className}__vote-mark js-${className}__vote-mark`)
               span(class=`${className}__vote-label`)= label

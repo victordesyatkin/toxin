@@ -3,19 +3,23 @@ $parent: 'comment';
 .#{$parent} {
   display: flex;
 
-  &__image,
+  &__image-wrapper,
   &__full-name,
   &__content {
     display: inline-flex;
   }
 
-  &__image {
-    border: 2px solid $color-white;
-    border-radius: 1.71rem;
-    display: block;
+  &__image-wrapper {
+    border-radius: 50%;
     filter: drop-shadow(0 0.71rem 1.42rem $dark-shade-opacity-1);
     height: 3.42rem;
+    overflow: hidden;
     width: 3.42rem;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
   }
 
   &__like-button {

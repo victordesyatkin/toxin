@@ -13,7 +13,7 @@ class LandingPage extends Component {
   }
 
   _init() {
-    const { picker } = this._props;
+    const { picker, backgroundImage } = this._props;
     this._base = new Base({
       props: this._props,
     });
@@ -21,6 +21,9 @@ class LandingPage extends Component {
       parents: this._$element,
       props: picker,
     });
+    if (backgroundImage) {
+      this._$element.css({ 'background-image': `url("${backgroundImage}")` });
+    }
   }
 }
 
