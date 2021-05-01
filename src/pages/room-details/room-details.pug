@@ -11,20 +11,18 @@ block main
   -
     let { info, rate, comments, bulletList, cancel, book, images = {}, slider } = data;
     let { image1, image2, image3 } = images;
-    let { src: backgroundImage1 } = image1;
-    let { src: backgroundImage2 } = image2;
-    let { src: backgroundImage3 } = image3;
-    let styleFirst = backgroundImage1 ? `background-image: url(${backgroundImage1});` : '';
-    let styleSecond = backgroundImage2 ? `background-image: url(${backgroundImage2});` : '';
-    let styleThird = backgroundImage3 ? `background-image: url(${backgroundImage3});` : '';
+    let { src: srcImage1, alt: altImage1 } = image1;
+    let { src: srcImage2, alt: altImage2 } = image2;
+    let { src: srcImage3, alt: altImage3 } = image3;
     let className = 'room-details';
     let classNames = `${className} js-${className}`;
   section(class=classNames)
-    section(class=`${className}__views-section`)
-      div(class=`${className}__view-first`, style=styleFirst)
-      div(class=`${className}__views`, style=styleFirst)
-        div(class=`${className}__view-second`, style=styleSecond)
-        div(class=`${className}__view-third`, style=styleThird)
+    div(class=`${className}__views`)
+      div(class=`${className}__view`)
+        img(src=srcImage1, alt=altImage1, class=`${className}__image`)
+      div(class=`${className}__view`, style=styleFirst)
+        img(src=srcImage2, alt=altImage2, class=`${className}__image`)
+        img(src=srcImage3, alt=altImage3, class=`${className}__image`)
     div(class=`${className}__slider js-${className}__slider`)
       +slider(slider)
     section(class=`${className}__main-section`)

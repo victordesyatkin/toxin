@@ -17,7 +17,7 @@ $parent: 'room-details';
     }
 
     @include media-breakpoint-up($xl) {
-      padding: 4.9285rem 9.9285rem 4.6428rem 10.0285rem;
+      padding: 5.1rem 9.9285rem 4.4rem 10.0285rem;
     }
   }
 
@@ -42,25 +42,12 @@ $parent: 'room-details';
     }
   }
 
-  &__views-section {
+  &__views {
     display: none;
     width: 100%;
 
-    @include media-breakpoint-up($sm) {
+    @include media-breakpoint-up($xs) {
       display: flex;
-      height: 14.7128rem;
-    }
-
-    @include media-breakpoint-up($md) {
-      height: 24.7128rem;
-    }
-
-    @include media-breakpoint-up($lg) {
-      height: 24.7128rem;
-    }
-
-    @include media-breakpoint-up($lg) {
-      height: 34.7128rem;
     }
   }
 
@@ -70,53 +57,18 @@ $parent: 'room-details';
     margin-bottom: 1rem;
     width: 100%;
 
-    @include media-breakpoint-up($sm) {
+    @include media-breakpoint-up($xs) {
       display: none;
     }
   }
 
-  &__views {
-    height: 100%;
-    width: 30%;
-
-    @include media-breakpoint-up($xl) {
-      height: 100%;
-      width: calc(100% - 70.0414rem);
-    }
+  &__view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  &__view-first,
-  &__view-second,
-  &__view-third {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-
-    @include media-breakpoint-up($xl) {
-      background-position: initial;
-      background-size: initial;
-      overflow: hidden;
-    }
-  }
-
-  &__view-first {
-    height: 100%;
-    width: 70%;
-
-    @include media-breakpoint-up($xl) {
-      height: 100%;
-      width: 70.0414rem;
-    }
-  }
-
-  &__view-second {
-    height: 50%;
-    width: 100%;
-  }
-
-  &__view-third {
-    height: 50%;
+  &__image {
     width: 100%;
   }
 
