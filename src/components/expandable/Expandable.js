@@ -12,31 +12,39 @@ class Expandable extends Component {
     this._renderComponent();
   }
 
+  toggleOpen() {
+    if (this._isOpened) {
+      this.close();
+    } else {
+      this.open();
+    }
+  }
+
   open() {
     this._isOpened = true;
-    this._$element.addClass(`${this._className}_opened`);
+    this._$element.toggleClass(`${this._className}_opened`);
+    this._$body.toggle(this._isOpened);
   }
 
   close() {
     this._isOpened = false;
-    this._$element.removeClass(`${this._className}_opened`);
+    this._$element.toggleClass(`${this._className}_opened`);
+    this._$body.toggle(this._isOpened);
   }
 
   _init() {
     const { isOpened } = this._props;
     this._isOpened = isOpened;
     this._$header = $(`${this._query}__header`, this._$element);
-    this._$header.on('click', this._toggleClass);
+    this._$header.on({ click: this._handleHeaderClick });
+    this._$body = $(`${this._query}__body`, this._$element);
+    this._$body.toggle(this._isOpened);
     $('body').on('click', this._handleBodyClick);
   }
 
   @bind
-  _toggleClass() {
-    if (this._$element.hasClass(`${this._className}_opened`)) {
-      this.close();
-    } else {
-      this.open();
-    }
+  _handleHeaderClick() {
+    this.toggleOpen();
   }
 
   @bind
