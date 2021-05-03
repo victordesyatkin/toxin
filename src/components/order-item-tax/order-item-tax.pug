@@ -1,0 +1,9 @@
+include ../order-item/order-item
+
+mixin order-item-tax(props)
+  if props
+    -
+      let className = 'order-item-tax';
+      let classNames = `${className} js-${className}`;
+    article(class=classNames)
+      +order-item(props)

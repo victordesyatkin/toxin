@@ -149,6 +149,19 @@ function value2Date(value = '') {
   }
   return date;
 }
+
+function transformNumber({ number = 0, numberFormat = {} }) {
+  const { locales, options } = numberFormat || {};
+  return new Intl.NumberFormat(locales, options).format(number);
+}
+
+function prepareNumber(number = '') {
+  return (number || '').split(' ').join('') || 0;
+}
+
+function setHtml({ content, ref }) {
+  ref?.html(content);
+}
 class Component {
   constructor(options = {}) {
     this._options = options;
@@ -211,4 +224,7 @@ export {
   value2Date,
   prepareDate,
   isValidDateByParts,
+  transformNumber,
+  prepareNumber,
+  setHtml,
 };

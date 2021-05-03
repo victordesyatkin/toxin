@@ -1,0 +1,16 @@
+include ../icon/icon
+
+mixin order-item(props)
+  if props
+    -
+      let { content, total, withIcon = true, icon = 'icon-info' } = props || {};
+      let className = 'order-item';
+      let classNames = `${className} js-${className}`;
+    article(class=classNames)
+      span(class=`${className}__content js-${className}__content`)
+        | !{content}
+      if withIcon
+        span(class=`${className}__icon-info`)
+          +icon(icon)
+      span(class=`${className}__total js-${className}__total`)
+        | !{total}

@@ -1,6 +1,8 @@
 $parent: 'card-header';
 
 .#{$parent} {
+  width: 100%;
+
   &__section-info {
     color: $dark-shade-opacity-75;
     display: flex;
@@ -9,19 +11,17 @@ $parent: 'card-header';
   }
 
   &_theme_slider {
-    .#{$parent}__number-info {
-      font-size: 1rem;
-    }
-
     .#{$parent}__number {
       font-size: 1.36rem;
-      margin: 0 0 0 0.2857rem;
+      letter-spacing: initial;
+      margin: 0 0.1rem 0 0.2857rem;
     }
 
     .#{$parent}__price {
       align-items: center;
       display: flex;
       font-size: 1rem;
+      padding-top: initial;
     }
   }
 
@@ -36,26 +36,19 @@ $parent: 'card-header';
     }
   }
 
-  &__number-info {
-    @include h3;
-
-    font-size: 1rem;
-    line-height: initial;
-    padding-top: 0.0714rem;
-    text-transform: uppercase;
-  }
-
   &__number {
     @include base-h;
 
-    font-size: 1.286rem;
-    font-weight: bold;
-    margin: 0 0.5714rem 0 0.285rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.07rem;
+    margin: 0 0.1rem 0 0.25rem;
   }
 
   &__quality {
+    @include h3;
+
     color: $color-primary;
-    font-size: 0.929rem;
+    font-size: 0.9rem;
   }
 
   &__price {
@@ -63,10 +56,12 @@ $parent: 'card-header';
 
     color: $dark-shade-opacity-50;
     font-weight: bold;
-    line-height: initial;
+    padding-top: 0.3rem;
   }
 
   &__info-text {
+    @include h3;
+
     font-size: 1rem;
   }
 

@@ -1,0 +1,9 @@
+include ../order-item/order-item
+
+mixin order-item-basis(props)
+  if props
+    -
+      let className = 'order-item-basis';
+      let classNames = `${className} js-${className}`;
+    article(class=classNames)
+      +order-item(props)

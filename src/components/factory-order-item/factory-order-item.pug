@@ -1,0 +1,18 @@
+include ../order-total/order-total
+include ../order-item-basis/order-item-basis
+include ../order-item-discount/order-item-discount
+include ../order-item-tax/order-item-tax
+include ../order-item/order-item
+
+mixin factory-order-item(props)
+  if props
+    - let { type } = props || {};
+    case type
+      when 'basis'
+        +order-item-basis(props)
+      when 'discount'
+        +order-item-discount(props)
+      when 'tax'
+        +order-item-tax(props)
+      default
+        +order-item(props)

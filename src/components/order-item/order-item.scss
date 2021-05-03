@@ -1,0 +1,29 @@
+$parent: 'order-item';
+
+.#{$parent} {
+  display: flex;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    line-height: 1.48rem;
+    width: 15.3rem;
+  }
+
+  &__icon-info {
+    color: $dark-shade-opacity-25;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1.4285rem;
+    margin: 0 0.4rem;
+
+    &:hover {
+      color: initial;
+    }
+  }
+
+  &__total {
+    margin-left: auto;
+    white-space: nowrap;
+  }
+}

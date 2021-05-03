@@ -1,0 +1,12 @@
+mixin order-total(props)
+  if props
+    -
+      let { content, total } = props;
+      let className = 'order-total';
+      let classNames = `${className} js-${className}`;
+    article(class=classNames)
+      span(class=`${className}__content`)= content
+      span(class=`${className}__separator-wrapper`)
+        span(class=`${className}__separator`)
+      span(class=`${className}__total js-${className}__total`)
+        | !{total}

@@ -1,22 +1,12 @@
 import bind from 'bind-decorator';
 
-import { wordForm, Component } from '../../helpers';
+import { Component } from '../../helpers';
 import Dropdown from '../dropdown';
 import DateDropdown from '../date-dropdown';
+import OrderTotal from '../order-total';
+import FactoryOrderItem from '../factory-order-item';
 
 class Book extends Component {
-  static TYPE_PRICE = 3;
-
-  static TYPE_COUNT = 1;
-
-  static TYPE_FEE = 2;
-
-  static IS_CALENDAR = 1;
-
-  static _prepareNumber(number = '') {
-    return number.split(' ').join('') || 0;
-  }
-
   _query = '.js-book';
 
   _className = 'book';
@@ -27,18 +17,23 @@ class Book extends Component {
   }
 
   _init() {
-    const { dateDropdown, dropdown } = this._props;
-    this._$basisContent = $(`${this._query}__basis-content`, this._$element);
-    this._$basisTotal = $(`${this._query}__basis-total`, this._$element);
-    this._$discountContent = $(
-      `${this._query}__discount-content`,
-      this._$element
-    );
-    this._$total = $(`${this._query}__total`, this._$element);
-    this._basisTotal = 0;
-    this._$discountTotal = $(`${this._query}__discount-total`, this._$element);
+    const {
+      dateDropdown,
+      dropdown,
+      header,
+      total,
+      unit,
+      numberFormat,
+    } = this._props;
+    this._factoryOrderItem = new FactoryOrderItem(this._props);
+    this._orderItems = [];
+    $(`${this._query}__order-item`, this._$element).each(this._createOrderItem);
+    this._orderTotal = new OrderTotal({
+      parent: $(`${this._query}__order-total`, this._$element),
+      props: { ...total, unit, numberFormat },
+    });
     this._dateDropdown = new DateDropdown({
-      parent: $(`${this._query}__date-dropdown`),
+      parent: $(`${this._query}__date-dropdown`, this._$element),
       props: {
         ...dateDropdown,
         handleCalendarClick: this._handleCalendarClick,
@@ -46,55 +41,27 @@ class Book extends Component {
       },
     });
     this._dropdown = new Dropdown({
-      parent: $(`${this._query}__dropdown`),
+      parent: $(`${this._query}__dropdown`, this._$element),
       props: dropdown,
+    });
+    this._header = new Headers({
+      parent: $(`${this._query}__header`, this._$element),
+      props: header,
     });
   }
 
-  _updateTotal() {
-    const { unit, additionalServiceFeeTotal } = this._props;
-    const parseAdditionalServiceFeeTotal =
-      parseFloat(additionalServiceFeeTotal, 10) || 0;
-    let total =
-      this._basisTotal - this._discountTotal + parseAdditionalServiceFeeTotal;
-    if (total < 0) {
-      total = 0;
+  @bind
+  _createOrderItem(index, element) {
+    const { order } = this._props;
+    const item = order?.[index];
+    if (item) {
+      this._orderItems.push(
+        this._factoryOrderItem.create({
+          parent: $(element, this._$element),
+          item,
+        })
+      );
     }
-    this._$total.html(`${this._prepareFormat(total)}${unit}`);
-  }
-
-  _updateDiscount() {
-    const { discountContent = '', discountTotal = '', unit } = this._props;
-    let parseDiscountTotal =
-      parseFloat(Book._prepareNumber(discountTotal), 10) || 0;
-    this._discountTotal = parseDiscountTotal;
-    if (parseDiscountTotal) {
-      parseDiscountTotal = `${this._prepareFormat(parseDiscountTotal)}${unit}`;
-      this._$discountContent.html(discountContent);
-      this._$discountTotal.html(parseDiscountTotal);
-    } else {
-      this._$discountContent.html('');
-      this._$discountTotal.html('');
-    }
-  }
-
-  _prepareFormat(number = 0) {
-    const { options, numberFormat } = this._props;
-    return new Intl.NumberFormat(numberFormat, options).format(number);
-  }
-
-  _prepareBasis(duration = 0) {
-    const { price, unit, words } = this._props;
-    let parsePrice = parseFloat(Book._prepareNumber(price), 10) || 0;
-    let total = Math.round(parsePrice * duration);
-    this._basisTotal = total;
-    total = this._prepareFormat(total);
-    total = `${total}${unit}`;
-    parsePrice = `${this._prepareFormat(parsePrice)}${unit}`;
-    this._$basisContent.html(
-      `${parsePrice} x ${duration} ${wordForm(duration, words)}`
-    );
-    this._$basisTotal.html(total);
   }
 
   @bind
@@ -106,9 +73,15 @@ class Book extends Component {
         (new Date(end) - new Date(start)) / (1000 * 60 * 60 * 24)
       );
     }
-    this._prepareBasis(duration);
-    this._updateDiscount();
-    this._updateTotal();
+    this._update({ duration });
+  }
+
+  _update(data) {
+    console.log('this._orderItems : ', this._orderItems);
+    this._orderItems.forEach((item) => {
+      item.update(data);
+    });
+    this._orderTotal.update({ items: this._orderItems });
   }
 }
 

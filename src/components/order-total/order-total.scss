@@ -1,0 +1,36 @@
+$parent: 'order-total';
+
+.#{$parent} {
+  @include h2;
+  align-items: flex-end;
+  display: flex;
+
+  width: 100%;
+
+  &__total,
+  &__content,
+  &__separator-wrapper {
+    display: flex;
+  }
+
+  &__total,
+  &__content {
+    @include h2;
+  }
+
+  &__separator-wrapper {
+    height: 100%;
+    padding: 0 0.4rem 0.4rem;
+    width: 100%;
+  }
+
+  &__separator {
+    border-bottom: 1px dashed $dark-shade-opacity-25;
+    display: flex;
+    width: 100%;
+  }
+
+  &__total {
+    white-space: nowrap;
+  }
+}

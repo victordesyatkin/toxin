@@ -1,0 +1,9 @@
+include ../order-item/order-item
+
+mixin order-item-discount(props)
+  if props
+    -
+      let className = 'order-item-discount';
+      let classNames = `${className} js-${className}`;
+    article(class=classNames)
+      +order-item(props)
