@@ -17,8 +17,6 @@ class OrderItem extends Component {
 
   getTotal() {
     const total = parseFloat(prepareNumber(this._$total.text()), 10);
-    console.log('this._$total.text() ', prepareNumber(this._$total.text()));
-    console.log('total : ', total);
     return total;
   }
 

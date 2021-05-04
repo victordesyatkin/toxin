@@ -505,21 +505,42 @@
     ]
   },
   "book": {
-    "roomNumberContent": "№",
-    "roomNumber": "888",
-    "roomQuality": "люкс",
-    "price": "9 990",
-    "duration": "в сутки",
+    "header": {
+      "roomNumber": 888,
+      "roomQuality": "люкс",
+      "price": "9 990",
+      "duration": "в сутки",
+      "unit": "&#8381",
+      "roomNumberContent": "№",
+      "numberFormat": "ru-RU",
+      "options": { "style": "decimal", "currency": "RUB" },
+      "theme": "details"
+    },
+    "order": [
+      {
+        "content": "9 990₽ х 4 суток",
+        "total": "39 960₽",
+        "withIcon": false,
+        "type": "basis"
+      },
+      {
+        "content": "Сбор за услуги: скидка",
+        "total": "0₽",
+        "type": "discount",
+        "discount": "2 179₽"
+      },
+      {
+        "content": "Сбор за дополнительные услуги",
+        "total": "300₽",
+        "type": "tax"
+      }
+    ],
+    "price": "9 990₽",
     "unit": "&#8381",
-    "serviceFeeContent": "Сбор за услуги:",
-    "serviceFeeTotal": "0",
-    "discountContent": "скидка",
-    "discountTotal": "2179",
-    "additionalServiceFeeContent": "Сбор за дополнительные услуги",
-    "additionalServiceFeeTotal": "300",
-    "total": "38 081",
-    "totalContent": "Итого",
-    "theme": "room-details",
+    "total": {
+      "content": "Итого",
+      "total": "38 081₽"
+    },
     "dateDropdown": {
       "isOpened": false,
       "items": [
@@ -638,13 +659,15 @@
       "theme": "filled",
       "src": "assets/images/arrow-forward.svg"
     },
-    "numberFormat": "ru-RU",
-    "words": ["сутки", "суток", "суток"],
-    "options": {
-      "style": "decimal",
-      "currency": "RUB",
-      "minimumFractionDigits": 0
-    }
+    "numberFormat": {
+      "locales": "ru-RU",
+      "options": {
+        "style": "decimal",
+        "currency": "RUB",
+        "minimumFractionDigits": 0
+      }
+    },
+    "durationUnits": ["сутки", "суток", "суток"]
   },
   "images": {
     "image1": {

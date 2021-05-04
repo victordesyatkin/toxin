@@ -6,10 +6,14 @@ include ../rate-button/rate-button
 mixin card-slider(props)
   if props
     -
-      let { slider, info, rating = {}, commentsNumber, commentsContent } = props || {};
+      let { slider, info, rating = {}, commentsNumber, commentsContent, theme = '' } = props || {};
       let { button } = rating;
       let className = 'card-slider';
       let classNames = `${className} js-${className}`;
+      let themes = {
+        search: 'search',
+      };
+      classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
     +card
       div(class=classNames)
         div(class=`${className}__slider js-${className}__slider`)

@@ -32,14 +32,12 @@ class OrderTotal extends Component {
     if (items?.length) {
       let amount = 0;
       items?.forEach((item) => {
-        console.log('item : ', item.getTotal());
         amount += item?.getTotal ? item.getTotal() : 0;
         const discount = item?.getDiscount ? item?.getDiscount() : 0;
         if (discount) {
           amount -= discount;
         }
       });
-      console.log('amount : ', amount);
       amount = amount >= 0 ? amount : 0;
       return `${transformNumber({ number: amount, numberFormat })}${unit}`;
     }

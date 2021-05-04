@@ -644,7 +644,8 @@
         }
       },
       "commentsNumber": 145,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -692,7 +693,8 @@
         }
       },
       "commentsNumber": 65,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -740,7 +742,8 @@
         }
       },
       "commentsNumber": 35,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -788,7 +791,8 @@
         }
       },
       "commentsNumber": 19,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -836,7 +840,8 @@
         }
       },
       "commentsNumber": 44,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -884,7 +889,8 @@
         }
       },
       "commentsNumber": 56,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -932,7 +938,8 @@
         }
       },
       "commentsNumber": 45,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -980,7 +987,8 @@
         }
       },
       "commentsNumber": 39,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -1028,7 +1036,8 @@
         }
       },
       "commentsNumber": 77,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -1076,7 +1085,8 @@
         }
       },
       "commentsNumber": 25,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -1123,7 +1133,8 @@
         }
       },
       "commentsNumber": 15,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     },
     {
       "slider": {
@@ -1171,7 +1182,8 @@
         }
       },
       "commentsNumber": 55,
-      "commentsContent": "Отзывов"
+      "commentsContent": "Отзывов",
+      "theme": "search"
     }
   ],
   "pagination": {

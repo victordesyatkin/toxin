@@ -82,13 +82,25 @@ $parent: '.cards';
 
   &__picker,
   &__sign-up,
-  &__book,
   &__sign-in,
   &__calendar,
   &__sliders,
   &__card-slider {
     margin-bottom: 2.7rem;
+  }
+
+  &__picker,
+  &__sign-up,
+  &__book,
+  &__sign-in,
+  &__calendar,
+  &__sliders,
+  &__card-slider {
     width: 100%;
+  }
+
+  &__book {
+    margin-bottom: 2.9rem;
   }
 
   &__calendar {

@@ -156,11 +156,7 @@ function transformNumber({ number = 0, numberFormat = {} }) {
 }
 
 function prepareNumber(number = '') {
-  return (number || '').split(' ').join('') || 0;
-}
-
-function setHtml({ content, ref }) {
-  ref?.html(content);
+  return (number || '').replace(/\s/g, '').split(' ').join('') || 0;
 }
 class Component {
   constructor(options = {}) {
@@ -226,5 +222,4 @@ export {
   isValidDateByParts,
   transformNumber,
   prepareNumber,
-  setHtml,
 };

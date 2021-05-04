@@ -16,6 +16,10 @@ class OrderItemTax extends Component {
     this._render();
   }
 
+  getDiscount() {
+    return this._discount || 0;
+  }
+
   getTotal() {
     return this._orderItem.getTotal();
   }

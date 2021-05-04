@@ -3,6 +3,13 @@ $parent: 'card-slider';
 .#{$parent} {
   width: 100%;
 
+  &_theme_search {
+    .#{$parent}__card-header {
+      padding-bottom: 0.45rem;
+      padding-top: 1.45rem;
+    }
+  }
+
   &__slider {
     height: 10.8571rem;
     width: 100%;

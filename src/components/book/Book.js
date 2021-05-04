@@ -77,7 +77,6 @@ class Book extends Component {
   }
 
   _update(data) {
-    console.log('this._orderItems : ', this._orderItems);
     this._orderItems.forEach((item) => {
       item.update(data);
     });

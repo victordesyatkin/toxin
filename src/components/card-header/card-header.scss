@@ -28,11 +28,17 @@ $parent: 'card-header';
   &_theme_search {
     .#{$parent}__number {
       font-size: 1.3rem;
-      margin: 0 0.65rem 0 0.23rem;
+      margin: 0 0.89rem 0 0.23rem;
     }
 
     .#{$parent}__price {
-      padding-top: 0.214rem;
+      padding-top: 0.1rem;
+    }
+  }
+
+  &_theme_details {
+    .#{$parent}__number {
+      margin-right: 0.55rem;
     }
   }
 
