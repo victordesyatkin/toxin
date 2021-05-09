@@ -4,7 +4,7 @@ mixin toggle-button(props)
       let { name, type = "checkbox", value, label, tabindex, isRequired, isDisabled, isChecked, isHidden } = props;
       let id = `${name}-${Math.random().toString(16).substr(2)}`;
       let className = 'toggle-button';
-      let classNames = `${className} js-${className}`; 
+      let classNames = `${className}`; 
     label(for=id, class=classNames)
       input(
         id=id,

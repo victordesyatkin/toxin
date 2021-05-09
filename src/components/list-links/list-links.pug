@@ -5,7 +5,7 @@ mixin list-links(props)
     -
       let { items = [], header } = props;
       let className = 'list-links';
-      let classNames = `${className} js-${className}`;
+      let classNames = `${className}`;
     article(class=classNames)
       if header
         p(class=`${className}__header`)= header

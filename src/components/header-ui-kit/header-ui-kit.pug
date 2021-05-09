@@ -2,6 +2,9 @@ include ../logo-image/logo-image
 
 mixin header-ui-kit(props)
   if props
-    header.header-ui-kit
-      .header-ui-kit__logo-image
+    -
+      let className = 'header-ui-kit';
+      let classNames = `${className}`;
+    header(class=classNames)
+      div(class=`${className}__logo-image`)
         +logo-image(props)

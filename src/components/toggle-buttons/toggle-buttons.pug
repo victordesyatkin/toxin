@@ -5,7 +5,7 @@ mixin toggle-buttons(props)
     -
       let { title, buttons = [] } = props;
       let className = 'toggle-buttons';
-      let classNames = `${className} js-${className}`;
+      let classNames = `${className}`;
       let { length } = buttons;
     article(class=classNames)
       if title

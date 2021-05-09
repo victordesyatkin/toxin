@@ -5,7 +5,7 @@ mixin info-item(props)
     -
       let { src, alt, title, content, iconClassName } = props;
       let className = 'info-item';
-      let classNames = `${className} js-${className}`;
+      let classNames = `${className}`;
     div(class=classNames)
       if iconClassName
         span(class=`${className}__image-wrapper`)

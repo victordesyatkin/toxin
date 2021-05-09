@@ -5,7 +5,7 @@ mixin rich-checkbox-button(props)
     -
       let { info, ...other } = props;
       let className = 'rich-checkbox-button';
-      let classNames = `${className} js-${className}`;
+      let classNames = `${className}`;
     div(class=classNames)
       +checkbox-button(other)
       if info
