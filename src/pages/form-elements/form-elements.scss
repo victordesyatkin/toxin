@@ -18,6 +18,10 @@ $parent: 'form-elements';
     padding: 4.64rem 8.9rem 10.07rem 10.07rem;
   }
 
+  @include media-breakpoint-up($xxl) {
+    padding: 4.64rem 13rem 10.07rem;
+  }
+
   &__text-fields,
   &__dropdowns,
   &__lists,
@@ -33,6 +37,10 @@ $parent: 'form-elements';
       flex-wrap: initial;
       justify-content: initial;
     }
+
+    @include media-breakpoint-up($xxl) {
+      justify-content: space-around;
+    }
   }
 
   &__text-fields {
@@ -42,8 +50,6 @@ $parent: 'form-elements';
       margin-bottom: 6.9rem;
     }
     @include media-breakpoint-up($xl) {
-      flex-wrap: initial;
-      justify-content: initial;
       margin-bottom: 6.9rem;
     }
 
@@ -88,8 +94,6 @@ $parent: 'form-elements';
     }
 
     @include media-breakpoint-up($xl) {
-      flex-wrap: initial;
-      justify-content: initial;
       margin-bottom: 12.4rem;
     }
 
@@ -142,8 +146,6 @@ $parent: 'form-elements';
     }
 
     @include media-breakpoint-up($xl) {
-      flex-wrap: initial;
-      justify-content: initial;
       margin-bottom: 0.85rem;
     }
 
@@ -322,5 +324,11 @@ $parent: 'form-elements';
 
   &__pagination {
     max-width: 17.214rem;
+  }
+
+  &__list-comment {
+    @include media-breakpoint-up($xxl) {
+      max-width: 50rem;
+    }
   }
 }

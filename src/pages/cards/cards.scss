@@ -28,6 +28,11 @@ $parent: '.cards';
     padding: 5.14rem 6.07rem 10rem 10rem;
   }
 
+  @include media-breakpoint-up($xxl) {
+    justify-content: space-around;
+    padding: 5.14rem 10rem 10rem;
+  }
+
   &__header {
     background-color: $color-grey;
   }

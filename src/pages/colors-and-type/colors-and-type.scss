@@ -23,6 +23,10 @@ $parent: '.colors-and-type';
     padding: 4.78rem 10.4rem 0 10.71rem;
   }
 
+  @include media-breakpoint-up($xxl) {
+    padding: 4.78rem 13rem 0;
+  }
+
   &__colors,
   &__fonts {
     list-style-type: none;

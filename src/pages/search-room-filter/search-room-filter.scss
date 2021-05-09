@@ -18,6 +18,11 @@ $parent: 'search-room-filter';
     padding: 2.1rem 10rem 0;
   }
 
+  @include media-breakpoint-up($xxl) {
+    justify-content: space-around;
+    padding: 2.1rem 8rem 0;
+  }
+
   &__aside {
     margin-bottom: 1rem;
     margin-right: 0;
@@ -33,6 +38,14 @@ $parent: 'search-room-filter';
       margin-right: 4.2857rem;
       padding-top: 0.1428rem;
     }
+
+    @include media-breakpoint-up($xxl) {
+      margin-right: 4rem;
+    }
+  }
+
+  &__section {
+    width: 100%;
   }
 
   &__title {
@@ -88,11 +101,24 @@ $parent: 'search-room-filter';
       grid-gap: 1.2rem 0.7rem;
       grid-template-columns: repeat(3, 19.4rem);
     }
+
+    @include media-breakpoint-up($xxl) {
+      grid-gap: 2rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include media-breakpoint-up($xxxl) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   &__card-slider {
     max-width: 20rem;
     width: 100%;
+
+    @include media-breakpoint-up($xxl) {
+      max-width: initial;
+    }
   }
 
   &__pagination {

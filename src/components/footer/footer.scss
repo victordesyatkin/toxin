@@ -83,6 +83,10 @@ $parent: 'footer';
       justify-content: initial;
       margin-top: 0.3rem;
     }
+
+    @include media-breakpoint-up($xxl) {
+      justify-content: space-around;
+    }
   }
 
   &__nav-item {
