@@ -33,8 +33,7 @@ $parent: 'form-elements';
     margin-bottom: 2rem;
     width: 100%;
 
-    @include media-breakpoint-up($md) {
-      flex-wrap: initial;
+    @include media-breakpoint-up($xl) {
       justify-content: initial;
     }
 
@@ -176,6 +175,10 @@ $parent: 'form-elements';
   }
 
   &__comments {
+    @include media-breakpoint-up($sm) {
+      flex-wrap: initial;
+    }
+
     .#{$parent}__list-info {
       margin-bottom: initial;
       max-width: 20rem;

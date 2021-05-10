@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers';
+import { Component, checkerOutsideClick, isUndefined } from '../../helpers';
 
 class Expandable extends Component {
   _query = '.js-expandable';
@@ -12,32 +12,19 @@ class Expandable extends Component {
     this._renderComponent();
   }
 
-  toggleOpen() {
-    if (this._isOpened) {
-      this.close();
+  toggleOpen(isOpened) {
+    if (isUndefined(isOpened)) {
+      this._isOpened = !this._isOpened;
     } else {
-      this.open();
+      this._isOpened = isOpened;
     }
-  }
-
-  open() {
-    this._isOpened = true;
-    this._$element.toggleClass(`${this._className}_opened`);
-    this._$body.toggle(this._isOpened);
-  }
-
-  close() {
-    this._isOpened = false;
-    this._$element.toggleClass(`${this._className}_opened`);
-    this._$body.toggle(this._isOpened);
+    this._$element.toggleClass(`${this._className}_opened`, this._isOpened);
   }
 
   _init() {
     const { isOpened } = this._props;
     this._isOpened = isOpened;
     this._$header = $(`${this._query}__header`, this._$element);
-    this._$body = $(`${this._query}__body`, this._$element);
-    this._$body.toggle(this._isOpened);
     this._bindEventListeners();
   }
 
@@ -53,12 +40,12 @@ class Expandable extends Component {
 
   @bind
   _handleBodyClick(event) {
-    if (this._isOpened) {
-      const { target } = event;
-      if (!$(target).closest(this._$element).length) {
-        this.close();
-      }
-    }
+    checkerOutsideClick({
+      event,
+      isOpened: this._isOpened,
+      callback: () => this.toggleOpen(false),
+      $parent: this._$element,
+    });
   }
 }
 

@@ -5,6 +5,7 @@ import Dropdown from '../dropdown';
 import DateDropdown from '../date-dropdown';
 import OrderTotal from '../order-total';
 import FactoryOrderItem from '../factory-order-item';
+import CardHeader from '../card-header';
 
 class Book extends Component {
   _query = '.js-book';
@@ -44,7 +45,7 @@ class Book extends Component {
       parent: $(`${this._query}__dropdown`, this._$element),
       props: dropdown,
     });
-    this._header = new Headers({
+    this._header = new CardHeader({
       parent: $(`${this._query}__header`, this._$element),
       props: header,
     });

@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers';
+import { Component, checkerOutsideClick, isUndefined } from '../../helpers';
 
 class NavItem extends Component {
   _query = '.js-nav-item';
@@ -12,14 +12,13 @@ class NavItem extends Component {
     this._renderComponent();
   }
 
-  open() {
-    this._$element.addClass(`${this._className}_opened`);
-    this._isOpened = true;
-  }
-
-  close() {
-    this._$element.removeClass(`${this._className}_opened`);
-    this._isOpened = false;
+  toggleOpen(isOpened) {
+    if (isUndefined(isOpened)) {
+      this._isOpened = !this._isOpened;
+    } else {
+      this._isOpened = isOpened;
+    }
+    this._$element.toggleClass(`${this._className}_opened`, this._isOpened);
   }
 
   _init() {
@@ -34,31 +33,25 @@ class NavItem extends Component {
     this._$control.on('click', this._handleControlClick);
   }
 
-  _toggleOpened() {
-    if (this._$element.hasClass(`${this._className}_opened`)) {
-      this.close();
-    } else {
-      this.open();
-    }
-  }
-
   @bind
   _handleControlClick() {
-    this._toggleOpened();
+    this.toggleOpen();
   }
 
   @bind
   _handleBodyClick(event) {
-    const { target } = event;
-    if (!$(target).closest(this._$element).length && this._isOpened) {
-      this.close();
-    }
+    checkerOutsideClick({
+      event,
+      isOpened: this._isOpened,
+      callback: () => this.toggleOpen(false),
+      $parent: this._$element,
+    });
   }
 
   @bind
   _handleChildrenFocusOut() {
     if (this._isOpened) {
-      this.close();
+      this.toggleOpen(false);
     }
   }
 }

@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component, isUndefined } from '../../helpers';
+import { Component } from '../../helpers';
 
 class DropdownItem extends Component {
   static TYPE_DECREASE = 'decrease';
@@ -54,11 +54,7 @@ class DropdownItem extends Component {
   }
 
   _toggleFade() {
-    if (this.getValue()) {
-      this._$element.removeClass(`${this._className}_faded`);
-    } else {
-      this._$element.addClass(`${this._className}_faded`);
-    }
+    this._$element.toggleClass(`${this._className}_faded`, !this.getValue());
   }
 
   @bind
@@ -90,25 +86,6 @@ class DropdownItem extends Component {
         }
       }
     }
-  }
-
-  @bind
-  _handleIncreaseButtonClick() {
-    let value = this.getValue();
-    const { max } = this._props;
-    if (!isUndefined(max) && value >= max) {
-      return undefined;
-    }
-    value += 1;
-    this._toggleButtonMinus();
-    this.setValue(value);
-    const passEvent = new Event('input');
-    this._$input[0].dispatchEvent(passEvent);
-    const { handleIncreaseButtonClick } = this._props;
-    if (handleIncreaseButtonClick) {
-      handleIncreaseButtonClick();
-    }
-    return undefined;
   }
 }
 

@@ -14,14 +14,14 @@ class CardSlider extends Component {
   }
 
   _init() {
-    const { slider, cardHeader, rating } = this._props;
+    const { slider, info, rating } = this._props;
     this._slider = new Slider({
       parent: $(`${this._query}__slider`, this._$element),
       props: slider,
     });
     this._cardHeader = new CardHeader({
       parent: $(`${this._query}__card-header`, this._$element),
-      props: cardHeader,
+      props: info,
     });
     const { button } = rating;
     this._rateButton = new RateButton({

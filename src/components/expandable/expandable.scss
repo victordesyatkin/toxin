@@ -16,6 +16,10 @@ $parent: 'expandable';
   &_opened {
     z-index: 100;
 
+    .#{$parent}__body {
+      display: block;
+    }
+
     .#{$parent}__control {
       transform: rotate(180deg);
       transition-duration: 1s;
@@ -46,7 +50,7 @@ $parent: 'expandable';
 
   &__body {
     background-color: $color-white;
-    display: block;
+    display: none;
     left: 0;
     padding: 1.357rem 0;
     position: absolute;

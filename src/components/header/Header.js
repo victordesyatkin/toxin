@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers';
+import { Component, isUndefined } from '../../helpers';
 import Nav from '../nav';
 
 class Header extends Component {
@@ -13,12 +13,13 @@ class Header extends Component {
     this._renderComponent();
   }
 
-  open() {
-    this._$element.addClass(`${this._className}_opened`);
-  }
-
-  close() {
-    this._$element.removeClass(`${this._className}_opened`);
+  toggleOpen(isOpened) {
+    if (isUndefined(isOpened)) {
+      this._isOpened = !this._isOpened;
+    } else {
+      this._isOpened = isOpened;
+    }
+    this._$element.toggleClass(`${this._className}_opened`, this._isOpened);
   }
 
   _init() {
@@ -41,17 +42,9 @@ class Header extends Component {
     );
   }
 
-  _toggleOpened() {
-    if (this._$element.hasClass(`${this._className}_opened`)) {
-      this.close();
-    } else {
-      this.open();
-    }
-  }
-
   @bind
   _handleToggleNavigationButtonClick() {
-    this._toggleOpened();
+    this.toggleOpen();
   }
 }
 

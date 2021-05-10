@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component } from '../../helpers';
+import { Component, checkerOutsideClick } from '../../helpers';
 import DropDownSummary from '../dropdown-summary';
 import DropdownItem from '../dropdown-item';
 import Control from '../control';
@@ -34,6 +34,7 @@ class Dropdown extends Component {
     this._dropDownSummary.open();
   }
 
+  @bind
   close() {
     this._isOpened = false;
     this._$element.removeClass(`${this._className}_opened`);
@@ -71,7 +72,7 @@ class Dropdown extends Component {
     this._items = [];
     this._$items = $(`${this._query}__item`, this._$element);
     this._$items.each(this._renderItem);
-    if (this._isOpen) {
+    if (this._isOpened) {
       this.open();
     }
     this._bindEventListeners();
@@ -134,11 +135,13 @@ class Dropdown extends Component {
 
   @bind
   _handleBodyClick(event) {
-    if (this._isOpened) {
-      const { target } = event;
-      if (!$(target).closest(this._$element).length) {
-        this.close();
-      }
+    const isClickOutside = checkerOutsideClick({
+      event,
+      isOpened: this._isOpened,
+      $parent: this._$element,
+    });
+    if (isClickOutside) {
+      this.close();
     }
   }
 }

@@ -14,8 +14,13 @@ function isUndefined(value) {
 }
 
 function isFunction(func) {
-  if (func && typeof func === 'function') {
-    return true;
+  if (func) {
+    const isFunc =
+      {}.toString.call(func) === '[object Function]' &&
+      typeof func === 'function';
+    if (isFunc) {
+      return true;
+    }
   }
   return false;
 }
@@ -158,6 +163,43 @@ function transformNumber({ number = 0, numberFormat = {} }) {
 function prepareNumber(number = '') {
   return (number || '').replace(/\s/g, '').split(' ').join('') || 0;
 }
+
+function deepCheckerOutsideClick({ event, isOpened, callback, $parent }) {
+  if (isOpened && $parent) {
+    const { target } = event;
+    const path = event?.originalEvent?.path || [];
+    let isClosest = false;
+    path.forEach((item) => {
+      if (!isClosest) {
+        isClosest = $(item).closest($parent).length;
+      }
+    });
+    const isClickOutside = !$(target).closest($parent).length && !isClosest;
+    if (isClickOutside) {
+      if (isFunction(callback)) {
+        callback();
+      }
+      return true;
+    }
+    return false;
+  }
+  return false;
+}
+
+function checkerOutsideClick({ event, isOpened, callback, $parent }) {
+  if (isOpened && $parent) {
+    const { target } = event;
+    const isClickOutside = !$(target).closest($parent).length;
+    if (isClickOutside) {
+      if (isFunction(callback)) {
+        callback();
+      }
+      return true;
+    }
+    return false;
+  }
+  return false;
+}
 class Component {
   constructor(options = {}) {
     this._options = options;
@@ -222,4 +264,6 @@ export {
   isValidDateByParts,
   transformNumber,
   prepareNumber,
+  checkerOutsideClick,
+  deepCheckerOutsideClick,
 };

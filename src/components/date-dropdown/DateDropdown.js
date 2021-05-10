@@ -1,6 +1,6 @@
 import bind from 'bind-decorator';
 
-import { Component, isValidDate } from '../../helpers';
+import { Component, isValidDate, deepCheckerOutsideClick } from '../../helpers';
 import Calendar from '../calendar';
 import DropdownTitleControl from '../dropdown-title-text-field';
 
@@ -32,13 +32,12 @@ class DateDropdown extends Component {
 
   open() {
     this._$element.addClass(`${this._className}_opened`);
-    this._items.forEach((item) => item.open());
     this._isOpened = true;
   }
 
+  @bind
   close() {
     this._$element.removeClass(`${this._className}_opened`);
-    this._items.forEach((item) => item.close());
     this._isOpened = false;
   }
 
@@ -79,19 +78,12 @@ class DateDropdown extends Component {
 
   @bind
   _handleBodyClick(event) {
-    if (this._isOpened) {
-      const { target } = event;
-      const path = event?.originalEvent?.path || [];
-      let isClosest = false;
-      path.forEach((item) => {
-        if (!isClosest) {
-          isClosest = $(item).closest(this._$element).length;
-        }
-      });
-      if (!$(target).closest(this._$element).length && !isClosest) {
-        this.close();
-      }
-    }
+    deepCheckerOutsideClick({
+      event,
+      callback: this.close,
+      isOpened: this._isOpened,
+      $parent: this._$element,
+    });
   }
 
   @bind
