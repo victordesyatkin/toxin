@@ -17,8 +17,12 @@ class LikeButton extends Component {
     if (!isDisabled) {
       this._$input = $(`${this._query}__input`, this._$element);
       this._$count = $(`${this._query}__count`, this._$element);
-      this._$input.on('click', this._handleInputClick);
+      this._bindEventListeners();
     }
+  }
+
+  _bindEventListeners() {
+    this._$input.on('click', this._handleInputClick);
   }
 
   @bind

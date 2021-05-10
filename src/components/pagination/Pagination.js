@@ -44,9 +44,13 @@ class Pagination extends Component {
       this._separatorTotal = separatorTotal;
       this._$items = $(`${this._query}__items`, this._$element);
       this._$summary = $(`${this._query}__summary`, this._$element);
-      $(window).on('resize', this._handleWindowResize);
       this._updateListItems();
+      this._bindEventListeners();
     }
+  }
+
+  _bindEventListeners() {
+    $(window).on('resize', this._handleWindowResize);
   }
 
   _updateListItems() {

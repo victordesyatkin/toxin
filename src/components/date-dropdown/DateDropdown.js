@@ -70,6 +70,10 @@ class DateDropdown extends Component {
         end,
       },
     });
+    this._bindEventListeners();
+  }
+
+  _bindEventListeners() {
     $('body').on('click', this._handleBodyClick);
   }
 

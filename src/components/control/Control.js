@@ -22,6 +22,10 @@ class Control extends Component {
 
   _init() {
     this._$items = $(`${this._query}__button`, this._$element);
+    this._bindEventListeners();
+  }
+
+  _bindEventListeners() {
     this._$items.on('click', this._handleButtonClick);
   }
 

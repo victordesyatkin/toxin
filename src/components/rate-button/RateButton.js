@@ -18,8 +18,12 @@ class RateButton extends Component {
       this._rate = value;
       this._$rates = $(`${this._query}__rate`, this._$element);
       this._$input = $(`${this._query}__input`, this._$element);
-      this._$rates.on('click', this._handleLiClick);
+      this._bindEventListeners();
     }
+  }
+
+  _bindEventListeners() {
+    this._$rates.on('click', this._handleLiClick);
   }
 
   @bind

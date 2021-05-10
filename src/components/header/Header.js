@@ -27,14 +27,18 @@ class Header extends Component {
       `${this._query}__toggle-navigation-button`,
       this._$element
     );
-    this._toggleNavigationButton.on(
-      'click',
-      this._handleToggleNavigationButtonClick
-    );
     this._nav = new Nav({
       parent: $(`${this._query}__nav`, this._$element),
       props: nav,
     });
+    this._bindEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._toggleNavigationButton.on(
+      'click',
+      this._handleToggleNavigationButtonClick
+    );
   }
 
   _toggleOpened() {

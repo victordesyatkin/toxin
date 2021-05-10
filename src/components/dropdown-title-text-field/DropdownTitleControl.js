@@ -74,12 +74,14 @@ class DropdownTitleControl extends Component {
       parent: this._$element,
       props: maskedTextField,
     });
-    this._$element.on('click', this._handleDropdownTitleTextFieldClick);
-
     this._$title = $(`${this._query}__title`, this._$element);
-    this._$title.on('click', this._handleTitleClick);
-
     this._$textField = $(`${this._query}__masked-text-field`, this._$element);
+    this._bindEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._$element.on('click', this._handleDropdownTitleTextFieldClick);
+    this._$title.on('click', this._handleTitleClick);
     this._$textField.on('click', this._handleTextFieldClick);
   }
 

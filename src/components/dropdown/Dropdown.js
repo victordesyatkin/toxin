@@ -74,6 +74,10 @@ class Dropdown extends Component {
     if (this._isOpen) {
       this.open();
     }
+    this._bindEventListeners();
+  }
+
+  _bindEventListeners() {
     $('body').on('click', this._handleBodyClick);
   }
 

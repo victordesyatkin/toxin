@@ -81,13 +81,14 @@ class TextField extends Component {
   _init() {
     this._$input = $(`${this._query}__input`, this._$element);
     this._$summary = $(`${this._query}__summary`, this._$element);
+    this._$button = $(`${this._query}__button`, this._$element);
+    this._bindEventListeners();
+  }
 
+  _bindEventListeners() {
     this._$input.on('focusin', this._handleInputFocusIn);
     this._$input.on('focusout', this._handleInputFocusOut);
-
     this._$element.on('click', this._handleInputClick);
-
-    this._$button = $(`${this._query}__button`, this._$element);
     this._$button.on('click', this._handleButtonClick);
   }
 

@@ -26,8 +26,12 @@ class NavItem extends Component {
     const { isOpened } = this._props;
     this._isOpened = isOpened;
     this._$control = $(`${this._query}__control`, this._$element);
-    this._$control.on('click', this._handleControlClick);
     this._$children = $(`${this._query}__children`, this._$element);
+    this._bindEventListeners();
+  }
+
+  _bindEventListeners() {
+    this._$control.on('click', this._handleControlClick);
   }
 
   _toggleOpened() {

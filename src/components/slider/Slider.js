@@ -28,18 +28,22 @@ class Slider extends Component {
         `[data-type="${Slider.TYPE_BUTTON_LEFT}"]`,
         this._$element
       );
-      this._$prev.on('click', this._handleControlClick);
       this._$next = $(
         `[data-type="${Slider.TYPE_BUTTON_RIGHT}"]`,
         this._$element
       );
-      this._$next.on('click', this._handleControlClick);
-      this._$points.on('click', this._handlePointClick);
+      this._bindEventListeners();
     }
     this._$image = $(`${this._query}__image`, this._$element);
     this._index = 0;
     this._setImage(this._index);
     this._setPoint(this._index);
+  }
+
+  _bindEventListeners() {
+    this._$prev.on('click', this._handleControlClick);
+    this._$next.on('click', this._handleControlClick);
+    this._$points.on('click', this._handlePointClick);
   }
 
   @bind
