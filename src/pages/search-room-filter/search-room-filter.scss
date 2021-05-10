@@ -13,6 +13,10 @@ $parent: 'search-room-filter';
     padding: 2rem;
   }
 
+  @include media-breakpoint-up($md) {
+    padding: 2.1rem 6rem;
+  }
+
   @include media-breakpoint-up($xl) {
     justify-content: initial;
     padding: 2.1rem 10rem 0;
@@ -117,7 +121,7 @@ $parent: 'search-room-filter';
     width: 100%;
 
     @include media-breakpoint-up($xxl) {
-      max-width: initial;
+      max-width: 22rem;
     }
   }
 

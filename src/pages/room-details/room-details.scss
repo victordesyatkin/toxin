@@ -66,9 +66,18 @@ $parent: 'room-details';
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include media-breakpoint-up($xxl) {
+      flex: 1;
+
+      &:first-child {
+        flex: 2;
+      }
+    }
   }
 
   &__image {
+    height: 100%;
     width: 100%;
   }
 
