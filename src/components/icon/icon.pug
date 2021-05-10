@@ -28,4 +28,8 @@ mixin icon(className = '')
       };
       let readyClassName = classNames[className];
     if readyClassName
-      span(class=readyClassName)
+      -
+        let iconClassName = 'icon';
+        let iconClassNames = `${iconClassName} js-${iconClassName}`;
+      span(class=iconClassNames)
+        span(class=readyClassName)

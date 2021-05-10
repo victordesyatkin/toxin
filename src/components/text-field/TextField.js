@@ -1,6 +1,7 @@
 import bind from 'bind-decorator';
 
 import { Component } from '../../helpers';
+import Icon from '../icon';
 
 class TextField extends Component {
   _query = '.js-text-field';
@@ -82,6 +83,9 @@ class TextField extends Component {
     this._$input = $(`${this._query}__input`, this._$element);
     this._$summary = $(`${this._query}__summary`, this._$element);
     this._$button = $(`${this._query}__button`, this._$element);
+    this._icon = new Icon({
+      parent: this._$button,
+    });
     this._bindEventListeners();
   }
 
@@ -129,19 +133,15 @@ class TextField extends Component {
     const { isToggle, type } = this._props;
     if (type === 'password' && isToggle) {
       let typeInput = this._$input.attr('type');
-      let removedClassName = '';
       let addedClassName = '';
       if (typeInput === 'text') {
         typeInput = 'password';
-        removedClassName = 'icon-eye-slash';
         addedClassName = 'icon-eye';
       } else {
         typeInput = 'text';
-        removedClassName = 'icon-eye';
         addedClassName = 'icon-eye-slash';
       }
-      this._$button.removeClass(removedClassName);
-      this._$button.addClass(addedClassName);
+      this._icon.updateIcon(addedClassName);
       this._$input.attr('type', typeInput);
     }
   }
