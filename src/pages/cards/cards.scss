@@ -85,7 +85,6 @@ $parent: '.cards';
     max-width: 19.4rem;
   }
 
-  &__picker,
   &__sign-up,
   &__sign-in,
   &__calendar,
@@ -102,6 +101,10 @@ $parent: '.cards';
   &__sliders,
   &__card-slider {
     width: 100%;
+  }
+
+  &__picker {
+    margin-bottom: 2.9rem;
   }
 
   &__book {

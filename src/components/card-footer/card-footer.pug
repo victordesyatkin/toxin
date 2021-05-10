@@ -6,6 +6,6 @@ mixin card-footer(props)
       let { button, content } = props;
       let className = 'card-footer';
       let classNames = `${className}`;
-    article(class=`${classNames}`)
+    div(class=`${classNames}`)
       span(class=`${className}__content`)= content
       +button(button)

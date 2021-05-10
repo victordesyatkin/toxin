@@ -2,7 +2,7 @@ $parent: 'header';
 
 .#{$parent} {
   background: $color-white;
-  box-shadow: 0 0.714rem 1.429rem $dark-shade-opacity-25;
+  box-shadow: 0 0.714rem 1.429rem $dark-shade-opacity-5;
   display: flex;
   justify-content: space-between;
   position: relative;

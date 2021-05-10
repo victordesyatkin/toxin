@@ -12,7 +12,7 @@ mixin bullet-list(props)
       let sizes = { large: 'large' }
       classNames += sizes[size] ? ` ${className}_size_${sizes[size]}` : '';
       classNames += themes[theme] ? ` ${className}_theme_${themes[theme]}` : '';
-    article(class=classNames)
+    div(class=classNames)
       if title
         div(class=`${className}__title`)
           +title-label(title)

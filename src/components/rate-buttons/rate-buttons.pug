@@ -8,7 +8,7 @@ mixin rate-buttons(props)
       let { length } = buttons;
       let className = 'rate-buttons';
       let classNames = `${className} js-${className}`;
-    article(class=classNames)
+    div(class=classNames)
       if title
         div(class=`${className}__title`)
           +title-label(title)
