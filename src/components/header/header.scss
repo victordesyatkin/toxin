@@ -4,17 +4,22 @@ $parent: 'header';
   background: $color-white;
   box-shadow: 0 0.714rem 1.429rem $dark-shade-opacity-5;
   display: flex;
-  justify-content: space-between;
-  position: relative;
   width: 100%;
-  z-index: 9;
 
-  @include media-breakpoint-up($md) {
-    padding: 1.1rem;
-  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    z-index: 9;
 
-  @include media-breakpoint-up($xl) {
-    padding: 1.1rem 10rem 1.01rem;
+    @include media-breakpoint-up($md) {
+      padding: 1.1rem;
+    }
+
+    @include media-breakpoint-up($xl) {
+      padding: 1.1rem 10rem 1.01rem;
+    }
   }
 
   &_opened {

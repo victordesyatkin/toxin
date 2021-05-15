@@ -1,5 +1,6 @@
 {
-  "container": { "basis": 1920, "align": "center" },
+  "generalContainer": { "basis": 1920, "align": "center" },
+  "container": { "basis": 1440, "align": "center" },
   "slug": "search-room-filter-preferences-expandable-checkbox-list",
   "meta": [
     {

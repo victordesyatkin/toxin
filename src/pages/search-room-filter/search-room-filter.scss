@@ -3,28 +3,28 @@ $parent: 'search-room-filter';
 .#{$parent} {
   background-color: $color-white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2.1428rem 1rem 0;
   width: 100%;
 
-  @include media-breakpoint-up($xs) {
-    flex-direction: initial;
-    padding: 2rem;
-  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.1428rem 1rem 0;
+    width: 100%;
 
-  @include media-breakpoint-up($md) {
-    padding: 2.1rem 6rem;
-  }
+    @include media-breakpoint-up($xs) {
+      flex-direction: initial;
+      padding: 2rem;
+    }
 
-  @include media-breakpoint-up($xl) {
-    justify-content: initial;
-    padding: 2.1rem 10rem 0;
-  }
+    @include media-breakpoint-up($md) {
+      padding: 2.1rem 6rem;
+    }
 
-  @include media-breakpoint-up($xxl) {
-    justify-content: space-around;
-    padding: 2.1rem 8rem 0;
+    @include media-breakpoint-up($xl) {
+      justify-content: initial;
+      padding: 2.1rem 10rem 0;
+    }
   }
 
   &__aside {
@@ -41,10 +41,6 @@ $parent: 'search-room-filter';
     @include media-breakpoint-up($xl) {
       margin-right: 4.2857rem;
       padding-top: 0.1428rem;
-    }
-
-    @include media-breakpoint-up($xxl) {
-      margin-right: 4rem;
     }
   }
 
@@ -105,31 +101,18 @@ $parent: 'search-room-filter';
       grid-gap: 1.2rem 0.7rem;
       grid-template-columns: repeat(3, 19.4rem);
     }
-
-    @include media-breakpoint-up($xxl) {
-      grid-gap: 2rem;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    @include media-breakpoint-up($xxxl) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
   }
 
   &__card-slider {
     max-width: 20rem;
     width: 100%;
-
-    @include media-breakpoint-up($xxl) {
-      max-width: 22rem;
-    }
   }
 
   &__pagination {
     margin: 2.67rem auto 5.1842rem;
 
     @include media-breakpoint-up($xl) {
-      margin: 3.1rem 1.1rem 5.15rem 0;
+      margin: 3.3rem 1.1rem 5.15rem 0;
     }
   }
 }

@@ -2,12 +2,20 @@ $parent: 'room-details';
 
 .#{$parent} {
   background-color: $color-white;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+  }
 
   &__main-section {
     display: flex;
     flex-direction: column-reverse;
     padding: 1rem;
+    width: 100%;
 
     @include media-breakpoint-up($md) {
       flex-direction: initial;
@@ -66,14 +74,6 @@ $parent: 'room-details';
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    @include media-breakpoint-up($xxl) {
-      flex: 1;
-
-      &:first-child {
-        flex: 2;
-      }
-    }
   }
 
   &__image {

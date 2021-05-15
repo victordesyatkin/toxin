@@ -1,14 +1,17 @@
 extends ../../templates/base/base
 
+include ../../components/layout-container/layout-container
 include ../../components/picker/picker
 
 block main
   -
-    let { picker, footer, slogan } = data;
+    let { picker, footer, slogan, container } = data;
     let className = "landing-page";
     let classNames = `${className} js-${className}`;
   section(class=classNames, style=style)
-    div(class=`${className}__picker js-${className}__picker`)
-      +picker(picker) 
-    p(class=`${className}__info`)
-      span(class=`${className}__slogan`)= slogan
+    +layout-container(container)
+      div(class=`${className}__wrapper`)
+        div(class=`${className}__picker js-${className}__picker`)
+          +picker(picker) 
+        p(class=`${className}__info`)
+          span(class=`${className}__slogan`)= slogan

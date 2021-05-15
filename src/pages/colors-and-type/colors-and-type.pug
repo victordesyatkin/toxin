@@ -2,18 +2,21 @@ extends ../../templates/demo-base/demo-base
 
 include ../../components/color-sample/color-sample
 include ../../components/font-sample/font-sample
+include ../../components/layout-container/layout-container
 
 block main
   -
-    let { colors = [], fonts = [] } = data;
+    let { colors = [], fonts = [], container } = data;
     let className = 'colors-and-type';
     let classNames = `${className}`;
   section(class=classNames)
-    ul(class=`${className}__colors`)
-      each color in colors
-        li(class=`${className}__color-item`)
-          +color-sample(color)
-    ul(class=`${className}__fonts`)
-      each font in fonts
-        li(class=`${className}__font-item`)
-          +font-sample(font)
+    +layout-container(container)
+      div(class=`${className}__wrapper`)
+        ul(class=`${className}__colors`)
+          each color in colors
+            li(class=`${className}__color-item`)
+              +color-sample(color)
+        ul(class=`${className}__fonts`)
+          each font in fonts
+            li(class=`${className}__font-item`)
+              +font-sample(font)

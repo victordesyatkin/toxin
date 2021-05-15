@@ -1,5 +1,6 @@
 {
-  "container": { "basis": 1920, "align": "center" },
+  "generalContainer": { "basis": 1920, "align": "center" },
+  "container": { "basis": 1440, "align": "center" },
   "slug": "cards",
   "meta": [
     {
@@ -52,9 +53,11 @@
       "color": "#5bbad5"
     }
   ],
-  "logo": {
-    "src": "assets/images/logo-fill.svg",
-    "alt": "TOXIN"
+  "header": {
+    "logo": {
+      "src": "assets/images/logo-fill.svg",
+      "alt": "TOXIN"
+    }
   },
   "picker": {
     "title": {

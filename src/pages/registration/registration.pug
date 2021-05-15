@@ -10,4 +10,6 @@ block main
       - let { signUp } = data;
       if signUp
         section(class=`${className}__sign-up js-${className}__sign-up`)
-          +sign-up(signUp)
+          +layout-container(container)
+            div(class=`${className}__wrapper`)
+              +sign-up(signUp)

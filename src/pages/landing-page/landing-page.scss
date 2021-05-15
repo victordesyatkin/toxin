@@ -7,9 +7,13 @@ $parent: 'landing-page';
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: 100%;
+
+  &__wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
 
   &__info {
     display: flex;

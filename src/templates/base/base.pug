@@ -26,19 +26,20 @@ html(lang="en")
       block title
         - let { title } = data;
         | #{title}
-  - let { slug = '', container } = data;
+  -
+    let { slug = '', generalContainer, container } = data;
   body(data-slug=slug)
     +layout
       +layout-header
-        +layout-container(container)
+        +layout-container(generalContainer)
           block header
             - let { headerNotAuthorized } = data;
-            +header(headerNotAuthorized)
+            +header({ container, ...headerNotAuthorized })
       +layout-main
-        +layout-container(container)
+        +layout-container(generalContainer)
           block main
       +layout-footer
-        +layout-container(container)
+        +layout-container(generalContainer)
           block footer
-            - let { footer } = data;
-            +footer(footer)
+            - let { footer, container } = data;
+            +footer({container, ...footer})

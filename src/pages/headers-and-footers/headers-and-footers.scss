@@ -4,6 +4,18 @@ $parent: 'headers-and-footers';
   margin-top: 4.4042rem;
   width: 100%;
 
+  &__header {
+    display: flex;
+    width: 100%;
+  }
+
+  &__header-not-authorized,
+  &__header-authorized,
+  &__footer {
+    display: flex;
+    width: 100%;
+  }
+
   &__header-not-authorized {
     margin-bottom: 2.9271rem;
   }

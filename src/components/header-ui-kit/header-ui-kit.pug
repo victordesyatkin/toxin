@@ -1,10 +1,14 @@
 include ../logo-image/logo-image
+include ../layout-container/layout-container
 
 mixin header-ui-kit(props)
   if props
     -
+      let { logo, container } = props;
       let className = 'header-ui-kit';
       let classNames = `${className}`;
-    header(class=classNames)
-      div(class=`${className}__logo-image`)
-        +logo-image(props)
+    div(class=classNames)
+      +layout-container(container)
+        div(class=`${className}__wrapper`)
+          div(class=`${className}__logo-image`)
+            +logo-image(logo)

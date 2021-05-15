@@ -1,5 +1,6 @@
 extends ../../templates/demo-base/demo-base
 
+include ../../components/layout-container/layout-container
 include ../../components/header-ui-kit/header-ui-kit
 include ../../components/header/header
 include ../../components/footer/footer
@@ -7,24 +8,24 @@ include ../../components/footer/footer
 block header
   - let className = 'headers-and-footers';
   div(class=`${className}__header`)
-    - let { logo } = data;
-    +header-ui-kit(logo)
+    - let { header, container } = data;
+    +header-ui-kit({ container, ...header })
 block main
   -
     let className = 'headers-and-footers';
     let classNames = `${className} js-${className}`;
-    let { headerNotAuthorized, headerAuthorized, footer1, footer2, copyright } = data;
+    let { headerNotAuthorized, headerAuthorized, footer1, footer2, copyright, container} = data;
   section(class=classNames)
     section(
       class=`${className}__header-not-authorized js-${className}__header-not-authorized`
     )
-      +header(headerNotAuthorized)
+      +header({ container, ...headerNotAuthorized })
     section(
       class=`${className}__header-authorized js-${className}__header-authorized`
     )
-      +header(headerAuthorized)
+      +header({ container, ...headerAuthorized })
     section(class=`${className}__footer js-${className}__footer`)
-      +footer(footer1)
+      +footer({ container, ...footer1 })
     section(class=`${className}__footer-small js-${className}__footer-small`)
       +footer(footer2)
 block footer

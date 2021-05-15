@@ -8,40 +8,43 @@ include ../../components/calendar/calendar
 include ../../components/card-slider/card-slider
 include ../../components/book/book
 include ../../components/sign-in/sign-in
+include ../../components/layout-container/layout-container
 
 block header
   - let className = 'cards';
   div(class=`${className}__header`)
-    - let { logo } = data;
-    +header-ui-kit(logo)
+    - let { header, container } = data;
+      +header-ui-kit({ container, ...header })
 block main
   -
     let className = 'cards';
     let classNames = `${className} js-${className}`;
-    let { picker, book, calendar, signUp, signIn, cardSliders = [] } = data;
+    let { picker, book, calendar, signUp, signIn, cardSliders = [], container } = data;
     let cardSlidersLength = cardSliders.length;
   section(class=classNames)
-    ul(class=`${className}__list-picker`)
-      li(class=`${className}__picker js-${className}__picker`)
-        +picker(picker)
-      li(class=`${className}__sign-up js-${className}__sign-up`)
-        +sign-up(signUp)
-    ul(class=`${className}__list-book`)
-      li(class=`${className}__book js-${className}__book`)
-        +book(book)
-      li(class=`${className}__sign-in js-${className}__sign-in`)
-        +sign-in(signIn)
-    ul(class=`${className}__list-calendar`)
-      li(class=`${className}__calendar js-${className}__calendar`)
-        +calendar(calendar)
-      li(class=`${className}__sliders js-${className}__sliders`)
-        if cardSlidersLength
-          ul(class=`${className}__list`)
-            each cardSlider in cardSliders
-              -
-                let { withControl } = cardSlider || {};
-                let cardSliderClassName = `${className}__card-slider`;
-                let cardSliderClassNames = `${cardSliderClassName} js-${className}__card-slider`;
-                cardSliderClassNames += withControl ? ` ${cardSliderClassName}_with_control` : '';
-              li(class=cardSliderClassNames)
-                +card-slider(cardSlider)
+    +layout-container(container)
+      div(class=`${className}__wrapper`)
+        ul(class=`${className}__list-picker`)
+          li(class=`${className}__picker js-${className}__picker`)
+            +picker(picker)
+          li(class=`${className}__sign-up js-${className}__sign-up`)
+            +sign-up(signUp)
+        ul(class=`${className}__list-book`)
+          li(class=`${className}__book js-${className}__book`)
+            +book(book)
+          li(class=`${className}__sign-in js-${className}__sign-in`)
+            +sign-in(signIn)
+        ul(class=`${className}__list-calendar`)
+          li(class=`${className}__calendar js-${className}__calendar`)
+            +calendar(calendar)
+          li(class=`${className}__sliders js-${className}__sliders`)
+            if cardSlidersLength
+              ul(class=`${className}__list`)
+                each cardSlider in cardSliders
+                  -
+                    let { withControl } = cardSlider || {};
+                    let cardSliderClassName = `${className}__card-slider`;
+                    let cardSliderClassNames = `${cardSliderClassName} js-${className}__card-slider`;
+                    cardSliderClassNames += withControl ? ` ${cardSliderClassName}_with_control` : '';
+                  li(class=cardSliderClassNames)
+                    +card-slider(cardSlider)
