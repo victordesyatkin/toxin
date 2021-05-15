@@ -164,7 +164,7 @@ function prepareNumber(number = '') {
   return (number || '').replace(/\s/g, '').split(' ').join('') || 0;
 }
 
-function deepCheckerOutsideClick({ event, isOpened, callback, $parent }) {
+function deepCheckerOutsideClick({ event, isOpened, $parent }) {
   if (isOpened && $parent) {
     const { target } = event;
     const path = event?.originalEvent?.path || [];
@@ -174,11 +174,8 @@ function deepCheckerOutsideClick({ event, isOpened, callback, $parent }) {
         isClosest = $(item).closest($parent).length;
       }
     });
-    const isClickOutside = !$(target).closest($parent).length && !isClosest;
-    if (isClickOutside) {
-      if (isFunction(callback)) {
-        callback();
-      }
+    const isClickedOutside = !$(target).closest($parent).length && !isClosest;
+    if (isClickedOutside) {
       return true;
     }
     return false;
@@ -186,14 +183,11 @@ function deepCheckerOutsideClick({ event, isOpened, callback, $parent }) {
   return false;
 }
 
-function checkerOutsideClick({ event, isOpened, callback, $parent }) {
+function checkerOutsideClick({ event, isOpened, $parent }) {
   if (isOpened && $parent) {
     const { target } = event;
-    const isClickOutside = !$(target).closest($parent).length;
-    if (isClickOutside) {
-      if (isFunction(callback)) {
-        callback();
-      }
+    const isClickedOutside = !$(target).closest($parent).length;
+    if (isClickedOutside) {
       return true;
     }
     return false;

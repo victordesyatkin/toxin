@@ -40,12 +40,15 @@ class Expandable extends Component {
 
   @bind
   _handleBodyClick(event) {
-    checkerOutsideClick({
+    const isClickedOutside = checkerOutsideClick({
       event,
       isOpened: this._isOpened,
       callback: () => this.toggleOpen(false),
       $parent: this._$element,
     });
+    if (isClickedOutside) {
+      this.toggleOpen(false);
+    }
   }
 }
 

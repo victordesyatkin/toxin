@@ -83,12 +83,14 @@ class FilterDateDropdown extends Component {
 
   @bind
   _handleBodyClick(event) {
-    deepCheckerOutsideClick({
+    const isClickedOutside = deepCheckerOutsideClick({
       event,
-      callback: this.close,
       isOpened: this._isOpened,
       $parent: this._$element,
     });
+    if (isClickedOutside) {
+      this.close();
+    }
   }
 
   @bind
