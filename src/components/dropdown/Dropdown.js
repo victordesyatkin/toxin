@@ -135,12 +135,12 @@ class Dropdown extends Component {
 
   @bind
   _handleBodyClick(event) {
-    const isClickOutside = checkerOutsideClick({
+    const isClickedOutside = checkerOutsideClick({
       event,
       isOpened: this._isOpened,
       $parent: this._$element,
     });
-    if (isClickOutside) {
+    if (isClickedOutside) {
       this.close();
     }
   }
